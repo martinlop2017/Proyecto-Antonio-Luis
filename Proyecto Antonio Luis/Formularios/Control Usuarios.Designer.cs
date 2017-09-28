@@ -57,7 +57,7 @@
             // 
             this.button1.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Llave;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(376, 383);
+            this.button1.Location = new System.Drawing.Point(393, 374);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 60);
             this.button1.TabIndex = 6;
@@ -75,7 +75,7 @@
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.Location = new System.Drawing.Point(128, 168);
+            this.panel2.Location = new System.Drawing.Point(145, 158);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(372, 199);
             this.panel2.TabIndex = 4;
@@ -141,12 +141,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(586, 462);
+            this.ClientSize = new System.Drawing.Size(586, 448);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);

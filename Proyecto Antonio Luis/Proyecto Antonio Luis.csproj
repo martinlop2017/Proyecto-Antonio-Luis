@@ -47,6 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministracionAntonioDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdministracionAntonioDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Control Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +82,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="AdministracionAntonioDataSet.xsc">
+      <DependentUpon>AdministracionAntonioDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AdministracionAntonioDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdministracionAntonioDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AdministracionAntonioDataSet.xss">
+      <DependentUpon>AdministracionAntonioDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
