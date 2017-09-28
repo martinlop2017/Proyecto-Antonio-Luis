@@ -117,14 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Logo Antonio Luis" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo Antonio Luis.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="panel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAK8AAABUCAYAAAD0x2evAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAEGSURBVHhe7dLBCYBAEMBAu7JYm7Kj9XUHPvwbmIF0kGMg
+        yrxk7XnP65YSLa954e/MS5Z5yTIvWeYly7xkmZcs85JlXrLMS5Z5yTIvWeYly7xkmZcs85JlXrLMS5Z5
+        yTIvWeYly7xkmZcs85JlXrLMS5Z5yTIvWeYly7xkmZcs85JlXrLMS5Z5yTIvWeYly7xkmZcs85JlXrLM
+        S5Z5yTIvWeYly7xkmZcs85JlXrLMS5Z5yTIvWeYly7xkmZcs85JlXrLMS5Z5yTIvWeYly7xkmZcs85Jl
+        XrLMS5Z5yTIvWeYly7xkmZcs85JlXrLMS5Z5yTIvWeYly7xkfc4rFVr2vFBjXqJmHk3mNIkl5zhNAAAA
+        AElFTkSuQmCC
+</value>
   </data>
-  <data name="Llave azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Llave azul.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Llave" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Llave.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="panel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAb4AAABUCAYAAAD9JVK5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAICSURBVHhe7dVBEQJBAMRAXCEWUzg6XssrCma7q6IhrwcA
+        LmJ8AFzlP7735ytJ0myH8UmSrugwPknSFR3GJ0m6oiPHBwAL6m3GB8CsepvxATCr3mZ8AMyqtxkfALPq
+        bcYHwKx6m/EBMKveZnwAzKq3GR8As+ptxgfArHqb8QEwq95mfADMqrcZHwCz6m3GB8CsepvxATCr3mZ8
+        AMyqtxkfALPqbcYHwKx6m/EBMKveZnwAzKq3GR8As+ptxgfArHqb8QEwq95mfADMqrcZHwCz6m3GB8Cs
+        epvxATCr3mZ8AMyqtxkfALPqbcYHwKx6m/EBMKveZnwAzKq3GR8As+ptxgfArHqb8QEwq95mfADMqrcZ
+        HwCz6m3GB8CsepvxATCr3mZ8AMyqtxkfALPqbcYHwKx6m/EBMKveZnwAzKq3GR8As+ptxgfArHqb8QEw
+        q95mfADMqrcZHwCz6m3GB8CsepvxATCr3mZ8AMyqtxkfALPqbcYHwKx6m/EBMKveZnwAzKq3GR8As+pt
+        xgfArHqb8QEwq95mfADMqrcZHwCz6m3GB8CsepvxATCr3mZ8AMyqtxkfALPqbcYHwKx6m/EBMKveZnwA
+        zKq3GR8As+ptxgfArHqb8QEwq95mfADMqrfl+CRJWuswPknSFR3GJ0m6osP4JElXdPzHBwA3MD4ALvI8
+        PzhtNQ9JhrSWAAAAAElFTkSuQmCC
+</value>
   </data>
 </root>
