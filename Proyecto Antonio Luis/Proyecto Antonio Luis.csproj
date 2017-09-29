@@ -117,6 +117,111 @@
   <ItemGroup>
     <Folder Include="Utils\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sistema.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agenda Azul.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agenda.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ayuda Azul.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ayuda.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes Azul.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contaplus Azul.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contaplus.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CSB19 Azul.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CSB19.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facturas Azul.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facturas.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Listados Azul.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Listados.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mantenimiento Azul.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mantenimiento.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sistema Azul.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes Azul1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enlace.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Escaner Azul.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Escaner.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FacturaManual Azul.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FacturaManual.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FacturaMensual Azul.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FacturaMensual.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Impuetos Azul.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Impuetos.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Propios Azul.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Propios.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ruta Azul.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ruta.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ususarios Azul.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ususarios.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
