@@ -10,10 +10,11 @@ using System.Windows.Forms;
 
 namespace Proyecto_Antonio_Luis.Formularios
 {
-    public partial class Form2 : Form
+    public partial class MenuPrincipal : Form
     {
-        public Form2()
+        public MenuPrincipal()
         {
+            
             InitializeComponent();
         }
     }

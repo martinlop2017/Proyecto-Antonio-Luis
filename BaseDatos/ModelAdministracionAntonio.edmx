@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AdministracionAntonioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Ususarios">
+          <Key>
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="cod" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="nombre" Type="nchar" MaxLength="15" />
+          <Property Name="login" Type="nchar" MaxLength="10" />
+          <Property Name="activo" Type="nchar" MaxLength="10" />
+          <Property Name="grupo" Type="nchar" MaxLength="20" />
+          <Property Name="pregunta" Type="nchar" MaxLength="50" />
+          <Property Name="respuesta" Type="nchar" MaxLength="50" />
+          <Property Name="sistema" Type="nchar" MaxLength="10" />
+          <Property Name="clientes" Type="nchar" MaxLength="10" />
+          <Property Name="facturas" Type="nchar" MaxLength="10" />
+          <Property Name="csb19" Type="nchar" MaxLength="10" />
+          <Property Name="contaplus" Type="nchar" MaxLength="10" />
+          <Property Name="listados" Type="nchar" MaxLength="10" />
+          <Property Name="mantenimiento" Type="nchar" MaxLength="10" />
+          <Property Name="ayuda" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="AdministracionAntonioModelStoreContainer">
+          <EntitySet Name="Ususarios" EntityType="Self.Ususarios" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AdministracionAntonioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Ususarios">
+          <Key>
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="cod" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="login" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="activo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="grupo" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="pregunta" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="respuesta" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="sistema" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="clientes" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="facturas" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="csb19" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="contaplus" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="listados" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="mantenimiento" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ayuda" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="AdministracionAntonioEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ususarios" EntityType="Self.Ususarios" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AdministracionAntonioModelStoreContainer" CdmEntityContainer="AdministracionAntonioEntities">
+          <EntitySetMapping Name="Ususarios">
+            <EntityTypeMapping TypeName="AdministracionAntonioModel.Ususarios">
+              <MappingFragment StoreEntitySet="Ususarios">
+                <ScalarProperty Name="cod" ColumnName="cod" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="grupo" ColumnName="grupo" />
+                <ScalarProperty Name="pregunta" ColumnName="pregunta" />
+                <ScalarProperty Name="respuesta" ColumnName="respuesta" />
+                <ScalarProperty Name="sistema" ColumnName="sistema" />
+                <ScalarProperty Name="clientes" ColumnName="clientes" />
+                <ScalarProperty Name="facturas" ColumnName="facturas" />
+                <ScalarProperty Name="csb19" ColumnName="csb19" />
+                <ScalarProperty Name="contaplus" ColumnName="contaplus" />
+                <ScalarProperty Name="listados" ColumnName="listados" />
+                <ScalarProperty Name="mantenimiento" ColumnName="mantenimiento" />
+                <ScalarProperty Name="ayuda" ColumnName="ayuda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

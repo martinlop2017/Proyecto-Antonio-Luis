@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_Antonio_Luis.Formularios
 {
-    partial class Form2
+    partial class MenuPrincipal
     {
         /// <summary>
         /// Required designer variable.

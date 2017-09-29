@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{27272B19-7B82-4F86-AF86-1BD4BCE6709E}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{45FA9993-4762-4DC3-B90A-24F711B39D4C}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Proyecto_Antonio_Luis</RootNamespace>
-    <AssemblyName>Proyecto Antonio Luis</AssemblyName>
+    <RootNamespace>BaseDatos</RootNamespace>
+    <AssemblyName>BaseDatos</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -44,78 +41,61 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\Control Usuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Control Usuarios.Designer.cs">
-      <DependentUpon>Control Usuarios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\MenuPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\MenuPrincipal.Designer.cs">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\Control Usuarios.resx">
-      <DependentUpon>Control Usuarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\MenuPrincipal.resx">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
+    <Compile Include="ModelAdministracionAntonio.Context.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
+      <DependentUpon>ModelAdministracionAntonio.Context.tt</DependentUpon>
     </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
+    <Compile Include="ModelAdministracionAntonio.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelAdministracionAntonio.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelAdministracionAntonio.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ususarios.cs">
+      <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.Config" />
+    <EntityDeploy Include="ModelAdministracionAntonio.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelAdministracionAntonio.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelAdministracionAntonio.edmx.diagram">
+      <DependentUpon>ModelAdministracionAntonio.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Logo Antonio Luis.bmp" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Llave azul.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Llave.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BaseDatos\BaseDatos.csproj">
-      <Project>{45FA9993-4762-4DC3-B90A-24F711B39D4C}</Project>
-      <Name>BaseDatos</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utils\" />
+    <Content Include="ModelAdministracionAntonio.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelAdministracionAntonio.edmx</DependentUpon>
+      <LastGenOutput>ModelAdministracionAntonio.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelAdministracionAntonio.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelAdministracionAntonio.edmx</DependentUpon>
+      <LastGenOutput>ModelAdministracionAntonio.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
