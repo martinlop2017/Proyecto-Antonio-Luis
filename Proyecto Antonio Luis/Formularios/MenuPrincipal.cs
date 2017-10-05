@@ -246,37 +246,51 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void BotonSistema_Click(object sender, EventArgs e)
         {
-
+            PanelSistema.Visible = true;
+            PanelClientes.Visible = false;
+            PanelFacturas.Visible = false;
         }
 
         private void BotonClientes_Click(object sender, EventArgs e)
         {
-
+            PanelSistema.Visible = false;
+            PanelClientes.Visible = true;
+            PanelFacturas.Visible = false;
         }
 
         private void BotonFacturas_Click(object sender, EventArgs e)
         {
-
+            PanelSistema.Visible = false;
+            PanelClientes.Visible = false;
+            PanelFacturas.Visible = true;
         }
 
         private void BotonCsb19_Click(object sender, EventArgs e)
         {
-
+            PanelSistema.Visible = false;
+            PanelClientes.Visible = false;
+            PanelFacturas.Visible = false;
         }
 
         private void BotonContaplus_Click(object sender, EventArgs e)
         {
-
+            PanelSistema.Visible = false;
+            PanelClientes.Visible = false;
+            PanelFacturas.Visible = false;
         }
 
         private void BotonListados_Click(object sender, EventArgs e)
         {
-
+            PanelSistema.Visible = false;
+            PanelClientes.Visible = false;
+            PanelFacturas.Visible = false;
         }
 
         private void BotonMantenimiento_Click(object sender, EventArgs e)
         {
-
+            PanelSistema.Visible = false;
+            PanelClientes.Visible = false;
+            PanelFacturas.Visible = false;
         }
 
         private void BotonPropios_Click(object sender, EventArgs e)
@@ -312,6 +326,20 @@ namespace Proyecto_Antonio_Luis.Formularios
         private void BotonFactManual_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BotonAgenda_Click(object sender, EventArgs e)
+        {
+            PanelSistema.Visible = false;
+            PanelClientes.Visible = false;
+            PanelFacturas.Visible = false;
+        }
+
+        private void BotonAyuda_Click(object sender, EventArgs e)
+        {
+            PanelSistema.Visible = false;
+            PanelClientes.Visible = false;
+            PanelFacturas.Visible = false;
         }
 
         //============================================================================================================
