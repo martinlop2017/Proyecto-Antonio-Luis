@@ -18,7 +18,7 @@ namespace Proyecto_Antonio_Luis
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Propios());
+            Application.Run(new GestionUsuarios());
         }
     }
 }

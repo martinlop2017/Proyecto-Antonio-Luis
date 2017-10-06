@@ -483,7 +483,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.MisDatos3;
-            this.ClientSize = new System.Drawing.Size(852, 652);
+            this.ClientSize = new System.Drawing.Size(874, 641);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
