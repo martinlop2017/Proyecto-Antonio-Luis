@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Impuestos));
             this.buttonAceptar = new System.Windows.Forms.Button();
             this.dataGridViewIVAs = new System.Windows.Forms.DataGridView();
-            this.label15 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIVAs)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,17 +69,6 @@
             this.dataGridViewIVAs.TabIndex = 117;
             this.dataGridViewIVAs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIVAs_CellContentClick);
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Tahoma", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label15.Location = new System.Drawing.Point(78, 31);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(310, 42);
-            this.label15.TabIndex = 118;
-            this.label15.Text = "Tipos Impuestos";
-            // 
             // Column1
             // 
             this.Column1.FillWeight = 226.7426F;
@@ -104,16 +93,29 @@
             this.Column4.HeaderText = " ";
             this.Column4.Name = "Column4";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Tahoma", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label15.Location = new System.Drawing.Point(78, 31);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(310, 42);
+            this.label15.TabIndex = 118;
+            this.label15.Text = "Tipos Impuestos";
+            // 
             // Impuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(465, 528);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.dataGridViewIVAs);
             this.Controls.Add(this.buttonAceptar);
+            this.DoubleBuffered = true;
             this.Name = "Impuestos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Impuestos";

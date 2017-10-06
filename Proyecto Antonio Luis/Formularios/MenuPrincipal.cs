@@ -241,7 +241,10 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void BotonImpuestos_Click(object sender, EventArgs e)
         {
+            // Abre Impuestos
 
+            Impuestos form = new Impuestos();
+            form.Show();
         }
 
         private void BotonSistema_Click(object sender, EventArgs e)
@@ -295,7 +298,10 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void BotonPropios_Click(object sender, EventArgs e)
         {
+            // Abre Propios
 
+            Propios form = new Propios();
+            form.Show();
         }
 
         private void BotonRutas_Click(object sender, EventArgs e)
@@ -305,7 +311,10 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void BotonUsuarios_Click(object sender, EventArgs e)
         {
+            // Abre Gestion de Ususarios
 
+            GestionUsuarios form = new GestionUsuarios();
+            form.Show();
         }
 
         private void BotonCliente_Click(object sender, EventArgs e)
