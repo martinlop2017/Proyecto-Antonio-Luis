@@ -10,9 +10,8 @@
 
 namespace Proyecto_Antonio_Luis.Properties {
     using System;
-    using System.Drawing;
-
-
+    
+    
     /// <summary>
     ///   Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
     /// </summary>
@@ -364,6 +363,46 @@ namespace Proyecto_Antonio_Luis.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MisDatos {
+            get {
+                object obj = ResourceManager.GetObject("MisDatos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MisDatos1 {
+            get {
+                object obj = ResourceManager.GetObject("MisDatos1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MisDatos2 {
+            get {
+                object obj = ResourceManager.GetObject("MisDatos2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MisDatos3 {
+            get {
+                object obj = ResourceManager.GetObject("MisDatos3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Propios {
             get {
                 object obj = ResourceManager.GetObject("Propios", resourceCulture);
@@ -440,7 +479,5 @@ namespace Proyecto_Antonio_Luis.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
-        public static Image Impuestos { get; internal set; }
     }
 }

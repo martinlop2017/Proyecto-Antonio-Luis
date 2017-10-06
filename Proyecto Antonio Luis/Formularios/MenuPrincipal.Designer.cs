@@ -59,10 +59,28 @@
             this.PanelSistema = new System.Windows.Forms.Panel();
             this.PanelClientes = new System.Windows.Forms.Panel();
             this.PanelFacturas = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.datosPropiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.impuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestiónClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.almacenDocumentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturacionMensualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturaciónManualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cSB19ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contaplusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.PanelSistema.SuspendLayout();
             this.PanelClientes.SuspendLayout();
             this.PanelFacturas.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -411,6 +429,130 @@
             this.PanelFacturas.Size = new System.Drawing.Size(117, 265);
             this.PanelFacturas.TabIndex = 42;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sistemaToolStripMenuItem,
+            this.clientesToolStripMenuItem,
+            this.facturasToolStripMenuItem,
+            this.cSB19ToolStripMenuItem,
+            this.contaplusToolStripMenuItem,
+            this.listadosToolStripMenuItem,
+            this.mantenimientoToolStripMenuItem,
+            this.agendaToolStripMenuItem,
+            this.ayudaToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1252, 24);
+            this.menuStrip1.TabIndex = 43;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // sistemaToolStripMenuItem
+            // 
+            this.sistemaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.datosPropiosToolStripMenuItem,
+            this.usuariosToolStripMenuItem,
+            this.impuestosToolStripMenuItem});
+            this.sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
+            this.sistemaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.sistemaToolStripMenuItem.Text = "Sistema";
+            // 
+            // datosPropiosToolStripMenuItem
+            // 
+            this.datosPropiosToolStripMenuItem.Name = "datosPropiosToolStripMenuItem";
+            this.datosPropiosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.datosPropiosToolStripMenuItem.Text = "Datos Propios";
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            // 
+            // impuestosToolStripMenuItem
+            // 
+            this.impuestosToolStripMenuItem.Name = "impuestosToolStripMenuItem";
+            this.impuestosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.impuestosToolStripMenuItem.Text = "Impuestos";
+            // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestiónClientesToolStripMenuItem,
+            this.almacenDocumentosToolStripMenuItem});
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            // 
+            // gestiónClientesToolStripMenuItem
+            // 
+            this.gestiónClientesToolStripMenuItem.Name = "gestiónClientesToolStripMenuItem";
+            this.gestiónClientesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.gestiónClientesToolStripMenuItem.Text = "Gestión Clientes";
+            // 
+            // almacenDocumentosToolStripMenuItem
+            // 
+            this.almacenDocumentosToolStripMenuItem.Name = "almacenDocumentosToolStripMenuItem";
+            this.almacenDocumentosToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.almacenDocumentosToolStripMenuItem.Text = "Almacen Documentos";
+            // 
+            // facturasToolStripMenuItem
+            // 
+            this.facturasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.facturacionMensualToolStripMenuItem,
+            this.facturaciónManualToolStripMenuItem});
+            this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
+            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.facturasToolStripMenuItem.Text = "Facturas";
+            // 
+            // facturacionMensualToolStripMenuItem
+            // 
+            this.facturacionMensualToolStripMenuItem.Name = "facturacionMensualToolStripMenuItem";
+            this.facturacionMensualToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.facturacionMensualToolStripMenuItem.Text = "Facturación Mensual";
+            // 
+            // facturaciónManualToolStripMenuItem
+            // 
+            this.facturaciónManualToolStripMenuItem.Name = "facturaciónManualToolStripMenuItem";
+            this.facturaciónManualToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.facturaciónManualToolStripMenuItem.Text = "Facturación Manual";
+            // 
+            // cSB19ToolStripMenuItem
+            // 
+            this.cSB19ToolStripMenuItem.Name = "cSB19ToolStripMenuItem";
+            this.cSB19ToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.cSB19ToolStripMenuItem.Text = "CSB19";
+            // 
+            // contaplusToolStripMenuItem
+            // 
+            this.contaplusToolStripMenuItem.Name = "contaplusToolStripMenuItem";
+            this.contaplusToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.contaplusToolStripMenuItem.Text = "Contaplus";
+            // 
+            // listadosToolStripMenuItem
+            // 
+            this.listadosToolStripMenuItem.Name = "listadosToolStripMenuItem";
+            this.listadosToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.listadosToolStripMenuItem.Text = "Listados";
+            // 
+            // mantenimientoToolStripMenuItem
+            // 
+            this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
+            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
+            this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
+            // 
+            // agendaToolStripMenuItem
+            // 
+            this.agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
+            this.agendaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.agendaToolStripMenuItem.Text = "Agenda";
+            // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,6 +576,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Principal";
@@ -444,6 +588,8 @@
             this.PanelSistema.ResumeLayout(false);
             this.PanelClientes.ResumeLayout(false);
             this.PanelFacturas.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -481,5 +627,22 @@
         private System.Windows.Forms.Panel PanelSistema;
         private System.Windows.Forms.Panel PanelClientes;
         private System.Windows.Forms.Panel PanelFacturas;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem datosPropiosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem impuestosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestiónClientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem almacenDocumentosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem facturacionMensualToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem facturaciónManualToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cSB19ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contaplusToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agendaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
     }
 }
