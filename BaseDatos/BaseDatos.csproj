@@ -51,6 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clientes.cs">
+      <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cuentas.cs">
+      <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Iva.cs">
+      <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModelAdministracionAntonio.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -67,6 +76,9 @@
       <DependentUpon>ModelAdministracionAntonio.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Propios.cs">
+      <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
+    </Compile>
     <Compile Include="Ususarios.cs">
       <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
     </Compile>

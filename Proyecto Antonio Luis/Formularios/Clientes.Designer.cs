@@ -447,7 +447,7 @@
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(51, 21);
             this.checkBox5.TabIndex = 155;
-            this.checkBox5.Text = "309";
+            this.checkBox5.Text = "131";
             this.checkBox5.UseVisualStyleBackColor = false;
             // 
             // checkBox6
@@ -459,7 +459,7 @@
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(51, 21);
             this.checkBox6.TabIndex = 156;
-            this.checkBox6.Text = "200";
+            this.checkBox6.Text = "303";
             this.checkBox6.UseVisualStyleBackColor = false;
             // 
             // checkBox7
@@ -507,7 +507,7 @@
             this.checkBox10.Name = "checkBox10";
             this.checkBox10.Size = new System.Drawing.Size(51, 21);
             this.checkBox10.TabIndex = 160;
-            this.checkBox10.Text = "349";
+            this.checkBox10.Text = "130";
             this.checkBox10.UseVisualStyleBackColor = false;
             // 
             // checkBox11
@@ -531,7 +531,7 @@
             this.checkBox12.Name = "checkBox12";
             this.checkBox12.Size = new System.Drawing.Size(51, 21);
             this.checkBox12.TabIndex = 162;
-            this.checkBox12.Text = "193";
+            this.checkBox12.Text = "200";
             this.checkBox12.UseVisualStyleBackColor = false;
             // 
             // checkBox13
@@ -543,7 +543,7 @@
             this.checkBox13.Name = "checkBox13";
             this.checkBox13.Size = new System.Drawing.Size(51, 21);
             this.checkBox13.TabIndex = 163;
-            this.checkBox13.Text = "390";
+            this.checkBox13.Text = "123";
             this.checkBox13.UseVisualStyleBackColor = false;
             // 
             // checkBox14
@@ -555,7 +555,7 @@
             this.checkBox14.Name = "checkBox14";
             this.checkBox14.Size = new System.Drawing.Size(51, 21);
             this.checkBox14.TabIndex = 164;
-            this.checkBox14.Text = "100";
+            this.checkBox14.Text = "390";
             this.checkBox14.UseVisualStyleBackColor = false;
             // 
             // checkBox15
@@ -567,7 +567,7 @@
             this.checkBox15.Name = "checkBox15";
             this.checkBox15.Size = new System.Drawing.Size(51, 21);
             this.checkBox15.TabIndex = 165;
-            this.checkBox15.Text = "303";
+            this.checkBox15.Text = "115";
             this.checkBox15.UseVisualStyleBackColor = false;
             // 
             // checkBox16
@@ -579,7 +579,7 @@
             this.checkBox16.Name = "checkBox16";
             this.checkBox16.Size = new System.Drawing.Size(51, 21);
             this.checkBox16.TabIndex = 166;
-            this.checkBox16.Text = "123";
+            this.checkBox16.Text = "193";
             this.checkBox16.UseVisualStyleBackColor = false;
             // 
             // checkBox17
@@ -591,7 +591,7 @@
             this.checkBox17.Name = "checkBox17";
             this.checkBox17.Size = new System.Drawing.Size(51, 21);
             this.checkBox17.TabIndex = 167;
-            this.checkBox17.Text = "131";
+            this.checkBox17.Text = "349";
             this.checkBox17.UseVisualStyleBackColor = false;
             // 
             // checkBox18
@@ -603,7 +603,7 @@
             this.checkBox18.Name = "checkBox18";
             this.checkBox18.Size = new System.Drawing.Size(51, 21);
             this.checkBox18.TabIndex = 168;
-            this.checkBox18.Text = "180";
+            this.checkBox18.Text = "190";
             this.checkBox18.UseVisualStyleBackColor = false;
             // 
             // checkBox19
@@ -615,7 +615,7 @@
             this.checkBox19.Name = "checkBox19";
             this.checkBox19.Size = new System.Drawing.Size(51, 21);
             this.checkBox19.TabIndex = 169;
-            this.checkBox19.Text = "190";
+            this.checkBox19.Text = "111";
             this.checkBox19.UseVisualStyleBackColor = false;
             // 
             // checkBox20
@@ -627,7 +627,7 @@
             this.checkBox20.Name = "checkBox20";
             this.checkBox20.Size = new System.Drawing.Size(51, 21);
             this.checkBox20.TabIndex = 170;
-            this.checkBox20.Text = "130";
+            this.checkBox20.Text = "309";
             this.checkBox20.UseVisualStyleBackColor = false;
             // 
             // checkBox21
@@ -639,7 +639,7 @@
             this.checkBox21.Name = "checkBox21";
             this.checkBox21.Size = new System.Drawing.Size(51, 21);
             this.checkBox21.TabIndex = 171;
-            this.checkBox21.Text = "115";
+            this.checkBox21.Text = "180";
             this.checkBox21.UseVisualStyleBackColor = false;
             // 
             // checkBox22
@@ -651,7 +651,7 @@
             this.checkBox22.Name = "checkBox22";
             this.checkBox22.Size = new System.Drawing.Size(51, 21);
             this.checkBox22.TabIndex = 172;
-            this.checkBox22.Text = "111";
+            this.checkBox22.Text = "100";
             this.checkBox22.UseVisualStyleBackColor = false;
             // 
             // textBox1
