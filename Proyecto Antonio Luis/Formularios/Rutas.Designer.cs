@@ -50,14 +50,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
@@ -70,12 +62,13 @@
             this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.panel1.SuspendLayout();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -327,106 +320,14 @@
             this.textBox9.TabIndex = 30;
             this.textBox9.Text = "99";
             // 
-            // textBox11
-            // 
-            this.textBox11.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(465, 510);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox11.Size = new System.Drawing.Size(88, 23);
-            this.textBox11.TabIndex = 59;
-            this.textBox11.Text = "4300000000";
-            // 
-            // textBox12
-            // 
-            this.textBox12.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(465, 480);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox12.Size = new System.Drawing.Size(88, 23);
-            this.textBox12.TabIndex = 58;
-            this.textBox12.Text = "4300000000";
-            // 
-            // textBox13
-            // 
-            this.textBox13.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(465, 450);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox13.Size = new System.Drawing.Size(88, 23);
-            this.textBox13.TabIndex = 57;
-            this.textBox13.Text = "4300000000";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label10.Location = new System.Drawing.Point(273, 453);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(116, 15);
-            this.label10.TabIndex = 56;
-            this.label10.Text = "Cta. Iva Rep. 0%.";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label11.Location = new System.Drawing.Point(273, 483);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(186, 15);
-            this.label11.TabIndex = 55;
-            this.label11.Text = "Cta. Iva Rep. Superreducido";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label12.Location = new System.Drawing.Point(273, 513);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(157, 15);
-            this.label12.TabIndex = 54;
-            this.label12.Text = "Cta. Iva Rep. Reducido.";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label14.Location = new System.Drawing.Point(273, 423);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(123, 15);
-            this.label14.TabIndex = 52;
-            this.label14.Text = "Cta. Prestaciones.";
-            // 
-            // textBox14
-            // 
-            this.textBox14.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(465, 420);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox14.Size = new System.Drawing.Size(88, 23);
-            this.textBox14.TabIndex = 51;
-            this.textBox14.Text = "99";
-            // 
             // textBox16
             // 
             this.textBox16.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.Location = new System.Drawing.Point(163, 510);
+            this.textBox16.Location = new System.Drawing.Point(182, 510);
             this.textBox16.Name = "textBox16";
             this.textBox16.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox16.Size = new System.Drawing.Size(88, 23);
+            this.textBox16.Size = new System.Drawing.Size(340, 23);
             this.textBox16.TabIndex = 49;
             this.textBox16.Text = "4300000000";
             // 
@@ -434,10 +335,10 @@
             // 
             this.textBox17.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(163, 480);
+            this.textBox17.Location = new System.Drawing.Point(182, 482);
             this.textBox17.Name = "textBox17";
             this.textBox17.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox17.Size = new System.Drawing.Size(88, 23);
+            this.textBox17.Size = new System.Drawing.Size(340, 23);
             this.textBox17.TabIndex = 48;
             this.textBox17.Text = "4300000000";
             // 
@@ -445,10 +346,10 @@
             // 
             this.textBox18.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(163, 450);
+            this.textBox18.Location = new System.Drawing.Point(182, 453);
             this.textBox18.Name = "textBox18";
             this.textBox18.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox18.Size = new System.Drawing.Size(88, 23);
+            this.textBox18.Size = new System.Drawing.Size(340, 23);
             this.textBox18.TabIndex = 47;
             this.textBox18.Text = "4300000000";
             // 
@@ -460,9 +361,9 @@
             this.label15.ForeColor = System.Drawing.Color.SteelBlue;
             this.label15.Location = new System.Drawing.Point(62, 453);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(63, 15);
+            this.label15.Size = new System.Drawing.Size(84, 15);
             this.label15.TabIndex = 46;
-            this.label15.Text = "Clientes.";
+            this.label15.Text = "Ruta Diario.";
             // 
             // label16
             // 
@@ -472,9 +373,10 @@
             this.label16.ForeColor = System.Drawing.Color.SteelBlue;
             this.label16.Location = new System.Drawing.Point(62, 483);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(80, 15);
+            this.label16.Size = new System.Drawing.Size(117, 15);
             this.label16.TabIndex = 45;
-            this.label16.Text = "Cta. Banco.";
+            this.label16.Text = "Ruta Comen. Asi.";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label17
             // 
@@ -484,9 +386,10 @@
             this.label17.ForeColor = System.Drawing.Color.SteelBlue;
             this.label17.Location = new System.Drawing.Point(62, 513);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(92, 15);
+            this.label17.Size = new System.Drawing.Size(88, 15);
             this.label17.TabIndex = 44;
-            this.label17.Text = "Cta. Suplidos";
+            this.label17.Text = "Ruta CSB19.";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // label20
             // 
@@ -496,18 +399,19 @@
             this.label20.ForeColor = System.Drawing.Color.SteelBlue;
             this.label20.Location = new System.Drawing.Point(62, 423);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(94, 15);
+            this.label20.Size = new System.Drawing.Size(113, 15);
             this.label20.TabIndex = 42;
-            this.label20.Text = "Num. Digitos.";
+            this.label20.Text = "Ruta Subcuenta.";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // textBox19
             // 
             this.textBox19.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox19.Location = new System.Drawing.Point(220, 420);
+            this.textBox19.Location = new System.Drawing.Point(182, 423);
             this.textBox19.Name = "textBox19";
             this.textBox19.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox19.Size = new System.Drawing.Size(31, 23);
+            this.textBox19.Size = new System.Drawing.Size(340, 23);
             this.textBox19.TabIndex = 40;
             this.textBox19.Text = "99";
             // 
@@ -558,24 +462,6 @@
             this.button2.TabIndex = 129;
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Location = new System.Drawing.Point(42, 115);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(532, 453);
-            this.panel1.TabIndex = 130;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(333, 308);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // fileSystemWatcher1
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
@@ -592,6 +478,50 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(526, 509);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(27, 23);
+            this.button3.TabIndex = 130;
+            this.button3.Text = "...";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(526, 479);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(27, 23);
+            this.button4.TabIndex = 131;
+            this.button4.Text = "...";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(526, 452);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(27, 23);
+            this.button5.TabIndex = 132;
+            this.button5.Text = "...";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(526, 423);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(27, 23);
+            this.button6.TabIndex = 133;
+            this.button6.Text = "...";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Rutas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -600,18 +530,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(619, 731);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox14);
             this.Controls.Add(this.textBox16);
             this.Controls.Add(this.textBox17);
             this.Controls.Add(this.textBox18);
@@ -647,7 +572,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rutas";
             this.Load += new System.EventHandler(this.Rutas_Load);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -677,14 +601,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.TextBox textBox18;
@@ -697,10 +613,12 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel panel1;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.DirectoryServices.DirectorySearcher directorySearcher1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
     }
 }

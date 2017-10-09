@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace Proyecto_Antonio_Luis.Formularios
 {
-    public partial class GestionUsuarios : Form
+    public partial class GestionClientes : Form
     {
-        public GestionUsuarios()
+        public GestionClientes()
         {
             InitializeComponent();
         }
+
 
 
         //============================================================================================================
@@ -30,46 +31,10 @@ namespace Proyecto_Antonio_Luis.Formularios
         //============================================================================================================
         //============================================================================================================
 
-
-
-        private void button1_Click(object sender, EventArgs e)
+        private void sumar_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void eliminar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void modificar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buscar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void salir_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-
-
-        //============================================================================================================
-        //============================================================================================================
-        //============================================================================================================
-        //=================                                                                               ============
-        //=================                                                                               ============
-        //=================      Aquí termina las acciones al pulsar los distintos botones               ============
-        //=================                                                                               ============
-        //=================                                                                               ============
-        //============================================================================================================
-        //============================================================================================================
-        //============================================================================================================
 
 
 
@@ -85,8 +50,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void sumar_MouseEnter(object sender, EventArgs e)
         {
-            label1.Visible = true;
-            
+            label1.Visible = true; 
         }
 
         private void sumar_MouseLeave(object sender, EventArgs e)
@@ -112,7 +76,6 @@ namespace Proyecto_Antonio_Luis.Formularios
         private void modificar_MouseLeave(object sender, EventArgs e)
         {
             label3.Visible = false;
-                
         }
 
         private void buscar_MouseEnter(object sender, EventArgs e)
@@ -135,39 +98,27 @@ namespace Proyecto_Antonio_Luis.Formularios
             label5.Visible = false;
         }
 
-        private void dataGridViewArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
+        //============================================================================================================
+        //============================================================================================================
+        //============================================================================================================
+        //=================                                                                               ============
+        //=================                                                                               ============
+        //=================      Aquí termina las acciones al pulsar los distintos botones               ============
+        //=================                                                                               ============
+        //=================                                                                               ============
+        //============================================================================================================
+        //============================================================================================================
+        //============================================================================================================
 
-        }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

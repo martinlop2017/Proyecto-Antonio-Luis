@@ -70,5 +70,68 @@ namespace Proyecto_Antonio_Luis.Formularios
                 textBox1.Text = buscar.FileName;
             }
         }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            {
+                OpenFileDialog buscar = new OpenFileDialog();
+
+                if (buscar.ShowDialog() == DialogResult.OK)
+                {
+                    textBox19.Text = buscar.FileName;
+                }
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            {
+                OpenFileDialog buscar = new OpenFileDialog();
+
+                if (buscar.ShowDialog() == DialogResult.OK)
+                {
+                    textBox18.Text = buscar.FileName;
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            {
+                OpenFileDialog buscar = new OpenFileDialog();
+
+                if (buscar.ShowDialog() == DialogResult.OK)
+                {
+                    textBox17.Text = buscar.FileName;
+                }
+            }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            {
+                OpenFileDialog buscar = new OpenFileDialog();
+
+                if (buscar.ShowDialog() == DialogResult.OK)
+                {
+                    textBox16.Text = buscar.FileName;
+                }
+            }
+        }
     }
 }

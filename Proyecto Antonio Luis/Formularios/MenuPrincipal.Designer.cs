@@ -410,6 +410,7 @@
             this.PanelSistema.Name = "PanelSistema";
             this.PanelSistema.Size = new System.Drawing.Size(117, 552);
             this.PanelSistema.TabIndex = 40;
+            this.PanelSistema.Visible = false;
             // 
             // PanelClientes
             // 
@@ -419,6 +420,7 @@
             this.PanelClientes.Name = "PanelClientes";
             this.PanelClientes.Size = new System.Drawing.Size(117, 265);
             this.PanelClientes.TabIndex = 41;
+            this.PanelClientes.Visible = false;
             // 
             // PanelFacturas
             // 
@@ -428,6 +430,7 @@
             this.PanelFacturas.Name = "PanelFacturas";
             this.PanelFacturas.Size = new System.Drawing.Size(117, 265);
             this.PanelFacturas.TabIndex = 42;
+            this.PanelFacturas.Visible = false;
             // 
             // menuStrip1
             // 
@@ -460,19 +463,19 @@
             // datosPropiosToolStripMenuItem
             // 
             this.datosPropiosToolStripMenuItem.Name = "datosPropiosToolStripMenuItem";
-            this.datosPropiosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.datosPropiosToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.datosPropiosToolStripMenuItem.Text = "Datos Propios";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // impuestosToolStripMenuItem
             // 
             this.impuestosToolStripMenuItem.Name = "impuestosToolStripMenuItem";
-            this.impuestosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.impuestosToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.impuestosToolStripMenuItem.Text = "Impuestos";
             // 
             // clientesToolStripMenuItem
