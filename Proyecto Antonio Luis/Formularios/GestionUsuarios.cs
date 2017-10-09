@@ -34,7 +34,10 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // Abre Ususarios
 
+            Usuarios form = new Usuarios();
+            form.Show();
         }
 
         private void eliminar_Click(object sender, EventArgs e)

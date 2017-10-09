@@ -280,6 +280,9 @@ namespace Proyecto_Antonio_Luis.Formularios
             PanelSistema.Visible = false;
             PanelClientes.Visible = false;
             PanelFacturas.Visible = false;
+            // Abre Contaplus
+            Contaplus form = new Contaplus();
+            form.Show();
         }
 
         private void BotonListados_Click(object sender, EventArgs e)
@@ -306,7 +309,10 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void BotonRutas_Click(object sender, EventArgs e)
         {
+            // Abre Rutas
 
+            Rutas form = new Rutas();
+            form.Show();
         }
 
         private void BotonUsuarios_Click(object sender, EventArgs e)
@@ -319,7 +325,10 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void BotonCliente_Click(object sender, EventArgs e)
         {
+            // Abre Gestion de Clientes
 
+            GestionClientes form = new GestionClientes();
+            form.Show();
         }
 
         private void BotonEscaner_Click(object sender, EventArgs e)

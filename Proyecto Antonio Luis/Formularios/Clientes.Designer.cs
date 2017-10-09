@@ -132,11 +132,11 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Tahoma", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(153)))), ((int)(((byte)(208)))));
-            this.label15.Location = new System.Drawing.Point(267, 20);
+            this.label15.Location = new System.Drawing.Point(319, 40);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(191, 42);
+            this.label15.Size = new System.Drawing.Size(273, 42);
             this.label15.TabIndex = 127;
-            this.label15.Text = "Mis Datos";
+            this.label15.Text = "Datos Clientes";
             // 
             // textBoxMiCif
             // 
@@ -992,6 +992,7 @@
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label1);
             this.Name = "Clientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.Clientes_Load);
             this.ResumeLayout(false);

@@ -33,7 +33,10 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void sumar_Click(object sender, EventArgs e)
         {
+            // Abre Propios
 
+            Clientes form = new Clientes();
+            form.Show();
         }
 
 

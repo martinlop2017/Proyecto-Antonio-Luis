@@ -16,5 +16,10 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
             InitializeComponent();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

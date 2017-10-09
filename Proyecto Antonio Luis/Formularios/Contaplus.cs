@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Proyecto_Antonio_Luis.Formularios
 {
-    public partial class Propios : Form
+    public partial class Contaplus : Form
     {
-        public Propios()
+        public Contaplus()
         {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }

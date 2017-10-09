@@ -63,6 +63,12 @@
     <Compile Include="Formularios\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Contaplus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Contaplus.Designer.cs">
+      <DependentUpon>Contaplus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Control Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Contaplus.resx">
+      <DependentUpon>Contaplus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Control Usuarios.resx">
       <DependentUpon>Control Usuarios.cs</DependentUpon>
