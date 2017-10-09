@@ -98,6 +98,11 @@ namespace Proyecto_Antonio_Luis.Formularios
             label5.Visible = false;
         }
 
+        private void salir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
 
 
 
