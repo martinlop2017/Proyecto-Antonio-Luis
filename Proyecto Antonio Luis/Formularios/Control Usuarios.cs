@@ -94,7 +94,6 @@ namespace Proyecto_Antonio_Luis
             MenuPrincipal form = new MenuPrincipal();
             form.Show();
 
-           
 
 
         }

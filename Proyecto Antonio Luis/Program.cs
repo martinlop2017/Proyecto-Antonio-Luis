@@ -18,7 +18,7 @@ namespace Proyecto_Antonio_Luis
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Facturacion());
+            Application.Run(new Impuestos());
         }
     }
 }

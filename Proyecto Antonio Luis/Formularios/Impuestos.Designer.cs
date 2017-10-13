@@ -119,6 +119,7 @@
             this.Name = "Impuestos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Impuestos";
+            this.Load += new System.EventHandler(this.Impuestos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIVAs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
