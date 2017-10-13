@@ -35,8 +35,8 @@ namespace Proyecto_Antonio_Luis.Formularios
             //BaseDatos.Iva.Select(User => user.icaconcepto).ToList<string>();
             //          dataGridViewIVAs.DataSource = baseDeDatos.Ususarios.Select(user => user.nombre).ToList<string>();
 
-            dataGridViewIVAs.DataSource = baseDeDatos.Iva.Select(user => user.ivaconcepto).ToList<string>();
-           // dataGridViewIVAs.Columns[0] = baseDeDatos.Iva.Select(user => user.ivaconcepto).ToList<string>();
+            dataGridViewIVAs.DataSource = baseDeDatos.Iva.Select(user=> user.ivaconcepto).ToList<string>();
+          // dataGridViewIVAs.Columns[0] = baseDeDatos.Iva.Select(user => user.ivaconcepto).ToList<string>();
 
         }
     }
