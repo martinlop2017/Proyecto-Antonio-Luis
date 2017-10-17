@@ -530,12 +530,6 @@
   <metadata name="ivaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="ivaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="ususariosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>163, 17</value>
-  </metadata>
   <data name="salir.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         Qk2uHwAAAAAAADYAAAAoAAAAMgAAADUAAAABABgAAAAAAAAAAADEDgAAxA4AAAAAAAAAAAAA////////
@@ -1522,7 +1516,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAc0AAAINCAYAAABcRSQ0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABTKSURBVHhe7dxBiiRZkkXRXlZttXfV9EpqA00WNnB4GNph
+        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAABTKSURBVHhe7dxBiiRZkkXRXlZttXfV9EpqA00WNnB4GNph
         IqHf3UxczoUzlW9oBPEgB/lf/0iSpFJGU5KkYkZTkqRiRlOSpGJGU5KkYkZTkqRiRlOSpGJGU5KkYkZT
         kqRit0bzX//9PwAwyp3+ajSvfgQATPI3tUfz6mEAmKhbazSvHgSAyTqVR/PqIQD4DaqVRvPqAQD4TSrd
         Gk1JkqZ1tWcPlV6O5tXhB0mSpna1aw+v+qvRlCRpen+zb38czauDD5IkTe9q3x7+VHs0JUn6LXV3zmhK

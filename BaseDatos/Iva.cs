@@ -14,7 +14,7 @@ namespace BaseDatos
     
     public partial class Iva
     {
-        public string numerador { get; set; }
+        public string numerador { get;  set; }
         public string ivaconcepto { get; set; }
         public Nullable<decimal> ivaporciento { get; set; }
         public Nullable<decimal> ivarecargo { get; set; }

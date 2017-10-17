@@ -46,23 +46,35 @@ namespace Proyecto_Antonio_Luis.Formularios
         private void button1_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                var nuevoiva = new Iva();
+                nuevoiva.ivaconcepto = "fff concpeto";
+                nuevoiva.ivaporciento = 3;
+                nuevoiva.numerador = "111";
 
 
-            var nuevoiva = new Iva();
-            nuevoiva.ivaconcepto = "nuevoiva concpeto";
-            nuevoiva.ivaporciento = 16;
-
-  
 
 
-            baseDeDatos.Iva.Add(nuevoiva);
+                baseDeDatos.Iva.Add(nuevoiva);
+
+//*** borrar
+                var ivaABorrar = baseDeDatos.Iva.Single(iva => iva.numerador == "11");
+                baseDeDatos.Iva.Remove(ivaABorrar);
+              //**
+
+                // Guardamos los cambios
+
+                baseDeDatos.SaveChanges();
+            }
+            catch(Exception exp)
+            {
+
+            }
+
+            dataGridViewIVAs.DataSource = baseDeDatos.Iva.ToList();
 
 
-            // Guardamos los cambios
-          
-            baseDeDatos.SaveChanges();
-    
-            
 
 
         }
