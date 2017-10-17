@@ -168,6 +168,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\BaseDatos.AdministracionAntonioEntities.datasource" />
+    <None Include="Properties\DataSources\BaseDatos.Clientes.datasource" />
+    <None Include="Properties\DataSources\BaseDatos.Cuentas.datasource" />
+    <None Include="Properties\DataSources\BaseDatos.Iva.datasource" />
+    <None Include="Properties\DataSources\BaseDatos.Propios.datasource" />
+    <None Include="Properties\DataSources\BaseDatos.Ususarios.datasource" />
+    <None Include="Properties\DataSources\Form1.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.Clientes.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.Contaplus.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.Facturacion.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.GestionClientes.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.GestionUsuarios.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.Impuestos.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.MenuPrincipal.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.Propios.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.Rutas.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.Usuarios.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
