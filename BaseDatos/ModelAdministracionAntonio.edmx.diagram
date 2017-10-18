@@ -8,8 +8,8 @@
         <EntityTypeShape EntityType="AdministracionAntonioModel.Ususarios" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Clientes" Width="1.5" PointX="2.125" PointY="0.5" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Cuentas" Width="1.5" PointX="3.875" PointY="0.5" />
-        <EntityTypeShape EntityType="AdministracionAntonioModel.Iva" Width="1.5" PointX="3.875" PointY="5.5" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Propios" Width="1.5" PointX="5.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdministracionAntonioModel.Iva" Width="1.5" PointX="4" PointY="4.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

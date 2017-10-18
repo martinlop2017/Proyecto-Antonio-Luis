@@ -82,10 +82,10 @@
           <Key>
             <PropertyRef Name="numerador" />
           </Key>
-          <Property Name="numerador" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="numerador" Type="numeric" Precision="18" Scale="0" Nullable="false" />
           <Property Name="ivaconcepto" Type="nchar" MaxLength="20" />
-          <Property Name="ivaporciento" Type="numeric" Precision="3" Scale="2" />
-          <Property Name="ivarecargo" Type="numeric" Precision="3" Scale="2" />
+          <Property Name="ivaporciento" Type="numeric" Precision="4" Scale="2" />
+          <Property Name="ivarecargo" Type="numeric" Precision="4" Scale="2" />
         </EntityType>
         <EntityType Name="Propios">
           <Key>
@@ -166,8 +166,8 @@
           <EntitySet Name="Ususarios" EntityType="Self.Ususarios" />
           <EntitySet Name="Clientes" EntityType="AdministracionAntonioModel.Clientes" />
           <EntitySet Name="Cuentas" EntityType="AdministracionAntonioModel.Cuentas" />
-          <EntitySet Name="Iva" EntityType="AdministracionAntonioModel.Iva" />
           <EntitySet Name="Propios" EntityType="AdministracionAntonioModel.Propios" />
+          <EntitySet Name="Iva" EntityType="AdministracionAntonioModel.Iva" />
         </EntityContainer>
         <EntityType Name="Clientes">
           <Key>
@@ -242,15 +242,6 @@
           <Property Name="rutaasi" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="rutacsb19" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
         </EntityType>
-        <EntityType Name="Iva">
-          <Key>
-            <PropertyRef Name="numerador" />
-          </Key>
-          <Property Name="numerador" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="ivaconcepto" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="ivaporciento" Type="Decimal" Precision="3" Scale="2" />
-          <Property Name="ivarecargo" Type="Decimal" Precision="3" Scale="2" />
-        </EntityType>
         <EntityType Name="Propios">
           <Key>
             <PropertyRef Name="numerador" />
@@ -274,6 +265,15 @@
           <Property Name="miiban5" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
           <Property Name="miiban6" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
           <Property Name="milogo" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Iva">
+          <Key>
+            <PropertyRef Name="numerador" />
+          </Key>
+          <Property Name="numerador" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ivaconcepto" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="ivaporciento" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="ivarecargo" Type="Decimal" Precision="4" Scale="2" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -377,16 +377,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Iva">
-            <EntityTypeMapping TypeName="AdministracionAntonioModel.Iva">
-              <MappingFragment StoreEntitySet="Iva">
-                <ScalarProperty Name="ivarecargo" ColumnName="ivarecargo" />
-                <ScalarProperty Name="ivaporciento" ColumnName="ivaporciento" />
-                <ScalarProperty Name="ivaconcepto" ColumnName="ivaconcepto" />
-                <ScalarProperty Name="numerador" ColumnName="numerador" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Propios">
             <EntityTypeMapping TypeName="AdministracionAntonioModel.Propios">
               <MappingFragment StoreEntitySet="Propios">
@@ -408,6 +398,16 @@
                 <ScalarProperty Name="midireccion" ColumnName="midireccion" />
                 <ScalarProperty Name="micif" ColumnName="micif" />
                 <ScalarProperty Name="minombre" ColumnName="minombre" />
+                <ScalarProperty Name="numerador" ColumnName="numerador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Iva">
+            <EntityTypeMapping TypeName="AdministracionAntonioModel.Iva">
+              <MappingFragment StoreEntitySet="Iva">
+                <ScalarProperty Name="ivarecargo" ColumnName="ivarecargo" />
+                <ScalarProperty Name="ivaporciento" ColumnName="ivaporciento" />
+                <ScalarProperty Name="ivaconcepto" ColumnName="ivaconcepto" />
                 <ScalarProperty Name="numerador" ColumnName="numerador" />
               </MappingFragment>
             </EntityTypeMapping>

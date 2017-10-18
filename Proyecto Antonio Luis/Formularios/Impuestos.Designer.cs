@@ -43,11 +43,20 @@
             this.eliminar = new System.Windows.Forms.Button();
             this.sumar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.ivaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.boxrecargo = new System.Windows.Forms.TextBox();
+            this.boxiva = new System.Windows.Forms.TextBox();
+            this.boxconcepto = new System.Windows.Forms.TextBox();
             this.ivaconceptoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ivaporcientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ivarecargoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ivaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIVAs)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,14 +66,18 @@
             this.buttonAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonAceptar.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.buttonAceptar.FlatAppearance.BorderSize = 0;
-            this.buttonAceptar.Location = new System.Drawing.Point(56, 411);
+            this.buttonAceptar.Location = new System.Drawing.Point(20, 192);
             this.buttonAceptar.Name = "buttonAceptar";
-            this.buttonAceptar.Size = new System.Drawing.Size(208, 60);
+            this.buttonAceptar.Size = new System.Drawing.Size(180, 60);
             this.buttonAceptar.TabIndex = 114;
             this.buttonAceptar.UseVisualStyleBackColor = true;
+            this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
             // 
             // dataGridViewIVAs
             // 
+            this.dataGridViewIVAs.AllowUserToAddRows = false;
+            this.dataGridViewIVAs.AllowUserToDeleteRows = false;
+            this.dataGridViewIVAs.AllowUserToOrderColumns = true;
             this.dataGridViewIVAs.AutoGenerateColumns = false;
             this.dataGridViewIVAs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewIVAs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -76,16 +89,18 @@
             this.ivarecargoDataGridViewTextBoxColumn});
             this.dataGridViewIVAs.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.ivaBindingSource, "numerador", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.dataGridViewIVAs.DataSource = this.ivaBindingSource;
-            this.dataGridViewIVAs.Location = new System.Drawing.Point(48, 213);
+            this.dataGridViewIVAs.Location = new System.Drawing.Point(38, 212);
+            this.dataGridViewIVAs.MultiSelect = false;
             this.dataGridViewIVAs.Name = "dataGridViewIVAs";
             this.dataGridViewIVAs.RowHeadersWidth = 15;
-            this.dataGridViewIVAs.Size = new System.Drawing.Size(455, 165);
+            this.dataGridViewIVAs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewIVAs.Size = new System.Drawing.Size(385, 211);
             this.dataGridViewIVAs.TabIndex = 117;
             this.dataGridViewIVAs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIVAs_CellContentClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(290, 305);
+            this.button1.Location = new System.Drawing.Point(290, 72);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 30);
             this.button1.TabIndex = 120;
@@ -109,7 +124,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(475, 89);
+            this.label5.Location = new System.Drawing.Point(396, 89);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(27, 13);
             this.label5.TabIndex = 130;
@@ -153,11 +168,12 @@
             // 
             this.salir.BackColor = System.Drawing.Color.White;
             this.salir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("salir.BackgroundImage")));
-            this.salir.Location = new System.Drawing.Point(463, 105);
+            this.salir.Location = new System.Drawing.Point(380, 105);
             this.salir.Name = "salir";
             this.salir.Size = new System.Drawing.Size(52, 56);
             this.salir.TabIndex = 125;
             this.salir.UseVisualStyleBackColor = false;
+            this.salir.Click += new System.EventHandler(this.salir_Click);
             this.salir.MouseEnter += new System.EventHandler(this.salir_MouseEnter);
             this.salir.MouseLeave += new System.EventHandler(this.salir_MouseLeave);
             // 
@@ -170,6 +186,7 @@
             this.modificar.Size = new System.Drawing.Size(52, 56);
             this.modificar.TabIndex = 123;
             this.modificar.UseVisualStyleBackColor = false;
+            this.modificar.Click += new System.EventHandler(this.modificar_Click);
             this.modificar.MouseEnter += new System.EventHandler(this.modificar_MouseEnter);
             this.modificar.MouseLeave += new System.EventHandler(this.modificar_MouseLeave);
             // 
@@ -182,6 +199,7 @@
             this.eliminar.Size = new System.Drawing.Size(52, 56);
             this.eliminar.TabIndex = 122;
             this.eliminar.UseVisualStyleBackColor = false;
+            this.eliminar.Click += new System.EventHandler(this.eliminar_Click);
             this.eliminar.MouseEnter += new System.EventHandler(this.eliminar_MouseEnter);
             this.eliminar.MouseLeave += new System.EventHandler(this.eliminar_MouseLeave);
             // 
@@ -194,6 +212,7 @@
             this.sumar.Size = new System.Drawing.Size(52, 56);
             this.sumar.TabIndex = 121;
             this.sumar.UseVisualStyleBackColor = false;
+            this.sumar.Click += new System.EventHandler(this.sumar_Click);
             this.sumar.MouseEnter += new System.EventHandler(this.sumar_MouseEnter);
             this.sumar.MouseLeave += new System.EventHandler(this.sumar_MouseLeave);
             // 
@@ -203,15 +222,96 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.Location = new System.Drawing.Point(290, 411);
+            this.button2.Location = new System.Drawing.Point(215, 192);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(208, 60);
+            this.button2.Size = new System.Drawing.Size(180, 60);
             this.button2.TabIndex = 197;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // ivaBindingSource
+            // panel1
             // 
-            this.ivaBindingSource.DataSource = typeof(BaseDatos.Iva);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.boxrecargo);
+            this.panel1.Controls.Add(this.boxiva);
+            this.panel1.Controls.Add(this.boxconcepto);
+            this.panel1.Controls.Add(this.buttonAceptar);
+            this.panel1.Location = new System.Drawing.Point(445, 186);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(422, 268);
+            this.panel1.TabIndex = 198;
+            this.panel1.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(240)))), ((int)(((byte)(253)))));
+            this.label9.Font = new System.Drawing.Font("Tahoma", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(153)))), ((int)(((byte)(208)))));
+            this.label9.Location = new System.Drawing.Point(124, 25);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(176, 33);
+            this.label9.TabIndex = 199;
+            this.label9.Text = "Alta de Tipo";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(240)))), ((int)(((byte)(253)))));
+            this.label8.Location = new System.Drawing.Point(340, 103);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 13);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "% R.E.";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(240)))), ((int)(((byte)(253)))));
+            this.label6.Location = new System.Drawing.Point(265, 103);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "% I.V.A.";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(240)))), ((int)(((byte)(253)))));
+            this.label4.Location = new System.Drawing.Point(16, 103);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Concepto";
+            // 
+            // boxrecargo
+            // 
+            this.boxrecargo.Location = new System.Drawing.Point(331, 119);
+            this.boxrecargo.Name = "boxrecargo";
+            this.boxrecargo.Size = new System.Drawing.Size(64, 20);
+            this.boxrecargo.TabIndex = 2;
+            // 
+            // boxiva
+            // 
+            this.boxiva.Location = new System.Drawing.Point(256, 119);
+            this.boxiva.Name = "boxiva";
+            this.boxiva.Size = new System.Drawing.Size(64, 20);
+            this.boxiva.TabIndex = 1;
+            // 
+            // boxconcepto
+            // 
+            this.boxconcepto.Location = new System.Drawing.Point(19, 119);
+            this.boxconcepto.Name = "boxconcepto";
+            this.boxconcepto.Size = new System.Drawing.Size(222, 20);
+            this.boxconcepto.TabIndex = 0;
+            this.boxconcepto.TextChanged += new System.EventHandler(this.boxconcepto_TextChanged);
             // 
             // ivaconceptoDataGridViewTextBoxColumn
             // 
@@ -231,6 +331,11 @@
             this.ivarecargoDataGridViewTextBoxColumn.HeaderText = "ivarecargo";
             this.ivarecargoDataGridViewTextBoxColumn.Name = "ivarecargoDataGridViewTextBoxColumn";
             // 
+            // ivaBindingSource
+            // 
+            this.ivaBindingSource.DataSource = typeof(BaseDatos.Iva);
+            this.ivaBindingSource.CurrentChanged += new System.EventHandler(this.ivaBindingSource_CurrentChanged);
+            // 
             // Impuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,8 +343,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(549, 528);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(879, 478);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -251,13 +356,14 @@
             this.Controls.Add(this.sumar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridViewIVAs);
-            this.Controls.Add(this.buttonAceptar);
             this.DoubleBuffered = true;
             this.Name = "Impuestos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Impuestos";
             this.Load += new System.EventHandler(this.Impuestos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIVAs)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -283,5 +389,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ivaconceptoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ivaporcientoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ivarecargoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox boxrecargo;
+        private System.Windows.Forms.TextBox boxiva;
+        private System.Windows.Forms.TextBox boxconcepto;
     }
 }

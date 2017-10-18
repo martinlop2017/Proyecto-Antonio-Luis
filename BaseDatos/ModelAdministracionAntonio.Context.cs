@@ -28,7 +28,7 @@ namespace BaseDatos
         public virtual DbSet<Ususarios> Ususarios { get; set; }
         public virtual DbSet<Clientes> Clientes { get; set; }
         public virtual DbSet<Cuentas> Cuentas { get; set; }
-        public virtual DbSet<Iva> Iva { get; set; }
         public virtual DbSet<Propios> Propios { get; set; }
+        public virtual DbSet<Iva> Iva { get; set; }
     }
 }
