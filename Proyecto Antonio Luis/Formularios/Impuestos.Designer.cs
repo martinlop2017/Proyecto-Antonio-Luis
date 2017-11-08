@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Impuestos));
             this.buttonAceptar = new System.Windows.Forms.Button();
-            this.dataGridViewIVAs = new System.Windows.Forms.DataGridView();
+            this.dgvIva = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,7 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.salir = new System.Windows.Forms.Button();
             this.modificar = new System.Windows.Forms.Button();
-            this.eliminar = new System.Windows.Forms.Button();
             this.sumar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -51,13 +49,9 @@
             this.boxrecargo = new System.Windows.Forms.TextBox();
             this.boxiva = new System.Windows.Forms.TextBox();
             this.boxconcepto = new System.Windows.Forms.TextBox();
-            this.ivaconceptoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ivaporcientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ivarecargoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ivaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIVAs)).BeginInit();
+            this.eliminar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIva)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAceptar
@@ -73,30 +67,23 @@
             this.buttonAceptar.UseVisualStyleBackColor = true;
             this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
             // 
-            // dataGridViewIVAs
+            // dgvIva
             // 
-            this.dataGridViewIVAs.AllowUserToAddRows = false;
-            this.dataGridViewIVAs.AllowUserToDeleteRows = false;
-            this.dataGridViewIVAs.AllowUserToOrderColumns = true;
-            this.dataGridViewIVAs.AutoGenerateColumns = false;
-            this.dataGridViewIVAs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewIVAs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridViewIVAs.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridViewIVAs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewIVAs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ivaconceptoDataGridViewTextBoxColumn,
-            this.ivaporcientoDataGridViewTextBoxColumn,
-            this.ivarecargoDataGridViewTextBoxColumn});
-            this.dataGridViewIVAs.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.ivaBindingSource, "numerador", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.dataGridViewIVAs.DataSource = this.ivaBindingSource;
-            this.dataGridViewIVAs.Location = new System.Drawing.Point(38, 212);
-            this.dataGridViewIVAs.MultiSelect = false;
-            this.dataGridViewIVAs.Name = "dataGridViewIVAs";
-            this.dataGridViewIVAs.RowHeadersWidth = 15;
-            this.dataGridViewIVAs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewIVAs.Size = new System.Drawing.Size(385, 211);
-            this.dataGridViewIVAs.TabIndex = 117;
-            this.dataGridViewIVAs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIVAs_CellContentClick);
+            this.dgvIva.AllowUserToAddRows = false;
+            this.dgvIva.AllowUserToDeleteRows = false;
+            this.dgvIva.AllowUserToOrderColumns = true;
+            this.dgvIva.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvIva.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvIva.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvIva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvIva.Location = new System.Drawing.Point(38, 212);
+            this.dgvIva.MultiSelect = false;
+            this.dgvIva.Name = "dgvIva";
+            this.dgvIva.RowHeadersWidth = 15;
+            this.dgvIva.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvIva.Size = new System.Drawing.Size(385, 211);
+            this.dgvIva.TabIndex = 117;
+            this.dgvIva.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIVAs_CellContentClick);
             // 
             // button1
             // 
@@ -190,24 +177,11 @@
             this.modificar.MouseEnter += new System.EventHandler(this.modificar_MouseEnter);
             this.modificar.MouseLeave += new System.EventHandler(this.modificar_MouseLeave);
             // 
-            // eliminar
-            // 
-            this.eliminar.BackColor = System.Drawing.Color.White;
-            this.eliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eliminar.BackgroundImage")));
-            this.eliminar.Location = new System.Drawing.Point(96, 105);
-            this.eliminar.Name = "eliminar";
-            this.eliminar.Size = new System.Drawing.Size(52, 56);
-            this.eliminar.TabIndex = 122;
-            this.eliminar.UseVisualStyleBackColor = false;
-            this.eliminar.Click += new System.EventHandler(this.eliminar_Click);
-            this.eliminar.MouseEnter += new System.EventHandler(this.eliminar_MouseEnter);
-            this.eliminar.MouseLeave += new System.EventHandler(this.eliminar_MouseLeave);
-            // 
             // sumar
             // 
             this.sumar.BackColor = System.Drawing.Color.White;
             this.sumar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sumar.BackgroundImage")));
-            this.sumar.Location = new System.Drawing.Point(38, 105);
+            this.sumar.Location = new System.Drawing.Point(30, 105);
             this.sumar.Name = "sumar";
             this.sumar.Size = new System.Drawing.Size(52, 56);
             this.sumar.TabIndex = 121;
@@ -313,28 +287,16 @@
             this.boxconcepto.TabIndex = 0;
             this.boxconcepto.TextChanged += new System.EventHandler(this.boxconcepto_TextChanged);
             // 
-            // ivaconceptoDataGridViewTextBoxColumn
+            // eliminar
             // 
-            this.ivaconceptoDataGridViewTextBoxColumn.DataPropertyName = "ivaconcepto";
-            this.ivaconceptoDataGridViewTextBoxColumn.HeaderText = "ivaconcepto";
-            this.ivaconceptoDataGridViewTextBoxColumn.Name = "ivaconceptoDataGridViewTextBoxColumn";
-            // 
-            // ivaporcientoDataGridViewTextBoxColumn
-            // 
-            this.ivaporcientoDataGridViewTextBoxColumn.DataPropertyName = "ivaporciento";
-            this.ivaporcientoDataGridViewTextBoxColumn.HeaderText = "ivaporciento";
-            this.ivaporcientoDataGridViewTextBoxColumn.Name = "ivaporcientoDataGridViewTextBoxColumn";
-            // 
-            // ivarecargoDataGridViewTextBoxColumn
-            // 
-            this.ivarecargoDataGridViewTextBoxColumn.DataPropertyName = "ivarecargo";
-            this.ivarecargoDataGridViewTextBoxColumn.HeaderText = "ivarecargo";
-            this.ivarecargoDataGridViewTextBoxColumn.Name = "ivarecargoDataGridViewTextBoxColumn";
-            // 
-            // ivaBindingSource
-            // 
-            this.ivaBindingSource.DataSource = typeof(BaseDatos.Iva);
-            this.ivaBindingSource.CurrentChanged += new System.EventHandler(this.ivaBindingSource_CurrentChanged);
+            this.eliminar.BackColor = System.Drawing.Color.White;
+            this.eliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eliminar.BackgroundImage")));
+            this.eliminar.Location = new System.Drawing.Point(93, 105);
+            this.eliminar.Name = "eliminar";
+            this.eliminar.Size = new System.Drawing.Size(52, 56);
+            this.eliminar.TabIndex = 199;
+            this.eliminar.UseVisualStyleBackColor = false;
+            this.eliminar.Click += new System.EventHandler(this.eliminar_Click_1);
             // 
             // Impuestos
             // 
@@ -344,6 +306,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(879, 478);
+            this.Controls.Add(this.eliminar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -352,19 +315,17 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.salir);
             this.Controls.Add(this.modificar);
-            this.Controls.Add(this.eliminar);
             this.Controls.Add(this.sumar);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridViewIVAs);
+            this.Controls.Add(this.dgvIva);
             this.DoubleBuffered = true;
             this.Name = "Impuestos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Impuestos";
             this.Load += new System.EventHandler(this.Impuestos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIVAs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvIva)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,8 +334,7 @@
         #endregion
 
         private System.Windows.Forms.Button buttonAceptar;
-        private System.Windows.Forms.DataGridView dataGridViewIVAs;
-        public System.Windows.Forms.BindingSource ivaBindingSource;
+        private System.Windows.Forms.DataGridView dgvIva;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
@@ -383,12 +343,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button salir;
         private System.Windows.Forms.Button modificar;
-        private System.Windows.Forms.Button eliminar;
         private System.Windows.Forms.Button sumar;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ivaconceptoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ivaporcientoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ivarecargoDataGridViewTextBoxColumn;
+       
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -397,5 +354,6 @@
         private System.Windows.Forms.TextBox boxrecargo;
         private System.Windows.Forms.TextBox boxiva;
         private System.Windows.Forms.TextBox boxconcepto;
+        private System.Windows.Forms.Button eliminar;
     }
 }
