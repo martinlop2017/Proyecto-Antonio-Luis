@@ -210,6 +210,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
                     //****GRABA LOS DATOS EN LA TABLA
                     var nuevoiva = new Iva();
+                    
                     nuevoiva.numerador = ultimonumerador + 1;
                     nuevoiva.ivaconcepto = boxconcepto.Text;
                     nuevoiva.ivaporciento = Convert.ToDecimal(boxiva.Text);

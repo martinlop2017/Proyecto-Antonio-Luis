@@ -111,11 +111,11 @@
     <Compile Include="Formularios\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Propios.cs">
+    <Compile Include="Formularios\MisDatos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Propios.Designer.cs">
-      <DependentUpon>Propios.cs</DependentUpon>
+    <Compile Include="Formularios\MisDatos.Designer.cs">
+      <DependentUpon>MisDatos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Rutas.cs">
       <SubType>Form</SubType>
@@ -158,8 +158,8 @@
     <EmbeddedResource Include="Formularios\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Propios.resx">
-      <DependentUpon>Propios.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\MisDatos.resx">
+      <DependentUpon>MisDatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Rutas.resx">
       <DependentUpon>Rutas.cs</DependentUpon>
@@ -183,7 +183,9 @@
     <None Include="Properties\DataSources\BaseDatos.Iva.datasource" />
     <None Include="Properties\DataSources\BaseDatos.Propios.datasource" />
     <None Include="Properties\DataSources\BaseDatos.Ususarios.datasource" />
-    <None Include="Properties\DataSources\Form1.datasource" />
+    <None Include="Properties\DataSources\Form1.datasource">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.Clientes.datasource" />
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.Contaplus.datasource" />

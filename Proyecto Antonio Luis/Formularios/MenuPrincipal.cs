@@ -303,7 +303,7 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
             // Abre Propios
 
-            Propios form = new Propios();
+            MisDatos form = new MisDatos();
             form.Show();
         }
 
