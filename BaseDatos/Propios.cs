@@ -14,7 +14,7 @@ namespace BaseDatos
     
     public partial class Propios
     {
-        public string numerador { get; set; }
+        public decimal numerador { get; set; }
         public string minombre { get; set; }
         public string micif { get; set; }
         public string midireccion { get; set; }

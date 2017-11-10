@@ -14,20 +14,31 @@ namespace BaseDatos
     
     public partial class Ususarios
     {
-        public string cod { get; set; }
+        public decimal cod { get; set; }
         public string nombre { get; set; }
         public string login { get; set; }
         public string activo { get; set; }
         public string grupo { get; set; }
         public string pregunta { get; set; }
         public string respuesta { get; set; }
-        public string sistema { get; set; }
-        public string clientes { get; set; }
-        public string facturas { get; set; }
-        public string csb19 { get; set; }
-        public string contaplus { get; set; }
-        public string listados { get; set; }
-        public string mantenimiento { get; set; }
-        public string ayuda { get; set; }
+        public Nullable<bool> sistema { get; set; }
+        public Nullable<bool> misdatos { get; set; }
+        public Nullable<bool> usuarios { get; set; }
+        public Nullable<bool> gusuarios { get; set; }
+        public Nullable<bool> impuestos { get; set; }
+        public Nullable<bool> clientes { get; set; }
+        public Nullable<bool> gclientes { get; set; }
+        public Nullable<bool> articulos { get; set; }
+        public Nullable<bool> garticulos { get; set; }
+        public Nullable<bool> albaranes { get; set; }
+        public Nullable<bool> galbaranes { get; set; }
+        public Nullable<bool> facturas { get; set; }
+        public Nullable<bool> gfacturas { get; set; }
+        public Nullable<bool> csb19 { get; set; }
+        public Nullable<bool> contaplus { get; set; }
+        public Nullable<bool> listados { get; set; }
+        public Nullable<bool> mantenimiento { get; set; }
+        public Nullable<bool> copiaseguridad { get; set; }
+        public Nullable<bool> agenda { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace Proyecto_Antonio_Luis.Formularios
     {
 
         AdministracionAntonioEntities bd;
-        string llamada;
+ 
 
 
         public Impuestos()
@@ -137,8 +137,9 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void sumar_Click(object sender, EventArgs e)
         {
-            
-            llamada = "1";
+
+            Globales.llamadas = "1";
+           // llamada = "1";
             panel1.Visible = true;
             sumar.Enabled = false;
             modificar.Enabled = false;
@@ -154,7 +155,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void modificar_Click(object sender, EventArgs e)
         {
-            llamada = "2";
+            Globales.llamadas = "2";
             panel1.Visible = true;
             sumar.Enabled = false;
             modificar.Enabled = false;
@@ -199,7 +200,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             // realiza esto si es llamado desde el boton añadir
 
 
-            if (llamada == "1")
+            if (Globales.llamadas == "1")
             {
 
 
@@ -241,7 +242,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
             // esto lo hace si llamamos desde modificar
 
-            if (llamada == "2")
+            if (Globales.llamadas == "2")
             {
                 //Primero extraemos el valor de la columna numerador 
                 int valor1 = Convert.ToInt16(dgvIva.CurrentRow.Cells[0].Value);

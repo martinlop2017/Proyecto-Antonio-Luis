@@ -103,6 +103,7 @@
       <DependentUpon>ModelAdministracionAntonio.edmx</DependentUpon>
       <LastGenOutput>ModelAdministracionAntonio.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="ModelAdministracionAntonio.edmx.sql" />
     <Content Include="ModelAdministracionAntonio.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelAdministracionAntonio.edmx</DependentUpon>

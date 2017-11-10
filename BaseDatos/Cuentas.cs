@@ -14,7 +14,7 @@ namespace BaseDatos
     
     public partial class Cuentas
     {
-        public string numerador { get; set; }
+        public decimal numerador { get; set; }
         public string digitos { get; set; }
         public string ctacliente { get; set; }
         public string ctabanco { get; set; }

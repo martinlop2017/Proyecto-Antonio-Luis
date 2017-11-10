@@ -14,7 +14,7 @@ namespace BaseDatos
     
     public partial class Clientes
     {
-        public string numerador { get; set; }
+        public decimal numerador { get; set; }
         public string codcliente { get; set; }
         public string nombrecliente { get; set; }
         public string direcioncliente { get; set; }

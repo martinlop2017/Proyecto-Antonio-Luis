@@ -30,7 +30,7 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
             //****Al cargar mostramos los datos.
             //extraemos los datos correspondientes de la tabla en el objeto
-            var muestramisdatos = bd.Propios.SingleOrDefault(mio => mio.numerador == "1");
+            var muestramisdatos = bd.Propios.SingleOrDefault(mio => mio.numerador == 1);
 
             
 
@@ -66,7 +66,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
 
             //extraemos los datos correspondientes de la tabla en el objeto
-            var propioModificar = bd.Propios.SingleOrDefault(mio => mio.numerador == "1");
+            var propioModificar = bd.Propios.SingleOrDefault(mio => mio.numerador == 1);
 
 
             //modificamos los valores

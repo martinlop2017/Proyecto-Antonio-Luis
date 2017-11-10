@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BaseDatos;
 
 namespace Proyecto_Antonio_Luis.Formularios
 {
     public partial class GestionUsuarios : Form
     {
+        AdministracionAntonioEntities bd;
+        
+
         public GestionUsuarios()
         {
             InitializeComponent();
+            bd = new AdministracionAntonioEntities();
         }
 
 
@@ -34,20 +39,55 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Abre Ususarios
+            // Inicializa la variable global llamadas
+            Globales.llamadas = "1";
 
-            Usuarios form = new Usuarios();
+            // Abre Ususarios
+            Usuario form = new Usuario();
             form.Show();
+
+            //CARGA LOS REGISTROS EN EL GRIP AL INICIAR EL FORM
+
+            dgvUsuario.DataSource = bd.Ususarios.ToList();
+
+
+
+
+
         }
 
         private void eliminar_Click(object sender, EventArgs e)
         {
+            // creamos una variable que va aguardar los datos de la fila seleccionada en el dbgrid
 
+            int valor1 = Convert.ToInt16(dgvUsuario.CurrentRow.Cells[0].Value);
+
+            //*** borrar
+            //busca en la tabla la fila con el registro suminstrado
+            //y si lo encuentra borra la linea de la base de datos
+
+            var borrar = bd.Ususarios.SingleOrDefault(codusuario => codusuario.cod == valor1);
+            if (borrar != null)
+            {
+                bd.Ususarios.Remove(borrar);
+            }
+
+
+            //guardamos los cambios
+            bd.SaveChanges();
+
+            // Refrescamos el dbgrid
+            dgvUsuario.DataSource = bd.Ususarios.ToList();
         }
 
         private void modificar_Click(object sender, EventArgs e)
         {
+            // Inicializa la variable global llamadas
+            Globales.llamadas = "2";
 
+            // Abre Ususarios
+            Usuario form = new Usuario();
+            form.Show();
         }
 
         private void buscar_Click(object sender, EventArgs e)
@@ -169,6 +209,26 @@ namespace Proyecto_Antonio_Luis.Formularios
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GestionUsuarios_Load(object sender, EventArgs e)
+        {
+            //CARGA LOS REGISTROS EN EL GRIP AL INICIAR EL FORM
+
+            dgvUsuario.DataSource = bd.Ususarios.ToList();
+            
+
+        }
+
+        private void GestionUsuarios_Activated(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void GestionUsuarios_Enter(object sender, EventArgs e)
         {
 
         }
