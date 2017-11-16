@@ -78,11 +78,13 @@
             this.textdigitos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textdigitos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textdigitos.Location = new System.Drawing.Point(220, 182);
+            this.textdigitos.MaxLength = 2;
             this.textdigitos.Name = "textdigitos";
             this.textdigitos.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textdigitos.Size = new System.Drawing.Size(31, 23);
             this.textdigitos.TabIndex = 17;
             this.textdigitos.Text = "99";
+            this.textdigitos.Leave += new System.EventHandler(this.textdigitos_Leave);
             // 
             // label18
             // 

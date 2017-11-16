@@ -238,7 +238,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("No ha sido possible gabar los datos", "Error 202");
+                    MessageBox.Show("No ha sido posible gabar los datos", "Error 202");
 
                 }
             }
@@ -258,6 +258,20 @@ namespace Proyecto_Antonio_Luis.Formularios
                 bd.Cuentas.Remove(borrar);
                 bd.SaveChanges();
             }
+        }
+
+        private void textdigitos_Leave(object sender, EventArgs e)
+        {
+            textclientes.MaxLength = Convert.ToInt16( textdigitos.Text);
+            textbanco.MaxLength = Convert.ToInt16(textdigitos.Text);
+            textsuplidos.MaxLength = Convert.ToInt16(textdigitos.Text);
+            textretenciones.MaxLength = Convert.ToInt16(textdigitos.Text);
+            textprestaciones.MaxLength = Convert.ToInt16(textdigitos.Text);
+            textiva0.MaxLength = Convert.ToInt16(textdigitos.Text);
+            textivasuper.MaxLength = Convert.ToInt16(textdigitos.Text);
+            textivaredu.MaxLength = Convert.ToInt16(textdigitos.Text);
+            textivageneral.MaxLength = Convert.ToInt16(textdigitos.Text);
+
         }
     }
 }
