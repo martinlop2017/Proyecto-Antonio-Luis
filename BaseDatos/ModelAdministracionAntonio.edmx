@@ -141,6 +141,8 @@
           <Property Name="mantenimiento" Type="bit" />
           <Property Name="copiaseguridad" Type="bit" />
           <Property Name="agenda" Type="bit" />
+          <Property Name="avisos" Type="bit" />
+          <Property Name="gavisos" Type="bit" />
         </EntityType>
         <EntityContainer Name="AdministracionAntonioModelStoreContainer">
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
@@ -296,6 +298,8 @@
           <Property Name="mantenimiento" Type="Boolean" />
           <Property Name="copiaseguridad" Type="Boolean" />
           <Property Name="agenda" Type="Boolean" />
+          <Property Name="avisos" Type="Boolean" />
+          <Property Name="gavisos" Type="Boolean" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -416,6 +420,8 @@
           <EntitySetMapping Name="Ususarios">
             <EntityTypeMapping TypeName="AdministracionAntonioModel.Ususarios">
               <MappingFragment StoreEntitySet="Ususarios">
+                <ScalarProperty Name="gavisos" ColumnName="gavisos" />
+                <ScalarProperty Name="avisos" ColumnName="avisos" />
                 <ScalarProperty Name="agenda" ColumnName="agenda" />
                 <ScalarProperty Name="copiaseguridad" ColumnName="copiaseguridad" />
                 <ScalarProperty Name="mantenimiento" ColumnName="mantenimiento" />

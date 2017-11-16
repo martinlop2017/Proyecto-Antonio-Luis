@@ -46,44 +46,58 @@ namespace Proyecto_Antonio_Luis.Formularios
             Usuario form = new Usuario();
             form.Show();
 
-            //CARGA LOS REGISTROS EN EL GRIP AL INICIAR EL FORM
-
-            dgvUsuario.DataSource = bd.Ususarios.ToList();
-
-
-
-
 
         }
 
         private void eliminar_Click(object sender, EventArgs e)
         {
-            // creamos una variable que va aguardar los datos de la fila seleccionada en el dbgrid
 
-            int valor1 = Convert.ToInt16(dgvUsuario.CurrentRow.Cells[0].Value);
-
-            //*** borrar
-            //busca en la tabla la fila con el registro suminstrado
-            //y si lo encuentra borra la linea de la base de datos
-
-            var borrar = bd.Ususarios.SingleOrDefault(codusuario => codusuario.cod == valor1);
-            if (borrar != null)
+            try
             {
-                bd.Ususarios.Remove(borrar);
+               
+
+
+                if (MessageBox.Show("Confirme La Eliminación del Registro.","Eliminar Registro", 
+                    MessageBoxButtons.YesNo)== System.Windows.Forms.DialogResult.Yes)
+                {
+
+
+                    // creamos una variable que va aguardar los datos de la fila seleccionada en el dbgrid
+
+                    int valor1 = Convert.ToInt16(dgvUsuario.CurrentRow.Cells[0].Value);
+
+                    //*** borrar
+                    //busca en la tabla la fila con el registro suminstrado
+                    //y si lo encuentra borra la linea de la base de datos
+
+                    var borrar = bd.Ususarios.SingleOrDefault(codusuario => codusuario.cod == valor1);
+                    if (borrar != null)
+                    {
+                        bd.Ususarios.Remove(borrar);
+                    }
+
+
+                    //guardamos los cambios
+                    bd.SaveChanges();
+
+                    // Refrescamos el dbgrid
+                    dgvUsuario.DataSource = bd.Ususarios.ToList();
+                }
             }
-
-
-            //guardamos los cambios
-            bd.SaveChanges();
-
-            // Refrescamos el dbgrid
-            dgvUsuario.DataSource = bd.Ususarios.ToList();
+            catch (Exception)
+            {
+                MessageBox.Show("No ha sido posible eliminar los datos", "Error 103");
+            }
         }
+
 
         private void modificar_Click(object sender, EventArgs e)
         {
             // Inicializa la variable global llamadas
             Globales.llamadas = "2";
+
+            // creamos una variable que va aguardar los datos de la fila seleccionada en el dbgrid
+            Globales.modificar =  Convert.ToInt16(dgvUsuario.CurrentRow.Cells[0].Value);
 
             // Abre Ususarios
             Usuario form = new Usuario();
@@ -215,10 +229,15 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void GestionUsuarios_Load(object sender, EventArgs e)
         {
+
             //CARGA LOS REGISTROS EN EL GRIP AL INICIAR EL FORM
 
             dgvUsuario.DataSource = bd.Ususarios.ToList();
-            
+            dgvUsuario.Refresh();
+
+            dgvUsuario.DataSource = "";
+            dgvUsuario.DataSource = bd.Ususarios.ToList();
+            dgvUsuario.Refresh();
 
         }
 
@@ -226,9 +245,20 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
 
 
+            dgvUsuario.DataSource = "";
+            dgvUsuario.DataSource = bd.Ususarios.ToList();
+            dgvUsuario.Refresh();
+
         }
 
         private void GestionUsuarios_Enter(object sender, EventArgs e)
+        {
+            dgvUsuario.DataSource = "";
+            dgvUsuario.DataSource = bd.Ususarios.ToList();
+            dgvUsuario.Refresh();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
 
         }

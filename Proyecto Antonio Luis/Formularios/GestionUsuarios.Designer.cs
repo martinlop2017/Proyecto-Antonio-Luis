@@ -46,7 +46,7 @@
             this.codDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.grupoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preguntaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.respuestaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +69,8 @@
             this.mantenimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.copiaseguridadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.agendaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.avisosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gavisosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ususariosBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -213,6 +215,8 @@
             // 
             // dgvUsuario
             // 
+            this.dgvUsuario.AllowUserToAddRows = false;
+            this.dgvUsuario.AllowUserToDeleteRows = false;
             this.dgvUsuario.AutoGenerateColumns = false;
             this.dgvUsuario.BackgroundColor = System.Drawing.Color.White;
             this.dgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -242,11 +246,16 @@
             this.listadosDataGridViewTextBoxColumn,
             this.mantenimientoDataGridViewTextBoxColumn,
             this.copiaseguridadDataGridViewTextBoxColumn,
-            this.agendaDataGridViewTextBoxColumn});
+            this.agendaDataGridViewTextBoxColumn,
+            this.avisosDataGridViewTextBoxColumn,
+            this.gavisosDataGridViewTextBoxColumn});
             this.dgvUsuario.DataSource = this.ususariosBindingSource;
             this.dgvUsuario.Location = new System.Drawing.Point(42, 215);
+            this.dgvUsuario.MultiSelect = false;
             this.dgvUsuario.Name = "dgvUsuario";
-            this.dgvUsuario.Size = new System.Drawing.Size(616, 259);
+            this.dgvUsuario.ReadOnly = true;
+            this.dgvUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUsuario.Size = new System.Drawing.Size(616, 378);
             this.dgvUsuario.TabIndex = 39;
             // 
             // ususariosBindingSource
@@ -258,156 +267,199 @@
             this.codDataGridViewTextBoxColumn.DataPropertyName = "cod";
             this.codDataGridViewTextBoxColumn.HeaderText = "cod";
             this.codDataGridViewTextBoxColumn.Name = "codDataGridViewTextBoxColumn";
+            this.codDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
             this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // loginDataGridViewTextBoxColumn
             // 
             this.loginDataGridViewTextBoxColumn.DataPropertyName = "login";
             this.loginDataGridViewTextBoxColumn.HeaderText = "login";
             this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+            this.loginDataGridViewTextBoxColumn.ReadOnly = true;
+            this.loginDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // activoDataGridViewTextBoxColumn
             // 
             this.activoDataGridViewTextBoxColumn.DataPropertyName = "activo";
             this.activoDataGridViewTextBoxColumn.HeaderText = "activo";
             this.activoDataGridViewTextBoxColumn.Name = "activoDataGridViewTextBoxColumn";
+            this.activoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.activoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.activoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // grupoDataGridViewTextBoxColumn
             // 
             this.grupoDataGridViewTextBoxColumn.DataPropertyName = "grupo";
             this.grupoDataGridViewTextBoxColumn.HeaderText = "grupo";
             this.grupoDataGridViewTextBoxColumn.Name = "grupoDataGridViewTextBoxColumn";
+            this.grupoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // preguntaDataGridViewTextBoxColumn
             // 
             this.preguntaDataGridViewTextBoxColumn.DataPropertyName = "pregunta";
             this.preguntaDataGridViewTextBoxColumn.HeaderText = "pregunta";
             this.preguntaDataGridViewTextBoxColumn.Name = "preguntaDataGridViewTextBoxColumn";
+            this.preguntaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // respuestaDataGridViewTextBoxColumn
             // 
             this.respuestaDataGridViewTextBoxColumn.DataPropertyName = "respuesta";
             this.respuestaDataGridViewTextBoxColumn.HeaderText = "respuesta";
             this.respuestaDataGridViewTextBoxColumn.Name = "respuestaDataGridViewTextBoxColumn";
+            this.respuestaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sistemaDataGridViewTextBoxColumn
             // 
             this.sistemaDataGridViewTextBoxColumn.DataPropertyName = "sistema";
             this.sistemaDataGridViewTextBoxColumn.HeaderText = "sistema";
             this.sistemaDataGridViewTextBoxColumn.Name = "sistemaDataGridViewTextBoxColumn";
+            this.sistemaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // misdatosDataGridViewTextBoxColumn
             // 
             this.misdatosDataGridViewTextBoxColumn.DataPropertyName = "misdatos";
             this.misdatosDataGridViewTextBoxColumn.HeaderText = "misdatos";
             this.misdatosDataGridViewTextBoxColumn.Name = "misdatosDataGridViewTextBoxColumn";
+            this.misdatosDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // usuariosDataGridViewTextBoxColumn
             // 
             this.usuariosDataGridViewTextBoxColumn.DataPropertyName = "usuarios";
             this.usuariosDataGridViewTextBoxColumn.HeaderText = "usuarios";
             this.usuariosDataGridViewTextBoxColumn.Name = "usuariosDataGridViewTextBoxColumn";
+            this.usuariosDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // gusuariosDataGridViewTextBoxColumn
             // 
             this.gusuariosDataGridViewTextBoxColumn.DataPropertyName = "gusuarios";
             this.gusuariosDataGridViewTextBoxColumn.HeaderText = "gusuarios";
             this.gusuariosDataGridViewTextBoxColumn.Name = "gusuariosDataGridViewTextBoxColumn";
+            this.gusuariosDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // impuestosDataGridViewTextBoxColumn
             // 
             this.impuestosDataGridViewTextBoxColumn.DataPropertyName = "impuestos";
             this.impuestosDataGridViewTextBoxColumn.HeaderText = "impuestos";
             this.impuestosDataGridViewTextBoxColumn.Name = "impuestosDataGridViewTextBoxColumn";
+            this.impuestosDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // clientesDataGridViewTextBoxColumn
             // 
             this.clientesDataGridViewTextBoxColumn.DataPropertyName = "clientes";
             this.clientesDataGridViewTextBoxColumn.HeaderText = "clientes";
             this.clientesDataGridViewTextBoxColumn.Name = "clientesDataGridViewTextBoxColumn";
+            this.clientesDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // gclientesDataGridViewTextBoxColumn
             // 
             this.gclientesDataGridViewTextBoxColumn.DataPropertyName = "gclientes";
             this.gclientesDataGridViewTextBoxColumn.HeaderText = "gclientes";
             this.gclientesDataGridViewTextBoxColumn.Name = "gclientesDataGridViewTextBoxColumn";
+            this.gclientesDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // articulosDataGridViewTextBoxColumn
             // 
             this.articulosDataGridViewTextBoxColumn.DataPropertyName = "articulos";
             this.articulosDataGridViewTextBoxColumn.HeaderText = "articulos";
             this.articulosDataGridViewTextBoxColumn.Name = "articulosDataGridViewTextBoxColumn";
+            this.articulosDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // garticulosDataGridViewTextBoxColumn
             // 
             this.garticulosDataGridViewTextBoxColumn.DataPropertyName = "garticulos";
             this.garticulosDataGridViewTextBoxColumn.HeaderText = "garticulos";
             this.garticulosDataGridViewTextBoxColumn.Name = "garticulosDataGridViewTextBoxColumn";
+            this.garticulosDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // albaranesDataGridViewTextBoxColumn
             // 
             this.albaranesDataGridViewTextBoxColumn.DataPropertyName = "albaranes";
             this.albaranesDataGridViewTextBoxColumn.HeaderText = "albaranes";
             this.albaranesDataGridViewTextBoxColumn.Name = "albaranesDataGridViewTextBoxColumn";
+            this.albaranesDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // galbaranesDataGridViewTextBoxColumn
             // 
             this.galbaranesDataGridViewTextBoxColumn.DataPropertyName = "galbaranes";
             this.galbaranesDataGridViewTextBoxColumn.HeaderText = "galbaranes";
             this.galbaranesDataGridViewTextBoxColumn.Name = "galbaranesDataGridViewTextBoxColumn";
+            this.galbaranesDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // facturasDataGridViewTextBoxColumn
             // 
             this.facturasDataGridViewTextBoxColumn.DataPropertyName = "facturas";
             this.facturasDataGridViewTextBoxColumn.HeaderText = "facturas";
             this.facturasDataGridViewTextBoxColumn.Name = "facturasDataGridViewTextBoxColumn";
+            this.facturasDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // gfacturasDataGridViewTextBoxColumn
             // 
             this.gfacturasDataGridViewTextBoxColumn.DataPropertyName = "gfacturas";
             this.gfacturasDataGridViewTextBoxColumn.HeaderText = "gfacturas";
             this.gfacturasDataGridViewTextBoxColumn.Name = "gfacturasDataGridViewTextBoxColumn";
+            this.gfacturasDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // csb19DataGridViewTextBoxColumn
             // 
             this.csb19DataGridViewTextBoxColumn.DataPropertyName = "csb19";
             this.csb19DataGridViewTextBoxColumn.HeaderText = "csb19";
             this.csb19DataGridViewTextBoxColumn.Name = "csb19DataGridViewTextBoxColumn";
+            this.csb19DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // contaplusDataGridViewTextBoxColumn
             // 
             this.contaplusDataGridViewTextBoxColumn.DataPropertyName = "contaplus";
             this.contaplusDataGridViewTextBoxColumn.HeaderText = "contaplus";
             this.contaplusDataGridViewTextBoxColumn.Name = "contaplusDataGridViewTextBoxColumn";
+            this.contaplusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // listadosDataGridViewTextBoxColumn
             // 
             this.listadosDataGridViewTextBoxColumn.DataPropertyName = "listados";
             this.listadosDataGridViewTextBoxColumn.HeaderText = "listados";
             this.listadosDataGridViewTextBoxColumn.Name = "listadosDataGridViewTextBoxColumn";
+            this.listadosDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // mantenimientoDataGridViewTextBoxColumn
             // 
             this.mantenimientoDataGridViewTextBoxColumn.DataPropertyName = "mantenimiento";
             this.mantenimientoDataGridViewTextBoxColumn.HeaderText = "mantenimiento";
             this.mantenimientoDataGridViewTextBoxColumn.Name = "mantenimientoDataGridViewTextBoxColumn";
+            this.mantenimientoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // copiaseguridadDataGridViewTextBoxColumn
             // 
             this.copiaseguridadDataGridViewTextBoxColumn.DataPropertyName = "copiaseguridad";
             this.copiaseguridadDataGridViewTextBoxColumn.HeaderText = "copiaseguridad";
             this.copiaseguridadDataGridViewTextBoxColumn.Name = "copiaseguridadDataGridViewTextBoxColumn";
+            this.copiaseguridadDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // agendaDataGridViewTextBoxColumn
             // 
             this.agendaDataGridViewTextBoxColumn.DataPropertyName = "agenda";
             this.agendaDataGridViewTextBoxColumn.HeaderText = "agenda";
             this.agendaDataGridViewTextBoxColumn.Name = "agendaDataGridViewTextBoxColumn";
+            this.agendaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // avisosDataGridViewTextBoxColumn
+            // 
+            this.avisosDataGridViewTextBoxColumn.DataPropertyName = "avisos";
+            this.avisosDataGridViewTextBoxColumn.HeaderText = "avisos";
+            this.avisosDataGridViewTextBoxColumn.Name = "avisosDataGridViewTextBoxColumn";
+            this.avisosDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gavisosDataGridViewTextBoxColumn
+            // 
+            this.gavisosDataGridViewTextBoxColumn.DataPropertyName = "gavisos";
+            this.gavisosDataGridViewTextBoxColumn.HeaderText = "gavisos";
+            this.gavisosDataGridViewTextBoxColumn.Name = "gavisosDataGridViewTextBoxColumn";
+            this.gavisosDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // GestionUsuarios
             // 
@@ -459,7 +511,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn activoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn activoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn grupoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn preguntaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn respuestaDataGridViewTextBoxColumn;
@@ -482,5 +534,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mantenimientoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn copiaseguridadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn agendaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn avisosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gavisosDataGridViewTextBoxColumn;
     }
 }

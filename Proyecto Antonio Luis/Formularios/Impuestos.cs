@@ -223,7 +223,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                     bd.SaveChanges();
 
                 }
-                catch (Exception exp)
+                catch (Exception)
                 {
 
                 }

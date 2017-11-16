@@ -34,5 +34,6 @@ namespace Proyecto_Antonio_Luis
      static class Globales
 {
     public static string llamadas;
+    public static int modificar;
 
 }

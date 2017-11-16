@@ -40,5 +40,7 @@ namespace BaseDatos
         public Nullable<bool> mantenimiento { get; set; }
         public Nullable<bool> copiaseguridad { get; set; }
         public Nullable<bool> agenda { get; set; }
+        public Nullable<bool> avisos { get; set; }
+        public Nullable<bool> gavisos { get; set; }
     }
 }
