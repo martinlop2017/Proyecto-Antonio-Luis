@@ -29,35 +29,35 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Rutas));
-            this.textBoxMiNombre = new System.Windows.Forms.TextBox();
+            this.textdigitos = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textclientes = new System.Windows.Forms.TextBox();
+            this.textbanco = new System.Windows.Forms.TextBox();
+            this.textsuplidos = new System.Windows.Forms.TextBox();
+            this.textretenciones = new System.Windows.Forms.TextBox();
+            this.textivageneral = new System.Windows.Forms.TextBox();
+            this.textivaredu = new System.Windows.Forms.TextBox();
+            this.textivasuper = new System.Windows.Forms.TextBox();
+            this.textiva0 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.textprestaciones = new System.Windows.Forms.TextBox();
+            this.textcsb19 = new System.Windows.Forms.TextBox();
+            this.textasi = new System.Windows.Forms.TextBox();
+            this.textdiario = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.textsubcuenta = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -69,19 +69,20 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBoxMiNombre
+            // textdigitos
             // 
-            this.textBoxMiNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBoxMiNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMiNombre.Location = new System.Drawing.Point(220, 182);
-            this.textBoxMiNombre.Name = "textBoxMiNombre";
-            this.textBoxMiNombre.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBoxMiNombre.Size = new System.Drawing.Size(31, 23);
-            this.textBoxMiNombre.TabIndex = 17;
-            this.textBoxMiNombre.Text = "99";
+            this.textdigitos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textdigitos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textdigitos.Location = new System.Drawing.Point(220, 182);
+            this.textdigitos.Name = "textdigitos";
+            this.textdigitos.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textdigitos.Size = new System.Drawing.Size(31, 23);
+            this.textdigitos.TabIndex = 17;
+            this.textdigitos.Text = "99";
             // 
             // label18
             // 
@@ -155,94 +156,94 @@
             this.label4.TabIndex = 25;
             this.label4.Text = "Clientes.";
             // 
-            // textBox1
+            // textclientes
             // 
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(163, 212);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox1.Size = new System.Drawing.Size(88, 23);
-            this.textBox1.TabIndex = 26;
-            this.textBox1.Text = "4300000000";
+            this.textclientes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textclientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textclientes.Location = new System.Drawing.Point(163, 212);
+            this.textclientes.Name = "textclientes";
+            this.textclientes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textclientes.Size = new System.Drawing.Size(88, 23);
+            this.textclientes.TabIndex = 26;
+            this.textclientes.Text = "4300000000";
             // 
-            // textBox2
+            // textbanco
             // 
-            this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(163, 242);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox2.Size = new System.Drawing.Size(88, 23);
-            this.textBox2.TabIndex = 27;
-            this.textBox2.Text = "4300000000";
+            this.textbanco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textbanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textbanco.Location = new System.Drawing.Point(163, 242);
+            this.textbanco.Name = "textbanco";
+            this.textbanco.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textbanco.Size = new System.Drawing.Size(88, 23);
+            this.textbanco.TabIndex = 27;
+            this.textbanco.Text = "4300000000";
             // 
-            // textBox3
+            // textsuplidos
             // 
-            this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(163, 272);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox3.Size = new System.Drawing.Size(88, 23);
-            this.textBox3.TabIndex = 28;
-            this.textBox3.Text = "4300000000";
+            this.textsuplidos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textsuplidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textsuplidos.Location = new System.Drawing.Point(163, 272);
+            this.textsuplidos.Name = "textsuplidos";
+            this.textsuplidos.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textsuplidos.Size = new System.Drawing.Size(88, 23);
+            this.textsuplidos.TabIndex = 28;
+            this.textsuplidos.Text = "4300000000";
             // 
-            // textBox4
+            // textretenciones
             // 
-            this.textBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(163, 302);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox4.Size = new System.Drawing.Size(88, 23);
-            this.textBox4.TabIndex = 29;
-            this.textBox4.Text = "4300000000";
+            this.textretenciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textretenciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textretenciones.Location = new System.Drawing.Point(163, 302);
+            this.textretenciones.Name = "textretenciones";
+            this.textretenciones.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textretenciones.Size = new System.Drawing.Size(88, 23);
+            this.textretenciones.TabIndex = 29;
+            this.textretenciones.Text = "4300000000";
             // 
-            // textBox5
+            // textivageneral
             // 
-            this.textBox5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(465, 302);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox5.Size = new System.Drawing.Size(88, 23);
-            this.textBox5.TabIndex = 39;
-            this.textBox5.Text = "4300000000";
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.textivageneral.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textivageneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textivageneral.Location = new System.Drawing.Point(465, 302);
+            this.textivageneral.Name = "textivageneral";
+            this.textivageneral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textivageneral.Size = new System.Drawing.Size(88, 23);
+            this.textivageneral.TabIndex = 39;
+            this.textivageneral.Text = "4300000000";
+            this.textivageneral.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // textBox6
+            // textivaredu
             // 
-            this.textBox6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(465, 272);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox6.Size = new System.Drawing.Size(88, 23);
-            this.textBox6.TabIndex = 38;
-            this.textBox6.Text = "4300000000";
+            this.textivaredu.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textivaredu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textivaredu.Location = new System.Drawing.Point(465, 272);
+            this.textivaredu.Name = "textivaredu";
+            this.textivaredu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textivaredu.Size = new System.Drawing.Size(88, 23);
+            this.textivaredu.TabIndex = 38;
+            this.textivaredu.Text = "4300000000";
             // 
-            // textBox7
+            // textivasuper
             // 
-            this.textBox7.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(465, 242);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox7.Size = new System.Drawing.Size(88, 23);
-            this.textBox7.TabIndex = 37;
-            this.textBox7.Text = "4300000000";
+            this.textivasuper.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textivasuper.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textivasuper.Location = new System.Drawing.Point(465, 242);
+            this.textivasuper.Name = "textivasuper";
+            this.textivasuper.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textivasuper.Size = new System.Drawing.Size(88, 23);
+            this.textivasuper.TabIndex = 37;
+            this.textivasuper.Text = "4300000000";
             // 
-            // textBox8
+            // textiva0
             // 
-            this.textBox8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(465, 212);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox8.Size = new System.Drawing.Size(88, 23);
-            this.textBox8.TabIndex = 36;
-            this.textBox8.Text = "4300000000";
+            this.textiva0.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textiva0.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textiva0.Location = new System.Drawing.Point(465, 212);
+            this.textiva0.Name = "textiva0";
+            this.textiva0.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textiva0.Size = new System.Drawing.Size(88, 23);
+            this.textiva0.TabIndex = 36;
+            this.textiva0.Text = "4300000000";
             // 
             // label5
             // 
@@ -309,49 +310,49 @@
             this.label9.Text = "Cta. Prestaciones.";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // textBox9
+            // textprestaciones
             // 
-            this.textBox9.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(465, 182);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox9.Size = new System.Drawing.Size(88, 23);
-            this.textBox9.TabIndex = 30;
-            this.textBox9.Text = "99";
+            this.textprestaciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textprestaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textprestaciones.Location = new System.Drawing.Point(465, 182);
+            this.textprestaciones.Name = "textprestaciones";
+            this.textprestaciones.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textprestaciones.Size = new System.Drawing.Size(88, 23);
+            this.textprestaciones.TabIndex = 30;
+            this.textprestaciones.Text = "99";
             // 
-            // textBox16
+            // textcsb19
             // 
-            this.textBox16.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.Location = new System.Drawing.Point(182, 510);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox16.Size = new System.Drawing.Size(340, 23);
-            this.textBox16.TabIndex = 49;
-            this.textBox16.Text = "4300000000";
+            this.textcsb19.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textcsb19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textcsb19.Location = new System.Drawing.Point(182, 510);
+            this.textcsb19.Name = "textcsb19";
+            this.textcsb19.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textcsb19.Size = new System.Drawing.Size(340, 23);
+            this.textcsb19.TabIndex = 49;
+            this.textcsb19.Text = "4300000000";
             // 
-            // textBox17
+            // textasi
             // 
-            this.textBox17.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(182, 482);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox17.Size = new System.Drawing.Size(340, 23);
-            this.textBox17.TabIndex = 48;
-            this.textBox17.Text = "4300000000";
+            this.textasi.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textasi.Location = new System.Drawing.Point(182, 482);
+            this.textasi.Name = "textasi";
+            this.textasi.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textasi.Size = new System.Drawing.Size(340, 23);
+            this.textasi.TabIndex = 48;
+            this.textasi.Text = "4300000000";
             // 
-            // textBox18
+            // textdiario
             // 
-            this.textBox18.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(182, 453);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox18.Size = new System.Drawing.Size(340, 23);
-            this.textBox18.TabIndex = 47;
-            this.textBox18.Text = "4300000000";
+            this.textdiario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textdiario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textdiario.Location = new System.Drawing.Point(182, 453);
+            this.textdiario.Name = "textdiario";
+            this.textdiario.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textdiario.Size = new System.Drawing.Size(340, 23);
+            this.textdiario.TabIndex = 47;
+            this.textdiario.Text = "4300000000";
             // 
             // label15
             // 
@@ -404,16 +405,16 @@
             this.label20.Text = "Ruta Subcuenta.";
             this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
-            // textBox19
+            // textsubcuenta
             // 
-            this.textBox19.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox19.Location = new System.Drawing.Point(182, 423);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox19.Size = new System.Drawing.Size(340, 23);
-            this.textBox19.TabIndex = 40;
-            this.textBox19.Text = "99";
+            this.textsubcuenta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textsubcuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textsubcuenta.Location = new System.Drawing.Point(182, 423);
+            this.textsubcuenta.Name = "textsubcuenta";
+            this.textsubcuenta.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textsubcuenta.Size = new System.Drawing.Size(340, 23);
+            this.textsubcuenta.TabIndex = 40;
+            this.textsubcuenta.Text = "99";
             // 
             // label21
             // 
@@ -449,6 +450,7 @@
             this.button1.Size = new System.Drawing.Size(208, 60);
             this.button1.TabIndex = 128;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -523,6 +525,16 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(540, 35);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(67, 42);
+            this.button7.TabIndex = 134;
+            this.button7.Text = "button7";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Rutas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -531,6 +543,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(619, 731);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -538,35 +551,35 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox16);
-            this.Controls.Add(this.textBox17);
-            this.Controls.Add(this.textBox18);
+            this.Controls.Add(this.textcsb19);
+            this.Controls.Add(this.textasi);
+            this.Controls.Add(this.textdiario);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.textBox19);
+            this.Controls.Add(this.textsubcuenta);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.textivageneral);
+            this.Controls.Add(this.textivaredu);
+            this.Controls.Add(this.textivasuper);
+            this.Controls.Add(this.textiva0);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textprestaciones);
+            this.Controls.Add(this.textretenciones);
+            this.Controls.Add(this.textsuplidos);
+            this.Controls.Add(this.textbanco);
+            this.Controls.Add(this.textclientes);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label27);
-            this.Controls.Add(this.textBoxMiNombre);
+            this.Controls.Add(this.textdigitos);
             this.Controls.Add(this.label18);
             this.DoubleBuffered = true;
             this.Name = "Rutas";
@@ -581,35 +594,35 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxMiNombre;
+        private System.Windows.Forms.TextBox textdigitos;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textclientes;
+        private System.Windows.Forms.TextBox textbanco;
+        private System.Windows.Forms.TextBox textsuplidos;
+        private System.Windows.Forms.TextBox textretenciones;
+        private System.Windows.Forms.TextBox textivageneral;
+        private System.Windows.Forms.TextBox textivaredu;
+        private System.Windows.Forms.TextBox textivasuper;
+        private System.Windows.Forms.TextBox textiva0;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox textprestaciones;
+        private System.Windows.Forms.TextBox textcsb19;
+        private System.Windows.Forms.TextBox textasi;
+        private System.Windows.Forms.TextBox textdiario;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox textsubcuenta;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button1;
@@ -621,5 +634,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button7;
     }
 }

@@ -60,23 +60,23 @@
         </EntityType>
         <EntityType Name="Cuentas">
           <Key>
-            <PropertyRef Name="numerador" />
+            <PropertyRef Name="cod" />
           </Key>
-          <Property Name="numerador" Type="numeric" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="digitos" Type="nchar" MaxLength="3" />
-          <Property Name="ctacliente" Type="nchar" MaxLength="20" />
-          <Property Name="ctabanco" Type="nchar" MaxLength="20" />
-          <Property Name="ctasuplidos" Type="nchar" MaxLength="20" />
-          <Property Name="ctaretenciones" Type="nchar" MaxLength="20" />
-          <Property Name="ctaprestaciones" Type="nchar" MaxLength="20" />
-          <Property Name="ctaiva0" Type="nchar" MaxLength="20" />
-          <Property Name="ctaivasuperreducido" Type="nchar" MaxLength="20" />
-          <Property Name="ctaivareducido" Type="nchar" MaxLength="20" />
-          <Property Name="ctaivageneral" Type="nchar" MaxLength="20" />
-          <Property Name="rutasubcuenta" Type="nchar" MaxLength="100" />
-          <Property Name="rutadiario" Type="nchar" MaxLength="100" />
-          <Property Name="rutaasi" Type="nchar" MaxLength="100" />
-          <Property Name="rutacsb19" Type="nchar" MaxLength="100" />
+          <Property Name="cod" Type="numeric" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="CtaCliente" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="CtaBanco" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="CtaSuplido" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="CtaRetencion" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="CtaPrestaciones" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Iva0" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="IvaSuper" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="IvaReducido" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="IvaGeneral" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="RutaSubcuenta" Type="nchar" MaxLength="400" />
+          <Property Name="RutaDiario" Type="nchar" MaxLength="400" />
+          <Property Name="RutaAsi" Type="nchar" MaxLength="400" />
+          <Property Name="RutaCSB19" Type="nchar" MaxLength="400" />
+          <Property Name="NumDigitos" Type="nchar" MaxLength="2" />
         </EntityType>
         <EntityType Name="Iva">
           <Key>
@@ -157,10 +157,10 @@
       <Schema Namespace="AdministracionAntonioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="AdministracionAntonioEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Clientes" EntityType="AdministracionAntonioModel.Clientes" />
-          <EntitySet Name="Cuentas" EntityType="AdministracionAntonioModel.Cuentas" />
           <EntitySet Name="Iva" EntityType="AdministracionAntonioModel.Iva" />
           <EntitySet Name="Propios" EntityType="AdministracionAntonioModel.Propios" />
           <EntitySet Name="Ususarios" EntityType="AdministracionAntonioModel.Ususarios" />
+          <EntitySet Name="Cuentas" EntityType="AdministracionAntonioModel.Cuentas" />
         </EntityContainer>
         <EntityType Name="Clientes">
           <Key>
@@ -214,26 +214,6 @@
           <Property Name="bajacliente" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="fechaaltacliente" Type="DateTime" Precision="0" />
           <Property Name="empleadoscliente" Type="Decimal" Precision="3" Scale="0" />
-        </EntityType>
-        <EntityType Name="Cuentas">
-          <Key>
-            <PropertyRef Name="numerador" />
-          </Key>
-          <Property Name="numerador" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="digitos" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
-          <Property Name="ctacliente" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="ctabanco" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="ctasuplidos" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="ctaretenciones" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="ctaprestaciones" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="ctaiva0" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="ctaivasuperreducido" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="ctaivareducido" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="ctaivageneral" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="rutasubcuenta" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="rutadiario" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="rutaasi" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="rutacsb19" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="Iva">
           <Key>
@@ -301,6 +281,26 @@
           <Property Name="avisos" Type="Boolean" />
           <Property Name="gavisos" Type="Boolean" />
         </EntityType>
+        <EntityType Name="Cuentas">
+          <Key>
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="cod" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+          <Property Name="CtaCliente" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CtaBanco" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CtaSuplido" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CtaRetencion" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CtaPrestaciones" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Iva0" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IvaSuper" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IvaReducido" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IvaGeneral" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RutaSubcuenta" Type="String" MaxLength="400" FixedLength="true" Unicode="true" />
+          <Property Name="RutaDiario" Type="String" MaxLength="400" FixedLength="true" Unicode="true" />
+          <Property Name="RutaAsi" Type="String" MaxLength="400" FixedLength="true" Unicode="true" />
+          <Property Name="RutaCSB19" Type="String" MaxLength="400" FixedLength="true" Unicode="true" />
+          <Property Name="NumDigitos" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -357,27 +357,6 @@
                 <ScalarProperty Name="direcioncliente" ColumnName="direcioncliente" />
                 <ScalarProperty Name="nombrecliente" ColumnName="nombrecliente" />
                 <ScalarProperty Name="codcliente" ColumnName="codcliente" />
-                <ScalarProperty Name="numerador" ColumnName="numerador" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Cuentas">
-            <EntityTypeMapping TypeName="AdministracionAntonioModel.Cuentas">
-              <MappingFragment StoreEntitySet="Cuentas">
-                <ScalarProperty Name="rutacsb19" ColumnName="rutacsb19" />
-                <ScalarProperty Name="rutaasi" ColumnName="rutaasi" />
-                <ScalarProperty Name="rutadiario" ColumnName="rutadiario" />
-                <ScalarProperty Name="rutasubcuenta" ColumnName="rutasubcuenta" />
-                <ScalarProperty Name="ctaivageneral" ColumnName="ctaivageneral" />
-                <ScalarProperty Name="ctaivareducido" ColumnName="ctaivareducido" />
-                <ScalarProperty Name="ctaivasuperreducido" ColumnName="ctaivasuperreducido" />
-                <ScalarProperty Name="ctaiva0" ColumnName="ctaiva0" />
-                <ScalarProperty Name="ctaprestaciones" ColumnName="ctaprestaciones" />
-                <ScalarProperty Name="ctaretenciones" ColumnName="ctaretenciones" />
-                <ScalarProperty Name="ctasuplidos" ColumnName="ctasuplidos" />
-                <ScalarProperty Name="ctabanco" ColumnName="ctabanco" />
-                <ScalarProperty Name="ctacliente" ColumnName="ctacliente" />
-                <ScalarProperty Name="digitos" ColumnName="digitos" />
                 <ScalarProperty Name="numerador" ColumnName="numerador" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -447,6 +426,27 @@
                 <ScalarProperty Name="activo" ColumnName="activo" />
                 <ScalarProperty Name="login" ColumnName="login" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="cod" ColumnName="cod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cuentas">
+            <EntityTypeMapping TypeName="AdministracionAntonioModel.Cuentas">
+              <MappingFragment StoreEntitySet="Cuentas">
+                <ScalarProperty Name="NumDigitos" ColumnName="NumDigitos" />
+                <ScalarProperty Name="RutaCSB19" ColumnName="RutaCSB19" />
+                <ScalarProperty Name="RutaAsi" ColumnName="RutaAsi" />
+                <ScalarProperty Name="RutaDiario" ColumnName="RutaDiario" />
+                <ScalarProperty Name="RutaSubcuenta" ColumnName="RutaSubcuenta" />
+                <ScalarProperty Name="IvaGeneral" ColumnName="IvaGeneral" />
+                <ScalarProperty Name="IvaReducido" ColumnName="IvaReducido" />
+                <ScalarProperty Name="IvaSuper" ColumnName="IvaSuper" />
+                <ScalarProperty Name="Iva0" ColumnName="Iva0" />
+                <ScalarProperty Name="CtaPrestaciones" ColumnName="CtaPrestaciones" />
+                <ScalarProperty Name="CtaRetencion" ColumnName="CtaRetencion" />
+                <ScalarProperty Name="CtaSuplido" ColumnName="CtaSuplido" />
+                <ScalarProperty Name="CtaBanco" ColumnName="CtaBanco" />
+                <ScalarProperty Name="CtaCliente" ColumnName="CtaCliente" />
                 <ScalarProperty Name="cod" ColumnName="cod" />
               </MappingFragment>
             </EntityTypeMapping>

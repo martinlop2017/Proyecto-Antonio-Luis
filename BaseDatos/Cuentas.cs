@@ -14,20 +14,20 @@ namespace BaseDatos
     
     public partial class Cuentas
     {
-        public decimal numerador { get; set; }
-        public string digitos { get; set; }
-        public string ctacliente { get; set; }
-        public string ctabanco { get; set; }
-        public string ctasuplidos { get; set; }
-        public string ctaretenciones { get; set; }
-        public string ctaprestaciones { get; set; }
-        public string ctaiva0 { get; set; }
-        public string ctaivasuperreducido { get; set; }
-        public string ctaivareducido { get; set; }
-        public string ctaivageneral { get; set; }
-        public string rutasubcuenta { get; set; }
-        public string rutadiario { get; set; }
-        public string rutaasi { get; set; }
-        public string rutacsb19 { get; set; }
+        public decimal cod { get; set; }
+        public Nullable<decimal> CtaCliente { get; set; }
+        public Nullable<decimal> CtaBanco { get; set; }
+        public Nullable<decimal> CtaSuplido { get; set; }
+        public Nullable<decimal> CtaRetencion { get; set; }
+        public Nullable<decimal> CtaPrestaciones { get; set; }
+        public Nullable<decimal> Iva0 { get; set; }
+        public Nullable<decimal> IvaSuper { get; set; }
+        public Nullable<decimal> IvaReducido { get; set; }
+        public Nullable<decimal> IvaGeneral { get; set; }
+        public string RutaSubcuenta { get; set; }
+        public string RutaDiario { get; set; }
+        public string RutaAsi { get; set; }
+        public string RutaCSB19 { get; set; }
+        public string NumDigitos { get; set; }
     }
 }
