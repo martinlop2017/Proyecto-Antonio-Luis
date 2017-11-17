@@ -15,52 +15,54 @@ namespace BaseDatos
     public partial class Clientes
     {
         public decimal numerador { get; set; }
-        public string codcliente { get; set; }
+        public Nullable<decimal> codcliente { get; set; }
         public string nombrecliente { get; set; }
+        public string cifcliente { get; set; }
         public string direcioncliente { get; set; }
         public string localidacliente { get; set; }
-        public string cod_postalcliente { get; set; }
         public string provinciacliente { get; set; }
-        public string cifcliente { get; set; }
-        public string grupocliente { get; set; }
-        public string telefonocliente { get; set; }
-        public string faxcliente { get; set; }
-        public string movilcliente { get; set; }
+        public string cod_postalcliente { get; set; }
+        public Nullable<decimal> telefono1cliente { get; set; }
+        public Nullable<decimal> telefono2cliente { get; set; }
+        public Nullable<decimal> faxcliente { get; set; }
         public string contactocliente { get; set; }
         public string mailcliente { get; set; }
-        public string comentariocliente { get; set; }
-        public string activocliente { get; set; }
-        public decimal tarifacliente { get; set; }
-        public string recargo { get; set; }
+        public Nullable<bool> activocliente { get; set; }
+        public Nullable<bool> domiciliadocliente { get; set; }
+        public Nullable<bool> recargo { get; set; }
+        public Nullable<bool> contabilizarcliente { get; set; }
         public Nullable<decimal> iban1cliente { get; set; }
         public Nullable<decimal> iban2cliente { get; set; }
         public Nullable<decimal> iban3cliente { get; set; }
-        public decimal iban4cliente { get; set; }
+        public Nullable<decimal> iban4cliente { get; set; }
         public Nullable<decimal> iban5cliente { get; set; }
         public Nullable<decimal> iban6cliente { get; set; }
-        public string domiciliadocliente { get; set; }
-        public string avioncliente { get; set; }
-        public string mod100 { get; set; }
-        public string mod111 { get; set; }
-        public string mod115 { get; set; }
-        public string mod123 { get; set; }
-        public string mod130 { get; set; }
-        public string mod131 { get; set; }
-        public string mod180 { get; set; }
-        public string mod190 { get; set; }
-        public string mod193 { get; set; }
-        public string mod200 { get; set; }
-        public string mod202 { get; set; }
-        public string mod303 { get; set; }
-        public string mod309 { get; set; }
-        public string mod349 { get; set; }
-        public string mod390 { get; set; }
-        public string mod751 { get; set; }
-        public string mod752 { get; set; }
-        public string instrastatcliente { get; set; }
-        public string altacliente { get; set; }
-        public string bajacliente { get; set; }
-        public Nullable<System.DateTime> fechaaltacliente { get; set; }
+        public string grupocliente { get; set; }
         public Nullable<decimal> empleadoscliente { get; set; }
+        public Nullable<System.DateTime> fechaaltacliente { get; set; }
+        public Nullable<System.DateTime> fechabajacliente { get; set; }
+        public Nullable<decimal> tarifacliente { get; set; }
+        public string avioncliente { get; set; }
+        public Nullable<bool> mod100 { get; set; }
+        public Nullable<bool> mod111 { get; set; }
+        public Nullable<bool> mod115 { get; set; }
+        public Nullable<bool> mod123 { get; set; }
+        public Nullable<bool> mod130 { get; set; }
+        public Nullable<bool> mod131 { get; set; }
+        public Nullable<bool> mod180 { get; set; }
+        public Nullable<bool> mod190 { get; set; }
+        public Nullable<bool> mod193 { get; set; }
+        public Nullable<bool> mod200 { get; set; }
+        public Nullable<bool> mod202 { get; set; }
+        public Nullable<bool> mod303 { get; set; }
+        public Nullable<bool> mod309 { get; set; }
+        public Nullable<bool> mod349 { get; set; }
+        public Nullable<bool> mod390 { get; set; }
+        public Nullable<bool> mod751 { get; set; }
+        public Nullable<bool> mod752 { get; set; }
+        public Nullable<bool> instrastatcliente { get; set; }
+        public string comentariocliente { get; set; }
+        public Nullable<bool> altacliente { get; set; }
+        public Nullable<bool> bajacliente { get; set; }
     }
 }

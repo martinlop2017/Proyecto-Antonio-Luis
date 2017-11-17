@@ -10,53 +10,55 @@
             <PropertyRef Name="numerador" />
           </Key>
           <Property Name="numerador" Type="numeric" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="codcliente" Type="nchar" MaxLength="6" />
+          <Property Name="codcliente" Type="numeric" Precision="18" Scale="0" />
           <Property Name="nombrecliente" Type="nchar" MaxLength="50" />
+          <Property Name="cifcliente" Type="nchar" MaxLength="15" />
           <Property Name="direcioncliente" Type="nchar" MaxLength="50" />
           <Property Name="localidacliente" Type="nchar" MaxLength="50" />
-          <Property Name="cod_postalcliente" Type="nchar" MaxLength="9" />
           <Property Name="provinciacliente" Type="nchar" MaxLength="30" />
-          <Property Name="cifcliente" Type="nchar" MaxLength="10" />
-          <Property Name="grupocliente" Type="nchar" MaxLength="10" />
-          <Property Name="telefonocliente" Type="nchar" MaxLength="15" />
-          <Property Name="faxcliente" Type="nchar" MaxLength="15" />
-          <Property Name="movilcliente" Type="nchar" MaxLength="15" />
+          <Property Name="cod_postalcliente" Type="nchar" MaxLength="18" />
+          <Property Name="telefono1cliente" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="telefono2cliente" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="faxcliente" Type="numeric" Precision="18" Scale="0" />
           <Property Name="contactocliente" Type="nchar" MaxLength="50" />
-          <Property Name="mailcliente" Type="nchar" MaxLength="30" />
-          <Property Name="comentariocliente" Type="nchar" MaxLength="100" />
-          <Property Name="activocliente" Type="nchar" MaxLength="5" />
-          <Property Name="tarifacliente" Type="numeric" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="recargo" Type="nchar" MaxLength="5" />
+          <Property Name="mailcliente" Type="nchar" MaxLength="50" />
+          <Property Name="activocliente" Type="bit" />
+          <Property Name="domiciliadocliente" Type="bit" />
+          <Property Name="recargo" Type="bit" />
+          <Property Name="contabilizarcliente" Type="bit" />
           <Property Name="iban1cliente" Type="numeric" Precision="4" Scale="0" />
           <Property Name="iban2cliente" Type="numeric" Precision="4" Scale="0" />
           <Property Name="iban3cliente" Type="numeric" Precision="4" Scale="0" />
-          <Property Name="iban4cliente" Type="numeric" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="iban4cliente" Type="numeric" Precision="4" Scale="0" />
           <Property Name="iban5cliente" Type="numeric" Precision="4" Scale="0" />
           <Property Name="iban6cliente" Type="numeric" Precision="4" Scale="0" />
-          <Property Name="domiciliadocliente" Type="nchar" MaxLength="5" />
-          <Property Name="avioncliente" Type="nchar" MaxLength="5" />
-          <Property Name="mod100" Type="nchar" MaxLength="5" />
-          <Property Name="mod111" Type="nchar" MaxLength="10" />
-          <Property Name="mod115" Type="nchar" MaxLength="10" />
-          <Property Name="mod123" Type="nchar" MaxLength="10" />
-          <Property Name="mod130" Type="nchar" MaxLength="10" />
-          <Property Name="mod131" Type="nchar" MaxLength="10" />
-          <Property Name="mod180" Type="nchar" MaxLength="10" />
-          <Property Name="mod190" Type="nchar" MaxLength="10" />
-          <Property Name="mod193" Type="nchar" MaxLength="10" />
-          <Property Name="mod200" Type="nchar" MaxLength="10" />
-          <Property Name="mod202" Type="nchar" MaxLength="10" />
-          <Property Name="mod303" Type="nchar" MaxLength="10" />
-          <Property Name="mod309" Type="nchar" MaxLength="10" />
-          <Property Name="mod349" Type="nchar" MaxLength="10" />
-          <Property Name="mod390" Type="nchar" MaxLength="10" />
-          <Property Name="mod751" Type="nchar" MaxLength="10" />
-          <Property Name="mod752" Type="nchar" MaxLength="10" />
-          <Property Name="instrastatcliente" Type="nchar" MaxLength="10" />
-          <Property Name="altacliente" Type="nchar" MaxLength="10" />
-          <Property Name="bajacliente" Type="nchar" MaxLength="10" />
-          <Property Name="fechaaltacliente" Type="date" />
+          <Property Name="grupocliente" Type="nchar" MaxLength="10" />
           <Property Name="empleadoscliente" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="fechaaltacliente" Type="date" />
+          <Property Name="fechabajacliente" Type="date" />
+          <Property Name="tarifacliente" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="avioncliente" Type="nchar" MaxLength="5" />
+          <Property Name="mod100" Type="bit" />
+          <Property Name="mod111" Type="bit" />
+          <Property Name="mod115" Type="bit" />
+          <Property Name="mod123" Type="bit" />
+          <Property Name="mod130" Type="bit" />
+          <Property Name="mod131" Type="bit" />
+          <Property Name="mod180" Type="bit" />
+          <Property Name="mod190" Type="bit" />
+          <Property Name="mod193" Type="bit" />
+          <Property Name="mod200" Type="bit" />
+          <Property Name="mod202" Type="bit" />
+          <Property Name="mod303" Type="bit" />
+          <Property Name="mod309" Type="bit" />
+          <Property Name="mod349" Type="bit" />
+          <Property Name="mod390" Type="bit" />
+          <Property Name="mod751" Type="bit" />
+          <Property Name="mod752" Type="bit" />
+          <Property Name="instrastatcliente" Type="bit" />
+          <Property Name="comentariocliente" Type="nchar" MaxLength="500" />
+          <Property Name="altacliente" Type="bit" />
+          <Property Name="bajacliente" Type="bit" />
         </EntityType>
         <EntityType Name="Cuentas">
           <Key>
@@ -156,65 +158,12 @@
     <edmx:ConceptualModels>
       <Schema Namespace="AdministracionAntonioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="AdministracionAntonioEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Clientes" EntityType="AdministracionAntonioModel.Clientes" />
           <EntitySet Name="Iva" EntityType="AdministracionAntonioModel.Iva" />
           <EntitySet Name="Propios" EntityType="AdministracionAntonioModel.Propios" />
           <EntitySet Name="Ususarios" EntityType="AdministracionAntonioModel.Ususarios" />
           <EntitySet Name="Cuentas" EntityType="AdministracionAntonioModel.Cuentas" />
+          <EntitySet Name="Clientes" EntityType="AdministracionAntonioModel.Clientes" />
         </EntityContainer>
-        <EntityType Name="Clientes">
-          <Key>
-            <PropertyRef Name="numerador" />
-          </Key>
-          <Property Name="numerador" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="codcliente" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
-          <Property Name="nombrecliente" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="direcioncliente" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="localidacliente" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="cod_postalcliente" Type="String" MaxLength="9" FixedLength="true" Unicode="true" />
-          <Property Name="provinciacliente" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="cifcliente" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="grupocliente" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="telefonocliente" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
-          <Property Name="faxcliente" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
-          <Property Name="movilcliente" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
-          <Property Name="contactocliente" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="mailcliente" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="comentariocliente" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="activocliente" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
-          <Property Name="tarifacliente" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="recargo" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
-          <Property Name="iban1cliente" Type="Decimal" Precision="4" Scale="0" />
-          <Property Name="iban2cliente" Type="Decimal" Precision="4" Scale="0" />
-          <Property Name="iban3cliente" Type="Decimal" Precision="4" Scale="0" />
-          <Property Name="iban4cliente" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
-          <Property Name="iban5cliente" Type="Decimal" Precision="4" Scale="0" />
-          <Property Name="iban6cliente" Type="Decimal" Precision="4" Scale="0" />
-          <Property Name="domiciliadocliente" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
-          <Property Name="avioncliente" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
-          <Property Name="mod100" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
-          <Property Name="mod111" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="mod115" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="mod123" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="mod130" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="mod131" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="mod180" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="mod190" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="mod193" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="mod200" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="mod202" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="mod303" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="mod309" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="mod349" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="mod390" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="mod751" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="mod752" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="instrastatcliente" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="altacliente" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="bajacliente" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="fechaaltacliente" Type="DateTime" Precision="0" />
-          <Property Name="empleadoscliente" Type="Decimal" Precision="3" Scale="0" />
-        </EntityType>
         <EntityType Name="Iva">
           <Key>
             <PropertyRef Name="numerador" />
@@ -301,66 +250,67 @@
           <Property Name="RutaCSB19" Type="String" MaxLength="400" FixedLength="true" Unicode="true" />
           <Property Name="NumDigitos" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
         </EntityType>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="numerador" />
+          </Key>
+          <Property Name="numerador" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="codcliente" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="nombrecliente" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="cifcliente" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="direcioncliente" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="localidacliente" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="provinciacliente" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="cod_postalcliente" Type="String" MaxLength="18" FixedLength="true" Unicode="true" />
+          <Property Name="telefono1cliente" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="telefono2cliente" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="faxcliente" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="contactocliente" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="mailcliente" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="activocliente" Type="Boolean" />
+          <Property Name="domiciliadocliente" Type="Boolean" />
+          <Property Name="recargo" Type="Boolean" />
+          <Property Name="contabilizarcliente" Type="Boolean" />
+          <Property Name="iban1cliente" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="iban2cliente" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="iban3cliente" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="iban4cliente" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="iban5cliente" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="iban6cliente" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="grupocliente" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="empleadoscliente" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="fechaaltacliente" Type="DateTime" Precision="0" />
+          <Property Name="fechabajacliente" Type="DateTime" Precision="0" />
+          <Property Name="tarifacliente" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="avioncliente" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="mod100" Type="Boolean" />
+          <Property Name="mod111" Type="Boolean" />
+          <Property Name="mod115" Type="Boolean" />
+          <Property Name="mod123" Type="Boolean" />
+          <Property Name="mod130" Type="Boolean" />
+          <Property Name="mod131" Type="Boolean" />
+          <Property Name="mod180" Type="Boolean" />
+          <Property Name="mod190" Type="Boolean" />
+          <Property Name="mod193" Type="Boolean" />
+          <Property Name="mod200" Type="Boolean" />
+          <Property Name="mod202" Type="Boolean" />
+          <Property Name="mod303" Type="Boolean" />
+          <Property Name="mod309" Type="Boolean" />
+          <Property Name="mod349" Type="Boolean" />
+          <Property Name="mod390" Type="Boolean" />
+          <Property Name="mod751" Type="Boolean" />
+          <Property Name="mod752" Type="Boolean" />
+          <Property Name="instrastatcliente" Type="Boolean" />
+          <Property Name="comentariocliente" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+          <Property Name="altacliente" Type="Boolean" />
+          <Property Name="bajacliente" Type="Boolean" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="AdministracionAntonioModelStoreContainer" CdmEntityContainer="AdministracionAntonioEntities">
-          <EntitySetMapping Name="Clientes">
-            <EntityTypeMapping TypeName="AdministracionAntonioModel.Clientes">
-              <MappingFragment StoreEntitySet="Clientes">
-                <ScalarProperty Name="empleadoscliente" ColumnName="empleadoscliente" />
-                <ScalarProperty Name="fechaaltacliente" ColumnName="fechaaltacliente" />
-                <ScalarProperty Name="bajacliente" ColumnName="bajacliente" />
-                <ScalarProperty Name="altacliente" ColumnName="altacliente" />
-                <ScalarProperty Name="instrastatcliente" ColumnName="instrastatcliente" />
-                <ScalarProperty Name="mod752" ColumnName="mod752" />
-                <ScalarProperty Name="mod751" ColumnName="mod751" />
-                <ScalarProperty Name="mod390" ColumnName="mod390" />
-                <ScalarProperty Name="mod349" ColumnName="mod349" />
-                <ScalarProperty Name="mod309" ColumnName="mod309" />
-                <ScalarProperty Name="mod303" ColumnName="mod303" />
-                <ScalarProperty Name="mod202" ColumnName="mod202" />
-                <ScalarProperty Name="mod200" ColumnName="mod200" />
-                <ScalarProperty Name="mod193" ColumnName="mod193" />
-                <ScalarProperty Name="mod190" ColumnName="mod190" />
-                <ScalarProperty Name="mod180" ColumnName="mod180" />
-                <ScalarProperty Name="mod131" ColumnName="mod131" />
-                <ScalarProperty Name="mod130" ColumnName="mod130" />
-                <ScalarProperty Name="mod123" ColumnName="mod123" />
-                <ScalarProperty Name="mod115" ColumnName="mod115" />
-                <ScalarProperty Name="mod111" ColumnName="mod111" />
-                <ScalarProperty Name="mod100" ColumnName="mod100" />
-                <ScalarProperty Name="avioncliente" ColumnName="avioncliente" />
-                <ScalarProperty Name="domiciliadocliente" ColumnName="domiciliadocliente" />
-                <ScalarProperty Name="iban6cliente" ColumnName="iban6cliente" />
-                <ScalarProperty Name="iban5cliente" ColumnName="iban5cliente" />
-                <ScalarProperty Name="iban4cliente" ColumnName="iban4cliente" />
-                <ScalarProperty Name="iban3cliente" ColumnName="iban3cliente" />
-                <ScalarProperty Name="iban2cliente" ColumnName="iban2cliente" />
-                <ScalarProperty Name="iban1cliente" ColumnName="iban1cliente" />
-                <ScalarProperty Name="recargo" ColumnName="recargo" />
-                <ScalarProperty Name="tarifacliente" ColumnName="tarifacliente" />
-                <ScalarProperty Name="activocliente" ColumnName="activocliente" />
-                <ScalarProperty Name="comentariocliente" ColumnName="comentariocliente" />
-                <ScalarProperty Name="mailcliente" ColumnName="mailcliente" />
-                <ScalarProperty Name="contactocliente" ColumnName="contactocliente" />
-                <ScalarProperty Name="movilcliente" ColumnName="movilcliente" />
-                <ScalarProperty Name="faxcliente" ColumnName="faxcliente" />
-                <ScalarProperty Name="telefonocliente" ColumnName="telefonocliente" />
-                <ScalarProperty Name="grupocliente" ColumnName="grupocliente" />
-                <ScalarProperty Name="cifcliente" ColumnName="cifcliente" />
-                <ScalarProperty Name="provinciacliente" ColumnName="provinciacliente" />
-                <ScalarProperty Name="cod_postalcliente" ColumnName="cod_postalcliente" />
-                <ScalarProperty Name="localidacliente" ColumnName="localidacliente" />
-                <ScalarProperty Name="direcioncliente" ColumnName="direcioncliente" />
-                <ScalarProperty Name="nombrecliente" ColumnName="nombrecliente" />
-                <ScalarProperty Name="codcliente" ColumnName="codcliente" />
-                <ScalarProperty Name="numerador" ColumnName="numerador" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Iva">
             <EntityTypeMapping TypeName="AdministracionAntonioModel.Iva">
               <MappingFragment StoreEntitySet="Iva">
@@ -448,6 +398,62 @@
                 <ScalarProperty Name="CtaBanco" ColumnName="CtaBanco" />
                 <ScalarProperty Name="CtaCliente" ColumnName="CtaCliente" />
                 <ScalarProperty Name="cod" ColumnName="cod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="AdministracionAntonioModel.Clientes">
+              <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="bajacliente" ColumnName="bajacliente" />
+                <ScalarProperty Name="altacliente" ColumnName="altacliente" />
+                <ScalarProperty Name="comentariocliente" ColumnName="comentariocliente" />
+                <ScalarProperty Name="instrastatcliente" ColumnName="instrastatcliente" />
+                <ScalarProperty Name="mod752" ColumnName="mod752" />
+                <ScalarProperty Name="mod751" ColumnName="mod751" />
+                <ScalarProperty Name="mod390" ColumnName="mod390" />
+                <ScalarProperty Name="mod349" ColumnName="mod349" />
+                <ScalarProperty Name="mod309" ColumnName="mod309" />
+                <ScalarProperty Name="mod303" ColumnName="mod303" />
+                <ScalarProperty Name="mod202" ColumnName="mod202" />
+                <ScalarProperty Name="mod200" ColumnName="mod200" />
+                <ScalarProperty Name="mod193" ColumnName="mod193" />
+                <ScalarProperty Name="mod190" ColumnName="mod190" />
+                <ScalarProperty Name="mod180" ColumnName="mod180" />
+                <ScalarProperty Name="mod131" ColumnName="mod131" />
+                <ScalarProperty Name="mod130" ColumnName="mod130" />
+                <ScalarProperty Name="mod123" ColumnName="mod123" />
+                <ScalarProperty Name="mod115" ColumnName="mod115" />
+                <ScalarProperty Name="mod111" ColumnName="mod111" />
+                <ScalarProperty Name="mod100" ColumnName="mod100" />
+                <ScalarProperty Name="avioncliente" ColumnName="avioncliente" />
+                <ScalarProperty Name="tarifacliente" ColumnName="tarifacliente" />
+                <ScalarProperty Name="fechabajacliente" ColumnName="fechabajacliente" />
+                <ScalarProperty Name="fechaaltacliente" ColumnName="fechaaltacliente" />
+                <ScalarProperty Name="empleadoscliente" ColumnName="empleadoscliente" />
+                <ScalarProperty Name="grupocliente" ColumnName="grupocliente" />
+                <ScalarProperty Name="iban6cliente" ColumnName="iban6cliente" />
+                <ScalarProperty Name="iban5cliente" ColumnName="iban5cliente" />
+                <ScalarProperty Name="iban4cliente" ColumnName="iban4cliente" />
+                <ScalarProperty Name="iban3cliente" ColumnName="iban3cliente" />
+                <ScalarProperty Name="iban2cliente" ColumnName="iban2cliente" />
+                <ScalarProperty Name="iban1cliente" ColumnName="iban1cliente" />
+                <ScalarProperty Name="contabilizarcliente" ColumnName="contabilizarcliente" />
+                <ScalarProperty Name="recargo" ColumnName="recargo" />
+                <ScalarProperty Name="domiciliadocliente" ColumnName="domiciliadocliente" />
+                <ScalarProperty Name="activocliente" ColumnName="activocliente" />
+                <ScalarProperty Name="mailcliente" ColumnName="mailcliente" />
+                <ScalarProperty Name="contactocliente" ColumnName="contactocliente" />
+                <ScalarProperty Name="faxcliente" ColumnName="faxcliente" />
+                <ScalarProperty Name="telefono2cliente" ColumnName="telefono2cliente" />
+                <ScalarProperty Name="telefono1cliente" ColumnName="telefono1cliente" />
+                <ScalarProperty Name="cod_postalcliente" ColumnName="cod_postalcliente" />
+                <ScalarProperty Name="provinciacliente" ColumnName="provinciacliente" />
+                <ScalarProperty Name="localidacliente" ColumnName="localidacliente" />
+                <ScalarProperty Name="direcioncliente" ColumnName="direcioncliente" />
+                <ScalarProperty Name="cifcliente" ColumnName="cifcliente" />
+                <ScalarProperty Name="nombrecliente" ColumnName="nombrecliente" />
+                <ScalarProperty Name="codcliente" ColumnName="codcliente" />
+                <ScalarProperty Name="numerador" ColumnName="numerador" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

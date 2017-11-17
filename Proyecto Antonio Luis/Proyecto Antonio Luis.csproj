@@ -63,11 +63,11 @@
     <Compile Include="Formularios\BORRAR.Designer.cs">
       <DependentUpon>BORRAR.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Clientes.cs">
+    <Compile Include="Formularios\Cliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Clientes.Designer.cs">
-      <DependentUpon>Clientes.cs</DependentUpon>
+    <Compile Include="Formularios\Cliente.Designer.cs">
+      <DependentUpon>Cliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Contaplus.cs">
       <SubType>Form</SubType>
@@ -134,8 +134,8 @@
     <EmbeddedResource Include="Formularios\BORRAR.resx">
       <DependentUpon>BORRAR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Clientes.resx">
-      <DependentUpon>Clientes.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Cliente.resx">
+      <DependentUpon>Cliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Contaplus.resx">
       <DependentUpon>Contaplus.cs</DependentUpon>

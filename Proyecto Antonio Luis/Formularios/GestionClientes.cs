@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BaseDatos;
 
 namespace Proyecto_Antonio_Luis.Formularios
 {
     public partial class GestionClientes : Form
     {
+
+        AdministracionAntonioEntities bd;
+
         public GestionClientes()
         {
             InitializeComponent();
+            bd = new AdministracionAntonioEntities();
         }
 
 
@@ -33,9 +38,12 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void sumar_Click(object sender, EventArgs e)
         {
-            // Abre Propios
+          
+            // Inicializa la variable global llamadas
+            Globales.llamadas = "1";
 
-            Clientes form = new Clientes();
+            // Abre Clientes
+              Cliente form = new Cliente();
             form.Show();
         }
 
@@ -104,6 +112,78 @@ namespace Proyecto_Antonio_Luis.Formularios
         private void salir_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void GestionClientes_Load(object sender, EventArgs e)
+        {
+            //CARGA LOS REGISTROS EN EL GRIP AL INICIAR EL FORM
+
+            dgvclientes.DataSource = bd.Clientes.ToList();
+            dgvclientes.Refresh();
+
+            dgvclientes.DataSource = "";
+            dgvclientes.DataSource = bd.Clientes.ToList();
+            dgvclientes.Refresh();
+
+        }
+
+        private void eliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Confirme La Eliminación del Registro.", "Eliminar Registro",
+                    MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    // creamos una variable que va aguardar los datos de la fila seleccionada en el dbgrid
+
+                    int valor1 = Convert.ToInt16(dgvclientes.CurrentRow.Cells[0].Value);
+
+                    //*** borrar
+                    //busca en la tabla la fila con el registro suminstrado
+                    //y si lo encuentra borra la linea de la base de datos
+
+                    var borrar = bd.Clientes.SingleOrDefault(codcliente => codcliente.numerador == valor1);
+                    if (borrar != null)
+                    {
+                        bd.Clientes.Remove(borrar);
+                    }
+                    //guardamos los cambios
+                    bd.SaveChanges();
+
+                    // Refrescamos el dbgrid
+                    dgvclientes.DataSource = bd.Clientes.ToList();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No ha sido posible eliminar los datos", "Error 103", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void modificar_Click(object sender, EventArgs e)
+        {
+            // Inicializa la variable global llamadas
+            Globales.llamadas = "2";
+            try
+            {
+               // creamos una variable que va aguardar los datos de la fila seleccionada en el dbgrid
+               Globales.modificar = Convert.ToInt16(dgvclientes.CurrentRow.Cells[0].Value);
+                // Abre Ususarios
+                Cliente form = new Cliente();
+                form.Show();
+
+            }
+            catch (Exception)
+            { 
+                MessageBox.Show("Debe Seleccionar un registro.", "Error 303", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+                
+        }
+
+        private void dgvclientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
 
