@@ -100,7 +100,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textFechaAlta = new System.Windows.Forms.MaskedTextBox();
-            this.textFechaBaja = new System.Windows.Forms.MaskedTextBox();
+            this.checpormail = new System.Windows.Forms.CheckBox();
+            this.textPreciotrabajador = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label27
@@ -145,7 +146,7 @@
             this.textMiCif.Location = new System.Drawing.Point(646, 163);
             this.textMiCif.Name = "textMiCif";
             this.textMiCif.Size = new System.Drawing.Size(163, 23);
-            this.textMiCif.TabIndex = 129;
+            this.textMiCif.TabIndex = 1;
             this.textMiCif.Text = "B-21.144.896";
             // 
             // textMiNombre
@@ -155,7 +156,7 @@
             this.textMiNombre.Location = new System.Drawing.Point(156, 163);
             this.textMiNombre.Name = "textMiNombre";
             this.textMiNombre.Size = new System.Drawing.Size(476, 23);
-            this.textMiNombre.TabIndex = 128;
+            this.textMiNombre.TabIndex = 0;
             this.textMiNombre.Text = "PESCADOS REBOLLO DE PAN DURO S.L.";
             // 
             // label17
@@ -188,7 +189,7 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(620, 302);
+            this.label5.Location = new System.Drawing.Point(473, 302);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 15);
             this.label5.TabIndex = 149;
@@ -200,7 +201,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label4.Location = new System.Drawing.Point(468, 302);
+            this.label4.Location = new System.Drawing.Point(468, 450);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 15);
             this.label4.TabIndex = 148;
@@ -249,28 +250,28 @@
             this.textMiTLF2.Location = new System.Drawing.Point(587, 266);
             this.textMiTLF2.Name = "textMiTLF2";
             this.textMiTLF2.Size = new System.Drawing.Size(117, 23);
-            this.textMiTLF2.TabIndex = 141;
-            this.textMiTLF2.Text = "959-311 12 12 12 ";
+            this.textMiTLF2.TabIndex = 7;
+            this.textMiTLF2.Text = "22222";
             this.textMiTLF2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textMiTLF2_KeyPress);
             // 
             // textMiPersonaContacto
             // 
             this.textMiPersonaContacto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiPersonaContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMiPersonaContacto.Location = new System.Drawing.Point(461, 321);
+            this.textMiPersonaContacto.Location = new System.Drawing.Point(461, 469);
             this.textMiPersonaContacto.Name = "textMiPersonaContacto";
-            this.textMiPersonaContacto.Size = new System.Drawing.Size(144, 23);
-            this.textMiPersonaContacto.TabIndex = 143;
+            this.textMiPersonaContacto.Size = new System.Drawing.Size(239, 23);
+            this.textMiPersonaContacto.TabIndex = 9;
             this.textMiPersonaContacto.Text = "ANTONIO";
             // 
             // textMiMail
             // 
             this.textMiMail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMiMail.Location = new System.Drawing.Point(608, 321);
+            this.textMiMail.Location = new System.Drawing.Point(461, 321);
             this.textMiMail.Name = "textMiMail";
-            this.textMiMail.Size = new System.Drawing.Size(222, 23);
-            this.textMiMail.TabIndex = 144;
+            this.textMiMail.Size = new System.Drawing.Size(243, 23);
+            this.textMiMail.TabIndex = 10;
             this.textMiMail.Text = "PESCADOREBOLLO@GMAIL.COM";
             // 
             // textMiFax
@@ -280,8 +281,8 @@
             this.textMiFax.Location = new System.Drawing.Point(713, 266);
             this.textMiFax.Name = "textMiFax";
             this.textMiFax.Size = new System.Drawing.Size(117, 23);
-            this.textMiFax.TabIndex = 142;
-            this.textMiFax.Text = "959-311 12 12 12 ";
+            this.textMiFax.TabIndex = 8;
+            this.textMiFax.Text = "333333";
             this.textMiFax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textMiFax_KeyPress);
             // 
             // textMiTLF1
@@ -291,8 +292,8 @@
             this.textMiTLF1.Location = new System.Drawing.Point(461, 266);
             this.textMiTLF1.Name = "textMiTLF1";
             this.textMiTLF1.Size = new System.Drawing.Size(117, 23);
-            this.textMiTLF1.TabIndex = 140;
-            this.textMiTLF1.Text = "959-311 12 12 12 ";
+            this.textMiTLF1.TabIndex = 6;
+            this.textMiTLF1.Text = "11111";
             this.textMiTLF1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textMiTLF1_KeyPress);
             // 
             // textMiCP
@@ -302,7 +303,7 @@
             this.textMiCP.Location = new System.Drawing.Point(347, 321);
             this.textMiCP.Name = "textMiCP";
             this.textMiCP.Size = new System.Drawing.Size(84, 23);
-            this.textMiCP.TabIndex = 137;
+            this.textMiCP.TabIndex = 5;
             this.textMiCP.Text = "211560";
             // 
             // textMiProvincia
@@ -312,7 +313,7 @@
             this.textMiProvincia.Location = new System.Drawing.Point(201, 321);
             this.textMiProvincia.Name = "textMiProvincia";
             this.textMiProvincia.Size = new System.Drawing.Size(140, 23);
-            this.textMiProvincia.TabIndex = 135;
+            this.textMiProvincia.TabIndex = 4;
             this.textMiProvincia.Text = "LA ALCARRIA ";
             // 
             // textMiPoblacion
@@ -322,7 +323,7 @@
             this.textMiPoblacion.Location = new System.Drawing.Point(50, 321);
             this.textMiPoblacion.Name = "textMiPoblacion";
             this.textMiPoblacion.Size = new System.Drawing.Size(145, 23);
-            this.textMiPoblacion.TabIndex = 133;
+            this.textMiPoblacion.TabIndex = 3;
             this.textMiPoblacion.Text = "PUNTA UMBRIA";
             // 
             // textMiDiereccion
@@ -332,7 +333,7 @@
             this.textMiDiereccion.Location = new System.Drawing.Point(50, 266);
             this.textMiDiereccion.Name = "textMiDiereccion";
             this.textMiDiereccion.Size = new System.Drawing.Size(381, 23);
-            this.textMiDiereccion.TabIndex = 132;
+            this.textMiDiereccion.TabIndex = 2;
             this.textMiDiereccion.Text = "C/ DEL PORRON  5, POLIGONO  EL RASTRO NAVE 6 Y 9";
             // 
             // label24
@@ -391,7 +392,7 @@
             this.checActivo.Location = new System.Drawing.Point(61, 417);
             this.checActivo.Name = "checActivo";
             this.checActivo.Size = new System.Drawing.Size(69, 21);
-            this.checActivo.TabIndex = 150;
+            this.checActivo.TabIndex = 11;
             this.checActivo.Text = "Activo.";
             this.checActivo.UseVisualStyleBackColor = false;
             // 
@@ -403,7 +404,7 @@
             this.checDomiciliacion.Location = new System.Drawing.Point(129, 418);
             this.checDomiciliacion.Name = "checDomiciliacion";
             this.checDomiciliacion.Size = new System.Drawing.Size(131, 21);
-            this.checDomiciliacion.TabIndex = 151;
+            this.checDomiciliacion.TabIndex = 12;
             this.checDomiciliacion.Text = "Domc. Bancaria.";
             this.checDomiciliacion.UseVisualStyleBackColor = false;
             // 
@@ -415,7 +416,7 @@
             this.checRE.Location = new System.Drawing.Point(266, 417);
             this.checRE.Name = "checRE";
             this.checRE.Size = new System.Drawing.Size(54, 21);
-            this.checRE.TabIndex = 152;
+            this.checRE.TabIndex = 13;
             this.checRE.Text = "R.E.";
             this.checRE.UseVisualStyleBackColor = false;
             // 
@@ -427,7 +428,7 @@
             this.checContabilizar.Location = new System.Drawing.Point(326, 417);
             this.checContabilizar.Name = "checContabilizar";
             this.checContabilizar.Size = new System.Drawing.Size(105, 21);
-            this.checContabilizar.TabIndex = 153;
+            this.checContabilizar.TabIndex = 14;
             this.checContabilizar.Text = "Contabilizar.";
             this.checContabilizar.UseVisualStyleBackColor = false;
             // 
@@ -438,7 +439,7 @@
             this.comboGrupo.Location = new System.Drawing.Point(461, 418);
             this.comboGrupo.Name = "comboGrupo";
             this.comboGrupo.Size = new System.Drawing.Size(102, 24);
-            this.comboGrupo.TabIndex = 154;
+            this.comboGrupo.TabIndex = 21;
             this.comboGrupo.Text = "grupo";
             // 
             // chec131
@@ -449,7 +450,7 @@
             this.chec131.Location = new System.Drawing.Point(384, 583);
             this.chec131.Name = "chec131";
             this.chec131.Size = new System.Drawing.Size(51, 21);
-            this.chec131.TabIndex = 155;
+            this.chec131.TabIndex = 31;
             this.chec131.Text = "131";
             this.chec131.UseVisualStyleBackColor = false;
             // 
@@ -461,7 +462,7 @@
             this.chec303.Location = new System.Drawing.Point(384, 615);
             this.chec303.Name = "chec303";
             this.chec303.Size = new System.Drawing.Size(51, 21);
-            this.chec303.TabIndex = 156;
+            this.chec303.TabIndex = 37;
             this.chec303.Text = "303";
             this.chec303.UseVisualStyleBackColor = false;
             // 
@@ -473,7 +474,7 @@
             this.checIntrastat.Location = new System.Drawing.Point(384, 647);
             this.checIntrastat.Name = "checIntrastat";
             this.checIntrastat.Size = new System.Drawing.Size(78, 21);
-            this.checIntrastat.TabIndex = 157;
+            this.checIntrastat.TabIndex = 43;
             this.checIntrastat.Text = "Intrastat";
             this.checIntrastat.UseVisualStyleBackColor = false;
             // 
@@ -485,7 +486,7 @@
             this.chec752.Location = new System.Drawing.Point(319, 647);
             this.chec752.Name = "chec752";
             this.chec752.Size = new System.Drawing.Size(51, 21);
-            this.chec752.TabIndex = 158;
+            this.chec752.TabIndex = 42;
             this.chec752.Text = "752";
             this.chec752.UseVisualStyleBackColor = false;
             // 
@@ -497,7 +498,7 @@
             this.chec202.Location = new System.Drawing.Point(319, 615);
             this.chec202.Name = "chec202";
             this.chec202.Size = new System.Drawing.Size(51, 21);
-            this.chec202.TabIndex = 159;
+            this.chec202.TabIndex = 36;
             this.chec202.Text = "202";
             this.chec202.UseVisualStyleBackColor = false;
             // 
@@ -509,7 +510,7 @@
             this.chec130.Location = new System.Drawing.Point(319, 583);
             this.chec130.Name = "chec130";
             this.chec130.Size = new System.Drawing.Size(51, 21);
-            this.chec130.TabIndex = 160;
+            this.chec130.TabIndex = 30;
             this.chec130.Text = "130";
             this.chec130.UseVisualStyleBackColor = false;
             // 
@@ -521,7 +522,7 @@
             this.chec751.Location = new System.Drawing.Point(254, 647);
             this.chec751.Name = "chec751";
             this.chec751.Size = new System.Drawing.Size(51, 21);
-            this.chec751.TabIndex = 161;
+            this.chec751.TabIndex = 41;
             this.chec751.Text = "751";
             this.chec751.UseVisualStyleBackColor = false;
             // 
@@ -533,7 +534,7 @@
             this.chec200.Location = new System.Drawing.Point(254, 615);
             this.chec200.Name = "chec200";
             this.chec200.Size = new System.Drawing.Size(51, 21);
-            this.chec200.TabIndex = 162;
+            this.chec200.TabIndex = 35;
             this.chec200.Text = "200";
             this.chec200.UseVisualStyleBackColor = false;
             // 
@@ -545,7 +546,7 @@
             this.chec123.Location = new System.Drawing.Point(254, 583);
             this.chec123.Name = "chec123";
             this.chec123.Size = new System.Drawing.Size(51, 21);
-            this.chec123.TabIndex = 163;
+            this.chec123.TabIndex = 29;
             this.chec123.Text = "123";
             this.chec123.UseVisualStyleBackColor = false;
             // 
@@ -557,7 +558,7 @@
             this.chec390.Location = new System.Drawing.Point(189, 647);
             this.chec390.Name = "chec390";
             this.chec390.Size = new System.Drawing.Size(51, 21);
-            this.chec390.TabIndex = 164;
+            this.chec390.TabIndex = 40;
             this.chec390.Text = "390";
             this.chec390.UseVisualStyleBackColor = false;
             // 
@@ -569,7 +570,7 @@
             this.chec115.Location = new System.Drawing.Point(189, 583);
             this.chec115.Name = "chec115";
             this.chec115.Size = new System.Drawing.Size(51, 21);
-            this.chec115.TabIndex = 165;
+            this.chec115.TabIndex = 28;
             this.chec115.Text = "115";
             this.chec115.UseVisualStyleBackColor = false;
             // 
@@ -581,7 +582,7 @@
             this.chec193.Location = new System.Drawing.Point(189, 615);
             this.chec193.Name = "chec193";
             this.chec193.Size = new System.Drawing.Size(51, 21);
-            this.chec193.TabIndex = 166;
+            this.chec193.TabIndex = 34;
             this.chec193.Text = "193";
             this.chec193.UseVisualStyleBackColor = false;
             // 
@@ -593,7 +594,7 @@
             this.chec349.Location = new System.Drawing.Point(124, 647);
             this.chec349.Name = "chec349";
             this.chec349.Size = new System.Drawing.Size(51, 21);
-            this.chec349.TabIndex = 167;
+            this.chec349.TabIndex = 39;
             this.chec349.Text = "349";
             this.chec349.UseVisualStyleBackColor = false;
             // 
@@ -605,7 +606,7 @@
             this.chec190.Location = new System.Drawing.Point(124, 615);
             this.chec190.Name = "chec190";
             this.chec190.Size = new System.Drawing.Size(51, 21);
-            this.chec190.TabIndex = 168;
+            this.chec190.TabIndex = 33;
             this.chec190.Text = "190";
             this.chec190.UseVisualStyleBackColor = false;
             // 
@@ -617,7 +618,7 @@
             this.chec111.Location = new System.Drawing.Point(124, 583);
             this.chec111.Name = "chec111";
             this.chec111.Size = new System.Drawing.Size(51, 21);
-            this.chec111.TabIndex = 169;
+            this.chec111.TabIndex = 27;
             this.chec111.Text = "111";
             this.chec111.UseVisualStyleBackColor = false;
             // 
@@ -629,7 +630,7 @@
             this.chec309.Location = new System.Drawing.Point(59, 647);
             this.chec309.Name = "chec309";
             this.chec309.Size = new System.Drawing.Size(51, 21);
-            this.chec309.TabIndex = 170;
+            this.chec309.TabIndex = 38;
             this.chec309.Text = "309";
             this.chec309.UseVisualStyleBackColor = false;
             // 
@@ -641,7 +642,7 @@
             this.chec180.Location = new System.Drawing.Point(59, 615);
             this.chec180.Name = "chec180";
             this.chec180.Size = new System.Drawing.Size(51, 21);
-            this.chec180.TabIndex = 171;
+            this.chec180.TabIndex = 32;
             this.chec180.Text = "180";
             this.chec180.UseVisualStyleBackColor = false;
             // 
@@ -653,7 +654,7 @@
             this.chec100.Location = new System.Drawing.Point(59, 583);
             this.chec100.Name = "chec100";
             this.chec100.Size = new System.Drawing.Size(51, 21);
-            this.chec100.TabIndex = 172;
+            this.chec100.TabIndex = 26;
             this.chec100.Text = "100";
             this.chec100.UseVisualStyleBackColor = false;
             // 
@@ -687,7 +688,7 @@
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label10.Location = new System.Drawing.Point(656, 398);
+            this.label10.Location = new System.Drawing.Point(756, 398);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 15);
             this.label10.TabIndex = 177;
@@ -699,21 +700,21 @@
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label11.Location = new System.Drawing.Point(751, 399);
+            this.label11.Location = new System.Drawing.Point(658, 398);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(79, 15);
+            this.label11.Size = new System.Drawing.Size(80, 15);
             this.label11.TabIndex = 178;
-            this.label11.Text = "Fecha Baja";
+            this.label11.Text = "Imp.Emple.";
             // 
             // textTrabajadores
             // 
             this.textTrabajadores.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textTrabajadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textTrabajadores.Location = new System.Drawing.Point(569, 417);
+            this.textTrabajadores.Location = new System.Drawing.Point(569, 418);
             this.textTrabajadores.Name = "textTrabajadores";
             this.textTrabajadores.Size = new System.Drawing.Size(76, 23);
-            this.textTrabajadores.TabIndex = 179;
-            this.textTrabajadores.Text = "ANTONIO";
+            this.textTrabajadores.TabIndex = 22;
+            this.textTrabajadores.Text = "10";
             this.textTrabajadores.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTrabajadores_KeyPress);
             // 
             // label12
@@ -734,7 +735,7 @@
             this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label13.Location = new System.Drawing.Point(597, 477);
+            this.label13.Location = new System.Drawing.Point(720, 451);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(103, 15);
             this.label13.TabIndex = 182;
@@ -743,12 +744,13 @@
             // textTarifa
             // 
             this.textTarifa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textTarifa.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textTarifa.Location = new System.Drawing.Point(712, 461);
+            this.textTarifa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textTarifa.Location = new System.Drawing.Point(712, 469);
             this.textTarifa.Name = "textTarifa";
-            this.textTarifa.Size = new System.Drawing.Size(118, 38);
-            this.textTarifa.TabIndex = 181;
+            this.textTarifa.Size = new System.Drawing.Size(118, 23);
+            this.textTarifa.TabIndex = 25;
             this.textTarifa.Text = "150,00";
+            this.textTarifa.TextChanged += new System.EventHandler(this.textTarifa_TextChanged);
             this.textTarifa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTarifa_KeyPress);
             // 
             // label14
@@ -773,7 +775,7 @@
             this.textCCC1.MaxLength = 4;
             this.textCCC1.Name = "textCCC1";
             this.textCCC1.Size = new System.Drawing.Size(50, 22);
-            this.textCCC1.TabIndex = 183;
+            this.textCCC1.TabIndex = 15;
             this.textCCC1.Text = "ES99";
             // 
             // textCCC2
@@ -785,8 +787,8 @@
             this.textCCC2.MaxLength = 4;
             this.textCCC2.Name = "textCCC2";
             this.textCCC2.Size = new System.Drawing.Size(50, 22);
-            this.textCCC2.TabIndex = 184;
-            this.textCCC2.Text = "ES99";
+            this.textCCC2.TabIndex = 16;
+            this.textCCC2.Text = "1111";
             this.textCCC2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCCC2_KeyPress);
             // 
             // textCCC3
@@ -798,8 +800,8 @@
             this.textCCC3.MaxLength = 4;
             this.textCCC3.Name = "textCCC3";
             this.textCCC3.Size = new System.Drawing.Size(50, 22);
-            this.textCCC3.TabIndex = 185;
-            this.textCCC3.Text = "ES99";
+            this.textCCC3.TabIndex = 17;
+            this.textCCC3.Text = "2222";
             this.textCCC3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCCC3_KeyPress);
             // 
             // textCCC4
@@ -811,8 +813,8 @@
             this.textCCC4.MaxLength = 4;
             this.textCCC4.Name = "textCCC4";
             this.textCCC4.Size = new System.Drawing.Size(50, 22);
-            this.textCCC4.TabIndex = 186;
-            this.textCCC4.Text = "ES99";
+            this.textCCC4.TabIndex = 18;
+            this.textCCC4.Text = "3333";
             this.textCCC4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCCC4_KeyPress);
             // 
             // textCCC5
@@ -824,8 +826,8 @@
             this.textCCC5.MaxLength = 4;
             this.textCCC5.Name = "textCCC5";
             this.textCCC5.Size = new System.Drawing.Size(50, 22);
-            this.textCCC5.TabIndex = 187;
-            this.textCCC5.Text = "ES99";
+            this.textCCC5.TabIndex = 19;
+            this.textCCC5.Text = "4444";
             this.textCCC5.TextChanged += new System.EventHandler(this.textCCC5_TextChanged);
             this.textCCC5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCCC5_KeyPress);
             // 
@@ -838,8 +840,8 @@
             this.textCCC6.MaxLength = 4;
             this.textCCC6.Name = "textCCC6";
             this.textCCC6.Size = new System.Drawing.Size(50, 22);
-            this.textCCC6.TabIndex = 188;
-            this.textCCC6.Text = "ES99";
+            this.textCCC6.TabIndex = 20;
+            this.textCCC6.Text = "5555";
             this.textCCC6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCCC6_KeyPress);
             // 
             // contextMenuStrip1
@@ -852,7 +854,7 @@
             this.textObserva.Location = new System.Drawing.Point(498, 560);
             this.textObserva.Name = "textObserva";
             this.textObserva.Size = new System.Drawing.Size(332, 121);
-            this.textObserva.TabIndex = 192;
+            this.textObserva.TabIndex = 44;
             this.textObserva.Text = "";
             // 
             // label16
@@ -888,7 +890,7 @@
             this.button1.Location = new System.Drawing.Point(218, 746);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(208, 60);
-            this.button1.TabIndex = 195;
+            this.button1.TabIndex = 45;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -901,29 +903,42 @@
             this.button2.Location = new System.Drawing.Point(492, 746);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(208, 60);
-            this.button2.TabIndex = 196;
+            this.button2.TabIndex = 46;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textFechaAlta
             // 
             this.textFechaAlta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textFechaAlta.Location = new System.Drawing.Point(652, 416);
+            this.textFechaAlta.Location = new System.Drawing.Point(750, 418);
             this.textFechaAlta.Mask = "00/00/0000";
             this.textFechaAlta.Name = "textFechaAlta";
             this.textFechaAlta.Size = new System.Drawing.Size(80, 23);
-            this.textFechaAlta.TabIndex = 198;
+            this.textFechaAlta.TabIndex = 23;
+            this.textFechaAlta.Text = "12122007";
             this.textFechaAlta.ValidatingType = typeof(System.DateTime);
             // 
-            // textFechaBaja
+            // checpormail
             // 
-            this.textFechaBaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textFechaBaja.Location = new System.Drawing.Point(750, 416);
-            this.textFechaBaja.Mask = "00/00/0000";
-            this.textFechaBaja.Name = "textFechaBaja";
-            this.textFechaBaja.Size = new System.Drawing.Size(80, 23);
-            this.textFechaBaja.TabIndex = 199;
-            this.textFechaBaja.ValidatingType = typeof(System.DateTime);
+            this.checpormail.AutoSize = true;
+            this.checpormail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.checpormail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checpormail.Location = new System.Drawing.Point(709, 323);
+            this.checpormail.Name = "checpormail";
+            this.checpormail.Size = new System.Drawing.Size(121, 21);
+            this.checpormail.TabIndex = 195;
+            this.checpormail.Text = "Enviar por Mail";
+            this.checpormail.UseVisualStyleBackColor = false;
+            // 
+            // textPreciotrabajador
+            // 
+            this.textPreciotrabajador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textPreciotrabajador.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPreciotrabajador.Location = new System.Drawing.Point(661, 419);
+            this.textPreciotrabajador.Name = "textPreciotrabajador";
+            this.textPreciotrabajador.Size = new System.Drawing.Size(76, 23);
+            this.textPreciotrabajador.TabIndex = 196;
+            this.textPreciotrabajador.Text = "11";
             // 
             // Cliente
             // 
@@ -932,7 +947,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(879, 867);
-            this.Controls.Add(this.textFechaBaja);
+            this.Controls.Add(this.textPreciotrabajador);
+            this.Controls.Add(this.checpormail);
             this.Controls.Add(this.textFechaAlta);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
@@ -1006,6 +1022,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.Clientes_Load);
+            this.MouseEnter += new System.EventHandler(this.Cliente_MouseEnter);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1083,6 +1100,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.MaskedTextBox textFechaAlta;
-        private System.Windows.Forms.MaskedTextBox textFechaBaja;
+        private System.Windows.Forms.CheckBox checpormail;
+        private System.Windows.Forms.TextBox textPreciotrabajador;
     }
 }

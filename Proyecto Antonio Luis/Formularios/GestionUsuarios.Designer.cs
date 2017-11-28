@@ -42,7 +42,6 @@
             this.eliminar = new System.Windows.Forms.Button();
             this.sumar = new System.Windows.Forms.Button();
             this.dgvUsuario = new System.Windows.Forms.DataGridView();
-            this.ususariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.codDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +70,7 @@
             this.agendaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.avisosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gavisosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ususariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ususariosBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -257,10 +257,6 @@
             this.dgvUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuario.Size = new System.Drawing.Size(616, 378);
             this.dgvUsuario.TabIndex = 39;
-            // 
-            // ususariosBindingSource
-            // 
-            this.ususariosBindingSource.DataSource = typeof(BaseDatos.Ususarios);
             // 
             // codDataGridViewTextBoxColumn
             // 
@@ -461,6 +457,10 @@
             this.gavisosDataGridViewTextBoxColumn.Name = "gavisosDataGridViewTextBoxColumn";
             this.gavisosDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // ususariosBindingSource
+            // 
+            this.ususariosBindingSource.DataSource = typeof(BaseDatos.Ususarios);
+            // 
             // GestionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -483,6 +483,7 @@
             this.Name = "GestionUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionUsuarios";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.GestionUsuarios_Activated);
             this.Load += new System.EventHandler(this.GestionUsuarios_Load);
             this.Enter += new System.EventHandler(this.GestionUsuarios_Enter);

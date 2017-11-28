@@ -45,6 +45,10 @@ namespace Proyecto_Antonio_Luis.Formularios
             // Abre Clientes
               Cliente form = new Cliente();
             form.Show();
+
+            dgvclientes.DataSource = "";
+            dgvclientes.DataSource = bd.Clientes.ToList();
+            dgvclientes.Refresh();
         }
 
 
@@ -118,9 +122,6 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
             //CARGA LOS REGISTROS EN EL GRIP AL INICIAR EL FORM
 
-            dgvclientes.DataSource = bd.Clientes.ToList();
-            dgvclientes.Refresh();
-
             dgvclientes.DataSource = "";
             dgvclientes.DataSource = bd.Clientes.ToList();
             dgvclientes.Refresh();
@@ -172,6 +173,10 @@ namespace Proyecto_Antonio_Luis.Formularios
                 Cliente form = new Cliente();
                 form.Show();
 
+
+                dgvclientes.DataSource = "";
+                dgvclientes.DataSource = bd.Clientes.ToList();
+                dgvclientes.Refresh();
             }
             catch (Exception)
             { 
@@ -182,6 +187,27 @@ namespace Proyecto_Antonio_Luis.Formularios
         }
 
         private void dgvclientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void GestionClientes_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GestionClientes_Enter(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void GestionClientes_Activated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

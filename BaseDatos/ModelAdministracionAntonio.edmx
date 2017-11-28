@@ -22,11 +22,12 @@
           <Property Name="faxcliente" Type="numeric" Precision="18" Scale="0" />
           <Property Name="contactocliente" Type="nchar" MaxLength="50" />
           <Property Name="mailcliente" Type="nchar" MaxLength="50" />
+          <Property Name="pormailcliente" Type="bit" />
           <Property Name="activocliente" Type="bit" />
           <Property Name="domiciliadocliente" Type="bit" />
           <Property Name="recargo" Type="bit" />
           <Property Name="contabilizarcliente" Type="bit" />
-          <Property Name="iban1cliente" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="iban1cliente" Type="nchar" MaxLength="4" />
           <Property Name="iban2cliente" Type="numeric" Precision="4" Scale="0" />
           <Property Name="iban3cliente" Type="numeric" Precision="4" Scale="0" />
           <Property Name="iban4cliente" Type="numeric" Precision="4" Scale="0" />
@@ -59,6 +60,7 @@
           <Property Name="comentariocliente" Type="nchar" MaxLength="500" />
           <Property Name="altacliente" Type="bit" />
           <Property Name="bajacliente" Type="bit" />
+          <Property Name="precioempleadocliente" Type="numeric" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="Cuentas">
           <Key>
@@ -267,11 +269,12 @@
           <Property Name="faxcliente" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="contactocliente" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="mailcliente" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="pormailcliente" Type="Boolean" />
           <Property Name="activocliente" Type="Boolean" />
           <Property Name="domiciliadocliente" Type="Boolean" />
           <Property Name="recargo" Type="Boolean" />
           <Property Name="contabilizarcliente" Type="Boolean" />
-          <Property Name="iban1cliente" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="iban1cliente" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
           <Property Name="iban2cliente" Type="Decimal" Precision="4" Scale="0" />
           <Property Name="iban3cliente" Type="Decimal" Precision="4" Scale="0" />
           <Property Name="iban4cliente" Type="Decimal" Precision="4" Scale="0" />
@@ -304,6 +307,7 @@
           <Property Name="comentariocliente" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
           <Property Name="altacliente" Type="Boolean" />
           <Property Name="bajacliente" Type="Boolean" />
+          <Property Name="precioempleadocliente" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -404,6 +408,7 @@
           <EntitySetMapping Name="Clientes">
             <EntityTypeMapping TypeName="AdministracionAntonioModel.Clientes">
               <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="precioempleadocliente" ColumnName="precioempleadocliente" />
                 <ScalarProperty Name="bajacliente" ColumnName="bajacliente" />
                 <ScalarProperty Name="altacliente" ColumnName="altacliente" />
                 <ScalarProperty Name="comentariocliente" ColumnName="comentariocliente" />
@@ -441,6 +446,7 @@
                 <ScalarProperty Name="recargo" ColumnName="recargo" />
                 <ScalarProperty Name="domiciliadocliente" ColumnName="domiciliadocliente" />
                 <ScalarProperty Name="activocliente" ColumnName="activocliente" />
+                <ScalarProperty Name="pormailcliente" ColumnName="pormailcliente" />
                 <ScalarProperty Name="mailcliente" ColumnName="mailcliente" />
                 <ScalarProperty Name="contactocliente" ColumnName="contactocliente" />
                 <ScalarProperty Name="faxcliente" ColumnName="faxcliente" />

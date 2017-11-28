@@ -24,7 +24,7 @@ namespace Proyecto_Antonio_Luis
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GestionClientes());
+            Application.Run(new Facturacion());
         }
     }
 }
@@ -35,5 +35,9 @@ namespace Proyecto_Antonio_Luis
 {
     public static string llamadas;
     public static int modificar;
+    public static DateTime fechafactura;
+    public static string mesfactura;
+    public static decimal tipoiva;
+        
 
 }

@@ -27,11 +27,12 @@ namespace BaseDatos
         public Nullable<decimal> faxcliente { get; set; }
         public string contactocliente { get; set; }
         public string mailcliente { get; set; }
+        public Nullable<bool> pormailcliente { get; set; }
         public Nullable<bool> activocliente { get; set; }
         public Nullable<bool> domiciliadocliente { get; set; }
         public Nullable<bool> recargo { get; set; }
         public Nullable<bool> contabilizarcliente { get; set; }
-        public Nullable<decimal> iban1cliente { get; set; }
+        public string iban1cliente { get; set; }
         public Nullable<decimal> iban2cliente { get; set; }
         public Nullable<decimal> iban3cliente { get; set; }
         public Nullable<decimal> iban4cliente { get; set; }
@@ -64,5 +65,6 @@ namespace BaseDatos
         public string comentariocliente { get; set; }
         public Nullable<bool> altacliente { get; set; }
         public Nullable<bool> bajacliente { get; set; }
+        public Nullable<decimal> precioempleadocliente { get; set; }
     }
 }

@@ -57,6 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\albaranesclientes.cs" />
+    <Compile Include="Clases\temporal.cs" />
     <Compile Include="Formularios\BORRAR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +131,8 @@
     <Compile Include="Formularios\Usuario.Designer.cs">
       <DependentUpon>Usuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mapeos\creaalbaran.cs" />
+    <Compile Include="Mapeos\Mapeo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\BORRAR.resx">
@@ -187,6 +191,8 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Clases.albaranesclientes.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Clases.temporal.datasource" />
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.Clientes.datasource" />
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.Contaplus.datasource" />
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.Facturacion.datasource" />
@@ -197,6 +203,7 @@
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.Propios.datasource" />
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.Rutas.datasource" />
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.Usuarios.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Mapeos.Mapeo.datasource" />
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
