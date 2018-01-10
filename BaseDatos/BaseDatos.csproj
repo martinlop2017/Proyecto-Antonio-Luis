@@ -82,6 +82,9 @@
     <Compile Include="Propios.cs">
       <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
     </Compile>
+    <Compile Include="Remesas.cs">
+      <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
+    </Compile>
     <Compile Include="Ususarios.cs">
       <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
     </Compile>

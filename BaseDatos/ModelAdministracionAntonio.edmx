@@ -156,6 +156,18 @@
           <Property Name="miiban6" Type="nchar" MaxLength="4" />
           <Property Name="milogo" Type="nchar" MaxLength="200" />
         </EntityType>
+        <EntityType Name="Remesas">
+          <Key>
+            <PropertyRef Name="remesanumerador" />
+          </Key>
+          <Property Name="remesanumerador" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="remesanumero" Type="nchar" MaxLength="100" />
+          <Property Name="remesafecha" Type="nchar" MaxLength="20" />
+          <Property Name="remesabanco" Type="nchar" MaxLength="10" />
+          <Property Name="remesatotal" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="remesaimpresa" Type="bit" />
+          <Property Name="remesacontabilizada" Type="bit" />
+        </EntityType>
         <EntityType Name="Ususarios">
           <Key>
             <PropertyRef Name="cod" />
@@ -195,6 +207,7 @@
           <EntitySet Name="Facturas" EntityType="Self.Facturas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Iva" EntityType="Self.Iva" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Propios" EntityType="Self.Propios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Remesas" EntityType="Self.Remesas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ususarios" EntityType="Self.Ususarios" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -208,6 +221,7 @@
           <EntitySet Name="Cuentas" EntityType="AdministracionAntonioModel.Cuentas" />
           <EntitySet Name="Clientes" EntityType="AdministracionAntonioModel.Clientes" />
           <EntitySet Name="Facturas" EntityType="AdministracionAntonioModel.Facturas" />
+          <EntitySet Name="Remesas" EntityType="AdministracionAntonioModel.Remesas" />
         </EntityContainer>
         <EntityType Name="Iva">
           <Key>
@@ -392,6 +406,18 @@
           <Property Name="facttotalremesa" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="factpormail" Type="Boolean" />
           <Property Name="factmail" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Remesas">
+          <Key>
+            <PropertyRef Name="remesanumerador" />
+          </Key>
+          <Property Name="remesanumerador" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="remesanumero" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="remesafecha" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="remesabanco" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="remesatotal" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="remesaimpresa" Type="Boolean" />
+          <Property Name="remesacontabilizada" Type="Boolean" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -586,6 +612,19 @@
                 <ScalarProperty Name="factremesa" ColumnName="factremesa" />
                 <ScalarProperty Name="factnumerofact" ColumnName="factnumerofact" />
                 <ScalarProperty Name="factcontador" ColumnName="factcontador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Remesas">
+            <EntityTypeMapping TypeName="AdministracionAntonioModel.Remesas">
+              <MappingFragment StoreEntitySet="Remesas">
+                <ScalarProperty Name="remesacontabilizada" ColumnName="remesacontabilizada" />
+                <ScalarProperty Name="remesaimpresa" ColumnName="remesaimpresa" />
+                <ScalarProperty Name="remesatotal" ColumnName="remesatotal" />
+                <ScalarProperty Name="remesabanco" ColumnName="remesabanco" />
+                <ScalarProperty Name="remesafecha" ColumnName="remesafecha" />
+                <ScalarProperty Name="remesanumero" ColumnName="remesanumero" />
+                <ScalarProperty Name="remesanumerador" ColumnName="remesanumerador" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

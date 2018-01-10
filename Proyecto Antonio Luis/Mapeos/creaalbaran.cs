@@ -47,9 +47,10 @@ namespace Proyecto_Antonio_Luis.Mapeos
                 albbase = (c.empleadoscliente.Value * c.precioempleadocliente.Value) + c.tarifacliente.Value,
                 albiva = (((c.empleadoscliente.Value * c.precioempleadocliente.Value) + c.tarifacliente.Value)
                            * 10) / 100,
-                albtotal = c.tarifacliente.Value + (c.empleadoscliente.Value * c.precioempleadocliente.Value) +
-                          (c.tarifacliente.Value + (c.empleadoscliente.Value * c.precioempleadocliente.Value)
-                           * 10) / 100,
+                albtotal = ((c.empleadoscliente.Value * c.precioempleadocliente.Value) + c.tarifacliente.Value) +
+                            (((c.empleadoscliente.Value * c.precioempleadocliente.Value) + c.tarifacliente.Value)*10/100),
+
+
                 albtipoiva = Globales.tipoiva,
             }).ToList();
 

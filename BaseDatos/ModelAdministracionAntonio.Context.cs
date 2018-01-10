@@ -31,5 +31,6 @@ namespace BaseDatos
         public virtual DbSet<Cuentas> Cuentas { get; set; }
         public virtual DbSet<Clientes> Clientes { get; set; }
         public virtual DbSet<Facturas> Facturas { get; set; }
+        public virtual DbSet<Remesas> Remesas { get; set; }
     }
 }

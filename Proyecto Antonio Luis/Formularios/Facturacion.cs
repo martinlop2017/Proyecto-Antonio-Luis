@@ -284,34 +284,6 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
 
 
-          //  bd.Clientes.Add(nuevocliente);
-
-            //guardamos los cambios
-        //    bd.SaveChanges();
-
-
-
-
-
-
-
-
-
-
-
-            /*
-
-            int fila = dgvTemporal.Rows.Count + 1;
-
-            textBox2.Text = fila.ToString();
-
-            dgvTemporal.Rows.Insert(fila);
-            
-         /*   dgvTemporal.
-
-
-            clienteseleccionado = DatosdataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-            */
         }
 
         private void facturar_Click(object sender, EventArgs e)
@@ -334,6 +306,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
 
             List<temporal> lista = new List<temporal>();
+
 
 
             foreach (DataGridViewRow row in dgvTemporal.Rows)
@@ -376,7 +349,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                 datosapasar.tempiban5 = Convert.ToDecimal(row.Cells[27].Value);
                 datosapasar.tempiban6 = Convert.ToDecimal(row.Cells[28].Value);
 
-
+             
 
 
                 lista.Add(datosapasar);
@@ -394,11 +367,26 @@ namespace Proyecto_Antonio_Luis.Formularios
             try
             {
                 List<Facturas> facturasAGuardar = new List<Facturas>();
+
                 
-                foreach(var temp in lista)
+
+
+                decimal totalbaseremesa = 0;
+                decimal totalivaremesa = 0;
+                decimal totaltotalremesa = 0;
+                string numeroremesa = "";
+                string fecharemesa = ""; 
+
+
+                
+
+              
+
+
+                foreach (var temp in lista)
                 {
                     Facturas myFactura = new Facturas();
-
+                   
                     myFactura.factbase1 = temp.tempbase;
                     myFactura.factnumerofact = temp.tempnumerofactura;
                     myFactura.factremesa = temp.tempremesa;
@@ -439,18 +427,35 @@ namespace Proyecto_Antonio_Luis.Formularios
                     myFactura.factparadomiciliar = temp.tempdoiciliado;
                     myFactura.factdomiciliada = false;
 
+                    totalbaseremesa = totalbaseremesa + temp.tempbase;
+                    totalivaremesa = totalivaremesa + temp.tempiva;
+                    totaltotalremesa = totaltotalremesa + temp.temptotal;
 
-    
+                    numeroremesa = temp.tempremesa;
+                    fecharemesa = temp.tempfecha;
+
                     facturasAGuardar.Add(myFactura);
+           
                 }
-
+                
+                // pasamos los datos a la tabla facturacion y remesa
                 bd.Facturas.AddRange(facturasAGuardar);
+
+
+                var pasoremesa = new Remesas();
+                pasoremesa.remesanumero = numeroremesa;
+                pasoremesa.remesafecha = fecharemesa;
+                pasoremesa.remesatotal = totaltotalremesa;
+                pasoremesa.remesaimpresa = false;
+                pasoremesa.remesacontabilizada = false;           
+                                            
+                
+                // pasamos los datos a remesa
+                bd.Remesas.Add(pasoremesa);
+
+
                 bd.SaveChanges();
 
-           
-
-
-               
 
             }
             catch(Exception exp)

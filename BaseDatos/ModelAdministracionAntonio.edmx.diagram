@@ -5,12 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="a2d73c19c05f478b992f2b389ad55236" Name="Diagram1" ZoomLevel="68">
-        <EntityTypeShape EntityType="AdministracionAntonioModel.Iva" Width="1.5" PointX="2.625" PointY="4.75" />
+        <EntityTypeShape EntityType="AdministracionAntonioModel.Iva" Width="1.5" PointX="2.625" PointY="4.5" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Propios" Width="1.5" PointX="4.375" PointY="0.5" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Ususarios" Width="1.5" PointX="6" PointY="0.5" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Cuentas" Width="1.5" PointX="2.625" PointY="0.5" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Clientes" Width="1.5" PointX="0.875" PointY="0.5" />
-        <EntityTypeShape EntityType="AdministracionAntonioModel.Facturas" Width="1.5" PointX="3.375" PointY="7.75" />
+        <EntityTypeShape EntityType="AdministracionAntonioModel.Facturas" Width="1.5" PointX="7.625" PointY="0.5" />
+        <EntityTypeShape EntityType="AdministracionAntonioModel.Remesas" Width="1.5" PointX="4.375" PointY="5.25" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
