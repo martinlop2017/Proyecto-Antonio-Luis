@@ -38,6 +38,7 @@ namespace Proyecto_Antonio_Luis
     public static DateTime fechafactura;
     public static string mesfactura;
     public static decimal tipoiva;
+    
         
 
 }

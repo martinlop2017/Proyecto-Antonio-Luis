@@ -40,7 +40,7 @@ namespace Proyecto_Antonio_Luis.Mapeos
                 albtarifa = c.tarifacliente.Value,
                 albfecha = Globales.fechafactura.ToString("dd/MM/yyyy"),
                 albmes = Globales.mesfactura,
-                albconcepto1 = "Honorários Correspondiente al mes de " + Globales.fechafactura.ToString("mm"),
+                albconcepto1 = "Honorários Correspondiente al mes de " + Globales.mesfactura.ToString(),
                 albconcepto2 = null,
                 albtarifa2 = 0,
                 alblaboral = c.empleadoscliente.Value * c.precioempleadocliente.Value,

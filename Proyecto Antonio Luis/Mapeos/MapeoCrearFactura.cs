@@ -9,19 +9,26 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Antonio_Luis.Mapeos
 {
-    public class Mapeo
-    {
+    public class MapeoCrearFactura
+    {/*
 
-
-        public static List<temporal> MapeoClienteDB_A_Temporal(List<Clientes>pasoclientes)
+        public static List<temporal> MapeoPantalla_a_TablaFacturacion(List<Facturacion>pasofactura)
         {
             //hace el mapeo
 
-            
-
-            return pasoclientes.Select(c => new temporal()
+ 
+            return pasofactura.Select(c => new temporal()
             {
-                tempcod = c.codcliente.Value,
+                //c.factcontador
+                //c.factnumerofact = 
+                c.factremesa = temporal.datosa
+
+
+
+
+
+
+                //tempcod = c.codcliente.Value,
                 tempnombre = c.nombrecliente,
                 tempcif = c.cifcliente,
                 tempdireccion = c.direcioncliente,
@@ -49,8 +56,9 @@ namespace Proyecto_Antonio_Luis.Mapeos
             }).ToList();
 
             //return listaTemporales;
+            
         }
-
+*/
     }
 
 }

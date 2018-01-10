@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Impuestos));
             this.buttonAceptar = new System.Windows.Forms.Button();
             this.dgvIva = new System.Windows.Forms.DataGridView();
+            this.ivaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,14 +51,9 @@
             this.boxiva = new System.Windows.Forms.TextBox();
             this.boxconcepto = new System.Windows.Forms.TextBox();
             this.eliminar = new System.Windows.Forms.Button();
-            this.ivaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.numeradorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ivaconceptoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ivaporcientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ivarecargoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIva)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonAceptar
@@ -66,7 +62,7 @@
             this.buttonAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonAceptar.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.buttonAceptar.FlatAppearance.BorderSize = 0;
-            this.buttonAceptar.Location = new System.Drawing.Point(20, 192);
+            this.buttonAceptar.Location = new System.Drawing.Point(19, 192);
             this.buttonAceptar.Name = "buttonAceptar";
             this.buttonAceptar.Size = new System.Drawing.Size(180, 60);
             this.buttonAceptar.TabIndex = 114;
@@ -83,11 +79,6 @@
             this.dgvIva.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvIva.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvIva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvIva.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.numeradorDataGridViewTextBoxColumn,
-            this.ivaconceptoDataGridViewTextBoxColumn,
-            this.ivaporcientoDataGridViewTextBoxColumn,
-            this.ivarecargoDataGridViewTextBoxColumn});
             this.dgvIva.DataSource = this.ivaBindingSource;
             this.dgvIva.Location = new System.Drawing.Point(38, 212);
             this.dgvIva.MultiSelect = false;
@@ -301,48 +292,6 @@
             this.eliminar.UseVisualStyleBackColor = false;
             this.eliminar.Click += new System.EventHandler(this.eliminar_Click_1);
             // 
-            // ivaBindingSource
-            // 
-  //          this.ivaBindingSource.DataSource = typeof(BaseDatos.Iva);
-            // 
-            // numeradorDataGridViewTextBoxColumn
-            // 
-            this.numeradorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.numeradorDataGridViewTextBoxColumn.DataPropertyName = "numerador";
-            this.numeradorDataGridViewTextBoxColumn.FillWeight = 55.10756F;
-            this.numeradorDataGridViewTextBoxColumn.HeaderText = "Id.";
-            this.numeradorDataGridViewTextBoxColumn.Name = "numeradorDataGridViewTextBoxColumn";
-            this.numeradorDataGridViewTextBoxColumn.Width = 37;
-            // 
-            // ivaconceptoDataGridViewTextBoxColumn
-            // 
-            this.ivaconceptoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ivaconceptoDataGridViewTextBoxColumn.DataPropertyName = "ivaconcepto";
-            this.ivaconceptoDataGridViewTextBoxColumn.FillWeight = 145.8943F;
-            this.ivaconceptoDataGridViewTextBoxColumn.HeaderText = "Concepto";
-            this.ivaconceptoDataGridViewTextBoxColumn.Name = "ivaconceptoDataGridViewTextBoxColumn";
-            this.ivaconceptoDataGridViewTextBoxColumn.Width = 190;
-            // 
-            // ivaporcientoDataGridViewTextBoxColumn
-            // 
-            this.ivaporcientoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ivaporcientoDataGridViewTextBoxColumn.DataPropertyName = "ivaporciento";
-            this.ivaporcientoDataGridViewTextBoxColumn.FillWeight = 66.73797F;
-            this.ivaporcientoDataGridViewTextBoxColumn.HeaderText = "Iva %";
-            this.ivaporcientoDataGridViewTextBoxColumn.Name = "ivaporcientoDataGridViewTextBoxColumn";
-            this.ivaporcientoDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // ivarecargoDataGridViewTextBoxColumn
-            // 
-            this.ivarecargoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ivarecargoDataGridViewTextBoxColumn.DataPropertyName = "ivarecargo";
-            this.ivarecargoDataGridViewTextBoxColumn.FillWeight = 94.13318F;
-            this.ivarecargoDataGridViewTextBoxColumn.HeaderText = "R.E. %";
-            this.ivarecargoDataGridViewTextBoxColumn.Name = "ivarecargoDataGridViewTextBoxColumn";
-            this.ivarecargoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ivarecargoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ivarecargoDataGridViewTextBoxColumn.Width = 70;
-            // 
             // Impuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,9 +317,9 @@
             this.Text = "Impuestos";
             this.Load += new System.EventHandler(this.Impuestos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIva)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

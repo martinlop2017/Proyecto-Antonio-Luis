@@ -132,7 +132,7 @@
       <DependentUpon>Usuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Mapeos\creaalbaran.cs" />
-    <Compile Include="Mapeos\Mapeo.cs" />
+    <Compile Include="Mapeos\MapeoCrearFactura.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\BORRAR.resx">

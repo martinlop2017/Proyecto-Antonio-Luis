@@ -216,6 +216,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                     nuevoiva.ivaconcepto = boxconcepto.Text;
                     nuevoiva.ivaporciento = Convert.ToDecimal(boxiva.Text);
                     nuevoiva.ivarecargo = Convert.ToDecimal(boxrecargo.Text);
+                    
 
                     bd.Iva.Add(nuevoiva);
 

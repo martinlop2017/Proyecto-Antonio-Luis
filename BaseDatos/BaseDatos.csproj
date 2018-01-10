@@ -57,6 +57,9 @@
     <Compile Include="Cuentas.cs">
       <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
     </Compile>
+    <Compile Include="Facturas.cs">
+      <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
+    </Compile>
     <Compile Include="Iva.cs">
       <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
     </Compile>
