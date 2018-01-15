@@ -54,6 +54,7 @@
             this.button2.Size = new System.Drawing.Size(180, 60);
             this.button2.TabIndex = 199;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // buttonAceptar
             // 
