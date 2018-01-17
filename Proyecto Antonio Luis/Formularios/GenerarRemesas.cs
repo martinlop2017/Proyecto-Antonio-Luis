@@ -26,6 +26,26 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
+            //Variables donde introduciremos algunos datos.
+            string referencia;
+            string ano, mes, dia, hora, minuto, segundo;
+
+                // cargamos estas variables con los datos actuales
+                ano = DateTime.Now.ToString("yyyy");
+                mes = DateTime.Now.ToString("MM");
+                dia = DateTime.Now.ToString("dd");
+                hora = DateTime.Now.ToString("HH");
+                minuto = DateTime.Now.ToString("mm");
+                segundo = DateTime.Now.ToString("ss");
+
+
+           
+
+
+
+            //Variables y listas donde vamos a cargar las tablas
+            Propios pasarpropios = new Propios();
+
 
             XmlTextWriter writer;
             writer = new XmlTextWriter("C:\\Equipo Martin\\Programacion\\archivo prueba\\ejemplocbs.xml", Encoding.UTF8);
@@ -34,11 +54,21 @@ namespace Proyecto_Antonio_Luis.Formularios
 
             writer.WriteStartElement("Document", "urn:iso:std:iso:20022:tech:xsd:pain.008.001.02");
 
-
+            // introducimos la cabecera sacandos los datos de "pasarpropios2donde cargo la base "Propios"
             writer.WriteStartElement("CstmrDrctDbtInitn");
 
             writer.WriteStartElement("GrpHdr");
-            writer.WriteElementString("MsgId", "PRE2018011113255000000");
+
+            //introducimos la referencia identificativa del fichero
+            //lleva "PRE+Fecha(AñoMEsDia)+Hora(hhmmss)+((mes de facturacion)+(10000000000000))+Cif Presentador + 
+
+            referencia = "PRE" + ano + mes + dia + hora + minuto + segundo;
+            label1.Text = referencia;
+            writer.WriteElementString("MsgId", "2018011113255000000");
+
+
+
+
             writer.WriteElementString("CreDtTm", "2018-01-11T12:26:06Z");
             writer.WriteElementString("NbOfTxs", "1");
             writer.WriteElementString("CtrlSum", "1.4");
@@ -176,6 +206,11 @@ namespace Proyecto_Antonio_Luis.Formularios
 
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }   
     }
 
 }

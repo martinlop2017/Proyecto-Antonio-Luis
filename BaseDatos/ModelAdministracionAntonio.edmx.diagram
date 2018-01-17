@@ -9,9 +9,9 @@
         <EntityTypeShape EntityType="AdministracionAntonioModel.Propios" Width="1.5" PointX="4.375" PointY="0.5" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Ususarios" Width="1.5" PointX="6" PointY="0.5" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Cuentas" Width="1.5" PointX="2.625" PointY="0.5" />
-        <EntityTypeShape EntityType="AdministracionAntonioModel.Clientes" Width="1.5" PointX="0.875" PointY="0.5" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Facturas" Width="1.5" PointX="7.625" PointY="0.5" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Remesas" Width="1.5" PointX="4.375" PointY="5.25" />
+        <EntityTypeShape EntityType="AdministracionAntonioModel.Clientes" Width="1.5" PointX="1" PointY="0.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

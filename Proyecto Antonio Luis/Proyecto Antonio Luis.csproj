@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\albaranesclientes.cs" />
+    <Compile Include="Clases\PasoClientes.cs" />
     <Compile Include="Clases\temporal.cs" />
     <Compile Include="Formularios\BORRAR.cs">
       <SubType>Form</SubType>
