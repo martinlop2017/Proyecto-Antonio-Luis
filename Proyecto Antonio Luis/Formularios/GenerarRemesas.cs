@@ -29,6 +29,8 @@ namespace Proyecto_Antonio_Luis.Formularios
             //Variables donde introduciremos algunos datos.
             string referencia;
             string ano, mes, dia, hora, minuto, segundo;
+            //variable para almacenar el mes de la fcatura para la referencia
+            string mesfact, fechafactura;
 
                 // cargamos estas variables con los datos actuales
                 ano = DateTime.Now.ToString("yyyy");
@@ -37,7 +39,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                 hora = DateTime.Now.ToString("HH");
                 minuto = DateTime.Now.ToString("mm");
                 segundo = DateTime.Now.ToString("ss");
-
+            
 
            
 
@@ -47,6 +49,16 @@ namespace Proyecto_Antonio_Luis.Formularios
             Propios pasarpropios = new Propios();
 
 
+            var listafacturas = bd.Facturas.Where(x => x.factdomiciliada == false).ToList();
+                      
+            var mesfactura = listafacturas.OrderByDescending(x => x.factfecha).FirstOrDefault();
+            var listaremesas = bd.Remesas.Where(x => x.remesafecha == mesfactura.factfecha).ToList();
+            var importeremesa = listaremesas.OrderByDescending(x => x.remesatotal).FirstOrDefault();
+            
+
+
+
+
             XmlTextWriter writer;
             writer = new XmlTextWriter("C:\\Equipo Martin\\Programacion\\archivo prueba\\ejemplocbs.xml", Encoding.UTF8);
             writer.Formatting = Formatting.Indented;
@@ -54,7 +66,14 @@ namespace Proyecto_Antonio_Luis.Formularios
 
             writer.WriteStartElement("Document", "urn:iso:std:iso:20022:tech:xsd:pain.008.001.02");
 
-            // introducimos la cabecera sacandos los datos de "pasarpropios2donde cargo la base "Propios"
+
+
+//*******************************************************************************************************
+//*******************************************************************************************************
+//****************                  C A B E C E R A                 *************************************            //*******************************************************************************************************
+//*******************************************************************************************************
+//*******************************************************************************************************
+// introducimos la cabecera sacandos los datos de "pasarpropios2donde cargo la base "Propios"
             writer.WriteStartElement("CstmrDrctDbtInitn");
 
             writer.WriteStartElement("GrpHdr");
@@ -62,32 +81,39 @@ namespace Proyecto_Antonio_Luis.Formularios
             //introducimos la referencia identificativa del fichero
             //lleva "PRE+Fecha(AñoMEsDia)+Hora(hhmmss)+((mes de facturacion)+(10000000000000))+Cif Presentador + 
 
-            referencia = "PRE" + ano + mes + dia + hora + minuto + segundo;
-            label1.Text = referencia;
-            writer.WriteElementString("MsgId", "2018011113255000000");
+            //sacamos el mes de la factura para añadir e la refrerencia
+                        mesfact = "00" + mesfactura.factfecha.ToString().Substring(3, 2);
+            //sacamos el cif del presentador
+                        var cifpresentador = bd.Propios.OrderByDescending(X => X.micif).FirstOrDefault();
+                        referencia = "PRE" + ano + mes + dia + hora + minuto + segundo + mesfact+ cifpresentador.micif.ToString();
+                        writer.WriteElementString("MsgId", referencia);
 
+            //Introducimos la fecha y hora de presentacion
+                        writer.WriteElementString("CreDtTm", (ano+"-"+mes+"-"+dia+"T"+hora+":"+minuto+":"+segundo));
 
+            // Introducimos el numero de transaciones.
+                        writer.WriteElementString("NbOfTxs", listafacturas.Count.ToString());
 
+            //Introducimos el total de la remesa.
+            //filtramos la tabla Remesas por la fecha de factura.
+                        writer.WriteElementString("CtrlSum", importeremesa.remesatotal. ToString());
 
-            writer.WriteElementString("CreDtTm", "2018-01-11T12:26:06Z");
-            writer.WriteElementString("NbOfTxs", "1");
-            writer.WriteElementString("CtrlSum", "1.4");
+            //Introducimos El nombre del presentador
+                        writer.WriteStartElement("InitgPty");
+            var nombrepresentador = bd.Propios.OrderByDescending(X => X.minombre).FirstOrDefault();
+                        writer.WriteElementString("Nm", nombrepresentador.minombre.ToString());
 
-            writer.WriteStartElement("InitgPty");
-            writer.WriteElementString("Nm", "MARTIN LOPEZ");
-
+            //Introducimos el identificador bancario
             writer.WriteStartElement("Id");
-
             writer.WriteStartElement("OrgId");
-
             writer.WriteStartElement("Othr");
 
-            writer.WriteElementString("Id", "ES8600144207587T");
+            writer.WriteElementString("Id", nombrepresentador.miidentificadorbancario+ nombrepresentador.micif );
 
             writer.WriteStartElement("SchmeNm");
-
             writer.WriteElementString("Prtry", "SEPA");
 
+            //cierra los elementos de la cabecera
             writer.WriteEndElement();
             writer.WriteEndElement();
             writer.WriteEndElement();
@@ -95,53 +121,62 @@ namespace Proyecto_Antonio_Luis.Formularios
             writer.WriteEndElement();
             writer.WriteEndElement();
 
+            //Codigo Interno
             writer.WriteStartElement("PmtInf");
-            writer.WriteElementString("PmtInfId", "B21156054 2018-08-23 RCUR 1");
+            writer.WriteElementString("PmtInfId", nombrepresentador.miidentificadorbancario.ToString()+cifpresentador.micif.ToString()
+                                        + ano+mes+dia+mesfact);
+            //Numero Operaciones e Importe
             writer.WriteElementString("PmtMtd", "DD");
-            writer.WriteElementString("NbOfTxs", "1");
-            writer.WriteElementString("CtrlSum", "1.40");
+            writer.WriteElementString("BtchBookg", "true");
+            writer.WriteElementString("NbOfTxs", listafacturas.Count.ToString());
+            writer.WriteElementString("CtrlSum", importeremesa.remesatotal.ToString());
 
             writer.WriteStartElement("PmtTpInf");
 
-
+            //Estos datos son fijos
             writer.WriteStartElement("SvcLvl");
             writer.WriteElementString("Cd", "SEPA");
             writer.WriteEndElement();
-
             writer.WriteStartElement("LclInstrm");
             writer.WriteElementString("Cd", "CORE");
             writer.WriteEndElement();
-
             writer.WriteElementString("SeqTp", "RCUR");
             writer.WriteEndElement();
 
-            writer.WriteElementString("ReqdColltnDt", "2018-08-23");
+            //Fecha de ejecucion
+            writer.WriteElementString("ReqdColltnDt", ano+"-"+mes+"-"+dia);
 
+            //Datos del presentador/Cobrador
             writer.WriteStartElement("Cdtr");
-            writer.WriteElementString("Nm", "HNOS FELIPE S.L.");
-            writer.WriteElementString("PstlAdr", "");
+            writer.WriteElementString("Nm", nombrepresentador.minombre);
+            writer.WriteStartElement("PstlAdr");
+            //Pais del presentador
+            writer.WriteElementString("Ctry", "ES");
+            //Direcion del presentador
+            writer.WriteElementString("AdrLine", ".");
+            writer.WriteElementString("AdrLine", "..");
             writer.WriteEndElement();
-
+            writer.WriteEndElement();
+            //Iban del presentador
             writer.WriteStartElement("CdtrAcct");
-
+            //Datos bancarios presentador
             writer.WriteStartElement("Id");
-            writer.WriteElementString("IBAN", "ES5821002703970210075120");
+            writer.WriteElementString("IBAN", nombrepresentador.miiban1+ nombrepresentador.miiban2+
+                nombrepresentador.miiban3+ nombrepresentador.miiban4+ nombrepresentador.miiban5+ nombrepresentador.miiban6);
+            writer.WriteElementString("Ccy", "EUR");
+             writer.WriteEndElement();
             writer.WriteEndElement();
-            writer.WriteEndElement();
-
             writer.WriteStartElement("CdtrAgt");
             writer.WriteStartElement("FinInstnId");
-            writer.WriteElementString("BIC", "CAIXESBB");
+            writer.WriteElementString("BIC", nombrepresentador.mibic);
             writer.WriteEndElement();
             writer.WriteEndElement();
-
             writer.WriteElementString("ChrgBr", "SLEV");
-
             writer.WriteStartElement("CdtrSchmeId");
             writer.WriteStartElement("Id");
             writer.WriteStartElement("PrvtId");
             writer.WriteStartElement("Othr");
-            writer.WriteElementString("Id", "ES29002b21156054");
+            writer.WriteElementString("Id", nombrepresentador.miidentificadorbancario+nombrepresentador.micif);
             writer.WriteStartElement("SchmeNm");
             writer.WriteElementString("Prtry", "SEPA");
             writer.WriteEndElement();
@@ -150,51 +185,88 @@ namespace Proyecto_Antonio_Luis.Formularios
             writer.WriteEndElement();
             writer.WriteEndElement();
 
-            writer.WriteStartElement("DrctDbtTxInf");
-            writer.WriteStartElement("PmtId");
-            writer.WriteElementString("EndToEndId", "FACTURA A25");
-            writer.WriteEndElement();
 
 
-            writer.WriteStartElement("InstdAmt");
-            writer.WriteAttributeString("Ccy", "EUR");
-            writer.WriteString("1.40");
-            writer.WriteEndElement();
 
 
-            writer.WriteStartElement("DrctDbtTx");
-            writer.WriteStartElement("MndtRltdInf");
-            writer.WriteElementString("MndtId", "43000125");
-            writer.WriteElementString("DtOfSgntr", "201/-01-11");
-            writer.WriteEndElement();
-            writer.WriteEndElement();
-
-            writer.WriteStartElement("DbtrAgt");
-            writer.WriteElementString("FinInstnId", "");
-            writer.WriteEndElement();
-
-            writer.WriteStartElement("Dbtr");
-            writer.WriteElementString("Nm", "CLIENTE1");
-            writer.WriteEndElement();
-
-            writer.WriteStartElement("DbtrAcct");
-            writer.WriteStartElement("Id");
-            writer.WriteElementString("IBAN", "ES9602388108440600454315");
-            writer.WriteEndElement();
-            writer.WriteEndElement();
-
-            writer.WriteStartElement("RmtInf");
-            writer.WriteElementString("Ustrd", "FACTURA MENSUAL");
-            writer.WriteEndElement();
+            //*******************************************************************************************************
+            //*******************************************************************************************************
+            //*******************************************************************************************************
+            //*******************************************************************************************************
+            //*******************************************************************************************************
+            //*******************************************************************************************************
 
 
-            writer.WriteEndDocument();
+
+
+            //=======================================================================================================            
+            //=======================================================================================================            
+            //=======================================================================================================            
+            //===============          C A R G O S   F A C T U R A S           ======================================
+            //=======================================================================================================
+            //=======================================================================================================
+
+            //INICIAMOS SEGUNDO BLOQUE.
+
+            //Recorremos la tabla facturas para ir sacando los recibos.
+            int contador = 1;
+
+            foreach (var temp in listafacturas)
+
+            {
+                //cargamos los datos de cada recibo 
+                writer.WriteStartElement("DrctDbtTxInf");
+                writer.WriteStartElement("PmtId");
+                //identificador de la transferencia (añomesdiahoraminutossegundosnumerofactura)
+                writer.WriteElementString("EndToEndId", ano+mes+dia+hora+minuto+segundo+"00"+temp.factnumerofact);
+                writer.WriteEndElement();
+                writer.WriteStartElement("InstdAmt");
+                //moneda de la operacion
+                writer.WriteAttributeString("Ccy", "EUR");
+                //importe de la factura
+                writer.WriteString(temp.facttotalfactura.ToString());
+                writer.WriteEndElement();
+                //datos del revibo
+                writer.WriteStartElement("DrctDbtTx");
+                writer.WriteStartElement("MndtRltdInf");
+                //introducimos el mandato ( contador + fecha dia+mes+año)
+                writer.WriteElementString("MndtId", contador +dia+mes+ano);
+                writer.WriteElementString("DtOfSgntr", "201/-01-11");
+                writer.WriteElementString("AmdmntInd", "false");
+                writer.WriteEndElement();
+                writer.WriteEndElement();
+                writer.WriteStartElement("DbtrAgt");
+                writer.WriteElementString("FinInstnId", "");
+                writer.WriteEndElement();
+                //Introduce el nombre del cliente
+                writer.WriteStartElement("Dbtr");
+                writer.WriteElementString("Nm", temp.factnombre);
+                writer.WriteEndElement();
+
+                writer.WriteStartElement("DbtrAcct");
+                writer.WriteStartElement("Id");
+                writer.WriteElementString("IBAN", temp.factiban1+temp.factiban2+ temp.factiban3+ temp.factiban4+
+                                            temp.factiban5+ temp.factiban6);
+                writer.WriteEndElement();
+                writer.WriteEndElement();
+
+                writer.WriteStartElement("RmtInf");
+                writer.WriteElementString("Ustrd", "FACTURA N. "+temp.factnumerofact);
+                writer.WriteEndElement();
+                writer.WriteEndElement();
+
+
+
+                contador++;
+            }
+
+                writer.WriteEndDocument();
             writer.Flush();
             writer.Close();
 
 
 
-
+            label2.Text = "termino";
 
 
 

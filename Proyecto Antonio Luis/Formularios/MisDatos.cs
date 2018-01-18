@@ -52,6 +52,8 @@ namespace Proyecto_Antonio_Luis.Formularios
             textBoxivan5.Text = muestramisdatos.miiban5;
             textBoxivan6.Text = muestramisdatos.miiban6;
             textBox23.Text = muestramisdatos.milogo;
+            textboxidentificador.Text = muestramisdatos.miidentificadorbancario;
+            textboxbic.Text = muestramisdatos.mibic;
 
 
         }
@@ -88,7 +90,8 @@ namespace Proyecto_Antonio_Luis.Formularios
             propioModificar.miiban5 = textBoxivan5.Text;
             propioModificar.miiban6 = textBoxivan6.Text;
             propioModificar.milogo = textBox23.Text;
-
+            propioModificar.miidentificadorbancario = textboxidentificador.Text;
+            propioModificar.mibic = textboxbic.Text;
 
             //guardamos los cambios
             bd.SaveChanges();

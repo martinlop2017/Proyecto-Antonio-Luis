@@ -52,38 +52,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvTemporal = new System.Windows.Forms.DataGridView();
-            this.albmesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albfechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albnombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albconcepto1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albtarifaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albconcepto2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albtarifa2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albempleadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albpvpempleadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alblaboralDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albbasedgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albivadgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albtotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.albtipoiva = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albcoddgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albpormailDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.albdomiciliadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.albcifDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albdireccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alblocalidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albprovinciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albcpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albiban1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albiban2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albiban3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albiban4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albiban5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albiban6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albgrupoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albaranesclientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -144,21 +113,52 @@
             this.altaclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bajaclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioempleadoclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.albmesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albfechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albnombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albconcepto1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albtarifaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albconcepto2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albtarifa2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albempleadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albpvpempleadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alblaboralDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albbasedgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albivadgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albtotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albcoddgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albpormailDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.albdomiciliadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.albcifDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albdireccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alblocalidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albprovinciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albcpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albiban1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albiban2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albiban3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albiban4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albiban5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albiban6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albgrupoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albaranesclientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTemporal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.albaranesclientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.albaranesclientesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // generar
             // 
             this.generar.BackColor = System.Drawing.Color.White;
             this.generar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("generar.BackgroundImage")));
-            this.generar.Location = new System.Drawing.Point(36, 116);
+            this.generar.Location = new System.Drawing.Point(36, 114);
             this.generar.Name = "generar";
             this.generar.Size = new System.Drawing.Size(52, 56);
             this.generar.TabIndex = 28;
@@ -457,193 +457,11 @@
             this.dgvTemporal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTemporal_CellContentClick);
             this.dgvTemporal.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTemporal_CellValueChanged);
             // 
-            // albmesDataGridViewTextBoxColumn
-            // 
-            this.albmesDataGridViewTextBoxColumn.DataPropertyName = "albmes";
-            this.albmesDataGridViewTextBoxColumn.HeaderText = "albmes";
-            this.albmesDataGridViewTextBoxColumn.Name = "albmesDataGridViewTextBoxColumn";
-            // 
-            // albfechaDataGridViewTextBoxColumn
-            // 
-            this.albfechaDataGridViewTextBoxColumn.DataPropertyName = "albfecha";
-            this.albfechaDataGridViewTextBoxColumn.HeaderText = "albfecha";
-            this.albfechaDataGridViewTextBoxColumn.Name = "albfechaDataGridViewTextBoxColumn";
-            // 
-            // albnombreDataGridViewTextBoxColumn
-            // 
-            this.albnombreDataGridViewTextBoxColumn.DataPropertyName = "albnombre";
-            this.albnombreDataGridViewTextBoxColumn.HeaderText = "albnombre";
-            this.albnombreDataGridViewTextBoxColumn.Name = "albnombreDataGridViewTextBoxColumn";
-            // 
-            // albconcepto1DataGridViewTextBoxColumn
-            // 
-            this.albconcepto1DataGridViewTextBoxColumn.DataPropertyName = "albconcepto1";
-            this.albconcepto1DataGridViewTextBoxColumn.HeaderText = "albconcepto1";
-            this.albconcepto1DataGridViewTextBoxColumn.Name = "albconcepto1DataGridViewTextBoxColumn";
-            // 
-            // albtarifaDataGridViewTextBoxColumn
-            // 
-            this.albtarifaDataGridViewTextBoxColumn.DataPropertyName = "albtarifa";
-            this.albtarifaDataGridViewTextBoxColumn.HeaderText = "albtarifa";
-            this.albtarifaDataGridViewTextBoxColumn.Name = "albtarifaDataGridViewTextBoxColumn";
-            // 
-            // albconcepto2DataGridViewTextBoxColumn
-            // 
-            this.albconcepto2DataGridViewTextBoxColumn.DataPropertyName = "albconcepto2";
-            this.albconcepto2DataGridViewTextBoxColumn.HeaderText = "albconcepto2";
-            this.albconcepto2DataGridViewTextBoxColumn.Name = "albconcepto2DataGridViewTextBoxColumn";
-            // 
-            // albtarifa2DataGridViewTextBoxColumn
-            // 
-            this.albtarifa2DataGridViewTextBoxColumn.DataPropertyName = "albtarifa2";
-            this.albtarifa2DataGridViewTextBoxColumn.HeaderText = "albtarifa2";
-            this.albtarifa2DataGridViewTextBoxColumn.Name = "albtarifa2DataGridViewTextBoxColumn";
-            // 
-            // albempleadosDataGridViewTextBoxColumn
-            // 
-            this.albempleadosDataGridViewTextBoxColumn.DataPropertyName = "albempleados";
-            this.albempleadosDataGridViewTextBoxColumn.HeaderText = "albempleados";
-            this.albempleadosDataGridViewTextBoxColumn.Name = "albempleadosDataGridViewTextBoxColumn";
-            // 
-            // albpvpempleadosDataGridViewTextBoxColumn
-            // 
-            this.albpvpempleadosDataGridViewTextBoxColumn.DataPropertyName = "albpvpempleados";
-            this.albpvpempleadosDataGridViewTextBoxColumn.HeaderText = "albpvpempleados";
-            this.albpvpempleadosDataGridViewTextBoxColumn.Name = "albpvpempleadosDataGridViewTextBoxColumn";
-            // 
-            // alblaboralDataGridViewTextBoxColumn
-            // 
-            this.alblaboralDataGridViewTextBoxColumn.DataPropertyName = "alblaboral";
-            this.alblaboralDataGridViewTextBoxColumn.HeaderText = "alblaboral";
-            this.alblaboralDataGridViewTextBoxColumn.Name = "alblaboralDataGridViewTextBoxColumn";
-            // 
-            // albbasedgv
-            // 
-            this.albbasedgv.DataPropertyName = "albbase";
-            this.albbasedgv.HeaderText = "albbase";
-            this.albbasedgv.Name = "albbasedgv";
-            // 
-            // albivadgv
-            // 
-            this.albivadgv.DataPropertyName = "albiva";
-            this.albivadgv.HeaderText = "albiva";
-            this.albivadgv.Name = "albivadgv";
-            // 
-            // albtotalDataGridViewTextBoxColumn
-            // 
-            this.albtotalDataGridViewTextBoxColumn.DataPropertyName = "albtotal";
-            this.albtotalDataGridViewTextBoxColumn.HeaderText = "albtotal";
-            this.albtotalDataGridViewTextBoxColumn.Name = "albtotalDataGridViewTextBoxColumn";
-            // 
             // albtipoiva
             // 
             this.albtipoiva.DataPropertyName = "albtipoiva";
             this.albtipoiva.HeaderText = "albtipoiva";
             this.albtipoiva.Name = "albtipoiva";
-            // 
-            // albcoddgv
-            // 
-            this.albcoddgv.DataPropertyName = "albcod";
-            this.albcoddgv.HeaderText = "albcod";
-            this.albcoddgv.Name = "albcoddgv";
-            // 
-            // albpormailDataGridViewCheckBoxColumn
-            // 
-            this.albpormailDataGridViewCheckBoxColumn.DataPropertyName = "albpormail";
-            this.albpormailDataGridViewCheckBoxColumn.HeaderText = "albpormail";
-            this.albpormailDataGridViewCheckBoxColumn.Name = "albpormailDataGridViewCheckBoxColumn";
-            // 
-            // albdomiciliadoDataGridViewCheckBoxColumn
-            // 
-            this.albdomiciliadoDataGridViewCheckBoxColumn.DataPropertyName = "albdomiciliado";
-            this.albdomiciliadoDataGridViewCheckBoxColumn.HeaderText = "albdomiciliado";
-            this.albdomiciliadoDataGridViewCheckBoxColumn.Name = "albdomiciliadoDataGridViewCheckBoxColumn";
-            // 
-            // albcifDataGridViewTextBoxColumn
-            // 
-            this.albcifDataGridViewTextBoxColumn.DataPropertyName = "albcif";
-            this.albcifDataGridViewTextBoxColumn.HeaderText = "albcif";
-            this.albcifDataGridViewTextBoxColumn.Name = "albcifDataGridViewTextBoxColumn";
-            // 
-            // albdireccionDataGridViewTextBoxColumn
-            // 
-            this.albdireccionDataGridViewTextBoxColumn.DataPropertyName = "albdireccion";
-            this.albdireccionDataGridViewTextBoxColumn.HeaderText = "albdireccion";
-            this.albdireccionDataGridViewTextBoxColumn.Name = "albdireccionDataGridViewTextBoxColumn";
-            // 
-            // alblocalidadDataGridViewTextBoxColumn
-            // 
-            this.alblocalidadDataGridViewTextBoxColumn.DataPropertyName = "alblocalidad";
-            this.alblocalidadDataGridViewTextBoxColumn.HeaderText = "alblocalidad";
-            this.alblocalidadDataGridViewTextBoxColumn.Name = "alblocalidadDataGridViewTextBoxColumn";
-            // 
-            // albprovinciaDataGridViewTextBoxColumn
-            // 
-            this.albprovinciaDataGridViewTextBoxColumn.DataPropertyName = "albprovincia";
-            this.albprovinciaDataGridViewTextBoxColumn.HeaderText = "albprovincia";
-            this.albprovinciaDataGridViewTextBoxColumn.Name = "albprovinciaDataGridViewTextBoxColumn";
-            // 
-            // albcpDataGridViewTextBoxColumn
-            // 
-            this.albcpDataGridViewTextBoxColumn.DataPropertyName = "albcp";
-            this.albcpDataGridViewTextBoxColumn.HeaderText = "albcp";
-            this.albcpDataGridViewTextBoxColumn.Name = "albcpDataGridViewTextBoxColumn";
-            // 
-            // albmailDataGridViewTextBoxColumn
-            // 
-            this.albmailDataGridViewTextBoxColumn.DataPropertyName = "albmail";
-            this.albmailDataGridViewTextBoxColumn.HeaderText = "albmail";
-            this.albmailDataGridViewTextBoxColumn.Name = "albmailDataGridViewTextBoxColumn";
-            // 
-            // albiban1DataGridViewTextBoxColumn
-            // 
-            this.albiban1DataGridViewTextBoxColumn.DataPropertyName = "albiban1";
-            this.albiban1DataGridViewTextBoxColumn.HeaderText = "albiban1";
-            this.albiban1DataGridViewTextBoxColumn.Name = "albiban1DataGridViewTextBoxColumn";
-            // 
-            // albiban2DataGridViewTextBoxColumn
-            // 
-            this.albiban2DataGridViewTextBoxColumn.DataPropertyName = "albiban2";
-            this.albiban2DataGridViewTextBoxColumn.HeaderText = "albiban2";
-            this.albiban2DataGridViewTextBoxColumn.Name = "albiban2DataGridViewTextBoxColumn";
-            // 
-            // albiban3DataGridViewTextBoxColumn
-            // 
-            this.albiban3DataGridViewTextBoxColumn.DataPropertyName = "albiban3";
-            this.albiban3DataGridViewTextBoxColumn.HeaderText = "albiban3";
-            this.albiban3DataGridViewTextBoxColumn.Name = "albiban3DataGridViewTextBoxColumn";
-            // 
-            // albiban4DataGridViewTextBoxColumn
-            // 
-            this.albiban4DataGridViewTextBoxColumn.DataPropertyName = "albiban4";
-            this.albiban4DataGridViewTextBoxColumn.HeaderText = "albiban4";
-            this.albiban4DataGridViewTextBoxColumn.Name = "albiban4DataGridViewTextBoxColumn";
-            // 
-            // albiban5DataGridViewTextBoxColumn
-            // 
-            this.albiban5DataGridViewTextBoxColumn.DataPropertyName = "albiban5";
-            this.albiban5DataGridViewTextBoxColumn.HeaderText = "albiban5";
-            this.albiban5DataGridViewTextBoxColumn.Name = "albiban5DataGridViewTextBoxColumn";
-            // 
-            // albiban6DataGridViewTextBoxColumn
-            // 
-            this.albiban6DataGridViewTextBoxColumn.DataPropertyName = "albiban6";
-            this.albiban6DataGridViewTextBoxColumn.HeaderText = "albiban6";
-            this.albiban6DataGridViewTextBoxColumn.Name = "albiban6DataGridViewTextBoxColumn";
-            // 
-            // albgrupoDataGridViewTextBoxColumn
-            // 
-            this.albgrupoDataGridViewTextBoxColumn.DataPropertyName = "albgrupo";
-            this.albgrupoDataGridViewTextBoxColumn.HeaderText = "albgrupo";
-            this.albgrupoDataGridViewTextBoxColumn.Name = "albgrupoDataGridViewTextBoxColumn";
-            // 
-            // albaranesclientesBindingSource
-            // 
-            this.albaranesclientesBindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Clases.albaranesclientes);
-            // 
-            // clientesBindingSource
-            // 
-            this.clientesBindingSource.DataSource = typeof(BaseDatos.Clientes);
             // 
             // dataGridView1
             // 
@@ -1091,6 +909,188 @@
             this.precioempleadoclienteDataGridViewTextBoxColumn.HeaderText = "precioempleadocliente";
             this.precioempleadoclienteDataGridViewTextBoxColumn.Name = "precioempleadoclienteDataGridViewTextBoxColumn";
             // 
+            // clientesBindingSource
+            // 
+//            this.clientesBindingSource.DataSource = typeof(BaseDatos.Clientes);
+            // 
+            // albmesDataGridViewTextBoxColumn
+            // 
+            this.albmesDataGridViewTextBoxColumn.DataPropertyName = "albmes";
+            this.albmesDataGridViewTextBoxColumn.HeaderText = "albmes";
+            this.albmesDataGridViewTextBoxColumn.Name = "albmesDataGridViewTextBoxColumn";
+            // 
+            // albfechaDataGridViewTextBoxColumn
+            // 
+            this.albfechaDataGridViewTextBoxColumn.DataPropertyName = "albfecha";
+            this.albfechaDataGridViewTextBoxColumn.HeaderText = "albfecha";
+            this.albfechaDataGridViewTextBoxColumn.Name = "albfechaDataGridViewTextBoxColumn";
+            // 
+            // albnombreDataGridViewTextBoxColumn
+            // 
+            this.albnombreDataGridViewTextBoxColumn.DataPropertyName = "albnombre";
+            this.albnombreDataGridViewTextBoxColumn.HeaderText = "albnombre";
+            this.albnombreDataGridViewTextBoxColumn.Name = "albnombreDataGridViewTextBoxColumn";
+            // 
+            // albconcepto1DataGridViewTextBoxColumn
+            // 
+            this.albconcepto1DataGridViewTextBoxColumn.DataPropertyName = "albconcepto1";
+            this.albconcepto1DataGridViewTextBoxColumn.HeaderText = "albconcepto1";
+            this.albconcepto1DataGridViewTextBoxColumn.Name = "albconcepto1DataGridViewTextBoxColumn";
+            // 
+            // albtarifaDataGridViewTextBoxColumn
+            // 
+            this.albtarifaDataGridViewTextBoxColumn.DataPropertyName = "albtarifa";
+            this.albtarifaDataGridViewTextBoxColumn.HeaderText = "albtarifa";
+            this.albtarifaDataGridViewTextBoxColumn.Name = "albtarifaDataGridViewTextBoxColumn";
+            // 
+            // albconcepto2DataGridViewTextBoxColumn
+            // 
+            this.albconcepto2DataGridViewTextBoxColumn.DataPropertyName = "albconcepto2";
+            this.albconcepto2DataGridViewTextBoxColumn.HeaderText = "albconcepto2";
+            this.albconcepto2DataGridViewTextBoxColumn.Name = "albconcepto2DataGridViewTextBoxColumn";
+            // 
+            // albtarifa2DataGridViewTextBoxColumn
+            // 
+            this.albtarifa2DataGridViewTextBoxColumn.DataPropertyName = "albtarifa2";
+            this.albtarifa2DataGridViewTextBoxColumn.HeaderText = "albtarifa2";
+            this.albtarifa2DataGridViewTextBoxColumn.Name = "albtarifa2DataGridViewTextBoxColumn";
+            // 
+            // albempleadosDataGridViewTextBoxColumn
+            // 
+            this.albempleadosDataGridViewTextBoxColumn.DataPropertyName = "albempleados";
+            this.albempleadosDataGridViewTextBoxColumn.HeaderText = "albempleados";
+            this.albempleadosDataGridViewTextBoxColumn.Name = "albempleadosDataGridViewTextBoxColumn";
+            // 
+            // albpvpempleadosDataGridViewTextBoxColumn
+            // 
+            this.albpvpempleadosDataGridViewTextBoxColumn.DataPropertyName = "albpvpempleados";
+            this.albpvpempleadosDataGridViewTextBoxColumn.HeaderText = "albpvpempleados";
+            this.albpvpempleadosDataGridViewTextBoxColumn.Name = "albpvpempleadosDataGridViewTextBoxColumn";
+            // 
+            // alblaboralDataGridViewTextBoxColumn
+            // 
+            this.alblaboralDataGridViewTextBoxColumn.DataPropertyName = "alblaboral";
+            this.alblaboralDataGridViewTextBoxColumn.HeaderText = "alblaboral";
+            this.alblaboralDataGridViewTextBoxColumn.Name = "alblaboralDataGridViewTextBoxColumn";
+            // 
+            // albbasedgv
+            // 
+            this.albbasedgv.DataPropertyName = "albbase";
+            this.albbasedgv.HeaderText = "albbase";
+            this.albbasedgv.Name = "albbasedgv";
+            // 
+            // albivadgv
+            // 
+            this.albivadgv.DataPropertyName = "albiva";
+            this.albivadgv.HeaderText = "albiva";
+            this.albivadgv.Name = "albivadgv";
+            // 
+            // albtotalDataGridViewTextBoxColumn
+            // 
+            this.albtotalDataGridViewTextBoxColumn.DataPropertyName = "albtotal";
+            this.albtotalDataGridViewTextBoxColumn.HeaderText = "albtotal";
+            this.albtotalDataGridViewTextBoxColumn.Name = "albtotalDataGridViewTextBoxColumn";
+            // 
+            // albcoddgv
+            // 
+            this.albcoddgv.DataPropertyName = "albcod";
+            this.albcoddgv.HeaderText = "albcod";
+            this.albcoddgv.Name = "albcoddgv";
+            // 
+            // albpormailDataGridViewCheckBoxColumn
+            // 
+            this.albpormailDataGridViewCheckBoxColumn.DataPropertyName = "albpormail";
+            this.albpormailDataGridViewCheckBoxColumn.HeaderText = "albpormail";
+            this.albpormailDataGridViewCheckBoxColumn.Name = "albpormailDataGridViewCheckBoxColumn";
+            // 
+            // albdomiciliadoDataGridViewCheckBoxColumn
+            // 
+            this.albdomiciliadoDataGridViewCheckBoxColumn.DataPropertyName = "albdomiciliado";
+            this.albdomiciliadoDataGridViewCheckBoxColumn.HeaderText = "albdomiciliado";
+            this.albdomiciliadoDataGridViewCheckBoxColumn.Name = "albdomiciliadoDataGridViewCheckBoxColumn";
+            // 
+            // albcifDataGridViewTextBoxColumn
+            // 
+            this.albcifDataGridViewTextBoxColumn.DataPropertyName = "albcif";
+            this.albcifDataGridViewTextBoxColumn.HeaderText = "albcif";
+            this.albcifDataGridViewTextBoxColumn.Name = "albcifDataGridViewTextBoxColumn";
+            // 
+            // albdireccionDataGridViewTextBoxColumn
+            // 
+            this.albdireccionDataGridViewTextBoxColumn.DataPropertyName = "albdireccion";
+            this.albdireccionDataGridViewTextBoxColumn.HeaderText = "albdireccion";
+            this.albdireccionDataGridViewTextBoxColumn.Name = "albdireccionDataGridViewTextBoxColumn";
+            // 
+            // alblocalidadDataGridViewTextBoxColumn
+            // 
+            this.alblocalidadDataGridViewTextBoxColumn.DataPropertyName = "alblocalidad";
+            this.alblocalidadDataGridViewTextBoxColumn.HeaderText = "alblocalidad";
+            this.alblocalidadDataGridViewTextBoxColumn.Name = "alblocalidadDataGridViewTextBoxColumn";
+            // 
+            // albprovinciaDataGridViewTextBoxColumn
+            // 
+            this.albprovinciaDataGridViewTextBoxColumn.DataPropertyName = "albprovincia";
+            this.albprovinciaDataGridViewTextBoxColumn.HeaderText = "albprovincia";
+            this.albprovinciaDataGridViewTextBoxColumn.Name = "albprovinciaDataGridViewTextBoxColumn";
+            // 
+            // albcpDataGridViewTextBoxColumn
+            // 
+            this.albcpDataGridViewTextBoxColumn.DataPropertyName = "albcp";
+            this.albcpDataGridViewTextBoxColumn.HeaderText = "albcp";
+            this.albcpDataGridViewTextBoxColumn.Name = "albcpDataGridViewTextBoxColumn";
+            // 
+            // albmailDataGridViewTextBoxColumn
+            // 
+            this.albmailDataGridViewTextBoxColumn.DataPropertyName = "albmail";
+            this.albmailDataGridViewTextBoxColumn.HeaderText = "albmail";
+            this.albmailDataGridViewTextBoxColumn.Name = "albmailDataGridViewTextBoxColumn";
+            // 
+            // albiban1DataGridViewTextBoxColumn
+            // 
+            this.albiban1DataGridViewTextBoxColumn.DataPropertyName = "albiban1";
+            this.albiban1DataGridViewTextBoxColumn.HeaderText = "albiban1";
+            this.albiban1DataGridViewTextBoxColumn.Name = "albiban1DataGridViewTextBoxColumn";
+            // 
+            // albiban2DataGridViewTextBoxColumn
+            // 
+            this.albiban2DataGridViewTextBoxColumn.DataPropertyName = "albiban2";
+            this.albiban2DataGridViewTextBoxColumn.HeaderText = "albiban2";
+            this.albiban2DataGridViewTextBoxColumn.Name = "albiban2DataGridViewTextBoxColumn";
+            // 
+            // albiban3DataGridViewTextBoxColumn
+            // 
+            this.albiban3DataGridViewTextBoxColumn.DataPropertyName = "albiban3";
+            this.albiban3DataGridViewTextBoxColumn.HeaderText = "albiban3";
+            this.albiban3DataGridViewTextBoxColumn.Name = "albiban3DataGridViewTextBoxColumn";
+            // 
+            // albiban4DataGridViewTextBoxColumn
+            // 
+            this.albiban4DataGridViewTextBoxColumn.DataPropertyName = "albiban4";
+            this.albiban4DataGridViewTextBoxColumn.HeaderText = "albiban4";
+            this.albiban4DataGridViewTextBoxColumn.Name = "albiban4DataGridViewTextBoxColumn";
+            // 
+            // albiban5DataGridViewTextBoxColumn
+            // 
+            this.albiban5DataGridViewTextBoxColumn.DataPropertyName = "albiban5";
+            this.albiban5DataGridViewTextBoxColumn.HeaderText = "albiban5";
+            this.albiban5DataGridViewTextBoxColumn.Name = "albiban5DataGridViewTextBoxColumn";
+            // 
+            // albiban6DataGridViewTextBoxColumn
+            // 
+            this.albiban6DataGridViewTextBoxColumn.DataPropertyName = "albiban6";
+            this.albiban6DataGridViewTextBoxColumn.HeaderText = "albiban6";
+            this.albiban6DataGridViewTextBoxColumn.Name = "albiban6DataGridViewTextBoxColumn";
+            // 
+            // albgrupoDataGridViewTextBoxColumn
+            // 
+            this.albgrupoDataGridViewTextBoxColumn.DataPropertyName = "albgrupo";
+            this.albgrupoDataGridViewTextBoxColumn.HeaderText = "albgrupo";
+            this.albgrupoDataGridViewTextBoxColumn.Name = "albgrupoDataGridViewTextBoxColumn";
+            // 
+            // albaranesclientesBindingSource
+            // 
+            this.albaranesclientesBindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Clases.albaranesclientes);
+            // 
             // Facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1126,12 +1126,12 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTemporal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.albaranesclientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.albaranesclientesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -251,6 +251,8 @@ namespace Proyecto_Antonio_Luis.Formularios
                 //extraemos los datos correspondientes de la tabla en el objeto
                 var ivaAmodificar = bd.Iva.SingleOrDefault(iva => iva.numerador == valor1);
 
+
+                
                 //modificamos los valores
                 ivaAmodificar.ivaconcepto = boxconcepto.Text;
                 ivaAmodificar.ivaconcepto = boxconcepto.Text;

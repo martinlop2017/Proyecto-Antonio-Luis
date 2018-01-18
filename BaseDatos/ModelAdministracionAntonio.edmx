@@ -155,6 +155,8 @@
           <Property Name="miiban5" Type="nchar" MaxLength="4" />
           <Property Name="miiban6" Type="nchar" MaxLength="4" />
           <Property Name="milogo" Type="nchar" MaxLength="200" />
+          <Property Name="miidentificadorbancario" Type="nchar" MaxLength="15" />
+          <Property Name="mibic" Type="nchar" MaxLength="15" />
         </EntityType>
         <EntityType Name="Remesas">
           <Key>
@@ -216,12 +218,12 @@
       <Schema Namespace="AdministracionAntonioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="AdministracionAntonioEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Iva" EntityType="AdministracionAntonioModel.Iva" />
-          <EntitySet Name="Propios" EntityType="AdministracionAntonioModel.Propios" />
           <EntitySet Name="Ususarios" EntityType="AdministracionAntonioModel.Ususarios" />
           <EntitySet Name="Cuentas" EntityType="AdministracionAntonioModel.Cuentas" />
-          <EntitySet Name="Facturas" EntityType="AdministracionAntonioModel.Facturas" />
           <EntitySet Name="Remesas" EntityType="AdministracionAntonioModel.Remesas" />
           <EntitySet Name="Clientes" EntityType="AdministracionAntonioModel.Clientes" />
+          <EntitySet Name="Propios" EntityType="AdministracionAntonioModel.Propios" />
+          <EntitySet Name="Facturas" EntityType="AdministracionAntonioModel.Facturas" />
         </EntityContainer>
         <EntityType Name="Iva">
           <Key>
@@ -231,30 +233,6 @@
           <Property Name="ivaconcepto" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="ivaporciento" Type="Decimal" Precision="4" Scale="2" />
           <Property Name="ivarecargo" Type="Decimal" Precision="4" Scale="2" />
-        </EntityType>
-        <EntityType Name="Propios">
-          <Key>
-            <PropertyRef Name="numerador" />
-          </Key>
-          <Property Name="numerador" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="minombre" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="micif" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
-          <Property Name="midireccion" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
-          <Property Name="mipoblacion" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="miprovincia" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="micp" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="mitelefono1" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="mitelefono2" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="mifax" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="micontacto" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="mimail" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="miiban1" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="miiban2" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="miiban3" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="miiban4" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="miiban5" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="miiban6" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="milogo" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="Ususarios">
           <Key>
@@ -308,47 +286,6 @@
           <Property Name="RutaAsi" Type="String" MaxLength="400" FixedLength="true" Unicode="true" />
           <Property Name="RutaCSB19" Type="String" MaxLength="400" FixedLength="true" Unicode="true" />
           <Property Name="NumDigitos" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Facturas">
-          <Key>
-            <PropertyRef Name="factcontador" />
-          </Key>
-          <Property Name="factcontador" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="factnumerofact" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="factremesa" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="factfecha" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="factcodcliente" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="factnombre" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="factdireccion" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="factlocalidad" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="factprovincia" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="factcp" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="factnif" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="factiban1" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="factiban2" Type="Decimal" Precision="4" Scale="0" />
-          <Property Name="factiban3" Type="Decimal" Precision="4" Scale="0" />
-          <Property Name="factiban4" Type="Decimal" Precision="4" Scale="0" />
-          <Property Name="factiban5" Type="Decimal" Precision="4" Scale="0" />
-          <Property Name="factiban6" Type="Decimal" Precision="5" Scale="0" />
-          <Property Name="factconcepto1" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
-          <Property Name="factbase1" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="factconcepto2" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
-          <Property Name="factbase2" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="factemleados" Type="Decimal" Precision="3" Scale="0" />
-          <Property Name="factprecioempleado" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="factbaseempleado" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="facttipoiva" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="factimporteiva" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="facttotalfactura" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="factpara_imprimir" Type="Boolean" />
-          <Property Name="factimpresa" Type="Boolean" />
-          <Property Name="factparacontabilizar" Type="Boolean" />
-          <Property Name="factcontabilizada" Type="Boolean" />
-          <Property Name="factparadomiciliar" Type="Boolean" />
-          <Property Name="factdomiciliada" Type="Boolean" />
-          <Property Name="facttotalremesa" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="factpormail" Type="Boolean" />
-          <Property Name="factmail" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="Remesas">
           <Key>
@@ -419,6 +356,73 @@
           <Property Name="bajacliente" Type="Boolean" />
           <Property Name="precioempleadocliente" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
+        <EntityType Name="Propios">
+          <Key>
+            <PropertyRef Name="numerador" />
+          </Key>
+          <Property Name="numerador" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="minombre" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="micif" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="midireccion" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="mipoblacion" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="miprovincia" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="micp" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="mitelefono1" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="mitelefono2" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="mifax" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="micontacto" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="mimail" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="miiban1" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="miiban2" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="miiban3" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="miiban4" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="miiban5" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="miiban6" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="milogo" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="miidentificadorbancario" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="mibic" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Facturas">
+          <Key>
+            <PropertyRef Name="factcontador" />
+          </Key>
+          <Property Name="factcontador" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="factnumerofact" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="factremesa" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="factfecha" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="factcodcliente" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="factnombre" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="factdireccion" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="factlocalidad" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="factprovincia" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="factcp" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="factnif" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="factiban1" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="factiban2" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="factiban3" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="factiban4" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="factiban5" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="factiban6" Type="Decimal" Precision="5" Scale="0" />
+          <Property Name="factconcepto1" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+          <Property Name="factbase1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="factconcepto2" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
+          <Property Name="factbase2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="factemleados" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="factprecioempleado" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="factbaseempleado" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="facttipoiva" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="factimporteiva" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="facttotalfactura" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="factpara_imprimir" Type="Boolean" />
+          <Property Name="factimpresa" Type="Boolean" />
+          <Property Name="factparacontabilizar" Type="Boolean" />
+          <Property Name="factcontabilizada" Type="Boolean" />
+          <Property Name="factparadomiciliar" Type="Boolean" />
+          <Property Name="factdomiciliada" Type="Boolean" />
+          <Property Name="facttotalremesa" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="factpormail" Type="Boolean" />
+          <Property Name="factmail" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -431,31 +435,6 @@
                 <ScalarProperty Name="ivarecargo" ColumnName="ivarecargo" />
                 <ScalarProperty Name="ivaporciento" ColumnName="ivaporciento" />
                 <ScalarProperty Name="ivaconcepto" ColumnName="ivaconcepto" />
-                <ScalarProperty Name="numerador" ColumnName="numerador" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Propios">
-            <EntityTypeMapping TypeName="AdministracionAntonioModel.Propios">
-              <MappingFragment StoreEntitySet="Propios">
-                <ScalarProperty Name="milogo" ColumnName="milogo" />
-                <ScalarProperty Name="miiban6" ColumnName="miiban6" />
-                <ScalarProperty Name="miiban5" ColumnName="miiban5" />
-                <ScalarProperty Name="miiban4" ColumnName="miiban4" />
-                <ScalarProperty Name="miiban3" ColumnName="miiban3" />
-                <ScalarProperty Name="miiban2" ColumnName="miiban2" />
-                <ScalarProperty Name="miiban1" ColumnName="miiban1" />
-                <ScalarProperty Name="mimail" ColumnName="mimail" />
-                <ScalarProperty Name="micontacto" ColumnName="micontacto" />
-                <ScalarProperty Name="mifax" ColumnName="mifax" />
-                <ScalarProperty Name="mitelefono2" ColumnName="mitelefono2" />
-                <ScalarProperty Name="mitelefono1" ColumnName="mitelefono1" />
-                <ScalarProperty Name="micp" ColumnName="micp" />
-                <ScalarProperty Name="miprovincia" ColumnName="miprovincia" />
-                <ScalarProperty Name="mipoblacion" ColumnName="mipoblacion" />
-                <ScalarProperty Name="midireccion" ColumnName="midireccion" />
-                <ScalarProperty Name="micif" ColumnName="micif" />
-                <ScalarProperty Name="minombre" ColumnName="minombre" />
                 <ScalarProperty Name="numerador" ColumnName="numerador" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -512,48 +491,6 @@
                 <ScalarProperty Name="CtaBanco" ColumnName="CtaBanco" />
                 <ScalarProperty Name="CtaCliente" ColumnName="CtaCliente" />
                 <ScalarProperty Name="cod" ColumnName="cod" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Facturas">
-            <EntityTypeMapping TypeName="AdministracionAntonioModel.Facturas">
-              <MappingFragment StoreEntitySet="Facturas">
-                <ScalarProperty Name="factmail" ColumnName="factmail" />
-                <ScalarProperty Name="factpormail" ColumnName="factpormail" />
-                <ScalarProperty Name="facttotalremesa" ColumnName="facttotalremesa" />
-                <ScalarProperty Name="factdomiciliada" ColumnName="factdomiciliada" />
-                <ScalarProperty Name="factparadomiciliar" ColumnName="factparadomiciliar" />
-                <ScalarProperty Name="factcontabilizada" ColumnName="factcontabilizada" />
-                <ScalarProperty Name="factparacontabilizar" ColumnName="factparacontabilizar" />
-                <ScalarProperty Name="factimpresa" ColumnName="factimpresa" />
-                <ScalarProperty Name="factpara_imprimir" ColumnName="factpara imprimir" />
-                <ScalarProperty Name="facttotalfactura" ColumnName="facttotalfactura" />
-                <ScalarProperty Name="factimporteiva" ColumnName="factimporteiva" />
-                <ScalarProperty Name="facttipoiva" ColumnName="facttipoiva" />
-                <ScalarProperty Name="factbaseempleado" ColumnName="factbaseempleado" />
-                <ScalarProperty Name="factprecioempleado" ColumnName="factprecioempleado" />
-                <ScalarProperty Name="factemleados" ColumnName="factemleados" />
-                <ScalarProperty Name="factbase2" ColumnName="factbase2" />
-                <ScalarProperty Name="factconcepto2" ColumnName="factconcepto2" />
-                <ScalarProperty Name="factbase1" ColumnName="factbase1" />
-                <ScalarProperty Name="factconcepto1" ColumnName="factconcepto1" />
-                <ScalarProperty Name="factiban6" ColumnName="factiban6" />
-                <ScalarProperty Name="factiban5" ColumnName="factiban5" />
-                <ScalarProperty Name="factiban4" ColumnName="factiban4" />
-                <ScalarProperty Name="factiban3" ColumnName="factiban3" />
-                <ScalarProperty Name="factiban2" ColumnName="factiban2" />
-                <ScalarProperty Name="factiban1" ColumnName="factiban1" />
-                <ScalarProperty Name="factnif" ColumnName="factnif" />
-                <ScalarProperty Name="factcp" ColumnName="factcp" />
-                <ScalarProperty Name="factprovincia" ColumnName="factprovincia" />
-                <ScalarProperty Name="factlocalidad" ColumnName="factlocalidad" />
-                <ScalarProperty Name="factdireccion" ColumnName="factdireccion" />
-                <ScalarProperty Name="factnombre" ColumnName="factnombre" />
-                <ScalarProperty Name="factcodcliente" ColumnName="factcodcliente" />
-                <ScalarProperty Name="factfecha" ColumnName="factfecha" />
-                <ScalarProperty Name="factremesa" ColumnName="factremesa" />
-                <ScalarProperty Name="factnumerofact" ColumnName="factnumerofact" />
-                <ScalarProperty Name="factcontador" ColumnName="factcontador" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -625,6 +562,75 @@
                 <ScalarProperty Name="nombrecliente" ColumnName="nombrecliente" />
                 <ScalarProperty Name="codcliente" ColumnName="codcliente" />
                 <ScalarProperty Name="numerador" ColumnName="numerador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Propios">
+            <EntityTypeMapping TypeName="AdministracionAntonioModel.Propios">
+              <MappingFragment StoreEntitySet="Propios">
+                <ScalarProperty Name="mibic" ColumnName="mibic" />
+                <ScalarProperty Name="miidentificadorbancario" ColumnName="miidentificadorbancario" />
+                <ScalarProperty Name="milogo" ColumnName="milogo" />
+                <ScalarProperty Name="miiban6" ColumnName="miiban6" />
+                <ScalarProperty Name="miiban5" ColumnName="miiban5" />
+                <ScalarProperty Name="miiban4" ColumnName="miiban4" />
+                <ScalarProperty Name="miiban3" ColumnName="miiban3" />
+                <ScalarProperty Name="miiban2" ColumnName="miiban2" />
+                <ScalarProperty Name="miiban1" ColumnName="miiban1" />
+                <ScalarProperty Name="mimail" ColumnName="mimail" />
+                <ScalarProperty Name="micontacto" ColumnName="micontacto" />
+                <ScalarProperty Name="mifax" ColumnName="mifax" />
+                <ScalarProperty Name="mitelefono2" ColumnName="mitelefono2" />
+                <ScalarProperty Name="mitelefono1" ColumnName="mitelefono1" />
+                <ScalarProperty Name="micp" ColumnName="micp" />
+                <ScalarProperty Name="miprovincia" ColumnName="miprovincia" />
+                <ScalarProperty Name="mipoblacion" ColumnName="mipoblacion" />
+                <ScalarProperty Name="midireccion" ColumnName="midireccion" />
+                <ScalarProperty Name="micif" ColumnName="micif" />
+                <ScalarProperty Name="minombre" ColumnName="minombre" />
+                <ScalarProperty Name="numerador" ColumnName="numerador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Facturas">
+            <EntityTypeMapping TypeName="AdministracionAntonioModel.Facturas">
+              <MappingFragment StoreEntitySet="Facturas">
+                <ScalarProperty Name="factmail" ColumnName="factmail" />
+                <ScalarProperty Name="factpormail" ColumnName="factpormail" />
+                <ScalarProperty Name="facttotalremesa" ColumnName="facttotalremesa" />
+                <ScalarProperty Name="factdomiciliada" ColumnName="factdomiciliada" />
+                <ScalarProperty Name="factparadomiciliar" ColumnName="factparadomiciliar" />
+                <ScalarProperty Name="factcontabilizada" ColumnName="factcontabilizada" />
+                <ScalarProperty Name="factparacontabilizar" ColumnName="factparacontabilizar" />
+                <ScalarProperty Name="factimpresa" ColumnName="factimpresa" />
+                <ScalarProperty Name="factpara_imprimir" ColumnName="factpara imprimir" />
+                <ScalarProperty Name="facttotalfactura" ColumnName="facttotalfactura" />
+                <ScalarProperty Name="factimporteiva" ColumnName="factimporteiva" />
+                <ScalarProperty Name="facttipoiva" ColumnName="facttipoiva" />
+                <ScalarProperty Name="factbaseempleado" ColumnName="factbaseempleado" />
+                <ScalarProperty Name="factprecioempleado" ColumnName="factprecioempleado" />
+                <ScalarProperty Name="factemleados" ColumnName="factemleados" />
+                <ScalarProperty Name="factbase2" ColumnName="factbase2" />
+                <ScalarProperty Name="factconcepto2" ColumnName="factconcepto2" />
+                <ScalarProperty Name="factbase1" ColumnName="factbase1" />
+                <ScalarProperty Name="factconcepto1" ColumnName="factconcepto1" />
+                <ScalarProperty Name="factiban6" ColumnName="factiban6" />
+                <ScalarProperty Name="factiban5" ColumnName="factiban5" />
+                <ScalarProperty Name="factiban4" ColumnName="factiban4" />
+                <ScalarProperty Name="factiban3" ColumnName="factiban3" />
+                <ScalarProperty Name="factiban2" ColumnName="factiban2" />
+                <ScalarProperty Name="factiban1" ColumnName="factiban1" />
+                <ScalarProperty Name="factnif" ColumnName="factnif" />
+                <ScalarProperty Name="factcp" ColumnName="factcp" />
+                <ScalarProperty Name="factprovincia" ColumnName="factprovincia" />
+                <ScalarProperty Name="factlocalidad" ColumnName="factlocalidad" />
+                <ScalarProperty Name="factdireccion" ColumnName="factdireccion" />
+                <ScalarProperty Name="factnombre" ColumnName="factnombre" />
+                <ScalarProperty Name="factcodcliente" ColumnName="factcodcliente" />
+                <ScalarProperty Name="factfecha" ColumnName="factfecha" />
+                <ScalarProperty Name="factremesa" ColumnName="factremesa" />
+                <ScalarProperty Name="factnumerofact" ColumnName="factnumerofact" />
+                <ScalarProperty Name="factcontador" ColumnName="factcontador" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

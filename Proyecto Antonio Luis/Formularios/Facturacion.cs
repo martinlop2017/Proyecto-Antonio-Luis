@@ -437,9 +437,9 @@ namespace Proyecto_Antonio_Luis.Formularios
                     facturasAGuardar.Add(myFactura);
            
                 }
-                
-                // pasamos los datos a la tabla facturacion y remesa
-                bd.Facturas.AddRange(facturasAGuardar);
+
+                    // pasamos los datos a la tabla facturacion y remesa
+                    bd.Facturas.AddRange(facturasAGuardar);
 
 
                 var pasoremesa = new Remesas();

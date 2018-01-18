@@ -33,5 +33,7 @@ namespace BaseDatos
         public string miiban5 { get; set; }
         public string miiban6 { get; set; }
         public string milogo { get; set; }
+        public string miidentificadorbancario { get; set; }
+        public string mibic { get; set; }
     }
 }
