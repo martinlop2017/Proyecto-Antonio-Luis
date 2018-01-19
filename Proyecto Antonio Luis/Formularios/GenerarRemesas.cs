@@ -49,8 +49,11 @@ namespace Proyecto_Antonio_Luis.Formularios
             Propios pasarpropios = new Propios();
 
 
-            var listafacturas = bd.Facturas.Where(x => x.factdomiciliada == false).ToList();
-                      
+            var listafacturas = bd.Facturas.Where(x => x.factdomiciliada == false && x.factparadomiciliar == true).ToList();
+
+            dataGridView1.DataSource = listafacturas.ToList();
+
+
             var mesfactura = listafacturas.OrderByDescending(x => x.factfecha).FirstOrDefault();
             var listaremesas = bd.Remesas.Where(x => x.remesafecha == mesfactura.factfecha).ToList();
             var importeremesa = listaremesas.OrderByDescending(x => x.remesatotal).FirstOrDefault();
@@ -265,8 +268,27 @@ namespace Proyecto_Antonio_Luis.Formularios
             writer.Close();
 
 
+            //damos las facturas como domiciliadas
+            // Filtramos la tabla facuras por contabilizadas por las no contabilizadas
+            var facturasfiltradas = bd.Facturas.Where(x => x.factdomiciliada ==false);
+            //Modificamos el campo
+            facturasfiltradas.ToList().ForEach ( f => f.factdomiciliada = true);
 
-            label2.Text = "termino";
+
+            //damos las remesas como domiciliadas
+            // Filtramos la tabla facuras por contabilizadas por las no contabilizadas
+            var remesasfiltradas = bd.Remesas .Where(x => x.remesacontabilizada == false);
+            //Modificamos el campo
+            remesasfiltradas.ToList().ForEach(f => f.remesacontabilizada = true);
+
+            // Guardamos los cambios
+            bd.SaveChanges();
+
+
+
+            
+
+                    label2.Text = "termino";
 
 
 

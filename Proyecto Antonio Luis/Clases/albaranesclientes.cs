@@ -39,7 +39,11 @@ namespace Proyecto_Antonio_Luis.Clases
         public string albgrupo { get; set; }
         public string albmes { get; set; }
         public decimal albtipoiva{ get; set; }
-        
+        public bool albparadomiciliar { get; set; }
+        public bool albparaimprimir { get; set; }
+        public bool albparacontabilizar { get; set; }
+
+
 
     }
 }

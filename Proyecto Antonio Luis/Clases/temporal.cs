@@ -38,6 +38,12 @@ namespace Proyecto_Antonio_Luis.Clases
         public decimal tempiban6 { get; set; }
         public decimal temptipoiva { get; set; }
         public decimal tempcod { get; set; }
+        public bool tempparacontabilizar { get; set; }
+        public bool tempparadomiciliar { get; set; }
+        public bool tempparaimprimir { get; set; }
+
+
+
 
 
     }

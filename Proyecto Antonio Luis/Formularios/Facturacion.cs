@@ -314,26 +314,23 @@ namespace Proyecto_Antonio_Luis.Formularios
             {
                 temporal datosapasar = new temporal();
 
-                
-
                 datosapasar.tempnumerofactura = Convert.ToDecimal(numerofactura);
                 numerofactura++;
                 datosapasar.tempremesa = Convert.ToString(row.Cells[0].Value);
-                datosapasar.tempfecha = Convert.ToString(row.Cells[1].Value);
-                datosapasar.tempnombre = Convert.ToString(row.Cells[2].Value);
-                datosapasar.tempconcepto1 = Convert.ToString(row.Cells[3].Value);
-                datosapasar.temptarifa = Convert.ToDecimal(row.Cells[4].Value);
-                datosapasar.tempconcepto2 = Convert.ToString(row.Cells[5].Value);
-                datosapasar.temptarifa2 = Convert.ToDecimal(row.Cells[6].Value);
-                datosapasar.tempempleados = Convert.ToDecimal(row.Cells[7].Value);
-                datosapasar.temppvempleados = Convert.ToDecimal(row.Cells[8].Value);
-                datosapasar.templaboral = Convert.ToDecimal(row.Cells[9].Value);
-                datosapasar.tempbase = Convert.ToDecimal(row.Cells[10].Value);
-                datosapasar.tempiva = Convert.ToDecimal(row.Cells[11].Value);
-                datosapasar.temptotal = Convert.ToDecimal(row.Cells[12].Value);
-                datosapasar.temptipoiva = Convert.ToDecimal(row.Cells[13].Value);
-                datosapasar.tempcod = Convert.ToDecimal(row.Cells[14].Value);
-
+                datosapasar.temptipoiva = Convert.ToDecimal(row.Cells[1].Value);
+                datosapasar.tempcod = Convert.ToDecimal(row.Cells[2].Value);
+                datosapasar.tempfecha = Convert.ToString(row.Cells[3].Value);
+                datosapasar.tempnombre = Convert.ToString(row.Cells[4].Value);
+                datosapasar.tempconcepto1 = Convert.ToString(row.Cells[5].Value);
+                datosapasar.temptarifa = Convert.ToDecimal(row.Cells[6].Value);
+                datosapasar.tempconcepto2 = Convert.ToString(row.Cells[7].Value);
+                datosapasar.temptarifa2 = Convert.ToDecimal(row.Cells[8].Value);
+                datosapasar.tempempleados = Convert.ToDecimal(row.Cells[9].Value);
+                datosapasar.temppvempleados = Convert.ToDecimal(row.Cells[10].Value);
+                datosapasar.templaboral = Convert.ToDecimal(row.Cells[11].Value);
+                datosapasar.tempbase = Convert.ToDecimal(row.Cells[12].Value);
+                datosapasar.tempiva = Convert.ToDecimal(row.Cells[13].Value);
+                datosapasar.temptotal = Convert.ToDecimal(row.Cells[14].Value);
                 datosapasar.temppormail = Convert.ToBoolean(row.Cells[15].Value);
                 datosapasar.tempdoiciliado = Convert.ToBoolean(row.Cells[16].Value);
                 datosapasar.tempcif = Convert.ToString(row.Cells[17].Value);
@@ -348,8 +345,12 @@ namespace Proyecto_Antonio_Luis.Formularios
                 datosapasar.tempiban4 = Convert.ToDecimal(row.Cells[26].Value);
                 datosapasar.tempiban5 = Convert.ToDecimal(row.Cells[27].Value);
                 datosapasar.tempiban6 = Convert.ToDecimal(row.Cells[28].Value);
+                datosapasar.tempparadomiciliar = Convert.ToBoolean(row.Cells[31].Value);
+                datosapasar.tempparaimprimir = Convert.ToBoolean(row.Cells[32].Value);
+                datosapasar.tempparacontabilizar = Convert.ToBoolean(row.Cells[33].Value);
 
-             
+
+
 
 
                 lista.Add(datosapasar);
@@ -415,16 +416,18 @@ namespace Proyecto_Antonio_Luis.Formularios
                     myFactura.factimporteiva = temp.tempiva;
                     myFactura.facttotalfactura = temp.temptotal;
                     myFactura.factpara_imprimir = true;
+                    myFactura.factimpresa = false;
+                    
                     if (temp.temppormail == true)
                     {
                         myFactura.factpara_imprimir = false;
                     }
                     myFactura.factpormail = temp.temppormail;
                     myFactura.factmail = temp.tempmail;
-                    myFactura.factimpresa = false;
-                    myFactura.factparacontabilizar = true;
+
+                    myFactura.factparacontabilizar = temp.tempparacontabilizar;
                     myFactura.factcontabilizada = false;
-                    myFactura.factparadomiciliar = temp.tempdoiciliado;
+                    myFactura.factparadomiciliar = temp.tempparadomiciliar;
                     myFactura.factdomiciliada = false;
 
                     totalbaseremesa = totalbaseremesa + temp.tempbase;
@@ -456,6 +459,16 @@ namespace Proyecto_Antonio_Luis.Formularios
 
                 bd.SaveChanges();
 
+                //ahora vamos a introducir el total de la remesa en las facturas.
+                                
+                // Filtramos la tabla facuras por el numero de remesa
+                var facturasfiltradas = bd.Facturas.Where(x => x.factremesa == numeroremesa);
+                //Modificamos el campo
+                facturasfiltradas.ToList().ForEach(f => f.facttotalremesa = totaltotalremesa);
+
+
+                // Guardamos los cambios
+                bd.SaveChanges();
 
             }
             catch(Exception exp)

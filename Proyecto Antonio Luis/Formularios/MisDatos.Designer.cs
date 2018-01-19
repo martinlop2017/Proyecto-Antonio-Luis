@@ -317,7 +317,7 @@
             // 
             this.textBoxivan1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxivan1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxivan1.Location = new System.Drawing.Point(59, 401);
+            this.textBoxivan1.Location = new System.Drawing.Point(59, 410);
             this.textBoxivan1.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxivan1.MaxLength = 4;
             this.textBoxivan1.Name = "textBoxivan1";
@@ -329,7 +329,7 @@
             // 
             this.textBoxivan2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxivan2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxivan2.Location = new System.Drawing.Point(117, 401);
+            this.textBoxivan2.Location = new System.Drawing.Point(117, 410);
             this.textBoxivan2.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxivan2.MaxLength = 4;
             this.textBoxivan2.Name = "textBoxivan2";
@@ -341,7 +341,7 @@
             // 
             this.textBoxivan3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxivan3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxivan3.Location = new System.Drawing.Point(175, 401);
+            this.textBoxivan3.Location = new System.Drawing.Point(175, 410);
             this.textBoxivan3.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxivan3.MaxLength = 4;
             this.textBoxivan3.Name = "textBoxivan3";
@@ -354,7 +354,7 @@
             // 
             this.textBoxivan4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxivan4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxivan4.Location = new System.Drawing.Point(233, 401);
+            this.textBoxivan4.Location = new System.Drawing.Point(233, 410);
             this.textBoxivan4.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxivan4.MaxLength = 4;
             this.textBoxivan4.Name = "textBoxivan4";
@@ -366,7 +366,7 @@
             // 
             this.textBoxivan5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxivan5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxivan5.Location = new System.Drawing.Point(291, 401);
+            this.textBoxivan5.Location = new System.Drawing.Point(291, 410);
             this.textBoxivan5.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxivan5.MaxLength = 4;
             this.textBoxivan5.Name = "textBoxivan5";
@@ -378,7 +378,7 @@
             // 
             this.textBoxivan6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxivan6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxivan6.Location = new System.Drawing.Point(349, 402);
+            this.textBoxivan6.Location = new System.Drawing.Point(349, 411);
             this.textBoxivan6.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxivan6.MaxLength = 4;
             this.textBoxivan6.Name = "textBoxivan6";
@@ -393,7 +393,7 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label6.Location = new System.Drawing.Point(66, 382);
+            this.label6.Location = new System.Drawing.Point(66, 391);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 15);
             this.label6.TabIndex = 118;
@@ -490,7 +490,7 @@
             // 
             this.textboxidentificador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textboxidentificador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxidentificador.Location = new System.Drawing.Point(59, 446);
+            this.textboxidentificador.Location = new System.Drawing.Point(59, 455);
             this.textboxidentificador.Margin = new System.Windows.Forms.Padding(4);
             this.textboxidentificador.MaxLength = 4;
             this.textboxidentificador.Name = "textboxidentificador";
@@ -505,7 +505,7 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label7.Location = new System.Drawing.Point(66, 427);
+            this.label7.Location = new System.Drawing.Point(66, 436);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(148, 15);
             this.label7.TabIndex = 128;
@@ -515,7 +515,7 @@
             // 
             this.textboxbic.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textboxbic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textboxbic.Location = new System.Drawing.Point(245, 446);
+            this.textboxbic.Location = new System.Drawing.Point(245, 455);
             this.textboxbic.Margin = new System.Windows.Forms.Padding(4);
             this.textboxbic.MaxLength = 4;
             this.textboxbic.Name = "textboxbic";
@@ -530,7 +530,7 @@
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label9.Location = new System.Drawing.Point(251, 427);
+            this.label9.Location = new System.Drawing.Point(254, 436);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 15);
             this.label9.TabIndex = 130;
@@ -541,7 +541,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.MisDatos3;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(874, 641);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textboxbic);

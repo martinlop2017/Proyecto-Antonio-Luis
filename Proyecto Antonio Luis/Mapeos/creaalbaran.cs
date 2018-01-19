@@ -51,7 +51,12 @@ namespace Proyecto_Antonio_Luis.Mapeos
                             (((c.empleadoscliente.Value * c.precioempleadocliente.Value) + c.tarifacliente.Value)*10/100),
 
 
-                albtipoiva = Globales.tipoiva,
+               // albtipoiva = Globales.tipoiva,
+                albparadomiciliar = c.domiciliadocliente.Value,
+                albparacontabilizar = c.contabilizarcliente.Value,
+               // albparaimprimir = c.
+
+             
             }).ToList();
 
             //return listaTemporales;
