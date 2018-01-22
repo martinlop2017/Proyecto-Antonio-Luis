@@ -18,11 +18,15 @@ namespace Proyecto_Antonio_Luis.Formularios
         //esta lista la declaro arriba para poder usarla posteriormente
         List<albaranesclientes> albaranes = new List<albaranesclientes>();
 
+
+
+
         public Facturacion()
         {
             InitializeComponent();
            
             bd = new AdministracionAntonioEntities();
+          
 
         }
 
@@ -50,13 +54,12 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
             // cargamos el combo del iva y la fecha.
             comboiva.DataSource = bd.Iva.Select(user => user.ivaporciento).ToList();
-            comboiva.Text = "10";
+            comboiva.Text = "21";
 
             fechafactura.Value = DateTime.Now;
 
-            //mostramos el mes que tenemos que factuar
-            // para ello  filtramos la tabla por la fecha, y añadimos uno
-            //   var mes = bd.Temporal.OrderByDescending(x => x.tempfecharemesa).FirstOrDefault();
+            //mostramos el mes actual
+            combomes.Text = DateTime.Now.ToString("MMMM");
 
 
             // borrar
@@ -72,7 +75,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             // cuando generamos, recorremos los datos de la tabla clientes, y extraemos los datos de los que
             //tienen como true el campo activo.
 
-       var facturcliente = bd.Clientes.Where(x => x.activocliente == true).ToList();
+            var facturcliente = bd.Clientes.Where(x => x.activocliente == true).ToList();
 
             Globales.fechafactura = fechafactura.Value;
             Globales.mesfactura = combomes.Text;
@@ -86,30 +89,16 @@ namespace Proyecto_Antonio_Luis.Formularios
             albaranes = Mapeos.creaalbaran.pasoclientes_a_albaran(facturcliente);
 
             dgvTemporal.DataSource = albaranes.ToList();
-//**************************
+            //**************************
 
 
+            //activamos los botones de imprimir y facturar.
+            facturar.Enabled = true;
+            facturar.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Facturacion;
+            imprimir.Enabled = true;
+            imprimir.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Impresora;
 
 
-
-
-
-
-
-            
-
-
-
-
-
-/*
-           
-            List<temporal> listaTemporales = new List<temporal>();
-
-            listaTemporales = Mapeos.Mapeo.MapeoClienteDB_A_Temporal(facturcliente);
-                
-             dataGridView1.DataSource = listaTemporales.ToList();
-             */
         }
 
 
@@ -195,30 +184,54 @@ namespace Proyecto_Antonio_Luis.Formularios
             
             
             // realizamos esto si modificamos la tarifa 1 o tarifa 2
-            if ((dgvTemporal.Columns[e.ColumnIndex].Name == "albtarifaDataGridViewTextBoxColumn")||
-                    (dgvTemporal.Columns[e.ColumnIndex].Name == "albtarifa2DataGridViewTextBoxColumn"))
+            if (dgvTemporal.Columns[e.ColumnIndex].Name == "albtarifaDataGridViewTextBoxColumn")
             {
                 fila = Convert.ToInt32(dgvTemporal.CurrentRow.Index);
 
 
                 // cargamos las variables con los datos del dgv
-                tarifa1albaran = Convert.ToDecimal(dgvTemporal[4, fila].Value);
-                tarifa2albaran = Convert.ToDecimal(dgvTemporal[6, fila].Value);
-                laboralalbaran = Convert.ToDecimal(dgvTemporal[9, fila].Value);
-                tipoivaalbaran = Convert.ToDecimal(dgvTemporal[13, fila].Value);
+                tarifa1albaran = Convert.ToDecimal(dgvTemporal[6, fila].Value);
+                tarifa2albaran = Convert.ToDecimal(dgvTemporal[8, fila].Value);
+                laboralalbaran = Convert.ToDecimal(dgvTemporal[11, fila].Value);
+                tipoivaalbaran = Convert.ToDecimal(dgvTemporal[1, fila].Value);
 
                 // realizamos lo scalculos
                 basealbaran = (tarifa1albaran + tarifa2albaran + laboralalbaran);
-                ivaalbaran = (basealbaran * tipoivaalbaran)/100;
+                ivaalbaran = ((tarifa1albaran + laboralalbaran) * tipoivaalbaran)/100;
 
                 totalalbaran = basealbaran + ivaalbaran;
 
                 // cargamos los datos e el dgv
-                dgvTemporal[10, fila].Value = basealbaran;
-                dgvTemporal[11, fila].Value = ivaalbaran;
-                dgvTemporal[12, fila].Value = totalalbaran;
+                dgvTemporal[12, fila].Value = basealbaran;
+                dgvTemporal[13, fila].Value = ivaalbaran;
+                dgvTemporal[14, fila].Value = totalalbaran;
             }
 
+
+
+            // realizamos esto si modificamos la tarifa 2 (SUPLIDOS)
+            if (dgvTemporal.Columns[e.ColumnIndex].Name == "albtarifa2DataGridViewTextBoxColumn")
+            {
+                fila = Convert.ToInt32(dgvTemporal.CurrentRow.Index);
+
+
+                // cargamos las variables con los datos del dgv
+                tarifa1albaran = Convert.ToDecimal(dgvTemporal[6, fila].Value);
+                tarifa2albaran = Convert.ToDecimal(dgvTemporal[8, fila].Value);
+                laboralalbaran = Convert.ToDecimal(dgvTemporal[11, fila].Value);
+                tipoivaalbaran = Convert.ToDecimal(dgvTemporal[1, fila].Value);
+
+                // realizamos lo scalculos
+                basealbaran = (tarifa1albaran + tarifa2albaran + laboralalbaran);
+                ivaalbaran = ((tarifa1albaran + laboralalbaran) * tipoivaalbaran) / 100;
+
+                totalalbaran = basealbaran + ivaalbaran;
+
+                // cargamos los datos e el dgv
+                dgvTemporal[12, fila].Value = basealbaran;
+                dgvTemporal[13, fila].Value = ivaalbaran;
+                dgvTemporal[14, fila].Value = totalalbaran;
+            }
 
 
             // realizamos esto si modificamos los empleados o el precio por emleado
@@ -228,23 +241,23 @@ namespace Proyecto_Antonio_Luis.Formularios
                 fila = Convert.ToInt32(dgvTemporal.CurrentRow.Index);
 
                 // cargamos las variables con los datos del dgv
-                tarifa1albaran = Convert.ToDecimal(dgvTemporal[4, fila].Value);
-                tarifa2albaran = Convert.ToDecimal(dgvTemporal[6, fila].Value);
-                tipoivaalbaran = Convert.ToDecimal(dgvTemporal[13, fila].Value);
-                empleadosalbaran = Convert.ToInt32(dgvTemporal[7, fila].Value);
-                precioempleadoalbaran = Convert.ToDecimal(dgvTemporal[8, fila].Value);
+                tarifa1albaran = Convert.ToDecimal(dgvTemporal[6, fila].Value);
+                tarifa2albaran = Convert.ToDecimal(dgvTemporal[8, fila].Value);
+                tipoivaalbaran = Convert.ToDecimal(dgvTemporal[1, fila].Value);
+                empleadosalbaran = Convert.ToInt32(dgvTemporal[9, fila].Value);
+                precioempleadoalbaran = Convert.ToDecimal(dgvTemporal[10, fila].Value);
 
                 // realizamos lo scalculos
                 laboralalbaran = empleadosalbaran * precioempleadoalbaran;
                 basealbaran = (tarifa1albaran + tarifa2albaran + laboralalbaran);
-                ivaalbaran = (basealbaran * tipoivaalbaran) / 100;
+                ivaalbaran = ((tarifa1albaran + laboralalbaran) * tipoivaalbaran) / 100;
                 totalalbaran = basealbaran + ivaalbaran;
 
                 // cargamos los datos e el dgv
-                dgvTemporal[10, fila].Value = basealbaran;
-                dgvTemporal[11, fila].Value = ivaalbaran;
-                dgvTemporal[12, fila].Value = totalalbaran;
-                dgvTemporal[9, fila].Value = laboralalbaran;
+                dgvTemporal[12, fila].Value = basealbaran;
+                dgvTemporal[13, fila].Value = ivaalbaran;
+                dgvTemporal[14, fila].Value = totalalbaran;
+                dgvTemporal[11, fila].Value = laboralalbaran;
 
             }
 
@@ -255,40 +268,22 @@ namespace Proyecto_Antonio_Luis.Formularios
         private void añadir_Click(object sender, EventArgs e)
         {
 
+            // hace visible el panel de busqueda y ordena por numero de cliente
+            panel3.Visible = true;
+            var nuevocliente = bd.Clientes.OrderByDescending(y => y.nombrecliente);
+            dataGridView2.DataSource = nuevocliente.ToList();
 
 
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //var buscaclientes = bd.Clientes.OrderByDescending(x => x.nombrecliente).f
 
-
-      //      int index = comboiva.FindString(textBox1.Text);
-     //       comboiva.SelectedIndex = index;
-
-            var buscaclientes = bd.Clientes.OrderByDescending(y => y.nombrecliente == textBox1.Text );
-
-       
-
-
-
-            dataGridView2.DataSource = buscaclientes.ToList();
-
-
-
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-
-        }
+ 
 
         private void facturar_Click(object sender, EventArgs e)
         {
 
+            //mostramos el detagrib
+            dataGridView1.Visible = true;
 
 
 
@@ -470,6 +465,13 @@ namespace Proyecto_Antonio_Luis.Formularios
                 // Guardamos los cambios
                 bd.SaveChanges();
 
+
+
+                //desasctivamos los botones de generar, añadir y borrar
+                añadir.Enabled = false;
+                generar.Enabled = false;
+                eliminar.Enabled = false;
+
             }
             catch(Exception exp)
             { 
@@ -479,20 +481,148 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         }
 
-        private void dgvTemporal_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+
+
+
+
+
+
+
+        private void button3_Click(object sender, EventArgs e)
         {
+            panel3.Visible = false;
+        }
+
+        private void dataGridView2_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            int fila = Convert.ToInt32(dataGridView2.CurrentRow.Index);
+            decimal esteclienod = Convert.ToDecimal(dataGridView2[1, fila].Value);
+
+
+            var porcodigo2 = bd.Clientes.Where(x => x.codcliente == esteclienod).ToList();
+
+
+            dataGridView2.DataSource = porcodigo2.ToList();
+        }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
+            if ((textBox2.Text != "")) ;
+            {
+                try
+                {
+                    var pornombre = bd.Clientes.OrderBy(y => y.nombrecliente);
+                    dataGridView2.DataSource = pornombre.ToList();
+
+                    //decimal esteclienod = Convert.ToDecimal(textBox1.Text);
+
+
+                    var porcodigo2 = bd.Clientes.Where(x => x.nombrecliente == textBox2.Text).ToList();
+
+                    dataGridView2.DataSource = porcodigo2.ToList();
+                }
+                catch
+                {
+
+                }
+            }
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void textBox2_Enter_1(object sender, EventArgs e)
         {
-
+            // ordena por nombre de cliente
+            var nuevocliente = bd.Clientes.OrderBy(y => y.nombrecliente);
+            dataGridView2.DataSource = nuevocliente.ToList();
         }
 
-        private void temporalBindingSource_CurrentChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
+            if ((textBox1.Text != "")) ;
+            {
+                try
+                {
+                    var porcodigo = bd.Clientes.OrderByDescending(y => y.codcliente);
+                    dataGridView2.DataSource = porcodigo.ToList();
 
+                    decimal esteclienod = Convert.ToDecimal(textBox1.Text);
+
+
+                    var porcodigo2 = bd.Clientes.Where(x => x.codcliente == esteclienod).ToList();
+
+                    dataGridView2.DataSource = porcodigo2.ToList();
+                }
+                catch
+                {
+
+                }
+
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView2.Rows)
+
+            {
+                albaranesclientes datosapasar = new albaranesclientes();
+                datosapasar.albcod = Convert.ToDecimal(row.Cells[1].Value);
+                datosapasar.albnombre = Convert.ToString(row.Cells[2].Value);
+                datosapasar.albcif = Convert.ToString(row.Cells[3].Value);
+                datosapasar.albdireccion = Convert.ToString(row.Cells[4].Value);
+                datosapasar.alblocalidad = Convert.ToString(row.Cells[5].Value);
+                datosapasar.albprovincia = Convert.ToString(row.Cells[6].Value);
+                datosapasar.albcp = Convert.ToString(row.Cells[7].Value);
+                datosapasar.albmail = Convert.ToString(row.Cells[12].Value);
+                datosapasar.albpormail = Convert.ToBoolean(row.Cells[13].Value);
+                datosapasar.albdomiciliado = Convert.ToBoolean(row.Cells[16].Value);
+                datosapasar.albiban1 = Convert.ToString(row.Cells[19].Value);
+                datosapasar.albiban2 = Convert.ToInt64(row.Cells[20].Value);
+                datosapasar.albiban3 = Convert.ToInt64(row.Cells[21].Value);
+                datosapasar.albiban4 = Convert.ToInt64(row.Cells[15].Value);
+                datosapasar.albiban5 = Convert.ToInt64(row.Cells[22].Value);
+                datosapasar.albiban6 = Convert.ToInt64(row.Cells[26].Value);
+                datosapasar.albempleados = Convert.ToInt64(row.Cells[25].Value);
+                datosapasar.albpvpempleados = Convert.ToDecimal(row.Cells[51].Value);
+                datosapasar.albtarifa = Convert.ToDecimal(row.Cells[28].Value);
+                datosapasar.albfecha = Globales.fechafactura.ToString("dd/MM/yyy");
+                datosapasar.albmes = Globales.mesfactura;
+                datosapasar.albconcepto1 = "Honorarios Correspondiente al mes de " + Globales.mesfactura.ToString();
+                datosapasar.albconcepto2 = null;
+                datosapasar.albtarifa2 = 0;
+                datosapasar.albtipoiva = Globales.tipoiva;
+                datosapasar.alblaboral = Convert.ToDecimal((Convert.ToInt64(row.Cells[25].Value)) * (Convert.ToDecimal(row.Cells[51].Value)));
+                datosapasar.albbase = Convert.ToDecimal(Convert.ToDecimal(row.Cells[28].Value)) +
+                   ((Convert.ToInt64(row.Cells[25].Value)) * (Convert.ToDecimal(row.Cells[51].Value)));
+
+                datosapasar.albiva = Convert.ToDecimal(((Convert.ToDecimal(row.Cells[28].Value)) +
+                   ((Convert.ToInt64(row.Cells[25].Value)) * (Convert.ToDecimal(row.Cells[51].Value)))) * Globales.tipoiva / 100);
+
+                datosapasar.albtotal = Convert.ToDecimal(Convert.ToDecimal(row.Cells[28].Value)) +
+                   ((Convert.ToInt64(row.Cells[25].Value)) * (Convert.ToDecimal(row.Cells[51].Value)) +
+                   Convert.ToDecimal(((Convert.ToDecimal(row.Cells[28].Value)) +
+                   ((Convert.ToInt64(row.Cells[25].Value)) * (Convert.ToDecimal(row.Cells[51].Value)))) * Globales.tipoiva / 100));
+
+                datosapasar.albparadomiciliar = Convert.ToBoolean(row.Cells[16].Value);
+                datosapasar.albparacontabilizar = Convert.ToBoolean(row.Cells[18].Value);
+
+
+
+                albaranes.Add(datosapasar);
+            }
+            dgvTemporal.DataSource = albaranes.ToList();
+        }
+
+        private void textBox1_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+
+            }
         }
     }
+    
 }
-

@@ -213,6 +213,26 @@ namespace Proyecto_Antonio_Luis.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Facturacion {
+            get {
+                object obj = ResourceManager.GetObject("Facturacion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Facturacion_of {
+            get {
+                object obj = ResourceManager.GetObject("Facturacion of", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FacturaManual {
             get {
                 object obj = ResourceManager.GetObject("FacturaManual", resourceCulture);
@@ -266,6 +286,26 @@ namespace Proyecto_Antonio_Luis.Properties {
         internal static System.Drawing.Bitmap Facturas_Azul {
             get {
                 object obj = ResourceManager.GetObject("Facturas Azul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Impresora {
+            get {
+                object obj = ResourceManager.GetObject("Impresora", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Impresora_of {
+            get {
+                object obj = ResourceManager.GetObject("Impresora of", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

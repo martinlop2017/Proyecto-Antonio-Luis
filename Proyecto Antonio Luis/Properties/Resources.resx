@@ -127,11 +127,11 @@
   <data name="Propios" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Propios.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Mantenimiento Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Mantenimiento Azul.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Enlace" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Enlace.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo Antonio Luis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo Antonio Luis.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Clientes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Clientes1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,8 +148,8 @@
   <data name="Ayuda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ayuda.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Impuetos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Impuetos.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Facturacion of" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Facturacion of.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Ruta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ruta.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,8 +193,17 @@
   <data name="FacturaMensual" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FacturaMensual.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Impuetos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Impuetos.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Llave azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Llave azul.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MisDatos3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MisDatos3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Facturacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Facturacion.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FacturaMensual Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FacturaMensual Azul.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,8 +223,8 @@
   <data name="FacturaManual Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FacturaManual Azul.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Clientes.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Impuetos Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Impuetos Azul.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MisDatos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MisDatos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,13 +244,16 @@
   <data name="Llave" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Llave.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Impuetos Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Impuetos Azul.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Mantenimiento Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mantenimiento Azul.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo Antonio Luis" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo Antonio Luis.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clientes.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MisDatos3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MisDatos3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Impresora of" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Impresora of.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Impresora" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Impresora.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

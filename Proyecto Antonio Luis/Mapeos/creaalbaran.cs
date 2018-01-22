@@ -46,12 +46,12 @@ namespace Proyecto_Antonio_Luis.Mapeos
                 alblaboral = c.empleadoscliente.Value * c.precioempleadocliente.Value,
                 albbase = (c.empleadoscliente.Value * c.precioempleadocliente.Value) + c.tarifacliente.Value,
                 albiva = (((c.empleadoscliente.Value * c.precioempleadocliente.Value) + c.tarifacliente.Value)
-                           * 10) / 100,
+                           * Globales.tipoiva / 100),
                 albtotal = ((c.empleadoscliente.Value * c.precioempleadocliente.Value) + c.tarifacliente.Value) +
-                            (((c.empleadoscliente.Value * c.precioempleadocliente.Value) + c.tarifacliente.Value)*10/100),
+                            (((c.empleadoscliente.Value * c.precioempleadocliente.Value) + c.tarifacliente.Value) * Globales.tipoiva  / 100),
 
 
-               // albtipoiva = Globales.tipoiva,
+                albtipoiva = Globales.tipoiva,
                 albparadomiciliar = c.domiciliadocliente.Value,
                 albparacontabilizar = c.contabilizarcliente.Value,
                // albparaimprimir = c.

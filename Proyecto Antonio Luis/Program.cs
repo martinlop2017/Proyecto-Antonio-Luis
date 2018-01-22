@@ -24,7 +24,7 @@ namespace Proyecto_Antonio_Luis
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GenerarRemesas());
+            Application.Run(new Facturacion());
         }
     }
 }
@@ -38,6 +38,8 @@ namespace Proyecto_Antonio_Luis
     public static DateTime fechafactura;
     public static string mesfactura;
     public static decimal tipoiva;
+    
+
     
         
 
