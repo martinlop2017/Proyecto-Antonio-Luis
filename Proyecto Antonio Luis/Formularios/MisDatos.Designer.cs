@@ -541,7 +541,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.MisDatos6;
             this.ClientSize = new System.Drawing.Size(874, 641);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textboxbic);

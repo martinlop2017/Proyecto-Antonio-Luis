@@ -465,6 +465,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(704, 644);
             this.ControlBox = false;
@@ -483,7 +484,6 @@
             this.Name = "GestionUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionUsuarios";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.GestionUsuarios_Activated);
             this.Load += new System.EventHandler(this.GestionUsuarios_Load);
             this.Enter += new System.EventHandler(this.GestionUsuarios_Enter);

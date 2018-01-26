@@ -12,14 +12,12 @@ namespace BaseDatos
     using System;
     using System.Collections.Generic;
     
-    public partial class Remesas
+    public partial class Resilla
     {
         public decimal remesanumerador { get; set; }
         public string remesanumero { get; set; }
         public string remesafecha { get; set; }
-        public string remesabanco { get; set; }
         public Nullable<decimal> remesatotal { get; set; }
-        public Nullable<bool> remesaimpresa { get; set; }
         public Nullable<bool> remesacontabilizada { get; set; }
     }
 }

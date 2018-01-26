@@ -676,6 +676,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                     MessageBox.Show("No ha sido posible grabar los datos", "Error 101", MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
             }
+            Close();
         }
 
         private void button3_Click(object sender, EventArgs e)

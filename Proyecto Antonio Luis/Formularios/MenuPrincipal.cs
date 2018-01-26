@@ -273,6 +273,9 @@ namespace Proyecto_Antonio_Luis.Formularios
             PanelSistema.Visible = false;
             PanelClientes.Visible = false;
             PanelFacturas.Visible = false;
+
+            CBS19 form = new CBS19();
+            form.Show();
         }
 
         private void BotonContaplus_Click(object sender, EventArgs e)
@@ -338,7 +341,8 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void BotonFactMensual_Click(object sender, EventArgs e)
         {
-
+            Facturacion form = new Facturacion();
+            form.Show();
         }
 
         private void BotonFactManual_Click(object sender, EventArgs e)

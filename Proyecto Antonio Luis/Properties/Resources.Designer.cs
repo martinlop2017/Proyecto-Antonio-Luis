@@ -143,6 +143,16 @@ namespace Proyecto_Antonio_Luis.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Clientes2 {
+            get {
+                object obj = ResourceManager.GetObject("Clientes2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Contaplus {
             get {
                 object obj = ResourceManager.GetObject("Contaplus", resourceCulture);
@@ -436,6 +446,36 @@ namespace Proyecto_Antonio_Luis.Properties {
         internal static System.Drawing.Bitmap MisDatos3 {
             get {
                 object obj = ResourceManager.GetObject("MisDatos3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MisDatos4 {
+            get {
+                object obj = ResourceManager.GetObject("MisDatos4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MisDatos5 {
+            get {
+                object obj = ResourceManager.GetObject("MisDatos5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MisDatos6 {
+            get {
+                object obj = ResourceManager.GetObject("MisDatos6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -57,6 +57,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministracionAntonioDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdministracionAntonioDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AdministracionAntonioDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdministracionAntonioDataSet11.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Clases\albaranesclientes.cs" />
     <Compile Include="Clases\PasoClientes.cs" />
     <Compile Include="Clases\temporal.cs" />
@@ -65,6 +75,12 @@
     </Compile>
     <Compile Include="Formularios\BORRAR.Designer.cs">
       <DependentUpon>BORRAR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\CBS19.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\CBS19.Designer.cs">
+      <DependentUpon>CBS19.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Cliente.cs">
       <SubType>Form</SubType>
@@ -145,6 +161,9 @@
     <EmbeddedResource Include="Formularios\BORRAR.resx">
       <DependentUpon>BORRAR.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CBS19.resx">
+      <DependentUpon>CBS19.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Cliente.resx">
       <DependentUpon>Cliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,14 +202,31 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <None Include="AdministracionAntonioDataSet1.xsc">
+      <DependentUpon>AdministracionAntonioDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="AdministracionAntonioDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdministracionAntonioDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AdministracionAntonioDataSet1.xss">
+      <DependentUpon>AdministracionAntonioDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="AdministracionAntonioDataSet11.xsc">
+      <DependentUpon>AdministracionAntonioDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="AdministracionAntonioDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdministracionAntonioDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AdministracionAntonioDataSet11.xss">
+      <DependentUpon>AdministracionAntonioDataSet11.xsd</DependentUpon>
+    </None>
     <None Include="Properties\DataSources\BaseDatos.AdministracionAntonioEntities.datasource" />
     <None Include="Properties\DataSources\BaseDatos.Clientes.datasource" />
     <None Include="Properties\DataSources\BaseDatos.Cuentas.datasource" />
@@ -203,6 +239,7 @@
     <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Clases.albaranesclientes.datasource" />
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Clases.temporal.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.CBS19.datasource" />
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.Clientes.datasource" />
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.Contaplus.datasource" />
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.Facturacion.datasource" />
@@ -220,6 +257,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -353,9 +395,6 @@
     <None Include="Resources\Ususarios.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MisDatos3.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Facturacion of.bmp" />
   </ItemGroup>
   <ItemGroup>
@@ -366,6 +405,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Impresora.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MisDatos3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MisDatos4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

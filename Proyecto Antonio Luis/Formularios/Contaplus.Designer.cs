@@ -83,7 +83,7 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.Location = new System.Drawing.Point(32, 329);
+            this.button2.Location = new System.Drawing.Point(32, 321);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(191, 60);
             this.button2.TabIndex = 126;

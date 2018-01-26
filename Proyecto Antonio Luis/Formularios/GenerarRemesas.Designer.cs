@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GenerarRemesas));
             this.button2 = new System.Windows.Forms.Button();
             this.buttonAceptar = new System.Windows.Forms.Button();
@@ -39,9 +40,28 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.administracionAntonioEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.administracionAntonioDataSet = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet();
+            this.remesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.remesasTableAdapter = new Proyecto_Antonio_Luis.AdministracionAntonioDataSetTableAdapters.RemesasTableAdapter();
+            this.remesanumeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remesafechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remesatotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remesabancoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remesaimpresaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.remesacontabilizadaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.remesanumeradorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.caja = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioEntitiesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.remesasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -82,11 +102,23 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(31, 168);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.remesanumeroDataGridViewTextBoxColumn,
+            this.remesafechaDataGridViewTextBoxColumn,
+            this.remesatotalDataGridViewTextBoxColumn,
+            this.remesabancoDataGridViewTextBoxColumn,
+            this.remesaimpresaDataGridViewCheckBoxColumn,
+            this.remesacontabilizadaDataGridViewCheckBoxColumn,
+            this.remesanumeradorDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.remesasBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(53, 168);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(563, 318);
+            this.dataGridView1.RowHeadersWidth = 15;
+            this.dataGridView1.Size = new System.Drawing.Size(329, 318);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -133,11 +165,94 @@
             this.label5.TabIndex = 204;
             this.label5.Text = "label5";
             // 
+            // administracionAntonioEntitiesBindingSource
+            // 
+            this.administracionAntonioEntitiesBindingSource.DataSource = typeof(BaseDatos.AdministracionAntonioEntities);
+            // 
+            // administracionAntonioDataSet
+            // 
+            this.administracionAntonioDataSet.DataSetName = "AdministracionAntonioDataSet";
+            this.administracionAntonioDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // remesasBindingSource
+            // 
+            this.remesasBindingSource.DataMember = "Remesas";
+            this.remesasBindingSource.DataSource = this.administracionAntonioDataSet;
+            // 
+            // remesasTableAdapter
+            // 
+            this.remesasTableAdapter.ClearBeforeFill = true;
+            // 
+            // remesanumeroDataGridViewTextBoxColumn
+            // 
+            this.remesanumeroDataGridViewTextBoxColumn.DataPropertyName = "remesanumero";
+            this.remesanumeroDataGridViewTextBoxColumn.HeaderText = "remesanumero";
+            this.remesanumeroDataGridViewTextBoxColumn.Name = "remesanumeroDataGridViewTextBoxColumn";
+            // 
+            // remesafechaDataGridViewTextBoxColumn
+            // 
+            this.remesafechaDataGridViewTextBoxColumn.DataPropertyName = "remesafecha";
+            this.remesafechaDataGridViewTextBoxColumn.HeaderText = "remesafecha";
+            this.remesafechaDataGridViewTextBoxColumn.Name = "remesafechaDataGridViewTextBoxColumn";
+            // 
+            // remesatotalDataGridViewTextBoxColumn
+            // 
+            this.remesatotalDataGridViewTextBoxColumn.DataPropertyName = "remesatotal";
+            this.remesatotalDataGridViewTextBoxColumn.HeaderText = "remesatotal";
+            this.remesatotalDataGridViewTextBoxColumn.Name = "remesatotalDataGridViewTextBoxColumn";
+            // 
+            // remesabancoDataGridViewTextBoxColumn
+            // 
+            this.remesabancoDataGridViewTextBoxColumn.DataPropertyName = "remesabanco";
+            this.remesabancoDataGridViewTextBoxColumn.HeaderText = "remesabanco";
+            this.remesabancoDataGridViewTextBoxColumn.Name = "remesabancoDataGridViewTextBoxColumn";
+            this.remesabancoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // remesaimpresaDataGridViewCheckBoxColumn
+            // 
+            this.remesaimpresaDataGridViewCheckBoxColumn.DataPropertyName = "remesaimpresa";
+            this.remesaimpresaDataGridViewCheckBoxColumn.HeaderText = "remesaimpresa";
+            this.remesaimpresaDataGridViewCheckBoxColumn.Name = "remesaimpresaDataGridViewCheckBoxColumn";
+            this.remesaimpresaDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // remesacontabilizadaDataGridViewCheckBoxColumn
+            // 
+            this.remesacontabilizadaDataGridViewCheckBoxColumn.DataPropertyName = "remesacontabilizada";
+            this.remesacontabilizadaDataGridViewCheckBoxColumn.HeaderText = "remesacontabilizada";
+            this.remesacontabilizadaDataGridViewCheckBoxColumn.Name = "remesacontabilizadaDataGridViewCheckBoxColumn";
+            this.remesacontabilizadaDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // remesanumeradorDataGridViewTextBoxColumn
+            // 
+            this.remesanumeradorDataGridViewTextBoxColumn.DataPropertyName = "remesanumerador";
+            this.remesanumeradorDataGridViewTextBoxColumn.HeaderText = "remesanumerador";
+            this.remesanumeradorDataGridViewTextBoxColumn.Name = "remesanumeradorDataGridViewTextBoxColumn";
+            this.remesanumeradorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.remesanumeradorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // form1BindingSource
+            // 
+            this.form1BindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Form1);
+            // 
+            // programBindingSource
+            // 
+            this.programBindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Program);
+            // 
+            // caja
+            // 
+            this.caja.AutoSize = true;
+            this.caja.Location = new System.Drawing.Point(464, 257);
+            this.caja.Name = "caja";
+            this.caja.Size = new System.Drawing.Size(35, 13);
+            this.caja.TabIndex = 205;
+            this.caja.Text = "label6";
+            // 
             // GenerarRemesas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 641);
+            this.Controls.Add(this.caja);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -148,9 +263,15 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "GenerarRemesas";
             this.Text = "GenerarRemesas";
+            this.Load += new System.EventHandler(this.GenerarRemesas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioEntitiesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.remesasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,5 +288,19 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.BindingSource form1BindingSource;
+        private System.Windows.Forms.BindingSource administracionAntonioEntitiesBindingSource;
+        private System.Windows.Forms.BindingSource programBindingSource;
+        private AdministracionAntonioDataSet administracionAntonioDataSet;
+        private System.Windows.Forms.BindingSource remesasBindingSource;
+        private AdministracionAntonioDataSetTableAdapters.RemesasTableAdapter remesasTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn remesanumeroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn remesafechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn remesatotalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn remesabancoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn remesaimpresaDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn remesacontabilizadaDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn remesanumeradorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label caja;
     }
 }

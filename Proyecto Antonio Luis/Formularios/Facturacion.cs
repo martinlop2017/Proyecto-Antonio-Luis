@@ -94,9 +94,11 @@ namespace Proyecto_Antonio_Luis.Formularios
 
             //activamos los botones de imprimir y facturar.
             facturar.Enabled = true;
-            facturar.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Facturacion;
-            imprimir.Enabled = true;
-            imprimir.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Impresora;
+            
+            añadir.Enabled = true;
+            eliminar.Enabled = true;
+
+
 
 
         }
@@ -281,7 +283,11 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void facturar_Click(object sender, EventArgs e)
         {
-
+            generar.Enabled = false;
+            añadir.Enabled = false;
+            eliminar.Enabled = false;
+            imprimir.Enabled = true;
+            facturar.Enabled = false;
             //mostramos el detagrib
             dataGridView1.Visible = true;
 
@@ -440,16 +446,17 @@ namespace Proyecto_Antonio_Luis.Formularios
                     bd.Facturas.AddRange(facturasAGuardar);
 
 
-                var pasoremesa = new Remesas();
+                var pasoremesa = new Resilla();
                 pasoremesa.remesanumero = numeroremesa;
                 pasoremesa.remesafecha = fecharemesa;
                 pasoremesa.remesatotal = totaltotalremesa;
-                pasoremesa.remesaimpresa = false;
-                pasoremesa.remesacontabilizada = false;           
+               // pasoremesa.remesaimpresa = false;
+                pasoremesa.remesacontabilizada = false;
+                    
                                             
                 
                 // pasamos los datos a remesa
-                bd.Remesas.Add(pasoremesa);
+                bd.Resilla.Add(pasoremesa);
 
 
                 bd.SaveChanges();
@@ -622,6 +629,11 @@ namespace Proyecto_Antonio_Luis.Formularios
                 e.Handled = true;
 
             }
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
     
