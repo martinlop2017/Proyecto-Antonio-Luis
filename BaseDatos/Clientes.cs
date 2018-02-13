@@ -33,11 +33,11 @@ namespace BaseDatos
         public Nullable<bool> recargo { get; set; }
         public Nullable<bool> contabilizarcliente { get; set; }
         public string iban1cliente { get; set; }
-        public Nullable<decimal> iban2cliente { get; set; }
-        public Nullable<decimal> iban3cliente { get; set; }
-        public Nullable<decimal> iban4cliente { get; set; }
-        public Nullable<decimal> iban5cliente { get; set; }
-        public Nullable<decimal> iban6cliente { get; set; }
+        public string iban2cliente { get; set; }
+        public string iban3cliente { get; set; }
+        public string iban4cliente { get; set; }
+        public string iban5cliente { get; set; }
+        public string iban6cliente { get; set; }
         public string grupocliente { get; set; }
         public Nullable<decimal> empleadoscliente { get; set; }
         public Nullable<System.DateTime> fechaaltacliente { get; set; }

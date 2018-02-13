@@ -212,6 +212,12 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         }
 
+        private void buscar_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
 
 
 

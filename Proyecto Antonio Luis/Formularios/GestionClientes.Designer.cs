@@ -567,11 +567,12 @@
             // 
             this.buscar.BackColor = System.Drawing.Color.White;
             this.buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscar.BackgroundImage")));
-            this.buscar.Location = new System.Drawing.Point(215, 105);
+            this.buscar.Location = new System.Drawing.Point(214, 103);
             this.buscar.Name = "buscar";
             this.buscar.Size = new System.Drawing.Size(52, 56);
             this.buscar.TabIndex = 42;
             this.buscar.UseVisualStyleBackColor = false;
+            this.buscar.Click += new System.EventHandler(this.buscar_Click);
             this.buscar.MouseEnter += new System.EventHandler(this.buscar_MouseEnter);
             this.buscar.MouseLeave += new System.EventHandler(this.buscar_MouseLeave);
             // 

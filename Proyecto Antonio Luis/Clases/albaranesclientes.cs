@@ -31,11 +31,11 @@ namespace Proyecto_Antonio_Luis.Clases
         public string albcp { get; set; }
         public string albmail { get; set; }
         public string albiban1 { get; set; }
-        public decimal albiban2 { get; set; }
-        public decimal albiban3 { get; set; }
-        public decimal albiban4 { get; set; }
-        public decimal albiban5 { get; set; }
-        public decimal albiban6 { get; set; }
+        public string albiban2 { get; set; }
+        public string albiban3 { get; set; }
+        public string albiban4 { get; set; }
+        public string albiban5 { get; set; }
+        public string albiban6 { get; set; }
         public string albgrupo { get; set; }
         public string albmes { get; set; }
         public decimal albtipoiva{ get; set; }

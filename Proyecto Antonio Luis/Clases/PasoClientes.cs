@@ -25,11 +25,11 @@ namespace Proyecto_Antonio_Luis.Clases
         public bool nuevoactivocliente { get; set; }
         public bool nuevodomiciliadocliente { get; set; }
         public string nuevoiban1cliente { get; set; }
-        public decimal nuevoiban2cliente { get; set; }
-        public decimal nuevoiban3cliente { get; set; }
-        public decimal nuevoiban4cliente { get; set; }
-        public decimal nuevoiban5cliente { get; set; }
-        public decimal nuevoiban6cliente { get; set; }
+        public string nuevoiban2cliente { get; set; }
+        public string nuevoiban3cliente { get; set; }
+        public string nuevoiban4cliente { get; set; }
+        public string nuevoiban5cliente { get; set; }
+        public string nuevoiban6cliente { get; set; }
         public string nuevogrupocliente { get; set; }
         public decimal nuevoempleadoscliente { get; set; }
         public string nuevofechaaltacliente { get; set; }

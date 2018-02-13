@@ -26,11 +26,11 @@ namespace BaseDatos
         public string factcp { get; set; }
         public string factnif { get; set; }
         public string factiban1 { get; set; }
-        public Nullable<decimal> factiban2 { get; set; }
-        public Nullable<decimal> factiban3 { get; set; }
-        public Nullable<decimal> factiban4 { get; set; }
-        public Nullable<decimal> factiban5 { get; set; }
-        public Nullable<decimal> factiban6 { get; set; }
+        public string factiban2 { get; set; }
+        public string factiban3 { get; set; }
+        public string factiban4 { get; set; }
+        public string factiban5 { get; set; }
+        public string factiban6 { get; set; }
         public string factconcepto1 { get; set; }
         public Nullable<decimal> factbase1 { get; set; }
         public string factconcepto2 { get; set; }

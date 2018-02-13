@@ -31,11 +31,11 @@ namespace Proyecto_Antonio_Luis.Clases
         public string tempcp { get; set; }
         public string tempmail { get; set; }
         public string tempiban1 { get; set; }
-        public decimal tempiban2 { get; set; }
-        public decimal tempiban3 { get; set; }
-        public decimal tempiban4 { get; set; }
-        public decimal tempiban5 { get; set; }
-        public decimal tempiban6 { get; set; }
+        public string tempiban2 { get; set; }
+        public string tempiban3 { get; set; }
+        public string tempiban4 { get; set; }
+        public string tempiban5 { get; set; }
+        public string tempiban6 { get; set; }
         public decimal temptipoiva { get; set; }
         public decimal tempcod { get; set; }
         public bool tempparacontabilizar { get; set; }

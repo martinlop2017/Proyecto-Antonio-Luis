@@ -275,11 +275,11 @@ namespace Proyecto_Antonio_Luis.Formularios
                         nuevocliente.pormailcliente = false;
                     }
                     nuevocliente.iban1cliente = textCCC1.Text;
-                    nuevocliente.iban2cliente = Convert.ToInt64(textCCC2.Text);
-                    nuevocliente.iban3cliente = Convert.ToInt64(textCCC3.Text);
-                    nuevocliente.iban4cliente = Convert.ToInt64(textCCC4.Text);
-                    nuevocliente.iban5cliente = Convert.ToInt64(textCCC5.Text);
-                    nuevocliente.iban6cliente = Convert.ToInt64(textCCC6.Text);
+                    nuevocliente.iban2cliente = textCCC2.Text;
+                    nuevocliente.iban3cliente = textCCC3.Text;
+                    nuevocliente.iban4cliente = textCCC4.Text;
+                    nuevocliente.iban5cliente = textCCC5.Text;
+                    nuevocliente.iban6cliente = textCCC6.Text;
 
 
                     if (chec100.Checked == true)
@@ -511,11 +511,11 @@ namespace Proyecto_Antonio_Luis.Formularios
                             amodificar.pormailcliente = false;
                         }
                         amodificar.iban1cliente = textCCC1.Text;
-                        amodificar.iban2cliente = Convert.ToInt64(textCCC2.Text);
-                        amodificar.iban3cliente = Convert.ToInt64(textCCC3.Text);
-                        amodificar.iban4cliente = Convert.ToInt64(textCCC4.Text);
-                        amodificar.iban5cliente = Convert.ToInt64(textCCC5.Text);
-                        amodificar.iban6cliente = Convert.ToInt64(textCCC6.Text);
+                        amodificar.iban2cliente = textCCC2.Text;
+                        amodificar.iban3cliente = textCCC3.Text;
+                        amodificar.iban4cliente = textCCC4.Text;
+                        amodificar.iban5cliente = textCCC5.Text;
+                        amodificar.iban6cliente = textCCC6.Text;
 
 
                         if (chec100.Checked == true)
