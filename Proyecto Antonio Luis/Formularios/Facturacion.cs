@@ -482,7 +482,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                 bd.Resilla.Add(pasoremesa);
 
 
-                bd.SaveChanges();
+          //      bd.SaveChanges();
 
                 //ahora vamos a introducir el total de la remesa en las facturas.
 

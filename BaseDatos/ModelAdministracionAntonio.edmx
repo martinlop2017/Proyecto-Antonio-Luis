@@ -180,6 +180,16 @@
           <Property Name="remesatotal" Type="decimal" Precision="18" Scale="0" />
           <Property Name="remesacontabilizada" Type="bit" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="Ususarios">
           <Key>
             <PropertyRef Name="cod" />
@@ -221,6 +231,7 @@
           <EntitySet Name="Propios" EntityType="Self.Propios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Remesasapasar" EntityType="Self.Remesasapasar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Resilla" EntityType="Self.Resilla" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ususarios" EntityType="Self.Ususarios" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -235,6 +246,7 @@
           <EntitySet Name="Propios" EntityType="AdministracionAntonioModel.Propios" />
           <EntitySet Name="Remesasapasar" EntityType="AdministracionAntonioModel.Remesasapasar" />
           <EntitySet Name="Resilla" EntityType="AdministracionAntonioModel.Resilla" />
+          <EntitySet Name="sysdiagrams" EntityType="AdministracionAntonioModel.sysdiagrams" />
           <EntitySet Name="Ususarios" EntityType="AdministracionAntonioModel.Ususarios" />
         </EntityContainer>
         <EntityType Name="Clientes">
@@ -411,6 +423,16 @@
           <Property Name="remesafecha" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="remesatotal" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="remesacontabilizada" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Ususarios">
           <Key>
@@ -630,6 +652,17 @@
                 <ScalarProperty Name="remesafecha" ColumnName="remesafecha" />
                 <ScalarProperty Name="remesanumero" ColumnName="remesanumero" />
                 <ScalarProperty Name="remesanumerador" ColumnName="remesanumerador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="AdministracionAntonioModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

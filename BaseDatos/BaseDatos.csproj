@@ -88,6 +88,9 @@
     <Compile Include="Resilla.cs">
       <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
+    </Compile>
     <Compile Include="Ususarios.cs">
       <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
     </Compile>

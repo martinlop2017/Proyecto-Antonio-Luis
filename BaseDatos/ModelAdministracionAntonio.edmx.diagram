@@ -12,7 +12,8 @@
         <EntityTypeShape EntityType="AdministracionAntonioModel.Propios" Width="1.5" PointX="6.75" PointY="3.75" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Remesasapasar" Width="1.5" PointX="8.75" PointY="0.75" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Resilla" Width="1.5" PointX="8.75" PointY="4.75" />
-        <EntityTypeShape EntityType="AdministracionAntonioModel.Ususarios" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="AdministracionAntonioModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="AdministracionAntonioModel.Ususarios" Width="1.5" PointX="2.75" PointY="9.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
