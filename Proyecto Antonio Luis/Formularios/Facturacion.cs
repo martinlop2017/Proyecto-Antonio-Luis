@@ -387,14 +387,13 @@ namespace Proyecto_Antonio_Luis.Formularios
 
                     myFactura.factbase1 = temp.tempbase;
                     myFactura.factnumerofact = temp.tempnumerofactura;
+                    mylistado.listnumerofactura = temp.tempnumerofactura.ToString();
+
                     myFactura.factremesa = temp.tempremesa;
                     myFactura.factfecha = temp.tempfecha;
                     myFactura.factcodcliente = temp.tempcod;
                     myFactura.factnombre = temp.tempnombre;
                     mylistado.listnombre = temp.tempnombre;
-
-
-
 
                     myFactura.factdireccion = temp.tempdireccion;
                     myFactura.factlocalidad = temp.templocalidad;
@@ -408,15 +407,25 @@ namespace Proyecto_Antonio_Luis.Formularios
                     myFactura.factiban5 = temp.tempiban5;
                     myFactura.factiban6 = temp.tempiban6;
                     myFactura.factconcepto1 = temp.tempconcepto1;
+                    mylistado.listconcepto1 = temp.tempconcepto1;
+
                     myFactura.factbase1 = temp.temptarifa;
+                    mylistado.listbase = temp.tempbase;
+
                     myFactura.factconcepto2 = temp.tempconcepto2;
                     myFactura.factbase2 = temp.temptarifa2;
+                    mylistado.listsuplidos= temp.temptarifa2;
+
                     myFactura.factemleados = temp.tempempleados;
                     myFactura.factprecioempleado = temp.temppvempleados;
                     myFactura.factbaseempleado = temp.templaboral;
                     myFactura.facttipoiva = temp.temptipoiva;
                     myFactura.factimporteiva = temp.tempiva;
+                    mylistado.listiva = temp.tempiva;
+
                     myFactura.facttotalfactura = temp.temptotal;
+                    mylistado.listtotal = temp.temptotal;
+
                     myFactura.factpara_imprimir = true;
                     myFactura.factimpresa = false;
 
@@ -433,11 +442,19 @@ namespace Proyecto_Antonio_Luis.Formularios
                     myFactura.factdomiciliada = false;
 
                     totalbaseremesa = totalbaseremesa + temp.tempbase;
+
+
                     totalivaremesa = totalivaremesa + temp.tempiva;
                     totaltotalremesa = totaltotalremesa + temp.temptotal;
 
                     numeroremesa = temp.tempremesa;
                     fecharemesa = temp.tempfecha;
+                    mylistado.listfecha = temp.tempfecha; ;
+
+
+                    mylistado.listnombreemisor = bd.Propios.First().minombre;
+                    mylistado.listtotalremesa = totaltotalremesa;
+                    mylistado.listnumeroremesa = numeroremesa;
 
                     facturasAGuardar.Add(myFactura);
                     alistar.Add(mylistado);
@@ -452,6 +469,8 @@ namespace Proyecto_Antonio_Luis.Formularios
 
                 var pasoremesa = new Resilla();
                 pasoremesa.remesanumero = numeroremesa;
+                
+
                 pasoremesa.remesafecha = fecharemesa;
                 pasoremesa.remesatotal = totaltotalremesa;
                 // pasoremesa.remesaimpresa = false;

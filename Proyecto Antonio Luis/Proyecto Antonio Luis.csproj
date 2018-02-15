@@ -207,7 +207,7 @@
     <EmbeddedResource Include="Formularios\MisDatos.resx">
       <DependentUpon>MisDatos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Report2.rdlc" />
+    <EmbeddedResource Include="Formularios\Report1.rdlc" />
     <EmbeddedResource Include="Formularios\Rutas.resx">
       <DependentUpon>Rutas.cs</DependentUpon>
     </EmbeddedResource>

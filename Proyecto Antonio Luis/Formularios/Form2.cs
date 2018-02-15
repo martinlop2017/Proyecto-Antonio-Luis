@@ -14,16 +14,15 @@ namespace Proyecto_Antonio_Luis.Formularios
     public partial class Form2 : Form
     {
         List<datoslistadoreme> listadodefinitivo;
-        public Form2(listadodefinitivo)
+        public Form2(List<datoslistadoreme> alistar)
         {
+            listadodefinitivo = alistar;
             InitializeComponent();
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet1.Facturas' Puede moverla o quitarla según sea necesario.
-            this.facturasTableAdapter.Fill(this.datoslistadoremeBindingSource.);
-
+            datoslistadoremeBindingSource.DataSource = listadodefinitivo;
             this.reportViewer1.RefreshReport();
         }
 

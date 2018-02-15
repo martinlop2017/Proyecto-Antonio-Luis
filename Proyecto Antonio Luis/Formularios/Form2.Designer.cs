@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.facturasTableAdapter = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1TableAdapters.FacturasTableAdapter();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.datoslistadoremeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.datoslistadoremeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // facturasTableAdapter
+            // 
+            this.facturasTableAdapter.ClearBeforeFill = true;
+            // 
             // reportViewer1
             // 
-            this.reportViewer1.AutoSize = true;
+            this.reportViewer1.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource3.Name = "DataSet1";
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Proyecto_Antonio_Luis.Formularios.Report2.rdlc";
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.datoslistadoremeBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Proyecto_Antonio_Luis.Formularios.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(685, 432);
             this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
-            // 
-            // facturasTableAdapter
-            // 
-            this.facturasTableAdapter.ClearBeforeFill = true;
             // 
             // datoslistadoremeBindingSource
             // 
@@ -70,14 +70,12 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datoslistadoremeBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private AdministracionAntonioDataSet1TableAdapters.FacturasTableAdapter facturasTableAdapter;
         private System.Windows.Forms.BindingSource datoslistadoremeBindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }
