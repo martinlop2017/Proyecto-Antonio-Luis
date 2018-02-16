@@ -19,5 +19,7 @@ namespace Proyecto_Antonio_Luis.Clases
         public decimal listsuplidos { get; set; }
         public string listnumeroremesa { get; set; }
         public decimal listtotalremesa { get; set; }
+        public int listtotaldocumentos { get; set; }
+
     }
 }

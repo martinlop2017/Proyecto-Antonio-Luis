@@ -18,18 +18,18 @@
               <Width>2.22312cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.2302cm</Width>
+              <Width>2.23744cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.88293cm</Width>
+              <Width>1.75981cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.48884cm</Width>
+              <Width>3.10878cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.67938cm</Height>
+              <Height>0.60001cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -309,8 +309,8 @@
         <DataSetName>DataSet1</DataSetName>
         <Top>0.12783cm</Top>
         <Left>0.44473cm</Left>
-        <Height>0.67938cm</Height>
-        <Width>26.91168cm</Width>
+        <Height>0.60001cm</Height>
+        <Width>27.41574cm</Width>
         <Style>
           <Border>
             <Color>White</Color>
@@ -320,7 +320,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.35417in</Height>
+    <Height>0.38542in</Height>
     <Style>
       <Border>
         <Style>None</Style>
@@ -408,7 +408,9 @@
                   <TextRuns>
                     <TextRun>
                       <Value>=Globals!ExecutionTime</Value>
-                      <Style />
+                      <Style>
+                        <Format>dd/MM/yyyy - hh:mm:ss</Format>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style>
@@ -629,7 +631,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox13</rd:DefaultName>
           <Top>6.80583cm</Top>
-          <Left>19.24819cm</Left>
+          <Left>19.5cm</Left>
           <Height>0.6cm</Height>
           <Width>1.12098cm</Width>
           <ZIndex>7</ZIndex>
@@ -832,47 +834,12 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="listtotalremesa">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Sum(Fields!listtotalremesa.Value, "DataSet1")</Value>
-                  <Style>
-                    <Format>#,0.00'€'</Format>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>listtotalremesa</rd:DefaultName>
-          <Top>5.09411cm</Top>
-          <Left>4.09346cm</Left>
-          <Height>0.6cm</Height>
-          <Width>1.93275cm</Width>
-          <ZIndex>15</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-            <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
-          </Style>
-        </Textbox>
         <Line Name="Line6">
           <Top>6.65cm</Top>
           <Left>0.44475cm</Left>
           <Height>0cm</Height>
           <Width>27.87406cm</Width>
-          <ZIndex>16</ZIndex>
+          <ZIndex>15</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -885,7 +852,7 @@
           <Left>0.44475cm</Left>
           <Height>0cm</Height>
           <Width>27.87406cm</Width>
-          <ZIndex>17</ZIndex>
+          <ZIndex>16</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -915,7 +882,7 @@
           <Left>6.02621cm</Left>
           <Height>0.6cm</Height>
           <Width>1.93275cm</Width>
-          <ZIndex>18</ZIndex>
+          <ZIndex>17</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1000,13 +967,48 @@
           <Left>0.44475cm</Left>
           <Height>1cm</Height>
           <Width>20.30969cm</Width>
-          <ZIndex>19</ZIndex>
+          <ZIndex>18</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
             </Border>
           </Style>
         </Rectangle>
+        <Textbox Name="listtotalremesa">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!listtotalremesa.Value, "DataSet1")</Value>
+                  <Style>
+                    <Format>#,0.00'€'</Format>
+                    <rd:FormatSymbolCulture>es-ES</rd:FormatSymbolCulture>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>listtotalremesa</rd:DefaultName>
+          <Top>5.18266cm</Top>
+          <Left>4.09347cm</Left>
+          <Height>0.6cm</Height>
+          <Width>1.93274cm</Width>
+          <ZIndex>19</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
       </ReportItems>
       <Style>
         <Border>
@@ -1015,7 +1017,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.53458cm</Height>
+      <Height>1.87854cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1084,7 +1086,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>000</Value>
+                  <Value>=First(Fields!listtotaldocumentos.Value, "DataSet1")</Value>
                   <Style>
                     <FontWeight>Normal</FontWeight>
                     <TextDecoration>None</TextDecoration>
@@ -1186,8 +1188,8 @@
     </PageFooter>
     <PageHeight>21cm</PageHeight>
     <PageWidth>29.7cm</PageWidth>
-    <LeftMargin>0.5cm</LeftMargin>
-    <RightMargin>0.5cm</RightMargin>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
     <TopMargin>0cm</TopMargin>
     <BottomMargin>0cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
@@ -1249,6 +1251,10 @@
         <Field Name="listtotal">
           <DataField>listtotal</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="listtotaldocumentos">
+          <DataField>listtotaldocumentos</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="listtotalremesa">
           <DataField>listtotalremesa</DataField>

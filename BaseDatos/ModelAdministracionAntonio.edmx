@@ -91,7 +91,7 @@
           <Property Name="factremesa" Type="nchar" MaxLength="20" />
           <Property Name="factfecha" Type="nchar" MaxLength="30" />
           <Property Name="factcodcliente" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="factnombre" Type="nchar" MaxLength="50" />
+          <Property Name="factnombre" Type="nchar" MaxLength="250" />
           <Property Name="factdireccion" Type="nchar" MaxLength="100" />
           <Property Name="factlocalidad" Type="nchar" MaxLength="100" />
           <Property Name="factprovincia" Type="nchar" MaxLength="100" />
@@ -335,7 +335,7 @@
           <Property Name="factremesa" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="factfecha" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
           <Property Name="factcodcliente" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="factnombre" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="factnombre" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
           <Property Name="factdireccion" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="factlocalidad" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="factprovincia" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />

@@ -374,16 +374,18 @@ namespace Proyecto_Antonio_Luis.Formularios
                 decimal totaltotalremesa = 0;
                 string numeroremesa = "";
                 string fecharemesa = "";
-                
+               int totaldocumentos = 0;
+
 
                 List<Facturas> facturasAGuardar = new List<Facturas>();
 
-  //            List<datoslistadoreme> alistar = new List<datoslistadoreme>();
+                //            List<datoslistadoreme> alistar = new List<datoslistadoreme>();
 
                 foreach (var temp in lista)
                 {
-                    Facturas myFactura = new Facturas();
                     datoslistadoreme mylistado = new datoslistadoreme();
+                    Facturas myFactura = new Facturas();
+
 
                     myFactura.factbase1 = temp.tempbase;
                     myFactura.factnumerofact = temp.tempnumerofactura;
@@ -414,7 +416,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
                     myFactura.factconcepto2 = temp.tempconcepto2;
                     myFactura.factbase2 = temp.temptarifa2;
-                    mylistado.listsuplidos= temp.temptarifa2;
+                    mylistado.listsuplidos = temp.temptarifa2;
 
                     myFactura.factemleados = temp.tempempleados;
                     myFactura.factprecioempleado = temp.temppvempleados;
@@ -453,21 +455,18 @@ namespace Proyecto_Antonio_Luis.Formularios
 
 
                     mylistado.listnombreemisor = bd.Propios.First().minombre;
-                    mylistado.listtotalremesa = totaltotalremesa;
+                    // mylistado.listtotalremesa = totaltotalremesa;
                     mylistado.listnumeroremesa = numeroremesa;
 
                     facturasAGuardar.Add(myFactura);
                     alistar.Add(mylistado);
-
-
-
                 }
+                    // pasamos los datos a la tabla facturacion y remesa
+                    bd.Facturas.AddRange(facturasAGuardar);
+                    bd.SaveChanges();
                 
-                // pasamos los datos a la tabla facturacion y remesa
-                bd.Facturas.AddRange(facturasAGuardar);
 
-
-                var pasoremesa = new Resilla();
+            var pasoremesa = new Resilla();
                 pasoremesa.remesanumero = numeroremesa;
                 
 
@@ -481,8 +480,15 @@ namespace Proyecto_Antonio_Luis.Formularios
                 // pasamos los datos a remesa
                 bd.Resilla.Add(pasoremesa);
 
+                //grabamos el total de la remesa en la clase a listar
+                alistar.ToList().ForEach(x => x.listtotalremesa = totaltotalremesa);
+                totaldocumentos = alistar.Count;
+                alistar.ToList().ForEach(x => x.listtotaldocumentos  = totaldocumentos );
+               
 
-          //      bd.SaveChanges();
+
+               
+
 
                 //ahora vamos a introducir el total de la remesa en las facturas.
 
@@ -662,7 +668,8 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void imprimir_Click(object sender, EventArgs e)
         {
-            
+            dataGridView3.DataSource = alistar.ToList() ;
+
             Form2 form = new Form2(alistar);
             form.Show();
         }
