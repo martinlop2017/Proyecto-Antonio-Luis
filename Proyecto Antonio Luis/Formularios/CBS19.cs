@@ -28,11 +28,11 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void CBS19_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet1.Resilla' Puede moverla o quitarla según sea necesario.
-            this.resillaTableAdapter.Fill(this.administracionAntonioDataSet1.Resilla);
+          /*  // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet1.Resilla' Puede moverla o quitarla según sea necesario.
+                        this.resillaTableAdapter.Fill(this.administracionAntonioDataSet1.Resilla);
             // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet1.Facturas' Puede moverla o quitarla según sea necesario.
             this.facturasTableAdapter.Fill(this.administracionAntonioDataSet1.Facturas);
-
+*/
             //al cargar el form filtra la base de datos Remesas por contabilizada = false, y lo mostramos en el dgv
             var remesasacontabilizar = bd.Resilla.Where(x => x.remesacontabilizada == false).ToList();
                 dgvremesas.DataSource = remesasacontabilizar;
@@ -90,7 +90,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
             var listafacturas = bd.Facturas.Where(x => x.factremesa == mesrremesa && x.factdomiciliada == false &&
                                                   x.factparadomiciliar == true  ).ToList();
-            var mesfactura = listafacturas.OrderByDescending(x => x.factremesa).FirstOrDefault();
+            var mesfactura = listafacturas.OrderByDescending(x => x.factfecha).FirstOrDefault();
             var remesasacontabilizar = bd.Resilla.Where(x => x.remesacontabilizada == false).ToList();
             var importeremesa = remesasacontabilizar.SingleOrDefault(x => x.remesanumero ==mesrremesa);
             //         var mesfactura = listafacturas.OrderByDescending(x => x.factremesa).FirstOrDefault();
@@ -106,11 +106,19 @@ namespace Proyecto_Antonio_Luis.Formularios
             label4.Text = "0";
             panel1.Visible = true;
 
-
-
+            var tempo = bd.Cuentas.OrderByDescending (X => X.RutaCSB19).FirstOrDefault();
+            string ruta = tempo.RutaCSB19.ToString()+("\\");
+            string ruta2 = importeremesa.remesanumero.ToString()+ano+(".xml");
+            
+            //quitamos los espacios
+            ruta = ruta.Replace(" ", "");
+            ruta2 = ruta2.Replace(" ", "");
+            string paht = ruta + ruta2;
 
             XmlTextWriter writer;
-            writer = new XmlTextWriter("C:\\Equipo Martin\\Programacion\\archivo prueba\\ejemplocbs.xml", Encoding.UTF8);
+
+            writer = new XmlTextWriter (paht, Encoding.UTF8);
+           //   writer = new XmlTextWriter(ruta+"\\ejemplocbs.xml", Encoding.UTF8);
             writer.Formatting = Formatting.Indented;
             writer.WriteStartDocument();
 
@@ -135,7 +143,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
 
             //sacamos el mes de la factura para añadir e la refrerencia
-            mesfact = "00" + mesfactura. ToString().Substring(3, 2);
+            mesfact = "00" + mesfactura.factfecha. ToString().Substring(3,2);
 
             //sacamos el cif del presentador
             var cifpresentador = bd.Propios.OrderByDescending(X => X.micif).FirstOrDefault();
@@ -150,7 +158,9 @@ namespace Proyecto_Antonio_Luis.Formularios
 
             //Introducimos el total de la remesa.
             //filtramos la tabla Remesas por la fecha de factura.
-            writer.WriteElementString("CtrlSum", importeremesa.remesatotal.ToString());
+            string totalaremesar = importeremesa.remesatotal.ToString();
+            totalaremesar = totalaremesar.Replace(',', '.');
+            writer.WriteElementString("CtrlSum", totalaremesar);
 
             //Introducimos El nombre del presentador
             writer.WriteStartElement("InitgPty");
@@ -183,7 +193,8 @@ namespace Proyecto_Antonio_Luis.Formularios
             writer.WriteElementString("PmtMtd", "DD");
             writer.WriteElementString("BtchBookg", "true");
             writer.WriteElementString("NbOfTxs", listafacturas.Count.ToString());
-            writer.WriteElementString("CtrlSum", importeremesa.remesatotal.ToString());
+
+            writer.WriteElementString("CtrlSum", totalaremesar.ToString());
 
             writer.WriteStartElement("PmtTpInf");
 
@@ -222,7 +233,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             writer.WriteEndElement();
             writer.WriteStartElement("CdtrAgt");
             writer.WriteStartElement("FinInstnId");
-            writer.WriteElementString("BIC", nombrepresentador.mibic);
+            writer.WriteElementString("BIC","NOTPROVIDED");
             writer.WriteEndElement();
             writer.WriteEndElement();
             writer.WriteElementString("ChrgBr", "SLEV");
@@ -279,7 +290,11 @@ namespace Proyecto_Antonio_Luis.Formularios
                 //moneda de la operacion
                 writer.WriteAttributeString("Ccy", "EUR");
                 //importe de la factura
-                writer.WriteString(temp.facttotalfactura.ToString());
+                //SUSTITUIMOS LA COMA POR UN PUNTO.
+                String apagar = temp.facttotalfactura.ToString();
+                apagar = apagar.Replace(",", ".");
+
+                writer.WriteString(apagar);
                 writer.WriteEndElement();
                 //datos del revibo
                 writer.WriteStartElement("DrctDbtTx");
@@ -361,6 +376,19 @@ namespace Proyecto_Antonio_Luis.Formularios
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+      
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+
         }
     }
 }

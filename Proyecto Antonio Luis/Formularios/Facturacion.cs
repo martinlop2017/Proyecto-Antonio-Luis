@@ -53,6 +53,8 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void Facturacion_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet1.Facturas' Puede moverla o quitarla según sea necesario.
+            //this.facturasTableAdapter.Fill(this.administracionAntonioDataSet1.Facturas);
             // cargamos el combo del iva y la fecha.
             comboiva.DataSource = bd.Iva.Select(user => user.ivaporciento).ToList();
             comboiva.Text = "21";
@@ -404,7 +406,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                     myFactura.factnif = temp.tempcif;
                     myFactura.factiban1 = temp.tempiban1;
                     myFactura.factiban2 = temp.tempiban2;
-                    myFactura.factiban3 = temp.tempiban6;
+                    myFactura.factiban3 = temp.tempiban3;
                     myFactura.factiban4 = temp.tempiban4;
                     myFactura.factiban5 = temp.tempiban5;
                     myFactura.factiban6 = temp.tempiban6;
@@ -471,7 +473,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                 
 
                 pasoremesa.remesafecha = fecharemesa;
-                pasoremesa.remesatotal = totaltotalremesa;
+                pasoremesa.remesatotal = Convert.ToDecimal( totaltotalremesa);
                 // pasoremesa.remesaimpresa = false;
                 pasoremesa.remesacontabilizada = false;
 
@@ -507,6 +509,11 @@ namespace Proyecto_Antonio_Luis.Formularios
                 añadir.Enabled = false;
                 generar.Enabled = false;
                 eliminar.Enabled = false;
+
+
+                // cargamos la pantalla de listados de remesas
+                Form2 form = new Form2(alistar);
+                form.Show();
 
 
             }
@@ -668,10 +675,8 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void imprimir_Click(object sender, EventArgs e)
         {
-            dataGridView3.DataSource = alistar.ToList() ;
 
-            Form2 form = new Form2(alistar);
-            form.Show();
+
         }
     }
     
