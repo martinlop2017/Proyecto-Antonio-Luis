@@ -35,7 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -136,8 +135,9 @@
             this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.temporalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.administracionAntonioDataSet1 = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1();
+            this.facturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.facturasTableAdapter = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1TableAdapters.FacturasTableAdapter();
             this.tempremesaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tempnumerofacturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.temptipoivaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -171,6 +171,7 @@
             this.tempparadomiciliarDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tempparaimprimirDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tempparacontabilizarDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.temporalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.albmesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.albcodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.albfechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -206,18 +207,6 @@
             this.albparacontabilizarDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.albaranesclientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datoslistadoremeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listfechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listnombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listconcepto1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listnumerofacturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listbaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listivaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listtotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listnombreemisorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listsuplidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listnumeroremesaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listtotalremesaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listtotaldocumentosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTemporal)).BeginInit();
@@ -227,7 +216,8 @@
             this.panel3.SuspendLayout();
             this.panel33.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facturasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.temporalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.albaranesclientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datoslistadoremeBindingSource)).BeginInit();
@@ -359,7 +349,7 @@
             this.comboiva.Name = "comboiva";
             this.comboiva.Size = new System.Drawing.Size(90, 21);
             this.comboiva.TabIndex = 138;
-            this.comboiva.Text = "General";
+            this.comboiva.Text = "10";
             // 
             // label3
             // 
@@ -1195,43 +1185,19 @@
             this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
             this.dataGridViewTextBoxColumn53.Visible = false;
             // 
-            // dataGridView3
+            // administracionAntonioDataSet1
             // 
-            this.dataGridView3.AutoGenerateColumns = false;
-            this.dataGridView3.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.listfechaDataGridViewTextBoxColumn,
-            this.listnombreDataGridViewTextBoxColumn,
-            this.listconcepto1DataGridViewTextBoxColumn,
-            this.listnumerofacturaDataGridViewTextBoxColumn,
-            this.listbaseDataGridViewTextBoxColumn,
-            this.listivaDataGridViewTextBoxColumn,
-            this.listtotalDataGridViewTextBoxColumn,
-            this.listnombreemisorDataGridViewTextBoxColumn,
-            this.listsuplidosDataGridViewTextBoxColumn,
-            this.listnumeroremesaDataGridViewTextBoxColumn,
-            this.listtotalremesaDataGridViewTextBoxColumn,
-            this.listtotaldocumentosDataGridViewTextBoxColumn});
-            this.dataGridView3.DataSource = this.datoslistadoremeBindingSource;
-            this.dataGridView3.EnableHeadersVisualStyles = false;
-            this.dataGridView3.Location = new System.Drawing.Point(42, 370);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 20;
-            this.dataGridView3.Size = new System.Drawing.Size(1189, 674);
-            this.dataGridView3.TabIndex = 53;
+            this.administracionAntonioDataSet1.DataSetName = "AdministracionAntonioDataSet1";
+            this.administracionAntonioDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // temporalBindingSource
+            // facturasBindingSource
             // 
-            this.temporalBindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Clases.temporal);
+            this.facturasBindingSource.DataMember = "Facturas";
+            this.facturasBindingSource.DataSource = this.administracionAntonioDataSet1;
+            // 
+            // facturasTableAdapter
+            // 
+            this.facturasTableAdapter.ClearBeforeFill = true;
             // 
             // tempremesaDataGridViewTextBoxColumn
             // 
@@ -1477,6 +1443,10 @@
             this.tempparacontabilizarDataGridViewCheckBoxColumn.HeaderText = "tempparacontabilizar";
             this.tempparacontabilizarDataGridViewCheckBoxColumn.Name = "tempparacontabilizarDataGridViewCheckBoxColumn";
             this.tempparacontabilizarDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // temporalBindingSource
+            // 
+            this.temporalBindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Clases.temporal);
             // 
             // albmesDataGridViewTextBoxColumn
             // 
@@ -1749,78 +1719,6 @@
             // 
             this.datoslistadoremeBindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Clases.datoslistadoreme);
             // 
-            // listfechaDataGridViewTextBoxColumn
-            // 
-            this.listfechaDataGridViewTextBoxColumn.DataPropertyName = "listfecha";
-            this.listfechaDataGridViewTextBoxColumn.HeaderText = "listfecha";
-            this.listfechaDataGridViewTextBoxColumn.Name = "listfechaDataGridViewTextBoxColumn";
-            // 
-            // listnombreDataGridViewTextBoxColumn
-            // 
-            this.listnombreDataGridViewTextBoxColumn.DataPropertyName = "listnombre";
-            this.listnombreDataGridViewTextBoxColumn.HeaderText = "listnombre";
-            this.listnombreDataGridViewTextBoxColumn.Name = "listnombreDataGridViewTextBoxColumn";
-            // 
-            // listconcepto1DataGridViewTextBoxColumn
-            // 
-            this.listconcepto1DataGridViewTextBoxColumn.DataPropertyName = "listconcepto1";
-            this.listconcepto1DataGridViewTextBoxColumn.HeaderText = "listconcepto1";
-            this.listconcepto1DataGridViewTextBoxColumn.Name = "listconcepto1DataGridViewTextBoxColumn";
-            // 
-            // listnumerofacturaDataGridViewTextBoxColumn
-            // 
-            this.listnumerofacturaDataGridViewTextBoxColumn.DataPropertyName = "listnumerofactura";
-            this.listnumerofacturaDataGridViewTextBoxColumn.HeaderText = "listnumerofactura";
-            this.listnumerofacturaDataGridViewTextBoxColumn.Name = "listnumerofacturaDataGridViewTextBoxColumn";
-            // 
-            // listbaseDataGridViewTextBoxColumn
-            // 
-            this.listbaseDataGridViewTextBoxColumn.DataPropertyName = "listbase";
-            this.listbaseDataGridViewTextBoxColumn.HeaderText = "listbase";
-            this.listbaseDataGridViewTextBoxColumn.Name = "listbaseDataGridViewTextBoxColumn";
-            // 
-            // listivaDataGridViewTextBoxColumn
-            // 
-            this.listivaDataGridViewTextBoxColumn.DataPropertyName = "listiva";
-            this.listivaDataGridViewTextBoxColumn.HeaderText = "listiva";
-            this.listivaDataGridViewTextBoxColumn.Name = "listivaDataGridViewTextBoxColumn";
-            // 
-            // listtotalDataGridViewTextBoxColumn
-            // 
-            this.listtotalDataGridViewTextBoxColumn.DataPropertyName = "listtotal";
-            this.listtotalDataGridViewTextBoxColumn.HeaderText = "listtotal";
-            this.listtotalDataGridViewTextBoxColumn.Name = "listtotalDataGridViewTextBoxColumn";
-            // 
-            // listnombreemisorDataGridViewTextBoxColumn
-            // 
-            this.listnombreemisorDataGridViewTextBoxColumn.DataPropertyName = "listnombreemisor";
-            this.listnombreemisorDataGridViewTextBoxColumn.HeaderText = "listnombreemisor";
-            this.listnombreemisorDataGridViewTextBoxColumn.Name = "listnombreemisorDataGridViewTextBoxColumn";
-            // 
-            // listsuplidosDataGridViewTextBoxColumn
-            // 
-            this.listsuplidosDataGridViewTextBoxColumn.DataPropertyName = "listsuplidos";
-            this.listsuplidosDataGridViewTextBoxColumn.HeaderText = "listsuplidos";
-            this.listsuplidosDataGridViewTextBoxColumn.Name = "listsuplidosDataGridViewTextBoxColumn";
-            // 
-            // listnumeroremesaDataGridViewTextBoxColumn
-            // 
-            this.listnumeroremesaDataGridViewTextBoxColumn.DataPropertyName = "listnumeroremesa";
-            this.listnumeroremesaDataGridViewTextBoxColumn.HeaderText = "listnumeroremesa";
-            this.listnumeroremesaDataGridViewTextBoxColumn.Name = "listnumeroremesaDataGridViewTextBoxColumn";
-            // 
-            // listtotalremesaDataGridViewTextBoxColumn
-            // 
-            this.listtotalremesaDataGridViewTextBoxColumn.DataPropertyName = "listtotalremesa";
-            this.listtotalremesaDataGridViewTextBoxColumn.HeaderText = "listtotalremesa";
-            this.listtotalremesaDataGridViewTextBoxColumn.Name = "listtotalremesaDataGridViewTextBoxColumn";
-            // 
-            // listtotaldocumentosDataGridViewTextBoxColumn
-            // 
-            this.listtotaldocumentosDataGridViewTextBoxColumn.DataPropertyName = "listtotaldocumentos";
-            this.listtotaldocumentosDataGridViewTextBoxColumn.HeaderText = "listtotaldocumentos";
-            this.listtotaldocumentosDataGridViewTextBoxColumn.Name = "listtotaldocumentosDataGridViewTextBoxColumn";
-            // 
             // Facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1829,7 +1727,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1281, 959);
-            this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dgvTemporal);
@@ -1863,7 +1760,8 @@
             this.panel33.ResumeLayout(false);
             this.panel33.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facturasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.temporalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.albaranesclientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datoslistadoremeBindingSource)).EndInit();
@@ -2088,19 +1986,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn51;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn52;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn53;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn listfechaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn listnombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn listconcepto1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn listnumerofacturaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn listbaseDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn listivaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn listtotalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn listnombreemisorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn listsuplidosDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn listnumeroremesaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn listtotalremesaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn listtotaldocumentosDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource datoslistadoremeBindingSource;
+        private AdministracionAntonioDataSet1 administracionAntonioDataSet1;
+        private System.Windows.Forms.BindingSource facturasBindingSource;
+        private AdministracionAntonioDataSet1TableAdapters.FacturasTableAdapter facturasTableAdapter;
     }
 }

@@ -158,14 +158,13 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            {
-                OpenFileDialog buscar = new OpenFileDialog();
+            FolderBrowserDialog buscar = new FolderBrowserDialog();
 
-                if (buscar.ShowDialog() == DialogResult.OK)
-                {
-                    textcsb19.Text = buscar.FileName;
-                }
+            if (buscar.ShowDialog() == DialogResult.OK)
+            {
+                textcsb19.Text = buscar.SelectedPath;
             }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
