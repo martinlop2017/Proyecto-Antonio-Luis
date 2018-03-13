@@ -39,6 +39,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -146,12 +147,23 @@
             this.dataGridView2.Size = new System.Drawing.Size(781, 233);
             this.dataGridView2.TabIndex = 132;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(515, 235);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(227, 65);
+            this.button4.TabIndex = 133;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Contaplus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(855, 949);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.button1);
@@ -186,5 +198,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button button4;
     }
 }
