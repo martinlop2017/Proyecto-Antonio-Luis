@@ -187,8 +187,10 @@ namespace Proyecto_Antonio_Luis.Formularios
 
             //Codigo Interno
             writer.WriteStartElement("PmtInf");
-            writer.WriteElementString("PmtInfId", nombrepresentador.miidentificadorbancario.ToString() + cifpresentador.micif.ToString()
+            string texto = (nombrepresentador.miidentificadorbancario.ToString() + cifpresentador.micif.ToString()
                                         + ano + mes + dia + mesfact);
+            texto = texto.Replace(" ", "");
+            writer.WriteElementString("PmtInfId", texto );
             //Numero Operaciones e Importe
             writer.WriteElementString("PmtMtd", "DD");
             writer.WriteElementString("BtchBookg", "true");
@@ -228,8 +230,9 @@ namespace Proyecto_Antonio_Luis.Formularios
             writer.WriteStartElement("Id");
             writer.WriteElementString("IBAN", nombrepresentador.miiban1 + nombrepresentador.miiban2 +
                 nombrepresentador.miiban3 + nombrepresentador.miiban4 + nombrepresentador.miiban5 + nombrepresentador.miiban6);
-            writer.WriteElementString("Ccy", "EUR");
             writer.WriteEndElement();
+            writer.WriteElementString("Ccy", "EUR");
+            
             writer.WriteEndElement();
             writer.WriteStartElement("CdtrAgt");
             writer.WriteStartElement("FinInstnId");
@@ -241,7 +244,9 @@ namespace Proyecto_Antonio_Luis.Formularios
             writer.WriteStartElement("Id");
             writer.WriteStartElement("PrvtId");
             writer.WriteStartElement("Othr");
-            writer.WriteElementString("Id", nombrepresentador.miidentificadorbancario + nombrepresentador.micif);
+            texto = (nombrepresentador.miidentificadorbancario + nombrepresentador.micif);
+            texto = texto.Replace(" ", "");
+            writer.WriteElementString("Id", texto);
             writer.WriteStartElement("SchmeNm");
             writer.WriteElementString("Prtry", "SEPA");
             writer.WriteEndElement();
@@ -301,7 +306,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                 writer.WriteStartElement("MndtRltdInf");
                 //introducimos el mandato ( contador + fecha dia+mes+año)
                 writer.WriteElementString("MndtId", contador + dia + mes + ano);
-                writer.WriteElementString("DtOfSgntr", "201/-01-11");
+                writer.WriteElementString("DtOfSgntr", "2011-01-11");
                 writer.WriteElementString("AmdmntInd", "false");
                 writer.WriteEndElement();
                 writer.WriteEndElement();
