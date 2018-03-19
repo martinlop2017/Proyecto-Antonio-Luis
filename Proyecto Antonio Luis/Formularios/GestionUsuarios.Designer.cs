@@ -37,7 +37,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.salir = new System.Windows.Forms.Button();
-            this.buscar = new System.Windows.Forms.Button();
             this.modificar = new System.Windows.Forms.Button();
             this.eliminar = new System.Windows.Forms.Button();
             this.sumar = new System.Windows.Forms.Button();
@@ -71,8 +70,11 @@
             this.avisosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gavisosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ususariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ususariosBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label7
@@ -160,19 +162,6 @@
             this.salir.Click += new System.EventHandler(this.salir_Click);
             this.salir.MouseEnter += new System.EventHandler(this.salir_MouseEnter);
             this.salir.MouseLeave += new System.EventHandler(this.salir_MouseLeave);
-            // 
-            // buscar
-            // 
-            this.buscar.BackColor = System.Drawing.Color.White;
-            this.buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buscar.BackgroundImage")));
-            this.buscar.Location = new System.Drawing.Point(216, 108);
-            this.buscar.Name = "buscar";
-            this.buscar.Size = new System.Drawing.Size(52, 56);
-            this.buscar.TabIndex = 30;
-            this.buscar.UseVisualStyleBackColor = false;
-            this.buscar.Click += new System.EventHandler(this.buscar_Click);
-            this.buscar.MouseEnter += new System.EventHandler(this.buscar_MouseEnter);
-            this.buscar.MouseLeave += new System.EventHandler(this.buscar_MouseLeave);
             // 
             // modificar
             // 
@@ -461,6 +450,30 @@
             // 
             this.ususariosBindingSource.DataSource = typeof(BaseDatos.Ususarios);
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Location = new System.Drawing.Point(216, 108);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(397, 56);
+            this.panel1.TabIndex = 52;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
+            this.panel1.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(9, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(377, 20);
+            this.textBox1.TabIndex = 52;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.MouseEnter += new System.EventHandler(this.textBox1_MouseEnter);
+            this.textBox1.MouseLeave += new System.EventHandler(this.textBox1_MouseLeave);
+            // 
             // GestionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -469,6 +482,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(704, 644);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvUsuario);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -477,7 +491,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.salir);
-            this.Controls.Add(this.buscar);
             this.Controls.Add(this.modificar);
             this.Controls.Add(this.eliminar);
             this.Controls.Add(this.sumar);
@@ -489,6 +502,8 @@
             this.Enter += new System.EventHandler(this.GestionUsuarios_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ususariosBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -503,7 +518,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button salir;
-        private System.Windows.Forms.Button buscar;
         private System.Windows.Forms.Button modificar;
         private System.Windows.Forms.Button eliminar;
         private System.Windows.Forms.Button sumar;
@@ -537,5 +551,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn agendaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn avisosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gavisosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

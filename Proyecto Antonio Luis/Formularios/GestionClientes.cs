@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BaseDatos;
-
+using Proyecto_Antonio_Luis.Clases;
 namespace Proyecto_Antonio_Luis.Formularios
 {
     public partial class GestionClientes : Form
     {
 
         AdministracionAntonioEntities bd;
+        private List<string> originalClientValues;
 
         public GestionClientes()
         {
@@ -123,7 +124,8 @@ namespace Proyecto_Antonio_Luis.Formularios
             //CARGA LOS REGISTROS EN EL GRIP AL INICIAR EL FORM
 
             dgvclientes.DataSource = "";
-            dgvclientes.DataSource = bd.Clientes.ToList();
+            var cargaclientes = bd.Clientes.OrderBy(x => x.nombrecliente);
+            dgvclientes.DataSource = cargaclientes.ToList();
             dgvclientes.Refresh();
 
         }
@@ -216,6 +218,55 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
 
 
+        }
+
+        private void comboBoxClientes_TextUpdate(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxClientes_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+         
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+           
+
+            var busqueda = from c in bd.Clientes select c;
+            busqueda = busqueda.Where(c => c.nombrecliente.Contains(textBox1.Text));
+
+            dgvclientes.DataSource = busqueda.ToList();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            var busqueda = from c in bd.Clientes select c;
+            busqueda = busqueda.Where(c => c.nombrecliente.Contains(textBox1.Text)).OrderBy(x=> x.nombrecliente);
+
+            dgvclientes.DataSource = busqueda.ToList();
+        }
+
+        private void panel1_MouseEnter(object sender, EventArgs e)
+        {
+            label4.Visible = true;
+        }
+
+        private void panel1_MouseLeave(object sender, EventArgs e)
+        {
+            label4.Visible = false;
+        }
+
+        private void textBox1_MouseEnter(object sender, EventArgs e)
+        {
+            label4.Visible = true;
+        }
+
+        private void textBox1_MouseLeave(object sender, EventArgs e)
+        {
+            label4.Visible = false;
         }
 
 

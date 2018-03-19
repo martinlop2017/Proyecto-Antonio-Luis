@@ -262,5 +262,38 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_MouseEnter(object sender, EventArgs e)
+        {
+            label4.Visible = true;
+        }
+
+        private void panel1_MouseLeave(object sender, EventArgs e)
+        {
+            label4.Visible = false;
+        }
+
+        private void textBox1_MouseEnter(object sender, EventArgs e)
+        {
+            label4.Visible = true;
+        }
+
+        private void textBox1_MouseLeave(object sender, EventArgs e)
+        {
+            label4.Visible = false;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            var busqueda = from c in bd.Ususarios select c;
+            busqueda = busqueda.Where(c => c.nombre.Contains(textBox1.Text)).OrderBy(x => x.nombre);
+
+            dgvUsuario.DataSource = busqueda.ToList();
+        }
     }
 }
