@@ -32,7 +32,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             string referencia;
             string ano, mes, dia, hora, minuto, segundo;
             //variable para almacenar el mes de la fcatura para la referencia
-            string mesfact, fechafactura;
+            string mesfact;
 
                 // cargamos estas variables con los datos actuales
                 ano = DateTime.Now.ToString("yyyy");

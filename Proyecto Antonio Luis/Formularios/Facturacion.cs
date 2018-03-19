@@ -91,7 +91,7 @@ namespace Proyecto_Antonio_Luis.Formularios
           //  List<albaranesclientes> albaranes = new List<albaranesclientes>();
             albaranes = Mapeos.creaalbaran.pasoclientes_a_albaran(facturcliente);
 
-            dgvTemporal.DataSource = albaranes.ToList();
+            dgvTemporal.DataSource = albaranes.OrderBy(x => x.albnombre).ToList();
             //**************************
 
 
@@ -517,13 +517,13 @@ namespace Proyecto_Antonio_Luis.Formularios
 
 
             }
+
             catch (Exception exp)
             {
+                MessageBox.Show("Error" + exp.Message);
             }
 
-
-
-        }
+       }
 
 
 
@@ -668,15 +668,31 @@ namespace Proyecto_Antonio_Luis.Formularios
             }
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void imprimir_Click(object sender, EventArgs e)
+        private void eliminar_Click(object sender, EventArgs e)
         {
 
 
+            if (MessageBox.Show("Va a proceder a eliminar el registro seleccionado.\n                     Desea Eliminar el registro?"
+                                 , "Eliminar Registro.", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) 
+            {
+                Globales.modificar = Convert.ToInt16(dgvTemporal.CurrentRow.Cells[2].Value);
+
+                try
+                {
+                    dgvTemporal.DataSource = albaranes.Remove(albaranes.First(x => x.albcod == Globales.modificar));
+                   
+                    dgvTemporal.DataSource = albaranes.OrderBy(x=> x.albnombre). ToList();
+
+
+                }
+                catch (Exception exp)
+                {
+
+                    MessageBox.Show("Error" + exp.Message);
+
+                }
+
+            }
         }
     }
     

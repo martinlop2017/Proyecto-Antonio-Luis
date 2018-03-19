@@ -80,7 +80,7 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.Location = new System.Drawing.Point(32, 300);
+            this.button2.Location = new System.Drawing.Point(32, 305);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(191, 60);
             this.button2.TabIndex = 126;
@@ -93,7 +93,7 @@
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.Location = new System.Drawing.Point(256, 300);
+            this.button3.Location = new System.Drawing.Point(256, 305);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(191, 60);
             this.button3.TabIndex = 127;
@@ -102,9 +102,9 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(15, 25);
+            this.progressBar1.Location = new System.Drawing.Point(15, 20);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(424, 29);
+            this.progressBar1.Size = new System.Drawing.Size(424, 25);
             this.progressBar1.Step = 1;
             this.progressBar1.TabIndex = 128;
             // 
@@ -114,9 +114,9 @@
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Controls.Add(this.progressBar1);
             this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.Location = new System.Drawing.Point(12, 177);
+            this.panel2.Location = new System.Drawing.Point(12, 305);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(455, 79);
+            this.panel2.Size = new System.Drawing.Size(455, 64);
             this.panel2.TabIndex = 5;
             this.panel2.Visible = false;
             // 
@@ -125,7 +125,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(479, 397);
+            this.ClientSize = new System.Drawing.Size(479, 392);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button2);
@@ -139,6 +139,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Exportar Datos.";
+            this.Load += new System.EventHandler(this.Contaplus_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

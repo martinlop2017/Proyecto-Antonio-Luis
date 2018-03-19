@@ -889,5 +889,10 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
             Close();
         }
+
+        private void Contaplus_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

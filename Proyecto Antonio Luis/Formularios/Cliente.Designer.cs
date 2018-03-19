@@ -144,6 +144,7 @@
             this.textMiCif.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiCif.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiCif.Location = new System.Drawing.Point(646, 163);
+            this.textMiCif.MaxLength = 15;
             this.textMiCif.Name = "textMiCif";
             this.textMiCif.Size = new System.Drawing.Size(163, 23);
             this.textMiCif.TabIndex = 1;
@@ -154,6 +155,7 @@
             this.textMiNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiNombre.Location = new System.Drawing.Point(156, 163);
+            this.textMiNombre.MaxLength = 200;
             this.textMiNombre.Name = "textMiNombre";
             this.textMiNombre.Size = new System.Drawing.Size(476, 23);
             this.textMiNombre.TabIndex = 0;
@@ -248,6 +250,7 @@
             this.textMiTLF2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiTLF2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiTLF2.Location = new System.Drawing.Point(587, 266);
+            this.textMiTLF2.MaxLength = 18;
             this.textMiTLF2.Name = "textMiTLF2";
             this.textMiTLF2.Size = new System.Drawing.Size(117, 23);
             this.textMiTLF2.TabIndex = 7;
@@ -259,6 +262,7 @@
             this.textMiPersonaContacto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiPersonaContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiPersonaContacto.Location = new System.Drawing.Point(461, 469);
+            this.textMiPersonaContacto.MaxLength = 50;
             this.textMiPersonaContacto.Name = "textMiPersonaContacto";
             this.textMiPersonaContacto.Size = new System.Drawing.Size(239, 23);
             this.textMiPersonaContacto.TabIndex = 9;
@@ -269,6 +273,7 @@
             this.textMiMail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiMail.Location = new System.Drawing.Point(461, 321);
+            this.textMiMail.MaxLength = 50;
             this.textMiMail.Name = "textMiMail";
             this.textMiMail.Size = new System.Drawing.Size(243, 23);
             this.textMiMail.TabIndex = 10;
@@ -279,6 +284,7 @@
             this.textMiFax.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiFax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiFax.Location = new System.Drawing.Point(713, 266);
+            this.textMiFax.MaxLength = 18;
             this.textMiFax.Name = "textMiFax";
             this.textMiFax.Size = new System.Drawing.Size(117, 23);
             this.textMiFax.TabIndex = 8;
@@ -290,6 +296,7 @@
             this.textMiTLF1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiTLF1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiTLF1.Location = new System.Drawing.Point(461, 266);
+            this.textMiTLF1.MaxLength = 18;
             this.textMiTLF1.Name = "textMiTLF1";
             this.textMiTLF1.Size = new System.Drawing.Size(117, 23);
             this.textMiTLF1.TabIndex = 6;
@@ -301,6 +308,7 @@
             this.textMiCP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiCP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiCP.Location = new System.Drawing.Point(347, 321);
+            this.textMiCP.MaxLength = 18;
             this.textMiCP.Name = "textMiCP";
             this.textMiCP.Size = new System.Drawing.Size(84, 23);
             this.textMiCP.TabIndex = 5;
@@ -311,6 +319,7 @@
             this.textMiProvincia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiProvincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiProvincia.Location = new System.Drawing.Point(201, 321);
+            this.textMiProvincia.MaxLength = 30;
             this.textMiProvincia.Name = "textMiProvincia";
             this.textMiProvincia.Size = new System.Drawing.Size(140, 23);
             this.textMiProvincia.TabIndex = 4;
@@ -321,6 +330,7 @@
             this.textMiPoblacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiPoblacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiPoblacion.Location = new System.Drawing.Point(50, 321);
+            this.textMiPoblacion.MaxLength = 50;
             this.textMiPoblacion.Name = "textMiPoblacion";
             this.textMiPoblacion.Size = new System.Drawing.Size(145, 23);
             this.textMiPoblacion.TabIndex = 3;
@@ -331,6 +341,7 @@
             this.textMiDiereccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiDiereccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiDiereccion.Location = new System.Drawing.Point(50, 266);
+            this.textMiDiereccion.MaxLength = 50;
             this.textMiDiereccion.Name = "textMiDiereccion";
             this.textMiDiereccion.Size = new System.Drawing.Size(381, 23);
             this.textMiDiereccion.TabIndex = 2;
@@ -711,6 +722,7 @@
             this.textTrabajadores.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textTrabajadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textTrabajadores.Location = new System.Drawing.Point(569, 418);
+            this.textTrabajadores.MaxLength = 3;
             this.textTrabajadores.Name = "textTrabajadores";
             this.textTrabajadores.Size = new System.Drawing.Size(76, 23);
             this.textTrabajadores.TabIndex = 22;
@@ -746,6 +758,7 @@
             this.textTarifa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textTarifa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textTarifa.Location = new System.Drawing.Point(712, 469);
+            this.textTarifa.MaxLength = 18;
             this.textTarifa.Name = "textTarifa";
             this.textTarifa.Size = new System.Drawing.Size(118, 23);
             this.textTarifa.TabIndex = 25;
@@ -852,6 +865,7 @@
             // textObserva
             // 
             this.textObserva.Location = new System.Drawing.Point(498, 560);
+            this.textObserva.MaxLength = 500;
             this.textObserva.Name = "textObserva";
             this.textObserva.Size = new System.Drawing.Size(332, 121);
             this.textObserva.TabIndex = 44;
@@ -935,6 +949,7 @@
             this.textPreciotrabajador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textPreciotrabajador.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPreciotrabajador.Location = new System.Drawing.Point(661, 419);
+            this.textPreciotrabajador.MaxLength = 18;
             this.textPreciotrabajador.Name = "textPreciotrabajador";
             this.textPreciotrabajador.Size = new System.Drawing.Size(76, 23);
             this.textPreciotrabajador.TabIndex = 196;
