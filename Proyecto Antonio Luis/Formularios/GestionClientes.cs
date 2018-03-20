@@ -48,7 +48,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             form.Show();
 
             dgvclientes.DataSource = "";
-            dgvclientes.DataSource = bd.Clientes.ToList();
+            dgvclientes.DataSource = bd.Clientes.OrderBy(x => x.nombrecliente).ToList();
             dgvclientes.Refresh();
         }
 
@@ -177,7 +177,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
 
                 dgvclientes.DataSource = "";
-                dgvclientes.DataSource = bd.Clientes.ToList();
+                dgvclientes.DataSource = bd.Clientes.OrderBy(x=> x.nombrecliente). ToList();
                 dgvclientes.Refresh();
             }
             catch (Exception)
@@ -269,27 +269,56 @@ namespace Proyecto_Antonio_Luis.Formularios
             label4.Visible = false;
         }
 
+        private void dgvclientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Esto lo que hace es mostrar los datos para modificar
+            // Inicializa la variable global llamadas
+            Globales.llamadas = "2";
+            try
+            {
+                // creamos una variable que va aguardar los datos de la fila seleccionada en el dbgrid
+                Globales.modificar = Convert.ToInt16(dgvclientes.CurrentRow.Cells[0].Value);
+                // Abre Ususarios
+                Cliente form = new Cliente();
+                form.Show();
+
+
+                dgvclientes.DataSource = "";
+                dgvclientes.DataSource = bd.Clientes.ToList();
+                dgvclientes.Refresh();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Debe Seleccionar un registro.", "Error 303", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+
+            //============================================================================================================
+            //============================================================================================================
+            //============================================================================================================
+            //=================                                                                               ============
+            //=================                                                                               ============
+            //=================      Aquí termina las acciones al pulsar los distintos botones               ============
+            //=================                                                                               ============
+            //=================                                                                               ============
+            //============================================================================================================
+            //============================================================================================================
+            //============================================================================================================
 
 
 
 
-        //============================================================================================================
-        //============================================================================================================
-        //============================================================================================================
-        //=================                                                                               ============
-        //=================                                                                               ============
-        //=================      Aquí termina las acciones al pulsar los distintos botones               ============
-        //=================                                                                               ============
-        //=================                                                                               ============
-        //============================================================================================================
-        //============================================================================================================
-        //============================================================================================================
 
 
 
-
-
-
-
-    }
+        }
 }

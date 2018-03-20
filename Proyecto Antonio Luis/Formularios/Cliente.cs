@@ -671,9 +671,10 @@ namespace Proyecto_Antonio_Luis.Formularios
 
 
                 }
-                catch
+                catch (Exception exp)
                 {
-                    MessageBox.Show("No ha sido posible grabar los datos", "Error 101", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    MessageBox.Show("Error" + exp.Message);
+                    // MessageBox.Show("No ha sido posible grabar los datos", "Error 101", MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
             }
             Close();

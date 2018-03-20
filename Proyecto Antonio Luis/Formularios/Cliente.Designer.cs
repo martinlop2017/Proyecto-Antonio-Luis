@@ -120,12 +120,13 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(52, 144);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label1.Location = new System.Drawing.Point(49, 148);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 54);
+            this.label1.Size = new System.Drawing.Size(74, 38);
             this.label1.TabIndex = 36;
-            this.label1.Text = "99";
+            this.label1.Text = "999";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label15

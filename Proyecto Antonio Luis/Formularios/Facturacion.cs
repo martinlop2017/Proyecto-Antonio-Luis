@@ -19,7 +19,7 @@ namespace Proyecto_Antonio_Luis.Formularios
         //esta lista la declaro arriba para poder usarla posteriormente
         List<albaranesclientes> albaranes = new List<albaranesclientes>();
         List<datoslistadoreme> alistar = new List<datoslistadoreme>();
-
+        private List<string> originalClientValues;
 
 
         public Facturacion()
@@ -275,7 +275,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
             // hace visible el panel de busqueda y ordena por numero de cliente
             panel3.Visible = true;
-            var nuevocliente = bd.Clientes.OrderByDescending(y => y.nombrecliente);
+            var nuevocliente = bd.Clientes.OrderBy(y => y.nombrecliente);
             dataGridView2.DataSource = nuevocliente.ToList();
 
 
@@ -552,25 +552,10 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
-            if ((textBox2.Text != "")) ;
-            {
-                try
-                {
-                    var pornombre = bd.Clientes.OrderBy(y => y.nombrecliente);
-                    dataGridView2.DataSource = pornombre.ToList();
+            var busqueda = from c in bd.Clientes select c;
+            busqueda = busqueda.Where(c => c.nombrecliente.Contains(textBox2.Text)).OrderBy(x => x.nombrecliente);
 
-                    //decimal esteclienod = Convert.ToDecimal(textBox1.Text);
-
-
-                    var porcodigo2 = bd.Clientes.Where(x => x.nombrecliente == textBox2.Text).ToList();
-
-                    dataGridView2.DataSource = porcodigo2.ToList();
-                }
-                catch
-                {
-
-                }
-            }
+            dataGridView2.DataSource = busqueda.ToList();
 
         }
 
@@ -583,26 +568,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
-            if ((textBox1.Text != "")) ;
-            {
-                try
-                {
-                    var porcodigo = bd.Clientes.OrderByDescending(y => y.codcliente);
-                    dataGridView2.DataSource = porcodigo.ToList();
 
-                    decimal esteclienod = Convert.ToDecimal(textBox1.Text);
-
-
-                    var porcodigo2 = bd.Clientes.Where(x => x.codcliente == esteclienod).ToList();
-
-                    dataGridView2.DataSource = porcodigo2.ToList();
-                }
-                catch
-                {
-
-                }
-
-            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
