@@ -31,14 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Facturacion));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -56,6 +48,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.comboiva = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -70,7 +64,42 @@
             this.label10 = new System.Windows.Forms.Label();
             this.dgvTemporal = new System.Windows.Forms.DataGridView();
             this.albtipoiva = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albaranesclientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tempremesaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempnumerofacturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.temptipoivaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempfechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempnombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempconcepto1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.temptarifaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempconcepto2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.temptarifa2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempempleadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.temppvempleadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.templaboralDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempbaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempivaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.temptotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.temppormailDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tempdoiciliadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tempcifDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempdireccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.templocalidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempprovinciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempcpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempiban1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempiban2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempiban3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempiban4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempiban5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempiban6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tempparadomiciliarDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tempparaimprimirDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tempparacontabilizarDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.temporalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
@@ -81,9 +110,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.administracionAntonioDataSet1 = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1();
-            this.facturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.facturasTableAdapter = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1TableAdapters.FacturasTableAdapter();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -136,79 +162,16 @@
             this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempremesaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempnumerofacturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.temptipoivaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempfechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempnombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempconcepto1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.temptarifaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempconcepto2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.temptarifa2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempempleadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.temppvempleadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.templaboralDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempbaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempivaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.temptotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.temppormailDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tempdoiciliadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tempcifDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempdireccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.templocalidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempprovinciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempcpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempiban1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempiban2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempiban3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempiban4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempiban5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempiban6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tempparadomiciliarDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tempparaimprimirDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tempparacontabilizarDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.temporalBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.albmesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albcodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albfechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albnombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albconcepto1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albtarifaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albconcepto2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albtarifa2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albempleadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albpvpempleadosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alblaboralDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albbaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albivaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albtotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albpormailDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.albdomiciliadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.albcifDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albdireccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alblocalidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albprovinciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albcpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albiban1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albiban2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albiban3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albiban4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albiban5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albiban6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albgrupoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albtipoivaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albparadomiciliarDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.albparaimprimirDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.albparacontabilizarDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.albaranesclientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.administracionAntonioDataSet1 = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1();
+            this.facturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.facturasTableAdapter = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1TableAdapters.FacturasTableAdapter();
             this.datoslistadoremeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTemporal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.albaranesclientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.temporalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
@@ -216,8 +179,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.temporalBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.albaranesclientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datoslistadoremeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -326,6 +287,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.comboiva);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
@@ -340,10 +303,34 @@
             this.panel2.Size = new System.Drawing.Size(839, 49);
             this.panel2.TabIndex = 41;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label14.Location = new System.Drawing.Point(790, 16);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(15, 15);
+            this.label14.TabIndex = 140;
+            this.label14.Text = "0";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label12.Location = new System.Drawing.Point(670, 17);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(114, 15);
+            this.label12.TabIndex = 139;
+            this.label12.Text = "Nº. Documentos.";
+            // 
             // comboiva
             // 
             this.comboiva.FormattingEnabled = true;
-            this.comboiva.Location = new System.Drawing.Point(710, 16);
+            this.comboiva.Location = new System.Drawing.Point(540, 16);
             this.comboiva.Name = "comboiva";
             this.comboiva.Size = new System.Drawing.Size(90, 21);
             this.comboiva.TabIndex = 138;
@@ -355,7 +342,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label3.Location = new System.Drawing.Point(615, 17);
+            this.label3.Location = new System.Drawing.Point(445, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 15);
             this.label3.TabIndex = 137;
@@ -367,7 +354,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(278, 17);
+            this.label1.Location = new System.Drawing.Point(201, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 15);
             this.label1.TabIndex = 136;
@@ -379,7 +366,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(19, 17);
+            this.label2.Location = new System.Drawing.Point(8, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 15);
             this.label2.TabIndex = 135;
@@ -388,7 +375,7 @@
             // fechafactura
             // 
             this.fechafactura.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechafactura.Location = new System.Drawing.Point(409, 16);
+            this.fechafactura.Location = new System.Drawing.Point(332, 15);
             this.fechafactura.Name = "fechafactura";
             this.fechafactura.Size = new System.Drawing.Size(102, 20);
             this.fechafactura.TabIndex = 1;
@@ -411,7 +398,7 @@
             "Octubre",
             "Noviembre",
             "Diciembre"});
-            this.combomes.Location = new System.Drawing.Point(120, 16);
+            this.combomes.Location = new System.Drawing.Point(104, 14);
             this.combomes.Name = "combomes";
             this.combomes.Size = new System.Drawing.Size(90, 21);
             this.combomes.TabIndex = 0;
@@ -498,66 +485,33 @@
             this.dgvTemporal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTemporal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTemporal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.albmesDataGridViewTextBoxColumn,
-            this.albtipoiva,
-            this.albcodDataGridViewTextBoxColumn,
-            this.albfechaDataGridViewTextBoxColumn,
-            this.albnombreDataGridViewTextBoxColumn,
-            this.albconcepto1DataGridViewTextBoxColumn,
-            this.albtarifaDataGridViewTextBoxColumn,
-            this.albconcepto2DataGridViewTextBoxColumn,
-            this.albtarifa2DataGridViewTextBoxColumn,
-            this.albempleadosDataGridViewTextBoxColumn,
-            this.albpvpempleadosDataGridViewTextBoxColumn,
-            this.alblaboralDataGridViewTextBoxColumn,
-            this.albbaseDataGridViewTextBoxColumn,
-            this.albivaDataGridViewTextBoxColumn,
-            this.albtotalDataGridViewTextBoxColumn,
-            this.albpormailDataGridViewCheckBoxColumn,
-            this.albdomiciliadoDataGridViewCheckBoxColumn,
-            this.albcifDataGridViewTextBoxColumn,
-            this.albdireccionDataGridViewTextBoxColumn,
-            this.alblocalidadDataGridViewTextBoxColumn,
-            this.albprovinciaDataGridViewTextBoxColumn,
-            this.albcpDataGridViewTextBoxColumn,
-            this.albmailDataGridViewTextBoxColumn,
-            this.albiban1DataGridViewTextBoxColumn,
-            this.albiban2DataGridViewTextBoxColumn,
-            this.albiban3DataGridViewTextBoxColumn,
-            this.albiban4DataGridViewTextBoxColumn,
-            this.albiban5DataGridViewTextBoxColumn,
-            this.albiban6DataGridViewTextBoxColumn,
-            this.albgrupoDataGridViewTextBoxColumn,
-            this.albtipoivaDataGridViewTextBoxColumn,
-            this.albparadomiciliarDataGridViewCheckBoxColumn,
-            this.albparaimprimirDataGridViewCheckBoxColumn,
-            this.albparacontabilizarDataGridViewCheckBoxColumn});
+            this.albtipoiva});
             this.dgvTemporal.DataSource = this.albaranesclientesBindingSource;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTemporal.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTemporal.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTemporal.EnableHeadersVisualStyles = false;
             this.dgvTemporal.Location = new System.Drawing.Point(40, 222);
             this.dgvTemporal.Name = "dgvTemporal";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTemporal.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTemporal.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTemporal.RowHeadersWidth = 20;
             this.dgvTemporal.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvTemporal.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvTemporal.RowTemplate.DefaultCellStyle.Format = "N2";
             this.dgvTemporal.RowTemplate.DefaultCellStyle.NullValue = null;
-            this.dgvTemporal.Size = new System.Drawing.Size(1189, 674);
+            this.dgvTemporal.Size = new System.Drawing.Size(1189, 552);
             this.dgvTemporal.TabIndex = 47;
             this.dgvTemporal.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTemporal_CellValueChanged);
             // 
@@ -572,14 +526,14 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tempremesaDataGridViewTextBoxColumn,
@@ -617,12 +571,261 @@
             this.tempparacontabilizarDataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.temporalBindingSource;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(40, 259);
+            this.dataGridView1.Location = new System.Drawing.Point(40, 222);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 20;
-            this.dataGridView1.Size = new System.Drawing.Size(1189, 674);
+            this.dataGridView1.Size = new System.Drawing.Size(1189, 552);
             this.dataGridView1.TabIndex = 48;
             this.dataGridView1.Visible = false;
+            // 
+            // tempremesaDataGridViewTextBoxColumn
+            // 
+            this.tempremesaDataGridViewTextBoxColumn.DataPropertyName = "tempremesa";
+            this.tempremesaDataGridViewTextBoxColumn.HeaderText = "Remesa";
+            this.tempremesaDataGridViewTextBoxColumn.Name = "tempremesaDataGridViewTextBoxColumn";
+            this.tempremesaDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // tempnumerofacturaDataGridViewTextBoxColumn
+            // 
+            this.tempnumerofacturaDataGridViewTextBoxColumn.DataPropertyName = "tempnumerofactura";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.tempnumerofacturaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.tempnumerofacturaDataGridViewTextBoxColumn.HeaderText = "Nº Factura";
+            this.tempnumerofacturaDataGridViewTextBoxColumn.Name = "tempnumerofacturaDataGridViewTextBoxColumn";
+            this.tempnumerofacturaDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // temptipoivaDataGridViewTextBoxColumn
+            // 
+            this.temptipoivaDataGridViewTextBoxColumn.DataPropertyName = "temptipoiva";
+            this.temptipoivaDataGridViewTextBoxColumn.HeaderText = "temptipoiva";
+            this.temptipoivaDataGridViewTextBoxColumn.Name = "temptipoivaDataGridViewTextBoxColumn";
+            this.temptipoivaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "tempcod";
+            this.dataGridViewTextBoxColumn1.HeaderText = "tempcod";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // tempfechaDataGridViewTextBoxColumn
+            // 
+            this.tempfechaDataGridViewTextBoxColumn.DataPropertyName = "tempfecha";
+            this.tempfechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.tempfechaDataGridViewTextBoxColumn.Name = "tempfechaDataGridViewTextBoxColumn";
+            this.tempfechaDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // tempnombreDataGridViewTextBoxColumn
+            // 
+            this.tempnombreDataGridViewTextBoxColumn.DataPropertyName = "tempnombre";
+            this.tempnombreDataGridViewTextBoxColumn.HeaderText = "Cliente";
+            this.tempnombreDataGridViewTextBoxColumn.Name = "tempnombreDataGridViewTextBoxColumn";
+            this.tempnombreDataGridViewTextBoxColumn.Width = 290;
+            // 
+            // tempconcepto1DataGridViewTextBoxColumn
+            // 
+            this.tempconcepto1DataGridViewTextBoxColumn.DataPropertyName = "tempconcepto1";
+            this.tempconcepto1DataGridViewTextBoxColumn.HeaderText = "Concepto 1";
+            this.tempconcepto1DataGridViewTextBoxColumn.Name = "tempconcepto1DataGridViewTextBoxColumn";
+            this.tempconcepto1DataGridViewTextBoxColumn.Width = 280;
+            // 
+            // temptarifaDataGridViewTextBoxColumn
+            // 
+            this.temptarifaDataGridViewTextBoxColumn.DataPropertyName = "temptarifa";
+            this.temptarifaDataGridViewTextBoxColumn.HeaderText = "temptarifa";
+            this.temptarifaDataGridViewTextBoxColumn.Name = "temptarifaDataGridViewTextBoxColumn";
+            this.temptarifaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tempconcepto2DataGridViewTextBoxColumn
+            // 
+            this.tempconcepto2DataGridViewTextBoxColumn.DataPropertyName = "tempconcepto2";
+            this.tempconcepto2DataGridViewTextBoxColumn.HeaderText = "Suplidos";
+            this.tempconcepto2DataGridViewTextBoxColumn.Name = "tempconcepto2DataGridViewTextBoxColumn";
+            this.tempconcepto2DataGridViewTextBoxColumn.Width = 145;
+            // 
+            // temptarifa2DataGridViewTextBoxColumn
+            // 
+            this.temptarifa2DataGridViewTextBoxColumn.DataPropertyName = "temptarifa2";
+            this.temptarifa2DataGridViewTextBoxColumn.HeaderText = "temptarifa2";
+            this.temptarifa2DataGridViewTextBoxColumn.Name = "temptarifa2DataGridViewTextBoxColumn";
+            this.temptarifa2DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tempempleadosDataGridViewTextBoxColumn
+            // 
+            this.tempempleadosDataGridViewTextBoxColumn.DataPropertyName = "tempempleados";
+            this.tempempleadosDataGridViewTextBoxColumn.HeaderText = "tempempleados";
+            this.tempempleadosDataGridViewTextBoxColumn.Name = "tempempleadosDataGridViewTextBoxColumn";
+            this.tempempleadosDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // temppvempleadosDataGridViewTextBoxColumn
+            // 
+            this.temppvempleadosDataGridViewTextBoxColumn.DataPropertyName = "temppvempleados";
+            this.temppvempleadosDataGridViewTextBoxColumn.HeaderText = "temppvempleados";
+            this.temppvempleadosDataGridViewTextBoxColumn.Name = "temppvempleadosDataGridViewTextBoxColumn";
+            this.temppvempleadosDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // templaboralDataGridViewTextBoxColumn
+            // 
+            this.templaboralDataGridViewTextBoxColumn.DataPropertyName = "templaboral";
+            this.templaboralDataGridViewTextBoxColumn.HeaderText = "templaboral";
+            this.templaboralDataGridViewTextBoxColumn.Name = "templaboralDataGridViewTextBoxColumn";
+            this.templaboralDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tempbaseDataGridViewTextBoxColumn
+            // 
+            this.tempbaseDataGridViewTextBoxColumn.DataPropertyName = "tempbase";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.NullValue = "0";
+            this.tempbaseDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.tempbaseDataGridViewTextBoxColumn.HeaderText = "Total Base";
+            this.tempbaseDataGridViewTextBoxColumn.Name = "tempbaseDataGridViewTextBoxColumn";
+            this.tempbaseDataGridViewTextBoxColumn.Width = 78;
+            // 
+            // tempivaDataGridViewTextBoxColumn
+            // 
+            this.tempivaDataGridViewTextBoxColumn.DataPropertyName = "tempiva";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = "0";
+            this.tempivaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.tempivaDataGridViewTextBoxColumn.HeaderText = "Total Iva";
+            this.tempivaDataGridViewTextBoxColumn.Name = "tempivaDataGridViewTextBoxColumn";
+            this.tempivaDataGridViewTextBoxColumn.Width = 78;
+            // 
+            // temptotalDataGridViewTextBoxColumn
+            // 
+            this.temptotalDataGridViewTextBoxColumn.DataPropertyName = "temptotal";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = "0";
+            this.temptotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            this.temptotalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.temptotalDataGridViewTextBoxColumn.Name = "temptotalDataGridViewTextBoxColumn";
+            this.temptotalDataGridViewTextBoxColumn.Width = 78;
+            // 
+            // temppormailDataGridViewCheckBoxColumn
+            // 
+            this.temppormailDataGridViewCheckBoxColumn.DataPropertyName = "temppormail";
+            this.temppormailDataGridViewCheckBoxColumn.HeaderText = "temppormail";
+            this.temppormailDataGridViewCheckBoxColumn.Name = "temppormailDataGridViewCheckBoxColumn";
+            this.temppormailDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // tempdoiciliadoDataGridViewCheckBoxColumn
+            // 
+            this.tempdoiciliadoDataGridViewCheckBoxColumn.DataPropertyName = "tempdoiciliado";
+            this.tempdoiciliadoDataGridViewCheckBoxColumn.HeaderText = "tempdoiciliado";
+            this.tempdoiciliadoDataGridViewCheckBoxColumn.Name = "tempdoiciliadoDataGridViewCheckBoxColumn";
+            this.tempdoiciliadoDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // tempcifDataGridViewTextBoxColumn
+            // 
+            this.tempcifDataGridViewTextBoxColumn.DataPropertyName = "tempcif";
+            this.tempcifDataGridViewTextBoxColumn.HeaderText = "tempcif";
+            this.tempcifDataGridViewTextBoxColumn.Name = "tempcifDataGridViewTextBoxColumn";
+            this.tempcifDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tempdireccionDataGridViewTextBoxColumn
+            // 
+            this.tempdireccionDataGridViewTextBoxColumn.DataPropertyName = "tempdireccion";
+            this.tempdireccionDataGridViewTextBoxColumn.HeaderText = "tempdireccion";
+            this.tempdireccionDataGridViewTextBoxColumn.Name = "tempdireccionDataGridViewTextBoxColumn";
+            this.tempdireccionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // templocalidadDataGridViewTextBoxColumn
+            // 
+            this.templocalidadDataGridViewTextBoxColumn.DataPropertyName = "templocalidad";
+            this.templocalidadDataGridViewTextBoxColumn.HeaderText = "templocalidad";
+            this.templocalidadDataGridViewTextBoxColumn.Name = "templocalidadDataGridViewTextBoxColumn";
+            this.templocalidadDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tempprovinciaDataGridViewTextBoxColumn
+            // 
+            this.tempprovinciaDataGridViewTextBoxColumn.DataPropertyName = "tempprovincia";
+            this.tempprovinciaDataGridViewTextBoxColumn.HeaderText = "tempprovincia";
+            this.tempprovinciaDataGridViewTextBoxColumn.Name = "tempprovinciaDataGridViewTextBoxColumn";
+            this.tempprovinciaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tempcpDataGridViewTextBoxColumn
+            // 
+            this.tempcpDataGridViewTextBoxColumn.DataPropertyName = "tempcp";
+            this.tempcpDataGridViewTextBoxColumn.HeaderText = "tempcp";
+            this.tempcpDataGridViewTextBoxColumn.Name = "tempcpDataGridViewTextBoxColumn";
+            this.tempcpDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tempmailDataGridViewTextBoxColumn
+            // 
+            this.tempmailDataGridViewTextBoxColumn.DataPropertyName = "tempmail";
+            this.tempmailDataGridViewTextBoxColumn.HeaderText = "tempmail";
+            this.tempmailDataGridViewTextBoxColumn.Name = "tempmailDataGridViewTextBoxColumn";
+            this.tempmailDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tempiban1DataGridViewTextBoxColumn
+            // 
+            this.tempiban1DataGridViewTextBoxColumn.DataPropertyName = "tempiban1";
+            this.tempiban1DataGridViewTextBoxColumn.HeaderText = "tempiban1";
+            this.tempiban1DataGridViewTextBoxColumn.Name = "tempiban1DataGridViewTextBoxColumn";
+            this.tempiban1DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tempiban2DataGridViewTextBoxColumn
+            // 
+            this.tempiban2DataGridViewTextBoxColumn.DataPropertyName = "tempiban2";
+            this.tempiban2DataGridViewTextBoxColumn.HeaderText = "tempiban2";
+            this.tempiban2DataGridViewTextBoxColumn.Name = "tempiban2DataGridViewTextBoxColumn";
+            this.tempiban2DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tempiban3DataGridViewTextBoxColumn
+            // 
+            this.tempiban3DataGridViewTextBoxColumn.DataPropertyName = "tempiban3";
+            this.tempiban3DataGridViewTextBoxColumn.HeaderText = "tempiban3";
+            this.tempiban3DataGridViewTextBoxColumn.Name = "tempiban3DataGridViewTextBoxColumn";
+            this.tempiban3DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tempiban4DataGridViewTextBoxColumn
+            // 
+            this.tempiban4DataGridViewTextBoxColumn.DataPropertyName = "tempiban4";
+            this.tempiban4DataGridViewTextBoxColumn.HeaderText = "tempiban4";
+            this.tempiban4DataGridViewTextBoxColumn.Name = "tempiban4DataGridViewTextBoxColumn";
+            this.tempiban4DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tempiban5DataGridViewTextBoxColumn
+            // 
+            this.tempiban5DataGridViewTextBoxColumn.DataPropertyName = "tempiban5";
+            this.tempiban5DataGridViewTextBoxColumn.HeaderText = "tempiban5";
+            this.tempiban5DataGridViewTextBoxColumn.Name = "tempiban5DataGridViewTextBoxColumn";
+            this.tempiban5DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tempiban6DataGridViewTextBoxColumn
+            // 
+            this.tempiban6DataGridViewTextBoxColumn.DataPropertyName = "tempiban6";
+            this.tempiban6DataGridViewTextBoxColumn.HeaderText = "tempiban6";
+            this.tempiban6DataGridViewTextBoxColumn.Name = "tempiban6DataGridViewTextBoxColumn";
+            this.tempiban6DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tempparadomiciliarDataGridViewCheckBoxColumn
+            // 
+            this.tempparadomiciliarDataGridViewCheckBoxColumn.DataPropertyName = "tempparadomiciliar";
+            this.tempparadomiciliarDataGridViewCheckBoxColumn.HeaderText = "tempparadomiciliar";
+            this.tempparadomiciliarDataGridViewCheckBoxColumn.Name = "tempparadomiciliarDataGridViewCheckBoxColumn";
+            this.tempparadomiciliarDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // tempparaimprimirDataGridViewCheckBoxColumn
+            // 
+            this.tempparaimprimirDataGridViewCheckBoxColumn.DataPropertyName = "tempparaimprimir";
+            this.tempparaimprimirDataGridViewCheckBoxColumn.HeaderText = "tempparaimprimir";
+            this.tempparaimprimirDataGridViewCheckBoxColumn.Name = "tempparaimprimirDataGridViewCheckBoxColumn";
+            this.tempparaimprimirDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // tempparacontabilizarDataGridViewCheckBoxColumn
+            // 
+            this.tempparacontabilizarDataGridViewCheckBoxColumn.DataPropertyName = "tempparacontabilizar";
+            this.tempparacontabilizarDataGridViewCheckBoxColumn.HeaderText = "tempparacontabilizar";
+            this.tempparacontabilizarDataGridViewCheckBoxColumn.Name = "tempparacontabilizarDataGridViewCheckBoxColumn";
+            this.tempparacontabilizarDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // temporalBindingSource
+            // 
+            this.temporalBindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Clases.temporal);
             // 
             // clientesBindingSource1
             // 
@@ -632,7 +835,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel3.Controls.Add(this.panel33);
-            this.panel3.Location = new System.Drawing.Point(187, 259);
+            this.panel3.Location = new System.Drawing.Point(299, 243);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(480, 548);
             this.panel3.TabIndex = 52;
@@ -723,14 +926,14 @@
             // 
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
@@ -793,20 +996,6 @@
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.UseWaitCursor = true;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick_1);
-            // 
-            // administracionAntonioDataSet1
-            // 
-            this.administracionAntonioDataSet1.DataSetName = "AdministracionAntonioDataSet1";
-            this.administracionAntonioDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // facturasBindingSource
-            // 
-            this.facturasBindingSource.DataMember = "Facturas";
-            this.facturasBindingSource.DataSource = this.administracionAntonioDataSet1;
-            // 
-            // facturasTableAdapter
-            // 
-            this.facturasTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -1172,521 +1361,19 @@
             this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
             this.dataGridViewTextBoxColumn53.Visible = false;
             // 
-            // tempremesaDataGridViewTextBoxColumn
+            // administracionAntonioDataSet1
             // 
-            this.tempremesaDataGridViewTextBoxColumn.DataPropertyName = "tempremesa";
-            this.tempremesaDataGridViewTextBoxColumn.HeaderText = "Remesa";
-            this.tempremesaDataGridViewTextBoxColumn.Name = "tempremesaDataGridViewTextBoxColumn";
-            this.tempremesaDataGridViewTextBoxColumn.Width = 70;
+            this.administracionAntonioDataSet1.DataSetName = "AdministracionAntonioDataSet1";
+            this.administracionAntonioDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tempnumerofacturaDataGridViewTextBoxColumn
+            // facturasBindingSource
             // 
-            this.tempnumerofacturaDataGridViewTextBoxColumn.DataPropertyName = "tempnumerofactura";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.tempnumerofacturaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
-            this.tempnumerofacturaDataGridViewTextBoxColumn.HeaderText = "Nº Factura";
-            this.tempnumerofacturaDataGridViewTextBoxColumn.Name = "tempnumerofacturaDataGridViewTextBoxColumn";
-            this.tempnumerofacturaDataGridViewTextBoxColumn.Width = 65;
+            this.facturasBindingSource.DataMember = "Facturas";
+            this.facturasBindingSource.DataSource = this.administracionAntonioDataSet1;
             // 
-            // temptipoivaDataGridViewTextBoxColumn
+            // facturasTableAdapter
             // 
-            this.temptipoivaDataGridViewTextBoxColumn.DataPropertyName = "temptipoiva";
-            this.temptipoivaDataGridViewTextBoxColumn.HeaderText = "temptipoiva";
-            this.temptipoivaDataGridViewTextBoxColumn.Name = "temptipoivaDataGridViewTextBoxColumn";
-            this.temptipoivaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "tempcod";
-            this.dataGridViewTextBoxColumn1.HeaderText = "tempcod";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // tempfechaDataGridViewTextBoxColumn
-            // 
-            this.tempfechaDataGridViewTextBoxColumn.DataPropertyName = "tempfecha";
-            this.tempfechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.tempfechaDataGridViewTextBoxColumn.Name = "tempfechaDataGridViewTextBoxColumn";
-            this.tempfechaDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // tempnombreDataGridViewTextBoxColumn
-            // 
-            this.tempnombreDataGridViewTextBoxColumn.DataPropertyName = "tempnombre";
-            this.tempnombreDataGridViewTextBoxColumn.HeaderText = "Cliente";
-            this.tempnombreDataGridViewTextBoxColumn.Name = "tempnombreDataGridViewTextBoxColumn";
-            this.tempnombreDataGridViewTextBoxColumn.Width = 290;
-            // 
-            // tempconcepto1DataGridViewTextBoxColumn
-            // 
-            this.tempconcepto1DataGridViewTextBoxColumn.DataPropertyName = "tempconcepto1";
-            this.tempconcepto1DataGridViewTextBoxColumn.HeaderText = "Concepto 1";
-            this.tempconcepto1DataGridViewTextBoxColumn.Name = "tempconcepto1DataGridViewTextBoxColumn";
-            this.tempconcepto1DataGridViewTextBoxColumn.Width = 280;
-            // 
-            // temptarifaDataGridViewTextBoxColumn
-            // 
-            this.temptarifaDataGridViewTextBoxColumn.DataPropertyName = "temptarifa";
-            this.temptarifaDataGridViewTextBoxColumn.HeaderText = "temptarifa";
-            this.temptarifaDataGridViewTextBoxColumn.Name = "temptarifaDataGridViewTextBoxColumn";
-            this.temptarifaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tempconcepto2DataGridViewTextBoxColumn
-            // 
-            this.tempconcepto2DataGridViewTextBoxColumn.DataPropertyName = "tempconcepto2";
-            this.tempconcepto2DataGridViewTextBoxColumn.HeaderText = "Suplidos";
-            this.tempconcepto2DataGridViewTextBoxColumn.Name = "tempconcepto2DataGridViewTextBoxColumn";
-            this.tempconcepto2DataGridViewTextBoxColumn.Width = 145;
-            // 
-            // temptarifa2DataGridViewTextBoxColumn
-            // 
-            this.temptarifa2DataGridViewTextBoxColumn.DataPropertyName = "temptarifa2";
-            this.temptarifa2DataGridViewTextBoxColumn.HeaderText = "temptarifa2";
-            this.temptarifa2DataGridViewTextBoxColumn.Name = "temptarifa2DataGridViewTextBoxColumn";
-            this.temptarifa2DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tempempleadosDataGridViewTextBoxColumn
-            // 
-            this.tempempleadosDataGridViewTextBoxColumn.DataPropertyName = "tempempleados";
-            this.tempempleadosDataGridViewTextBoxColumn.HeaderText = "tempempleados";
-            this.tempempleadosDataGridViewTextBoxColumn.Name = "tempempleadosDataGridViewTextBoxColumn";
-            this.tempempleadosDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // temppvempleadosDataGridViewTextBoxColumn
-            // 
-            this.temppvempleadosDataGridViewTextBoxColumn.DataPropertyName = "temppvempleados";
-            this.temppvempleadosDataGridViewTextBoxColumn.HeaderText = "temppvempleados";
-            this.temppvempleadosDataGridViewTextBoxColumn.Name = "temppvempleadosDataGridViewTextBoxColumn";
-            this.temppvempleadosDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // templaboralDataGridViewTextBoxColumn
-            // 
-            this.templaboralDataGridViewTextBoxColumn.DataPropertyName = "templaboral";
-            this.templaboralDataGridViewTextBoxColumn.HeaderText = "templaboral";
-            this.templaboralDataGridViewTextBoxColumn.Name = "templaboralDataGridViewTextBoxColumn";
-            this.templaboralDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tempbaseDataGridViewTextBoxColumn
-            // 
-            this.tempbaseDataGridViewTextBoxColumn.DataPropertyName = "tempbase";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Format = "N2";
-            dataGridViewCellStyle14.NullValue = "0";
-            this.tempbaseDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
-            this.tempbaseDataGridViewTextBoxColumn.HeaderText = "Total Base";
-            this.tempbaseDataGridViewTextBoxColumn.Name = "tempbaseDataGridViewTextBoxColumn";
-            this.tempbaseDataGridViewTextBoxColumn.Width = 78;
-            // 
-            // tempivaDataGridViewTextBoxColumn
-            // 
-            this.tempivaDataGridViewTextBoxColumn.DataPropertyName = "tempiva";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.Format = "N2";
-            dataGridViewCellStyle15.NullValue = "0";
-            this.tempivaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
-            this.tempivaDataGridViewTextBoxColumn.HeaderText = "Total Iva";
-            this.tempivaDataGridViewTextBoxColumn.Name = "tempivaDataGridViewTextBoxColumn";
-            this.tempivaDataGridViewTextBoxColumn.Width = 78;
-            // 
-            // temptotalDataGridViewTextBoxColumn
-            // 
-            this.temptotalDataGridViewTextBoxColumn.DataPropertyName = "temptotal";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle16.Format = "N2";
-            dataGridViewCellStyle16.NullValue = "0";
-            this.temptotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
-            this.temptotalDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.temptotalDataGridViewTextBoxColumn.Name = "temptotalDataGridViewTextBoxColumn";
-            this.temptotalDataGridViewTextBoxColumn.Width = 78;
-            // 
-            // temppormailDataGridViewCheckBoxColumn
-            // 
-            this.temppormailDataGridViewCheckBoxColumn.DataPropertyName = "temppormail";
-            this.temppormailDataGridViewCheckBoxColumn.HeaderText = "temppormail";
-            this.temppormailDataGridViewCheckBoxColumn.Name = "temppormailDataGridViewCheckBoxColumn";
-            this.temppormailDataGridViewCheckBoxColumn.Visible = false;
-            // 
-            // tempdoiciliadoDataGridViewCheckBoxColumn
-            // 
-            this.tempdoiciliadoDataGridViewCheckBoxColumn.DataPropertyName = "tempdoiciliado";
-            this.tempdoiciliadoDataGridViewCheckBoxColumn.HeaderText = "tempdoiciliado";
-            this.tempdoiciliadoDataGridViewCheckBoxColumn.Name = "tempdoiciliadoDataGridViewCheckBoxColumn";
-            this.tempdoiciliadoDataGridViewCheckBoxColumn.Visible = false;
-            // 
-            // tempcifDataGridViewTextBoxColumn
-            // 
-            this.tempcifDataGridViewTextBoxColumn.DataPropertyName = "tempcif";
-            this.tempcifDataGridViewTextBoxColumn.HeaderText = "tempcif";
-            this.tempcifDataGridViewTextBoxColumn.Name = "tempcifDataGridViewTextBoxColumn";
-            this.tempcifDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tempdireccionDataGridViewTextBoxColumn
-            // 
-            this.tempdireccionDataGridViewTextBoxColumn.DataPropertyName = "tempdireccion";
-            this.tempdireccionDataGridViewTextBoxColumn.HeaderText = "tempdireccion";
-            this.tempdireccionDataGridViewTextBoxColumn.Name = "tempdireccionDataGridViewTextBoxColumn";
-            this.tempdireccionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // templocalidadDataGridViewTextBoxColumn
-            // 
-            this.templocalidadDataGridViewTextBoxColumn.DataPropertyName = "templocalidad";
-            this.templocalidadDataGridViewTextBoxColumn.HeaderText = "templocalidad";
-            this.templocalidadDataGridViewTextBoxColumn.Name = "templocalidadDataGridViewTextBoxColumn";
-            this.templocalidadDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tempprovinciaDataGridViewTextBoxColumn
-            // 
-            this.tempprovinciaDataGridViewTextBoxColumn.DataPropertyName = "tempprovincia";
-            this.tempprovinciaDataGridViewTextBoxColumn.HeaderText = "tempprovincia";
-            this.tempprovinciaDataGridViewTextBoxColumn.Name = "tempprovinciaDataGridViewTextBoxColumn";
-            this.tempprovinciaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tempcpDataGridViewTextBoxColumn
-            // 
-            this.tempcpDataGridViewTextBoxColumn.DataPropertyName = "tempcp";
-            this.tempcpDataGridViewTextBoxColumn.HeaderText = "tempcp";
-            this.tempcpDataGridViewTextBoxColumn.Name = "tempcpDataGridViewTextBoxColumn";
-            this.tempcpDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tempmailDataGridViewTextBoxColumn
-            // 
-            this.tempmailDataGridViewTextBoxColumn.DataPropertyName = "tempmail";
-            this.tempmailDataGridViewTextBoxColumn.HeaderText = "tempmail";
-            this.tempmailDataGridViewTextBoxColumn.Name = "tempmailDataGridViewTextBoxColumn";
-            this.tempmailDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tempiban1DataGridViewTextBoxColumn
-            // 
-            this.tempiban1DataGridViewTextBoxColumn.DataPropertyName = "tempiban1";
-            this.tempiban1DataGridViewTextBoxColumn.HeaderText = "tempiban1";
-            this.tempiban1DataGridViewTextBoxColumn.Name = "tempiban1DataGridViewTextBoxColumn";
-            this.tempiban1DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tempiban2DataGridViewTextBoxColumn
-            // 
-            this.tempiban2DataGridViewTextBoxColumn.DataPropertyName = "tempiban2";
-            this.tempiban2DataGridViewTextBoxColumn.HeaderText = "tempiban2";
-            this.tempiban2DataGridViewTextBoxColumn.Name = "tempiban2DataGridViewTextBoxColumn";
-            this.tempiban2DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tempiban3DataGridViewTextBoxColumn
-            // 
-            this.tempiban3DataGridViewTextBoxColumn.DataPropertyName = "tempiban3";
-            this.tempiban3DataGridViewTextBoxColumn.HeaderText = "tempiban3";
-            this.tempiban3DataGridViewTextBoxColumn.Name = "tempiban3DataGridViewTextBoxColumn";
-            this.tempiban3DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tempiban4DataGridViewTextBoxColumn
-            // 
-            this.tempiban4DataGridViewTextBoxColumn.DataPropertyName = "tempiban4";
-            this.tempiban4DataGridViewTextBoxColumn.HeaderText = "tempiban4";
-            this.tempiban4DataGridViewTextBoxColumn.Name = "tempiban4DataGridViewTextBoxColumn";
-            this.tempiban4DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tempiban5DataGridViewTextBoxColumn
-            // 
-            this.tempiban5DataGridViewTextBoxColumn.DataPropertyName = "tempiban5";
-            this.tempiban5DataGridViewTextBoxColumn.HeaderText = "tempiban5";
-            this.tempiban5DataGridViewTextBoxColumn.Name = "tempiban5DataGridViewTextBoxColumn";
-            this.tempiban5DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tempiban6DataGridViewTextBoxColumn
-            // 
-            this.tempiban6DataGridViewTextBoxColumn.DataPropertyName = "tempiban6";
-            this.tempiban6DataGridViewTextBoxColumn.HeaderText = "tempiban6";
-            this.tempiban6DataGridViewTextBoxColumn.Name = "tempiban6DataGridViewTextBoxColumn";
-            this.tempiban6DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tempparadomiciliarDataGridViewCheckBoxColumn
-            // 
-            this.tempparadomiciliarDataGridViewCheckBoxColumn.DataPropertyName = "tempparadomiciliar";
-            this.tempparadomiciliarDataGridViewCheckBoxColumn.HeaderText = "tempparadomiciliar";
-            this.tempparadomiciliarDataGridViewCheckBoxColumn.Name = "tempparadomiciliarDataGridViewCheckBoxColumn";
-            this.tempparadomiciliarDataGridViewCheckBoxColumn.Visible = false;
-            // 
-            // tempparaimprimirDataGridViewCheckBoxColumn
-            // 
-            this.tempparaimprimirDataGridViewCheckBoxColumn.DataPropertyName = "tempparaimprimir";
-            this.tempparaimprimirDataGridViewCheckBoxColumn.HeaderText = "tempparaimprimir";
-            this.tempparaimprimirDataGridViewCheckBoxColumn.Name = "tempparaimprimirDataGridViewCheckBoxColumn";
-            this.tempparaimprimirDataGridViewCheckBoxColumn.Visible = false;
-            // 
-            // tempparacontabilizarDataGridViewCheckBoxColumn
-            // 
-            this.tempparacontabilizarDataGridViewCheckBoxColumn.DataPropertyName = "tempparacontabilizar";
-            this.tempparacontabilizarDataGridViewCheckBoxColumn.HeaderText = "tempparacontabilizar";
-            this.tempparacontabilizarDataGridViewCheckBoxColumn.Name = "tempparacontabilizarDataGridViewCheckBoxColumn";
-            this.tempparacontabilizarDataGridViewCheckBoxColumn.Visible = false;
-            // 
-            // temporalBindingSource
-            // 
-            this.temporalBindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Clases.temporal);
-            // 
-            // albmesDataGridViewTextBoxColumn
-            // 
-            this.albmesDataGridViewTextBoxColumn.DataPropertyName = "albmes";
-            this.albmesDataGridViewTextBoxColumn.HeaderText = "Remesa";
-            this.albmesDataGridViewTextBoxColumn.Name = "albmesDataGridViewTextBoxColumn";
-            this.albmesDataGridViewTextBoxColumn.Width = 63;
-            // 
-            // albcodDataGridViewTextBoxColumn
-            // 
-            this.albcodDataGridViewTextBoxColumn.DataPropertyName = "albcod";
-            this.albcodDataGridViewTextBoxColumn.HeaderText = "albcod";
-            this.albcodDataGridViewTextBoxColumn.Name = "albcodDataGridViewTextBoxColumn";
-            this.albcodDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // albfechaDataGridViewTextBoxColumn
-            // 
-            this.albfechaDataGridViewTextBoxColumn.DataPropertyName = "albfecha";
-            this.albfechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.albfechaDataGridViewTextBoxColumn.Name = "albfechaDataGridViewTextBoxColumn";
-            this.albfechaDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // albnombreDataGridViewTextBoxColumn
-            // 
-            this.albnombreDataGridViewTextBoxColumn.DataPropertyName = "albnombre";
-            this.albnombreDataGridViewTextBoxColumn.HeaderText = "Cliente";
-            this.albnombreDataGridViewTextBoxColumn.Name = "albnombreDataGridViewTextBoxColumn";
-            this.albnombreDataGridViewTextBoxColumn.Width = 250;
-            // 
-            // albconcepto1DataGridViewTextBoxColumn
-            // 
-            this.albconcepto1DataGridViewTextBoxColumn.DataPropertyName = "albconcepto1";
-            this.albconcepto1DataGridViewTextBoxColumn.HeaderText = "Concepto 1";
-            this.albconcepto1DataGridViewTextBoxColumn.Name = "albconcepto1DataGridViewTextBoxColumn";
-            this.albconcepto1DataGridViewTextBoxColumn.Width = 243;
-            // 
-            // albtarifaDataGridViewTextBoxColumn
-            // 
-            this.albtarifaDataGridViewTextBoxColumn.DataPropertyName = "albtarifa";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.albtarifaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.albtarifaDataGridViewTextBoxColumn.HeaderText = "Fiscal  Contable";
-            this.albtarifaDataGridViewTextBoxColumn.Name = "albtarifaDataGridViewTextBoxColumn";
-            this.albtarifaDataGridViewTextBoxColumn.Width = 57;
-            // 
-            // albconcepto2DataGridViewTextBoxColumn
-            // 
-            this.albconcepto2DataGridViewTextBoxColumn.DataPropertyName = "albconcepto2";
-            this.albconcepto2DataGridViewTextBoxColumn.HeaderText = "Concepto Suplidos";
-            this.albconcepto2DataGridViewTextBoxColumn.Name = "albconcepto2DataGridViewTextBoxColumn";
-            this.albconcepto2DataGridViewTextBoxColumn.Width = 120;
-            // 
-            // albtarifa2DataGridViewTextBoxColumn
-            // 
-            this.albtarifa2DataGridViewTextBoxColumn.DataPropertyName = "albtarifa2";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = "0";
-            this.albtarifa2DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.albtarifa2DataGridViewTextBoxColumn.HeaderText = "Suplidos";
-            this.albtarifa2DataGridViewTextBoxColumn.Name = "albtarifa2DataGridViewTextBoxColumn";
-            this.albtarifa2DataGridViewTextBoxColumn.Width = 53;
-            // 
-            // albempleadosDataGridViewTextBoxColumn
-            // 
-            this.albempleadosDataGridViewTextBoxColumn.DataPropertyName = "albempleados";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = "0";
-            this.albempleadosDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.albempleadosDataGridViewTextBoxColumn.HeaderText = "Emp.";
-            this.albempleadosDataGridViewTextBoxColumn.Name = "albempleadosDataGridViewTextBoxColumn";
-            this.albempleadosDataGridViewTextBoxColumn.Width = 33;
-            // 
-            // albpvpempleadosDataGridViewTextBoxColumn
-            // 
-            this.albpvpempleadosDataGridViewTextBoxColumn.DataPropertyName = "albpvpempleados";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = "0";
-            this.albpvpempleadosDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.albpvpempleadosDataGridViewTextBoxColumn.HeaderText = "Precio Empl.";
-            this.albpvpempleadosDataGridViewTextBoxColumn.Name = "albpvpempleadosDataGridViewTextBoxColumn";
-            this.albpvpempleadosDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // alblaboralDataGridViewTextBoxColumn
-            // 
-            this.alblaboralDataGridViewTextBoxColumn.DataPropertyName = "alblaboral";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "N2";
-            dataGridViewCellStyle6.NullValue = "0";
-            this.alblaboralDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.alblaboralDataGridViewTextBoxColumn.HeaderText = "Laboral";
-            this.alblaboralDataGridViewTextBoxColumn.Name = "alblaboralDataGridViewTextBoxColumn";
-            this.alblaboralDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // albbaseDataGridViewTextBoxColumn
-            // 
-            this.albbaseDataGridViewTextBoxColumn.DataPropertyName = "albbase";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "N2";
-            dataGridViewCellStyle7.NullValue = "0";
-            this.albbaseDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.albbaseDataGridViewTextBoxColumn.HeaderText = "Total Base";
-            this.albbaseDataGridViewTextBoxColumn.Name = "albbaseDataGridViewTextBoxColumn";
-            this.albbaseDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // albivaDataGridViewTextBoxColumn
-            // 
-            this.albivaDataGridViewTextBoxColumn.DataPropertyName = "albiva";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "N2";
-            dataGridViewCellStyle8.NullValue = "0";
-            this.albivaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.albivaDataGridViewTextBoxColumn.HeaderText = "Total Iva";
-            this.albivaDataGridViewTextBoxColumn.Name = "albivaDataGridViewTextBoxColumn";
-            this.albivaDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // albtotalDataGridViewTextBoxColumn
-            // 
-            this.albtotalDataGridViewTextBoxColumn.DataPropertyName = "albtotal";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "N2";
-            dataGridViewCellStyle9.NullValue = "0";
-            this.albtotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
-            this.albtotalDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.albtotalDataGridViewTextBoxColumn.Name = "albtotalDataGridViewTextBoxColumn";
-            this.albtotalDataGridViewTextBoxColumn.Width = 55;
-            // 
-            // albpormailDataGridViewCheckBoxColumn
-            // 
-            this.albpormailDataGridViewCheckBoxColumn.DataPropertyName = "albpormail";
-            this.albpormailDataGridViewCheckBoxColumn.HeaderText = "albpormail";
-            this.albpormailDataGridViewCheckBoxColumn.Name = "albpormailDataGridViewCheckBoxColumn";
-            this.albpormailDataGridViewCheckBoxColumn.Visible = false;
-            // 
-            // albdomiciliadoDataGridViewCheckBoxColumn
-            // 
-            this.albdomiciliadoDataGridViewCheckBoxColumn.DataPropertyName = "albdomiciliado";
-            this.albdomiciliadoDataGridViewCheckBoxColumn.HeaderText = "albdomiciliado";
-            this.albdomiciliadoDataGridViewCheckBoxColumn.Name = "albdomiciliadoDataGridViewCheckBoxColumn";
-            this.albdomiciliadoDataGridViewCheckBoxColumn.Visible = false;
-            // 
-            // albcifDataGridViewTextBoxColumn
-            // 
-            this.albcifDataGridViewTextBoxColumn.DataPropertyName = "albcif";
-            this.albcifDataGridViewTextBoxColumn.HeaderText = "albcif";
-            this.albcifDataGridViewTextBoxColumn.Name = "albcifDataGridViewTextBoxColumn";
-            this.albcifDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // albdireccionDataGridViewTextBoxColumn
-            // 
-            this.albdireccionDataGridViewTextBoxColumn.DataPropertyName = "albdireccion";
-            this.albdireccionDataGridViewTextBoxColumn.HeaderText = "albdireccion";
-            this.albdireccionDataGridViewTextBoxColumn.Name = "albdireccionDataGridViewTextBoxColumn";
-            this.albdireccionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // alblocalidadDataGridViewTextBoxColumn
-            // 
-            this.alblocalidadDataGridViewTextBoxColumn.DataPropertyName = "alblocalidad";
-            this.alblocalidadDataGridViewTextBoxColumn.HeaderText = "alblocalidad";
-            this.alblocalidadDataGridViewTextBoxColumn.Name = "alblocalidadDataGridViewTextBoxColumn";
-            this.alblocalidadDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // albprovinciaDataGridViewTextBoxColumn
-            // 
-            this.albprovinciaDataGridViewTextBoxColumn.DataPropertyName = "albprovincia";
-            this.albprovinciaDataGridViewTextBoxColumn.HeaderText = "albprovincia";
-            this.albprovinciaDataGridViewTextBoxColumn.Name = "albprovinciaDataGridViewTextBoxColumn";
-            this.albprovinciaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // albcpDataGridViewTextBoxColumn
-            // 
-            this.albcpDataGridViewTextBoxColumn.DataPropertyName = "albcp";
-            this.albcpDataGridViewTextBoxColumn.HeaderText = "albcp";
-            this.albcpDataGridViewTextBoxColumn.Name = "albcpDataGridViewTextBoxColumn";
-            this.albcpDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // albmailDataGridViewTextBoxColumn
-            // 
-            this.albmailDataGridViewTextBoxColumn.DataPropertyName = "albmail";
-            this.albmailDataGridViewTextBoxColumn.HeaderText = "albmail";
-            this.albmailDataGridViewTextBoxColumn.Name = "albmailDataGridViewTextBoxColumn";
-            this.albmailDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // albiban1DataGridViewTextBoxColumn
-            // 
-            this.albiban1DataGridViewTextBoxColumn.DataPropertyName = "albiban1";
-            this.albiban1DataGridViewTextBoxColumn.HeaderText = "albiban1";
-            this.albiban1DataGridViewTextBoxColumn.Name = "albiban1DataGridViewTextBoxColumn";
-            this.albiban1DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // albiban2DataGridViewTextBoxColumn
-            // 
-            this.albiban2DataGridViewTextBoxColumn.DataPropertyName = "albiban2";
-            this.albiban2DataGridViewTextBoxColumn.HeaderText = "albiban2";
-            this.albiban2DataGridViewTextBoxColumn.Name = "albiban2DataGridViewTextBoxColumn";
-            this.albiban2DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // albiban3DataGridViewTextBoxColumn
-            // 
-            this.albiban3DataGridViewTextBoxColumn.DataPropertyName = "albiban3";
-            this.albiban3DataGridViewTextBoxColumn.HeaderText = "albiban3";
-            this.albiban3DataGridViewTextBoxColumn.Name = "albiban3DataGridViewTextBoxColumn";
-            this.albiban3DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // albiban4DataGridViewTextBoxColumn
-            // 
-            this.albiban4DataGridViewTextBoxColumn.DataPropertyName = "albiban4";
-            this.albiban4DataGridViewTextBoxColumn.HeaderText = "albiban4";
-            this.albiban4DataGridViewTextBoxColumn.Name = "albiban4DataGridViewTextBoxColumn";
-            this.albiban4DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // albiban5DataGridViewTextBoxColumn
-            // 
-            this.albiban5DataGridViewTextBoxColumn.DataPropertyName = "albiban5";
-            this.albiban5DataGridViewTextBoxColumn.HeaderText = "albiban5";
-            this.albiban5DataGridViewTextBoxColumn.Name = "albiban5DataGridViewTextBoxColumn";
-            this.albiban5DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // albiban6DataGridViewTextBoxColumn
-            // 
-            this.albiban6DataGridViewTextBoxColumn.DataPropertyName = "albiban6";
-            this.albiban6DataGridViewTextBoxColumn.HeaderText = "albiban6";
-            this.albiban6DataGridViewTextBoxColumn.Name = "albiban6DataGridViewTextBoxColumn";
-            this.albiban6DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // albgrupoDataGridViewTextBoxColumn
-            // 
-            this.albgrupoDataGridViewTextBoxColumn.DataPropertyName = "albgrupo";
-            this.albgrupoDataGridViewTextBoxColumn.HeaderText = "albgrupo";
-            this.albgrupoDataGridViewTextBoxColumn.Name = "albgrupoDataGridViewTextBoxColumn";
-            this.albgrupoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // albtipoivaDataGridViewTextBoxColumn
-            // 
-            this.albtipoivaDataGridViewTextBoxColumn.DataPropertyName = "albtipoiva";
-            this.albtipoivaDataGridViewTextBoxColumn.HeaderText = "albtipoiva";
-            this.albtipoivaDataGridViewTextBoxColumn.Name = "albtipoivaDataGridViewTextBoxColumn";
-            this.albtipoivaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // albparadomiciliarDataGridViewCheckBoxColumn
-            // 
-            this.albparadomiciliarDataGridViewCheckBoxColumn.DataPropertyName = "albparadomiciliar";
-            this.albparadomiciliarDataGridViewCheckBoxColumn.HeaderText = "albparadomiciliar";
-            this.albparadomiciliarDataGridViewCheckBoxColumn.Name = "albparadomiciliarDataGridViewCheckBoxColumn";
-            this.albparadomiciliarDataGridViewCheckBoxColumn.Visible = false;
-            // 
-            // albparaimprimirDataGridViewCheckBoxColumn
-            // 
-            this.albparaimprimirDataGridViewCheckBoxColumn.DataPropertyName = "albparaimprimir";
-            this.albparaimprimirDataGridViewCheckBoxColumn.HeaderText = "albparaimprimir";
-            this.albparaimprimirDataGridViewCheckBoxColumn.Name = "albparaimprimirDataGridViewCheckBoxColumn";
-            this.albparaimprimirDataGridViewCheckBoxColumn.Visible = false;
-            // 
-            // albparacontabilizarDataGridViewCheckBoxColumn
-            // 
-            this.albparacontabilizarDataGridViewCheckBoxColumn.DataPropertyName = "albparacontabilizar";
-            this.albparacontabilizarDataGridViewCheckBoxColumn.HeaderText = "albparacontabilizar";
-            this.albparacontabilizarDataGridViewCheckBoxColumn.Name = "albparacontabilizarDataGridViewCheckBoxColumn";
-            this.albparacontabilizarDataGridViewCheckBoxColumn.Visible = false;
-            // 
-            // albaranesclientesBindingSource
-            // 
-            this.albaranesclientesBindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Clases.albaranesclientes);
+            this.facturasTableAdapter.ClearBeforeFill = true;
             // 
             // datoslistadoremeBindingSource
             // 
@@ -1726,7 +1413,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTemporal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.albaranesclientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.temporalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -1735,8 +1424,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.temporalBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.albaranesclientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datoslistadoremeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1955,5 +1642,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn51;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn52;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn53;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label12;
     }
 }

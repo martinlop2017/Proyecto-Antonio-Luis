@@ -188,49 +188,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                 
         }
 
-        private void dgvclientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void GestionClientes_MouseEnter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GestionClientes_Enter(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void GestionClientes_Activated(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buscar_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void comboBoxClientes_TextUpdate(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxClientes_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-         
-
-        }
-
+  
         private void button1_Click_1(object sender, EventArgs e)
         {
            
@@ -301,24 +259,65 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         }
 
-
-            //============================================================================================================
-            //============================================================================================================
-            //============================================================================================================
-            //=================                                                                               ============
-            //=================                                                                               ============
-            //=================      Aquí termina las acciones al pulsar los distintos botones               ============
-            //=================                                                                               ============
-            //=================                                                                               ============
-            //============================================================================================================
-            //============================================================================================================
-            //============================================================================================================
-
-
-
-
-
-
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "Código")
+            {
+                dgvclientes.DataSource = bd.Clientes.OrderBy(x=> x.codcliente).ToList();
+            }
+
+            if (comboBox1.Text == "Nombre")
+            {
+                dgvclientes.DataSource = bd.Clientes.OrderBy(x => x.nombrecliente).ToList();
+            }
+        }
+
+        private void comboBox1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+          
+        }
+
+        private void comboBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_MouseEnter(object sender, EventArgs e)
+        {
+            label6.Visible = true;
+        }
+
+        private void panel2_MouseLeave(object sender, EventArgs e)
+        {
+            label6.Visible = false;
+        }
+
+        private void comboBox1_MouseEnter(object sender, EventArgs e)
+        {
+            label6.Visible = true;
+        }
+
+        private void comboBox1_MouseLeave(object sender, EventArgs e)
+        {
+            label6.Visible = false;
+        }
+
+ 
+
+
+
+
+
+
+    }
 }

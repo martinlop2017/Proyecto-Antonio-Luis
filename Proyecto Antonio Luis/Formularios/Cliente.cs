@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BaseDatos;
 using System.Data.SqlClient;
+using System.IO;
 //using Administracion_Antonio_Luis.Utils.Iva;
 
 
@@ -21,11 +22,13 @@ namespace Proyecto_Antonio_Luis.Formularios
     {
 
         AdministracionAntonioEntities bd;
+          
         
         public Cliente()
         {
             InitializeComponent();
             bd = new AdministracionAntonioEntities();
+           // this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
         }
 
         private void Clientes_Load(object sender, EventArgs e)
@@ -197,487 +200,538 @@ namespace Proyecto_Antonio_Luis.Formularios
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (Globales.llamadas == "1")
-            {
-                try
+
+                if (Globales.llamadas == "1")
                 {
-                    var nuevocliente = new Clientes();
+                    try
+                    {
+                        var nuevocliente = new Clientes();
 
-                    //calcula y muestra el codigo de cliente automaticamente
-                    var autokey = bd.Clientes.OrderByDescending(x => x.numerador).Take(1).FirstOrDefault();
-                    if(autokey==null)
-                    {
-                        nuevocliente.numerador = 1;
-                    }
-                    else
-                    {
-                        nuevocliente.numerador = autokey.numerador + 1;
-                    }
-                    
-
-                    nuevocliente.codcliente = Convert.ToDecimal(label1.Text);
-                    nuevocliente.nombrecliente = textMiNombre.Text;
-                    nuevocliente.cifcliente = textMiCif.Text;
-                    nuevocliente.direcioncliente = textMiDiereccion.Text;
-                    nuevocliente.localidacliente = textMiPoblacion.Text;
-                    nuevocliente.provinciacliente = textMiProvincia.Text;
-                    nuevocliente.cod_postalcliente = textMiCP.Text;
-                    nuevocliente.telefono1cliente = Convert.ToInt64(textMiTLF1.Text);
-                    nuevocliente.telefono2cliente = Convert.ToInt64(textMiTLF2.Text);
-                    nuevocliente.faxcliente = Convert.ToInt64(textMiFax.Text);
-                    nuevocliente.contactocliente = textMiPersonaContacto.Text;
-                    nuevocliente.mailcliente = textMiMail.Text;
-                    nuevocliente.grupocliente = comboGrupo.Text;
-                    nuevocliente.empleadoscliente = Convert.ToInt64(textTrabajadores.Text);
-                    nuevocliente.fechaaltacliente = Convert.ToDateTime(textFechaAlta.Text);
-                    nuevocliente.precioempleadocliente = Convert.ToDecimal(textPreciotrabajador.Text);
-                    
-                    nuevocliente.tarifacliente = Convert.ToDecimal(textTarifa.Text);
-                    if (checActivo.Checked == true)
-                    {
-                        nuevocliente.activocliente = true;
-                    }
-                    else
-                    {
-                        nuevocliente.activocliente = false;
-                    }
-                    if (checDomiciliacion.Checked == true)
-                    {
-                        nuevocliente.domiciliadocliente = true;
-                    }
-                    else
-                    {
-                        nuevocliente.domiciliadocliente = false;
-                    }
-                    if (checRE.Checked == true)
-                    {
-                        nuevocliente.recargo = true;
-                    }
-                    else
-                    {
-                        nuevocliente.recargo = false;
-                    }
-                    if (checContabilizar.Checked == true)
-                    {
-                        nuevocliente.contabilizarcliente = true;
-                    }
-                    else
-                    {
-                        nuevocliente.contabilizarcliente = false;
-                    }
-
-                    if (checpormail.Checked == true)
-                    {
-                        nuevocliente.pormailcliente = true;
-                    }
-                    else
-                    {
-                        nuevocliente.pormailcliente = false;
-                    }
-                    nuevocliente.iban1cliente = textCCC1.Text;
-                    nuevocliente.iban2cliente = textCCC2.Text;
-                    nuevocliente.iban3cliente = textCCC3.Text;
-                    nuevocliente.iban4cliente = textCCC4.Text;
-                    nuevocliente.iban5cliente = textCCC5.Text;
-                    nuevocliente.iban6cliente = textCCC6.Text;
-
-
-                    if (chec100.Checked == true)
-                    {
-                        nuevocliente.mod100 = true;
-                    }
-                    else
-                    {
-                        nuevocliente.mod100 = false;
-                    }
-                    if (chec111.Checked == true)
-                    {
-                        nuevocliente.mod111 = true;
-                    }
-                    else
-                    {
-                        nuevocliente.mod111 = false;
-                    }
-                    if (chec115.Checked == true)
-                    {
-                        nuevocliente.mod115 = true;
-                    }
-                    else
-                    {
-                        nuevocliente.mod115 = false;
-                    }
-                    if (chec123.Checked == true)
-                    {
-                        nuevocliente.mod123 = true;
-                    }
-                    else
-                    {
-                        nuevocliente.mod123 = false;
-                    }
-                    if (chec130.Checked == true)
-                    {
-                        nuevocliente.mod130 = true;
-                    }
-                    else
-                    {
-                        nuevocliente.mod130 = false;
-                    }
-                    if (chec131.Checked == true)
-                    {
-                        nuevocliente.mod131 = true;
-                    }
-                    else
-                    {
-                        nuevocliente.mod131 = false;
-                    }
-                    if (chec180.Checked == true)
-                    {
-                        nuevocliente.mod180 = true;
-                    }
-                    else
-                    {
-                        nuevocliente.mod180 = false;
-                    }
-                    if (chec190.Checked == true)
-                    {
-                        nuevocliente.mod190 = true;
-                    }
-                    else
-                    {
-                        nuevocliente.mod190 = false;
-                    }
-                    if (chec193.Checked == true)
-                    {
-                        nuevocliente.mod193 = true;
-                    }
-                    else
-                    {
-                        nuevocliente.mod193 = false;
-                    }
-                    if (chec200.Checked == true)
-                    {
-                        nuevocliente.mod200 = true;
-                    }
-                    else
-                    {
-                        nuevocliente.mod200 = false;
-                    }
-                    if (chec202.Checked == true)
-                    {
-                        nuevocliente.mod202 = true;
-                    }
-                    else
-                    {
-                        nuevocliente.mod202 = false;
-                    }
-                    if (chec303.Checked == true)
-                    {
-                        nuevocliente.mod303 = true;
-                    }
-                    else
-                    {
-                        nuevocliente.mod303 = false;
-                    }
-                    if (chec309.Checked == true)
-                    {
-                        nuevocliente.mod309 = true;
-                    }
-                    else
-                    {
-                        nuevocliente.mod309 = false;
-                    }
-                    if (chec349.Checked == true)
-                    {
-                        nuevocliente.mod349 = true;
-                    }
-                    else
-                    {
-                        nuevocliente.mod349 = false;
-                    }
-                    if (chec390.Checked == true)
-                    {
-                        nuevocliente.mod390 = true;
-                    }
-                    else
-                    {
-                        nuevocliente.mod390 = false;
-                    }
-                    if (chec751.Checked == true)
-                    {
-                        nuevocliente.mod751 = true;
-                    }
-                    else
-                    {
-                        nuevocliente.mod751 = false;
-                    }
-                    if (chec752.Checked == true)
-                    {
-                        nuevocliente.mod752 = true;
-                    }
-                    else
-                    {
-                        nuevocliente.mod752 = false;
-                    }
-                    if (checIntrastat.Checked == true)
-                    {
-                        nuevocliente.instrastatcliente = true;
-                    }
-                    else
-                    {
-                        nuevocliente.instrastatcliente = false;
-                    }
-                    nuevocliente.comentariocliente = textObserva.Text;
-
-                    bd.Clientes.Add(nuevocliente);
-
-                    //guardamos los cambios
-                    bd.SaveChanges();
-                    
-
-                }
-                catch
-                {
-                    MessageBox.Show("No ha sido posible grabar los datos", "Error 101", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-
-            /// si see llama de modificar
-
-            if (Globales.llamadas == "2")
-            {
-                try
-                {
-                    //busca en la tabla la fila con el registro suminstrado
-                    //y si lo carga los datos en el formulario
-
-                    var amodificar = bd.Clientes.SingleOrDefault(x => x.numerador == Globales.modificar);
-                    if (amodificar != null)
-                    {
-                        amodificar.nombrecliente = textMiNombre.Text;
-                        amodificar.cifcliente = textMiCif.Text;
-                        amodificar.direcioncliente = textMiDiereccion.Text;
-                        amodificar.localidacliente = textMiPoblacion.Text;
-                        amodificar.provinciacliente = textMiProvincia.Text;
-                        amodificar.cod_postalcliente = textMiCP.Text;
-                        amodificar.telefono1cliente = Convert.ToInt64(textMiTLF1.Text);
-                        amodificar.telefono2cliente = Convert.ToInt64(textMiTLF2.Text);
-                        amodificar.faxcliente = Convert.ToInt64(textMiFax.Text);
-                        amodificar.contactocliente = textMiPersonaContacto.Text;
-                        amodificar.mailcliente = textMiMail.Text;
-                        amodificar.grupocliente = comboGrupo.Text;
-                        amodificar.empleadoscliente = Convert.ToInt64(textTrabajadores.Text);
-                        amodificar.fechaaltacliente = Convert.ToDateTime(textFechaAlta.Text);
-                        amodificar.precioempleadocliente = Convert.ToDecimal(textPreciotrabajador.Text);
-                        amodificar.tarifacliente = Convert.ToDecimal(textTarifa.Text);
-                        if (checActivo.Checked == true)
+                        //calcula y muestra el codigo de cliente automaticamente
+                        var autokey = bd.Clientes.OrderByDescending(x => x.numerador).Take(1).FirstOrDefault();
+                        if (autokey == null)
                         {
-                            amodificar.activocliente = true;
+                            nuevocliente.numerador = 1;
                         }
                         else
                         {
-                            amodificar.activocliente = false;
+                            nuevocliente.numerador = autokey.numerador + 1;
+                        }
+
+
+                        nuevocliente.codcliente = Convert.ToDecimal(label1.Text);
+                        nuevocliente.nombrecliente = textMiNombre.Text;
+                        nuevocliente.cifcliente = textMiCif.Text;
+                        nuevocliente.direcioncliente = textMiDiereccion.Text;
+                        nuevocliente.localidacliente = textMiPoblacion.Text;
+                        nuevocliente.provinciacliente = textMiProvincia.Text;
+                        nuevocliente.cod_postalcliente = textMiCP.Text;
+                        nuevocliente.telefono1cliente = Convert.ToInt64(textMiTLF1.Text);
+                        nuevocliente.telefono2cliente = Convert.ToInt64(textMiTLF2.Text);
+                        nuevocliente.faxcliente = Convert.ToInt64(textMiFax.Text);
+                        nuevocliente.contactocliente = textMiPersonaContacto.Text;
+                        nuevocliente.mailcliente = textMiMail.Text;
+                        nuevocliente.grupocliente = comboGrupo.Text;
+                        nuevocliente.empleadoscliente = Convert.ToInt64(textTrabajadores.Text);
+                        nuevocliente.fechaaltacliente = Convert.ToDateTime(textFechaAlta.Text);
+                        nuevocliente.precioempleadocliente = Convert.ToDecimal(textPreciotrabajador.Text);
+
+                        nuevocliente.tarifacliente = Convert.ToDecimal(textTarifa.Text);
+                        if (checActivo.Checked == true)
+                        {
+                            nuevocliente.activocliente = true;
+                        }
+                        else
+                        {
+                            nuevocliente.activocliente = false;
                         }
                         if (checDomiciliacion.Checked == true)
                         {
-                            amodificar.domiciliadocliente = true;
+                            nuevocliente.domiciliadocliente = true;
                         }
                         else
                         {
-                            amodificar.domiciliadocliente = false;
+                            nuevocliente.domiciliadocliente = false;
                         }
                         if (checRE.Checked == true)
                         {
-                            amodificar.recargo = true;
+                            nuevocliente.recargo = true;
                         }
                         else
                         {
-                            amodificar.recargo = false;
+                            nuevocliente.recargo = false;
                         }
                         if (checContabilizar.Checked == true)
                         {
-                            amodificar.contabilizarcliente = true;
+                            nuevocliente.contabilizarcliente = true;
                         }
                         else
                         {
-                            amodificar.contabilizarcliente = false;
+                            nuevocliente.contabilizarcliente = false;
                         }
+
                         if (checpormail.Checked == true)
                         {
-                            amodificar.pormailcliente = true;
+                            nuevocliente.pormailcliente = true;
                         }
                         else
                         {
-                            amodificar.pormailcliente = false;
+                            nuevocliente.pormailcliente = false;
                         }
-                        amodificar.iban1cliente = textCCC1.Text;
-                        amodificar.iban2cliente = textCCC2.Text;
-                        amodificar.iban3cliente = textCCC3.Text;
-                        amodificar.iban4cliente = textCCC4.Text;
-                        amodificar.iban5cliente = textCCC5.Text;
-                        amodificar.iban6cliente = textCCC6.Text;
+                        nuevocliente.iban1cliente = textCCC1.Text;
+                        nuevocliente.iban2cliente = textCCC2.Text;
+                        nuevocliente.iban3cliente = textCCC3.Text;
+                        nuevocliente.iban4cliente = textCCC4.Text;
+                        nuevocliente.iban5cliente = textCCC5.Text;
+                        nuevocliente.iban6cliente = textCCC6.Text;
 
 
                         if (chec100.Checked == true)
                         {
-                            amodificar.mod100 = true;
+                            nuevocliente.mod100 = true;
                         }
                         else
                         {
-                            amodificar.mod100 = false;
+                            nuevocliente.mod100 = false;
                         }
                         if (chec111.Checked == true)
                         {
-                            amodificar.mod111 = true;
+                            nuevocliente.mod111 = true;
                         }
                         else
                         {
-                            amodificar.mod111 = false;
+                            nuevocliente.mod111 = false;
                         }
                         if (chec115.Checked == true)
                         {
-                            amodificar.mod115 = true;
+                            nuevocliente.mod115 = true;
                         }
                         else
                         {
-                            amodificar.mod115 = false;
+                            nuevocliente.mod115 = false;
                         }
                         if (chec123.Checked == true)
                         {
-                            amodificar.mod123 = true;
+                            nuevocliente.mod123 = true;
                         }
                         else
                         {
-                            amodificar.mod123 = false;
+                            nuevocliente.mod123 = false;
                         }
                         if (chec130.Checked == true)
                         {
-                            amodificar.mod130 = true;
+                            nuevocliente.mod130 = true;
                         }
                         else
                         {
-                            amodificar.mod130 = false;
+                            nuevocliente.mod130 = false;
                         }
                         if (chec131.Checked == true)
                         {
-                            amodificar.mod131 = true;
+                            nuevocliente.mod131 = true;
                         }
                         else
                         {
-                            amodificar.mod131 = false;
-                        }                  
+                            nuevocliente.mod131 = false;
+                        }
                         if (chec180.Checked == true)
                         {
-                            amodificar.mod180 = true;
+                            nuevocliente.mod180 = true;
                         }
                         else
                         {
-                            amodificar.mod180 = false;
+                            nuevocliente.mod180 = false;
                         }
                         if (chec190.Checked == true)
                         {
-                            amodificar.mod190 = true;
+                            nuevocliente.mod190 = true;
                         }
                         else
                         {
-                            amodificar.mod190 = false;
+                            nuevocliente.mod190 = false;
                         }
                         if (chec193.Checked == true)
                         {
-                            amodificar.mod193 = true;
+                            nuevocliente.mod193 = true;
                         }
                         else
                         {
-                            amodificar.mod193 = false;
+                            nuevocliente.mod193 = false;
                         }
                         if (chec200.Checked == true)
                         {
-                            amodificar.mod200 = true;
+                            nuevocliente.mod200 = true;
                         }
                         else
                         {
-                            amodificar.mod200 = false;
+                            nuevocliente.mod200 = false;
                         }
                         if (chec202.Checked == true)
                         {
-                            amodificar.mod202 = true;
+                            nuevocliente.mod202 = true;
                         }
                         else
                         {
-                            amodificar.mod202 = false;
+                            nuevocliente.mod202 = false;
                         }
                         if (chec303.Checked == true)
                         {
-                            amodificar.mod303 = true;
+                            nuevocliente.mod303 = true;
                         }
                         else
                         {
-                            amodificar.mod303 = false;
+                            nuevocliente.mod303 = false;
                         }
                         if (chec309.Checked == true)
                         {
-                            amodificar.mod309 = true;
+                            nuevocliente.mod309 = true;
                         }
                         else
                         {
-                            amodificar.mod309 = false;
+                            nuevocliente.mod309 = false;
                         }
                         if (chec349.Checked == true)
                         {
-                            amodificar.mod349 = true;
+                            nuevocliente.mod349 = true;
                         }
                         else
                         {
-                            amodificar.mod349 = false;
+                            nuevocliente.mod349 = false;
                         }
                         if (chec390.Checked == true)
                         {
-                            amodificar.mod390 = true;
+                            nuevocliente.mod390 = true;
                         }
                         else
                         {
-                            amodificar.mod390 = false;
+                            nuevocliente.mod390 = false;
                         }
                         if (chec751.Checked == true)
                         {
-                            amodificar.mod751 = true;
+                            nuevocliente.mod751 = true;
                         }
                         else
                         {
-                            amodificar.mod751 = false;
+                            nuevocliente.mod751 = false;
                         }
                         if (chec752.Checked == true)
                         {
-                            amodificar.mod752 = true;
+                            nuevocliente.mod752 = true;
                         }
                         else
                         {
-                            amodificar.mod752 = false;
+                            nuevocliente.mod752 = false;
                         }
                         if (checIntrastat.Checked == true)
                         {
-                            amodificar.instrastatcliente = true;
+                            nuevocliente.instrastatcliente = true;
                         }
                         else
                         {
-                            amodificar.instrastatcliente = false;
+                            nuevocliente.instrastatcliente = false;
                         }
-                        amodificar.comentariocliente = textObserva.Text;
+                        nuevocliente.comentariocliente = textObserva.Text;
 
-                        //graba los datos
+                        bd.Clientes.Add(nuevocliente);
+
+                        //guardamos los cambios
                         bd.SaveChanges();
+
+
+                    }
+                    catch
+                    {
+                        MessageBox.Show("No ha sido posible grabar los datos", "Error 101", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+
+                /// si see llama de modificar
+
+                if (Globales.llamadas == "2")
+                {
+                    try
+                    {
+                        //busca en la tabla la fila con el registro suminstrado
+                        //y si lo carga los datos en el formulario
+
+                        var amodificar = bd.Clientes.SingleOrDefault(x => x.numerador == Globales.modificar);
+                        if (amodificar != null)
+                        {
+                            amodificar.nombrecliente = textMiNombre.Text;
+                            amodificar.cifcliente = textMiCif.Text;
+                            amodificar.direcioncliente = textMiDiereccion.Text;
+                            amodificar.localidacliente = textMiPoblacion.Text;
+                            amodificar.provinciacliente = textMiProvincia.Text;
+                            amodificar.cod_postalcliente = textMiCP.Text;
+                            amodificar.telefono1cliente = Convert.ToInt64(textMiTLF1.Text);
+                            amodificar.telefono2cliente = Convert.ToInt64(textMiTLF2.Text);
+                            amodificar.faxcliente = Convert.ToInt64(textMiFax.Text);
+                            amodificar.contactocliente = textMiPersonaContacto.Text;
+                            amodificar.mailcliente = textMiMail.Text;
+                            amodificar.grupocliente = comboGrupo.Text;
+                            amodificar.empleadoscliente = Convert.ToInt64(textTrabajadores.Text);
+                            amodificar.fechaaltacliente = Convert.ToDateTime(textFechaAlta.Text);
+                            amodificar.precioempleadocliente = Convert.ToDecimal(textPreciotrabajador.Text);
+                            amodificar.tarifacliente = Convert.ToDecimal(textTarifa.Text);
+                            if (checActivo.Checked == true)
+                            {
+                                amodificar.activocliente = true;
+                            }
+                            else
+                            {
+                                amodificar.activocliente = false;
+                            }
+                            if (checDomiciliacion.Checked == true)
+                            {
+                                amodificar.domiciliadocliente = true;
+                            }
+                            else
+                            {
+                                amodificar.domiciliadocliente = false;
+                            }
+                            if (checRE.Checked == true)
+                            {
+                                amodificar.recargo = true;
+                            }
+                            else
+                            {
+                                amodificar.recargo = false;
+                            }
+                            if (checContabilizar.Checked == true)
+                            {
+                                amodificar.contabilizarcliente = true;
+                            }
+                            else
+                            {
+                                amodificar.contabilizarcliente = false;
+                            }
+                            if (checpormail.Checked == true)
+                            {
+                                amodificar.pormailcliente = true;
+                            }
+                            else
+                            {
+                                amodificar.pormailcliente = false;
+                            }
+                            amodificar.iban1cliente = textCCC1.Text;
+                            amodificar.iban2cliente = textCCC2.Text;
+                            amodificar.iban3cliente = textCCC3.Text;
+                            amodificar.iban4cliente = textCCC4.Text;
+                            amodificar.iban5cliente = textCCC5.Text;
+                            amodificar.iban6cliente = textCCC6.Text;
+
+
+                            if (chec100.Checked == true)
+                            {
+                                amodificar.mod100 = true;
+                            }
+                            else
+                            {
+                                amodificar.mod100 = false;
+                            }
+                            if (chec111.Checked == true)
+                            {
+                                amodificar.mod111 = true;
+                            }
+                            else
+                            {
+                                amodificar.mod111 = false;
+                            }
+                            if (chec115.Checked == true)
+                            {
+                                amodificar.mod115 = true;
+                            }
+                            else
+                            {
+                                amodificar.mod115 = false;
+                            }
+                            if (chec123.Checked == true)
+                            {
+                                amodificar.mod123 = true;
+                            }
+                            else
+                            {
+                                amodificar.mod123 = false;
+                            }
+                            if (chec130.Checked == true)
+                            {
+                                amodificar.mod130 = true;
+                            }
+                            else
+                            {
+                                amodificar.mod130 = false;
+                            }
+                            if (chec131.Checked == true)
+                            {
+                                amodificar.mod131 = true;
+                            }
+                            else
+                            {
+                                amodificar.mod131 = false;
+                            }
+                            if (chec180.Checked == true)
+                            {
+                                amodificar.mod180 = true;
+                            }
+                            else
+                            {
+                                amodificar.mod180 = false;
+                            }
+                            if (chec190.Checked == true)
+                            {
+                                amodificar.mod190 = true;
+                            }
+                            else
+                            {
+                                amodificar.mod190 = false;
+                            }
+                            if (chec193.Checked == true)
+                            {
+                                amodificar.mod193 = true;
+                            }
+                            else
+                            {
+                                amodificar.mod193 = false;
+                            }
+                            if (chec200.Checked == true)
+                            {
+                                amodificar.mod200 = true;
+                            }
+                            else
+                            {
+                                amodificar.mod200 = false;
+                            }
+                            if (chec202.Checked == true)
+                            {
+                                amodificar.mod202 = true;
+                            }
+                            else
+                            {
+                                amodificar.mod202 = false;
+                            }
+                            if (chec303.Checked == true)
+                            {
+                                amodificar.mod303 = true;
+                            }
+                            else
+                            {
+                                amodificar.mod303 = false;
+                            }
+                            if (chec309.Checked == true)
+                            {
+                                amodificar.mod309 = true;
+                            }
+                            else
+                            {
+                                amodificar.mod309 = false;
+                            }
+                            if (chec349.Checked == true)
+                            {
+                                amodificar.mod349 = true;
+                            }
+                            else
+                            {
+                                amodificar.mod349 = false;
+                            }
+                            if (chec390.Checked == true)
+                            {
+                                amodificar.mod390 = true;
+                            }
+                            else
+                            {
+                                amodificar.mod390 = false;
+                            }
+                            if (chec751.Checked == true)
+                            {
+                                amodificar.mod751 = true;
+                            }
+                            else
+                            {
+                                amodificar.mod751 = false;
+                            }
+                            if (chec752.Checked == true)
+                            {
+                                amodificar.mod752 = true;
+                            }
+                            else
+                            {
+                                amodificar.mod752 = false;
+                            }
+                            if (checIntrastat.Checked == true)
+                            {
+                                amodificar.instrastatcliente = true;
+                            }
+                            else
+                            {
+                                amodificar.instrastatcliente = false;
+                            }
+                            amodificar.comentariocliente = textObserva.Text;
+
+                            //graba los datos
+                            bd.SaveChanges();
+                        }
+
+
+
+                    }
+                    catch (Exception exp)
+                    {
+                        MessageBox.Show("Error" + exp.Message);
+                        // MessageBox.Show("No ha sido posible grabar los datos", "Error 101", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    }
+                }
+
+
+             // Especificamos las rutas
+            string path = @"c:\ByMartin" + "\\" + textMiNombre.Text;
+            string escritura = path + "\\Escrituras";
+            string fiscal = path + "\\Fiscal";
+            string laboral = path + "\\Laboral";
+            string Otros = path + "\\Otros";
+
+                try
+                {
+                // Determine whether the directory exists.
+                    if (!Directory.Exists(escritura))
+                    {
+                        // Crea el directorio de Escrituras
+                        DirectoryInfo di = Directory.CreateDirectory(path + "\\Escrituras");
+                    }
+
+                    if (!Directory.Exists(fiscal))
+                    {
+                        // Crea el directorio de Fiscal
+                        DirectoryInfo di = Directory.CreateDirectory(path + "\\Fiscal");
+                    }
+
+                    if (!Directory.Exists(laboral))
+                    {
+                        // Crea el directorio de Laboral 
+                        DirectoryInfo di = Directory.CreateDirectory(path + "\\Laboral");
+                    }
+
+                    if (!Directory.Exists(Otros))
+                    {
+                        // Crea el directorio de Laboral 
+                        DirectoryInfo di = Directory.CreateDirectory(path + "\\Otros");
                     }
 
 
 
-                }
-                catch (Exception exp)
-                {
-                    MessageBox.Show("Error" + exp.Message);
-                    // MessageBox.Show("No ha sido posible grabar los datos", "Error 101", MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                }
+
             }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Error" + exp.Message);
+
+            }
+            Console.WriteLine("The directory was created successfully at {0}.", Directory.GetCreationTime(path));
+
+
             Close();
+ 
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -820,5 +874,39 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
 
         }
+
+        private void textMiNombre_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textMiNombre_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(textMiNombre, "");
+
+        }
+
+        private void textMiNombre_Validating(object sender, CancelEventArgs e)
+        {
+            if (textMiNombre.Text == "")
+
+            {
+                e.Cancel = true;
+                textMiNombre.Select(0, textMiNombre.Text.Length);
+                errorProvider1.SetError(textMiNombre, "Debe introducir el nombre");
+            }
+        }
+
+        private void Cliente_AutoValidateChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
+
+
+            }
     }
 }

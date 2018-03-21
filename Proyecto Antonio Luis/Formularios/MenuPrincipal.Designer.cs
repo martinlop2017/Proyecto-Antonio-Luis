@@ -76,6 +76,8 @@
             this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configurarSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rutasExportacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.PanelSistema.SuspendLayout();
             this.PanelClientes.SuspendLayout();
@@ -87,17 +89,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(452, 595);
+            this.label4.Location = new System.Drawing.Point(477, 572);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(239, 26);
+            this.label4.Size = new System.Drawing.Size(310, 26);
             this.label4.TabIndex = 22;
-            this.label4.Text = "D. Fulanito Garcia Garcia";
+            this.label4.Text = "D. Antonio Luis Moreno Venegas";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(451, 552);
+            this.label3.Location = new System.Drawing.Point(506, 531);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(243, 26);
             this.label3.TabIndex = 21;
@@ -107,7 +110,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(468, 293);
+            this.label2.Location = new System.Drawing.Point(547, 316);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(192, 18);
             this.label2.TabIndex = 20;
@@ -117,11 +120,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 45F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(303, 212);
+            this.label1.Location = new System.Drawing.Point(382, 235);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(566, 81);
+            this.label1.Size = new System.Drawing.Size(496, 81);
             this.label1.TabIndex = 19;
-            this.label1.Text = "F A C T U F I S H ©";
+            this.label1.Text = "e G E S T I 0 N ©";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // statusStrip1
             // 
@@ -153,10 +157,11 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
             this.toolStripStatusLabel2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(852, 40);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(821, 40);
             this.toolStripStatusLabel2.Spring = true;
-            this.toolStripStatusLabel2.Text = "                                   F   A   C   T   U   F   I   S   H             " +
+            this.toolStripStatusLabel2.Text = "                                    e   G   E   S   T   I   O   N                " +
     "                ";
+            this.toolStripStatusLabel2.Click += new System.EventHandler(this.toolStripStatusLabel2_Click);
             // 
             // FechaInicio
             // 
@@ -453,9 +458,11 @@
             // sistemaToolStripMenuItem
             // 
             this.sistemaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.configurarSistemaToolStripMenuItem,
             this.datosPropiosToolStripMenuItem,
             this.usuariosToolStripMenuItem,
-            this.impuestosToolStripMenuItem});
+            this.impuestosToolStripMenuItem,
+            this.rutasExportacionToolStripMenuItem});
             this.sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
             this.sistemaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.sistemaToolStripMenuItem.Text = "Sistema";
@@ -556,6 +563,18 @@
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
+            // configurarSistemaToolStripMenuItem
+            // 
+            this.configurarSistemaToolStripMenuItem.Name = "configurarSistemaToolStripMenuItem";
+            this.configurarSistemaToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.configurarSistemaToolStripMenuItem.Text = "Configurar Sistema";
+            // 
+            // rutasExportacionToolStripMenuItem
+            // 
+            this.rutasExportacionToolStripMenuItem.Name = "rutasExportacionToolStripMenuItem";
+            this.rutasExportacionToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.rutasExportacionToolStripMenuItem.Text = "Rutas Exportacion";
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -647,5 +666,7 @@
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agendaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configurarSistemaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rutasExportacionToolStripMenuItem;
     }
 }

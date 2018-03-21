@@ -94,6 +94,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             dgvTemporal.DataSource = albaranes.OrderBy(x => x.albnombre).ToList();
             //**************************
 
+            label14.Text = albaranes.Count.ToString();
 
             //activamos los botones de imprimir y facturar.
             facturar.Enabled = true;
@@ -286,6 +287,8 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void facturar_Click(object sender, EventArgs e)
         {
+            
+
             generar.Enabled = false;
             añadir.Enabled = false;
             eliminar.Enabled = false;
@@ -293,6 +296,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             facturar.Enabled = false;
             //mostramos el detagrib
             dataGridView1.Visible = true;
+           
 
 
 
@@ -621,7 +625,11 @@ namespace Proyecto_Antonio_Luis.Formularios
 
                 albaranes.Add(datosapasar);
             }
-            dgvTemporal.DataSource = albaranes.ToList();
+            panel3.Visible = false;
+
+            dgvTemporal.DataSource =  albaranes.OrderBy(x => x.albnombre).ToList();
+
+            label14.Text = albaranes.Count.ToString();
         }
 
         private void textBox1_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -648,6 +656,8 @@ namespace Proyecto_Antonio_Luis.Formularios
                     dgvTemporal.DataSource = albaranes.Remove(albaranes.First(x => x.albcod == Globales.modificar));
                    
                     dgvTemporal.DataSource = albaranes.OrderBy(x=> x.albnombre). ToList();
+
+                    label14.Text = albaranes.Count.ToString();
 
 
                 }

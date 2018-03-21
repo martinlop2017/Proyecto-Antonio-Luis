@@ -102,6 +102,9 @@
             this.textFechaAlta = new System.Windows.Forms.MaskedTextBox();
             this.checpormail = new System.Windows.Forms.CheckBox();
             this.textPreciotrabajador = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button3 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label27
@@ -161,6 +164,9 @@
             this.textMiNombre.Size = new System.Drawing.Size(476, 23);
             this.textMiNombre.TabIndex = 0;
             this.textMiNombre.Text = "PESCADOS REBOLLO DE PAN DURO S.L.";
+            this.textMiNombre.Leave += new System.EventHandler(this.textMiNombre_Leave);
+            this.textMiNombre.Validating += new System.ComponentModel.CancelEventHandler(this.textMiNombre_Validating);
+            this.textMiNombre.Validated += new System.EventHandler(this.textMiNombre_Validated);
             // 
             // label17
             // 
@@ -956,6 +962,20 @@
             this.textPreciotrabajador.TabIndex = 196;
             this.textPreciotrabajador.Text = "11";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(109, 44);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(170, 38);
+            this.button3.TabIndex = 197;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -963,6 +983,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Clientes2;
             this.ClientSize = new System.Drawing.Size(879, 867);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.textPreciotrabajador);
             this.Controls.Add(this.checpormail);
             this.Controls.Add(this.textFechaAlta);
@@ -1037,8 +1058,10 @@
             this.Name = "Cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
+            this.AutoValidateChanged += new System.EventHandler(this.Cliente_AutoValidateChanged);
             this.Load += new System.EventHandler(this.Clientes_Load);
             this.MouseEnter += new System.EventHandler(this.Cliente_MouseEnter);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1118,5 +1141,7 @@
         private System.Windows.Forms.MaskedTextBox textFechaAlta;
         private System.Windows.Forms.CheckBox checpormail;
         private System.Windows.Forms.TextBox textPreciotrabajador;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button button3;
     }
 }
