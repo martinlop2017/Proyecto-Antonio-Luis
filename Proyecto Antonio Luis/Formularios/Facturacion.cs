@@ -670,6 +670,11 @@ namespace Proyecto_Antonio_Luis.Formularios
 
             }
         }
+
+        private void clientesBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }
