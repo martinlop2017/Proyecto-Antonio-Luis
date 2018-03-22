@@ -110,6 +110,12 @@
     <Compile Include="Formularios\Facturacion.Designer.cs">
       <DependentUpon>Facturacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\correo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\correo.Designer.cs">
+      <DependentUpon>correo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Facturacion.resx">
       <DependentUpon>Facturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\correo.resx">
+      <DependentUpon>correo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>

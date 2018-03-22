@@ -24,7 +24,7 @@ namespace Proyecto_Antonio_Luis
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuPrincipal());
+            Application.Run(new correo());
         }
     }
 }
