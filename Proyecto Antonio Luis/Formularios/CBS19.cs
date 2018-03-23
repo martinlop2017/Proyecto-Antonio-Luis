@@ -147,7 +147,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
             //sacamos el cif del presentador
             var cifpresentador = bd.Propios.OrderByDescending(X => X.micif).FirstOrDefault();
-            referencia = "PRE" + ano + mes + dia + hora + minuto + segundo + mesfact + cifpresentador.micif.ToString();
+            referencia = "PRE" + ano + mes + dia + hora + minuto + mesfact + cifpresentador.micif.ToString();
             writer.WriteElementString("MsgId", referencia);
 
             //Introducimos la fecha y hora de presentacion
