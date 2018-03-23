@@ -72,6 +72,7 @@
     </Compile>
     <Compile Include="Clases\albaranesclientes.cs" />
     <Compile Include="Clases\datoslistadoreme.cs" />
+    <Compile Include="Clases\Encriptar.cs" />
     <Compile Include="Clases\PasoClientes.cs" />
     <Compile Include="Clases\temporal.cs" />
     <Compile Include="Formularios\BORRAR.cs">

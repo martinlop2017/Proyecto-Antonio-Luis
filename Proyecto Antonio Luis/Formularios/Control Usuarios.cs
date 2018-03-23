@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_Antonio_Luis.Formularios;
+using Proyecto_Antonio_Luis.Clases;
 
 
 
@@ -31,7 +32,7 @@ namespace Proyecto_Antonio_Luis
             
             InitializeComponent();
             baseDeDatos = new AdministracionAntonioEntities();
-            
+           
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -60,42 +61,44 @@ namespace Proyecto_Antonio_Luis
 
             comboBox1.DataSource = baseDeDatos.Ususarios.Select(user => user.nombre).ToList<string>();
 
-         // ***********************************************
-         //***********************************************
-         //******* Ejempolo de Linkq  ********************
-         //****   
-         //****   //introducir nueva linea
-         //****
-         //****   // creamos una nueva clase "ususarios"
-         //****
-         //****   Ususarios newUser = new Ususarios()
-         //****   {
-         //****       // cargarmos los datos
-         //****       
-         //****       cod = "6",
-         //****       nombre = "Test6"
-         //****   };
-         //****  
-         //****   //creamos una linea nueva y añade los datos
-         //****   baseDeDatos.Ususarios.Add(newUser);
-         //****   // guadrdamos la tabla
-         //****   baseDeDatos.SaveChanges();
-         //**** 
-         //****   int pepes = baseDeDatos.Ususarios.Count(user => user.nombre == "pepe");
-         //****   comboBox1.Text = pepes.ToString();
-         //**********************************************************
-         //**********************************************************
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Abre el menu principal
 
-            MenuPrincipal form = new MenuPrincipal();
-            form.Show();
+            string llave = Encriptar.codificar(textBox1.Text);
+
+            var compro = baseDeDatos.Ususarios.Where(X => X.nombre == comboBox1.Text && X.login == llave).ToList();
+            if (compro.Count == 1)
+            {
+
+                // Abre el menu principal
+
+                MenuPrincipal form = new MenuPrincipal();
+                form.Show();
+            }
+            else
+            {
+                MessageBox.Show("Contraseña y/o Ususario Incoreccto.","Error Login.",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
 
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_Leave(object sender, EventArgs e)
+        {
+            var compro = baseDeDatos.Ususarios.Where(X => X.nombre == comboBox1.Text && X.grupo == "Administrador").ToList();
+            if (compro.Count == 1)
+            {
+                label4.Visible = true;
+            }
+  
         }
     }
 }

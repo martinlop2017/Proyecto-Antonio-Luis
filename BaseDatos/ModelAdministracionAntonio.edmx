@@ -174,11 +174,11 @@
           </Key>
           <Property Name="cod" Type="numeric" Precision="38" Scale="0" Nullable="false" />
           <Property Name="nombre" Type="nchar" MaxLength="15" />
-          <Property Name="login" Type="nchar" MaxLength="10" />
+          <Property Name="login" Type="nchar" MaxLength="200" />
           <Property Name="activo" Type="nchar" MaxLength="10" />
           <Property Name="grupo" Type="nchar" MaxLength="20" />
-          <Property Name="pregunta" Type="nchar" MaxLength="100" />
-          <Property Name="respuesta" Type="nchar" MaxLength="100" />
+          <Property Name="pregunta" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="respuesta" Type="nchar" MaxLength="400" />
           <Property Name="sistema" Type="bit" />
           <Property Name="misdatos" Type="bit" />
           <Property Name="usuarios" Type="bit" />
@@ -220,8 +220,8 @@
           <EntitySet Name="Facturas" EntityType="AdministracionAntonioModel.Facturas" />
           <EntitySet Name="Iva" EntityType="AdministracionAntonioModel.Iva" />
           <EntitySet Name="Propios" EntityType="AdministracionAntonioModel.Propios" />
-          <EntitySet Name="Ususarios" EntityType="AdministracionAntonioModel.Ususarios" />
           <EntitySet Name="Resilla" EntityType="AdministracionAntonioModel.Resilla" />
+          <EntitySet Name="Ususarios" EntityType="AdministracionAntonioModel.Ususarios" />
         </EntityContainer>
         <EntityType Name="Clientes">
           <Key>
@@ -376,17 +376,27 @@
           <Property Name="miidentificadorbancario" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
           <Property Name="mibic" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
         </EntityType>
+        <EntityType Name="Resilla">
+          <Key>
+            <PropertyRef Name="remesanumerador" />
+          </Key>
+          <Property Name="remesanumerador" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="remesanumero" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="remesafecha" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="remesatotal" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="remesacontabilizada" Type="Boolean" />
+        </EntityType>
         <EntityType Name="Ususarios">
           <Key>
             <PropertyRef Name="cod" />
           </Key>
           <Property Name="cod" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
           <Property Name="nombre" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
-          <Property Name="login" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="login" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
           <Property Name="activo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="grupo" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="pregunta" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="respuesta" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="pregunta" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="respuesta" Type="String" MaxLength="400" FixedLength="true" Unicode="true" />
           <Property Name="sistema" Type="Boolean" />
           <Property Name="misdatos" Type="Boolean" />
           <Property Name="usuarios" Type="Boolean" />
@@ -408,16 +418,6 @@
           <Property Name="agenda" Type="Boolean" />
           <Property Name="avisos" Type="Boolean" />
           <Property Name="gavisos" Type="Boolean" />
-        </EntityType>
-        <EntityType Name="Resilla">
-          <Key>
-            <PropertyRef Name="remesanumerador" />
-          </Key>
-          <Property Name="remesanumerador" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="remesanumero" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
-          <Property Name="remesafecha" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="remesatotal" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="remesacontabilizada" Type="Boolean" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -583,6 +583,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Resilla">
+            <EntityTypeMapping TypeName="AdministracionAntonioModel.Resilla">
+              <MappingFragment StoreEntitySet="Resilla">
+                <ScalarProperty Name="remesacontabilizada" ColumnName="remesacontabilizada" />
+                <ScalarProperty Name="remesatotal" ColumnName="remesatotal" />
+                <ScalarProperty Name="remesafecha" ColumnName="remesafecha" />
+                <ScalarProperty Name="remesanumero" ColumnName="remesanumero" />
+                <ScalarProperty Name="remesanumerador" ColumnName="remesanumerador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Ususarios">
             <EntityTypeMapping TypeName="AdministracionAntonioModel.Ususarios">
               <MappingFragment StoreEntitySet="Ususarios">
@@ -614,17 +625,6 @@
                 <ScalarProperty Name="login" ColumnName="login" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="cod" ColumnName="cod" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Resilla">
-            <EntityTypeMapping TypeName="AdministracionAntonioModel.Resilla">
-              <MappingFragment StoreEntitySet="Resilla">
-                <ScalarProperty Name="remesacontabilizada" ColumnName="remesacontabilizada" />
-                <ScalarProperty Name="remesatotal" ColumnName="remesatotal" />
-                <ScalarProperty Name="remesafecha" ColumnName="remesafecha" />
-                <ScalarProperty Name="remesanumero" ColumnName="remesanumero" />
-                <ScalarProperty Name="remesanumerador" ColumnName="remesanumerador" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

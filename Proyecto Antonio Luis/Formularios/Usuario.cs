@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BaseDatos;
+using Proyecto_Antonio_Luis.Clases;
 
 namespace Proyecto_Antonio_Luis.Formularios
 {
@@ -41,10 +42,10 @@ namespace Proyecto_Antonio_Luis.Formularios
                     {
                         label1.Text = Convert.ToString(amodificar.cod);
                         textBox1.Text = amodificar.nombre;
-                        maskedTextBox1.Text = amodificar.login;
-                        maskedTextBox2.Text = amodificar.login;
+                        maskedTextBox1.Text = Encriptar.Descodificar(amodificar.login);
+                        maskedTextBox2.Text = Encriptar.Descodificar(amodificar.login);
                         textBox2.Text = amodificar.pregunta;
-                        textBox3.Text = amodificar.respuesta;
+                        textBox3.Text = Encriptar.Descodificar(amodificar.respuesta);
                         comboBox1.Text = amodificar.grupo;
                         if (Convert.ToBoolean(amodificar.activo) == true)
 
@@ -291,8 +292,7 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
             if (Globales.llamadas == "1")
             {
-
-
+                                
                 try
                 {
                     //**** calculamos el valor de la coluna numerador
@@ -303,7 +303,8 @@ namespace Proyecto_Antonio_Luis.Formularios
 
                     nuevoUsuario.cod = ultimocod + 1;
                     nuevoUsuario.nombre = textBox1.Text;
-                    nuevoUsuario.login = maskedTextBox1.Text;
+                    // encriptamos la contaraseña con la clase encriptar
+                    nuevoUsuario.login = Encriptar.codificar(maskedTextBox1.Text);
                     if (radioButton1.Checked == true)
                     {
                         nuevoUsuario.activo = "true";
@@ -314,7 +315,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                     }
                     nuevoUsuario.grupo = comboBox1.Text;
                     nuevoUsuario.pregunta = textBox2.Text;
-                    nuevoUsuario.respuesta = textBox3.Text;
+                    nuevoUsuario.respuesta = Encriptar.codificar(textBox3.Text);
                     if (arbol.Nodes[0].Checked == true)
                     {
                         nuevoUsuario.sistema = true;
@@ -446,8 +447,8 @@ namespace Proyecto_Antonio_Luis.Formularios
                     //modificamos los valores
 
                     usuarioAmodificar.nombre = textBox1.Text;
-                    usuarioAmodificar.login = maskedTextBox1.Text;
-                      usuarioAmodificar.pregunta = textBox2.Text;
+                    usuarioAmodificar.login = Encriptar.codificar(maskedTextBox1.Text);
+                    usuarioAmodificar.pregunta = textBox2.Text;
                     usuarioAmodificar.respuesta = textBox3.Text;
                     usuarioAmodificar.grupo = comboBox1.Text;
 
@@ -574,7 +575,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                 }
 
             }
-            Close();
+  //          Close();
         }
         private void Usuario_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -596,6 +597,28 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
             maskedTextBox1.UseSystemPasswordChar = true;
             maskedTextBox2.UseSystemPasswordChar = true;
+        }
+
+        private void maskedTextBox1_Leave(object sender, EventArgs e)
+        {
+            int t = maskedTextBox1.Text.Length;
+
+            if (t < 10)
+            {
+                MessageBox.Show("La contarseña debe tener diez caracteres.");
+                maskedTextBox1.Focus();
+            }
+        }
+
+        private void maskedTextBox2_Leave(object sender, EventArgs e)
+        {
+            if ( maskedTextBox1.Text != maskedTextBox2.Text)
+            {
+                MessageBox.Show("Los valores no coinciden.");
+                maskedTextBox2.Text = "";
+                maskedTextBox1.Text = "";
+                maskedTextBox1.Focus();
+            }
         }
     }
 }
