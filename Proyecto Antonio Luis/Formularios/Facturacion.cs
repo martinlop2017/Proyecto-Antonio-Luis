@@ -190,7 +190,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             
             
             // realizamos esto si modificamos la tarifa 1 o tarifa 2
-            if (dgvTemporal.Columns[e.ColumnIndex].Name == "albtarifaDataGridViewTextBoxColumn")
+            if (dgvTemporal.Columns[e.ColumnIndex].Name == "dataGridViewTextBoxColumn6")
             {
                 fila = Convert.ToInt32(dgvTemporal.CurrentRow.Index);
 
@@ -216,7 +216,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
 
             // realizamos esto si modificamos la tarifa 2 (SUPLIDOS)
-            if (dgvTemporal.Columns[e.ColumnIndex].Name == "albtarifa2DataGridViewTextBoxColumn")
+            if (dgvTemporal.Columns[e.ColumnIndex].Name == "dataGridViewTextBoxColumn8")
             {
                 fila = Convert.ToInt32(dgvTemporal.CurrentRow.Index);
 
@@ -241,8 +241,8 @@ namespace Proyecto_Antonio_Luis.Formularios
 
 
             // realizamos esto si modificamos los empleados o el precio por emleado
-            if ((dgvTemporal.Columns[e.ColumnIndex].Name == "albempleadosDataGridViewTextBoxColumn") ||
-                    (dgvTemporal.Columns[e.ColumnIndex].Name == "albpvpempleadosDataGridViewTextBoxColumn"))
+            if ((dgvTemporal.Columns[e.ColumnIndex].Name == "dataGridViewTextBoxColumn9") ||
+                    (dgvTemporal.Columns[e.ColumnIndex].Name == "dataGridViewTextBoxColumn10"))
             {
                 fila = Convert.ToInt32(dgvTemporal.CurrentRow.Index);
 
@@ -672,6 +672,11 @@ namespace Proyecto_Antonio_Luis.Formularios
         }
 
         private void clientesBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvTemporal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

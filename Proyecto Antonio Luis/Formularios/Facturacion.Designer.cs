@@ -76,7 +76,6 @@
             this.administracionAntonioDataSet1 = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1();
             this.facturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.facturasTableAdapter = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1TableAdapters.FacturasTableAdapter();
-            this.albtipoiva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tempremesaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tempnumerofacturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.temptipoivaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,7 +110,10 @@
             this.tempparaimprimirDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tempparacontabilizarDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.temporalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.albaranesclientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.datoslistadoremeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albtipoiva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -144,8 +146,6 @@
             this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.albaranesclientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.datoslistadoremeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTemporal)).BeginInit();
@@ -525,6 +525,7 @@
             this.dgvTemporal.RowTemplate.DefaultCellStyle.NullValue = null;
             this.dgvTemporal.Size = new System.Drawing.Size(1189, 552);
             this.dgvTemporal.TabIndex = 47;
+            this.dgvTemporal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTemporal_CellContentClick);
             this.dgvTemporal.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTemporal_CellValueChanged);
             // 
             // dataGridView1
@@ -576,7 +577,7 @@
             this.tempparacontabilizarDataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.temporalBindingSource;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(40, 221);
+            this.dataGridView1.Location = new System.Drawing.Point(42, 278);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 20;
             this.dataGridView1.Size = new System.Drawing.Size(1189, 552);
@@ -707,13 +708,6 @@
             // facturasTableAdapter
             // 
             this.facturasTableAdapter.ClearBeforeFill = true;
-            // 
-            // albtipoiva
-            // 
-            this.albtipoiva.DataPropertyName = "albtipoiva";
-            this.albtipoiva.HeaderText = "albtipoiva";
-            this.albtipoiva.Name = "albtipoiva";
-            this.albtipoiva.Visible = false;
             // 
             // tempremesaDataGridViewTextBoxColumn
             // 
@@ -964,12 +958,28 @@
             // 
             this.temporalBindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Clases.temporal);
             // 
+            // albaranesclientesBindingSource1
+            // 
+            this.albaranesclientesBindingSource1.DataSource = typeof(Proyecto_Antonio_Luis.Clases.albaranesclientes);
+            // 
+            // datoslistadoremeBindingSource
+            // 
+            this.datoslistadoremeBindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Clases.datoslistadoreme);
+            // 
             // dataGridViewTextBoxColumn28
             // 
             this.dataGridViewTextBoxColumn28.DataPropertyName = "albmes";
             this.dataGridViewTextBoxColumn28.HeaderText = "Remesa";
             this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.dataGridViewTextBoxColumn28.ReadOnly = true;
             this.dataGridViewTextBoxColumn28.Width = 63;
+            // 
+            // albtipoiva
+            // 
+            this.albtipoiva.DataPropertyName = "albtipoiva";
+            this.albtipoiva.HeaderText = "albtipoiva";
+            this.albtipoiva.Name = "albtipoiva";
+            this.albtipoiva.Visible = false;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -983,6 +993,7 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "albfecha";
             this.dataGridViewTextBoxColumn3.HeaderText = "Fecha";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 70;
             // 
             // dataGridViewTextBoxColumn4
@@ -990,6 +1001,7 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "albnombre";
             this.dataGridViewTextBoxColumn4.HeaderText = "Cliente";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 250;
             // 
             // dataGridViewTextBoxColumn5
@@ -997,6 +1009,7 @@
             this.dataGridViewTextBoxColumn5.DataPropertyName = "albconcepto1";
             this.dataGridViewTextBoxColumn5.HeaderText = "Concepto 1";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 243;
             // 
             // dataGridViewTextBoxColumn6
@@ -1039,6 +1052,7 @@
             this.dataGridViewTextBoxColumn11.DataPropertyName = "alblaboral";
             this.dataGridViewTextBoxColumn11.HeaderText = "Laboral";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             this.dataGridViewTextBoxColumn11.Width = 50;
             // 
             // dataGridViewTextBoxColumn12
@@ -1046,6 +1060,7 @@
             this.dataGridViewTextBoxColumn12.DataPropertyName = "albbase";
             this.dataGridViewTextBoxColumn12.HeaderText = "Total Base";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
             this.dataGridViewTextBoxColumn12.Width = 50;
             // 
             // dataGridViewTextBoxColumn13
@@ -1053,6 +1068,7 @@
             this.dataGridViewTextBoxColumn13.DataPropertyName = "albiva";
             this.dataGridViewTextBoxColumn13.HeaderText = "Total Iva";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
             this.dataGridViewTextBoxColumn13.Width = 50;
             // 
             // dataGridViewTextBoxColumn14
@@ -1060,6 +1076,7 @@
             this.dataGridViewTextBoxColumn14.DataPropertyName = "albtotal";
             this.dataGridViewTextBoxColumn14.HeaderText = "Total";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
             this.dataGridViewTextBoxColumn14.Width = 55;
             // 
             // dataGridViewCheckBoxColumn1
@@ -1194,14 +1211,6 @@
             this.dataGridViewCheckBoxColumn5.HeaderText = "albparacontabilizar";
             this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
             this.dataGridViewCheckBoxColumn5.Visible = false;
-            // 
-            // albaranesclientesBindingSource1
-            // 
-            this.albaranesclientesBindingSource1.DataSource = typeof(Proyecto_Antonio_Luis.Clases.albaranesclientes);
-            // 
-            // datoslistadoremeBindingSource
-            // 
-            this.datoslistadoremeBindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Clases.datoslistadoreme);
             // 
             // Facturacion
             // 

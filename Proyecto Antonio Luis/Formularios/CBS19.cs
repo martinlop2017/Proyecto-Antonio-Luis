@@ -172,7 +172,9 @@ namespace Proyecto_Antonio_Luis.Formularios
             writer.WriteStartElement("OrgId");
             writer.WriteStartElement("Othr");
 
-            writer.WriteElementString("Id", nombrepresentador.miidentificadorbancario + nombrepresentador.micif);
+            string limpiaespacios = (nombrepresentador.miidentificadorbancario + nombrepresentador.micif).ToString();
+            limpiaespacios = limpiaespacios.Replace(" " , "");
+            writer.WriteElementString("Id", limpiaespacios);
 
             writer.WriteStartElement("SchmeNm");
             writer.WriteElementString("Prtry", "SEPA");
