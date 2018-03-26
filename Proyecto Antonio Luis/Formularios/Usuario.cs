@@ -282,9 +282,18 @@ namespace Proyecto_Antonio_Luis.Formularios
 
             if (Globales.llamadas == "1")
             {
+                string cod;
                 //**** calculamos el valor de la coluna numerador
-                var ultimocod = bd.Ususarios.OrderByDescending(x => x.cod).First().cod;
-                label1.Text = Convert.ToString(ultimocod+1);
+                var ultimocod = bd.Ususarios.OrderByDescending(x => x.cod).ToList();// First().cod;
+                if (ultimocod.Count == 0)
+                {
+                    cod = "1";
+                }
+                else
+                {
+                    cod = (ultimocod.First().numerousuario+1).ToString();
+                }
+                label1.Text = cod;
             }
         }
 
@@ -296,22 +305,22 @@ namespace Proyecto_Antonio_Luis.Formularios
                 try
                 {
                     //**** calculamos el valor de la coluna numerador
-                    var ultimocod = bd.Ususarios.OrderByDescending(x => x.cod).First().cod;
+                  //  var ultimocod = bd.Ususarios.OrderByDescending(x => x.cod).First().cod;
 
                     //****GRABA LOS DATOS EN LA TABLA
                     var nuevoUsuario = new Ususarios();
 
-                    nuevoUsuario.cod = ultimocod + 1;
+                    nuevoUsuario.numerousuario = Convert.ToInt32( label1.Text);
                     nuevoUsuario.nombre = textBox1.Text;
                     // encriptamos la contaraseña con la clase encriptar
                     nuevoUsuario.login = Encriptar.codificar(maskedTextBox1.Text);
                     if (radioButton1.Checked == true)
                     {
-                        nuevoUsuario.activo = "true";
+                        nuevoUsuario.activo = true;
                     }
                     else
                     {
-                        nuevoUsuario.activo = "false";
+                        nuevoUsuario.activo = false;
                     }
                     nuevoUsuario.grupo = comboBox1.Text;
                     nuevoUsuario.pregunta = textBox2.Text;
@@ -455,11 +464,11 @@ namespace Proyecto_Antonio_Luis.Formularios
 
                     if (radioButton1.Checked == true)
                     {
-                        usuarioAmodificar.activo = "true";
+                        usuarioAmodificar.activo = true;
                     }
                     else
                     {
-                        usuarioAmodificar.activo = "false";
+                        usuarioAmodificar.activo = false;
                     }
 
                   

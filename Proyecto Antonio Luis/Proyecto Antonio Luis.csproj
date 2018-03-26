@@ -70,6 +70,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdministracionAntonioDataSet11.xsd</DependentUpon>
     </Compile>
+    <Compile Include="AdministracionAntonioDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdministracionAntonioDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Clases\albaranesclientes.cs" />
     <Compile Include="Clases\datoslistadoreme.cs" />
     <Compile Include="Clases\Encriptar.cs" />
@@ -159,6 +164,18 @@
     <Compile Include="Formularios\MisDatos.Designer.cs">
       <DependentUpon>MisDatos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Nuevacontraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Nuevacontraseña.Designer.cs">
+      <DependentUpon>Nuevacontraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\preguntaseguridad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\preguntaseguridad.Designer.cs">
+      <DependentUpon>preguntaseguridad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Rutas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +234,12 @@
     <EmbeddedResource Include="Formularios\MisDatos.resx">
       <DependentUpon>MisDatos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Nuevacontraseña.resx">
+      <DependentUpon>Nuevacontraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\preguntaseguridad.resx">
+      <DependentUpon>preguntaseguridad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Report1.rdlc" />
     <EmbeddedResource Include="Formularios\Rutas.resx">
       <DependentUpon>Rutas.cs</DependentUpon>
@@ -250,6 +273,17 @@
     </None>
     <None Include="AdministracionAntonioDataSet11.xss">
       <DependentUpon>AdministracionAntonioDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="AdministracionAntonioDataSet2.xsc">
+      <DependentUpon>AdministracionAntonioDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="AdministracionAntonioDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdministracionAntonioDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AdministracionAntonioDataSet2.xss">
+      <DependentUpon>AdministracionAntonioDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\BaseDatos.AdministracionAntonioEntities.datasource" />
     <None Include="Properties\DataSources\BaseDatos.Clientes.datasource" />

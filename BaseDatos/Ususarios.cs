@@ -15,9 +15,10 @@ namespace BaseDatos
     public partial class Ususarios
     {
         public decimal cod { get; set; }
+        public Nullable<decimal> numerousuario { get; set; }
         public string nombre { get; set; }
         public string login { get; set; }
-        public string activo { get; set; }
+        public Nullable<bool> activo { get; set; }
         public string grupo { get; set; }
         public string pregunta { get; set; }
         public string respuesta { get; set; }

@@ -312,12 +312,9 @@ namespace Proyecto_Antonio_Luis.Formularios
             label6.Visible = false;
         }
 
- 
+        private void dgvclientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-
-
-
-
-
+        }
     }
 }

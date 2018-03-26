@@ -172,12 +172,13 @@
           <Key>
             <PropertyRef Name="cod" />
           </Key>
-          <Property Name="cod" Type="numeric" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="cod" Type="numeric" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="numerousuario" Type="numeric" Precision="18" Scale="0" />
           <Property Name="nombre" Type="nchar" MaxLength="15" />
           <Property Name="login" Type="nchar" MaxLength="200" />
-          <Property Name="activo" Type="nchar" MaxLength="10" />
+          <Property Name="activo" Type="bit" />
           <Property Name="grupo" Type="nchar" MaxLength="20" />
-          <Property Name="pregunta" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="pregunta" Type="nchar" MaxLength="100" />
           <Property Name="respuesta" Type="nchar" MaxLength="400" />
           <Property Name="sistema" Type="bit" />
           <Property Name="misdatos" Type="bit" />
@@ -390,12 +391,13 @@
           <Key>
             <PropertyRef Name="cod" />
           </Key>
-          <Property Name="cod" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="cod" Type="Decimal" Nullable="false" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numerousuario" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="nombre" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
           <Property Name="login" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
-          <Property Name="activo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="activo" Type="Boolean" />
           <Property Name="grupo" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="pregunta" Type="String" Nullable="false" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="pregunta" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="respuesta" Type="String" MaxLength="400" FixedLength="true" Unicode="true" />
           <Property Name="sistema" Type="Boolean" />
           <Property Name="misdatos" Type="Boolean" />
@@ -624,6 +626,7 @@
                 <ScalarProperty Name="activo" ColumnName="activo" />
                 <ScalarProperty Name="login" ColumnName="login" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="numerousuario" ColumnName="numerousuario" />
                 <ScalarProperty Name="cod" ColumnName="cod" />
               </MappingFragment>
             </EntityTypeMapping>

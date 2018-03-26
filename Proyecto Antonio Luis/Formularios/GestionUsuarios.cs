@@ -60,8 +60,6 @@ namespace Proyecto_Antonio_Luis.Formularios
                 if (MessageBox.Show("Confirme La Eliminación del Registro.","Eliminar Registro", 
                     MessageBoxButtons.YesNo)== System.Windows.Forms.DialogResult.Yes)
                 {
-
-
                     // creamos una variable que va aguardar los datos de la fila seleccionada en el dbgrid
 
                     int valor1 = Convert.ToInt16(dgvUsuario.CurrentRow.Cells[0].Value);
@@ -229,6 +227,10 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void GestionUsuarios_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet2.Ususarios' Puede moverla o quitarla según sea necesario.
+            this.ususariosTableAdapter.Fill(this.administracionAntonioDataSet2.Ususarios);
+            // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet1.Ususarios' Puede moverla o quitarla según sea necesario.
+ //           this.ususariosTableAdapter.Fill(this.administracionAntonioDataSet1.Ususarios);
 
             //CARGA LOS REGISTROS EN EL GRIP AL INICIAR EL FORM
 

@@ -105,8 +105,10 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(178, 99);
             this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '*';
             this.textBox1.Size = new System.Drawing.Size(156, 30);
             this.textBox1.TabIndex = 1;
+            this.textBox1.UseSystemPasswordChar = true;
             // 
             // comboBox1
             // 
@@ -152,6 +154,7 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "¿Olvido la contraseña?";
             this.label4.Visible = false;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Form1
             // 
@@ -168,7 +171,6 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

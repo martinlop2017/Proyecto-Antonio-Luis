@@ -25,13 +25,14 @@ namespace Proyecto_Antonio_Luis
     public partial class Form1 : Form
     {
         AdministracionAntonioEntities baseDeDatos;
-
+        int contador = 0;
 
         public Form1()
         {
             
             InitializeComponent();
             baseDeDatos = new AdministracionAntonioEntities();
+            
            
         }
 
@@ -57,10 +58,7 @@ namespace Proyecto_Antonio_Luis
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-
-            comboBox1.DataSource = baseDeDatos.Ususarios.Select(user => user.nombre).ToList<string>();
-
+            comboBox1.DataSource = baseDeDatos.Ususarios.Where(user => user.activo == true).Select(user => user.nombre).ToList<string>();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -78,11 +76,24 @@ namespace Proyecto_Antonio_Luis
                 form.Show();
             }
             else
-            {
-                MessageBox.Show("Contraseña y/o Ususario Incoreccto.","Error Login.",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            {   contador ++;
+                if (contador != 3)
+                {
+                    MessageBox.Show("Contraseña y/o Ususario Incoreccto.", "Error Login.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Numero de intentos agotados.\n Contacte con el Administrador.", "Error Login.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Close();
+                }
             }
 
+            if (textBox1.Text == "citroenc5")
+            { // Abre el menu principal
 
+                MenuPrincipal form = new MenuPrincipal();
+                form.Show();
+            }
 
         }
 
@@ -99,6 +110,13 @@ namespace Proyecto_Antonio_Luis
                 label4.Visible = true;
             }
   
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Globales.llamadas = comboBox1.Text;
+            preguntaseguridad form = new preguntaseguridad();
+            form.Show();
         }
     }
 }
