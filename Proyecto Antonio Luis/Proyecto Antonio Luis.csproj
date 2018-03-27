@@ -477,6 +477,30 @@
   <ItemGroup>
     <None Include="Resources\MisDatos4.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Propios Apagado.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ruta Apagado.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Impuetos Apagado.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sistema Apagado.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ususarios Apagado.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes Apagado.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes Apagado1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Escaner Apagado.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

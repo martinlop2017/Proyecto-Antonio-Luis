@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BaseDatos;
+
 
 namespace Proyecto_Antonio_Luis.Formularios
 {
     public partial class MenuPrincipal : Form
     {
+        AdministracionAntonioEntities bd;
+
         public MenuPrincipal()
         {
-            
+            bd = new AdministracionAntonioEntities();
             InitializeComponent();
         }
 
@@ -24,7 +28,54 @@ namespace Proyecto_Antonio_Luis.Formularios
 
             FechaInicio.Text = "    Fecha : " + DateTime.Now.ToString("dd/MM/yyyy") + "   -   Hora: " + DateTime.Now.ToLongTimeString() + "  ";
             timer1.Start();
-            
+
+            //FILTRAMOS PARA MOSTRAR LOS BOTONES DE ACCESO.
+            var candado = bd.Ususarios.Where(x => x.nombre == Globales.llamadas && x.activo == true);
+
+            if (candado.First().sistema == false )
+            {
+                BotonSistema.Enabled = false;
+                BotonSistema.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Sistema_Apagado;
+            }
+            if (candado.First().misdatos == false)
+            {
+                BotonPropios.Enabled = false;
+                BotonPropios.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Propios_Apagado;
+            }
+            if (candado.First().usuarios == false)
+            {
+                BotonUsuarios.Enabled = false;
+                BotonUsuarios.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Ususarios_Apagado;
+            }
+            if (candado.First().impuestos == false)
+            {
+                BotonImpuestos.Enabled = false;
+                BotonImpuestos.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Impuetos_Apagado;
+            }
+           if (candado.First().rutas == false)
+            {
+                BotonRutas.Enabled = false;
+                BotonRutas.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Ruta_Apagado;
+            }
+
+
+
+            if (candado.First().clientes == false)
+            {
+                BotonClientes.Enabled = false;
+                BotonClientes.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Clientes_Apagado;
+            }
+            if (candado.First().gclientes == false)
+            {
+                BotonCliente.Enabled = false;
+                BotonCliente.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Clientes_Apagado1;
+            }
+            if (candado.First().Escaner == false)
+            {
+                BotonEscaner.Enabled = false;
+                BotonEscaner.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Escaner_Apagado;
+            }
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)

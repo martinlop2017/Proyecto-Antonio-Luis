@@ -185,8 +185,10 @@
           <Property Name="usuarios" Type="bit" />
           <Property Name="gusuarios" Type="bit" />
           <Property Name="impuestos" Type="bit" />
+          <Property Name="rutas" Type="bit" />
           <Property Name="clientes" Type="bit" />
           <Property Name="gclientes" Type="bit" />
+          <Property Name="Escaner" Type="bit" />
           <Property Name="articulos" Type="bit" />
           <Property Name="garticulos" Type="bit" />
           <Property Name="albaranes" Type="bit" />
@@ -404,8 +406,10 @@
           <Property Name="usuarios" Type="Boolean" />
           <Property Name="gusuarios" Type="Boolean" />
           <Property Name="impuestos" Type="Boolean" />
+          <Property Name="rutas" Type="Boolean" />
           <Property Name="clientes" Type="Boolean" />
           <Property Name="gclientes" Type="Boolean" />
+          <Property Name="Escaner" Type="Boolean" />
           <Property Name="articulos" Type="Boolean" />
           <Property Name="garticulos" Type="Boolean" />
           <Property Name="albaranes" Type="Boolean" />
@@ -613,8 +617,10 @@
                 <ScalarProperty Name="albaranes" ColumnName="albaranes" />
                 <ScalarProperty Name="garticulos" ColumnName="garticulos" />
                 <ScalarProperty Name="articulos" ColumnName="articulos" />
+                <ScalarProperty Name="Escaner" ColumnName="Escaner" />
                 <ScalarProperty Name="gclientes" ColumnName="gclientes" />
                 <ScalarProperty Name="clientes" ColumnName="clientes" />
+                <ScalarProperty Name="rutas" ColumnName="rutas" />
                 <ScalarProperty Name="impuestos" ColumnName="impuestos" />
                 <ScalarProperty Name="gusuarios" ColumnName="gusuarios" />
                 <ScalarProperty Name="usuarios" ColumnName="usuarios" />

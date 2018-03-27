@@ -329,33 +329,78 @@ namespace Proyecto_Antonio_Luis.Formularios
                     {
                         nuevoUsuario.sistema = true;
                     }
+                    else
+                    {
+                        nuevoUsuario.sistema = false;
+                    }
                     if (arbol.Nodes[0].Nodes[0].Checked == true)
                     {
                         nuevoUsuario.misdatos = true;
+                    }
+                    else
+                    {
+                        nuevoUsuario.misdatos = false;
                     }
                     if (arbol.Nodes[0].Nodes[1].Checked == true)
                     {
                         nuevoUsuario.usuarios = true;
                     }
+                    else
+                    {
+                        nuevoUsuario.usuarios = false;
+                    }
                     if (arbol.Nodes[0].Nodes[1].Nodes[0].Checked == true)
                     {
                         nuevoUsuario.gusuarios = true;
+                    }
+                    else
+                    {
+                        nuevoUsuario.gusuarios = false;
                     }
                     if (arbol.Nodes[0].Nodes[2].Checked == true)
                     {
                         nuevoUsuario.impuestos = true;
                     }
-
+                    else
+                    {
+                        nuevoUsuario.impuestos = false;
+                    }
+                    if (arbol.Nodes[0].Nodes[3].Checked == true)
+                    {
+                        nuevoUsuario.rutas = true;
+                    }
+                    else
+                    {
+                        nuevoUsuario.rutas = false;
+                    }
 
 
                     if (arbol.Nodes[1].Checked == true)
                     {
                         nuevoUsuario.clientes = true;
                     }
+                    else
+                    {
+                        nuevoUsuario.clientes = false;
+                    }
                     if (arbol.Nodes[1].Nodes[0].Checked == true)
                     {
                         nuevoUsuario.gclientes = true;
                     }
+                    else
+                    {
+                        nuevoUsuario.gclientes = false;
+                    }
+                    if (arbol.Nodes[1].Nodes[1].Checked == true)
+                    {
+                        nuevoUsuario.Escaner = true;
+                    }
+                    else
+                    {
+                        nuevoUsuario.Escaner = false;
+                    }
+
+
 
 
                     if (arbol.Nodes[2].Checked == true)
@@ -476,23 +521,42 @@ namespace Proyecto_Antonio_Luis.Formularios
                     {
                         usuarioAmodificar.sistema = true;
                     }
+                    else
+                    {
+                        usuarioAmodificar.sistema = false;
+                    }
                     if (arbol.Nodes[0].Nodes[0].Checked == true)
                     {
                         usuarioAmodificar.misdatos = true;
+                    }
+                    else
+                    {
+                        usuarioAmodificar.misdatos = false;
                     }
                     if (arbol.Nodes[0].Nodes[1].Checked == true)
                     {
                         usuarioAmodificar.usuarios = true;
                     }
+                    else
+                    {
+                        usuarioAmodificar.usuarios = false;
+                    }
                     if (arbol.Nodes[0].Nodes[1].Nodes[0].Checked == true)
                     {
                         usuarioAmodificar.gusuarios = true;
+                    }
+                    else
+                    {
+                        usuarioAmodificar.gusuarios = false;
                     }
                     if (arbol.Nodes[0].Nodes[2].Checked == true)
                     {
                         usuarioAmodificar.impuestos = true;
                     }
-
+                    else
+                    {
+                        usuarioAmodificar.impuestos = false;
+                    }
 
 
                     if (arbol.Nodes[1].Checked == true)
@@ -503,6 +567,15 @@ namespace Proyecto_Antonio_Luis.Formularios
                     {
                         usuarioAmodificar.gclientes = true;
                     }
+                    if (arbol.Nodes[1].Nodes[1].Checked == true)
+                    {
+                        usuarioAmodificar.Escaner = true;
+                    }
+                    else
+                    {
+                        usuarioAmodificar.Escaner = false;
+                    }
+
 
 
                     if (arbol.Nodes[2].Checked == true)
@@ -628,6 +701,16 @@ namespace Proyecto_Antonio_Luis.Formularios
                 maskedTextBox1.Text = "";
                 maskedTextBox1.Focus();
             }
+        }
+
+        private void arbol_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }

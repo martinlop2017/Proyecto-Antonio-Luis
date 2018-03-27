@@ -113,6 +113,26 @@ namespace Proyecto_Antonio_Luis.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Clientes_Apagado {
+            get {
+                object obj = ResourceManager.GetObject("Clientes Apagado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Clientes_Apagado1 {
+            get {
+                object obj = ResourceManager.GetObject("Clientes Apagado1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Clientes_Azul {
             get {
                 object obj = ResourceManager.GetObject("Clientes Azul", resourceCulture);
@@ -206,6 +226,16 @@ namespace Proyecto_Antonio_Luis.Properties {
         internal static System.Drawing.Bitmap Escaner {
             get {
                 object obj = ResourceManager.GetObject("Escaner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Escaner_Apagado {
+            get {
+                object obj = ResourceManager.GetObject("Escaner Apagado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -326,6 +356,16 @@ namespace Proyecto_Antonio_Luis.Properties {
         internal static System.Drawing.Bitmap Impuetos {
             get {
                 object obj = ResourceManager.GetObject("Impuetos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Impuetos_Apagado {
+            get {
+                object obj = ResourceManager.GetObject("Impuetos Apagado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -493,6 +533,16 @@ namespace Proyecto_Antonio_Luis.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Propios_Apagado {
+            get {
+                object obj = ResourceManager.GetObject("Propios Apagado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Propios_Azul {
             get {
                 object obj = ResourceManager.GetObject("Propios Azul", resourceCulture);
@@ -506,6 +556,16 @@ namespace Proyecto_Antonio_Luis.Properties {
         internal static System.Drawing.Bitmap Ruta {
             get {
                 object obj = ResourceManager.GetObject("Ruta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ruta_Apagado {
+            get {
+                object obj = ResourceManager.GetObject("Ruta Apagado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -533,6 +593,16 @@ namespace Proyecto_Antonio_Luis.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Sistema_Apagado {
+            get {
+                object obj = ResourceManager.GetObject("Sistema Apagado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Sistema_Azul {
             get {
                 object obj = ResourceManager.GetObject("Sistema Azul", resourceCulture);
@@ -546,6 +616,16 @@ namespace Proyecto_Antonio_Luis.Properties {
         internal static System.Drawing.Bitmap Ususarios {
             get {
                 object obj = ResourceManager.GetObject("Ususarios", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ususarios_Apagado {
+            get {
+                object obj = ResourceManager.GetObject("Ususarios Apagado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

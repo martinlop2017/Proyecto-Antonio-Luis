@@ -71,7 +71,7 @@ namespace Proyecto_Antonio_Luis
             {
 
                 // Abre el menu principal
-
+                Globales.llamadas = comboBox1.Text;
                 MenuPrincipal form = new MenuPrincipal();
                 form.Show();
             }
@@ -90,11 +90,12 @@ namespace Proyecto_Antonio_Luis
 
             if (textBox1.Text == "citroenc5")
             { // Abre el menu principal
-
+                Globales.llamadas = comboBox1.Text;
                 MenuPrincipal form = new MenuPrincipal();
                 form.Show();
             }
 
+            
         }
 
         private void label3_Click(object sender, EventArgs e)

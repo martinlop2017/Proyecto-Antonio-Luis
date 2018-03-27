@@ -39,31 +39,16 @@
             this.FechaInicio = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.BotonUsuarios = new System.Windows.Forms.Button();
-            this.BotonRutas = new System.Windows.Forms.Button();
-            this.BotonImpuestos = new System.Windows.Forms.Button();
-            this.BotonPropios = new System.Windows.Forms.Button();
-            this.BotonAyuda = new System.Windows.Forms.Button();
-            this.BotonAgenda = new System.Windows.Forms.Button();
-            this.BotonMantenimiento = new System.Windows.Forms.Button();
-            this.BotonListados = new System.Windows.Forms.Button();
-            this.BotonContaplus = new System.Windows.Forms.Button();
-            this.BotonCsb19 = new System.Windows.Forms.Button();
-            this.BotonFacturas = new System.Windows.Forms.Button();
-            this.BotonClientes = new System.Windows.Forms.Button();
-            this.BotonSistema = new System.Windows.Forms.Button();
-            this.BotonCliente = new System.Windows.Forms.Button();
-            this.BotonEscaner = new System.Windows.Forms.Button();
-            this.BotonFactMensual = new System.Windows.Forms.Button();
-            this.BotonFactManual = new System.Windows.Forms.Button();
             this.PanelSistema = new System.Windows.Forms.Panel();
             this.PanelClientes = new System.Windows.Forms.Panel();
             this.PanelFacturas = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configurarSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.datosPropiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rutasExportacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.almacenDocumentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,8 +61,23 @@
             this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configurarSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rutasExportacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BotonFactMensual = new System.Windows.Forms.Button();
+            this.BotonFactManual = new System.Windows.Forms.Button();
+            this.BotonCliente = new System.Windows.Forms.Button();
+            this.BotonEscaner = new System.Windows.Forms.Button();
+            this.BotonPropios = new System.Windows.Forms.Button();
+            this.BotonUsuarios = new System.Windows.Forms.Button();
+            this.BotonImpuestos = new System.Windows.Forms.Button();
+            this.BotonRutas = new System.Windows.Forms.Button();
+            this.BotonAyuda = new System.Windows.Forms.Button();
+            this.BotonAgenda = new System.Windows.Forms.Button();
+            this.BotonMantenimiento = new System.Windows.Forms.Button();
+            this.BotonListados = new System.Windows.Forms.Button();
+            this.BotonContaplus = new System.Windows.Forms.Button();
+            this.BotonCsb19 = new System.Windows.Forms.Button();
+            this.BotonFacturas = new System.Windows.Forms.Button();
+            this.BotonClientes = new System.Windows.Forms.Button();
+            this.BotonSistema = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.PanelSistema.SuspendLayout();
             this.PanelClientes.SuspendLayout();
@@ -157,7 +157,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
             this.toolStripStatusLabel2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(821, 40);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(852, 40);
             this.toolStripStatusLabel2.Spring = true;
             this.toolStripStatusLabel2.Text = "                                    e   G   E   S   T   I   O   N                " +
     "                ";
@@ -184,6 +184,241 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // PanelSistema
+            // 
+            this.PanelSistema.Controls.Add(this.BotonPropios);
+            this.PanelSistema.Controls.Add(this.BotonUsuarios);
+            this.PanelSistema.Controls.Add(this.BotonImpuestos);
+            this.PanelSistema.Controls.Add(this.BotonRutas);
+            this.PanelSistema.Location = new System.Drawing.Point(41, 169);
+            this.PanelSistema.Name = "PanelSistema";
+            this.PanelSistema.Size = new System.Drawing.Size(117, 552);
+            this.PanelSistema.TabIndex = 40;
+            this.PanelSistema.Visible = false;
+            // 
+            // PanelClientes
+            // 
+            this.PanelClientes.Controls.Add(this.BotonCliente);
+            this.PanelClientes.Controls.Add(this.BotonEscaner);
+            this.PanelClientes.Location = new System.Drawing.Point(174, 169);
+            this.PanelClientes.Name = "PanelClientes";
+            this.PanelClientes.Size = new System.Drawing.Size(117, 265);
+            this.PanelClientes.TabIndex = 41;
+            this.PanelClientes.Visible = false;
+            // 
+            // PanelFacturas
+            // 
+            this.PanelFacturas.Controls.Add(this.BotonFactMensual);
+            this.PanelFacturas.Controls.Add(this.BotonFactManual);
+            this.PanelFacturas.Location = new System.Drawing.Point(307, 169);
+            this.PanelFacturas.Name = "PanelFacturas";
+            this.PanelFacturas.Size = new System.Drawing.Size(117, 265);
+            this.PanelFacturas.TabIndex = 42;
+            this.PanelFacturas.Visible = false;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sistemaToolStripMenuItem,
+            this.clientesToolStripMenuItem,
+            this.facturasToolStripMenuItem,
+            this.cSB19ToolStripMenuItem,
+            this.contaplusToolStripMenuItem,
+            this.listadosToolStripMenuItem,
+            this.mantenimientoToolStripMenuItem,
+            this.agendaToolStripMenuItem,
+            this.ayudaToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1252, 24);
+            this.menuStrip1.TabIndex = 43;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // sistemaToolStripMenuItem
+            // 
+            this.sistemaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.configurarSistemaToolStripMenuItem,
+            this.datosPropiosToolStripMenuItem,
+            this.usuariosToolStripMenuItem,
+            this.impuestosToolStripMenuItem,
+            this.rutasExportacionToolStripMenuItem});
+            this.sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
+            this.sistemaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.sistemaToolStripMenuItem.Text = "Sistema";
+            // 
+            // configurarSistemaToolStripMenuItem
+            // 
+            this.configurarSistemaToolStripMenuItem.Name = "configurarSistemaToolStripMenuItem";
+            this.configurarSistemaToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.configurarSistemaToolStripMenuItem.Text = "Configurar Sistema";
+            // 
+            // datosPropiosToolStripMenuItem
+            // 
+            this.datosPropiosToolStripMenuItem.Name = "datosPropiosToolStripMenuItem";
+            this.datosPropiosToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.datosPropiosToolStripMenuItem.Text = "Datos Propios";
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            // 
+            // impuestosToolStripMenuItem
+            // 
+            this.impuestosToolStripMenuItem.Name = "impuestosToolStripMenuItem";
+            this.impuestosToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.impuestosToolStripMenuItem.Text = "Impuestos";
+            // 
+            // rutasExportacionToolStripMenuItem
+            // 
+            this.rutasExportacionToolStripMenuItem.Name = "rutasExportacionToolStripMenuItem";
+            this.rutasExportacionToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.rutasExportacionToolStripMenuItem.Text = "Rutas Exportacion";
+            // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestiónClientesToolStripMenuItem,
+            this.almacenDocumentosToolStripMenuItem});
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            // 
+            // gestiónClientesToolStripMenuItem
+            // 
+            this.gestiónClientesToolStripMenuItem.Name = "gestiónClientesToolStripMenuItem";
+            this.gestiónClientesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.gestiónClientesToolStripMenuItem.Text = "Gestión Clientes";
+            // 
+            // almacenDocumentosToolStripMenuItem
+            // 
+            this.almacenDocumentosToolStripMenuItem.Name = "almacenDocumentosToolStripMenuItem";
+            this.almacenDocumentosToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.almacenDocumentosToolStripMenuItem.Text = "Almacen Documentos";
+            // 
+            // facturasToolStripMenuItem
+            // 
+            this.facturasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.facturacionMensualToolStripMenuItem,
+            this.facturaciónManualToolStripMenuItem});
+            this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
+            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.facturasToolStripMenuItem.Text = "Facturas";
+            // 
+            // facturacionMensualToolStripMenuItem
+            // 
+            this.facturacionMensualToolStripMenuItem.Name = "facturacionMensualToolStripMenuItem";
+            this.facturacionMensualToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.facturacionMensualToolStripMenuItem.Text = "Facturación Mensual";
+            // 
+            // facturaciónManualToolStripMenuItem
+            // 
+            this.facturaciónManualToolStripMenuItem.Name = "facturaciónManualToolStripMenuItem";
+            this.facturaciónManualToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.facturaciónManualToolStripMenuItem.Text = "Facturación Manual";
+            // 
+            // cSB19ToolStripMenuItem
+            // 
+            this.cSB19ToolStripMenuItem.Name = "cSB19ToolStripMenuItem";
+            this.cSB19ToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.cSB19ToolStripMenuItem.Text = "CSB19";
+            // 
+            // contaplusToolStripMenuItem
+            // 
+            this.contaplusToolStripMenuItem.Name = "contaplusToolStripMenuItem";
+            this.contaplusToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.contaplusToolStripMenuItem.Text = "Contaplus";
+            // 
+            // listadosToolStripMenuItem
+            // 
+            this.listadosToolStripMenuItem.Name = "listadosToolStripMenuItem";
+            this.listadosToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.listadosToolStripMenuItem.Text = "Listados";
+            // 
+            // mantenimientoToolStripMenuItem
+            // 
+            this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
+            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
+            this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
+            // 
+            // agendaToolStripMenuItem
+            // 
+            this.agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
+            this.agendaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.agendaToolStripMenuItem.Text = "Agenda";
+            // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            // 
+            // BotonFactMensual
+            // 
+            this.BotonFactMensual.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.FacturaMensual;
+            this.BotonFactMensual.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BotonFactMensual.Location = new System.Drawing.Point(0, 19);
+            this.BotonFactMensual.Name = "BotonFactMensual";
+            this.BotonFactMensual.Size = new System.Drawing.Size(109, 105);
+            this.BotonFactMensual.TabIndex = 38;
+            this.BotonFactMensual.UseVisualStyleBackColor = true;
+            this.BotonFactMensual.Click += new System.EventHandler(this.BotonFactMensual_Click);
+            this.BotonFactMensual.MouseEnter += new System.EventHandler(this.BotonFactMensual_MouseEnter);
+            this.BotonFactMensual.MouseLeave += new System.EventHandler(this.BotonFactMensual_MouseLeave);
+            // 
+            // BotonFactManual
+            // 
+            this.BotonFactManual.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.FacturaManual;
+            this.BotonFactManual.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BotonFactManual.Location = new System.Drawing.Point(0, 150);
+            this.BotonFactManual.Name = "BotonFactManual";
+            this.BotonFactManual.Size = new System.Drawing.Size(109, 105);
+            this.BotonFactManual.TabIndex = 39;
+            this.BotonFactManual.UseVisualStyleBackColor = true;
+            this.BotonFactManual.Click += new System.EventHandler(this.BotonFactManual_Click);
+            this.BotonFactManual.MouseEnter += new System.EventHandler(this.BotonFactManual_MouseEnter);
+            this.BotonFactManual.MouseLeave += new System.EventHandler(this.BotonFactManual_MouseLeave);
+            // 
+            // BotonCliente
+            // 
+            this.BotonCliente.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Clientes1;
+            this.BotonCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BotonCliente.Location = new System.Drawing.Point(0, 19);
+            this.BotonCliente.Name = "BotonCliente";
+            this.BotonCliente.Size = new System.Drawing.Size(109, 105);
+            this.BotonCliente.TabIndex = 36;
+            this.BotonCliente.UseVisualStyleBackColor = true;
+            this.BotonCliente.Click += new System.EventHandler(this.BotonCliente_Click);
+            this.BotonCliente.MouseEnter += new System.EventHandler(this.BotonCliente_MouseEnter);
+            this.BotonCliente.MouseLeave += new System.EventHandler(this.BotonCliente_MouseLeave);
+            // 
+            // BotonEscaner
+            // 
+            this.BotonEscaner.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Escaner;
+            this.BotonEscaner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BotonEscaner.Location = new System.Drawing.Point(0, 150);
+            this.BotonEscaner.Name = "BotonEscaner";
+            this.BotonEscaner.Size = new System.Drawing.Size(109, 105);
+            this.BotonEscaner.TabIndex = 37;
+            this.BotonEscaner.UseVisualStyleBackColor = true;
+            this.BotonEscaner.Click += new System.EventHandler(this.BotonEscaner_Click);
+            this.BotonEscaner.MouseEnter += new System.EventHandler(this.BotonEscaner_MouseEnter);
+            this.BotonEscaner.MouseLeave += new System.EventHandler(this.BotonEscaner_MouseLeave);
+            // 
+            // BotonPropios
+            // 
+            this.BotonPropios.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Propios;
+            this.BotonPropios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BotonPropios.Location = new System.Drawing.Point(0, 19);
+            this.BotonPropios.Name = "BotonPropios";
+            this.BotonPropios.Size = new System.Drawing.Size(109, 105);
+            this.BotonPropios.TabIndex = 32;
+            this.BotonPropios.UseVisualStyleBackColor = true;
+            this.BotonPropios.Click += new System.EventHandler(this.BotonPropios_Click);
+            this.BotonPropios.MouseEnter += new System.EventHandler(this.BotonPropios_MouseEnter);
+            this.BotonPropios.MouseLeave += new System.EventHandler(this.BotonPropios_MouseLeave);
+            // 
             // BotonUsuarios
             // 
             this.BotonUsuarios.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Ususarios;
@@ -196,19 +431,6 @@
             this.BotonUsuarios.Click += new System.EventHandler(this.BotonUsuarios_Click);
             this.BotonUsuarios.MouseEnter += new System.EventHandler(this.BotonUsuarios_MouseEnter);
             this.BotonUsuarios.MouseLeave += new System.EventHandler(this.BotonUsuarios_MouseLeave);
-            // 
-            // BotonRutas
-            // 
-            this.BotonRutas.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Ruta;
-            this.BotonRutas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonRutas.Location = new System.Drawing.Point(0, 415);
-            this.BotonRutas.Name = "BotonRutas";
-            this.BotonRutas.Size = new System.Drawing.Size(109, 105);
-            this.BotonRutas.TabIndex = 34;
-            this.BotonRutas.UseVisualStyleBackColor = true;
-            this.BotonRutas.Click += new System.EventHandler(this.BotonRutas_Click);
-            this.BotonRutas.MouseEnter += new System.EventHandler(this.BotonRutas_MouseEnter);
-            this.BotonRutas.MouseLeave += new System.EventHandler(this.BotonRutas_MouseLeave);
             // 
             // BotonImpuestos
             // 
@@ -223,18 +445,18 @@
             this.BotonImpuestos.MouseEnter += new System.EventHandler(this.BotonImpuestos_MouseEnter);
             this.BotonImpuestos.MouseLeave += new System.EventHandler(this.BotonImpuestos_MouseLeave);
             // 
-            // BotonPropios
+            // BotonRutas
             // 
-            this.BotonPropios.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Propios;
-            this.BotonPropios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonPropios.Location = new System.Drawing.Point(0, 19);
-            this.BotonPropios.Name = "BotonPropios";
-            this.BotonPropios.Size = new System.Drawing.Size(109, 105);
-            this.BotonPropios.TabIndex = 32;
-            this.BotonPropios.UseVisualStyleBackColor = true;
-            this.BotonPropios.Click += new System.EventHandler(this.BotonPropios_Click);
-            this.BotonPropios.MouseEnter += new System.EventHandler(this.BotonPropios_MouseEnter);
-            this.BotonPropios.MouseLeave += new System.EventHandler(this.BotonPropios_MouseLeave);
+            this.BotonRutas.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Ruta;
+            this.BotonRutas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BotonRutas.Location = new System.Drawing.Point(0, 415);
+            this.BotonRutas.Name = "BotonRutas";
+            this.BotonRutas.Size = new System.Drawing.Size(109, 105);
+            this.BotonRutas.TabIndex = 34;
+            this.BotonRutas.UseVisualStyleBackColor = true;
+            this.BotonRutas.Click += new System.EventHandler(this.BotonRutas_Click);
+            this.BotonRutas.MouseEnter += new System.EventHandler(this.BotonRutas_MouseEnter);
+            this.BotonRutas.MouseLeave += new System.EventHandler(this.BotonRutas_MouseLeave);
             // 
             // BotonAyuda
             // 
@@ -352,228 +574,6 @@
             this.BotonSistema.Click += new System.EventHandler(this.BotonSistema_Click);
             this.BotonSistema.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             this.BotonSistema.MouseLeave += new System.EventHandler(this.BotonSistema_MouseLeave);
-            // 
-            // BotonCliente
-            // 
-            this.BotonCliente.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Clientes1;
-            this.BotonCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonCliente.Location = new System.Drawing.Point(0, 19);
-            this.BotonCliente.Name = "BotonCliente";
-            this.BotonCliente.Size = new System.Drawing.Size(109, 105);
-            this.BotonCliente.TabIndex = 36;
-            this.BotonCliente.UseVisualStyleBackColor = true;
-            this.BotonCliente.Click += new System.EventHandler(this.BotonCliente_Click);
-            this.BotonCliente.MouseEnter += new System.EventHandler(this.BotonCliente_MouseEnter);
-            this.BotonCliente.MouseLeave += new System.EventHandler(this.BotonCliente_MouseLeave);
-            // 
-            // BotonEscaner
-            // 
-            this.BotonEscaner.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Escaner;
-            this.BotonEscaner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonEscaner.Location = new System.Drawing.Point(0, 150);
-            this.BotonEscaner.Name = "BotonEscaner";
-            this.BotonEscaner.Size = new System.Drawing.Size(109, 105);
-            this.BotonEscaner.TabIndex = 37;
-            this.BotonEscaner.UseVisualStyleBackColor = true;
-            this.BotonEscaner.Click += new System.EventHandler(this.BotonEscaner_Click);
-            this.BotonEscaner.MouseEnter += new System.EventHandler(this.BotonEscaner_MouseEnter);
-            this.BotonEscaner.MouseLeave += new System.EventHandler(this.BotonEscaner_MouseLeave);
-            // 
-            // BotonFactMensual
-            // 
-            this.BotonFactMensual.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.FacturaMensual;
-            this.BotonFactMensual.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonFactMensual.Location = new System.Drawing.Point(0, 19);
-            this.BotonFactMensual.Name = "BotonFactMensual";
-            this.BotonFactMensual.Size = new System.Drawing.Size(109, 105);
-            this.BotonFactMensual.TabIndex = 38;
-            this.BotonFactMensual.UseVisualStyleBackColor = true;
-            this.BotonFactMensual.Click += new System.EventHandler(this.BotonFactMensual_Click);
-            this.BotonFactMensual.MouseEnter += new System.EventHandler(this.BotonFactMensual_MouseEnter);
-            this.BotonFactMensual.MouseLeave += new System.EventHandler(this.BotonFactMensual_MouseLeave);
-            // 
-            // BotonFactManual
-            // 
-            this.BotonFactManual.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.FacturaManual;
-            this.BotonFactManual.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonFactManual.Location = new System.Drawing.Point(0, 150);
-            this.BotonFactManual.Name = "BotonFactManual";
-            this.BotonFactManual.Size = new System.Drawing.Size(109, 105);
-            this.BotonFactManual.TabIndex = 39;
-            this.BotonFactManual.UseVisualStyleBackColor = true;
-            this.BotonFactManual.Click += new System.EventHandler(this.BotonFactManual_Click);
-            this.BotonFactManual.MouseEnter += new System.EventHandler(this.BotonFactManual_MouseEnter);
-            this.BotonFactManual.MouseLeave += new System.EventHandler(this.BotonFactManual_MouseLeave);
-            // 
-            // PanelSistema
-            // 
-            this.PanelSistema.Controls.Add(this.BotonPropios);
-            this.PanelSistema.Controls.Add(this.BotonUsuarios);
-            this.PanelSistema.Controls.Add(this.BotonImpuestos);
-            this.PanelSistema.Controls.Add(this.BotonRutas);
-            this.PanelSistema.Location = new System.Drawing.Point(41, 169);
-            this.PanelSistema.Name = "PanelSistema";
-            this.PanelSistema.Size = new System.Drawing.Size(117, 552);
-            this.PanelSistema.TabIndex = 40;
-            this.PanelSistema.Visible = false;
-            // 
-            // PanelClientes
-            // 
-            this.PanelClientes.Controls.Add(this.BotonCliente);
-            this.PanelClientes.Controls.Add(this.BotonEscaner);
-            this.PanelClientes.Location = new System.Drawing.Point(174, 169);
-            this.PanelClientes.Name = "PanelClientes";
-            this.PanelClientes.Size = new System.Drawing.Size(117, 265);
-            this.PanelClientes.TabIndex = 41;
-            this.PanelClientes.Visible = false;
-            // 
-            // PanelFacturas
-            // 
-            this.PanelFacturas.Controls.Add(this.BotonFactMensual);
-            this.PanelFacturas.Controls.Add(this.BotonFactManual);
-            this.PanelFacturas.Location = new System.Drawing.Point(307, 169);
-            this.PanelFacturas.Name = "PanelFacturas";
-            this.PanelFacturas.Size = new System.Drawing.Size(117, 265);
-            this.PanelFacturas.TabIndex = 42;
-            this.PanelFacturas.Visible = false;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sistemaToolStripMenuItem,
-            this.clientesToolStripMenuItem,
-            this.facturasToolStripMenuItem,
-            this.cSB19ToolStripMenuItem,
-            this.contaplusToolStripMenuItem,
-            this.listadosToolStripMenuItem,
-            this.mantenimientoToolStripMenuItem,
-            this.agendaToolStripMenuItem,
-            this.ayudaToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1252, 24);
-            this.menuStrip1.TabIndex = 43;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // sistemaToolStripMenuItem
-            // 
-            this.sistemaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.configurarSistemaToolStripMenuItem,
-            this.datosPropiosToolStripMenuItem,
-            this.usuariosToolStripMenuItem,
-            this.impuestosToolStripMenuItem,
-            this.rutasExportacionToolStripMenuItem});
-            this.sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
-            this.sistemaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.sistemaToolStripMenuItem.Text = "Sistema";
-            // 
-            // datosPropiosToolStripMenuItem
-            // 
-            this.datosPropiosToolStripMenuItem.Name = "datosPropiosToolStripMenuItem";
-            this.datosPropiosToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
-            this.datosPropiosToolStripMenuItem.Text = "Datos Propios";
-            // 
-            // usuariosToolStripMenuItem
-            // 
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
-            this.usuariosToolStripMenuItem.Text = "Usuarios";
-            // 
-            // impuestosToolStripMenuItem
-            // 
-            this.impuestosToolStripMenuItem.Name = "impuestosToolStripMenuItem";
-            this.impuestosToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
-            this.impuestosToolStripMenuItem.Text = "Impuestos";
-            // 
-            // clientesToolStripMenuItem
-            // 
-            this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestiónClientesToolStripMenuItem,
-            this.almacenDocumentosToolStripMenuItem});
-            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.clientesToolStripMenuItem.Text = "Clientes";
-            // 
-            // gestiónClientesToolStripMenuItem
-            // 
-            this.gestiónClientesToolStripMenuItem.Name = "gestiónClientesToolStripMenuItem";
-            this.gestiónClientesToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.gestiónClientesToolStripMenuItem.Text = "Gestión Clientes";
-            // 
-            // almacenDocumentosToolStripMenuItem
-            // 
-            this.almacenDocumentosToolStripMenuItem.Name = "almacenDocumentosToolStripMenuItem";
-            this.almacenDocumentosToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.almacenDocumentosToolStripMenuItem.Text = "Almacen Documentos";
-            // 
-            // facturasToolStripMenuItem
-            // 
-            this.facturasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.facturacionMensualToolStripMenuItem,
-            this.facturaciónManualToolStripMenuItem});
-            this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
-            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.facturasToolStripMenuItem.Text = "Facturas";
-            // 
-            // facturacionMensualToolStripMenuItem
-            // 
-            this.facturacionMensualToolStripMenuItem.Name = "facturacionMensualToolStripMenuItem";
-            this.facturacionMensualToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.facturacionMensualToolStripMenuItem.Text = "Facturación Mensual";
-            // 
-            // facturaciónManualToolStripMenuItem
-            // 
-            this.facturaciónManualToolStripMenuItem.Name = "facturaciónManualToolStripMenuItem";
-            this.facturaciónManualToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.facturaciónManualToolStripMenuItem.Text = "Facturación Manual";
-            // 
-            // cSB19ToolStripMenuItem
-            // 
-            this.cSB19ToolStripMenuItem.Name = "cSB19ToolStripMenuItem";
-            this.cSB19ToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.cSB19ToolStripMenuItem.Text = "CSB19";
-            // 
-            // contaplusToolStripMenuItem
-            // 
-            this.contaplusToolStripMenuItem.Name = "contaplusToolStripMenuItem";
-            this.contaplusToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.contaplusToolStripMenuItem.Text = "Contaplus";
-            // 
-            // listadosToolStripMenuItem
-            // 
-            this.listadosToolStripMenuItem.Name = "listadosToolStripMenuItem";
-            this.listadosToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.listadosToolStripMenuItem.Text = "Listados";
-            // 
-            // mantenimientoToolStripMenuItem
-            // 
-            this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
-            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
-            this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
-            // 
-            // agendaToolStripMenuItem
-            // 
-            this.agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
-            this.agendaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.agendaToolStripMenuItem.Text = "Agenda";
-            // 
-            // ayudaToolStripMenuItem
-            // 
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ayudaToolStripMenuItem.Text = "Ayuda";
-            // 
-            // configurarSistemaToolStripMenuItem
-            // 
-            this.configurarSistemaToolStripMenuItem.Name = "configurarSistemaToolStripMenuItem";
-            this.configurarSistemaToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.configurarSistemaToolStripMenuItem.Text = "Configurar Sistema";
-            // 
-            // rutasExportacionToolStripMenuItem
-            // 
-            this.rutasExportacionToolStripMenuItem.Name = "rutasExportacionToolStripMenuItem";
-            this.rutasExportacionToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.rutasExportacionToolStripMenuItem.Text = "Rutas Exportacion";
             // 
             // MenuPrincipal
             // 

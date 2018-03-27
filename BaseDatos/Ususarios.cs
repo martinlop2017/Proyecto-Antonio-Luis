@@ -27,8 +27,10 @@ namespace BaseDatos
         public Nullable<bool> usuarios { get; set; }
         public Nullable<bool> gusuarios { get; set; }
         public Nullable<bool> impuestos { get; set; }
+        public Nullable<bool> rutas { get; set; }
         public Nullable<bool> clientes { get; set; }
         public Nullable<bool> gclientes { get; set; }
+        public Nullable<bool> Escaner { get; set; }
         public Nullable<bool> articulos { get; set; }
         public Nullable<bool> garticulos { get; set; }
         public Nullable<bool> albaranes { get; set; }

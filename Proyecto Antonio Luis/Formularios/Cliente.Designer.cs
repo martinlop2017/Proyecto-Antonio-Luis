@@ -33,7 +33,6 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.textMiCif = new System.Windows.Forms.TextBox();
             this.textMiNombre = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -104,6 +103,7 @@
             this.textPreciotrabajador = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.button3 = new System.Windows.Forms.Button();
+            this.textMiCif = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,17 +143,6 @@
             this.label15.TabIndex = 127;
             this.label15.Text = "Datos Clientes";
             // 
-            // textMiCif
-            // 
-            this.textMiCif.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textMiCif.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMiCif.Location = new System.Drawing.Point(646, 163);
-            this.textMiCif.MaxLength = 15;
-            this.textMiCif.Name = "textMiCif";
-            this.textMiCif.Size = new System.Drawing.Size(163, 23);
-            this.textMiCif.TabIndex = 1;
-            this.textMiCif.Text = "B-21.144.896";
-            // 
             // textMiNombre
             // 
             this.textMiNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -163,7 +152,6 @@
             this.textMiNombre.Name = "textMiNombre";
             this.textMiNombre.Size = new System.Drawing.Size(476, 23);
             this.textMiNombre.TabIndex = 0;
-            this.textMiNombre.Text = "PESCADOS REBOLLO DE PAN DURO S.L.";
             this.textMiNombre.Leave += new System.EventHandler(this.textMiNombre_Leave);
             this.textMiNombre.Validating += new System.ComponentModel.CancelEventHandler(this.textMiNombre_Validating);
             this.textMiNombre.Validated += new System.EventHandler(this.textMiNombre_Validated);
@@ -261,7 +249,6 @@
             this.textMiTLF2.Name = "textMiTLF2";
             this.textMiTLF2.Size = new System.Drawing.Size(117, 23);
             this.textMiTLF2.TabIndex = 7;
-            this.textMiTLF2.Text = "22222";
             this.textMiTLF2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textMiTLF2_KeyPress);
             // 
             // textMiPersonaContacto
@@ -273,7 +260,6 @@
             this.textMiPersonaContacto.Name = "textMiPersonaContacto";
             this.textMiPersonaContacto.Size = new System.Drawing.Size(239, 23);
             this.textMiPersonaContacto.TabIndex = 9;
-            this.textMiPersonaContacto.Text = "ANTONIO";
             // 
             // textMiMail
             // 
@@ -284,7 +270,6 @@
             this.textMiMail.Name = "textMiMail";
             this.textMiMail.Size = new System.Drawing.Size(243, 23);
             this.textMiMail.TabIndex = 10;
-            this.textMiMail.Text = "PESCADOREBOLLO@GMAIL.COM";
             // 
             // textMiFax
             // 
@@ -295,7 +280,7 @@
             this.textMiFax.Name = "textMiFax";
             this.textMiFax.Size = new System.Drawing.Size(117, 23);
             this.textMiFax.TabIndex = 8;
-            this.textMiFax.Text = "333333";
+            this.textMiFax.TextChanged += new System.EventHandler(this.textMiFax_TextChanged);
             this.textMiFax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textMiFax_KeyPress);
             // 
             // textMiTLF1
@@ -307,7 +292,7 @@
             this.textMiTLF1.Name = "textMiTLF1";
             this.textMiTLF1.Size = new System.Drawing.Size(117, 23);
             this.textMiTLF1.TabIndex = 6;
-            this.textMiTLF1.Text = "11111";
+            this.textMiTLF1.TextChanged += new System.EventHandler(this.textMiTLF1_TextChanged);
             this.textMiTLF1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textMiTLF1_KeyPress);
             // 
             // textMiCP
@@ -319,7 +304,6 @@
             this.textMiCP.Name = "textMiCP";
             this.textMiCP.Size = new System.Drawing.Size(84, 23);
             this.textMiCP.TabIndex = 5;
-            this.textMiCP.Text = "211560";
             // 
             // textMiProvincia
             // 
@@ -330,7 +314,6 @@
             this.textMiProvincia.Name = "textMiProvincia";
             this.textMiProvincia.Size = new System.Drawing.Size(140, 23);
             this.textMiProvincia.TabIndex = 4;
-            this.textMiProvincia.Text = "LA ALCARRIA ";
             // 
             // textMiPoblacion
             // 
@@ -341,7 +324,6 @@
             this.textMiPoblacion.Name = "textMiPoblacion";
             this.textMiPoblacion.Size = new System.Drawing.Size(145, 23);
             this.textMiPoblacion.TabIndex = 3;
-            this.textMiPoblacion.Text = "PUNTA UMBRIA";
             // 
             // textMiDiereccion
             // 
@@ -352,7 +334,6 @@
             this.textMiDiereccion.Name = "textMiDiereccion";
             this.textMiDiereccion.Size = new System.Drawing.Size(381, 23);
             this.textMiDiereccion.TabIndex = 2;
-            this.textMiDiereccion.Text = "C/ DEL PORRON  5, POLIGONO  EL RASTRO NAVE 6 Y 9";
             // 
             // label24
             // 
@@ -406,6 +387,8 @@
             // 
             this.checActivo.AutoSize = true;
             this.checActivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.checActivo.Checked = true;
+            this.checActivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checActivo.Location = new System.Drawing.Point(61, 417);
             this.checActivo.Name = "checActivo";
@@ -413,6 +396,7 @@
             this.checActivo.TabIndex = 11;
             this.checActivo.Text = "Activo.";
             this.checActivo.UseVisualStyleBackColor = false;
+            this.checActivo.CheckedChanged += new System.EventHandler(this.checActivo_CheckedChanged);
             // 
             // checDomiciliacion
             // 
@@ -733,7 +717,6 @@
             this.textTrabajadores.Name = "textTrabajadores";
             this.textTrabajadores.Size = new System.Drawing.Size(76, 23);
             this.textTrabajadores.TabIndex = 22;
-            this.textTrabajadores.Text = "10";
             this.textTrabajadores.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTrabajadores_KeyPress);
             // 
             // label12
@@ -769,7 +752,6 @@
             this.textTarifa.Name = "textTarifa";
             this.textTarifa.Size = new System.Drawing.Size(118, 23);
             this.textTarifa.TabIndex = 25;
-            this.textTarifa.Text = "150,00";
             this.textTarifa.TextChanged += new System.EventHandler(this.textTarifa_TextChanged);
             this.textTarifa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTarifa_KeyPress);
             // 
@@ -796,7 +778,6 @@
             this.textCCC1.Name = "textCCC1";
             this.textCCC1.Size = new System.Drawing.Size(50, 22);
             this.textCCC1.TabIndex = 15;
-            this.textCCC1.Text = "ES99";
             // 
             // textCCC2
             // 
@@ -808,7 +789,6 @@
             this.textCCC2.Name = "textCCC2";
             this.textCCC2.Size = new System.Drawing.Size(50, 22);
             this.textCCC2.TabIndex = 16;
-            this.textCCC2.Text = "1111";
             this.textCCC2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCCC2_KeyPress);
             // 
             // textCCC3
@@ -821,7 +801,6 @@
             this.textCCC3.Name = "textCCC3";
             this.textCCC3.Size = new System.Drawing.Size(50, 22);
             this.textCCC3.TabIndex = 17;
-            this.textCCC3.Text = "2222";
             this.textCCC3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCCC3_KeyPress);
             // 
             // textCCC4
@@ -834,7 +813,6 @@
             this.textCCC4.Name = "textCCC4";
             this.textCCC4.Size = new System.Drawing.Size(50, 22);
             this.textCCC4.TabIndex = 18;
-            this.textCCC4.Text = "3333";
             this.textCCC4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCCC4_KeyPress);
             // 
             // textCCC5
@@ -847,7 +825,6 @@
             this.textCCC5.Name = "textCCC5";
             this.textCCC5.Size = new System.Drawing.Size(50, 22);
             this.textCCC5.TabIndex = 19;
-            this.textCCC5.Text = "4444";
             this.textCCC5.TextChanged += new System.EventHandler(this.textCCC5_TextChanged);
             this.textCCC5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCCC5_KeyPress);
             // 
@@ -861,7 +838,6 @@
             this.textCCC6.Name = "textCCC6";
             this.textCCC6.Size = new System.Drawing.Size(50, 22);
             this.textCCC6.TabIndex = 20;
-            this.textCCC6.Text = "5555";
             this.textCCC6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCCC6_KeyPress);
             // 
             // contextMenuStrip1
@@ -960,7 +936,6 @@
             this.textPreciotrabajador.Name = "textPreciotrabajador";
             this.textPreciotrabajador.Size = new System.Drawing.Size(76, 23);
             this.textPreciotrabajador.TabIndex = 196;
-            this.textPreciotrabajador.Text = "11";
             // 
             // errorProvider1
             // 
@@ -975,6 +950,16 @@
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // textMiCif
+            // 
+            this.textMiCif.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textMiCif.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textMiCif.Location = new System.Drawing.Point(646, 163);
+            this.textMiCif.MaxLength = 15;
+            this.textMiCif.Name = "textMiCif";
+            this.textMiCif.Size = new System.Drawing.Size(163, 23);
+            this.textMiCif.TabIndex = 1;
             // 
             // Cliente
             // 
@@ -1072,7 +1057,6 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textMiCif;
         private System.Windows.Forms.TextBox textMiNombre;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
@@ -1143,5 +1127,6 @@
         private System.Windows.Forms.TextBox textPreciotrabajador;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textMiCif;
     }
 }

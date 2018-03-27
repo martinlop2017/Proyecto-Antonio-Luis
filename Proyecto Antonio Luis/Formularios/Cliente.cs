@@ -908,5 +908,20 @@ namespace Proyecto_Antonio_Luis.Formularios
 
 
             }
+
+        private void textMiTLF1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textMiFax_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checActivo_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
