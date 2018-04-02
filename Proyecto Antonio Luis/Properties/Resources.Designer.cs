@@ -133,6 +133,16 @@ namespace Proyecto_Antonio_Luis.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Clientes_Apagado2 {
+            get {
+                object obj = ResourceManager.GetObject("Clientes Apagado2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Clientes_Azul {
             get {
                 object obj = ResourceManager.GetObject("Clientes Azul", resourceCulture);
@@ -273,6 +283,16 @@ namespace Proyecto_Antonio_Luis.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FacturaManua_Apagadol {
+            get {
+                object obj = ResourceManager.GetObject("FacturaManua Apagadol", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FacturaManual {
             get {
                 object obj = ResourceManager.GetObject("FacturaManual", resourceCulture);
@@ -303,6 +323,16 @@ namespace Proyecto_Antonio_Luis.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FacturaMensual_Apagado {
+            get {
+                object obj = ResourceManager.GetObject("FacturaMensual Apagado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FacturaMensual_Azul {
             get {
                 object obj = ResourceManager.GetObject("FacturaMensual Azul", resourceCulture);
@@ -316,6 +346,16 @@ namespace Proyecto_Antonio_Luis.Properties {
         internal static System.Drawing.Bitmap Facturas {
             get {
                 object obj = ResourceManager.GetObject("Facturas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Facturas_Apagado {
+            get {
+                object obj = ResourceManager.GetObject("Facturas Apagado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

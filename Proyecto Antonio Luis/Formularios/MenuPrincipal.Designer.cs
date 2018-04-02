@@ -371,7 +371,7 @@
             // 
             this.BotonFactManual.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.FacturaManual;
             this.BotonFactManual.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonFactManual.Location = new System.Drawing.Point(0, 150);
+            this.BotonFactManual.Location = new System.Drawing.Point(0, 147);
             this.BotonFactManual.Name = "BotonFactManual";
             this.BotonFactManual.Size = new System.Drawing.Size(109, 105);
             this.BotonFactManual.TabIndex = 39;

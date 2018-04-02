@@ -121,7 +121,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                         }
 
 
-                        if (amodificar.articulos == true)
+                        if (amodificar.facturas ==  true)
                         {
                             arbol.Nodes[2].Checked = true;
                         }
@@ -129,13 +129,21 @@ namespace Proyecto_Antonio_Luis.Formularios
                         {
                             arbol.Nodes[2].Checked = false;
                         }
-                        if (amodificar.garticulos == true)
+                        if (amodificar.fmensual == true)
                         {
                             arbol.Nodes[2].Nodes[0].Checked = true;
                         }
                         else
                         {
                             arbol.Nodes[2].Nodes[0].Checked = false;
+                        }
+                        if (amodificar.fmanual == true)
+                        {
+                            arbol.Nodes[2].Nodes[1].Checked = true;
+                        }
+                        else
+                        {
+                            arbol.Nodes[2].Nodes[1].Checked = false;
                         }
 
 
@@ -405,11 +413,15 @@ namespace Proyecto_Antonio_Luis.Formularios
 
                     if (arbol.Nodes[2].Checked == true)
                     {
-                        nuevoUsuario.articulos = true;
+                        nuevoUsuario.facturas = true;
                     }
                     if (arbol.Nodes[2].Nodes[0].Checked == true)
                     {
-                        nuevoUsuario.garticulos = true;
+                        nuevoUsuario.fmensual = true;
+                    }
+                    if (arbol.Nodes[2].Nodes[1].Checked == true)
+                    {
+                        nuevoUsuario.fmanual = true;
                     }
 
 
@@ -580,11 +592,15 @@ namespace Proyecto_Antonio_Luis.Formularios
 
                     if (arbol.Nodes[2].Checked == true)
                     {
-                        usuarioAmodificar.articulos = true;
+                        usuarioAmodificar.facturas = true;
                     }
                     if (arbol.Nodes[2].Nodes[0].Checked == true)
                     {
-                        usuarioAmodificar.garticulos = true;
+                        usuarioAmodificar.fmensual = true;
+                    }
+                    if (arbol.Nodes[2].Nodes[1].Checked == true)
+                    {
+                        usuarioAmodificar.fmanual = true;
                     }
 
 

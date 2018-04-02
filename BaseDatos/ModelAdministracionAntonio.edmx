@@ -179,7 +179,7 @@
           <Property Name="activo" Type="bit" />
           <Property Name="grupo" Type="nchar" MaxLength="20" />
           <Property Name="pregunta" Type="nchar" MaxLength="100" />
-          <Property Name="respuesta" Type="nchar" MaxLength="400" />
+          <Property Name="respuesta" Type="nchar" MaxLength="100" />
           <Property Name="sistema" Type="bit" />
           <Property Name="misdatos" Type="bit" />
           <Property Name="usuarios" Type="bit" />
@@ -189,11 +189,11 @@
           <Property Name="clientes" Type="bit" />
           <Property Name="gclientes" Type="bit" />
           <Property Name="Escaner" Type="bit" />
-          <Property Name="articulos" Type="bit" />
-          <Property Name="garticulos" Type="bit" />
+          <Property Name="facturas" Type="bit" />
+          <Property Name="fmensual" Type="bit" />
+          <Property Name="fmanual" Type="bit" />
           <Property Name="albaranes" Type="bit" />
           <Property Name="galbaranes" Type="bit" />
-          <Property Name="facturas" Type="bit" />
           <Property Name="gfacturas" Type="bit" />
           <Property Name="csb19" Type="bit" />
           <Property Name="contaplus" Type="bit" />
@@ -400,7 +400,7 @@
           <Property Name="activo" Type="Boolean" />
           <Property Name="grupo" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="pregunta" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="respuesta" Type="String" MaxLength="400" FixedLength="true" Unicode="true" />
+          <Property Name="respuesta" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="sistema" Type="Boolean" />
           <Property Name="misdatos" Type="Boolean" />
           <Property Name="usuarios" Type="Boolean" />
@@ -410,11 +410,11 @@
           <Property Name="clientes" Type="Boolean" />
           <Property Name="gclientes" Type="Boolean" />
           <Property Name="Escaner" Type="Boolean" />
-          <Property Name="articulos" Type="Boolean" />
-          <Property Name="garticulos" Type="Boolean" />
+          <Property Name="facturas" Type="Boolean" />
+          <Property Name="fmensual" Type="Boolean" />
+          <Property Name="fmanual" Type="Boolean" />
           <Property Name="albaranes" Type="Boolean" />
           <Property Name="galbaranes" Type="Boolean" />
-          <Property Name="facturas" Type="Boolean" />
           <Property Name="gfacturas" Type="Boolean" />
           <Property Name="csb19" Type="Boolean" />
           <Property Name="contaplus" Type="Boolean" />
@@ -612,11 +612,11 @@
                 <ScalarProperty Name="contaplus" ColumnName="contaplus" />
                 <ScalarProperty Name="csb19" ColumnName="csb19" />
                 <ScalarProperty Name="gfacturas" ColumnName="gfacturas" />
-                <ScalarProperty Name="facturas" ColumnName="facturas" />
                 <ScalarProperty Name="galbaranes" ColumnName="galbaranes" />
                 <ScalarProperty Name="albaranes" ColumnName="albaranes" />
-                <ScalarProperty Name="garticulos" ColumnName="garticulos" />
-                <ScalarProperty Name="articulos" ColumnName="articulos" />
+                <ScalarProperty Name="fmanual" ColumnName="fmanual" />
+                <ScalarProperty Name="fmensual" ColumnName="fmensual" />
+                <ScalarProperty Name="facturas" ColumnName="facturas" />
                 <ScalarProperty Name="Escaner" ColumnName="Escaner" />
                 <ScalarProperty Name="gclientes" ColumnName="gclientes" />
                 <ScalarProperty Name="clientes" ColumnName="clientes" />

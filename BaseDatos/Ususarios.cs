@@ -31,11 +31,11 @@ namespace BaseDatos
         public Nullable<bool> clientes { get; set; }
         public Nullable<bool> gclientes { get; set; }
         public Nullable<bool> Escaner { get; set; }
-        public Nullable<bool> articulos { get; set; }
-        public Nullable<bool> garticulos { get; set; }
+        public Nullable<bool> facturas { get; set; }
+        public Nullable<bool> fmensual { get; set; }
+        public Nullable<bool> fmanual { get; set; }
         public Nullable<bool> albaranes { get; set; }
         public Nullable<bool> galbaranes { get; set; }
-        public Nullable<bool> facturas { get; set; }
         public Nullable<bool> gfacturas { get; set; }
         public Nullable<bool> csb19 { get; set; }
         public Nullable<bool> contaplus { get; set; }

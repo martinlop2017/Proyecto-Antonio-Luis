@@ -76,6 +76,39 @@ namespace Proyecto_Antonio_Luis.Formularios
                 BotonEscaner.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Escaner_Apagado;
             }
 
+
+
+            if (candado.First().facturas == false)
+            {
+                BotonFacturas.Enabled = false;
+                BotonFacturas.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Facturas_Apagado;
+            }
+            if (candado.First().fmensual == false)
+            {
+                BotonFactMensual.Enabled = false;
+                BotonFactMensual.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.FacturaMensual_Apagado;
+            }
+            if (candado.First().Escaner == false)
+            {
+                BotonFactManual.Enabled = false;
+                BotonFactManual.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.FacturaManua_Apagadol;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)

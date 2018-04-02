@@ -501,6 +501,18 @@
   <ItemGroup>
     <None Include="Resources\Escaner Apagado.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes Apagado2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facturas Apagado.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FacturaMensual Apagado.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FacturaManua Apagadol.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

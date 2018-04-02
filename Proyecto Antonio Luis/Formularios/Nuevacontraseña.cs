@@ -50,7 +50,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                 var pregunta = bd.Ususarios.Where(X => X.nombre == Globales.llamadas).ToList();
 
                 pregunta.First().login = Encriptar.codificar(textBox1.Text);
-                pregunta.First().pregunta = Encriptar.codificar(textBox3.Text);
+                pregunta.First().pregunta = textBox3.Text;
                 pregunta.First().respuesta = Encriptar.codificar(textBox4.Text);
 
                 bd.SaveChanges();

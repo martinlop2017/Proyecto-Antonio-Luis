@@ -29,39 +29,41 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuario));
-            System.Windows.Forms.TreeNode treeNode67 = new System.Windows.Forms.TreeNode("Mis Datos");
-            System.Windows.Forms.TreeNode treeNode68 = new System.Windows.Forms.TreeNode("Gestion Usuarios");
-            System.Windows.Forms.TreeNode treeNode69 = new System.Windows.Forms.TreeNode("Ususarios", new System.Windows.Forms.TreeNode[] {
-            treeNode68});
-            System.Windows.Forms.TreeNode treeNode70 = new System.Windows.Forms.TreeNode("Impuestos");
-            System.Windows.Forms.TreeNode treeNode71 = new System.Windows.Forms.TreeNode("Rutas");
-            System.Windows.Forms.TreeNode treeNode72 = new System.Windows.Forms.TreeNode("Sistema", new System.Windows.Forms.TreeNode[] {
-            treeNode67,
-            treeNode69,
-            treeNode70,
-            treeNode71});
-            System.Windows.Forms.TreeNode treeNode73 = new System.Windows.Forms.TreeNode("Gestion Clientes");
-            System.Windows.Forms.TreeNode treeNode74 = new System.Windows.Forms.TreeNode("Escaner");
-            System.Windows.Forms.TreeNode treeNode75 = new System.Windows.Forms.TreeNode("Clientes", new System.Windows.Forms.TreeNode[] {
-            treeNode73,
-            treeNode74});
-            System.Windows.Forms.TreeNode treeNode76 = new System.Windows.Forms.TreeNode("Gestion Articulos");
-            System.Windows.Forms.TreeNode treeNode77 = new System.Windows.Forms.TreeNode("Articulos", new System.Windows.Forms.TreeNode[] {
-            treeNode76});
-            System.Windows.Forms.TreeNode treeNode78 = new System.Windows.Forms.TreeNode("Gestion Albaranes");
-            System.Windows.Forms.TreeNode treeNode79 = new System.Windows.Forms.TreeNode("Albaranes", new System.Windows.Forms.TreeNode[] {
-            treeNode78});
-            System.Windows.Forms.TreeNode treeNode80 = new System.Windows.Forms.TreeNode("Gestion Facturas");
-            System.Windows.Forms.TreeNode treeNode81 = new System.Windows.Forms.TreeNode("Facturas", new System.Windows.Forms.TreeNode[] {
-            treeNode80});
-            System.Windows.Forms.TreeNode treeNode82 = new System.Windows.Forms.TreeNode("CSB19");
-            System.Windows.Forms.TreeNode treeNode83 = new System.Windows.Forms.TreeNode("Contaplus");
-            System.Windows.Forms.TreeNode treeNode84 = new System.Windows.Forms.TreeNode("Listados");
-            System.Windows.Forms.TreeNode treeNode85 = new System.Windows.Forms.TreeNode("Copias Seguridad");
-            System.Windows.Forms.TreeNode treeNode86 = new System.Windows.Forms.TreeNode("Gestion Agenda");
-            System.Windows.Forms.TreeNode treeNode87 = new System.Windows.Forms.TreeNode("Gestion Avisos");
-            System.Windows.Forms.TreeNode treeNode88 = new System.Windows.Forms.TreeNode("Avisos", new System.Windows.Forms.TreeNode[] {
-            treeNode87});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Mis Datos");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Gestion Usuarios");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Ususarios", new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Impuestos");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Rutas");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Sistema", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode3,
+            treeNode4,
+            treeNode5});
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Gestion Clientes");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Escaner");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Clientes", new System.Windows.Forms.TreeNode[] {
+            treeNode7,
+            treeNode8});
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Facturacion Mensual");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Facturacion Manual");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Facturacion", new System.Windows.Forms.TreeNode[] {
+            treeNode10,
+            treeNode11});
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Gestion Albaranes");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Albaranes", new System.Windows.Forms.TreeNode[] {
+            treeNode13});
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Gestion Facturas");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Facturas", new System.Windows.Forms.TreeNode[] {
+            treeNode15});
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("CSB19");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Contaplus");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Listados");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Copias Seguridad");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Gestion Agenda");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Gestion Avisos");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Avisos", new System.Windows.Forms.TreeNode[] {
+            treeNode22});
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -247,62 +249,64 @@
             this.arbol.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.arbol.Location = new System.Drawing.Point(456, 150);
             this.arbol.Name = "arbol";
-            treeNode67.Name = "MisDAtos";
-            treeNode67.Text = "Mis Datos";
-            treeNode68.Name = "Gestion Usuarios";
-            treeNode68.Text = "Gestion Usuarios";
-            treeNode69.Name = "Ususarios";
-            treeNode69.Text = "Ususarios";
-            treeNode70.Name = "Impuestos";
-            treeNode70.Text = "Impuestos";
-            treeNode71.Name = "Rutas";
-            treeNode71.Text = "Rutas";
-            treeNode72.Name = "Sistema";
-            treeNode72.Text = "Sistema";
-            treeNode73.Name = "GestionClientes";
-            treeNode73.Text = "Gestion Clientes";
-            treeNode74.Name = "Escaner";
-            treeNode74.Text = "Escaner";
-            treeNode75.Name = "Clientes";
-            treeNode75.Text = "Clientes";
-            treeNode76.Name = "GestionArticulos";
-            treeNode76.Text = "Gestion Articulos";
-            treeNode77.Name = "Articulos";
-            treeNode77.Text = "Articulos";
-            treeNode78.Name = "GestionAlbaranes";
-            treeNode78.Text = "Gestion Albaranes";
-            treeNode79.Name = "Albaranes";
-            treeNode79.Text = "Albaranes";
-            treeNode80.Name = "GestionFaturas";
-            treeNode80.Text = "Gestion Facturas";
-            treeNode81.Name = "Facturas";
-            treeNode81.Text = "Facturas";
-            treeNode82.Name = "CSB19";
-            treeNode82.Text = "CSB19";
-            treeNode83.Name = "Contaplus";
-            treeNode83.Text = "Contaplus";
-            treeNode84.Name = "Listados";
-            treeNode84.Text = "Listados";
-            treeNode85.Name = "CopiaSeguridad";
-            treeNode85.Text = "Copias Seguridad";
-            treeNode86.Name = "Gestion Agenda";
-            treeNode86.Text = "Gestion Agenda";
-            treeNode87.Name = "GestionAvisos";
-            treeNode87.Text = "Gestion Avisos";
-            treeNode88.Name = "Agenda";
-            treeNode88.Text = "Avisos";
+            treeNode1.Name = "MisDAtos";
+            treeNode1.Text = "Mis Datos";
+            treeNode2.Name = "Gestion Usuarios";
+            treeNode2.Text = "Gestion Usuarios";
+            treeNode3.Name = "Ususarios";
+            treeNode3.Text = "Ususarios";
+            treeNode4.Name = "Impuestos";
+            treeNode4.Text = "Impuestos";
+            treeNode5.Name = "Rutas";
+            treeNode5.Text = "Rutas";
+            treeNode6.Name = "Sistema";
+            treeNode6.Text = "Sistema";
+            treeNode7.Name = "GestionClientes";
+            treeNode7.Text = "Gestion Clientes";
+            treeNode8.Name = "Escaner";
+            treeNode8.Text = "Escaner";
+            treeNode9.Name = "Clientes";
+            treeNode9.Text = "Clientes";
+            treeNode10.Name = "Facturacion Mensual";
+            treeNode10.Text = "Facturacion Mensual";
+            treeNode11.Name = "Facturacion Manual";
+            treeNode11.Text = "Facturacion Manual";
+            treeNode12.Name = "Facturacion";
+            treeNode12.Text = "Facturacion";
+            treeNode13.Name = "GestionAlbaranes";
+            treeNode13.Text = "Gestion Albaranes";
+            treeNode14.Name = "Albaranes";
+            treeNode14.Text = "Albaranes";
+            treeNode15.Name = "GestionFaturas";
+            treeNode15.Text = "Gestion Facturas";
+            treeNode16.Name = "Facturas";
+            treeNode16.Text = "Facturas";
+            treeNode17.Name = "CSB19";
+            treeNode17.Text = "CSB19";
+            treeNode18.Name = "Contaplus";
+            treeNode18.Text = "Contaplus";
+            treeNode19.Name = "Listados";
+            treeNode19.Text = "Listados";
+            treeNode20.Name = "CopiaSeguridad";
+            treeNode20.Text = "Copias Seguridad";
+            treeNode21.Name = "Gestion Agenda";
+            treeNode21.Text = "Gestion Agenda";
+            treeNode22.Name = "GestionAvisos";
+            treeNode22.Text = "Gestion Avisos";
+            treeNode23.Name = "Agenda";
+            treeNode23.Text = "Avisos";
             this.arbol.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode72,
-            treeNode75,
-            treeNode77,
-            treeNode79,
-            treeNode81,
-            treeNode82,
-            treeNode83,
-            treeNode84,
-            treeNode85,
-            treeNode86,
-            treeNode88});
+            treeNode6,
+            treeNode9,
+            treeNode12,
+            treeNode14,
+            treeNode16,
+            treeNode17,
+            treeNode18,
+            treeNode19,
+            treeNode20,
+            treeNode21,
+            treeNode23});
             this.arbol.Size = new System.Drawing.Size(246, 294);
             this.arbol.TabIndex = 8;
             this.arbol.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.arbol_AfterSelect);

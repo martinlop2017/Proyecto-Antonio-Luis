@@ -17,7 +17,7 @@ namespace Proyecto_Antonio_Luis.Formularios
     public partial class preguntaseguridad : Form
     {
         AdministracionAntonioEntities bd;
-        string respuesta;
+        string respuestassss;
         int contador;
 
         public preguntaseguridad()
@@ -30,13 +30,13 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
             var pregunta = bd.Ususarios.Where(X => X.nombre == Globales.llamadas).ToList();
             label2.Text = pregunta.First().pregunta.ToString();
-            label2.Text = Encriptar.Descodificar(label2.Text);
-            respuesta = pregunta.First().respuesta.ToString();
+            //  label2.Text = Encriptar.Descodificar(label2.Text);
+            respuestassss = pregunta.First().respuesta.ToString();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            string llave = Encriptar.Descodificar(respuesta);
+            string llave = Encriptar.Descodificar(respuestassss);
 
 
             if (textBox1.Text == llave)
@@ -44,6 +44,8 @@ namespace Proyecto_Antonio_Luis.Formularios
 
                 Nuevacontraseña form = new Nuevacontraseña();
                 form.Show();
+                Close();
+                
             }
             else
             {
