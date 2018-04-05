@@ -102,7 +102,6 @@
             this.checpormail = new System.Windows.Forms.CheckBox();
             this.textPreciotrabajador = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.button3 = new System.Windows.Forms.Button();
             this.textMiCif = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -941,16 +940,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(109, 44);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(170, 38);
-            this.button3.TabIndex = 197;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
             // textMiCif
             // 
             this.textMiCif.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -968,7 +957,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Clientes2;
             this.ClientSize = new System.Drawing.Size(879, 867);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.textPreciotrabajador);
             this.Controls.Add(this.checpormail);
             this.Controls.Add(this.textFechaAlta);
@@ -1126,7 +1114,6 @@
         private System.Windows.Forms.CheckBox checpormail;
         private System.Windows.Forms.TextBox textPreciotrabajador;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textMiCif;
     }
 }

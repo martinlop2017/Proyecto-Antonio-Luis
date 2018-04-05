@@ -80,21 +80,41 @@ namespace Proyecto_Antonio_Luis.Formularios
                         {
                             checActivo.Checked = true;
                         }
+                        else
+                        {
+                            checActivo.Checked = false;
+                        }
                         if (mostrar.domiciliadocliente == true)
                         {
                             checDomiciliacion.Checked = true;
+                        }
+                        else
+                        {
+                            checDomiciliacion.Checked = false;
                         }
                         if (mostrar.recargo == true)
                         {
                             checRE.Checked = true;
                         }
+                        else
+                        {
+                            checRE.Checked = false;
+                        }
                         if (mostrar.contabilizarcliente == true)
                         {
                             checContabilizar.Checked = true;
                         }
+                        else
+                        {
+                            checContabilizar.Checked = false;
+                        }
                         if(mostrar.pormailcliente == true)
                         {
                             checpormail.Checked = true;
+                        }
+                        else
+                        {
+                            checpormail.Checked = false;
                         }
                         textCCC1.Text = mostrar.iban1cliente.ToString();
                         textCCC2.Text = mostrar.iban2cliente.ToString();

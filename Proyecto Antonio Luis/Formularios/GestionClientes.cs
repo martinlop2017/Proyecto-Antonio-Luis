@@ -122,7 +122,7 @@ namespace Proyecto_Antonio_Luis.Formularios
         private void GestionClientes_Load(object sender, EventArgs e)
         {
             //CARGA LOS REGISTROS EN EL GRIP AL INICIAR EL FORM
-
+            comboBox1.Text = "Nombre";
             dgvclientes.DataSource = "";
             var cargaclientes = bd.Clientes.OrderBy(x => x.nombrecliente);
             dgvclientes.DataSource = cargaclientes.ToList();
@@ -313,6 +313,11 @@ namespace Proyecto_Antonio_Luis.Formularios
         }
 
         private void dgvclientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
