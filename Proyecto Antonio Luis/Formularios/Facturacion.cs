@@ -10,12 +10,16 @@ using System.Windows.Forms;
 using BaseDatos;
 using Proyecto_Antonio_Luis.Clases;
 using Proyecto_Antonio_Luis.Formularios;
+using System.Threading;
 
 namespace Proyecto_Antonio_Luis.Formularios
 {
     public partial class Facturacion : Form
     {
-         AdministracionAntonioEntities bd;
+        TaskScheduler uiScheduler;
+        int pasos = 1;
+
+        AdministracionAntonioEntities bd;
         //esta lista la declaro arriba para poder usarla posteriormente
         List<albaranesclientes> albaranes = new List<albaranesclientes>();
         List<datoslistadoreme> alistar = new List<datoslistadoreme>();
@@ -25,7 +29,8 @@ namespace Proyecto_Antonio_Luis.Formularios
         public Facturacion()
         {
             InitializeComponent();
-           
+            this.uiScheduler = TaskScheduler.FromCurrentSynchronizationContext();
+
             bd = new AdministracionAntonioEntities();
           
 
@@ -75,6 +80,11 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void sumar_Click(object sender, EventArgs e)
         {
+            
+           
+
+
+
             // cuando generamos, recorremos los datos de la tabla clientes, y extraemos los datos de los que
             //tienen como true el campo activo.
 
@@ -101,6 +111,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             
             añadir.Enabled = true;
             eliminar.Enabled = true;
+
 
 
 
@@ -287,7 +298,16 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void facturar_Click(object sender, EventArgs e)
         {
-            
+
+            pictureBox1.Visible = true;
+
+            Thread.Sleep(2000);
+
+
+
+
+
+
 
             generar.Enabled = false;
             añadir.Enabled = false;
@@ -516,8 +536,10 @@ namespace Proyecto_Antonio_Luis.Formularios
 
 
                 // cargamos la pantalla de listados de remesas
-                Form2 form = new Form2(alistar);
-                form.Show();
+                Form2 forma = new Form2(alistar);
+                forma.Show();
+      
+
 
 
             }
@@ -527,7 +549,8 @@ namespace Proyecto_Antonio_Luis.Formularios
                 MessageBox.Show("Error" + exp.Message);
             }
 
-       }
+
+        }
 
 
 
@@ -679,6 +702,99 @@ namespace Proyecto_Antonio_Luis.Formularios
         private void dgvTemporal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+        private void imprimir_Click(object sender, EventArgs e)
+        {
+
+        }
+       
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            switch (pasos)
+            {
+                case 1:
+                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_2;
+                    pasos++;
+                    break;
+                case 2:
+                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_3;
+                    pasos++;
+                    break;
+                case 3:
+                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_4;
+                    pasos++;
+                    break;
+                case 4:
+                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_5;
+                    pasos++;
+                    break;
+                case 5:
+                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_6;
+                    pasos++;
+                    break;
+                case 6:
+                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_7;
+                    pasos++;
+                    break;
+                case 7:
+                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_8;
+                    pasos++;
+                    break;
+                case 8:
+                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_9;
+                    pasos++;
+                    break;
+                case 9:
+                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_10;
+                    pasos++;
+                    break;
+                case 10:
+                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_11;
+                    pasos++;
+                    break;
+                case 11:
+                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_12;
+                    pasos++;
+                    break;
+                case 12:
+                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_13;
+                    pasos++;
+                    break;
+                case 13:
+                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_14;
+                    pasos++;
+                    break;
+                case 14:
+                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_15;
+                    pasos++;
+                    break;
+                case 15:
+                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_16;
+                    pasos = 1;
+                    break;
+            }
+        }
+
+        private void facturar_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void facturar_MouseUp(object sender, MouseEventArgs e)
+        {
+            Image img = Image.FromFile("C:\\Equipo Martin\\Programacion\\Repositorio Remoto\\Proyecto Antonio Luis\\Proyecto Antonio Luis\\Imagenes\\pROGRESS\\gif flor 1.gif");
+
+            pictureBox1.Image = img;
+
+            
         }
     }
     

@@ -63,6 +63,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvTemporal = new System.Windows.Forms.DataGridView();
+            this.albtipoiva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.albaranesclientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -76,6 +77,9 @@
             this.administracionAntonioDataSet1 = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1();
             this.facturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.facturasTableAdapter = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1TableAdapters.FacturasTableAdapter();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tempremesaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tempnumerofacturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.temptipoivaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -110,10 +114,7 @@
             this.tempparaimprimirDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tempparacontabilizarDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.temporalBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.albaranesclientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.datoslistadoremeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albtipoiva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -146,6 +147,8 @@
             this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.albaranesclientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.datoslistadoremeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTemporal)).BeginInit();
@@ -156,6 +159,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.temporalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.albaranesclientesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datoslistadoremeBindingSource)).BeginInit();
@@ -212,8 +216,10 @@
             this.facturar.TabIndex = 31;
             this.facturar.UseVisualStyleBackColor = false;
             this.facturar.Click += new System.EventHandler(this.facturar_Click);
+            this.facturar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.facturar_MouseDown);
             this.facturar.MouseEnter += new System.EventHandler(this.facturar_MouseEnter);
             this.facturar.MouseLeave += new System.EventHandler(this.facturar_MouseLeave);
+            this.facturar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.facturar_MouseUp);
             // 
             // imprimir
             // 
@@ -225,6 +231,7 @@
             this.imprimir.Size = new System.Drawing.Size(52, 56);
             this.imprimir.TabIndex = 32;
             this.imprimir.UseVisualStyleBackColor = false;
+            this.imprimir.Click += new System.EventHandler(this.imprimir_Click);
             this.imprimir.MouseEnter += new System.EventHandler(this.imprimir_MouseEnter);
             this.imprimir.MouseLeave += new System.EventHandler(this.imprimir_MouseLeave);
             // 
@@ -528,6 +535,13 @@
             this.dgvTemporal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTemporal_CellContentClick);
             this.dgvTemporal.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTemporal_CellValueChanged);
             // 
+            // albtipoiva
+            // 
+            this.albtipoiva.DataPropertyName = "albtipoiva";
+            this.albtipoiva.HeaderText = "albtipoiva";
+            this.albtipoiva.Name = "albtipoiva";
+            this.albtipoiva.Visible = false;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
@@ -708,6 +722,27 @@
             // facturasTableAdapter
             // 
             this.facturasTableAdapter.ClearBeforeFill = true;
+            // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Flor_1;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.Location = new System.Drawing.Point(614, 450);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(52, 58);
+            this.panel4.TabIndex = 53;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(210, 178);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 126);
+            this.pictureBox1.TabIndex = 54;
+            this.pictureBox1.TabStop = false;
             // 
             // tempremesaDataGridViewTextBoxColumn
             // 
@@ -958,14 +993,6 @@
             // 
             this.temporalBindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Clases.temporal);
             // 
-            // albaranesclientesBindingSource1
-            // 
-            this.albaranesclientesBindingSource1.DataSource = typeof(Proyecto_Antonio_Luis.Clases.albaranesclientes);
-            // 
-            // datoslistadoremeBindingSource
-            // 
-            this.datoslistadoremeBindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Clases.datoslistadoreme);
-            // 
             // dataGridViewTextBoxColumn28
             // 
             this.dataGridViewTextBoxColumn28.DataPropertyName = "albmes";
@@ -973,13 +1000,6 @@
             this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
             this.dataGridViewTextBoxColumn28.ReadOnly = true;
             this.dataGridViewTextBoxColumn28.Width = 63;
-            // 
-            // albtipoiva
-            // 
-            this.albtipoiva.DataPropertyName = "albtipoiva";
-            this.albtipoiva.HeaderText = "albtipoiva";
-            this.albtipoiva.Name = "albtipoiva";
-            this.albtipoiva.Visible = false;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -1212,6 +1232,14 @@
             this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
             this.dataGridViewCheckBoxColumn5.Visible = false;
             // 
+            // albaranesclientesBindingSource1
+            // 
+            this.albaranesclientesBindingSource1.DataSource = typeof(Proyecto_Antonio_Luis.Clases.albaranesclientes);
+            // 
+            // datoslistadoremeBindingSource
+            // 
+            this.datoslistadoremeBindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Clases.datoslistadoreme);
+            // 
             // Facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1220,6 +1248,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1281, 959);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dgvTemporal);
@@ -1254,6 +1284,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.temporalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.albaranesclientesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datoslistadoremeBindingSource)).EndInit();
@@ -1456,5 +1487,8 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

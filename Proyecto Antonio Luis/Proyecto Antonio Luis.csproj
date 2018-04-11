@@ -110,6 +110,12 @@
     <Compile Include="Formularios\Control Usuarios.Designer.cs">
       <DependentUpon>Control Usuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Espera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Espera.Designer.cs">
+      <DependentUpon>Espera.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Facturacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +182,12 @@
     <Compile Include="Formularios\preguntaseguridad.Designer.cs">
       <DependentUpon>preguntaseguridad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\pruebasprogress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\pruebasprogress.Designer.cs">
+      <DependentUpon>pruebasprogress.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Rutas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Control Usuarios.resx">
       <DependentUpon>Control Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Espera.resx">
+      <DependentUpon>Espera.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Facturacion.resx">
       <DependentUpon>Facturacion.cs</DependentUpon>
@@ -239,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\preguntaseguridad.resx">
       <DependentUpon>preguntaseguridad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\pruebasprogress.resx">
+      <DependentUpon>pruebasprogress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Report1.rdlc" />
     <EmbeddedResource Include="Formularios\Rutas.resx">
@@ -512,6 +530,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\FacturaManua Apagadol.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flor 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flor 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flor 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flor 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flor 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flor 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flor 7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flor 8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flor 9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flor 10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flor 11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flor 12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flor 13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flor 14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flor 15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flor 16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
