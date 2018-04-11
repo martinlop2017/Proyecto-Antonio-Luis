@@ -114,7 +114,7 @@
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Controls.Add(this.progressBar1);
             this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.Location = new System.Drawing.Point(12, 305);
+            this.panel2.Location = new System.Drawing.Point(12, 198);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(455, 64);
             this.panel2.TabIndex = 5;

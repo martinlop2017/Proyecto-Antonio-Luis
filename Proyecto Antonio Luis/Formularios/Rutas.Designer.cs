@@ -163,10 +163,11 @@
             this.textclientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textclientes.Location = new System.Drawing.Point(163, 212);
             this.textclientes.Name = "textclientes";
-            this.textclientes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textclientes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textclientes.Size = new System.Drawing.Size(88, 23);
             this.textclientes.TabIndex = 26;
             this.textclientes.Text = "4300000000";
+            this.textclientes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textbanco
             // 
@@ -174,10 +175,11 @@
             this.textbanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbanco.Location = new System.Drawing.Point(163, 242);
             this.textbanco.Name = "textbanco";
-            this.textbanco.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textbanco.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textbanco.Size = new System.Drawing.Size(88, 23);
             this.textbanco.TabIndex = 27;
             this.textbanco.Text = "4300000000";
+            this.textbanco.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textsuplidos
             // 
@@ -185,10 +187,11 @@
             this.textsuplidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textsuplidos.Location = new System.Drawing.Point(163, 272);
             this.textsuplidos.Name = "textsuplidos";
-            this.textsuplidos.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textsuplidos.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textsuplidos.Size = new System.Drawing.Size(88, 23);
             this.textsuplidos.TabIndex = 28;
             this.textsuplidos.Text = "4300000000";
+            this.textsuplidos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textretenciones
             // 
@@ -196,10 +199,11 @@
             this.textretenciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textretenciones.Location = new System.Drawing.Point(163, 302);
             this.textretenciones.Name = "textretenciones";
-            this.textretenciones.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textretenciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textretenciones.Size = new System.Drawing.Size(88, 23);
             this.textretenciones.TabIndex = 29;
             this.textretenciones.Text = "4300000000";
+            this.textretenciones.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textivageneral
             // 
@@ -207,10 +211,11 @@
             this.textivageneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textivageneral.Location = new System.Drawing.Point(465, 302);
             this.textivageneral.Name = "textivageneral";
-            this.textivageneral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textivageneral.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textivageneral.Size = new System.Drawing.Size(88, 23);
             this.textivageneral.TabIndex = 39;
             this.textivageneral.Text = "4300000000";
+            this.textivageneral.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textivageneral.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textivaredu
@@ -219,10 +224,11 @@
             this.textivaredu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textivaredu.Location = new System.Drawing.Point(465, 272);
             this.textivaredu.Name = "textivaredu";
-            this.textivaredu.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textivaredu.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textivaredu.Size = new System.Drawing.Size(88, 23);
             this.textivaredu.TabIndex = 38;
             this.textivaredu.Text = "4300000000";
+            this.textivaredu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textivasuper
             // 
@@ -230,10 +236,11 @@
             this.textivasuper.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textivasuper.Location = new System.Drawing.Point(465, 242);
             this.textivasuper.Name = "textivasuper";
-            this.textivasuper.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textivasuper.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textivasuper.Size = new System.Drawing.Size(88, 23);
             this.textivasuper.TabIndex = 37;
             this.textivasuper.Text = "4300000000";
+            this.textivasuper.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textiva0
             // 
@@ -241,10 +248,11 @@
             this.textiva0.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textiva0.Location = new System.Drawing.Point(465, 212);
             this.textiva0.Name = "textiva0";
-            this.textiva0.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textiva0.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textiva0.Size = new System.Drawing.Size(88, 23);
             this.textiva0.TabIndex = 36;
             this.textiva0.Text = "4300000000";
+            this.textiva0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 
@@ -317,10 +325,11 @@
             this.textprestaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textprestaciones.Location = new System.Drawing.Point(465, 182);
             this.textprestaciones.Name = "textprestaciones";
-            this.textprestaciones.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textprestaciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textprestaciones.Size = new System.Drawing.Size(88, 23);
             this.textprestaciones.TabIndex = 30;
             this.textprestaciones.Text = "99";
+            this.textprestaciones.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textcsb19
             // 
@@ -328,10 +337,11 @@
             this.textcsb19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textcsb19.Location = new System.Drawing.Point(182, 510);
             this.textcsb19.Name = "textcsb19";
-            this.textcsb19.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textcsb19.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textcsb19.Size = new System.Drawing.Size(340, 23);
             this.textcsb19.TabIndex = 49;
             this.textcsb19.Text = "4300000000";
+            this.textcsb19.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textasi
             // 
@@ -339,10 +349,11 @@
             this.textasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textasi.Location = new System.Drawing.Point(182, 482);
             this.textasi.Name = "textasi";
-            this.textasi.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textasi.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textasi.Size = new System.Drawing.Size(340, 23);
             this.textasi.TabIndex = 48;
             this.textasi.Text = "4300000000";
+            this.textasi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textdiario
             // 
@@ -350,10 +361,11 @@
             this.textdiario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textdiario.Location = new System.Drawing.Point(182, 453);
             this.textdiario.Name = "textdiario";
-            this.textdiario.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textdiario.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textdiario.Size = new System.Drawing.Size(340, 23);
             this.textdiario.TabIndex = 47;
             this.textdiario.Text = "4300000000";
+            this.textdiario.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label15
             // 
@@ -412,10 +424,11 @@
             this.textsubcuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textsubcuenta.Location = new System.Drawing.Point(182, 423);
             this.textsubcuenta.Name = "textsubcuenta";
-            this.textsubcuenta.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textsubcuenta.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textsubcuenta.Size = new System.Drawing.Size(340, 23);
             this.textsubcuenta.TabIndex = 40;
             this.textsubcuenta.Text = "99";
+            this.textsubcuenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label21
             // 

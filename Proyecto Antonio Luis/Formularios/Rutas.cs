@@ -122,38 +122,36 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void button6_Click(object sender, EventArgs e)
         {
-            {
-                OpenFileDialog buscar = new OpenFileDialog();
+            FolderBrowserDialog buscar = new FolderBrowserDialog();
 
-                if (buscar.ShowDialog() == DialogResult.OK)
-                {
-                    textsubcuenta.Text = buscar.FileName;
-                }
+            if (buscar.ShowDialog() == DialogResult.OK)
+            {
+                textsubcuenta.Text = buscar.SelectedPath;
             }
+
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            {
-                OpenFileDialog buscar = new OpenFileDialog();
+            FolderBrowserDialog buscar = new FolderBrowserDialog();
 
-                if (buscar.ShowDialog() == DialogResult.OK)
-                {
-                    textdiario.Text = buscar.FileName;
-                }
+            if (buscar.ShowDialog() == DialogResult.OK)
+            {
+                textdiario.Text = buscar.SelectedPath;
             }
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            {
-                OpenFileDialog buscar = new OpenFileDialog();
+            FolderBrowserDialog buscar = new FolderBrowserDialog();
 
-                if (buscar.ShowDialog() == DialogResult.OK)
-                {
-                    textasi.Text = buscar.FileName;
-                }
+            if (buscar.ShowDialog() == DialogResult.OK)
+            {
+                textasi.Text = buscar.SelectedPath;
             }
+            
+            
         }
 
         private void button3_Click_1(object sender, EventArgs e)
