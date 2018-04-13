@@ -134,6 +134,12 @@
     <Compile Include="Formularios\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\GenerarRemesas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     <EmbeddedResource Include="Formularios\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\GenerarRemesas.resx">
       <DependentUpon>GenerarRemesas.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,6 +268,7 @@
       <DependentUpon>pruebasprogress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Report1.rdlc" />
+    <EmbeddedResource Include="Formularios\ReportFacturas.rdlc" />
     <EmbeddedResource Include="Formularios\Rutas.resx">
       <DependentUpon>Rutas.cs</DependentUpon>
     </EmbeddedResource>
