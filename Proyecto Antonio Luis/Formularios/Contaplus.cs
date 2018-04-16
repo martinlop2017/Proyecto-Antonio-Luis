@@ -41,6 +41,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                 string cuentabase = rutas.CtaPrestaciones.ToString();
                 string cuentaiva = rutas.IvaGeneral.ToString();
                 string cuentabanco = rutas.CtaBanco.ToString();
+                string cuentasuplido = rutas.CtaSuplido.ToString();
 
 
                 //filtramos la tabla por contabilizados sea igual a falso.
@@ -84,8 +85,12 @@ namespace Proyecto_Antonio_Luis.Formularios
                             debe = debe.Replace(",", ".");
                             string ivaapagar = Convert.ToString(temp.factimporteiva);
                             ivaapagar = ivaapagar.Replace(",", ".");
-                            string bases = Convert.ToString(temp.factbase1.Value + temp.factbase2.Value + temp.factbaseempleado.Value);
+                            string bases = Convert.ToString(temp.factbase1.Value  + temp.factbaseempleado.Value);
                             bases = bases.Replace(",", ".");
+
+                            string basesuplida = Convert.ToString(temp.factbase2.Value);
+                            bases = bases.Replace(",", ".");
+
                             string nombre = temp.factnombre;
                             nombre = nombre.Replace("   ", "");
 
@@ -392,6 +397,177 @@ namespace Proyecto_Antonio_Luis.Formularios
                             + " ".PadLeft(40, ' ')
                             + "0".PadLeft(2, ' ')
                             + "0".PadLeft(2, ' '));
+
+                            
+
+                                // LINEA 3, pas los suplidos
+                            if (temp.factbase2 != 0)
+                            {
+                                nuevalinea.WriteLine(
+                                "1".PadLeft(6, ' ')
+                                + fecha
+                                + cuentasuplido.PadRight(12, ' ')
+                                + " ".PadLeft(12, ' ')
+                                + "0.00".PadLeft(16, ' ')
+                                + ("N. Factura " + temp.factnumerofact.ToString()).PadRight(25, ' ')
+                                + "0.00".PadLeft(16, ' ')
+                                + "0".PadLeft(8, ' ')
+                                + "0.00".PadLeft(16, ' ')
+                                + "0.00".PadLeft(5, ' ')
+                                + "0.00".PadLeft(5, ' ')
+                                + " ".PadLeft(10, ' ')
+                                + " ".PadLeft(3, ' ')
+
+
+                                + " ".PadLeft(6, ' ')
+                                + " ".PadLeft(1, ' ')
+                                + "0".PadLeft(6, ' ')
+                                + "0".PadLeft(1, ' ')
+                                + "0".PadLeft(6, ' ')
+                                + "0.000000".PadLeft(16, ' ')
+                                + "0.00".PadLeft(16, ' ')
+                                + "0.00".PadLeft(16, ' ')
+                                + " ".PadLeft(1, ' ')
+                                + " ".PadLeft(1, ' ')
+                                + " ".PadLeft(4, ' ')
+                                + " ".PadLeft(5, ' ')
+                                + "0.00".PadLeft(16, ' ')
+
+
+                                + "2"
+                                + "0.00".PadLeft(16, ' ')
+                                + basesuplida.PadLeft(16, ' ')
+                                + "0.00".PadLeft(16, ' ')
+                                + " "
+                                + " ".PadLeft(10, ' ')
+                                + " "
+                                + "0".PadLeft(8, ' ')
+                                + "0.00".PadLeft(16, ' ')
+                                + "0.00".PadLeft(16, ' ')
+                                + "F"
+                                + " ".PadLeft(8, ' ')
+                                + "E"
+
+
+                                + " "
+                                + " ".PadLeft(6, ' ')
+                                + " "
+                                + " ".PadLeft(6, ' ')
+                                + " ".PadLeft(6, ' ')
+                                + "F"
+                                + " ".PadLeft(8, ' ')
+                                + " ".PadLeft(8, ' ')
+                                + " ".PadLeft(5, ' ')
+                                + " ".PadLeft(10, ' ')
+                                + "0.00".PadLeft(5, ' ')
+                                + "0.00".PadLeft(5, ' ')
+                                + "0".PadLeft(6, ' ')
+
+
+                                + "0.00".PadLeft(16, ' ')
+                                + " ".PadLeft(100, ' ')
+                                + " ".PadLeft(50, ' ')
+                                + " ".PadLeft(50, ' ')
+                                + " "
+                                + "0".PadLeft(8, ' ')
+                                + " ".PadLeft(40, ' ')
+                                + " ".PadLeft(40, ' ')
+                                + "0"
+                                + " ".PadLeft(15, ' ')
+                                + " ".PadLeft(40, ' ')
+                                + " ".PadLeft(9, ' ')
+                                + "F"
+
+
+                                + " ".PadLeft(10, ' ')
+                                + "F"
+                                + "F"
+                                + "0.00".PadLeft(16, ' ')
+                                + " ".PadLeft(12, ' ')
+                                + "0"
+                                + " ".PadLeft(40, ' ')
+                                + " "
+                                + " "
+                                + " "
+                                + "F"
+                                + "0".PadLeft(4, ' ')
+                                + " ".PadLeft(15, ' ')
+
+
+                                + " ".PadLeft(12, ' ')
+                                + " ".PadLeft(8, ' ')
+                                + "0.00".PadLeft(16, ' ')
+                                + " ".PadLeft(40, ' ')
+                                + " ".PadLeft(12, ' ')
+                                + " ".PadLeft(8, ' ')
+                                + "0.00".PadLeft(16, ' ')
+                                + " ".PadLeft(40, ' ')
+                                + "0".PadLeft(2, ' ')
+                                + "F"
+                                + " "
+                                + " ".PadLeft(25, ' ')
+                                + "0"
+
+
+                                + "0".PadLeft(2, ' ')
+                                + "0".PadLeft(2, ' ')
+                                + "F"
+                                + " ".PadLeft(8, ' ')
+                                + "0.00".PadLeft(16, ' ')
+                                + " ".PadLeft(32, ' ')
+                                + "0.00".PadLeft(16, ' ')
+                                + " ".PadLeft(2, ' ')
+                                + " ".PadLeft(50, ' ')
+                                + " "
+                                + " "
+                                + " ".PadLeft(34, ' ')
+                                + "F"
+
+
+                                + " ".PadLeft(40, ' ')
+                                + "0".PadLeft(2, ' ')
+                                + "0".PadLeft(2, ' ')
+                                + " ".PadLeft(8, ' ')
+                                + " ".PadLeft(8, ' ')
+                                + "0".PadLeft(2, ' ')
+                                + "0.00".PadLeft(16, ' ')
+                                + "F"
+                                + "F"
+                                + "0".PadLeft(2, ' ')
+                                + " ".PadLeft(40, ' ')
+                                + "0"
+                                + "0".PadLeft(2, ' ')
+
+
+                                + "0".PadLeft(2, ' ')
+                                + "0".PadLeft(2, ' ')
+                                + "0".PadLeft(2, ' ')
+                                + " ".PadLeft(40, ' ')
+                                + " ".PadLeft(40, ' ')
+                                + "0".PadLeft(2, ' ')
+                                + "0.00".PadLeft(16, ' ')
+                                + "F"
+                                + "0"
+                                + " ".PadLeft(8, ' ')
+                                + " ".PadLeft(40, ' ')
+                                + "0".PadLeft(2, ' ')
+                                + "0".PadLeft(2, ' '));
+                            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                             nuevalinea.WriteLine(

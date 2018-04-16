@@ -790,11 +790,16 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void facturar_MouseUp(object sender, MouseEventArgs e)
         {
-            Image img = Image.FromFile("C:\\Equipo Martin\\Programacion\\Repositorio Remoto\\Proyecto Antonio Luis\\Proyecto Antonio Luis\\Imagenes\\pROGRESS\\gif flor 1.gif");
+            //Image img = Image.FromFile("C:\\Equipo Martin\\Programacion\\Repositorio Remoto\\Proyecto Antonio Luis\\Proyecto Antonio Luis\\Imagenes\\pROGRESS\\gif flor 1.gif");
 
-            pictureBox1.Image = img;
+           // pictureBox1.Image = img;
 
             
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
     
