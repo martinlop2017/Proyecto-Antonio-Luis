@@ -28,12 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.administracionAntonioDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.administracionAntonioDataSet1 = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1();
+            this.dataSetListadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetListados = new Proyecto_Antonio_Luis.DataSetListados();
+            this.facturasTableAdapter = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1TableAdapters.FacturasTableAdapter();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetListadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetListados)).BeginInit();
             this.SuspendLayout();
+            // 
+            // administracionAntonioDataSet1BindingSource
+            // 
+            this.administracionAntonioDataSet1BindingSource.DataSource = this.administracionAntonioDataSet1;
+            this.administracionAntonioDataSet1BindingSource.Position = 0;
+            // 
+            // administracionAntonioDataSet1
+            // 
+            this.administracionAntonioDataSet1.DataSetName = "AdministracionAntonioDataSet1";
+            this.administracionAntonioDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataSetListadosBindingSource
+            // 
+            this.dataSetListadosBindingSource.DataSource = this.dataSetListados;
+            this.dataSetListadosBindingSource.Position = 0;
+            // 
+            // dataSetListados
+            // 
+            this.dataSetListados.DataSetName = "DataSetListados";
+            this.dataSetListados.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // facturasTableAdapter
+            // 
+            this.facturasTableAdapter.ClearBeforeFill = true;
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.DocumentMapWidth = 26;
+            reportDataSource1.Name = "DaraSetFacturas";
+            reportDataSource1.Value = this.administracionAntonioDataSet1BindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Proyecto_Antonio_Luis.Formularios.ReportFacturas.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
@@ -49,12 +88,20 @@
             this.Name = "Form3";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetListadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetListados)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
+        private System.Windows.Forms.BindingSource dataSetListadosBindingSource;
+        private DataSetListados dataSetListados;
+        private System.Windows.Forms.BindingSource administracionAntonioDataSet1BindingSource;
+        private AdministracionAntonioDataSet1 administracionAntonioDataSet1;
+        private AdministracionAntonioDataSet1TableAdapters.FacturasTableAdapter facturasTableAdapter;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

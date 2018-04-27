@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a2d73c19c05f478b992f2b389ad55236" Name="Diagram1" ZoomLevel="59">
+      <Diagram DiagramId="a2d73c19c05f478b992f2b389ad55236" Name="Diagram1" ZoomLevel="77">
         <EntityTypeShape EntityType="AdministracionAntonioModel.Clientes" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Cuentas" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="AdministracionAntonioModel.Facturas" Width="1.5" PointX="4.75" PointY="0.75" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Iva" Width="1.5" PointX="6.75" PointY="0.75" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Propios" Width="1.5" PointX="6.75" PointY="3.75" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Resilla" Width="1.5" PointX="9.375" PointY="0.75" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Ususarios" Width="1.5" PointX="9.375" PointY="3.75" />
+        <EntityTypeShape EntityType="AdministracionAntonioModel.Facturas" Width="1.5" PointX="4.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

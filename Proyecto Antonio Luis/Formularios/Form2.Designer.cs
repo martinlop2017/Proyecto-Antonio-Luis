@@ -30,11 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.datoslistadoremeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.facturasTableAdapter = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1TableAdapters.FacturasTableAdapter();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.datoslistadoremeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.datoslistadoremeBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // datoslistadoremeBindingSource
+            // 
+            this.datoslistadoremeBindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Clases.datoslistadoreme);
+            this.datoslistadoremeBindingSource.CurrentChanged += new System.EventHandler(this.datoslistadoremeBindingSource_CurrentChanged);
             // 
             // facturasTableAdapter
             // 
@@ -52,11 +57,6 @@
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(685, 432);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // datoslistadoremeBindingSource
-            // 
-            this.datoslistadoremeBindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Clases.datoslistadoreme);
-            this.datoslistadoremeBindingSource.CurrentChanged += new System.EventHandler(this.datoslistadoremeBindingSource_CurrentChanged);
             // 
             // Form2
             // 

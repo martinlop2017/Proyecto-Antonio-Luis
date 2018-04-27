@@ -414,6 +414,8 @@ namespace Proyecto_Antonio_Luis.Formularios
 
 
                     myFactura.factbase1 = temp.tempbase;
+          //          mylistado.listimporte1 = temp.
+
                     myFactura.factnumerofact = temp.tempnumerofactura;
                     mylistado.listnumerofactura = temp.tempnumerofactura.ToString();
 
@@ -424,10 +426,21 @@ namespace Proyecto_Antonio_Luis.Formularios
                     mylistado.listnombre = temp.tempnombre;
 
                     myFactura.factdireccion = temp.tempdireccion;
+                    mylistado.listdireccion = temp.tempdireccion;
+
                     myFactura.factlocalidad = temp.templocalidad;
+                    mylistado.listpoblacion = temp.templocalidad;
+
                     myFactura.factprovincia = temp.tempprovincia;
+                    mylistado.listprovincia = temp.tempprovincia;
+
                     myFactura.factcp = temp.tempcp;
+                    mylistado.listcp = temp.tempcp;
+
                     myFactura.factnif = temp.tempcif;
+                    mylistado.listcif = temp.tempcif;
+
+
                     myFactura.factiban1 = temp.tempiban1;
                     myFactura.factiban2 = temp.tempiban2;
                     myFactura.factiban3 = temp.tempiban3;
@@ -437,7 +450,12 @@ namespace Proyecto_Antonio_Luis.Formularios
                     myFactura.factconcepto1 = temp.tempconcepto1;
                     mylistado.listconcepto1 = temp.tempconcepto1;
 
+                    myFactura.factconcepto2 = temp.tempconcepto2;
+                    mylistado.listconcepto2 = temp.tempconcepto2;
+
                     myFactura.factbase1 = temp.temptarifa;
+                    
+
                     mylistado.listbase = temp.tempbase;
 
                     myFactura.factconcepto2 = temp.tempconcepto2;
@@ -535,12 +553,14 @@ namespace Proyecto_Antonio_Luis.Formularios
                 eliminar.Enabled = false;
 
 
-                // cargamos la pantalla de listados de remesas
+  /*              // cargamos la pantalla de listados de remesas
                 Form2 forma = new Form2(alistar);
                 forma.Show();
-      
+*/
 
-
+                // cargamos la pantalla de listados de remesas
+                Form3 forma = new Form3(alistar);
+                forma.Show();
 
             }
 
