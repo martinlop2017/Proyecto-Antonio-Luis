@@ -24,7 +24,7 @@ namespace Proyecto_Antonio_Luis
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FacturaUnitaria());
+            Application.Run(new Form1());
         }
     }
 }

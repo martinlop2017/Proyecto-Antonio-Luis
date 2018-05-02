@@ -220,6 +220,11 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void dataGridView1_RowLeave(object sender, DataGridViewCellEventArgs e)
         {
             if (this.dataGridView1.Rows.Count >= 4)

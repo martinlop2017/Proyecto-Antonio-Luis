@@ -709,8 +709,9 @@ namespace Proyecto_Antonio_Luis.Formularios
             string fiscal = path + "\\Fiscal";
             string laboral = path + "\\Laboral";
             string Otros = path + "\\Otros";
+            string facturas = path + "\\Facturacion";
 
-                try
+            try
                 {
                 // Determine whether the directory exists.
                     if (!Directory.Exists(escritura))
@@ -736,7 +737,11 @@ namespace Proyecto_Antonio_Luis.Formularios
                         // Crea el directorio de Laboral 
                         DirectoryInfo di = Directory.CreateDirectory(path + "\\Otros");
                     }
-
+                    if (!Directory.Exists(facturas))
+                    {
+                        // Crea el directorio de Facturacion 
+                        DirectoryInfo di = Directory.CreateDirectory(path + "\\Facturacion");
+                    }
 
 
 

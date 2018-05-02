@@ -298,15 +298,14 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void facturar_Click(object sender, EventArgs e)
         {
-
-            pictureBox1.Visible = true;
-
-            Thread.Sleep(2000);
+            //mostramos el detagrib
+            dataGridView1.Visible = true;
 
 
-
-
-
+            CheckForIllegalCrossThreadCalls = false;
+            var formEsperar = new FormEsperar("Creando Facturas");
+            var hilo = Task.Factory.StartNew(() =>
+            {
 
 
             generar.Enabled = false;
@@ -315,12 +314,8 @@ namespace Proyecto_Antonio_Luis.Formularios
             imprimir.Enabled = true;
             facturar.Enabled = false;
             //mostramos el detagrib
-            dataGridView1.Visible = true;
+       //     dataGridView1.Visible = true;
            
-
-
-
-
             //cargamos los datos en el dgv.
 
             //**** calculamos el valor de la coluna numerador
@@ -393,8 +388,6 @@ namespace Proyecto_Antonio_Luis.Formularios
             //var ultimonumerador = bd.Facturas.OrderByDescending(x => x.factcontador).First().factcontador;
 
 
-            try
-            {
                 decimal totalbaseremesa = 0;
                 decimal totalivaremesa = 0;
                 decimal totaltotalremesa = 0;
@@ -495,7 +488,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
                     numeroremesa = temp.tempremesa;
                     fecharemesa = temp.tempfecha;
-                    mylistado.listfecha = temp.tempfecha; ;
+                    mylistado.listfecha = temp.tempfecha;
 
 
                     mylistado.listnombreemisor = bd.Propios.First().minombre;
@@ -552,22 +545,44 @@ namespace Proyecto_Antonio_Luis.Formularios
                 generar.Enabled = false;
                 eliminar.Enabled = false;
 
+                formEsperar.Close();
 
-  /*              // cargamos la pantalla de listados de remesas
-                Form2 forma = new Form2(alistar);
-                forma.Show();
-*/
+            });
+
+            formEsperar.ShowDialog();
+
+            hilo.Dispose();
+                CheckForIllegalCrossThreadCalls = true;
+
+
+                var form = new FormEsperar("Imprimiendo Facturas");
+                CheckForIllegalCrossThreadCalls = false;
+                var hilo2 = Task.Factory.StartNew(() =>
+                {
+
+                    // cargamos la pantalla de listados de remesas
+                    for (int i = 0; i < alistar.Count; i++)
+                    {
+                        var dato = alistar[i];
+
+                        Form3 nuevaForma = new Form3();
+                        //nuevaForma.ExportarToPdf(dato, $"C:\\Equipo Martin\\facturas\\Nueva carpeta\\Test{i + 1}.pdf");
+                        nuevaForma.ExportarToPdf(dato, $"C:\\ByMartin\\{dato.listnombre}\\Facturacion\\Factura {dato.listnumerofactura}.pdf");
+
+                    }
+
+                    form.Close();
+                });
+
+                form.ShowDialog();
+
+                hilo.Dispose();
+                CheckForIllegalCrossThreadCalls = true;
 
                 // cargamos la pantalla de listados de remesas
-                Form3 forma = new Form3(alistar);
+                Form2 forma = new Form2(alistar);
                 forma.Show();
-
-            }
-
-            catch (Exception exp)
-            {
-                MessageBox.Show("Error" + exp.Message);
-            }
+          
 
 
         }
@@ -738,69 +753,7 @@ namespace Proyecto_Antonio_Luis.Formularios
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            switch (pasos)
-            {
-                case 1:
-                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_2;
-                    pasos++;
-                    break;
-                case 2:
-                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_3;
-                    pasos++;
-                    break;
-                case 3:
-                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_4;
-                    pasos++;
-                    break;
-                case 4:
-                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_5;
-                    pasos++;
-                    break;
-                case 5:
-                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_6;
-                    pasos++;
-                    break;
-                case 6:
-                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_7;
-                    pasos++;
-                    break;
-                case 7:
-                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_8;
-                    pasos++;
-                    break;
-                case 8:
-                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_9;
-                    pasos++;
-                    break;
-                case 9:
-                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_10;
-                    pasos++;
-                    break;
-                case 10:
-                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_11;
-                    pasos++;
-                    break;
-                case 11:
-                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_12;
-                    pasos++;
-                    break;
-                case 12:
-                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_13;
-                    pasos++;
-                    break;
-                case 13:
-                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_14;
-                    pasos++;
-                    break;
-                case 14:
-                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_15;
-                    pasos++;
-                    break;
-                case 15:
-                    panel4.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Flor_16;
-                    pasos = 1;
-                    break;
-            }
+        
         }
 
         private void facturar_MouseDown(object sender, MouseEventArgs e)
