@@ -28,6 +28,9 @@ namespace Proyecto_Antonio_Luis.Clases
         public string listnumeroremesa { get; set; }
         public decimal listtotalremesa { get; set; }
         public int listtotaldocumentos { get; set; }
+        public decimal listnumempleados { get; set; }
+        public decimal listimporteempleados { get; set; }
+        public decimal listtotalempleados { get; set; }
 
     }
 }

@@ -34,10 +34,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             Warning[] warnings;
             string[] streamIds;
 
-            //var form = new FormEsperar("Imprimiendo");
-            //CheckForIllegalCrossThreadCalls = false;
-            //var test = Task.Factory.StartNew(() =>
-            //{
+
                     this.administracionAntonioDataSet1BindingSource.DataSource = datosListado;
 
                     byte[] bytes = reportViewer1.LocalReport.Render("PDF", null, out mimeType, out encoding,
@@ -47,17 +44,13 @@ namespace Proyecto_Antonio_Luis.Formularios
 
             FileInfo file = new FileInfo(exportPath);
             file.Directory.Create(); // If the directory already exists, this method does nothing.
-            //File.WriteAllText(file.FullName, bytes);
-            //var exportPath = string.Format($"C:\\Equipo Martin\\facturas\\Nueva carpeta\\Test{i+1}.pdf");
+
             File.WriteAllBytes(file.FullName, bytes);
-                //}
-            //    form.Close();
-            //});
+     
+        }
 
-            //form.ShowDialog();
-
-            //test.Dispose();
-            //CheckForIllegalCrossThreadCalls = true;
+        private void datoslistadoremeBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
 
         }
     }

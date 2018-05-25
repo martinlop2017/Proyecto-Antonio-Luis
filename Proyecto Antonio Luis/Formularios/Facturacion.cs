@@ -447,7 +447,8 @@ namespace Proyecto_Antonio_Luis.Formularios
                     mylistado.listconcepto2 = temp.tempconcepto2;
 
                     myFactura.factbase1 = temp.temptarifa;
-                    
+                    mylistado.listimporte1 = temp.temptarifa;
+
 
                     mylistado.listbase = temp.tempbase;
 
@@ -456,8 +457,15 @@ namespace Proyecto_Antonio_Luis.Formularios
                     mylistado.listsuplidos = temp.temptarifa2;
 
                     myFactura.factemleados = temp.tempempleados;
+                    mylistado.listnumempleados = temp.tempempleados;
+
                     myFactura.factprecioempleado = temp.temppvempleados;
+                    mylistado.listimporteempleados = temp.temppvempleados;
+
                     myFactura.factbaseempleado = temp.templaboral;
+                    mylistado.listtotalempleados = temp.templaboral;
+
+
                     myFactura.facttipoiva = temp.temptipoiva;
                     myFactura.factimporteiva = temp.tempiva;
                     mylistado.listiva = temp.tempiva;

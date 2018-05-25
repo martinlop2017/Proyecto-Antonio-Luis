@@ -2,56 +2,6 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Rectangle Name="Rectangle4">
-        <ReportItems>
-          <Line Name="Line1">
-            <Left>2.17778cm</Left>
-            <Height>6.79479cm</Height>
-            <Width>0cm</Width>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-                <Width>0.25pt</Width>
-              </Border>
-            </Style>
-          </Line>
-          <Line Name="Line2">
-            <Top>0.17639cm</Top>
-            <Left>12.07769cm</Left>
-            <Height>6.6184cm</Height>
-            <Width>0cm</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-                <Width>0.25pt</Width>
-              </Border>
-            </Style>
-          </Line>
-          <Line Name="Line3">
-            <Left>14.07503cm</Left>
-            <Height>6.79479cm</Height>
-            <Width>0cm</Width>
-            <ZIndex>2</ZIndex>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-                <Width>0.25pt</Width>
-              </Border>
-            </Style>
-          </Line>
-        </ReportItems>
-        <KeepTogether>true</KeepTogether>
-        <Left>1.10689cm</Left>
-        <Height>6.79479cm</Height>
-        <Width>16.05769cm</Width>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-            <Width>0.25pt</Width>
-          </Border>
-        </Style>
-      </Rectangle>
       <Rectangle Name="Rectangle5">
         <ReportItems>
           <Textbox Name="Textbox36">
@@ -486,7 +436,6 @@
         <Left>12.04009cm</Left>
         <Height>4.44528cm</Height>
         <Width>5.12448cm</Width>
-        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -516,7 +465,7 @@
         <Left>12.17536cm</Left>
         <Height>0.6cm</Height>
         <Width>2.87026cm</Width>
-        <ZIndex>2</ZIndex>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -550,7 +499,7 @@
         <Left>12.17537cm</Left>
         <Height>0.6cm</Height>
         <Width>2.87026cm</Width>
-        <ZIndex>3</ZIndex>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -584,7 +533,7 @@
         <Left>12.17536cm</Left>
         <Height>0.6cm</Height>
         <Width>2.87026cm</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -602,7 +551,7 @@
         <Left>1.10689cm</Left>
         <Height>4.44528cm</Height>
         <Width>8.08057cm</Width>
-        <ZIndex>5</ZIndex>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -632,7 +581,7 @@
         <Left>1.58314cm</Left>
         <Height>0.6cm</Height>
         <Width>2.87026cm</Width>
-        <ZIndex>6</ZIndex>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -644,14 +593,619 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox29">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>CANTIDAD</Value>
+                <Style>
+                  <FontFamily>Garamond</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>White</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Left>1.31843cm</Left>
+        <Height>0.4cm</Height>
+        <Width>2.12081cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>Black</BackgroundColor>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox30">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>CANTIDAD</Value>
+                <Style>
+                  <FontFamily>Garamond</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>White</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>0.00001cm</Top>
+        <Left>3.39655cm</Left>
+        <Height>0.4cm</Height>
+        <Width>9.99217cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>Black</BackgroundColor>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox31">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>IMPORTE</Value>
+                <Style>
+                  <FontFamily>Garamond</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>White</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Left>13.38872cm</Left>
+        <Height>0.4cm</Height>
+        <Width>1.99cm</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>Black</BackgroundColor>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox32">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>TOTAL</Value>
+                <Style>
+                  <FontFamily>Garamond</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>White</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Left>15.37872cm</Left>
+        <Height>0.4cm</Height>
+        <Width>1.99cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>Black</BackgroundColor>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Rectangle Name="Rectangle4">
+        <ReportItems>
+          <Line Name="Line1">
+            <Left>2.03467cm</Left>
+            <Height>6.79479cm</Height>
+            <Width>0cm</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+                <Width>0.25pt</Width>
+              </Border>
+            </Style>
+          </Line>
+          <Line Name="Line2">
+            <Left>11.93458cm</Left>
+            <Height>6.79479cm</Height>
+            <Width>0cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+                <Width>0.25pt</Width>
+              </Border>
+            </Style>
+          </Line>
+          <Line Name="Line3">
+            <Left>13.93192cm</Left>
+            <Height>6.79479cm</Height>
+            <Width>0cm</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+                <Width>0.25pt</Width>
+              </Border>
+            </Style>
+          </Line>
+          <Textbox Name="Textbox48">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Constant">1</Value>
+                    <Style>
+                      <FontFamily>Garamond</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>0.1764cm</Top>
+            <Left>0.15cm</Left>
+            <Height>0.6cm</Height>
+            <Width>1.7cm</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox49">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!listconcepto1.Value, "DaraSetFacturas")</Value>
+                    <Style>
+                      <FontFamily>Garamond</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>0.14112cm</Top>
+            <Left>2.21106cm</Left>
+            <Height>0.6cm</Height>
+            <Width>9.54713cm</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox50">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Sum(Fields!listimporte1.Value, "DaraSetFacturas")</Value>
+                    <Style>
+                      <FontFamily>Garamond</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                      <Format>#,0.00</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>0.1764cm</Top>
+            <Left>12.00514cm</Left>
+            <Height>0.6cm</Height>
+            <Width>1.8cm</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox51">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Sum(Fields!listimporte1.Value, "DaraSetFacturas")</Value>
+                    <Style>
+                      <FontFamily>Garamond</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                      <Format>#,0.00</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>0.1764cm</Top>
+            <Left>14.03775cm</Left>
+            <Height>0.6cm</Height>
+            <Width>1.8cm</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox52">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=IIf(Fields!listconcepto2.Value &lt;&gt; "", "1",  "")</Value>
+                    <Style>
+                      <FontFamily>Garamond</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>0.81168cm</Top>
+            <Left>0.15828cm</Left>
+            <Height>0.6cm</Height>
+            <Width>1.7cm</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox53">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!listconcepto2.Value, "DaraSetFacturas")</Value>
+                    <Style>
+                      <FontFamily>Garamond</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>0.81167cm</Top>
+            <Left>2.24634cm</Left>
+            <Height>0.6cm</Height>
+            <Width>9.54713cm</Width>
+            <ZIndex>8</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox54">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Sum(Fields!listimporte1.Value, "DaraSetFacturas")</Value>
+                    <Style>
+                      <FontFamily>Garamond</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                      <Format>#,0.00</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>0.84696cm</Top>
+            <Left>11.99563cm</Left>
+            <Height>0.6cm</Height>
+            <Width>1.8cm</Width>
+            <ZIndex>9</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox55">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=IIf(Fields!listconcepto2.Value &lt;&gt; "", Fields!listsuplidos.Value,"")</Value>
+                    <Style>
+                      <FontFamily>Garamond</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                      <Format>#,0.00</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>0.84696cm</Top>
+            <Left>14.03775cm</Left>
+            <Height>0.6cm</Height>
+            <Width>1.8cm</Width>
+            <ZIndex>10</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox56">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Microsoft.VisualBasic.Interaction.IIf(Fields!listconcepto2.Value &lt;&gt; "", "1", "")</Value>
+                    <Style>
+                      <FontFamily>Garamond</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>1.48224cm</Top>
+            <Left>0.15cm</Left>
+            <Height>0.6cm</Height>
+            <Width>1.7cm</Width>
+            <ZIndex>11</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox57">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!listconcepto2.Value, "DaraSetFacturas")</Value>
+                    <Style>
+                      <FontFamily>Garamond</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>1.5175cm</Top>
+            <Left>2.17578cm</Left>
+            <Height>0.6cm</Height>
+            <Width>9.54713cm</Width>
+            <ZIndex>12</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox58">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Sum(Fields!listimporte1.Value, "DaraSetFacturas")</Value>
+                    <Style>
+                      <FontFamily>Garamond</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                      <Format>#,0.00</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>1.48224cm</Top>
+            <Left>11.99563cm</Left>
+            <Height>0.6cm</Height>
+            <Width>1.8cm</Width>
+            <ZIndex>13</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <KeepTogether>true</KeepTogether>
+        <Top>0.4cm</Top>
+        <Left>1.31843cm</Left>
+        <Height>6.79479cm</Height>
+        <Width>16.05769cm</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+            <Width>0.25pt</Width>
+          </Border>
+        </Style>
+      </Rectangle>
     </ReportItems>
     <Height>4.90519in</Height>
     <Style />
   </Body>
-  <Width>7.19349in</Width>
+  <Width>7.36006in</Width>
   <Page>
     <PageHeader>
-      <Height>9.29669cm</Height>
+      <Height>8.92126cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -943,7 +1497,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!listnombre.Value, "DaraSetFacturas")</Value>
+                      <Value>=First(Fields!listnumerofactura.Value, "DaraSetFacturas")</Value>
                       <Style>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -954,9 +1508,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
               <Top>0.1cm</Top>
-              <Left>0.32632cm</Left>
+              <Left>0.14112cm</Left>
               <Height>0.6cm</Height>
-              <Width>1.06555cm</Width>
+              <Width>1.49867cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1002,7 +1556,7 @@
           <Top>6.65979cm</Top>
           <Left>2.56966cm</Left>
           <Height>0.6cm</Height>
-          <Width>9.00875cm</Width>
+          <Width>10.08726cm</Width>
           <ZIndex>10</ZIndex>
           <Style>
             <Border>
@@ -1022,7 +1576,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value />
+                  <Value>=First(Fields!listdireccion.Value, "DaraSetFacturas")</Value>
                   <Style>
                     <FontFamily>Garamond</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -1036,7 +1590,7 @@
           <Top>7.09979cm</Top>
           <Left>2.92244cm</Left>
           <Height>0.6cm</Height>
-          <Width>7.55354cm</Width>
+          <Width>9.73448cm</Width>
           <ZIndex>11</ZIndex>
           <Style>
             <Border>
@@ -1056,7 +1610,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>21100</Value>
+                  <Value>=First(Fields!listcp.Value, "DaraSetFacturas")</Value>
                   <Style>
                     <FontFamily>Garamond</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -1089,7 +1643,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>PUNTA UMBRIA</Value>
+                  <Value>=First(Fields!listpoblacion.Value, "DaraSetFacturas")</Value>
                   <Style>
                     <FontFamily>Garamond</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -1103,7 +1657,7 @@
           <Top>7.53979cm</Top>
           <Left>6.32924cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.99393cm</Width>
+          <Width>6.32768cm</Width>
           <ZIndex>13</ZIndex>
           <Style>
             <Border>
@@ -1122,7 +1676,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>HUELVA</Value>
+                  <Value>=First(Fields!listprovincia.Value, "DaraSetFacturas")</Value>
                   <Style>
                     <FontFamily>Garamond</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -1167,7 +1721,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
           <Top>6.65979cm</Top>
-          <Left>1.2426cm</Left>
+          <Left>1.25cm</Left>
           <Height>0.6cm</Height>
           <Width>1.22122cm</Width>
           <ZIndex>15</ZIndex>
@@ -1201,7 +1755,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
           <Top>7.09979cm</Top>
-          <Left>1.20732cm</Left>
+          <Left>1.25cm</Left>
           <Height>0.6cm</Height>
           <Width>1.64455cm</Width>
           <ZIndex>16</ZIndex>
@@ -1235,7 +1789,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
           <Top>7.53979cm</Top>
-          <Left>1.20732cm</Left>
+          <Left>1.25cm</Left>
           <Height>0.6cm</Height>
           <Width>0.81958cm</Width>
           <ZIndex>17</ZIndex>
@@ -1302,7 +1856,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
           <Top>7.97979cm</Top>
-          <Left>1.20733cm</Left>
+          <Left>1.25cm</Left>
           <Height>0.6cm</Height>
           <Width>1.64455cm</Width>
           <ZIndex>19</ZIndex>
@@ -1404,7 +1958,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>B21156054</Value>
+                  <Value>=First(Fields!listcif.Value, "DaraSetFacturas")</Value>
                   <Style>
                     <FontFamily>Garamond</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -1465,156 +2019,30 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox29">
+        <Textbox Name="Textbox2">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>CANTIDAD</Value>
-                  <Style>
-                    <FontFamily>Garamond</FontFamily>
-                    <FontSize>8pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <Color>White</Color>
-                  </Style>
+                  <Value />
+                  <Style />
                 </TextRun>
               </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
+              <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>8.89668cm</Top>
-          <Left>1.20732cm</Left>
-          <Height>0.4cm</Height>
-          <Width>2.12081cm</Width>
+          <Top>6.1087cm</Top>
+          <Left>11.16224cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
           <ZIndex>24</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
-            <BackgroundColor>Black</BackgroundColor>
-            <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox30">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>CANTIDAD</Value>
-                  <Style>
-                    <FontFamily>Garamond</FontFamily>
-                    <FontSize>8pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <Color>White</Color>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>8.89669cm</Top>
-          <Left>3.32812cm</Left>
-          <Height>0.4cm</Height>
-          <Width>9.99217cm</Width>
-          <ZIndex>25</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <BackgroundColor>Black</BackgroundColor>
-            <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox31">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>IMPORTE</Value>
-                  <Style>
-                    <FontFamily>Garamond</FontFamily>
-                    <FontSize>8pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <Color>White</Color>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>8.89668cm</Top>
-          <Left>13.32029cm</Left>
-          <Height>0.4cm</Height>
-          <Width>1.99cm</Width>
-          <ZIndex>26</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <BackgroundColor>Black</BackgroundColor>
-            <VerticalAlign>Middle</VerticalAlign>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox32">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>TOTAL</Value>
-                  <Style>
-                    <FontFamily>Garamond</FontFamily>
-                    <FontSize>8pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <Color>White</Color>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>8.89668cm</Top>
-          <Left>15.31029cm</Left>
-          <Height>0.4cm</Height>
-          <Width>1.99cm</Width>
-          <ZIndex>27</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <BackgroundColor>Black</BackgroundColor>
-            <VerticalAlign>Middle</VerticalAlign>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
@@ -1668,13 +2096,37 @@
           <DataField>listbase</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
+        <Field Name="listcif">
+          <DataField>listcif</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="listconcepto1">
           <DataField>listconcepto1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="listconcepto2">
+          <DataField>listconcepto2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="listcp">
+          <DataField>listcp</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="listdireccion">
+          <DataField>listdireccion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="listfecha">
           <DataField>listfecha</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="listimporte1">
+          <DataField>listimporte1</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="listimporte2">
+          <DataField>listimporte2</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="listiva">
           <DataField>listiva</DataField>
@@ -1694,6 +2146,14 @@
         </Field>
         <Field Name="listnumeroremesa">
           <DataField>listnumeroremesa</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="listpoblacion">
+          <DataField>listpoblacion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="listprovincia">
+          <DataField>listprovincia</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="listsuplidos">
