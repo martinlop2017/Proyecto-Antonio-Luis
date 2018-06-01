@@ -38,12 +38,14 @@
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.facturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datoslistadoremeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.datoslistadoremeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetListadosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetListados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datoslistadoremeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datoslistadoremeBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // administracionAntonioDataSet1BindingSource
@@ -75,7 +77,7 @@
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer1.DocumentMapWidth = 26;
             reportDataSource1.Name = "DaraSetFacturas";
-            reportDataSource1.Value = this.datoslistadoremeBindingSource;
+            reportDataSource1.Value = this.administracionAntonioDataSet1BindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Proyecto_Antonio_Luis.Formularios.ReportFacturas.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
@@ -93,6 +95,10 @@
             this.datoslistadoremeBindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Clases.datoslistadoreme);
             this.datoslistadoremeBindingSource.CurrentChanged += new System.EventHandler(this.datoslistadoremeBindingSource_CurrentChanged);
             // 
+            // datoslistadoremeBindingSource1
+            // 
+            this.datoslistadoremeBindingSource1.DataSource = typeof(Proyecto_Antonio_Luis.Clases.datoslistadoreme);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -108,6 +114,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSetListados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datoslistadoremeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datoslistadoremeBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -121,5 +128,6 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource datoslistadoremeBindingSource;
         private System.Windows.Forms.BindingSource facturasBindingSource;
+        private System.Windows.Forms.BindingSource datoslistadoremeBindingSource1;
     }
 }
