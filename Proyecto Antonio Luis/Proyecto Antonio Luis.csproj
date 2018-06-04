@@ -164,11 +164,23 @@
     <Compile Include="Formularios\GestionClientes.Designer.cs">
       <DependentUpon>GestionClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\GestionFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\GestionFacturas.Designer.cs">
+      <DependentUpon>GestionFacturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\GestionUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\GestionUsuarios.Designer.cs">
       <DependentUpon>GestionUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ImprimirFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ImprimirFacturas.Designer.cs">
+      <DependentUpon>ImprimirFacturas.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Impuestos.cs">
       <SubType>Form</SubType>
@@ -274,8 +286,14 @@
     <EmbeddedResource Include="Formularios\GestionClientes.resx">
       <DependentUpon>GestionClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\GestionFacturas.resx">
+      <DependentUpon>GestionFacturas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\GestionUsuarios.resx">
       <DependentUpon>GestionUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ImprimirFacturas.resx">
+      <DependentUpon>ImprimirFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Impuestos.resx">
       <DependentUpon>Impuestos.cs</DependentUpon>

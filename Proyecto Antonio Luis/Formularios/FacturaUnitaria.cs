@@ -35,17 +35,20 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void FacturaUnitaria_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet1.Iva' Puede moverla o quitarla según sea necesario.
-            this.ivaTableAdapter.Fill(this.administracionAntonioDataSet1.Iva);
-            //carga la tabla de clientes en el conbo
-            dataGridView2.DataSource = bd.Clientes.ToList();
 
-            //carga el numero de factura
-            var numerofactura = bd.Facturas.OrderByDescending(x => x.factnumerofact).Take(1).FirstOrDefault();
-            labelNumeroFactura.Text = (numerofactura.factnumerofact.Value + 1).ToString();
- 
+            if (Globales.llamadas == "1")
+            {
+                // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet1.Iva' Puede moverla o quitarla según sea necesario.
+                this.ivaTableAdapter.Fill(this.administracionAntonioDataSet1.Iva);
+                //carga la tabla de clientes en el conbo
+                dataGridView2.DataSource = bd.Clientes.ToList();
+
+                //carga el numero de factura
+                var numerofactura = bd.Facturas.OrderByDescending(x => x.factnumerofact).Take(1).FirstOrDefault();
+                labelNumeroFactura.Text = (numerofactura.factnumerofact.Value + 1).ToString();
 
 
+            }
 
             //  comboBox1.DataSource = baseDeDatos.Ususarios.Where(user => user.activo == true).Select(user => user.nombre).ToList<string>();
 
@@ -223,6 +226,11 @@ namespace Proyecto_Antonio_Luis.Formularios
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void dataGridView1_RowLeave(object sender, DataGridViewCellEventArgs e)

@@ -431,7 +431,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void BotonFactManual_Click(object sender, EventArgs e)
         {
-            FacturaUnitaria form = new FacturaUnitaria();
+            GestionFacturas form = new GestionFacturas();
             form.Show();
 
         }
