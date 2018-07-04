@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BaseDatos;
+using Proyecto_Antonio_Luis.Clases;
 
 
 namespace Proyecto_Antonio_Luis.Formularios
@@ -135,16 +136,16 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
             if (comboBox1.Text == "Número")
             {
-                dgvclientes.DataSource = bd.Facturas.OrderBy(x => x.factnumerofact).ToList();
+                dgvfactura.DataSource = bd.Facturas.OrderBy(x => x.factnumerofact).ToList();
             }
             if (comboBox1.Text == "Código")
             {
-                dgvclientes.DataSource = bd.Facturas.OrderBy(x => x.factcodcliente).ToList();
+                dgvfactura.DataSource = bd.Facturas.OrderBy(x => x.factcodcliente).ToList();
             }
 
             if (comboBox1.Text == "Nombre")
             {
-                dgvclientes.DataSource = bd.Facturas.OrderBy(x => x.factnombre).ToList();
+                dgvfactura.DataSource = bd.Facturas.OrderBy(x => x.factnombre).ToList();
             }
         }
 
@@ -153,7 +154,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             var busqueda = from c in bd.Facturas select c;
             busqueda = busqueda.Where(c => c.factnombre.Contains(textBox1.Text)).OrderBy(x => x.factnombre);
 
-            dgvclientes.DataSource = busqueda.ToList();
+            dgvfactura.DataSource = busqueda.ToList();
         }
 
         private void dgvclientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -164,15 +165,15 @@ namespace Proyecto_Antonio_Luis.Formularios
             try
             {
                 // creamos una variable que va aguardar los datos de la fila seleccionada en el dbgrid
-                Globales.modificar = Convert.ToInt16(dgvclientes.CurrentRow.Cells [1].Value);
+                Globales.modificar = Convert.ToInt16(dgvfactura.CurrentRow.Cells [1].Value);
                 // Abre Ususarios
                 FacturaUnitaria form = new FacturaUnitaria();
                 form.Show();
 
 
-                dgvclientes.DataSource = "";
-                dgvclientes.DataSource = bd.Facturas.ToList();
-                dgvclientes.Refresh();
+                dgvfactura.DataSource = "";
+                dgvfactura.DataSource = bd.Facturas.ToList();
+                dgvfactura.Refresh();
             }
             catch (Exception)
             {
@@ -189,7 +190,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                 {
                     // creamos una variable que va aguardar los datos de la fila seleccionada en el dbgrid
 
-                    int valor1 = Convert.ToInt16(dgvclientes.CurrentRow.Cells[1].Value);
+                    int valor1 = Convert.ToInt16(dgvfactura.CurrentRow.Cells[1].Value);
 
                     //*** borrar
                     //busca en la tabla la fila con el registro suminstrado
@@ -204,7 +205,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                     bd.SaveChanges();
 
                     // Refrescamos el dbgrid
-                    dgvclientes.DataSource = bd.Facturas.ToList();
+                    dgvfactura.DataSource = bd.Facturas.ToList();
                 }
             }
             catch (Exception)
@@ -222,15 +223,15 @@ namespace Proyecto_Antonio_Luis.Formularios
             try
             {
                 // creamos una variable que va aguardar los datos de la fila seleccionada en el dbgrid
-                Globales.modificar = Convert.ToInt16(dgvclientes.CurrentRow.Cells[1].Value);
+                Globales.modificar = Convert.ToInt16(dgvfactura.CurrentRow.Cells[1].Value);
                 // Abre Ususarios
                 FacturaUnitaria form = new FacturaUnitaria();
                 form.Show();
 
 
-                dgvclientes.DataSource = "";
-                dgvclientes.DataSource = bd.Facturas.ToList();
-                dgvclientes.Refresh();
+                dgvfactura.DataSource = "";
+                dgvfactura.DataSource = bd.Facturas.ToList();
+                dgvfactura.Refresh();
             }
             catch (Exception)
             {
@@ -242,6 +243,14 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
             Globales.llamadas = "1";
             FacturaUnitaria form = new FacturaUnitaria();
+            form.Show();
+        }
+
+        private void imprimir_Click(object sender, EventArgs e)
+        {
+            //primero cogemos el valor de la linea selecionada
+            Globales.modificar = Convert.ToInt16(dgvfactura.CurrentRow.Cells[1].Value);
+            ImprimirFacturas form = new ImprimirFacturas();
             form.Show();
         }
     }

@@ -79,6 +79,7 @@
     <Compile Include="Clases\datoslistadoreme.cs" />
     <Compile Include="Clases\Encriptar.cs" />
     <Compile Include="Clases\PasoClientes.cs" />
+    <Compile Include="Clases\ImpresionDirecta.cs" />
     <Compile Include="Clases\temporal.cs" />
     <Compile Include="Formularios\BORRAR.cs">
       <SubType>Form</SubType>

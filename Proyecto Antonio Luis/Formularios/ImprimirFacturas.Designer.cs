@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImprimirFacturas));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxDocumentoFinal = new System.Windows.Forms.TextBox();
@@ -40,6 +42,8 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
+            this.dgvfactura = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvfactura)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -119,6 +123,7 @@
             this.buttonGuardar.Size = new System.Drawing.Size(208, 60);
             this.buttonGuardar.TabIndex = 46;
             this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // printDialog1
             // 
@@ -134,8 +139,31 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
-            // printDocument1
+            // dgvfactura
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.dgvfactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvfactura.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvfactura.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvfactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvfactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvfactura.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvfactura.Location = new System.Drawing.Point(44, 400);
+            this.dgvfactura.Name = "dgvfactura";
+            this.dgvfactura.ReadOnly = true;
+            this.dgvfactura.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvfactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvfactura.Size = new System.Drawing.Size(790, 377);
+            this.dgvfactura.TabIndex = 65;
             // 
             // ImprimirFacturas
             // 
@@ -143,7 +171,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(595, 446);
+            this.ClientSize = new System.Drawing.Size(900, 860);
+            this.Controls.Add(this.dgvfactura);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxDocumentoFinal);
@@ -154,6 +183,8 @@
             this.DoubleBuffered = true;
             this.Name = "ImprimirFacturas";
             this.Text = "ImprimirFacturas";
+            this.Load += new System.EventHandler(this.ImprimirFacturas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvfactura)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,5 +202,6 @@
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
+        private System.Windows.Forms.DataGridView dgvfactura;
     }
 }

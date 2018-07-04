@@ -41,7 +41,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dgvclientes = new System.Windows.Forms.DataGridView();
+            this.dgvfactura = new System.Windows.Forms.DataGridView();
             this.factcontadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.factnumerofactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.factremesaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,7 +94,7 @@
             this.imprimir = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvclientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvfactura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1)).BeginInit();
             this.SuspendLayout();
@@ -176,15 +176,15 @@
             this.label7.TabIndex = 65;
             this.label7.Text = "Gestión de Facturas";
             // 
-            // dgvclientes
+            // dgvfactura
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.dgvclientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvclientes.AutoGenerateColumns = false;
-            this.dgvclientes.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvclientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvfactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvfactura.AutoGenerateColumns = false;
+            this.dgvfactura.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvfactura.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -192,9 +192,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvclientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvclientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvfactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvfactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvfactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.factcontadorDataGridViewTextBoxColumn,
             this.factnumerofactDataGridViewTextBoxColumn,
             this.factremesaDataGridViewTextBoxColumn,
@@ -231,17 +231,17 @@
             this.facttotalremesaDataGridViewTextBoxColumn,
             this.factpormailDataGridViewCheckBoxColumn,
             this.factmailDataGridViewTextBoxColumn});
-            this.dgvclientes.DataSource = this.facturasBindingSource;
-            this.dgvclientes.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvclientes.Location = new System.Drawing.Point(41, 207);
-            this.dgvclientes.Name = "dgvclientes";
-            this.dgvclientes.ReadOnly = true;
-            this.dgvclientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvclientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvclientes.Size = new System.Drawing.Size(790, 377);
-            this.dgvclientes.TabIndex = 64;
-            this.dgvclientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclientes_CellContentClick);
-            this.dgvclientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclientes_CellDoubleClick);
+            this.dgvfactura.DataSource = this.facturasBindingSource;
+            this.dgvfactura.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvfactura.Location = new System.Drawing.Point(41, 207);
+            this.dgvfactura.Name = "dgvfactura";
+            this.dgvfactura.ReadOnly = true;
+            this.dgvfactura.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvfactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvfactura.Size = new System.Drawing.Size(790, 377);
+            this.dgvfactura.TabIndex = 64;
+            this.dgvfactura.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclientes_CellContentClick);
+            this.dgvfactura.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclientes_CellDoubleClick);
             // 
             // factcontadorDataGridViewTextBoxColumn
             // 
@@ -679,6 +679,7 @@
             this.imprimir.Size = new System.Drawing.Size(52, 56);
             this.imprimir.TabIndex = 69;
             this.imprimir.UseVisualStyleBackColor = false;
+            this.imprimir.Click += new System.EventHandler(this.imprimir_Click);
             this.imprimir.MouseEnter += new System.EventHandler(this.imprimir_MouseEnter);
             this.imprimir.MouseLeave += new System.EventHandler(this.imprimir_MouseLeave);
             // 
@@ -695,7 +696,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dgvclientes);
+            this.Controls.Add(this.dgvfactura);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -715,7 +716,7 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvclientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvfactura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1)).EndInit();
             this.ResumeLayout(false);
@@ -731,7 +732,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dgvclientes;
+        private System.Windows.Forms.DataGridView dgvfactura;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
