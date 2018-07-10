@@ -11,7 +11,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Sum(Fields!listsuplidos.Value, "DaraSetFacturas")</Value>
+                    <Value>=Sum(Fields!impritotal2.Value, "DataSet1")</Value>
                     <Style>
                       <FontFamily>Garamond</FontFamily>
                       <FontWeight>Normal</FontWeight>
@@ -47,7 +47,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Sum(Fields!listtotalempleados.Value, "DaraSetFacturas")+Sum(Fields!listimporte1.Value, "DaraSetFacturas")</Value>
+                    <Value>=Sum(Fields!impriconcepto3.Value, "DataSet1")+Sum(Fields!impriconcepto1.Value, "DataSet1")</Value>
                     <Style>
                       <FontFamily>Garamond</FontFamily>
                       <FontWeight>Normal</FontWeight>
@@ -85,7 +85,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Sum(Fields!listiva.Value, "DaraSetFacturas")</Value>
+                    <Value>=Sum(Fields!impritotaliva.Value, "DataSet1")</Value>
                     <Style>
                       <FontFamily>Garamond</FontFamily>
                       <FontWeight>Normal</FontWeight>
@@ -178,7 +178,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Sum(Fields!listtotal.Value, "DaraSetFacturas")</Value>
+                    <Value>=Sum(Fields!impritotalfactura.Value, "DataSet1")</Value>
                     <Style>
                       <FontFamily>Garamond</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -373,7 +373,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Sum(Fields!listtotal.Value, "DaraSetFacturas")</Value>
+                    <Value>=Sum(Fields!impritotalfactura.Value, "DataSet1")</Value>
                     <Style>
                       <FontFamily>Garamond</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -406,8 +406,8 @@
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>8.0139cm</Top>
-        <Left>12.62954cm</Left>
+        <Top>8.08445cm</Top>
+        <Left>12.60871cm</Left>
         <Height>4.44528cm</Height>
         <Width>5.12448cm</Width>
         <Style>
@@ -435,8 +435,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>8.0139cm</Top>
-        <Left>12.76481cm</Left>
+        <Top>8.08445cm</Top>
+        <Left>12.74398cm</Left>
         <Height>0.6cm</Height>
         <Width>2.87026cm</Width>
         <ZIndex>1</ZIndex>
@@ -469,8 +469,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>8.4139cm</Top>
-        <Left>12.76482cm</Left>
+        <Top>8.48445cm</Top>
+        <Left>12.74399cm</Left>
         <Height>0.6cm</Height>
         <Width>2.87026cm</Width>
         <ZIndex>2</ZIndex>
@@ -503,8 +503,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>8.8139cm</Top>
-        <Left>12.76481cm</Left>
+        <Top>8.88445cm</Top>
+        <Left>12.74398cm</Left>
         <Height>0.6cm</Height>
         <Width>2.87026cm</Width>
         <ZIndex>3</ZIndex>
@@ -521,8 +521,8 @@
       </Textbox>
       <Rectangle Name="Rectangle6">
         <KeepTogether>true</KeepTogether>
-        <Top>8.0139cm</Top>
-        <Left>1.63529cm</Left>
+        <Top>8.08445cm</Top>
+        <Left>1.61446cm</Left>
         <Height>4.44528cm</Height>
         <Width>8.08057cm</Width>
         <ZIndex>4</ZIndex>
@@ -551,8 +551,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>7.23751cm</Top>
-        <Left>1.91517cm</Left>
+        <Top>7.30806cm</Top>
+        <Left>1.89434cm</Left>
         <Height>0.6cm</Height>
         <Width>2.87026cm</Width>
         <ZIndex>5</ZIndex>
@@ -589,8 +589,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.00001cm</Top>
-        <Left>1.65046cm</Left>
+        <Top>0.07056cm</Top>
+        <Left>1.62963cm</Left>
         <Height>0.4cm</Height>
         <Width>2.12081cm</Width>
         <ZIndex>6</ZIndex>
@@ -628,8 +628,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.00002cm</Top>
-        <Left>3.72858cm</Left>
+        <Top>0.07057cm</Top>
+        <Left>3.70775cm</Left>
         <Height>0.4cm</Height>
         <Width>9.99217cm</Width>
         <ZIndex>7</ZIndex>
@@ -667,8 +667,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.00001cm</Top>
-        <Left>13.72075cm</Left>
+        <Top>0.07056cm</Top>
+        <Left>13.69992cm</Left>
         <Height>0.4cm</Height>
         <Width>1.99cm</Width>
         <ZIndex>8</ZIndex>
@@ -706,8 +706,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.00001cm</Top>
-        <Left>15.71075cm</Left>
+        <Top>0.07056cm</Top>
+        <Left>15.68992cm</Left>
         <Height>0.4cm</Height>
         <Width>2.04326cm</Width>
         <ZIndex>9</ZIndex>
@@ -803,7 +803,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!listconcepto1.Value, "DaraSetFacturas")</Value>
+                    <Value>=First(Fields!impriconcepto1.Value, "DataSet1")</Value>
                     <Style>
                       <FontFamily>Garamond</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -816,7 +816,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>0.14112cm</Top>
+            <Top>0.21167cm</Top>
             <Left>2.21106cm</Left>
             <Height>0.6cm</Height>
             <Width>9.54713cm</Width>
@@ -839,7 +839,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Sum(Fields!listimporte1.Value, "DaraSetFacturas")</Value>
+                    <Value>=Sum(Fields!impribase1.Value, "DataSet1")</Value>
                     <Style>
                       <FontFamily>Garamond</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -876,7 +876,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Sum(Fields!listimporte1.Value, "DaraSetFacturas")</Value>
+                    <Value>=Sum(Fields!impribase1.Value, "DataSet1")</Value>
                     <Style>
                       <FontFamily>Garamond</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -913,7 +913,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=IIf(Fields!listtotalempleados.Value &lt;&gt; "0", "1", "")</Value>
+                    <Value />
                     <Style>
                       <FontFamily>Garamond</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -949,7 +949,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=IIf(Fields!listtotalempleados.Value &gt; "0", "Laboral","")</Value>
+                    <Value EvaluationMode="Constant" />
                     <Style>
                       <FontFamily>Garamond</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -963,7 +963,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>0.81167cm</Top>
-            <Left>2.17578cm</Left>
+            <Left>2.10523cm</Left>
             <Height>0.6cm</Height>
             <Width>9.54713cm</Width>
             <ZIndex>8</ZIndex>
@@ -985,7 +985,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=IIf(Fields!listtotalempleados.Value &lt;&gt; "0", Fields!listtotalempleados.Value,"")</Value>
+                    <Value>=IIf(Fields!impriconcepto3.Value &lt;&gt; "0", Fields!impribase3.Value,"")</Value>
                     <Style>
                       <FontFamily>Garamond</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -1022,7 +1022,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=IIf(Fields!listconcepto2.Value &lt;&gt; "", Fields!listsuplidos.Value,"")</Value>
+                    <Value>=IIf(Fields!impriconcepto2.Value &lt;&gt; "", Fields!impritotal2.Value,"")</Value>
                     <Style>
                       <FontFamily>Garamond</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -1037,7 +1037,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>1.48224cm</Top>
-            <Left>14.14395cm</Left>
+            <Left>14.1859cm</Left>
             <Height>0.6cm</Height>
             <Width>1.8cm</Width>
             <ZIndex>10</ZIndex>
@@ -1059,7 +1059,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Microsoft.VisualBasic.Interaction.IIf(Fields!listconcepto2.Value &lt;&gt; "", "1", "")</Value>
+                    <Value>=Microsoft.VisualBasic.Interaction.IIf(Fields!impriconcepto1.Value &lt;&gt; "", "1", "")</Value>
                     <Style>
                       <FontFamily>Garamond</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -1095,7 +1095,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!listconcepto2.Value, "DaraSetFacturas")</Value>
+                    <Value>=First(Fields!impriconcepto3.Value, "DataSet1")</Value>
                     <Style>
                       <FontFamily>Garamond</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -1108,7 +1108,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>1.5175cm</Top>
+            <Top>1.55278cm</Top>
             <Left>2.21106cm</Left>
             <Height>0.6cm</Height>
             <Width>9.54713cm</Width>
@@ -1131,7 +1131,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=IIf(Fields!listconcepto2.Value &lt;&gt; "", Fields!listsuplidos.Value,"")</Value>
+                    <Value EvaluationMode="Constant" />
                     <Style>
                       <FontFamily>Garamond</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -1168,7 +1168,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=IIf(Fields!listtotalempleados.Value &lt;&gt; "0", Fields!listtotalempleados.Value,"")</Value>
+                    <Value>=If(Fields!impritotal2.Value &lt;&gt; "0", Fields!impritotal2.Value,"")</Value>
                     <Style>
                       <FontFamily>Garamond</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -1200,9 +1200,9 @@
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>0.40001cm</Top>
-        <Left>1.65046cm</Left>
-        <Height>6.79479cm</Height>
+        <Top>0.47056cm</Top>
+        <Left>1.62963cm</Left>
+        <Height>7.4375cm</Height>
         <Width>16.10356cm</Width>
         <ZIndex>10</ZIndex>
         <Style>
@@ -1213,15 +1213,14 @@
         </Style>
       </Rectangle>
     </ReportItems>
-    <Height>4.90519in</Height>
+    <Height>5.07185in</Height>
     <Style />
   </Body>
-  <Width>7.36006in</Width>
+  <Width>7.98278in</Width>
   <Page>
     <PageHeader>
       <Height>8.70689cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
         <Textbox Name="Textbox7">
           <CanGrow>true</CanGrow>
@@ -1240,8 +1239,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>3.11333cm</Top>
-          <Left>11.51955cm</Left>
+          <Top>3.14024cm</Top>
+          <Left>11.53848cm</Left>
           <Height>0.6cm</Height>
           <Width>5.66286cm</Width>
           <Style>
@@ -1280,8 +1279,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>3.55333cm</Top>
-          <Left>12.31955cm</Left>
+          <Top>3.58024cm</Top>
+          <Left>12.33848cm</Left>
           <Height>0.6cm</Height>
           <Width>3.05562cm</Width>
           <ZIndex>1</ZIndex>
@@ -1314,8 +1313,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
-          <Top>1.09333cm</Top>
-          <Left>9.20955cm</Left>
+          <Top>1.12024cm</Top>
+          <Left>9.22848cm</Left>
           <Height>0.6cm</Height>
           <Width>9.485cm</Width>
           <ZIndex>2</ZIndex>
@@ -1344,8 +1343,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
-          <Top>1.79916cm</Top>
-          <Left>11.19888cm</Left>
+          <Top>1.82607cm</Top>
+          <Left>11.21781cm</Left>
           <Height>0.6cm</Height>
           <Width>5.83375cm</Width>
           <ZIndex>3</ZIndex>
@@ -1376,8 +1375,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
-          <Top>2.23333cm</Top>
-          <Left>10.96955cm</Left>
+          <Top>2.26024cm</Top>
+          <Left>10.98848cm</Left>
           <Height>0.6cm</Height>
           <Width>5.83375cm</Width>
           <ZIndex>4</ZIndex>
@@ -1408,8 +1407,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
-          <Top>2.67333cm</Top>
-          <Left>11.01955cm</Left>
+          <Top>2.70024cm</Top>
+          <Left>11.03848cm</Left>
           <Height>0.6cm</Height>
           <Width>5.83375cm</Width>
           <ZIndex>5</ZIndex>
@@ -1427,8 +1426,8 @@
           <Source>Embedded</Source>
           <Value>LogoAntonioLuis</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.75354cm</Top>
-          <Left>3.82624cm</Left>
+          <Top>0.78045cm</Top>
+          <Left>3.85701cm</Left>
           <Height>2.51979cm</Height>
           <Width>2.37312cm</Width>
           <ZIndex>6</ZIndex>
@@ -1457,8 +1456,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
-          <Top>3.55333cm</Top>
-          <Left>1.6304cm</Left>
+          <Top>3.58024cm</Top>
+          <Left>1.64933cm</Left>
           <Height>0.89104cm</Height>
           <Width>7.39479cm</Width>
           <ZIndex>7</ZIndex>
@@ -1487,8 +1486,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>5.43645cm</Top>
-          <Left>4.23469cm</Left>
+          <Top>5.46336cm</Top>
+          <Left>4.25362cm</Left>
           <Height>0.6cm</Height>
           <Width>2.15604cm</Width>
           <ZIndex>8</ZIndex>
@@ -1511,7 +1510,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!listnumerofactura.Value, "DaraSetFacturas")</Value>
+                      <Value>=Sum(Fields!imprifactura.Value, "DataSet1")</Value>
                       <Style>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -1539,8 +1538,8 @@
             </Textbox>
           </ReportItems>
           <KeepTogether>true</KeepTogether>
-          <Top>5.33645cm</Top>
-          <Left>6.426cm</Left>
+          <Top>5.36336cm</Top>
+          <Left>6.44493cm</Left>
           <Height>0.78021cm</Height>
           <Width>1.63979cm</Width>
           <ZIndex>9</ZIndex>
@@ -1558,7 +1557,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!listnombre.Value, "DaraSetFacturas")</Value>
+                  <Value>=First(Fields!imprinombre.Value, "DataSet1")</Value>
                   <Style>
                     <FontFamily>Garamond</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -1569,8 +1568,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>6.63333cm</Top>
-          <Left>2.99274cm</Left>
+          <Top>6.66024cm</Top>
+          <Left>3.01167cm</Left>
           <Height>0.6cm</Height>
           <Width>10.08726cm</Width>
           <ZIndex>10</ZIndex>
@@ -1592,7 +1591,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!listdireccion.Value, "DaraSetFacturas")</Value>
+                  <Value>=First(Fields!impridireccion.Value, "DataSet1")</Value>
                   <Style>
                     <FontFamily>Garamond</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -1603,8 +1602,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>7.07333cm</Top>
-          <Left>3.34552cm</Left>
+          <Top>7.10024cm</Top>
+          <Left>3.36445cm</Left>
           <Height>0.6cm</Height>
           <Width>9.73448cm</Width>
           <ZIndex>11</ZIndex>
@@ -1626,7 +1625,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!listcp.Value, "DaraSetFacturas")</Value>
+                  <Value>=First(Fields!impricp.Value, "DataSet1")</Value>
                   <Style>
                     <FontFamily>Garamond</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -1637,8 +1636,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>7.51333cm</Top>
-          <Left>2.62638cm</Left>
+          <Top>7.54024cm</Top>
+          <Left>2.64531cm</Left>
           <Height>0.6cm</Height>
           <Width>2.10312cm</Width>
           <ZIndex>12</ZIndex>
@@ -1659,7 +1658,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!listpoblacion.Value, "DaraSetFacturas")</Value>
+                  <Value>First(Fields!impriciudad.Value, "DataSet1")</Value>
                   <Style>
                     <FontFamily>Garamond</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -1670,8 +1669,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>7.51333cm</Top>
-          <Left>5.6225cm</Left>
+          <Top>7.54024cm</Top>
+          <Left>5.64143cm</Left>
           <Height>0.6cm</Height>
           <Width>7.4575cm</Width>
           <ZIndex>13</ZIndex>
@@ -1692,7 +1691,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!listprovincia.Value, "DaraSetFacturas")</Value>
+                  <Value>=First(Fields!impriprovincia.Value, "DataSet1")</Value>
                   <Style>
                     <FontFamily>Garamond</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -1703,8 +1702,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>7.95333cm</Top>
-          <Left>3.27496cm</Left>
+          <Top>7.98024cm</Top>
+          <Left>3.29389cm</Left>
           <Height>0.6cm</Height>
           <Width>2.99393cm</Width>
           <ZIndex>14</ZIndex>
@@ -1736,8 +1735,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>6.63333cm</Top>
-          <Left>1.67308cm</Left>
+          <Top>6.66024cm</Top>
+          <Left>1.69201cm</Left>
           <Height>0.6cm</Height>
           <Width>1.22122cm</Width>
           <ZIndex>15</ZIndex>
@@ -1770,8 +1769,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>7.07333cm</Top>
-          <Left>1.67308cm</Left>
+          <Top>7.10024cm</Top>
+          <Left>1.69201cm</Left>
           <Height>0.6cm</Height>
           <Width>1.64455cm</Width>
           <ZIndex>16</ZIndex>
@@ -1804,8 +1803,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>7.51333cm</Top>
-          <Left>1.67308cm</Left>
+          <Top>7.54024cm</Top>
+          <Left>1.69201cm</Left>
           <Height>0.6cm</Height>
           <Width>0.81958cm</Width>
           <ZIndex>17</ZIndex>
@@ -1838,8 +1837,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>7.51333cm</Top>
-          <Left>4.23469cm</Left>
+          <Top>7.54024cm</Top>
+          <Left>4.25362cm</Left>
           <Height>0.6cm</Height>
           <Width>1.64455cm</Width>
           <ZIndex>18</ZIndex>
@@ -1871,8 +1870,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>7.95333cm</Top>
-          <Left>1.67308cm</Left>
+          <Top>7.98024cm</Top>
+          <Left>1.69201cm</Left>
           <Height>0.6cm</Height>
           <Width>1.64455cm</Width>
           <ZIndex>19</ZIndex>
@@ -1904,8 +1903,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>5.53646cm</Top>
-          <Left>14.18915cm</Left>
+          <Top>5.56337cm</Top>
+          <Left>14.20808cm</Left>
           <Height>0.6cm</Height>
           <Width>1.17708cm</Width>
           <ZIndex>20</ZIndex>
@@ -1928,7 +1927,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!listfecha.Value, "DaraSetFacturas")</Value>
+                      <Value>=First(Fields!imprifecha.Value, "DataSet1")</Value>
                       <Style>
                         <FontFamily>garamond</FontFamily>
                         <FontWeight>Bold</FontWeight>
@@ -1955,8 +1954,8 @@
             </Textbox>
           </ReportItems>
           <KeepTogether>true</KeepTogether>
-          <Top>5.43646cm</Top>
-          <Left>15.54262cm</Left>
+          <Top>5.46337cm</Top>
+          <Left>15.56155cm</Left>
           <Height>0.78021cm</Height>
           <Width>2.08958cm</Width>
           <ZIndex>21</ZIndex>
@@ -1974,7 +1973,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!listcif.Value, "DaraSetFacturas")</Value>
+                  <Value>=First(Fields!imprinif.Value, "DataSet1")</Value>
                   <Style>
                     <FontFamily>Garamond</FontFamily>
                     <FontWeight>Bold</FontWeight>
@@ -1985,8 +1984,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>7.17333cm</Top>
-          <Left>15.61318cm</Left>
+          <Top>7.20024cm</Top>
+          <Left>15.63211cm</Left>
           <Height>0.6cm</Height>
           <Width>2.17862cm</Width>
           <ZIndex>22</ZIndex>
@@ -2019,8 +2018,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>7.17333cm</Top>
-          <Left>14.21557cm</Left>
+          <Top>7.20024cm</Top>
+          <Left>14.2345cm</Left>
           <Height>0.6cm</Height>
           <Width>1.15066cm</Width>
           <ZIndex>23</ZIndex>
@@ -2042,16 +2041,6 @@
         </Border>
       </Style>
     </PageHeader>
-    <PageFooter>
-      <Height>2.54cm</Height>
-      <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
-      <Style>
-        <Border>
-          <Style>None</Style>
-        </Border>
-      </Style>
-    </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <LeftMargin>1cm</LeftMargin>
@@ -2068,113 +2057,125 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>93c2cea4-5b86-4fc1-a2e8-6e341f78ee79</rd:DataSourceID>
+      <rd:DataSourceID>68fa216b-9321-413b-8d66-c760fcd6645b</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DaraSetFacturas">
+    <DataSet Name="DataSet1">
       <Query>
         <DataSourceName>Proyecto_Antonio_LuisClases</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="listbase">
-          <DataField>listbase</DataField>
+        <Field Name="impribase1">
+          <DataField>impribase1</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="listcif">
-          <DataField>listcif</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="listconcepto1">
-          <DataField>listconcepto1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="listconcepto2">
-          <DataField>listconcepto2</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="listcp">
-          <DataField>listcp</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="listdireccion">
-          <DataField>listdireccion</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="listfecha">
-          <DataField>listfecha</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="listimporte1">
-          <DataField>listimporte1</DataField>
+        <Field Name="impribase2">
+          <DataField>impribase2</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="listimporte2">
-          <DataField>listimporte2</DataField>
+        <Field Name="impribase3">
+          <DataField>impribase3</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="listimporteempleados">
-          <DataField>listimporteempleados</DataField>
+        <Field Name="impribasenosujeta">
+          <DataField>impribasenosujeta</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="listiva">
-          <DataField>listiva</DataField>
+        <Field Name="impribasesujeta">
+          <DataField>impribasesujeta</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="listnombre">
-          <DataField>listnombre</DataField>
+        <Field Name="impriciudad">
+          <DataField>impriciudad</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="listnombreemisor">
-          <DataField>listnombreemisor</DataField>
+        <Field Name="impriconcepto1">
+          <DataField>impriconcepto1</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="listnumempleados">
-          <DataField>listnumempleados</DataField>
+        <Field Name="impriconcepto2">
+          <DataField>impriconcepto2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="impriconcepto3">
+          <DataField>impriconcepto3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="impricp">
+          <DataField>impricp</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="impridireccion">
+          <DataField>impridireccion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="imprifactura">
+          <DataField>imprifactura</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="listnumerofactura">
-          <DataField>listnumerofactura</DataField>
+        <Field Name="imprifecha">
+          <DataField>imprifecha</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="listnumeroremesa">
-          <DataField>listnumeroremesa</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="listpoblacion">
-          <DataField>listpoblacion</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="listprovincia">
-          <DataField>listprovincia</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="listsuplidos">
-          <DataField>listsuplidos</DataField>
+        <Field Name="impriiva1">
+          <DataField>impriiva1</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="listtotal">
-          <DataField>listtotal</DataField>
+        <Field Name="impriiva2">
+          <DataField>impriiva2</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="listtotaldocumentos">
-          <DataField>listtotaldocumentos</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="listtotalempleados">
-          <DataField>listtotalempleados</DataField>
+        <Field Name="impriiva3">
+          <DataField>impriiva3</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="listtotalremesa">
-          <DataField>listtotalremesa</DataField>
+        <Field Name="imprinif">
+          <DataField>imprinif</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="imprinombre">
+          <DataField>imprinombre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="impriprovincia">
+          <DataField>impriprovincia</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="impriretenciones">
+          <DataField>impriretenciones</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="impritipoiva">
+          <DataField>impritipoiva</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="impritotal1">
+          <DataField>impritotal1</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="impritotal2">
+          <DataField>impritotal2</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="impritotal3">
+          <DataField>impritotal3</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="impritotalfactura">
+          <DataField>impritotalfactura</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="impritotaliva">
+          <DataField>impritotaliva</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>Proyecto_Antonio_Luis.Clases</rd:DataSetName>
-        <rd:TableName>datoslistadoreme</rd:TableName>
-        <rd:ObjectDataSourceType>Proyecto_Antonio_Luis.Clases.datoslistadoreme, Proyecto Antonio Luis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>ImpresionDirecta</rd:TableName>
+        <rd:ObjectDataSourceType>Proyecto_Antonio_Luis.Clases.ImpresionDirecta, Proyecto Antonio Luis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -2240,6 +2241,7 @@ fjxPfjxPfjxPfjxPfjxPfjxPfjxPfjxPfjxPfjxPfjxPfjxPfjxPfjxPfjxPfjxPfjxPfjxPfjxPfjxP
 iS4LiS4LiS4LiS4LiS4LiS4LiS4LiS4LiS4LiS4LiS4LiS4LiS4LiS4LiS4LiS4LiS4Lhi8LhC8Mii4MAAA=</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>936cf025-e138-4c94-b0fd-9bd4bed6b5f0</rd:ReportID>
+  <rd:ReportID>a7a1a385-f662-46dd-be74-4ad184cb12b4</rd:ReportID>
 </Report>

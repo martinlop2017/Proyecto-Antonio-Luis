@@ -147,6 +147,12 @@
     <Compile Include="Formularios\Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormEsperar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,6 +284,9 @@
     <EmbeddedResource Include="Formularios\Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormEsperar.resx">
       <DependentUpon>FormEsperar.cs</DependentUpon>
     </EmbeddedResource>
@@ -316,6 +325,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Report1.rdlc" />
     <EmbeddedResource Include="Formularios\ReportFacturas.rdlc" />
+    <EmbeddedResource Include="Formularios\ReportImpresionDirecta.rdlc" />
     <EmbeddedResource Include="Formularios\Rutas.resx">
       <DependentUpon>Rutas.cs</DependentUpon>
     </EmbeddedResource>
@@ -372,6 +382,7 @@
     <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Clases.albaranesclientes.datasource" />
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Clases.datoslistadoreme.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Clases.ImpresionDirecta.datasource" />
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Clases.temporal.datasource" />
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.CBS19.datasource" />
     <None Include="Properties\DataSources\Proyecto_Antonio_Luis.Formularios.Clientes.datasource" />

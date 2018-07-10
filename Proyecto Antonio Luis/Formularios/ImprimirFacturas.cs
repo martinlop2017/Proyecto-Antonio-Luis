@@ -40,8 +40,8 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            int inicio = Convert.ToInt16(textBoxDocumentoInicial);
-            int final = Convert.ToInt16(textBoxDocumentoFinal);
+            decimal inicio = Convert.ToDecimal(textBoxDocumentoInicial.Text);
+            decimal final = Convert.ToDecimal(textBoxDocumentoFinal.Text);
 
             if (Convert.ToInt16(textBoxDocumentoFinal.Text) < Convert.ToInt16(textBoxDocumentoInicial.Text))
             {
@@ -49,19 +49,91 @@ namespace Proyecto_Antonio_Luis.Formularios
             }
             else
             {
-                var facturasacontabilizar = bd.Facturas.Where(x => Convert.ToInt32(x.factremesa) >= Convert.ToInt32(textBoxDocumentoInicial.Text) && Convert.ToInt32(x.factnumerofact <= Convert.ToInt32(textBoxDocumentoFinal.Text))).ToList();
+                FolderBrowserDialog buscar = new FolderBrowserDialog();
+                string ruta;
+                if (buscar.ShowDialog() == DialogResult.OK)
+                {
+                    ruta = buscar.SelectedPath;
+
+                    var facturasacontabilizar = bd.Facturas.Where(x => x.factnumerofact >= inicio && x.factnumerofact <= final).OrderBy(x => x.factnumerofact).ToList(); ;
+
+                    dgvfactura.DataSource = facturasacontabilizar;//  facturasacontabilizar.OrderBy(x => x.factnumerofact).ToList();
 
 
-               
-                var facturaimpresa = bd.Facturas.Where(x => x.factnumerofact >= Convert.ToInt16(textBoxDocumentoInicial) && x.factnumerofact >= Convert.ToInt16(textBoxDocumentoFinasInicial)
-                x.factparadomiciliar == true
-                            && x.factdomiciliada == false).ToList();
-                //Enumerable.r  Range(documentoInicial, documentoFinal - documentoInicial + 1).Select(x => x);
+
+
+                    //****************************
+                    //*************************
+                    //*****************************
+                    //*****************************
+
+                    List<ImpresionDirecta> lista = new List<ImpresionDirecta>();
+
+
+                    foreach (var temp in facturasacontabilizar)
+                    {
+                        ImpresionDirecta datosapasar = new ImpresionDirecta();
+
+                        datosapasar.imprifactura = Convert.ToDecimal(temp.factnumerofact);
+                        datosapasar.imprifecha = temp.factfecha;
+                        datosapasar.imprinombre = temp.factnombre;
+                        datosapasar.impridireccion = temp.factdireccion;
+                        datosapasar.impricp = temp.factcp;
+                        datosapasar.impriciudad = temp.factlocalidad;
+                        datosapasar.impriprovincia = temp.factprovincia;
+                        datosapasar.imprinif = temp.factnif;
+                        datosapasar.impriconcepto1 = temp.factconcepto1;
+                        datosapasar.impribase1 = Convert.ToDecimal(temp.factbase1);
+                        datosapasar.impriconcepto2 = temp.factconcepto2;
+                        datosapasar.impribase2 = Convert.ToDecimal(temp.factbase2);
+                        //atosapasar.impriconcepto3 = temp.
+                        datosapasar.impribasenosujeta = Convert.ToDecimal(temp.factbase2);
+                        datosapasar.impribasesujeta = Convert.ToDecimal(temp.factbase1);
+                        datosapasar.impritotalfactura = Convert.ToDecimal(temp.facttotalfactura);
+                        datosapasar.impritipoiva = Convert.ToDecimal(temp.facttipoiva);
+
+
+                        lista.Add(datosapasar);
+
+                    }
+
+                    //marcamos lo s registros como IMPRESOS
+                    foreach (var temp in facturasacontabilizar)
+                    {
+                        temp.factcontabilizada = true;
+                    }
+                    bd.SaveChanges();
+
+
+                    // cargamos la pantalla de listados de remesas
+                    Form4 forma = new Form4(lista, ruta);
+                    forma.Show();
+
+                }
+
             }
 
 
 
-           
+
+        }
+
+        private void textBoxDocumentoFinal_Leave(object sender, EventArgs e)
+        {
+            // cuando introducimos el valor final comprueba si esta fuera de rrango, y si no es asi no permite sguir.
+            // extraemos el numero maximo de factura
+            var ultimafactura = bd.Facturas.OrderByDescending(x => x.factnumerofact).First().factnumerofact;
+            //pasamos a decimal el valor del edit.
+            decimal tope = Convert.ToDecimal(textBoxDocumentoFinal.Text);
+      
+
+            if (tope > ultimafactura)
+            {
+                MessageBox.Show("El documento final no puede ser mayor de: " + ultimafactura);
+                textBoxDocumentoFinal.Text = "0";
+                textBoxDocumentoFinal.Focus();
+            }
+
         }
     }
 }

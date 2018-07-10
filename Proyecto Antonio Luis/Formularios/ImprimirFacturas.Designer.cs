@@ -78,6 +78,7 @@
             this.textBoxDocumentoFinal.Size = new System.Drawing.Size(98, 20);
             this.textBoxDocumentoFinal.TabIndex = 50;
             this.textBoxDocumentoFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxDocumentoFinal.Leave += new System.EventHandler(this.textBoxDocumentoFinal_Leave);
             // 
             // label3
             // 

@@ -34,7 +34,7 @@ namespace Proyecto_Antonio_Luis.Clases
         public decimal impritotaliva { get; set; }
         public decimal impriretenciones { get; set; }
         public decimal impritotalfactura { get; set; }
+        public decimal impritipoiva { get; set; }
 
-        
     }
 }
