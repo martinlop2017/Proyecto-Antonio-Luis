@@ -35,18 +35,18 @@ namespace Proyecto_Antonio_Luis.Formularios
             string[] streamIds;
 
 
-                    this.administracionAntonioDataSet1BindingSource.DataSource = datosListado;
+            this.administracionAntonioDataSet1BindingSource.DataSource = datosListado;
 
-                    byte[] bytes = reportViewer1.LocalReport.Render("PDF", null, out mimeType, out encoding,
-                    out extension, out streamIds, out warnings);
+            byte[] bytes = reportViewer1.LocalReport.Render("PDF", null, out mimeType, out encoding,
+            out extension, out streamIds, out warnings);
 
-                    var exportPath = string.Format(pdfName);
+            var exportPath = string.Format(pdfName);
 
             FileInfo file = new FileInfo(exportPath);
             file.Directory.Create(); // If the directory already exists, this method does nothing.
 
             File.WriteAllBytes(file.FullName, bytes);
-     
+
         }
 
         private void datoslistadoremeBindingSource_CurrentChanged(object sender, EventArgs e)

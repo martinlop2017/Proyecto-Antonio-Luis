@@ -28,8 +28,8 @@ namespace Proyecto_Antonio_Luis.Formularios
         private void button8_Click(object sender, EventArgs e)
         {
 
-
-            DialogResult Result = Impresora.ShowDialog();
+            Close();
+         //   DialogResult Result = Impresora.ShowDialog();
         }
 
         private void ImprimirFacturas_Load(object sender, EventArgs e)
@@ -57,9 +57,6 @@ namespace Proyecto_Antonio_Luis.Formularios
 
                     var facturasacontabilizar = bd.Facturas.Where(x => x.factnumerofact >= inicio && x.factnumerofact <= final).OrderBy(x => x.factnumerofact).ToList(); ;
 
-                    dgvfactura.DataSource = facturasacontabilizar;//  facturasacontabilizar.OrderBy(x => x.factnumerofact).ToList();
-
-
 
 
                     //****************************
@@ -86,11 +83,12 @@ namespace Proyecto_Antonio_Luis.Formularios
                         datosapasar.impribase1 = Convert.ToDecimal(temp.factbase1);
                         datosapasar.impriconcepto2 = temp.factconcepto2;
                         datosapasar.impribase2 = Convert.ToDecimal(temp.factbase2);
-                        //atosapasar.impriconcepto3 = temp.
+                        datosapasar.impribase3 = Convert.ToDecimal(temp.factbaseempleado);
                         datosapasar.impribasenosujeta = Convert.ToDecimal(temp.factbase2);
                         datosapasar.impribasesujeta = Convert.ToDecimal(temp.factbase1);
                         datosapasar.impritotalfactura = Convert.ToDecimal(temp.facttotalfactura);
                         datosapasar.impritipoiva = Convert.ToDecimal(temp.facttipoiva);
+                        datosapasar.impritotaliva = Convert.ToDecimal(temp.factimporteiva);
 
 
                         lista.Add(datosapasar);

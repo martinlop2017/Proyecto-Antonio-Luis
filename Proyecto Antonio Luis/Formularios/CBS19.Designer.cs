@@ -29,15 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CBS19));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvremesas = new System.Windows.Forms.DataGridView();
+            this.remesanumeradorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remesanumeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remesafechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remesatotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remesacontabilizadaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.resillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.administracionAntonioDataSet1 = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1();
             this.dgvfacturas = new System.Windows.Forms.DataGridView();
@@ -90,14 +95,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.cBS19BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.remesanumeradorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remesanumeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remesafechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remesatotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remesacontabilizadaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvremesas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resillaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1)).BeginInit();
@@ -111,14 +109,14 @@
             // 
             this.dgvremesas.AutoGenerateColumns = false;
             this.dgvremesas.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvremesas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvremesas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvremesas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvremesas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.remesanumeradorDataGridViewTextBoxColumn,
@@ -129,19 +127,55 @@
             this.dgvremesas.DataSource = this.resillaBindingSource;
             this.dgvremesas.Location = new System.Drawing.Point(49, 173);
             this.dgvremesas.Name = "dgvremesas";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvremesas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvremesas.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvremesas.RowHeadersWidth = 15;
             this.dgvremesas.Size = new System.Drawing.Size(330, 105);
             this.dgvremesas.TabIndex = 0;
             this.dgvremesas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvremesas_CellClick);
             this.dgvremesas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvremesas_CellContentClick);
+            // 
+            // remesanumeradorDataGridViewTextBoxColumn
+            // 
+            this.remesanumeradorDataGridViewTextBoxColumn.DataPropertyName = "remesanumerador";
+            this.remesanumeradorDataGridViewTextBoxColumn.HeaderText = "remesanumerador";
+            this.remesanumeradorDataGridViewTextBoxColumn.Name = "remesanumeradorDataGridViewTextBoxColumn";
+            this.remesanumeradorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.remesanumeradorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // remesanumeroDataGridViewTextBoxColumn
+            // 
+            this.remesanumeroDataGridViewTextBoxColumn.DataPropertyName = "remesanumero";
+            this.remesanumeroDataGridViewTextBoxColumn.HeaderText = "Remesa";
+            this.remesanumeroDataGridViewTextBoxColumn.Name = "remesanumeroDataGridViewTextBoxColumn";
+            // 
+            // remesafechaDataGridViewTextBoxColumn
+            // 
+            this.remesafechaDataGridViewTextBoxColumn.DataPropertyName = "remesafecha";
+            this.remesafechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.remesafechaDataGridViewTextBoxColumn.Name = "remesafechaDataGridViewTextBoxColumn";
+            // 
+            // remesatotalDataGridViewTextBoxColumn
+            // 
+            this.remesatotalDataGridViewTextBoxColumn.DataPropertyName = "remesatotal";
+            dataGridViewCellStyle9.Format = "N2";
+            dataGridViewCellStyle9.NullValue = "0";
+            this.remesatotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            this.remesatotalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.remesatotalDataGridViewTextBoxColumn.Name = "remesatotalDataGridViewTextBoxColumn";
+            // 
+            // remesacontabilizadaDataGridViewCheckBoxColumn
+            // 
+            this.remesacontabilizadaDataGridViewCheckBoxColumn.DataPropertyName = "remesacontabilizada";
+            this.remesacontabilizadaDataGridViewCheckBoxColumn.HeaderText = "remesacontabilizada";
+            this.remesacontabilizadaDataGridViewCheckBoxColumn.Name = "remesacontabilizadaDataGridViewCheckBoxColumn";
+            this.remesacontabilizadaDataGridViewCheckBoxColumn.Visible = false;
             // 
             // resillaBindingSource
             // 
@@ -157,14 +191,14 @@
             // 
             this.dgvfacturas.AutoGenerateColumns = false;
             this.dgvfacturas.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvfacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvfacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvfacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvfacturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.factcontadorDataGridViewTextBoxColumn,
@@ -221,8 +255,8 @@
             // factremesaDataGridViewTextBoxColumn
             // 
             this.factremesaDataGridViewTextBoxColumn.DataPropertyName = "factremesa";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.factremesaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.factremesaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.factremesaDataGridViewTextBoxColumn.HeaderText = "Remesa";
             this.factremesaDataGridViewTextBoxColumn.Name = "factremesaDataGridViewTextBoxColumn";
             this.factremesaDataGridViewTextBoxColumn.Width = 70;
@@ -230,8 +264,8 @@
             // factnumerofactDataGridViewTextBoxColumn
             // 
             this.factnumerofactDataGridViewTextBoxColumn.DataPropertyName = "factnumerofact";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.factnumerofactDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.factnumerofactDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
             this.factnumerofactDataGridViewTextBoxColumn.HeaderText = "Factura";
             this.factnumerofactDataGridViewTextBoxColumn.Name = "factnumerofactDataGridViewTextBoxColumn";
             this.factnumerofactDataGridViewTextBoxColumn.Width = 65;
@@ -400,8 +434,8 @@
             // facttotalfacturaDataGridViewTextBoxColumn
             // 
             this.facttotalfacturaDataGridViewTextBoxColumn.DataPropertyName = "facttotalfactura";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.facttotalfacturaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.facttotalfacturaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
             this.facttotalfacturaDataGridViewTextBoxColumn.HeaderText = "Total";
             this.facttotalfacturaDataGridViewTextBoxColumn.Name = "facttotalfacturaDataGridViewTextBoxColumn";
             this.facttotalfacturaDataGridViewTextBoxColumn.Width = 78;
@@ -560,17 +594,17 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label3.AutoSize = true;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(431, 197);
+            this.label3.Location = new System.Drawing.Point(415, 205);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(77, 54);
+            this.label3.Size = new System.Drawing.Size(104, 58);
             this.label3.TabIndex = 207;
-            this.label3.Text = "99";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label3.Text = "999";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // progressBar1
             // 
@@ -599,67 +633,9 @@
             this.label4.TabIndex = 209;
             this.label4.Text = "0";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(401, 314);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 213;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(434, 327);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 214;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
             // cBS19BindingSource
             // 
             this.cBS19BindingSource.DataSource = typeof(Proyecto_Antonio_Luis.Formularios.CBS19);
-            // 
-            // remesanumeradorDataGridViewTextBoxColumn
-            // 
-            this.remesanumeradorDataGridViewTextBoxColumn.DataPropertyName = "remesanumerador";
-            this.remesanumeradorDataGridViewTextBoxColumn.HeaderText = "remesanumerador";
-            this.remesanumeradorDataGridViewTextBoxColumn.Name = "remesanumeradorDataGridViewTextBoxColumn";
-            this.remesanumeradorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.remesanumeradorDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // remesanumeroDataGridViewTextBoxColumn
-            // 
-            this.remesanumeroDataGridViewTextBoxColumn.DataPropertyName = "remesanumero";
-            this.remesanumeroDataGridViewTextBoxColumn.HeaderText = "Remesa";
-            this.remesanumeroDataGridViewTextBoxColumn.Name = "remesanumeroDataGridViewTextBoxColumn";
-            // 
-            // remesafechaDataGridViewTextBoxColumn
-            // 
-            this.remesafechaDataGridViewTextBoxColumn.DataPropertyName = "remesafecha";
-            this.remesafechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.remesafechaDataGridViewTextBoxColumn.Name = "remesafechaDataGridViewTextBoxColumn";
-            // 
-            // remesatotalDataGridViewTextBoxColumn
-            // 
-            this.remesatotalDataGridViewTextBoxColumn.DataPropertyName = "remesatotal";
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.remesatotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.remesatotalDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.remesatotalDataGridViewTextBoxColumn.Name = "remesatotalDataGridViewTextBoxColumn";
-            // 
-            // remesacontabilizadaDataGridViewCheckBoxColumn
-            // 
-            this.remesacontabilizadaDataGridViewCheckBoxColumn.DataPropertyName = "remesacontabilizada";
-            this.remesacontabilizadaDataGridViewCheckBoxColumn.HeaderText = "remesacontabilizada";
-            this.remesacontabilizadaDataGridViewCheckBoxColumn.Name = "remesacontabilizadaDataGridViewCheckBoxColumn";
-            this.remesacontabilizadaDataGridViewCheckBoxColumn.Visible = false;
             // 
             // CBS19
             // 
@@ -667,9 +643,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(591, 750);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(591, 767);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -753,8 +727,6 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.DataGridViewTextBoxColumn remesanumeradorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn remesanumeroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn remesafechaDataGridViewTextBoxColumn;

@@ -90,7 +90,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <EntityDeploy Include="ModelAdministracionAntonio.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelAdministracionAntonio.Designer.cs</LastGenOutput>

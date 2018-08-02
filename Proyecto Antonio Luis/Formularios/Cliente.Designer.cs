@@ -112,7 +112,7 @@
             this.label27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label27.Location = new System.Drawing.Point(61, 129);
+            this.label27.Location = new System.Drawing.Point(59, 111);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(52, 15);
             this.label27.TabIndex = 37;
@@ -124,7 +124,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(49, 148);
+            this.label1.Location = new System.Drawing.Point(51, 134);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 38);
             this.label1.TabIndex = 36;
@@ -146,7 +146,7 @@
             // 
             this.textMiNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMiNombre.Location = new System.Drawing.Point(156, 163);
+            this.textMiNombre.Location = new System.Drawing.Point(154, 141);
             this.textMiNombre.MaxLength = 200;
             this.textMiNombre.Name = "textMiNombre";
             this.textMiNombre.Size = new System.Drawing.Size(476, 23);
@@ -161,7 +161,7 @@
             this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(240)))), ((int)(((byte)(253)))));
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label17.Location = new System.Drawing.Point(658, 144);
+            this.label17.Location = new System.Drawing.Point(656, 122);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(74, 15);
             this.label17.TabIndex = 131;
@@ -173,7 +173,7 @@
             this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(240)))), ((int)(((byte)(253)))));
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label18.Location = new System.Drawing.Point(167, 144);
+            this.label18.Location = new System.Drawing.Point(165, 122);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(131, 15);
             this.label18.TabIndex = 130;
@@ -185,7 +185,7 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(473, 302);
+            this.label5.Location = new System.Drawing.Point(475, 247);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 15);
             this.label5.TabIndex = 149;
@@ -197,7 +197,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label4.Location = new System.Drawing.Point(468, 450);
+            this.label4.Location = new System.Drawing.Point(466, 367);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 15);
             this.label4.TabIndex = 148;
@@ -209,7 +209,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label3.Location = new System.Drawing.Point(720, 246);
+            this.label3.Location = new System.Drawing.Point(722, 191);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 15);
             this.label3.TabIndex = 147;
@@ -221,7 +221,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(589, 246);
+            this.label2.Location = new System.Drawing.Point(591, 191);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 15);
             this.label2.TabIndex = 146;
@@ -233,7 +233,7 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label6.Location = new System.Drawing.Point(468, 246);
+            this.label6.Location = new System.Drawing.Point(470, 191);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 15);
             this.label6.TabIndex = 145;
@@ -243,7 +243,7 @@
             // 
             this.textMiTLF2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiTLF2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMiTLF2.Location = new System.Drawing.Point(587, 266);
+            this.textMiTLF2.Location = new System.Drawing.Point(589, 211);
             this.textMiTLF2.MaxLength = 18;
             this.textMiTLF2.Name = "textMiTLF2";
             this.textMiTLF2.Size = new System.Drawing.Size(117, 23);
@@ -254,7 +254,7 @@
             // 
             this.textMiPersonaContacto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiPersonaContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMiPersonaContacto.Location = new System.Drawing.Point(461, 469);
+            this.textMiPersonaContacto.Location = new System.Drawing.Point(459, 386);
             this.textMiPersonaContacto.MaxLength = 50;
             this.textMiPersonaContacto.Name = "textMiPersonaContacto";
             this.textMiPersonaContacto.Size = new System.Drawing.Size(239, 23);
@@ -264,7 +264,7 @@
             // 
             this.textMiMail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMiMail.Location = new System.Drawing.Point(461, 321);
+            this.textMiMail.Location = new System.Drawing.Point(463, 266);
             this.textMiMail.MaxLength = 50;
             this.textMiMail.Name = "textMiMail";
             this.textMiMail.Size = new System.Drawing.Size(243, 23);
@@ -274,7 +274,7 @@
             // 
             this.textMiFax.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiFax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMiFax.Location = new System.Drawing.Point(713, 266);
+            this.textMiFax.Location = new System.Drawing.Point(715, 211);
             this.textMiFax.MaxLength = 18;
             this.textMiFax.Name = "textMiFax";
             this.textMiFax.Size = new System.Drawing.Size(117, 23);
@@ -286,7 +286,7 @@
             // 
             this.textMiTLF1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiTLF1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMiTLF1.Location = new System.Drawing.Point(461, 266);
+            this.textMiTLF1.Location = new System.Drawing.Point(463, 211);
             this.textMiTLF1.MaxLength = 18;
             this.textMiTLF1.Name = "textMiTLF1";
             this.textMiTLF1.Size = new System.Drawing.Size(117, 23);
@@ -298,7 +298,7 @@
             // 
             this.textMiCP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiCP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMiCP.Location = new System.Drawing.Point(347, 321);
+            this.textMiCP.Location = new System.Drawing.Point(349, 266);
             this.textMiCP.MaxLength = 18;
             this.textMiCP.Name = "textMiCP";
             this.textMiCP.Size = new System.Drawing.Size(84, 23);
@@ -308,7 +308,7 @@
             // 
             this.textMiProvincia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiProvincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMiProvincia.Location = new System.Drawing.Point(201, 321);
+            this.textMiProvincia.Location = new System.Drawing.Point(203, 266);
             this.textMiProvincia.MaxLength = 30;
             this.textMiProvincia.Name = "textMiProvincia";
             this.textMiProvincia.Size = new System.Drawing.Size(140, 23);
@@ -318,7 +318,7 @@
             // 
             this.textMiPoblacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiPoblacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMiPoblacion.Location = new System.Drawing.Point(50, 321);
+            this.textMiPoblacion.Location = new System.Drawing.Point(52, 266);
             this.textMiPoblacion.MaxLength = 50;
             this.textMiPoblacion.Name = "textMiPoblacion";
             this.textMiPoblacion.Size = new System.Drawing.Size(145, 23);
@@ -328,7 +328,7 @@
             // 
             this.textMiDiereccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiDiereccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMiDiereccion.Location = new System.Drawing.Point(50, 266);
+            this.textMiDiereccion.Location = new System.Drawing.Point(52, 211);
             this.textMiDiereccion.MaxLength = 50;
             this.textMiDiereccion.Name = "textMiDiereccion";
             this.textMiDiereccion.Size = new System.Drawing.Size(381, 23);
@@ -340,7 +340,7 @@
             this.label24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label24.Location = new System.Drawing.Point(354, 302);
+            this.label24.Location = new System.Drawing.Point(356, 247);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(29, 15);
             this.label24.TabIndex = 139;
@@ -352,7 +352,7 @@
             this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label25.Location = new System.Drawing.Point(213, 302);
+            this.label25.Location = new System.Drawing.Point(215, 247);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(66, 15);
             this.label25.TabIndex = 138;
@@ -364,7 +364,7 @@
             this.label26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label26.Location = new System.Drawing.Point(58, 302);
+            this.label26.Location = new System.Drawing.Point(60, 247);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(71, 15);
             this.label26.TabIndex = 136;
@@ -376,7 +376,7 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label7.Location = new System.Drawing.Point(61, 246);
+            this.label7.Location = new System.Drawing.Point(63, 191);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 15);
             this.label7.TabIndex = 134;
@@ -389,7 +389,7 @@
             this.checActivo.Checked = true;
             this.checActivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checActivo.Location = new System.Drawing.Point(61, 417);
+            this.checActivo.Location = new System.Drawing.Point(59, 334);
             this.checActivo.Name = "checActivo";
             this.checActivo.Size = new System.Drawing.Size(69, 21);
             this.checActivo.TabIndex = 11;
@@ -402,7 +402,7 @@
             this.checDomiciliacion.AutoSize = true;
             this.checDomiciliacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.checDomiciliacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checDomiciliacion.Location = new System.Drawing.Point(129, 418);
+            this.checDomiciliacion.Location = new System.Drawing.Point(127, 335);
             this.checDomiciliacion.Name = "checDomiciliacion";
             this.checDomiciliacion.Size = new System.Drawing.Size(131, 21);
             this.checDomiciliacion.TabIndex = 12;
@@ -414,7 +414,7 @@
             this.checRE.AutoSize = true;
             this.checRE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.checRE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checRE.Location = new System.Drawing.Point(266, 417);
+            this.checRE.Location = new System.Drawing.Point(264, 334);
             this.checRE.Name = "checRE";
             this.checRE.Size = new System.Drawing.Size(54, 21);
             this.checRE.TabIndex = 13;
@@ -426,7 +426,7 @@
             this.checContabilizar.AutoSize = true;
             this.checContabilizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.checContabilizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checContabilizar.Location = new System.Drawing.Point(326, 417);
+            this.checContabilizar.Location = new System.Drawing.Point(324, 334);
             this.checContabilizar.Name = "checContabilizar";
             this.checContabilizar.Size = new System.Drawing.Size(105, 21);
             this.checContabilizar.TabIndex = 14;
@@ -437,7 +437,7 @@
             // 
             this.comboGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboGrupo.FormattingEnabled = true;
-            this.comboGrupo.Location = new System.Drawing.Point(461, 418);
+            this.comboGrupo.Location = new System.Drawing.Point(459, 335);
             this.comboGrupo.Name = "comboGrupo";
             this.comboGrupo.Size = new System.Drawing.Size(102, 24);
             this.comboGrupo.TabIndex = 21;
@@ -448,7 +448,7 @@
             this.chec131.AutoSize = true;
             this.chec131.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.chec131.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chec131.Location = new System.Drawing.Point(384, 583);
+            this.chec131.Location = new System.Drawing.Point(384, 452);
             this.chec131.Name = "chec131";
             this.chec131.Size = new System.Drawing.Size(51, 21);
             this.chec131.TabIndex = 31;
@@ -460,7 +460,7 @@
             this.chec303.AutoSize = true;
             this.chec303.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.chec303.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chec303.Location = new System.Drawing.Point(384, 615);
+            this.chec303.Location = new System.Drawing.Point(384, 484);
             this.chec303.Name = "chec303";
             this.chec303.Size = new System.Drawing.Size(51, 21);
             this.chec303.TabIndex = 37;
@@ -472,7 +472,7 @@
             this.checIntrastat.AutoSize = true;
             this.checIntrastat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.checIntrastat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checIntrastat.Location = new System.Drawing.Point(384, 647);
+            this.checIntrastat.Location = new System.Drawing.Point(384, 516);
             this.checIntrastat.Name = "checIntrastat";
             this.checIntrastat.Size = new System.Drawing.Size(78, 21);
             this.checIntrastat.TabIndex = 43;
@@ -484,7 +484,7 @@
             this.chec752.AutoSize = true;
             this.chec752.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.chec752.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chec752.Location = new System.Drawing.Point(319, 647);
+            this.chec752.Location = new System.Drawing.Point(319, 516);
             this.chec752.Name = "chec752";
             this.chec752.Size = new System.Drawing.Size(51, 21);
             this.chec752.TabIndex = 42;
@@ -496,7 +496,7 @@
             this.chec202.AutoSize = true;
             this.chec202.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.chec202.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chec202.Location = new System.Drawing.Point(319, 615);
+            this.chec202.Location = new System.Drawing.Point(319, 484);
             this.chec202.Name = "chec202";
             this.chec202.Size = new System.Drawing.Size(51, 21);
             this.chec202.TabIndex = 36;
@@ -508,7 +508,7 @@
             this.chec130.AutoSize = true;
             this.chec130.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.chec130.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chec130.Location = new System.Drawing.Point(319, 583);
+            this.chec130.Location = new System.Drawing.Point(319, 452);
             this.chec130.Name = "chec130";
             this.chec130.Size = new System.Drawing.Size(51, 21);
             this.chec130.TabIndex = 30;
@@ -520,7 +520,7 @@
             this.chec751.AutoSize = true;
             this.chec751.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.chec751.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chec751.Location = new System.Drawing.Point(254, 647);
+            this.chec751.Location = new System.Drawing.Point(254, 516);
             this.chec751.Name = "chec751";
             this.chec751.Size = new System.Drawing.Size(51, 21);
             this.chec751.TabIndex = 41;
@@ -532,7 +532,7 @@
             this.chec200.AutoSize = true;
             this.chec200.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.chec200.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chec200.Location = new System.Drawing.Point(254, 615);
+            this.chec200.Location = new System.Drawing.Point(254, 484);
             this.chec200.Name = "chec200";
             this.chec200.Size = new System.Drawing.Size(51, 21);
             this.chec200.TabIndex = 35;
@@ -544,7 +544,7 @@
             this.chec123.AutoSize = true;
             this.chec123.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.chec123.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chec123.Location = new System.Drawing.Point(254, 583);
+            this.chec123.Location = new System.Drawing.Point(254, 452);
             this.chec123.Name = "chec123";
             this.chec123.Size = new System.Drawing.Size(51, 21);
             this.chec123.TabIndex = 29;
@@ -556,7 +556,7 @@
             this.chec390.AutoSize = true;
             this.chec390.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.chec390.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chec390.Location = new System.Drawing.Point(189, 647);
+            this.chec390.Location = new System.Drawing.Point(189, 516);
             this.chec390.Name = "chec390";
             this.chec390.Size = new System.Drawing.Size(51, 21);
             this.chec390.TabIndex = 40;
@@ -568,7 +568,7 @@
             this.chec115.AutoSize = true;
             this.chec115.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.chec115.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chec115.Location = new System.Drawing.Point(189, 583);
+            this.chec115.Location = new System.Drawing.Point(189, 452);
             this.chec115.Name = "chec115";
             this.chec115.Size = new System.Drawing.Size(51, 21);
             this.chec115.TabIndex = 28;
@@ -580,7 +580,7 @@
             this.chec193.AutoSize = true;
             this.chec193.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.chec193.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chec193.Location = new System.Drawing.Point(189, 615);
+            this.chec193.Location = new System.Drawing.Point(189, 484);
             this.chec193.Name = "chec193";
             this.chec193.Size = new System.Drawing.Size(51, 21);
             this.chec193.TabIndex = 34;
@@ -592,7 +592,7 @@
             this.chec349.AutoSize = true;
             this.chec349.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.chec349.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chec349.Location = new System.Drawing.Point(124, 647);
+            this.chec349.Location = new System.Drawing.Point(124, 516);
             this.chec349.Name = "chec349";
             this.chec349.Size = new System.Drawing.Size(51, 21);
             this.chec349.TabIndex = 39;
@@ -604,7 +604,7 @@
             this.chec190.AutoSize = true;
             this.chec190.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.chec190.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chec190.Location = new System.Drawing.Point(124, 615);
+            this.chec190.Location = new System.Drawing.Point(124, 484);
             this.chec190.Name = "chec190";
             this.chec190.Size = new System.Drawing.Size(51, 21);
             this.chec190.TabIndex = 33;
@@ -616,7 +616,7 @@
             this.chec111.AutoSize = true;
             this.chec111.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.chec111.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chec111.Location = new System.Drawing.Point(124, 583);
+            this.chec111.Location = new System.Drawing.Point(124, 452);
             this.chec111.Name = "chec111";
             this.chec111.Size = new System.Drawing.Size(51, 21);
             this.chec111.TabIndex = 27;
@@ -628,7 +628,7 @@
             this.chec309.AutoSize = true;
             this.chec309.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.chec309.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chec309.Location = new System.Drawing.Point(59, 647);
+            this.chec309.Location = new System.Drawing.Point(59, 516);
             this.chec309.Name = "chec309";
             this.chec309.Size = new System.Drawing.Size(51, 21);
             this.chec309.TabIndex = 38;
@@ -640,7 +640,7 @@
             this.chec180.AutoSize = true;
             this.chec180.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.chec180.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chec180.Location = new System.Drawing.Point(59, 615);
+            this.chec180.Location = new System.Drawing.Point(59, 484);
             this.chec180.Name = "chec180";
             this.chec180.Size = new System.Drawing.Size(51, 21);
             this.chec180.TabIndex = 32;
@@ -652,7 +652,7 @@
             this.chec100.AutoSize = true;
             this.chec100.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.chec100.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chec100.Location = new System.Drawing.Point(59, 583);
+            this.chec100.Location = new System.Drawing.Point(59, 452);
             this.chec100.Name = "chec100";
             this.chec100.Size = new System.Drawing.Size(51, 21);
             this.chec100.TabIndex = 26;
@@ -665,7 +665,7 @@
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label8.Location = new System.Drawing.Point(63, 398);
+            this.label8.Location = new System.Drawing.Point(61, 315);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 15);
             this.label8.TabIndex = 175;
@@ -677,7 +677,7 @@
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label9.Location = new System.Drawing.Point(468, 401);
+            this.label9.Location = new System.Drawing.Point(466, 318);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(46, 15);
             this.label9.TabIndex = 176;
@@ -689,7 +689,7 @@
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label10.Location = new System.Drawing.Point(756, 398);
+            this.label10.Location = new System.Drawing.Point(754, 315);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 15);
             this.label10.TabIndex = 177;
@@ -701,7 +701,7 @@
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label11.Location = new System.Drawing.Point(658, 398);
+            this.label11.Location = new System.Drawing.Point(656, 315);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(80, 15);
             this.label11.TabIndex = 178;
@@ -711,7 +711,7 @@
             // 
             this.textTrabajadores.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textTrabajadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textTrabajadores.Location = new System.Drawing.Point(569, 418);
+            this.textTrabajadores.Location = new System.Drawing.Point(567, 335);
             this.textTrabajadores.MaxLength = 3;
             this.textTrabajadores.Name = "textTrabajadores";
             this.textTrabajadores.Size = new System.Drawing.Size(76, 23);
@@ -724,7 +724,7 @@
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label12.Location = new System.Drawing.Point(574, 398);
+            this.label12.Location = new System.Drawing.Point(572, 315);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(71, 15);
             this.label12.TabIndex = 180;
@@ -736,7 +736,7 @@
             this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label13.Location = new System.Drawing.Point(720, 451);
+            this.label13.Location = new System.Drawing.Point(718, 368);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(103, 15);
             this.label13.TabIndex = 182;
@@ -746,7 +746,7 @@
             // 
             this.textTarifa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textTarifa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textTarifa.Location = new System.Drawing.Point(712, 469);
+            this.textTarifa.Location = new System.Drawing.Point(710, 386);
             this.textTarifa.MaxLength = 18;
             this.textTarifa.Name = "textTarifa";
             this.textTarifa.Size = new System.Drawing.Size(118, 23);
@@ -761,7 +761,7 @@
             this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label14.Location = new System.Drawing.Point(77, 451);
+            this.label14.Location = new System.Drawing.Point(75, 368);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(46, 15);
             this.label14.TabIndex = 189;
@@ -771,7 +771,7 @@
             // 
             this.textCCC1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textCCC1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCCC1.Location = new System.Drawing.Point(66, 470);
+            this.textCCC1.Location = new System.Drawing.Point(64, 387);
             this.textCCC1.Margin = new System.Windows.Forms.Padding(4);
             this.textCCC1.MaxLength = 4;
             this.textCCC1.Name = "textCCC1";
@@ -782,7 +782,7 @@
             // 
             this.textCCC2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textCCC2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCCC2.Location = new System.Drawing.Point(124, 470);
+            this.textCCC2.Location = new System.Drawing.Point(122, 387);
             this.textCCC2.Margin = new System.Windows.Forms.Padding(4);
             this.textCCC2.MaxLength = 4;
             this.textCCC2.Name = "textCCC2";
@@ -794,7 +794,7 @@
             // 
             this.textCCC3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textCCC3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCCC3.Location = new System.Drawing.Point(182, 470);
+            this.textCCC3.Location = new System.Drawing.Point(180, 387);
             this.textCCC3.Margin = new System.Windows.Forms.Padding(4);
             this.textCCC3.MaxLength = 4;
             this.textCCC3.Name = "textCCC3";
@@ -806,7 +806,7 @@
             // 
             this.textCCC4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textCCC4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCCC4.Location = new System.Drawing.Point(240, 470);
+            this.textCCC4.Location = new System.Drawing.Point(238, 387);
             this.textCCC4.Margin = new System.Windows.Forms.Padding(4);
             this.textCCC4.MaxLength = 4;
             this.textCCC4.Name = "textCCC4";
@@ -818,7 +818,7 @@
             // 
             this.textCCC5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textCCC5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCCC5.Location = new System.Drawing.Point(298, 470);
+            this.textCCC5.Location = new System.Drawing.Point(296, 387);
             this.textCCC5.Margin = new System.Windows.Forms.Padding(4);
             this.textCCC5.MaxLength = 4;
             this.textCCC5.Name = "textCCC5";
@@ -831,7 +831,7 @@
             // 
             this.textCCC6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textCCC6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCCC6.Location = new System.Drawing.Point(356, 471);
+            this.textCCC6.Location = new System.Drawing.Point(354, 388);
             this.textCCC6.Margin = new System.Windows.Forms.Padding(4);
             this.textCCC6.MaxLength = 4;
             this.textCCC6.Name = "textCCC6";
@@ -846,10 +846,10 @@
             // 
             // textObserva
             // 
-            this.textObserva.Location = new System.Drawing.Point(498, 560);
+            this.textObserva.Location = new System.Drawing.Point(500, 452);
             this.textObserva.MaxLength = 500;
             this.textObserva.Name = "textObserva";
-            this.textObserva.Size = new System.Drawing.Size(332, 121);
+            this.textObserva.Size = new System.Drawing.Size(332, 85);
             this.textObserva.TabIndex = 44;
             this.textObserva.Text = "";
             // 
@@ -859,7 +859,7 @@
             this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label16.Location = new System.Drawing.Point(67, 542);
+            this.label16.Location = new System.Drawing.Point(61, 434);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(91, 15);
             this.label16.TabIndex = 193;
@@ -871,7 +871,7 @@
             this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label19.Location = new System.Drawing.Point(504, 542);
+            this.label19.Location = new System.Drawing.Point(497, 434);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(101, 15);
             this.label19.TabIndex = 194;
@@ -883,7 +883,7 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Location = new System.Drawing.Point(218, 746);
+            this.button1.Location = new System.Drawing.Point(204, 578);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(208, 60);
             this.button1.TabIndex = 45;
@@ -896,7 +896,7 @@
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.Location = new System.Drawing.Point(492, 746);
+            this.button2.Location = new System.Drawing.Point(478, 578);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(208, 60);
             this.button2.TabIndex = 46;
@@ -906,7 +906,7 @@
             // textFechaAlta
             // 
             this.textFechaAlta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textFechaAlta.Location = new System.Drawing.Point(750, 418);
+            this.textFechaAlta.Location = new System.Drawing.Point(748, 335);
             this.textFechaAlta.Mask = "00/00/0000";
             this.textFechaAlta.Name = "textFechaAlta";
             this.textFechaAlta.Size = new System.Drawing.Size(80, 23);
@@ -919,7 +919,7 @@
             this.checpormail.AutoSize = true;
             this.checpormail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.checpormail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checpormail.Location = new System.Drawing.Point(709, 323);
+            this.checpormail.Location = new System.Drawing.Point(711, 268);
             this.checpormail.Name = "checpormail";
             this.checpormail.Size = new System.Drawing.Size(121, 21);
             this.checpormail.TabIndex = 195;
@@ -930,7 +930,7 @@
             // 
             this.textPreciotrabajador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textPreciotrabajador.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPreciotrabajador.Location = new System.Drawing.Point(661, 419);
+            this.textPreciotrabajador.Location = new System.Drawing.Point(659, 336);
             this.textPreciotrabajador.MaxLength = 18;
             this.textPreciotrabajador.Name = "textPreciotrabajador";
             this.textPreciotrabajador.Size = new System.Drawing.Size(76, 23);
@@ -944,7 +944,7 @@
             // 
             this.textMiCif.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiCif.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMiCif.Location = new System.Drawing.Point(646, 163);
+            this.textMiCif.Location = new System.Drawing.Point(644, 141);
             this.textMiCif.MaxLength = 15;
             this.textMiCif.Name = "textMiCif";
             this.textMiCif.Size = new System.Drawing.Size(163, 23);
@@ -952,11 +952,14 @@
             // 
             // Cliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Clientes2;
-            this.ClientSize = new System.Drawing.Size(879, 867);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(879, 685);
             this.Controls.Add(this.textPreciotrabajador);
             this.Controls.Add(this.checpormail);
             this.Controls.Add(this.textFechaAlta);
@@ -1028,6 +1031,7 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Name = "Cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";

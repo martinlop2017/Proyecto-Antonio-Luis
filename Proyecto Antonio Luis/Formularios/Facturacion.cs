@@ -294,7 +294,7 @@ namespace Proyecto_Antonio_Luis.Formularios
         }
 
 
- 
+
 
         private void facturar_Click(object sender, EventArgs e)
         {
@@ -308,84 +308,84 @@ namespace Proyecto_Antonio_Luis.Formularios
             {
 
 
-            generar.Enabled = false;
-            añadir.Enabled = false;
-            eliminar.Enabled = false;
-            imprimir.Enabled = true;
-            facturar.Enabled = false;
-            //mostramos el detagrib
-       //     dataGridView1.Visible = true;
-           
-            //cargamos los datos en el dgv.
+                generar.Enabled = false;
+                añadir.Enabled = false;
+                eliminar.Enabled = false;
+                imprimir.Enabled = true;
+                facturar.Enabled = false;
+                //mostramos el detagrib
+                //     dataGridView1.Visible = true;
 
-            //**** calculamos el valor de la coluna numerador
-            decimal numerofactura = 1;
+                //cargamos los datos en el dgv.
 
-            if (bd.Facturas.Any())
-            {
-                numerofactura = (bd.Facturas.OrderByDescending(x => x.factnumerofact).First().factnumerofact.Value)+1;
-                
-            }
+                //**** calculamos el valor de la coluna numerador
+                decimal numerofactura = 1;
 
+                if (bd.Facturas.Any())
+                {
+                    numerofactura = (bd.Facturas.OrderByDescending(x => x.factnumerofact).First().factnumerofact.Value) + 1;
 
-            List<temporal> lista = new List<temporal>();
+                }
 
 
-
-            foreach (DataGridViewRow row in dgvTemporal.Rows)
-
-            {
-                temporal datosapasar = new temporal();
-
-                datosapasar.tempnumerofactura = Convert.ToDecimal(numerofactura);
-                numerofactura++;
-                datosapasar.tempremesa = Convert.ToString(row.Cells[0].Value);
-                datosapasar.temptipoiva = Convert.ToDecimal(row.Cells[1].Value);
-                datosapasar.tempcod = Convert.ToDecimal(row.Cells[2].Value);
-                datosapasar.tempfecha = Convert.ToString(row.Cells[3].Value);
-                datosapasar.tempnombre = Convert.ToString(row.Cells[4].Value);
-                datosapasar.tempconcepto1 = Convert.ToString(row.Cells[5].Value);
-                datosapasar.temptarifa = Convert.ToDecimal(row.Cells[6].Value);
-                datosapasar.tempconcepto2 = Convert.ToString(row.Cells[7].Value);
-                datosapasar.temptarifa2 = Convert.ToDecimal(row.Cells[8].Value);
-                datosapasar.tempempleados = Convert.ToDecimal(row.Cells[9].Value);
-                datosapasar.temppvempleados = Convert.ToDecimal(row.Cells[10].Value);
-                datosapasar.templaboral = Convert.ToDecimal(row.Cells[11].Value);
-                datosapasar.tempbase = Convert.ToDecimal(row.Cells[12].Value);
-                datosapasar.tempiva = Convert.ToDecimal(row.Cells[13].Value);
-                datosapasar.temptotal = Convert.ToDecimal(row.Cells[14].Value);
-                datosapasar.temppormail = Convert.ToBoolean(row.Cells[15].Value);
-                datosapasar.tempdoiciliado = Convert.ToBoolean(row.Cells[16].Value);
-                datosapasar.tempcif = Convert.ToString(row.Cells[17].Value);
-                datosapasar.tempdireccion = Convert.ToString(row.Cells[18].Value);
-                datosapasar.templocalidad = Convert.ToString(row.Cells[19].Value);
-                datosapasar.tempprovincia = Convert.ToString(row.Cells[20].Value);
-                datosapasar.tempcp = Convert.ToString(row.Cells[21].Value);
-                datosapasar.tempmail = Convert.ToString(row.Cells[22].Value);
-                datosapasar.tempiban1 = Convert.ToString(row.Cells[23].Value);
-                datosapasar.tempiban2 = Convert.ToString(row.Cells[24].Value);
-                datosapasar.tempiban3 = Convert.ToString(row.Cells[25].Value);
-                datosapasar.tempiban4 = Convert.ToString(row.Cells[26].Value);
-                datosapasar.tempiban5 = Convert.ToString(row.Cells[27].Value);
-                datosapasar.tempiban6 = Convert.ToString(row.Cells[28].Value);
-                datosapasar.tempparadomiciliar = Convert.ToBoolean(row.Cells[31].Value);
-                datosapasar.tempparaimprimir = Convert.ToBoolean(row.Cells[32].Value);
-                datosapasar.tempparacontabilizar = Convert.ToBoolean(row.Cells[33].Value);
+                List<temporal> lista = new List<temporal>();
 
 
 
+                foreach (DataGridViewRow row in dgvTemporal.Rows)
+
+                {
+                    temporal datosapasar = new temporal();
+
+                    datosapasar.tempnumerofactura = Convert.ToDecimal(numerofactura);
+                    numerofactura++;
+                    datosapasar.tempremesa = Convert.ToString(row.Cells[0].Value);
+                    datosapasar.temptipoiva = Convert.ToDecimal(row.Cells[1].Value);
+                    datosapasar.tempcod = Convert.ToDecimal(row.Cells[2].Value);
+                    datosapasar.tempfecha = Convert.ToString(row.Cells[3].Value);
+                    datosapasar.tempnombre = Convert.ToString(row.Cells[4].Value);
+                    datosapasar.tempconcepto1 = Convert.ToString(row.Cells[5].Value);
+                    datosapasar.temptarifa = Convert.ToDecimal(row.Cells[6].Value);
+                    datosapasar.tempconcepto2 = Convert.ToString(row.Cells[7].Value);
+                    datosapasar.temptarifa2 = Convert.ToDecimal(row.Cells[8].Value);
+                    datosapasar.tempempleados = Convert.ToDecimal(row.Cells[9].Value);
+                    datosapasar.temppvempleados = Convert.ToDecimal(row.Cells[10].Value);
+                    datosapasar.templaboral = Convert.ToDecimal(row.Cells[11].Value);
+                    datosapasar.tempbase = Convert.ToDecimal(row.Cells[12].Value);
+                    datosapasar.tempiva = Convert.ToDecimal(row.Cells[13].Value);
+                    datosapasar.temptotal = Convert.ToDecimal(row.Cells[14].Value);
+                    datosapasar.temppormail = Convert.ToBoolean(row.Cells[15].Value);
+                    datosapasar.tempdoiciliado = Convert.ToBoolean(row.Cells[16].Value);
+                    datosapasar.tempcif = Convert.ToString(row.Cells[17].Value);
+                    datosapasar.tempdireccion = Convert.ToString(row.Cells[18].Value);
+                    datosapasar.templocalidad = Convert.ToString(row.Cells[19].Value);
+                    datosapasar.tempprovincia = Convert.ToString(row.Cells[20].Value);
+                    datosapasar.tempcp = Convert.ToString(row.Cells[21].Value);
+                    datosapasar.tempmail = Convert.ToString(row.Cells[22].Value);
+                    datosapasar.tempiban1 = Convert.ToString(row.Cells[23].Value);
+                    datosapasar.tempiban2 = Convert.ToString(row.Cells[24].Value);
+                    datosapasar.tempiban3 = Convert.ToString(row.Cells[25].Value);
+                    datosapasar.tempiban4 = Convert.ToString(row.Cells[26].Value);
+                    datosapasar.tempiban5 = Convert.ToString(row.Cells[27].Value);
+                    datosapasar.tempiban6 = Convert.ToString(row.Cells[28].Value);
+                    datosapasar.tempparadomiciliar = Convert.ToBoolean(row.Cells[31].Value);
+                    datosapasar.tempparaimprimir = Convert.ToBoolean(row.Cells[32].Value);
+                    datosapasar.tempparacontabilizar = Convert.ToBoolean(row.Cells[33].Value);
 
 
-                lista.Add(datosapasar);
 
-            }
-            
-            dataGridView1.DataSource = lista.ToList();
 
-            //ahora vamos a pasar los datos a la tabla de factura.
 
-            //**** calculamos el valor de la coluna numerador
-            //var ultimonumerador = bd.Facturas.OrderByDescending(x => x.factcontador).First().factcontador;
+                    lista.Add(datosapasar);
+
+                }
+
+                dataGridView1.DataSource = lista.ToList();
+
+                //ahora vamos a pasar los datos a la tabla de factura.
+
+                //**** calculamos el valor de la coluna numerador
+                //var ultimonumerador = bd.Facturas.OrderByDescending(x => x.factcontador).First().factcontador;
 
 
                 decimal totalbaseremesa = 0;
@@ -393,7 +393,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                 decimal totaltotalremesa = 0;
                 string numeroremesa = "";
                 string fecharemesa = "";
-               int totaldocumentos = 0;
+                int totaldocumentos = 0;
 
 
                 List<Facturas> facturasAGuardar = new List<Facturas>();
@@ -407,7 +407,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
 
                     myFactura.factbase1 = temp.tempbase;
-          //          mylistado.listimporte1 = temp.
+                    //          mylistado.listimporte1 = temp.
 
                     myFactura.factnumerofact = temp.tempnumerofactura;
                     mylistado.listnumerofactura = temp.tempnumerofactura.ToString();
@@ -506,17 +506,17 @@ namespace Proyecto_Antonio_Luis.Formularios
                     facturasAGuardar.Add(myFactura);
                     alistar.Add(mylistado);
                 }
-                    // pasamos los datos a la tabla facturacion y remesa
-                    bd.Facturas.AddRange(facturasAGuardar);
-                    bd.SaveChanges();
-                
+                // pasamos los datos a la tabla facturacion y remesa
+                bd.Facturas.AddRange(facturasAGuardar);
+                bd.SaveChanges();
 
-            var pasoremesa = new Resilla();
+
+                var pasoremesa = new Resilla();
                 pasoremesa.remesanumero = numeroremesa;
-                
+
 
                 pasoremesa.remesafecha = fecharemesa;
-                pasoremesa.remesatotal = Convert.ToDecimal( totaltotalremesa);
+                pasoremesa.remesatotal = Convert.ToDecimal(totaltotalremesa);
                 // pasoremesa.remesaimpresa = false;
                 pasoremesa.remesacontabilizada = false;
 
@@ -528,11 +528,11 @@ namespace Proyecto_Antonio_Luis.Formularios
                 //grabamos el total de la remesa en la clase a listar
                 alistar.ToList().ForEach(x => x.listtotalremesa = totaltotalremesa);
                 totaldocumentos = alistar.Count;
-                alistar.ToList().ForEach(x => x.listtotaldocumentos  = totaldocumentos );
-               
+                alistar.ToList().ForEach(x => x.listtotaldocumentos = totaldocumentos);
 
 
-               
+
+
 
 
                 //ahora vamos a introducir el total de la remesa en las facturas.
@@ -560,37 +560,39 @@ namespace Proyecto_Antonio_Luis.Formularios
             formEsperar.ShowDialog();
 
             hilo.Dispose();
-                CheckForIllegalCrossThreadCalls = true;
+            CheckForIllegalCrossThreadCalls = true;
 
 
-                var form = new FormEsperar("Imprimiendo Facturas");
-                CheckForIllegalCrossThreadCalls = false;
-                var hilo2 = Task.Factory.StartNew(() =>
-                {
+            var form = new FormEsperar("Imprimiendo Facturas");
+            CheckForIllegalCrossThreadCalls = false;
+            var hilo2 = Task.Factory.StartNew(() =>
+            {
 
-                    // cargamos la pantalla de listados de remesas
-                    for (int i = 0; i < alistar.Count; i++)
-                    {
-                        var dato = alistar[i];
-
-                        Form3 nuevaForma = new Form3();
-                        //nuevaForma.ExportarToPdf(dato, $"C:\\Equipo Martin\\facturas\\Nueva carpeta\\Test{i + 1}.pdf");
-                        nuevaForma.ExportarToPdf(dato, $"C:\\ByMartin\\{dato.listnombre}\\Facturacion\\Factura {dato.listnumerofactura}.pdf");
-
-                    }
-
-                    form.Close();
-                });
-
-                form.ShowDialog();
-
-                hilo.Dispose();
-                CheckForIllegalCrossThreadCalls = true;
-
+                    Form3 nuevaForma = new Form3();
                 // cargamos la pantalla de listados de remesas
-                Form2 forma = new Form2(alistar);
-                forma.Show();
-          
+                for (int i = 0; i < alistar.Count; i++)
+                {
+                    var dato = alistar[i];
+
+                    //nuevaForma.ExportarToPdf(dato, $"C:\\Equipo Martin\\facturas\\Nueva carpeta\\Test{i + 1}.pdf");
+                    nuevaForma.ExportarToPdf(dato, $"C:\\ByMartin\\{dato.listnombre}\\Facturacion\\Factura {dato.listnumerofactura}.pdf");
+
+                }
+
+                form.Close();
+            });
+
+            form.ShowDialog();
+
+            hilo2.Dispose();
+            CheckForIllegalCrossThreadCalls = true;
+
+
+
+            // cargamos la pantalla de listados de remesas
+            Form2 forma = new Form2(alistar);
+            forma.Show();
+
 
 
         }
@@ -782,6 +784,7 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
 
         }
-    }
+
+            }
     
 }

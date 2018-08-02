@@ -36,22 +36,22 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void eliminar_MouseEnter(object sender, EventArgs e)
         {
-            label2.Visible = true;
+            
         }
 
         private void eliminar_MouseLeave(object sender, EventArgs e)
         {
-            label2.Visible = false;
+            
         }
 
         private void modificar_MouseEnter(object sender, EventArgs e)
         {
-            label3.Visible = true;
+           
         }
 
         private void modificar_MouseLeave(object sender, EventArgs e)
         {
-            label3.Visible =false;
+           
         }
 
         private void panel1_MouseEnter(object sender, EventArgs e)
@@ -106,6 +106,8 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void GestionFacturas_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet1.Facturas' Puede moverla o quitarla según sea necesario.
+            this.facturasTableAdapter.Fill(this.administracionAntonioDataSet1.Facturas);
             // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet1.Facturas' Puede moverla o quitarla según sea necesario.
             this.facturasTableAdapter.Fill(this.administracionAntonioDataSet1.Facturas);
 
@@ -181,63 +183,6 @@ namespace Proyecto_Antonio_Luis.Formularios
             }
         }
 
-        private void eliminar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (MessageBox.Show("Confirme La Eliminación del Registro.", "Eliminar Registro",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
-                {
-                    // creamos una variable que va aguardar los datos de la fila seleccionada en el dbgrid
-
-                    int valor1 = Convert.ToInt16(dgvfactura.CurrentRow.Cells[1].Value);
-
-                    //*** borrar
-                    //busca en la tabla la fila con el registro suminstrado
-                    //y si lo encuentra borra la linea de la base de datos
-
-                    var borrar = bd.Facturas.SingleOrDefault(codcliente => codcliente.factnumerofact == valor1);
-                    if (borrar != null)
-                    {
-                        bd.Facturas.Remove(borrar);
-                    }
-                    //guardamos los cambios
-                    bd.SaveChanges();
-
-                    // Refrescamos el dbgrid
-                    dgvfactura.DataSource = bd.Facturas.ToList();
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("No ha sido posible eliminar los datos", "Error 103", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void modificar_Click(object sender, EventArgs e)
-        {
-
-            //Esto lo que hace es mostrar los datos para modificar
-            // Inicializa la variable global llamadas
-            Globales.llamadas = "2";
-            try
-            {
-                // creamos una variable que va aguardar los datos de la fila seleccionada en el dbgrid
-                Globales.modificar = Convert.ToInt16(dgvfactura.CurrentRow.Cells[1].Value);
-                // Abre Ususarios
-                FacturaUnitaria form = new FacturaUnitaria();
-                form.Show();
-
-
-                dgvfactura.DataSource = "";
-                dgvfactura.DataSource = bd.Facturas.ToList();
-                dgvfactura.Refresh();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Debe Seleccionar un registro.", "Error 303", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private void sumar_Click(object sender, EventArgs e)
         {
@@ -252,6 +197,11 @@ namespace Proyecto_Antonio_Luis.Formularios
             Globales.modificar = Convert.ToInt16(dgvfactura.CurrentRow.Cells[1].Value);
             ImprimirFacturas form = new ImprimirFacturas();
             form.Show();
+        }
+
+        private void facturasBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

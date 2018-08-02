@@ -358,7 +358,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             PanelClientes.Visible = false;
             PanelFacturas.Visible = false;
 
-            CBS19 form = new CBS19();
+            GestionRemesas form = new GestionRemesas();
             form.Show();
         }
 

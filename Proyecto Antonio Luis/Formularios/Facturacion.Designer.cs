@@ -166,7 +166,7 @@
             // 
             this.generar.BackColor = System.Drawing.Color.White;
             this.generar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("generar.BackgroundImage")));
-            this.generar.Location = new System.Drawing.Point(36, 116);
+            this.generar.Location = new System.Drawing.Point(32, 82);
             this.generar.Name = "generar";
             this.generar.Size = new System.Drawing.Size(52, 56);
             this.generar.TabIndex = 28;
@@ -179,7 +179,7 @@
             // 
             this.añadir.BackColor = System.Drawing.Color.White;
             this.añadir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("añadir.BackgroundImage")));
-            this.añadir.Location = new System.Drawing.Point(94, 116);
+            this.añadir.Location = new System.Drawing.Point(90, 82);
             this.añadir.Name = "añadir";
             this.añadir.Size = new System.Drawing.Size(52, 56);
             this.añadir.TabIndex = 29;
@@ -193,7 +193,7 @@
             this.eliminar.BackColor = System.Drawing.Color.White;
             this.eliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eliminar.BackgroundImage")));
             this.eliminar.Enabled = false;
-            this.eliminar.Location = new System.Drawing.Point(152, 116);
+            this.eliminar.Location = new System.Drawing.Point(148, 82);
             this.eliminar.Name = "eliminar";
             this.eliminar.Size = new System.Drawing.Size(52, 56);
             this.eliminar.TabIndex = 30;
@@ -207,7 +207,7 @@
             this.facturar.BackColor = System.Drawing.Color.White;
             this.facturar.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Facturacion;
             this.facturar.Enabled = false;
-            this.facturar.Location = new System.Drawing.Point(210, 116);
+            this.facturar.Location = new System.Drawing.Point(206, 82);
             this.facturar.Name = "facturar";
             this.facturar.Size = new System.Drawing.Size(52, 56);
             this.facturar.TabIndex = 31;
@@ -223,7 +223,7 @@
             this.imprimir.BackColor = System.Drawing.Color.White;
             this.imprimir.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Impresora;
             this.imprimir.Enabled = false;
-            this.imprimir.Location = new System.Drawing.Point(268, 116);
+            this.imprimir.Location = new System.Drawing.Point(264, 82);
             this.imprimir.Name = "imprimir";
             this.imprimir.Size = new System.Drawing.Size(52, 56);
             this.imprimir.TabIndex = 32;
@@ -236,7 +236,7 @@
             // 
             this.salir.BackColor = System.Drawing.Color.White;
             this.salir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("salir.BackgroundImage")));
-            this.salir.Location = new System.Drawing.Point(1177, 116);
+            this.salir.Location = new System.Drawing.Point(1179, 84);
             this.salir.Name = "salir";
             this.salir.Size = new System.Drawing.Size(52, 56);
             this.salir.TabIndex = 33;
@@ -251,7 +251,7 @@
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Tahoma", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(153)))), ((int)(((byte)(208)))));
-            this.label7.Location = new System.Drawing.Point(439, 42);
+            this.label7.Location = new System.Drawing.Point(439, 21);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(379, 42);
             this.label7.TabIndex = 39;
@@ -262,7 +262,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(153)))), ((int)(((byte)(208)))));
             this.panel1.Controls.Add(this.panel2);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Location = new System.Drawing.Point(326, 116);
+            this.panel1.Location = new System.Drawing.Point(322, 82);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(845, 56);
             this.panel1.TabIndex = 40;
@@ -391,7 +391,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(273, 100);
+            this.label4.Location = new System.Drawing.Point(269, 66);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 44;
@@ -402,7 +402,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(212, 100);
+            this.label5.Location = new System.Drawing.Point(208, 66);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 43;
@@ -413,7 +413,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(156, 100);
+            this.label6.Location = new System.Drawing.Point(152, 66);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 42;
@@ -424,7 +424,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(100, 100);
+            this.label8.Location = new System.Drawing.Point(96, 66);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 13);
             this.label8.TabIndex = 41;
@@ -436,7 +436,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(39, 100);
+            this.label9.Location = new System.Drawing.Point(35, 66);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 13);
             this.label9.TabIndex = 45;
@@ -447,7 +447,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(1187, 100);
+            this.label10.Location = new System.Drawing.Point(1189, 68);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(27, 13);
             this.label10.TabIndex = 46;
@@ -512,7 +512,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTemporal.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTemporal.EnableHeadersVisualStyles = false;
-            this.dgvTemporal.Location = new System.Drawing.Point(40, 222);
+            this.dgvTemporal.Location = new System.Drawing.Point(42, 175);
             this.dgvTemporal.Name = "dgvTemporal";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Yellow;
@@ -527,7 +527,7 @@
             this.dgvTemporal.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvTemporal.RowTemplate.DefaultCellStyle.Format = "N2";
             this.dgvTemporal.RowTemplate.DefaultCellStyle.NullValue = null;
-            this.dgvTemporal.Size = new System.Drawing.Size(1189, 552);
+            this.dgvTemporal.Size = new System.Drawing.Size(1189, 526);
             this.dgvTemporal.TabIndex = 47;
             this.dgvTemporal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTemporal_CellContentClick);
             this.dgvTemporal.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTemporal_CellValueChanged);
@@ -831,10 +831,10 @@
             this.tempparacontabilizarDataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.temporalBindingSource;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(42, 278);
+            this.dataGridView1.Location = new System.Drawing.Point(42, 175);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 20;
-            this.dataGridView1.Size = new System.Drawing.Size(1189, 552);
+            this.dataGridView1.Size = new System.Drawing.Size(1189, 526);
             this.dataGridView1.TabIndex = 48;
             this.dataGridView1.Visible = false;
             // 
@@ -1091,7 +1091,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel3.Controls.Add(this.panel33);
-            this.panel3.Location = new System.Drawing.Point(466, 285);
+            this.panel3.Location = new System.Drawing.Point(396, 144);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(480, 548);
             this.panel3.TabIndex = 52;

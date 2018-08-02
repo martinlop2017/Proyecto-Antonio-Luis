@@ -231,6 +231,155 @@ namespace Proyecto_Antonio_Luis.Formularios
         private void button1_Click(object sender, EventArgs e)
         {
 
+            List<Facturas> lista = new List<Facturas>();
+
+ 
+            
+            {
+                Facturas datosapasar = new Facturas();
+
+                datosapasar.factnumerofact = Convert.ToDecimal(labelNumeroFactura.Text);
+                datosapasar.factfecha = dateTimePickerFecha.Text;
+              
+                var datoscliente = bd.Clientes.FirstOrDefault(x => x.nombrecliente == textBox13.Text);
+     
+                if (datoscliente == null)
+                    {
+                    datosapasar.factnombre = textBox1.Text;
+                    datosapasar.factdireccion = textBox3.Text;
+                    datosapasar.factcp = textBox6.Text;
+                    datosapasar.factlocalidad = textBox4.Text;
+                    datosapasar.factprovincia = textBox5.Text;
+                    datosapasar.factnif = textBox2.Text;
+                    datosapasar.factiban1 = textBox7.Text;
+                    datosapasar.factiban2 = textBox8.Text;
+                    datosapasar.factiban3 = textBox9.Text;
+                    datosapasar.factiban4 = textBox10.Text;
+                    datosapasar.factiban5 = textBox11.Text;
+                    datosapasar.factiban6 = textBox12.Text;
+                    datosapasar.factdomiciliada = false;
+                    datosapasar.factcontabilizada = false;
+                    datosapasar.factimpresa = false;
+                    datosapasar.factparacontabilizar = false;
+                    datosapasar.factparadomiciliar = false;
+
+                    if (checkBox3.Checked == true)
+                    {
+                        datosapasar.factparadomiciliar = true;
+                    }
+                    if (checkBox3.Checked == true)
+                    {
+                        datosapasar.factparacontabilizar = true;
+
+                    }
+
+                }
+                    else
+                    {
+                    datosapasar.factnombre = datoscliente.nombrecliente;
+                    datosapasar.factdireccion = datoscliente.direcioncliente;
+                    datosapasar.factcp = datoscliente.cod_postalcliente;
+                    datosapasar.factlocalidad = datoscliente.localidacliente;
+                    datosapasar.factprovincia = datoscliente.provinciacliente;
+                    datosapasar.factnif = datoscliente.cifcliente;
+                    datosapasar.factiban1 = datoscliente.iban1cliente;
+                    datosapasar.factiban2 = datoscliente.iban2cliente;
+                    datosapasar.factiban3 = datoscliente.iban3cliente;
+                    datosapasar.factiban4 = datoscliente.iban4cliente;
+                    datosapasar.factiban5 = datoscliente.iban5cliente;
+                    datosapasar.factiban6 = datoscliente.iban6cliente;
+                    datosapasar.factcodcliente = datoscliente.codcliente;
+                    datosapasar.factdomiciliada = false;
+                    datosapasar.factcontabilizada = false;
+                    datosapasar.factimpresa = false;
+                    datosapasar.factparacontabilizar = datoscliente.contabilizarcliente;
+                    datosapasar.factparadomiciliar = datoscliente.domiciliadocliente;
+
+
+                }
+                datosapasar.factremesa = "Factura Directa " + labelNumeroFactura.Text;
+                int contador = 0;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                   
+                {
+                    
+                    if ("" != Convert.ToString(row.Cells[3].Value)&&(contador == 0))
+                    {
+                        if (true == Convert.ToBoolean(row.Cells[1].Value))
+                        {
+                            
+                          //  datosapasar.factcopceptolinea2 = Convert.ToString(row.Cells[3].Value);
+                            datosapasar.factbase2 = Convert.ToDecimal(row.Cells[5].Value);
+                        }
+                        else
+                        {
+                            datosapasar.factconcepto1 = Convert.ToString(row.Cells[3].Value);
+                            datosapasar.factbase1 = Convert.ToDecimal(row.Cells[5].Value);
+                        }
+                    }
+
+                    if ("" != Convert.ToString(row.Cells[3].Value) && (contador == 1))
+                    {
+                        if (true == Convert.ToBoolean(row.Cells[1].Value))
+                        {
+                            datosapasar.factconcepto2 = Convert.ToString(row.Cells[3].Value);
+                            datosapasar.factbase2 = Convert.ToDecimal(row.Cells[5].Value);
+                        }
+                        else
+                        {
+                            datosapasar.factconcepto1 = Convert.ToString(row.Cells[3].Value);
+                            datosapasar.factbase1 = Convert.ToDecimal(row.Cells[5].Value);
+                        }
+
+                    }
+
+
+                    if ("" != Convert.ToString(row.Cells[3].Value) && (contador == 2))
+                    {
+                        if (true == Convert.ToBoolean(row.Cells[1].Value))
+                        {
+                            datosapasar.factconcepto2 = Convert.ToString(row.Cells[3].Value);
+                            datosapasar.factbase2 = Convert.ToDecimal(row.Cells[5].Value);
+                        }
+                        else
+                        {
+                            datosapasar.factconcepto1 = Convert.ToString(row.Cells[3].Value);
+                            datosapasar.factbase1 = Convert.ToDecimal(row.Cells[5].Value);
+                        }
+
+                    }
+
+
+                    contador++;
+                }
+
+
+
+                //datosapasar.facttotalfactura = Convert.ToDecimal(totalfactura.Text);
+                /*
+            datosapasar.imprinombre = temp.factnombre;
+            datosapasar.impridireccion = temp.factdireccion;
+            datosapasar.impricp = temp.factcp;
+            datosapasar.impriciudad = temp.factlocalidad;
+            datosapasar.impriprovincia = temp.factprovincia;
+            datosapasar.imprinif = temp.factnif;
+            datosapasar.impriconcepto1 = temp.factconcepto1;
+            datosapasar.impribase1 = Convert.ToDecimal(temp.factbase1);
+            datosapasar.impriconcepto2 = temp.factconcepto2;
+            datosapasar.impribase2 = Convert.ToDecimal(temp.factbase2);
+            //atosapasar.impriconcepto3 = temp.
+            datosapasar.impribasenosujeta = Convert.ToDecimal(temp.factbase2);
+            datosapasar.impribasesujeta = Convert.ToDecimal(temp.factbase1);
+            datosapasar.impritotalfactura = Convert.ToDecimal(temp.facttotalfactura);
+            datosapasar.impritipoiva = Convert.ToDecimal(temp.facttipoiva);
+
+*/
+
+                lista.Add(datosapasar);
+
+            }
+            bd.Facturas.AddRange(lista);
+            bd.SaveChanges();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

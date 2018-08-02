@@ -177,6 +177,12 @@
     <Compile Include="Formularios\GestionFacturas.Designer.cs">
       <DependentUpon>GestionFacturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\GestionRemesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\GestionRemesas.Designer.cs">
+      <DependentUpon>GestionRemesas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\GestionUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\GestionFacturas.resx">
       <DependentUpon>GestionFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\GestionRemesas.resx">
+      <DependentUpon>GestionRemesas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\GestionUsuarios.resx">
       <DependentUpon>GestionUsuarios.cs</DependentUpon>
@@ -425,7 +434,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo Antonio Luis.bmp" />

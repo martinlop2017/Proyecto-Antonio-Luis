@@ -397,5 +397,10 @@ namespace Proyecto_Antonio_Luis.Formularios
 
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -32,11 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturaUnitaria));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturaUnitaria));
             this.labelNumeroFactura = new System.Windows.Forms.Label();
             this.dateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
@@ -49,12 +49,6 @@
             this.clientesTableAdapter = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1TableAdapters.ClientesTableAdapter();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.DataGridviewColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridviewColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridviewColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ivaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ivaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.ivaTableAdapter = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1TableAdapters.IvaTableAdapter();
@@ -119,6 +113,12 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.nombreclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.albaranesclientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Column6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.DataGridviewColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridviewColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridviewColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
@@ -245,7 +245,7 @@
             this.Column2,
             this.DataGridviewColumn3,
             this.DataGridviewColumn4});
-            this.dataGridView1.Location = new System.Drawing.Point(36, 135);
+            this.dataGridView1.Location = new System.Drawing.Point(38, 140);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -267,67 +267,6 @@
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             this.dataGridView1.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowLeave);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
-            // 
-            // Column6
-            // 
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = "0,00";
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column6.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.Column6.HeaderText = "I.V.A.";
-            this.Column6.Items.AddRange(new object[] {
-            "0,00",
-            "4,00",
-            "10,00",
-            "21,00"});
-            this.Column6.MaxDropDownItems = 4;
-            this.Column6.Name = "Column6";
-            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column6.Width = 65;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Suplidos";
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column5.Width = 65;
-            // 
-            // DataGridviewColumn1
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = "0";
-            this.DataGridviewColumn1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DataGridviewColumn1.HeaderText = "Cantidad";
-            this.DataGridviewColumn1.Name = "DataGridviewColumn1";
-            this.DataGridviewColumn1.Width = 75;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Descripción";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 437;
-            // 
-            // DataGridviewColumn3
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = "0,00";
-            this.DataGridviewColumn3.DefaultCellStyle = dataGridViewCellStyle4;
-            this.DataGridviewColumn3.HeaderText = "Importe";
-            this.DataGridviewColumn3.Name = "DataGridviewColumn3";
-            // 
-            // DataGridviewColumn4
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = "0,00";
-            this.DataGridviewColumn4.DefaultCellStyle = dataGridViewCellStyle5;
-            this.DataGridviewColumn4.HeaderText = "Total";
-            this.DataGridviewColumn4.Name = "DataGridviewColumn4";
-            this.DataGridviewColumn4.ReadOnly = true;
             // 
             // ivaBindingSource
             // 
@@ -689,7 +628,7 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Location = new System.Drawing.Point(63, 563);
+            this.button1.Location = new System.Drawing.Point(57, 558);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(208, 60);
             this.button1.TabIndex = 108;
@@ -1010,6 +949,64 @@
             this.nombreclienteDataGridViewTextBoxColumn.Name = "nombreclienteDataGridViewTextBoxColumn";
             this.nombreclienteDataGridViewTextBoxColumn.Width = 380;
             // 
+            // Column6
+            // 
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = "0,00";
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column6.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.Column6.HeaderText = "I.V.A.";
+            this.Column6.Items.AddRange(new object[] {
+            "21,00"});
+            this.Column6.MaxDropDownItems = 4;
+            this.Column6.Name = "Column6";
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column6.Width = 65;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Suplidos";
+            this.Column5.Name = "Column5";
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column5.Width = 65;
+            // 
+            // DataGridviewColumn1
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.DataGridviewColumn1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DataGridviewColumn1.HeaderText = "Cantidad";
+            this.DataGridviewColumn1.Name = "DataGridviewColumn1";
+            this.DataGridviewColumn1.Width = 75;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Descripción";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 437;
+            // 
+            // DataGridviewColumn3
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = "0,00";
+            this.DataGridviewColumn3.DefaultCellStyle = dataGridViewCellStyle4;
+            this.DataGridviewColumn3.HeaderText = "Importe";
+            this.DataGridviewColumn3.Name = "DataGridviewColumn3";
+            // 
+            // DataGridviewColumn4
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = "0,00";
+            this.DataGridviewColumn4.DefaultCellStyle = dataGridViewCellStyle5;
+            this.DataGridviewColumn4.HeaderText = "Total";
+            this.DataGridviewColumn4.Name = "DataGridviewColumn4";
+            this.DataGridviewColumn4.ReadOnly = true;
+            // 
             // FacturaUnitaria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1084,12 +1081,6 @@
         private System.Windows.Forms.BindingSource ivaBindingSource;
         private AdministracionAntonioDataSet1TableAdapters.IvaTableAdapter ivaTableAdapter;
         private System.Windows.Forms.BindingSource ivaBindingSource1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataGridviewColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataGridviewColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataGridviewColumn4;
         private System.Windows.Forms.Label bas1;
         private System.Windows.Forms.Label iv1;
         private System.Windows.Forms.Label bas2;
@@ -1150,5 +1141,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreclienteDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataGridviewColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataGridviewColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataGridviewColumn4;
     }
 }

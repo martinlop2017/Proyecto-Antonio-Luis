@@ -270,5 +270,10 @@ namespace Proyecto_Antonio_Luis.Formularios
             textivageneral.MaxLength = Convert.ToInt16(textdigitos.Text);
 
         }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

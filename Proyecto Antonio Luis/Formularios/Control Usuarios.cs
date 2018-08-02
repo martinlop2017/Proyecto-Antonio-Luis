@@ -24,14 +24,14 @@ namespace Proyecto_Antonio_Luis
 
     public partial class Form1 : Form
     {
-        AdministracionAntonioEntities baseDeDatos;
+        AdministracionAntonioEntities bd;
         int contador = 0;
 
         public Form1()
         {
             
             InitializeComponent();
-            baseDeDatos = new AdministracionAntonioEntities();
+            bd = new AdministracionAntonioEntities();
             
            
         }
@@ -58,7 +58,9 @@ namespace Proyecto_Antonio_Luis
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBox1.DataSource = baseDeDatos.Ususarios.Where(user => user.activo == true).Select(user => user.nombre).ToList<string>();
+       
+              
+            comboBox1.DataSource = bd.Ususarios.Where(user => user.activo == true).Select(user => user.nombre).ToList<string>();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -66,7 +68,7 @@ namespace Proyecto_Antonio_Luis
 
             string llave = Encriptar.codificar(textBox1.Text);
 
-            var compro = baseDeDatos.Ususarios.Where(X => X.nombre == comboBox1.Text && X.login == llave).ToList();
+            var compro = bd.Ususarios.Where(X => X.nombre == comboBox1.Text && X.login == llave).ToList();
             if (compro.Count == 1)
             {
 
@@ -105,7 +107,7 @@ namespace Proyecto_Antonio_Luis
 
         private void comboBox1_Leave(object sender, EventArgs e)
         {
-            var compro = baseDeDatos.Ususarios.Where(X => X.nombre == comboBox1.Text && X.grupo == "Administrador").ToList();
+            var compro = bd.Ususarios.Where(X => X.nombre == comboBox1.Text && X.grupo == "Administrador").ToList();
             if (compro.Count == 1)
             {
                 label4.Visible = true;
@@ -118,6 +120,19 @@ namespace Proyecto_Antonio_Luis
             Globales.llamadas = comboBox1.Text;
             preguntaseguridad form = new preguntaseguridad();
             form.Show();
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(13))
+            {
+                e.Handled = true; SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
