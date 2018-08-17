@@ -228,7 +228,7 @@ namespace Proyecto_Antonio_Luis.Formularios
         private void GestionUsuarios_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet2.Ususarios' Puede moverla o quitarla según sea necesario.
-            this.ususariosTableAdapter.Fill(this.administracionAntonioDataSet2.Ususarios);
+            //this.ususariosTableAdapter.Fill(this.administracionAntonioDataSet2.Ususarios);
             // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet1.Ususarios' Puede moverla o quitarla según sea necesario.
  //           this.ususariosTableAdapter.Fill(this.administracionAntonioDataSet1.Ususarios);
 

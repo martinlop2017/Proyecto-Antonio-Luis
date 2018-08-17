@@ -34,27 +34,12 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void Impuestos_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet1.Iva' Puede moverla o quitarla según sea necesario.
-            this.ivaTableAdapter.Fill(this.administracionAntonioDataSet1.Iva);
-            //CARGA LOS REGISTROS EN EL GRIP AL INICIAR EL FORM
-
             dgvIva.DataSource = bd.Iva.ToList();
-
-          //  dgvIva.DataSource = baseDeDatos.Iva.ToList();
-
-
-
-
-
+            dgvIva.Refresh();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-
-
-
-
         }
 
 

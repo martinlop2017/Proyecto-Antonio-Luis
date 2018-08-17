@@ -30,12 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Impuestos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonAceptar = new System.Windows.Forms.Button();
             this.dgvIva = new System.Windows.Forms.DataGridView();
-            this.ivaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,20 +51,16 @@
             this.boxiva = new System.Windows.Forms.TextBox();
             this.boxconcepto = new System.Windows.Forms.TextBox();
             this.eliminar = new System.Windows.Forms.Button();
-            this.administracionAntonioDataSet1 = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1();
-            this.administracionAntonioDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ivaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.ivaTableAdapter = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1TableAdapters.IvaTableAdapter();
+            this.dataSetAntonioLuis = new Proyecto_Antonio_Luis.DataSetAntonioLuis();
+            this.ivaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIva)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetAntonioLuis)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAceptar
@@ -91,21 +84,21 @@
             this.dgvIva.AutoGenerateColumns = false;
             this.dgvIva.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvIva.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvIva.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvIva.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvIva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIva.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dgvIva.DataSource = this.ivaBindingSource1;
+            this.dgvIva.DataSource = this.ivaBindingSource;
             this.dgvIva.Location = new System.Drawing.Point(38, 212);
             this.dgvIva.MultiSelect = false;
             this.dgvIva.Name = "dgvIva";
@@ -237,7 +230,7 @@
             this.panel1.Controls.Add(this.boxiva);
             this.panel1.Controls.Add(this.boxconcepto);
             this.panel1.Controls.Add(this.buttonAceptar);
-            this.panel1.Location = new System.Drawing.Point(20, 179);
+            this.panel1.Location = new System.Drawing.Point(21, 184);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(422, 268);
             this.panel1.TabIndex = 198;
@@ -318,64 +311,39 @@
             this.eliminar.UseVisualStyleBackColor = false;
             this.eliminar.Click += new System.EventHandler(this.eliminar_Click_1);
             // 
-            // administracionAntonioDataSet1
+            // dataSetAntonioLuis
             // 
-            this.administracionAntonioDataSet1.DataSetName = "AdministracionAntonioDataSet1";
-            this.administracionAntonioDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataSetAntonioLuis.DataSetName = "DataSetAntonioLuis";
+            this.dataSetAntonioLuis.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // administracionAntonioDataSet1BindingSource
+            // ivaBindingSource
             // 
-            this.administracionAntonioDataSet1BindingSource.DataSource = this.administracionAntonioDataSet1;
-            this.administracionAntonioDataSet1BindingSource.Position = 0;
-            // 
-            // ivaBindingSource1
-            // 
-            this.ivaBindingSource1.DataMember = "Iva";
-            this.ivaBindingSource1.DataSource = this.administracionAntonioDataSet1;
-            // 
-            // ivaTableAdapter
-            // 
-            this.ivaTableAdapter.ClearBeforeFill = true;
+            this.ivaBindingSource.DataMember = "Iva";
+            this.ivaBindingSource.DataSource = this.dataSetAntonioLuis;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "numerador";
             this.dataGridViewTextBoxColumn1.HeaderText = "numerador";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            this.dataGridViewTextBoxColumn1.Width = 5;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "ivaconcepto";
-            this.dataGridViewTextBoxColumn2.FillWeight = 108.7671F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Concepto";
+            this.dataGridViewTextBoxColumn2.HeaderText = "ivaconcepto";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 218;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "ivaporciento";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewTextBoxColumn3.FillWeight = 77.01976F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "% Iva";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ivaporciento";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 75;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "ivarecargo";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "N2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridViewTextBoxColumn4.FillWeight = 114.2132F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "% R.E.";
+            this.dataGridViewTextBoxColumn4.HeaderText = "ivarecargo";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 75;
             // 
             // Impuestos
             // 
@@ -384,7 +352,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(463, 478);
+            this.ClientSize = new System.Drawing.Size(464, 478);
             this.ControlBox = false;
             this.Controls.Add(this.eliminar);
             this.Controls.Add(this.panel1);
@@ -403,12 +371,10 @@
             this.Text = "Impuestos";
             this.Load += new System.EventHandler(this.Impuestos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvIva)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetAntonioLuis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -437,15 +403,12 @@
         private System.Windows.Forms.TextBox boxiva;
         private System.Windows.Forms.TextBox boxconcepto;
         private System.Windows.Forms.Button eliminar;
-        private System.Windows.Forms.BindingSource ivaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeradorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ivaconceptoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ivaporcientoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ivarecargoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource administracionAntonioDataSet1BindingSource;
-        private AdministracionAntonioDataSet1 administracionAntonioDataSet1;
-        private System.Windows.Forms.BindingSource ivaBindingSource1;
-        private AdministracionAntonioDataSet1TableAdapters.IvaTableAdapter ivaTableAdapter;
+        private DataSetAntonioLuis dataSetAntonioLuis;
+        private System.Windows.Forms.BindingSource ivaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

@@ -41,11 +41,6 @@
             this.eliminar = new System.Windows.Forms.Button();
             this.sumar = new System.Windows.Forms.Button();
             this.dgvUsuario = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.administracionAntonioDataSet2 = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet2();
-            this.ususariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ususariosTableAdapter = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet2TableAdapters.UsusariosTableAdapter();
             this.codDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numerousuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,10 +70,14 @@
             this.agendaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.avisosDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gavisosDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ususariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.administracionAntonioDataSet2 = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet2();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ususariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label7
@@ -251,44 +250,6 @@
             this.dgvUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuario.Size = new System.Drawing.Size(616, 378);
             this.dgvUsuario.TabIndex = 39;
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(216, 108);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(397, 56);
-            this.panel1.TabIndex = 52;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
-            this.panel1.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(9, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(377, 20);
-            this.textBox1.TabIndex = 52;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.MouseEnter += new System.EventHandler(this.textBox1_MouseEnter);
-            this.textBox1.MouseLeave += new System.EventHandler(this.textBox1_MouseLeave);
-            // 
-            // administracionAntonioDataSet2
-            // 
-            this.administracionAntonioDataSet2.DataSetName = "AdministracionAntonioDataSet2";
-            this.administracionAntonioDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ususariosBindingSource
-            // 
-            this.ususariosBindingSource.DataMember = "Ususarios";
-            this.ususariosBindingSource.DataSource = this.administracionAntonioDataSet2;
-            // 
-            // ususariosTableAdapter
-            // 
-            this.ususariosTableAdapter.ClearBeforeFill = true;
             // 
             // codDataGridViewTextBoxColumn
             // 
@@ -493,6 +454,40 @@
             this.gavisosDataGridViewCheckBoxColumn.Name = "gavisosDataGridViewCheckBoxColumn";
             this.gavisosDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
+            // ususariosBindingSource
+            // 
+            this.ususariosBindingSource.DataMember = "Ususarios";
+            this.ususariosBindingSource.DataSource = this.administracionAntonioDataSet2;
+            // 
+            // administracionAntonioDataSet2
+            // 
+            this.administracionAntonioDataSet2.DataSetName = "AdministracionAntonioDataSet2";
+            this.administracionAntonioDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Location = new System.Drawing.Point(216, 108);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(397, 56);
+            this.panel1.TabIndex = 52;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
+            this.panel1.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(9, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(377, 20);
+            this.textBox1.TabIndex = 52;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.MouseEnter += new System.EventHandler(this.textBox1_MouseEnter);
+            this.textBox1.MouseLeave += new System.EventHandler(this.textBox1_MouseLeave);
+            // 
             // GestionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -520,10 +515,10 @@
             this.Load += new System.EventHandler(this.GestionUsuarios_Load);
             this.Enter += new System.EventHandler(this.GestionUsuarios_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ususariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ususariosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -546,7 +541,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private AdministracionAntonioDataSet2 administracionAntonioDataSet2;
         private System.Windows.Forms.BindingSource ususariosBindingSource;
-        private AdministracionAntonioDataSet2TableAdapters.UsusariosTableAdapter ususariosTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn codDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numerousuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;

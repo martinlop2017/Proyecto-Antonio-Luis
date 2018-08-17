@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="facturasBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
-  <metadata name="administracionAntonioDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>190, 56</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="salir.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -412,9 +406,6 @@
         ////////////////////////////////////////////////////////////////////////
 </value>
   </data>
-  <metadata name="facturasTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>415, 56</value>
-  </metadata>
   <data name="panel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAG8AAABCCAYAAABZ94iIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -440,19 +431,10 @@
 </value>
   </data>
   <metadata name="resillaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 134</value>
+    <value>174, 17</value>
   </metadata>
-  <metadata name="administracionAntonioDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 95</value>
-  </metadata>
-  <metadata name="remesasBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>235, 95</value>
-  </metadata>
-  <metadata name="remesasTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>410, 95</value>
-  </metadata>
-  <metadata name="resillaTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>179, 134</value>
+  <metadata name="dataSetAntonioLuis.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>41</value>
@@ -460,7 +442,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAi0AAAKDCAYAAADW/zrsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsAAAA7AAWrWiQkAABrdSURBVHhe7dlBamTNdoVRD8tT9ayMR+IJmP+RjYKNuK6z
+        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAABrdSURBVHhe7dlBamTNdoVRD8tT9ayMR+IJmP+RjYKNuK6z
         FToKKR/rg9Wsc0V2YkP9xz+SJElvkNEiSZLeIqNFkiS9RUaLJEl6i4wWSZL0FhktkiTpLTJaJEnSW2S0
         SJKkt8hokSRJb9GXRst//td/AwBUvtrRaHn6QwAAGqd9erQ8fRwA4DNO+tRoefooAMCJz1aPlqePAQB8
         xWeqRsvTRwAANrR9abRIkiS1PW2Jl7ZxtDwdf5EkSfpsT5vipelotEiSJJ12ui3+Olqejr5IkiSd9rQt

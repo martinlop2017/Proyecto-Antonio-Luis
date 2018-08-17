@@ -106,11 +106,11 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void GestionFacturas_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet1.Facturas' Puede moverla o quitarla según sea necesario.
-            this.facturasTableAdapter.Fill(this.administracionAntonioDataSet1.Facturas);
-            // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet1.Facturas' Puede moverla o quitarla según sea necesario.
-            this.facturasTableAdapter.Fill(this.administracionAntonioDataSet1.Facturas);
+            // TODO: esta línea de código carga datos en la tabla 'dataSetAntonioLuis.Facturas' Puede moverla o quitarla según sea necesario.
+            //this.facturasTableAdapter.Fill(this.dataSetAntonioLuis.Facturas);
 
+            dgvfactura.DataSource = bd.Facturas.ToList();
+            dgvfactura.Refresh();
             comboBox1.Text = "Número";
         }
 

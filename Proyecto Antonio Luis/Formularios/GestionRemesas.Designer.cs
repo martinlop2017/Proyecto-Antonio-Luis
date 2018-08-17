@@ -33,14 +33,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
-            this.facturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.administracionAntonioDataSet1 = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.salir = new System.Windows.Forms.Button();
             this.sumar = new System.Windows.Forms.Button();
-            this.facturasTableAdapter = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1TableAdapters.FacturasTableAdapter();
             this.imprimir = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -49,24 +46,18 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvremesas = new System.Windows.Forms.DataGridView();
+            this.dataSetAntonioLuis = new Proyecto_Antonio_Luis.DataSetAntonioLuis();
             this.resillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.administracionAntonioDataSet = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet();
-            this.remesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.remesasTableAdapter = new Proyecto_Antonio_Luis.AdministracionAntonioDataSetTableAdapters.RemesasTableAdapter();
-            this.resillaTableAdapter = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1TableAdapters.ResillaTableAdapter();
-            this.remesacontabilizadaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.remesatotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remesafechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remesanumeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remesanumeradorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.facturasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1)).BeginInit();
+            this.remesanumeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remesafechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remesatotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remesacontabilizadaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvremesas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetAntonioLuis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resillaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.remesasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -79,16 +70,6 @@
             this.label8.TabIndex = 86;
             this.label8.Text = "&Imprimir";
             this.label8.Visible = false;
-            // 
-            // facturasBindingSource
-            // 
-            this.facturasBindingSource.DataMember = "Facturas";
-            this.facturasBindingSource.DataSource = this.administracionAntonioDataSet1;
-            // 
-            // administracionAntonioDataSet1
-            // 
-            this.administracionAntonioDataSet1.DataSetName = "AdministracionAntonioDataSet1";
-            this.administracionAntonioDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label5
             // 
@@ -144,10 +125,6 @@
             this.sumar.TabIndex = 71;
             this.sumar.UseVisualStyleBackColor = false;
             this.sumar.Click += new System.EventHandler(this.sumar_Click);
-            // 
-            // facturasTableAdapter
-            // 
-            this.facturasTableAdapter.ClearBeforeFill = true;
             // 
             // imprimir
             // 
@@ -264,56 +241,15 @@
             this.dgvremesas.Size = new System.Drawing.Size(477, 383);
             this.dgvremesas.TabIndex = 80;
             // 
+            // dataSetAntonioLuis
+            // 
+            this.dataSetAntonioLuis.DataSetName = "DataSetAntonioLuis";
+            this.dataSetAntonioLuis.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // resillaBindingSource
             // 
             this.resillaBindingSource.DataMember = "Resilla";
-            this.resillaBindingSource.DataSource = this.administracionAntonioDataSet1;
-            // 
-            // administracionAntonioDataSet
-            // 
-            this.administracionAntonioDataSet.DataSetName = "AdministracionAntonioDataSet";
-            this.administracionAntonioDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // remesasBindingSource
-            // 
-            this.remesasBindingSource.DataMember = "Remesas";
-            this.remesasBindingSource.DataSource = this.administracionAntonioDataSet;
-            // 
-            // remesasTableAdapter
-            // 
-            this.remesasTableAdapter.ClearBeforeFill = true;
-            // 
-            // resillaTableAdapter
-            // 
-            this.resillaTableAdapter.ClearBeforeFill = true;
-            // 
-            // remesacontabilizadaDataGridViewCheckBoxColumn
-            // 
-            this.remesacontabilizadaDataGridViewCheckBoxColumn.DataPropertyName = "remesacontabilizada";
-            this.remesacontabilizadaDataGridViewCheckBoxColumn.HeaderText = "Contabilizada";
-            this.remesacontabilizadaDataGridViewCheckBoxColumn.Name = "remesacontabilizadaDataGridViewCheckBoxColumn";
-            this.remesacontabilizadaDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // remesatotalDataGridViewTextBoxColumn
-            // 
-            this.remesatotalDataGridViewTextBoxColumn.DataPropertyName = "remesatotal";
-            this.remesatotalDataGridViewTextBoxColumn.HeaderText = "Importe";
-            this.remesatotalDataGridViewTextBoxColumn.Name = "remesatotalDataGridViewTextBoxColumn";
-            this.remesatotalDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // remesafechaDataGridViewTextBoxColumn
-            // 
-            this.remesafechaDataGridViewTextBoxColumn.DataPropertyName = "remesafecha";
-            this.remesafechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.remesafechaDataGridViewTextBoxColumn.Name = "remesafechaDataGridViewTextBoxColumn";
-            this.remesafechaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // remesanumeroDataGridViewTextBoxColumn
-            // 
-            this.remesanumeroDataGridViewTextBoxColumn.DataPropertyName = "remesanumero";
-            this.remesanumeroDataGridViewTextBoxColumn.HeaderText = "Remesa";
-            this.remesanumeroDataGridViewTextBoxColumn.Name = "remesanumeroDataGridViewTextBoxColumn";
-            this.remesanumeroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.resillaBindingSource.DataSource = this.dataSetAntonioLuis;
             // 
             // remesanumeradorDataGridViewTextBoxColumn
             // 
@@ -321,7 +257,34 @@
             this.remesanumeradorDataGridViewTextBoxColumn.HeaderText = "remesanumerador";
             this.remesanumeradorDataGridViewTextBoxColumn.Name = "remesanumeradorDataGridViewTextBoxColumn";
             this.remesanumeradorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.remesanumeradorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // remesanumeroDataGridViewTextBoxColumn
+            // 
+            this.remesanumeroDataGridViewTextBoxColumn.DataPropertyName = "remesanumero";
+            this.remesanumeroDataGridViewTextBoxColumn.HeaderText = "remesanumero";
+            this.remesanumeroDataGridViewTextBoxColumn.Name = "remesanumeroDataGridViewTextBoxColumn";
+            this.remesanumeroDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // remesafechaDataGridViewTextBoxColumn
+            // 
+            this.remesafechaDataGridViewTextBoxColumn.DataPropertyName = "remesafecha";
+            this.remesafechaDataGridViewTextBoxColumn.HeaderText = "remesafecha";
+            this.remesafechaDataGridViewTextBoxColumn.Name = "remesafechaDataGridViewTextBoxColumn";
+            this.remesafechaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // remesatotalDataGridViewTextBoxColumn
+            // 
+            this.remesatotalDataGridViewTextBoxColumn.DataPropertyName = "remesatotal";
+            this.remesatotalDataGridViewTextBoxColumn.HeaderText = "remesatotal";
+            this.remesatotalDataGridViewTextBoxColumn.Name = "remesatotalDataGridViewTextBoxColumn";
+            this.remesatotalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // remesacontabilizadaDataGridViewCheckBoxColumn
+            // 
+            this.remesacontabilizadaDataGridViewCheckBoxColumn.DataPropertyName = "remesacontabilizada";
+            this.remesacontabilizadaDataGridViewCheckBoxColumn.HeaderText = "remesacontabilizada";
+            this.remesacontabilizadaDataGridViewCheckBoxColumn.Name = "remesacontabilizadaDataGridViewCheckBoxColumn";
+            this.remesacontabilizadaDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // GestionRemesas
             // 
@@ -350,15 +313,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionRemesas";
             this.Load += new System.EventHandler(this.GestionRemesas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.facturasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvremesas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetAntonioLuis)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resillaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.remesasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,14 +327,11 @@
         #endregion
 
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.BindingSource facturasBindingSource;
-        private AdministracionAntonioDataSet1 administracionAntonioDataSet1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button salir;
         private System.Windows.Forms.Button sumar;
-        private AdministracionAntonioDataSet1TableAdapters.FacturasTableAdapter facturasTableAdapter;
         private System.Windows.Forms.Button imprimir;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel2;
@@ -383,11 +340,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvremesas;
-        private AdministracionAntonioDataSet administracionAntonioDataSet;
-        private System.Windows.Forms.BindingSource remesasBindingSource;
-        private AdministracionAntonioDataSetTableAdapters.RemesasTableAdapter remesasTableAdapter;
+        private DataSetAntonioLuis dataSetAntonioLuis;
         private System.Windows.Forms.BindingSource resillaBindingSource;
-        private AdministracionAntonioDataSet1TableAdapters.ResillaTableAdapter resillaTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn remesanumeradorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn remesanumeroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn remesafechaDataGridViewTextBoxColumn;

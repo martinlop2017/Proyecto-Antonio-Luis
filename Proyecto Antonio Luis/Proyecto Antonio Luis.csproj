@@ -60,15 +60,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministracionAntonioDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdministracionAntonioDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="AdministracionAntonioDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AdministracionAntonioDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AdministracionAntonioDataSet11.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AdministracionAntonioDataSet11.xsd</DependentUpon>
     </Compile>
     <Compile Include="AdministracionAntonioDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -81,6 +81,11 @@
     <Compile Include="Clases\PasoClientes.cs" />
     <Compile Include="Clases\ImpresionDirecta.cs" />
     <Compile Include="Clases\temporal.cs" />
+    <Compile Include="DataSetAntonioLuis.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetAntonioLuis.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\BORRAR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -346,6 +351,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="AdministracionAntonioDataSet.xsc">
+      <DependentUpon>AdministracionAntonioDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AdministracionAntonioDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdministracionAntonioDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AdministracionAntonioDataSet.xss">
+      <DependentUpon>AdministracionAntonioDataSet.xsd</DependentUpon>
+    </None>
     <None Include="AdministracionAntonioDataSet1.xsc">
       <DependentUpon>AdministracionAntonioDataSet1.xsd</DependentUpon>
     </None>
@@ -357,17 +373,6 @@
     <None Include="AdministracionAntonioDataSet1.xss">
       <DependentUpon>AdministracionAntonioDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="AdministracionAntonioDataSet11.xsc">
-      <DependentUpon>AdministracionAntonioDataSet11.xsd</DependentUpon>
-    </None>
-    <None Include="AdministracionAntonioDataSet11.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AdministracionAntonioDataSet11.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AdministracionAntonioDataSet11.xss">
-      <DependentUpon>AdministracionAntonioDataSet11.xsd</DependentUpon>
-    </None>
     <None Include="AdministracionAntonioDataSet2.xsc">
       <DependentUpon>AdministracionAntonioDataSet2.xsd</DependentUpon>
     </None>
@@ -378,6 +383,17 @@
     </None>
     <None Include="AdministracionAntonioDataSet2.xss">
       <DependentUpon>AdministracionAntonioDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetAntonioLuis.xsc">
+      <DependentUpon>DataSetAntonioLuis.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetAntonioLuis.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetAntonioLuis.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetAntonioLuis.xss">
+      <DependentUpon>DataSetAntonioLuis.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\BaseDatos.AdministracionAntonioEntities.datasource" />
     <None Include="Properties\DataSources\BaseDatos.Clientes.datasource" />

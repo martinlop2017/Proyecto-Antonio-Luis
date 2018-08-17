@@ -39,17 +39,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvfactura = new System.Windows.Forms.DataGridView();
-            this.facturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.salir = new System.Windows.Forms.Button();
-            this.sumar = new System.Windows.Forms.Button();
-            this.facturasTableAdapter = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1TableAdapters.FacturasTableAdapter();
-            this.label8 = new System.Windows.Forms.Label();
-            this.imprimir = new System.Windows.Forms.Button();
-            this.administracionAntonioDataSet1 = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet1();
-            this.facturasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.factcontadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.factnumerofactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.factremesaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,12 +75,20 @@
             this.facttotalremesaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.factpormailDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.factmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.facturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetAntonioLuis = new Proyecto_Antonio_Luis.DataSetAntonioLuis();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.salir = new System.Windows.Forms.Button();
+            this.sumar = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.imprimir = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvfactura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.facturasBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetAntonioLuis)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -226,7 +223,7 @@
             this.facttotalremesaDataGridViewTextBoxColumn,
             this.factpormailDataGridViewCheckBoxColumn,
             this.factmailDataGridViewTextBoxColumn});
-            this.dgvfactura.DataSource = this.facturasBindingSource1;
+            this.dgvfactura.DataSource = this.facturasBindingSource;
             this.dgvfactura.GridColor = System.Drawing.SystemColors.Control;
             this.dgvfactura.Location = new System.Drawing.Point(41, 207);
             this.dgvfactura.Name = "dgvfactura";
@@ -237,107 +234,6 @@
             this.dgvfactura.TabIndex = 64;
             this.dgvfactura.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclientes_CellContentClick);
             this.dgvfactura.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclientes_CellDoubleClick);
-            // 
-            // facturasBindingSource
-            // 
-            this.facturasBindingSource.CurrentChanged += new System.EventHandler(this.facturasBindingSource_CurrentChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(802, 88);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 13);
-            this.label5.TabIndex = 63;
-            this.label5.Text = "&Salir";
-            this.label5.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(170, 88);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
-            this.label4.TabIndex = 62;
-            this.label4.Text = "&Buscar";
-            this.label4.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(38, 88);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
-            this.label1.TabIndex = 59;
-            this.label1.Text = "&Añadir";
-            this.label1.Visible = false;
-            // 
-            // salir
-            // 
-            this.salir.BackColor = System.Drawing.Color.White;
-            this.salir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("salir.BackgroundImage")));
-            this.salir.Location = new System.Drawing.Point(790, 104);
-            this.salir.Name = "salir";
-            this.salir.Size = new System.Drawing.Size(52, 56);
-            this.salir.TabIndex = 58;
-            this.salir.UseVisualStyleBackColor = false;
-            this.salir.Click += new System.EventHandler(this.salir_Click);
-            this.salir.MouseEnter += new System.EventHandler(this.salir_MouseEnter);
-            this.salir.MouseLeave += new System.EventHandler(this.salir_MouseLeave);
-            // 
-            // sumar
-            // 
-            this.sumar.BackColor = System.Drawing.Color.White;
-            this.sumar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sumar.BackgroundImage")));
-            this.sumar.Location = new System.Drawing.Point(31, 104);
-            this.sumar.Name = "sumar";
-            this.sumar.Size = new System.Drawing.Size(52, 56);
-            this.sumar.TabIndex = 55;
-            this.sumar.UseVisualStyleBackColor = false;
-            this.sumar.Click += new System.EventHandler(this.sumar_Click);
-            this.sumar.MouseEnter += new System.EventHandler(this.sumar_MouseEnter);
-            this.sumar.MouseLeave += new System.EventHandler(this.sumar_MouseLeave);
-            // 
-            // facturasTableAdapter
-            // 
-            this.facturasTableAdapter.ClearBeforeFill = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(94, 87);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 13);
-            this.label8.TabIndex = 70;
-            this.label8.Text = "&Imprimir";
-            this.label8.Visible = false;
-            // 
-            // imprimir
-            // 
-            this.imprimir.BackColor = System.Drawing.Color.White;
-            this.imprimir.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Impresora;
-            this.imprimir.Location = new System.Drawing.Point(89, 103);
-            this.imprimir.Name = "imprimir";
-            this.imprimir.Size = new System.Drawing.Size(52, 56);
-            this.imprimir.TabIndex = 69;
-            this.imprimir.UseVisualStyleBackColor = false;
-            this.imprimir.Click += new System.EventHandler(this.imprimir_Click);
-            this.imprimir.MouseEnter += new System.EventHandler(this.imprimir_MouseEnter);
-            this.imprimir.MouseLeave += new System.EventHandler(this.imprimir_MouseLeave);
-            // 
-            // administracionAntonioDataSet1
-            // 
-            this.administracionAntonioDataSet1.DataSetName = "AdministracionAntonioDataSet1";
-            this.administracionAntonioDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // facturasBindingSource1
-            // 
-            this.facturasBindingSource1.DataMember = "Facturas";
-            this.facturasBindingSource1.DataSource = this.administracionAntonioDataSet1;
             // 
             // factcontadorDataGridViewTextBoxColumn
             // 
@@ -591,6 +487,99 @@
             this.factmailDataGridViewTextBoxColumn.Name = "factmailDataGridViewTextBoxColumn";
             this.factmailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // facturasBindingSource
+            // 
+            this.facturasBindingSource.DataMember = "Facturas";
+            this.facturasBindingSource.DataSource = this.dataSetAntonioLuis;
+            // 
+            // dataSetAntonioLuis
+            // 
+            this.dataSetAntonioLuis.DataSetName = "DataSetAntonioLuis";
+            this.dataSetAntonioLuis.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(802, 88);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(27, 13);
+            this.label5.TabIndex = 63;
+            this.label5.Text = "&Salir";
+            this.label5.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(170, 88);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.TabIndex = 62;
+            this.label4.Text = "&Buscar";
+            this.label4.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(38, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 59;
+            this.label1.Text = "&Añadir";
+            this.label1.Visible = false;
+            // 
+            // salir
+            // 
+            this.salir.BackColor = System.Drawing.Color.White;
+            this.salir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("salir.BackgroundImage")));
+            this.salir.Location = new System.Drawing.Point(790, 104);
+            this.salir.Name = "salir";
+            this.salir.Size = new System.Drawing.Size(52, 56);
+            this.salir.TabIndex = 58;
+            this.salir.UseVisualStyleBackColor = false;
+            this.salir.Click += new System.EventHandler(this.salir_Click);
+            this.salir.MouseEnter += new System.EventHandler(this.salir_MouseEnter);
+            this.salir.MouseLeave += new System.EventHandler(this.salir_MouseLeave);
+            // 
+            // sumar
+            // 
+            this.sumar.BackColor = System.Drawing.Color.White;
+            this.sumar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sumar.BackgroundImage")));
+            this.sumar.Location = new System.Drawing.Point(31, 104);
+            this.sumar.Name = "sumar";
+            this.sumar.Size = new System.Drawing.Size(52, 56);
+            this.sumar.TabIndex = 55;
+            this.sumar.UseVisualStyleBackColor = false;
+            this.sumar.Click += new System.EventHandler(this.sumar_Click);
+            this.sumar.MouseEnter += new System.EventHandler(this.sumar_MouseEnter);
+            this.sumar.MouseLeave += new System.EventHandler(this.sumar_MouseLeave);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(94, 87);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(42, 13);
+            this.label8.TabIndex = 70;
+            this.label8.Text = "&Imprimir";
+            this.label8.Visible = false;
+            // 
+            // imprimir
+            // 
+            this.imprimir.BackColor = System.Drawing.Color.White;
+            this.imprimir.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Impresora;
+            this.imprimir.Location = new System.Drawing.Point(89, 103);
+            this.imprimir.Name = "imprimir";
+            this.imprimir.Size = new System.Drawing.Size(52, 56);
+            this.imprimir.TabIndex = 69;
+            this.imprimir.UseVisualStyleBackColor = false;
+            this.imprimir.Click += new System.EventHandler(this.imprimir_Click);
+            this.imprimir.MouseEnter += new System.EventHandler(this.imprimir_MouseEnter);
+            this.imprimir.MouseLeave += new System.EventHandler(this.imprimir_MouseLeave);
+            // 
             // GestionFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -622,8 +611,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvfactura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.facturasBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetAntonioLuis)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -643,12 +631,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button salir;
         private System.Windows.Forms.Button sumar;
-        private System.Windows.Forms.BindingSource facturasBindingSource;
-        private AdministracionAntonioDataSet1TableAdapters.FacturasTableAdapter facturasTableAdapter;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button imprimir;
-        private AdministracionAntonioDataSet1 administracionAntonioDataSet1;
-        private System.Windows.Forms.BindingSource facturasBindingSource1;
+        private DataSetAntonioLuis dataSetAntonioLuis;
+        private System.Windows.Forms.BindingSource facturasBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn factcontadorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn factnumerofactDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn factremesaDataGridViewTextBoxColumn;
