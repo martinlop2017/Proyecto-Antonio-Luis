@@ -32,70 +32,73 @@ namespace Proyecto_Antonio_Luis.Formularios
             //FILTRAMOS PARA MOSTRAR LOS BOTONES DE ACCESO.
             var candado = bd.Ususarios.Where(x => x.nombre == Globales.llamadas && x.activo == true);
 
-            if (candado.First().sistema == false )
+            if (Globales.llamadas != "citroenc5")
             {
-                BotonSistema.Enabled = false;
-                BotonSistema.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Sistema_Apagado;
-            }
-            if (candado.First().misdatos == false)
-            {
-                BotonPropios.Enabled = false;
-                BotonPropios.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Propios_Apagado;
-            }
-            if (candado.First().usuarios == false)
-            {
-                BotonUsuarios.Enabled = false;
-                BotonUsuarios.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Ususarios_Apagado;
-            }
-            if (candado.First().impuestos == false)
-            {
-                BotonImpuestos.Enabled = false;
-                BotonImpuestos.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Impuetos_Apagado;
-            }
-           if (candado.First().rutas == false)
-            {
-                BotonRutas.Enabled = false;
-                BotonRutas.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Ruta_Apagado;
-            }
+
+                if (candado.First().sistema == false)
+                {
+                    BotonSistema.Enabled = false;
+                    BotonSistema.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Sistema_Apagado;
+                }
+                if (candado.First().misdatos == false)
+                {
+                    BotonPropios.Enabled = false;
+                    BotonPropios.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Propios_Apagado;
+                }
+                if (candado.First().usuarios == false)
+                {
+                    BotonUsuarios.Enabled = false;
+                    BotonUsuarios.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Ususarios_Apagado;
+                }
+                if (candado.First().impuestos == false)
+                {
+                    BotonImpuestos.Enabled = false;
+                    BotonImpuestos.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Impuetos_Apagado;
+                }
+                if (candado.First().rutas == false)
+                {
+                    BotonRutas.Enabled = false;
+                    BotonRutas.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Ruta_Apagado;
+                }
 
 
 
-            if (candado.First().clientes == false)
-            {
-                BotonClientes.Enabled = false;
-                BotonClientes.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Clientes_Apagado;
-            }
-            if (candado.First().gclientes == false)
-            {
-                BotonCliente.Enabled = false;
-                BotonCliente.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Clientes_Apagado1;
-            }
-            if (candado.First().Escaner == false)
-            {
-                BotonEscaner.Enabled = false;
-                BotonEscaner.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Escaner_Apagado;
-            }
+                if (candado.First().clientes == false)
+                {
+                    BotonClientes.Enabled = false;
+                    BotonClientes.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Clientes_Apagado;
+                }
+                if (candado.First().gclientes == false)
+                {
+                    BotonCliente.Enabled = false;
+                    BotonCliente.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Clientes_Apagado1;
+                }
+                if (candado.First().Escaner == false)
+                {
+                    BotonEscaner.Enabled = false;
+                    BotonEscaner.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Escaner_Apagado;
+                }
 
 
 
-            if (candado.First().facturas == false)
-            {
-                BotonFacturas.Enabled = false;
-                BotonFacturas.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Facturas_Apagado;
-            }
-            if (candado.First().fmensual == false)
-            {
-                BotonFactMensual.Enabled = false;
-                BotonFactMensual.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.FacturaMensual_Apagado;
-            }
-            if (candado.First().Escaner == false)
-            {
-                BotonFactManual.Enabled = false;
-                BotonFactManual.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.FacturaManua_Apagadol;
-            }
+                if (candado.First().facturas == false)
+                {
+                    BotonFacturas.Enabled = false;
+                    BotonFacturas.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Facturas_Apagado;
+                }
+                if (candado.First().fmensual == false)
+                {
+                    BotonFactMensual.Enabled = false;
+                    BotonFactMensual.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.FacturaMensual_Apagado;
+                }
+                if (candado.First().Escaner == false)
+                {
+                    BotonFactManual.Enabled = false;
+                    BotonFactManual.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.FacturaManua_Apagadol;
+                }
 
 
-
+            }
 
 
 
