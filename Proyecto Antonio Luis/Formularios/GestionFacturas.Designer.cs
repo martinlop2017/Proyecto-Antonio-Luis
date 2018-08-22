@@ -32,6 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionFacturas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -39,12 +43,21 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvfactura = new System.Windows.Forms.DataGridView();
+            this.facturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetAntonioLuis = new Proyecto_Antonio_Luis.DataSetAntonioLuis();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.salir = new System.Windows.Forms.Button();
+            this.sumar = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.imprimir = new System.Windows.Forms.Button();
             this.factcontadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.factnumerofactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.factremesaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.factfechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.factcodclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.factnombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.factcodclienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.factdireccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.factlocalidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.factprovinciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,15 +88,6 @@
             this.facttotalremesaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.factpormailDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.factmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.facturasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetAntonioLuis = new Proyecto_Antonio_Luis.DataSetAntonioLuis();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.salir = new System.Windows.Forms.Button();
-            this.sumar = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.imprimir = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvfactura)).BeginInit();
@@ -177,9 +181,9 @@
             this.dgvfactura.AutoGenerateColumns = false;
             this.dgvfactura.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvfactura.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -191,8 +195,8 @@
             this.factnumerofactDataGridViewTextBoxColumn,
             this.factremesaDataGridViewTextBoxColumn,
             this.factfechaDataGridViewTextBoxColumn,
-            this.factcodclienteDataGridViewTextBoxColumn,
             this.factnombreDataGridViewTextBoxColumn,
+            this.factcodclienteDataGridViewTextBoxColumn,
             this.factdireccionDataGridViewTextBoxColumn,
             this.factlocalidadDataGridViewTextBoxColumn,
             this.factprovinciaDataGridViewTextBoxColumn,
@@ -226,6 +230,7 @@
             this.dgvfactura.DataSource = this.facturasBindingSource;
             this.dgvfactura.GridColor = System.Drawing.SystemColors.Control;
             this.dgvfactura.Location = new System.Drawing.Point(41, 207);
+            this.dgvfactura.MultiSelect = false;
             this.dgvfactura.Name = "dgvfactura";
             this.dgvfactura.ReadOnly = true;
             this.dgvfactura.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -234,258 +239,6 @@
             this.dgvfactura.TabIndex = 64;
             this.dgvfactura.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclientes_CellContentClick);
             this.dgvfactura.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclientes_CellDoubleClick);
-            // 
-            // factcontadorDataGridViewTextBoxColumn
-            // 
-            this.factcontadorDataGridViewTextBoxColumn.DataPropertyName = "factcontador";
-            this.factcontadorDataGridViewTextBoxColumn.HeaderText = "factcontador";
-            this.factcontadorDataGridViewTextBoxColumn.Name = "factcontadorDataGridViewTextBoxColumn";
-            this.factcontadorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factnumerofactDataGridViewTextBoxColumn
-            // 
-            this.factnumerofactDataGridViewTextBoxColumn.DataPropertyName = "factnumerofact";
-            this.factnumerofactDataGridViewTextBoxColumn.HeaderText = "factnumerofact";
-            this.factnumerofactDataGridViewTextBoxColumn.Name = "factnumerofactDataGridViewTextBoxColumn";
-            this.factnumerofactDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factremesaDataGridViewTextBoxColumn
-            // 
-            this.factremesaDataGridViewTextBoxColumn.DataPropertyName = "factremesa";
-            this.factremesaDataGridViewTextBoxColumn.HeaderText = "factremesa";
-            this.factremesaDataGridViewTextBoxColumn.Name = "factremesaDataGridViewTextBoxColumn";
-            this.factremesaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factfechaDataGridViewTextBoxColumn
-            // 
-            this.factfechaDataGridViewTextBoxColumn.DataPropertyName = "factfecha";
-            this.factfechaDataGridViewTextBoxColumn.HeaderText = "factfecha";
-            this.factfechaDataGridViewTextBoxColumn.Name = "factfechaDataGridViewTextBoxColumn";
-            this.factfechaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factcodclienteDataGridViewTextBoxColumn
-            // 
-            this.factcodclienteDataGridViewTextBoxColumn.DataPropertyName = "factcodcliente";
-            this.factcodclienteDataGridViewTextBoxColumn.HeaderText = "factcodcliente";
-            this.factcodclienteDataGridViewTextBoxColumn.Name = "factcodclienteDataGridViewTextBoxColumn";
-            this.factcodclienteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factnombreDataGridViewTextBoxColumn
-            // 
-            this.factnombreDataGridViewTextBoxColumn.DataPropertyName = "factnombre";
-            this.factnombreDataGridViewTextBoxColumn.HeaderText = "factnombre";
-            this.factnombreDataGridViewTextBoxColumn.Name = "factnombreDataGridViewTextBoxColumn";
-            this.factnombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factdireccionDataGridViewTextBoxColumn
-            // 
-            this.factdireccionDataGridViewTextBoxColumn.DataPropertyName = "factdireccion";
-            this.factdireccionDataGridViewTextBoxColumn.HeaderText = "factdireccion";
-            this.factdireccionDataGridViewTextBoxColumn.Name = "factdireccionDataGridViewTextBoxColumn";
-            this.factdireccionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factlocalidadDataGridViewTextBoxColumn
-            // 
-            this.factlocalidadDataGridViewTextBoxColumn.DataPropertyName = "factlocalidad";
-            this.factlocalidadDataGridViewTextBoxColumn.HeaderText = "factlocalidad";
-            this.factlocalidadDataGridViewTextBoxColumn.Name = "factlocalidadDataGridViewTextBoxColumn";
-            this.factlocalidadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factprovinciaDataGridViewTextBoxColumn
-            // 
-            this.factprovinciaDataGridViewTextBoxColumn.DataPropertyName = "factprovincia";
-            this.factprovinciaDataGridViewTextBoxColumn.HeaderText = "factprovincia";
-            this.factprovinciaDataGridViewTextBoxColumn.Name = "factprovinciaDataGridViewTextBoxColumn";
-            this.factprovinciaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factcpDataGridViewTextBoxColumn
-            // 
-            this.factcpDataGridViewTextBoxColumn.DataPropertyName = "factcp";
-            this.factcpDataGridViewTextBoxColumn.HeaderText = "factcp";
-            this.factcpDataGridViewTextBoxColumn.Name = "factcpDataGridViewTextBoxColumn";
-            this.factcpDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factnifDataGridViewTextBoxColumn
-            // 
-            this.factnifDataGridViewTextBoxColumn.DataPropertyName = "factnif";
-            this.factnifDataGridViewTextBoxColumn.HeaderText = "factnif";
-            this.factnifDataGridViewTextBoxColumn.Name = "factnifDataGridViewTextBoxColumn";
-            this.factnifDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factiban1DataGridViewTextBoxColumn
-            // 
-            this.factiban1DataGridViewTextBoxColumn.DataPropertyName = "factiban1";
-            this.factiban1DataGridViewTextBoxColumn.HeaderText = "factiban1";
-            this.factiban1DataGridViewTextBoxColumn.Name = "factiban1DataGridViewTextBoxColumn";
-            this.factiban1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factiban2DataGridViewTextBoxColumn
-            // 
-            this.factiban2DataGridViewTextBoxColumn.DataPropertyName = "factiban2";
-            this.factiban2DataGridViewTextBoxColumn.HeaderText = "factiban2";
-            this.factiban2DataGridViewTextBoxColumn.Name = "factiban2DataGridViewTextBoxColumn";
-            this.factiban2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factiban3DataGridViewTextBoxColumn
-            // 
-            this.factiban3DataGridViewTextBoxColumn.DataPropertyName = "factiban3";
-            this.factiban3DataGridViewTextBoxColumn.HeaderText = "factiban3";
-            this.factiban3DataGridViewTextBoxColumn.Name = "factiban3DataGridViewTextBoxColumn";
-            this.factiban3DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factiban4DataGridViewTextBoxColumn
-            // 
-            this.factiban4DataGridViewTextBoxColumn.DataPropertyName = "factiban4";
-            this.factiban4DataGridViewTextBoxColumn.HeaderText = "factiban4";
-            this.factiban4DataGridViewTextBoxColumn.Name = "factiban4DataGridViewTextBoxColumn";
-            this.factiban4DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factiban5DataGridViewTextBoxColumn
-            // 
-            this.factiban5DataGridViewTextBoxColumn.DataPropertyName = "factiban5";
-            this.factiban5DataGridViewTextBoxColumn.HeaderText = "factiban5";
-            this.factiban5DataGridViewTextBoxColumn.Name = "factiban5DataGridViewTextBoxColumn";
-            this.factiban5DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factiban6DataGridViewTextBoxColumn
-            // 
-            this.factiban6DataGridViewTextBoxColumn.DataPropertyName = "factiban6";
-            this.factiban6DataGridViewTextBoxColumn.HeaderText = "factiban6";
-            this.factiban6DataGridViewTextBoxColumn.Name = "factiban6DataGridViewTextBoxColumn";
-            this.factiban6DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factconcepto1DataGridViewTextBoxColumn
-            // 
-            this.factconcepto1DataGridViewTextBoxColumn.DataPropertyName = "factconcepto1";
-            this.factconcepto1DataGridViewTextBoxColumn.HeaderText = "factconcepto1";
-            this.factconcepto1DataGridViewTextBoxColumn.Name = "factconcepto1DataGridViewTextBoxColumn";
-            this.factconcepto1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factbase1DataGridViewTextBoxColumn
-            // 
-            this.factbase1DataGridViewTextBoxColumn.DataPropertyName = "factbase1";
-            this.factbase1DataGridViewTextBoxColumn.HeaderText = "factbase1";
-            this.factbase1DataGridViewTextBoxColumn.Name = "factbase1DataGridViewTextBoxColumn";
-            this.factbase1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factconcepto2DataGridViewTextBoxColumn
-            // 
-            this.factconcepto2DataGridViewTextBoxColumn.DataPropertyName = "factconcepto2";
-            this.factconcepto2DataGridViewTextBoxColumn.HeaderText = "factconcepto2";
-            this.factconcepto2DataGridViewTextBoxColumn.Name = "factconcepto2DataGridViewTextBoxColumn";
-            this.factconcepto2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factbase2DataGridViewTextBoxColumn
-            // 
-            this.factbase2DataGridViewTextBoxColumn.DataPropertyName = "factbase2";
-            this.factbase2DataGridViewTextBoxColumn.HeaderText = "factbase2";
-            this.factbase2DataGridViewTextBoxColumn.Name = "factbase2DataGridViewTextBoxColumn";
-            this.factbase2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factemleadosDataGridViewTextBoxColumn
-            // 
-            this.factemleadosDataGridViewTextBoxColumn.DataPropertyName = "factemleados";
-            this.factemleadosDataGridViewTextBoxColumn.HeaderText = "factemleados";
-            this.factemleadosDataGridViewTextBoxColumn.Name = "factemleadosDataGridViewTextBoxColumn";
-            this.factemleadosDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factprecioempleadoDataGridViewTextBoxColumn
-            // 
-            this.factprecioempleadoDataGridViewTextBoxColumn.DataPropertyName = "factprecioempleado";
-            this.factprecioempleadoDataGridViewTextBoxColumn.HeaderText = "factprecioempleado";
-            this.factprecioempleadoDataGridViewTextBoxColumn.Name = "factprecioempleadoDataGridViewTextBoxColumn";
-            this.factprecioempleadoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factbaseempleadoDataGridViewTextBoxColumn
-            // 
-            this.factbaseempleadoDataGridViewTextBoxColumn.DataPropertyName = "factbaseempleado";
-            this.factbaseempleadoDataGridViewTextBoxColumn.HeaderText = "factbaseempleado";
-            this.factbaseempleadoDataGridViewTextBoxColumn.Name = "factbaseempleadoDataGridViewTextBoxColumn";
-            this.factbaseempleadoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // facttipoivaDataGridViewTextBoxColumn
-            // 
-            this.facttipoivaDataGridViewTextBoxColumn.DataPropertyName = "facttipoiva";
-            this.facttipoivaDataGridViewTextBoxColumn.HeaderText = "facttipoiva";
-            this.facttipoivaDataGridViewTextBoxColumn.Name = "facttipoivaDataGridViewTextBoxColumn";
-            this.facttipoivaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factimporteivaDataGridViewTextBoxColumn
-            // 
-            this.factimporteivaDataGridViewTextBoxColumn.DataPropertyName = "factimporteiva";
-            this.factimporteivaDataGridViewTextBoxColumn.HeaderText = "factimporteiva";
-            this.factimporteivaDataGridViewTextBoxColumn.Name = "factimporteivaDataGridViewTextBoxColumn";
-            this.factimporteivaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // facttotalfacturaDataGridViewTextBoxColumn
-            // 
-            this.facttotalfacturaDataGridViewTextBoxColumn.DataPropertyName = "facttotalfactura";
-            this.facttotalfacturaDataGridViewTextBoxColumn.HeaderText = "facttotalfactura";
-            this.facttotalfacturaDataGridViewTextBoxColumn.Name = "facttotalfacturaDataGridViewTextBoxColumn";
-            this.facttotalfacturaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factparaImprimirDataGridViewCheckBoxColumn
-            // 
-            this.factparaImprimirDataGridViewCheckBoxColumn.DataPropertyName = "factpara imprimir";
-            this.factparaImprimirDataGridViewCheckBoxColumn.HeaderText = "factpara imprimir";
-            this.factparaImprimirDataGridViewCheckBoxColumn.Name = "factparaImprimirDataGridViewCheckBoxColumn";
-            this.factparaImprimirDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // factimpresaDataGridViewCheckBoxColumn
-            // 
-            this.factimpresaDataGridViewCheckBoxColumn.DataPropertyName = "factimpresa";
-            this.factimpresaDataGridViewCheckBoxColumn.HeaderText = "factimpresa";
-            this.factimpresaDataGridViewCheckBoxColumn.Name = "factimpresaDataGridViewCheckBoxColumn";
-            this.factimpresaDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // factparacontabilizarDataGridViewCheckBoxColumn
-            // 
-            this.factparacontabilizarDataGridViewCheckBoxColumn.DataPropertyName = "factparacontabilizar";
-            this.factparacontabilizarDataGridViewCheckBoxColumn.HeaderText = "factparacontabilizar";
-            this.factparacontabilizarDataGridViewCheckBoxColumn.Name = "factparacontabilizarDataGridViewCheckBoxColumn";
-            this.factparacontabilizarDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // factcontabilizadaDataGridViewCheckBoxColumn
-            // 
-            this.factcontabilizadaDataGridViewCheckBoxColumn.DataPropertyName = "factcontabilizada";
-            this.factcontabilizadaDataGridViewCheckBoxColumn.HeaderText = "factcontabilizada";
-            this.factcontabilizadaDataGridViewCheckBoxColumn.Name = "factcontabilizadaDataGridViewCheckBoxColumn";
-            this.factcontabilizadaDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // factparadomiciliarDataGridViewCheckBoxColumn
-            // 
-            this.factparadomiciliarDataGridViewCheckBoxColumn.DataPropertyName = "factparadomiciliar";
-            this.factparadomiciliarDataGridViewCheckBoxColumn.HeaderText = "factparadomiciliar";
-            this.factparadomiciliarDataGridViewCheckBoxColumn.Name = "factparadomiciliarDataGridViewCheckBoxColumn";
-            this.factparadomiciliarDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // factdomiciliadaDataGridViewCheckBoxColumn
-            // 
-            this.factdomiciliadaDataGridViewCheckBoxColumn.DataPropertyName = "factdomiciliada";
-            this.factdomiciliadaDataGridViewCheckBoxColumn.HeaderText = "factdomiciliada";
-            this.factdomiciliadaDataGridViewCheckBoxColumn.Name = "factdomiciliadaDataGridViewCheckBoxColumn";
-            this.factdomiciliadaDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // facttotalremesaDataGridViewTextBoxColumn
-            // 
-            this.facttotalremesaDataGridViewTextBoxColumn.DataPropertyName = "facttotalremesa";
-            this.facttotalremesaDataGridViewTextBoxColumn.HeaderText = "facttotalremesa";
-            this.facttotalremesaDataGridViewTextBoxColumn.Name = "facttotalremesaDataGridViewTextBoxColumn";
-            this.facttotalremesaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factpormailDataGridViewCheckBoxColumn
-            // 
-            this.factpormailDataGridViewCheckBoxColumn.DataPropertyName = "factpormail";
-            this.factpormailDataGridViewCheckBoxColumn.HeaderText = "factpormail";
-            this.factpormailDataGridViewCheckBoxColumn.Name = "factpormailDataGridViewCheckBoxColumn";
-            this.factpormailDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // factmailDataGridViewTextBoxColumn
-            // 
-            this.factmailDataGridViewTextBoxColumn.DataPropertyName = "factmail";
-            this.factmailDataGridViewTextBoxColumn.HeaderText = "factmail";
-            this.factmailDataGridViewTextBoxColumn.Name = "factmailDataGridViewTextBoxColumn";
-            this.factmailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // facturasBindingSource
             // 
@@ -580,6 +333,307 @@
             this.imprimir.MouseEnter += new System.EventHandler(this.imprimir_MouseEnter);
             this.imprimir.MouseLeave += new System.EventHandler(this.imprimir_MouseLeave);
             // 
+            // factcontadorDataGridViewTextBoxColumn
+            // 
+            this.factcontadorDataGridViewTextBoxColumn.DataPropertyName = "factcontador";
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.factcontadorDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.factcontadorDataGridViewTextBoxColumn.HeaderText = "factcontador";
+            this.factcontadorDataGridViewTextBoxColumn.Name = "factcontadorDataGridViewTextBoxColumn";
+            this.factcontadorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.factcontadorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factnumerofactDataGridViewTextBoxColumn
+            // 
+            this.factnumerofactDataGridViewTextBoxColumn.DataPropertyName = "factnumerofact";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.factnumerofactDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.factnumerofactDataGridViewTextBoxColumn.HeaderText = "Num.";
+            this.factnumerofactDataGridViewTextBoxColumn.Name = "factnumerofactDataGridViewTextBoxColumn";
+            this.factnumerofactDataGridViewTextBoxColumn.ReadOnly = true;
+            this.factnumerofactDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // factremesaDataGridViewTextBoxColumn
+            // 
+            this.factremesaDataGridViewTextBoxColumn.DataPropertyName = "factremesa";
+            this.factremesaDataGridViewTextBoxColumn.HeaderText = "factremesa";
+            this.factremesaDataGridViewTextBoxColumn.Name = "factremesaDataGridViewTextBoxColumn";
+            this.factremesaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.factremesaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factfechaDataGridViewTextBoxColumn
+            // 
+            this.factfechaDataGridViewTextBoxColumn.DataPropertyName = "factfecha";
+            this.factfechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.factfechaDataGridViewTextBoxColumn.Name = "factfechaDataGridViewTextBoxColumn";
+            this.factfechaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.factfechaDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // factnombreDataGridViewTextBoxColumn
+            // 
+            this.factnombreDataGridViewTextBoxColumn.DataPropertyName = "factnombre";
+            this.factnombreDataGridViewTextBoxColumn.HeaderText = "Cliente";
+            this.factnombreDataGridViewTextBoxColumn.Name = "factnombreDataGridViewTextBoxColumn";
+            this.factnombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.factnombreDataGridViewTextBoxColumn.Width = 350;
+            // 
+            // factcodclienteDataGridViewTextBoxColumn
+            // 
+            this.factcodclienteDataGridViewTextBoxColumn.DataPropertyName = "factcodcliente";
+            this.factcodclienteDataGridViewTextBoxColumn.HeaderText = "factcodcliente";
+            this.factcodclienteDataGridViewTextBoxColumn.Name = "factcodclienteDataGridViewTextBoxColumn";
+            this.factcodclienteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.factcodclienteDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factdireccionDataGridViewTextBoxColumn
+            // 
+            this.factdireccionDataGridViewTextBoxColumn.DataPropertyName = "factdireccion";
+            this.factdireccionDataGridViewTextBoxColumn.HeaderText = "factdireccion";
+            this.factdireccionDataGridViewTextBoxColumn.Name = "factdireccionDataGridViewTextBoxColumn";
+            this.factdireccionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.factdireccionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factlocalidadDataGridViewTextBoxColumn
+            // 
+            this.factlocalidadDataGridViewTextBoxColumn.DataPropertyName = "factlocalidad";
+            this.factlocalidadDataGridViewTextBoxColumn.HeaderText = "factlocalidad";
+            this.factlocalidadDataGridViewTextBoxColumn.Name = "factlocalidadDataGridViewTextBoxColumn";
+            this.factlocalidadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.factlocalidadDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factprovinciaDataGridViewTextBoxColumn
+            // 
+            this.factprovinciaDataGridViewTextBoxColumn.DataPropertyName = "factprovincia";
+            this.factprovinciaDataGridViewTextBoxColumn.HeaderText = "factprovincia";
+            this.factprovinciaDataGridViewTextBoxColumn.Name = "factprovinciaDataGridViewTextBoxColumn";
+            this.factprovinciaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.factprovinciaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factcpDataGridViewTextBoxColumn
+            // 
+            this.factcpDataGridViewTextBoxColumn.DataPropertyName = "factcp";
+            this.factcpDataGridViewTextBoxColumn.HeaderText = "factcp";
+            this.factcpDataGridViewTextBoxColumn.Name = "factcpDataGridViewTextBoxColumn";
+            this.factcpDataGridViewTextBoxColumn.ReadOnly = true;
+            this.factcpDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factnifDataGridViewTextBoxColumn
+            // 
+            this.factnifDataGridViewTextBoxColumn.DataPropertyName = "factnif";
+            this.factnifDataGridViewTextBoxColumn.HeaderText = "factnif";
+            this.factnifDataGridViewTextBoxColumn.Name = "factnifDataGridViewTextBoxColumn";
+            this.factnifDataGridViewTextBoxColumn.ReadOnly = true;
+            this.factnifDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factiban1DataGridViewTextBoxColumn
+            // 
+            this.factiban1DataGridViewTextBoxColumn.DataPropertyName = "factiban1";
+            this.factiban1DataGridViewTextBoxColumn.HeaderText = "factiban1";
+            this.factiban1DataGridViewTextBoxColumn.Name = "factiban1DataGridViewTextBoxColumn";
+            this.factiban1DataGridViewTextBoxColumn.ReadOnly = true;
+            this.factiban1DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factiban2DataGridViewTextBoxColumn
+            // 
+            this.factiban2DataGridViewTextBoxColumn.DataPropertyName = "factiban2";
+            this.factiban2DataGridViewTextBoxColumn.HeaderText = "factiban2";
+            this.factiban2DataGridViewTextBoxColumn.Name = "factiban2DataGridViewTextBoxColumn";
+            this.factiban2DataGridViewTextBoxColumn.ReadOnly = true;
+            this.factiban2DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factiban3DataGridViewTextBoxColumn
+            // 
+            this.factiban3DataGridViewTextBoxColumn.DataPropertyName = "factiban3";
+            this.factiban3DataGridViewTextBoxColumn.HeaderText = "factiban3";
+            this.factiban3DataGridViewTextBoxColumn.Name = "factiban3DataGridViewTextBoxColumn";
+            this.factiban3DataGridViewTextBoxColumn.ReadOnly = true;
+            this.factiban3DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factiban4DataGridViewTextBoxColumn
+            // 
+            this.factiban4DataGridViewTextBoxColumn.DataPropertyName = "factiban4";
+            this.factiban4DataGridViewTextBoxColumn.HeaderText = "factiban4";
+            this.factiban4DataGridViewTextBoxColumn.Name = "factiban4DataGridViewTextBoxColumn";
+            this.factiban4DataGridViewTextBoxColumn.ReadOnly = true;
+            this.factiban4DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factiban5DataGridViewTextBoxColumn
+            // 
+            this.factiban5DataGridViewTextBoxColumn.DataPropertyName = "factiban5";
+            this.factiban5DataGridViewTextBoxColumn.HeaderText = "factiban5";
+            this.factiban5DataGridViewTextBoxColumn.Name = "factiban5DataGridViewTextBoxColumn";
+            this.factiban5DataGridViewTextBoxColumn.ReadOnly = true;
+            this.factiban5DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factiban6DataGridViewTextBoxColumn
+            // 
+            this.factiban6DataGridViewTextBoxColumn.DataPropertyName = "factiban6";
+            this.factiban6DataGridViewTextBoxColumn.HeaderText = "factiban6";
+            this.factiban6DataGridViewTextBoxColumn.Name = "factiban6DataGridViewTextBoxColumn";
+            this.factiban6DataGridViewTextBoxColumn.ReadOnly = true;
+            this.factiban6DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factconcepto1DataGridViewTextBoxColumn
+            // 
+            this.factconcepto1DataGridViewTextBoxColumn.DataPropertyName = "factconcepto1";
+            this.factconcepto1DataGridViewTextBoxColumn.HeaderText = "factconcepto1";
+            this.factconcepto1DataGridViewTextBoxColumn.Name = "factconcepto1DataGridViewTextBoxColumn";
+            this.factconcepto1DataGridViewTextBoxColumn.ReadOnly = true;
+            this.factconcepto1DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factbase1DataGridViewTextBoxColumn
+            // 
+            this.factbase1DataGridViewTextBoxColumn.DataPropertyName = "factbase1";
+            this.factbase1DataGridViewTextBoxColumn.HeaderText = "factbase1";
+            this.factbase1DataGridViewTextBoxColumn.Name = "factbase1DataGridViewTextBoxColumn";
+            this.factbase1DataGridViewTextBoxColumn.ReadOnly = true;
+            this.factbase1DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factconcepto2DataGridViewTextBoxColumn
+            // 
+            this.factconcepto2DataGridViewTextBoxColumn.DataPropertyName = "factconcepto2";
+            this.factconcepto2DataGridViewTextBoxColumn.HeaderText = "factconcepto2";
+            this.factconcepto2DataGridViewTextBoxColumn.Name = "factconcepto2DataGridViewTextBoxColumn";
+            this.factconcepto2DataGridViewTextBoxColumn.ReadOnly = true;
+            this.factconcepto2DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factbase2DataGridViewTextBoxColumn
+            // 
+            this.factbase2DataGridViewTextBoxColumn.DataPropertyName = "factbase2";
+            this.factbase2DataGridViewTextBoxColumn.HeaderText = "factbase2";
+            this.factbase2DataGridViewTextBoxColumn.Name = "factbase2DataGridViewTextBoxColumn";
+            this.factbase2DataGridViewTextBoxColumn.ReadOnly = true;
+            this.factbase2DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factemleadosDataGridViewTextBoxColumn
+            // 
+            this.factemleadosDataGridViewTextBoxColumn.DataPropertyName = "factemleados";
+            this.factemleadosDataGridViewTextBoxColumn.HeaderText = "factemleados";
+            this.factemleadosDataGridViewTextBoxColumn.Name = "factemleadosDataGridViewTextBoxColumn";
+            this.factemleadosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.factemleadosDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factprecioempleadoDataGridViewTextBoxColumn
+            // 
+            this.factprecioempleadoDataGridViewTextBoxColumn.DataPropertyName = "factprecioempleado";
+            this.factprecioempleadoDataGridViewTextBoxColumn.HeaderText = "factprecioempleado";
+            this.factprecioempleadoDataGridViewTextBoxColumn.Name = "factprecioempleadoDataGridViewTextBoxColumn";
+            this.factprecioempleadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.factprecioempleadoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factbaseempleadoDataGridViewTextBoxColumn
+            // 
+            this.factbaseempleadoDataGridViewTextBoxColumn.DataPropertyName = "factbaseempleado";
+            this.factbaseempleadoDataGridViewTextBoxColumn.HeaderText = "factbaseempleado";
+            this.factbaseempleadoDataGridViewTextBoxColumn.Name = "factbaseempleadoDataGridViewTextBoxColumn";
+            this.factbaseempleadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.factbaseempleadoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // facttipoivaDataGridViewTextBoxColumn
+            // 
+            this.facttipoivaDataGridViewTextBoxColumn.DataPropertyName = "facttipoiva";
+            this.facttipoivaDataGridViewTextBoxColumn.HeaderText = "facttipoiva";
+            this.facttipoivaDataGridViewTextBoxColumn.Name = "facttipoivaDataGridViewTextBoxColumn";
+            this.facttipoivaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.facttipoivaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factimporteivaDataGridViewTextBoxColumn
+            // 
+            this.factimporteivaDataGridViewTextBoxColumn.DataPropertyName = "factimporteiva";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = "0";
+            this.factimporteivaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.factimporteivaDataGridViewTextBoxColumn.HeaderText = "Impuetos";
+            this.factimporteivaDataGridViewTextBoxColumn.Name = "factimporteivaDataGridViewTextBoxColumn";
+            this.factimporteivaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // facttotalfacturaDataGridViewTextBoxColumn
+            // 
+            this.facttotalfacturaDataGridViewTextBoxColumn.DataPropertyName = "facttotalfactura";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = "0";
+            this.facttotalfacturaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.facttotalfacturaDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.facttotalfacturaDataGridViewTextBoxColumn.Name = "facttotalfacturaDataGridViewTextBoxColumn";
+            this.facttotalfacturaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.facttotalfacturaDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // factparaImprimirDataGridViewCheckBoxColumn
+            // 
+            this.factparaImprimirDataGridViewCheckBoxColumn.DataPropertyName = "factpara imprimir";
+            this.factparaImprimirDataGridViewCheckBoxColumn.HeaderText = "factpara imprimir";
+            this.factparaImprimirDataGridViewCheckBoxColumn.Name = "factparaImprimirDataGridViewCheckBoxColumn";
+            this.factparaImprimirDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.factparaImprimirDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // factimpresaDataGridViewCheckBoxColumn
+            // 
+            this.factimpresaDataGridViewCheckBoxColumn.DataPropertyName = "factimpresa";
+            this.factimpresaDataGridViewCheckBoxColumn.HeaderText = "factimpresa";
+            this.factimpresaDataGridViewCheckBoxColumn.Name = "factimpresaDataGridViewCheckBoxColumn";
+            this.factimpresaDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.factimpresaDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // factparacontabilizarDataGridViewCheckBoxColumn
+            // 
+            this.factparacontabilizarDataGridViewCheckBoxColumn.DataPropertyName = "factparacontabilizar";
+            this.factparacontabilizarDataGridViewCheckBoxColumn.HeaderText = "factparacontabilizar";
+            this.factparacontabilizarDataGridViewCheckBoxColumn.Name = "factparacontabilizarDataGridViewCheckBoxColumn";
+            this.factparacontabilizarDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.factparacontabilizarDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // factcontabilizadaDataGridViewCheckBoxColumn
+            // 
+            this.factcontabilizadaDataGridViewCheckBoxColumn.DataPropertyName = "factcontabilizada";
+            this.factcontabilizadaDataGridViewCheckBoxColumn.HeaderText = "factcontabilizada";
+            this.factcontabilizadaDataGridViewCheckBoxColumn.Name = "factcontabilizadaDataGridViewCheckBoxColumn";
+            this.factcontabilizadaDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.factcontabilizadaDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // factparadomiciliarDataGridViewCheckBoxColumn
+            // 
+            this.factparadomiciliarDataGridViewCheckBoxColumn.DataPropertyName = "factparadomiciliar";
+            this.factparadomiciliarDataGridViewCheckBoxColumn.HeaderText = "factparadomiciliar";
+            this.factparadomiciliarDataGridViewCheckBoxColumn.Name = "factparadomiciliarDataGridViewCheckBoxColumn";
+            this.factparadomiciliarDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.factparadomiciliarDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // factdomiciliadaDataGridViewCheckBoxColumn
+            // 
+            this.factdomiciliadaDataGridViewCheckBoxColumn.DataPropertyName = "factdomiciliada";
+            this.factdomiciliadaDataGridViewCheckBoxColumn.HeaderText = "factdomiciliada";
+            this.factdomiciliadaDataGridViewCheckBoxColumn.Name = "factdomiciliadaDataGridViewCheckBoxColumn";
+            this.factdomiciliadaDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.factdomiciliadaDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // facttotalremesaDataGridViewTextBoxColumn
+            // 
+            this.facttotalremesaDataGridViewTextBoxColumn.DataPropertyName = "facttotalremesa";
+            this.facttotalremesaDataGridViewTextBoxColumn.HeaderText = "facttotalremesa";
+            this.facttotalremesaDataGridViewTextBoxColumn.Name = "facttotalremesaDataGridViewTextBoxColumn";
+            this.facttotalremesaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.facttotalremesaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // factpormailDataGridViewCheckBoxColumn
+            // 
+            this.factpormailDataGridViewCheckBoxColumn.DataPropertyName = "factpormail";
+            this.factpormailDataGridViewCheckBoxColumn.HeaderText = "factpormail";
+            this.factpormailDataGridViewCheckBoxColumn.Name = "factpormailDataGridViewCheckBoxColumn";
+            this.factpormailDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.factpormailDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // factmailDataGridViewTextBoxColumn
+            // 
+            this.factmailDataGridViewTextBoxColumn.DataPropertyName = "factmail";
+            this.factmailDataGridViewTextBoxColumn.HeaderText = "factmail";
+            this.factmailDataGridViewTextBoxColumn.Name = "factmailDataGridViewTextBoxColumn";
+            this.factmailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.factmailDataGridViewTextBoxColumn.Visible = false;
+            // 
             // GestionFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -639,8 +693,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn factnumerofactDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn factremesaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn factfechaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn factcodclienteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn factnombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn factcodclienteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn factdireccionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn factlocalidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn factprovinciaDataGridViewTextBoxColumn;

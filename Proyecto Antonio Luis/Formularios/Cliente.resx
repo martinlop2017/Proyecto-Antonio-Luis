@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -937,13 +934,10 @@
         ////////////////////////////////////////////////////////
 </value>
   </data>
-  <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>172, 17</value>
-  </metadata>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA3MAAAKqCAYAAACQDwcpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAADv3SURBVHhe7d1BjiRbkhxaLutvlbv64JQDAiTAAQcPtQGi
+        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAADv3SURBVHhe7d1BjiRbkhxaLutvlbv64JQDAiTAAQcPtQGi
         iduNGyXtJS8jM9TSMq7bEeAMXkFdPGEOmIaiB/1f/k1ERERERESOi2NORERERETkwDjmREREREREDoxj
         TkRERERE5MA45kRERERERA6MY05EREREROTAOOZEREREREQOjGNORERERETkwDjmREREREREDoxjTkRE
         RERE5MA45kRERERERA7MZcfc//df/38AAACK35HxMdf+oQAAAPyrKzM65to/DgAAgL93Vb58zLV/FAAA

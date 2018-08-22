@@ -575,7 +575,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                     var dato = alistar[i];
 
                     //nuevaForma.ExportarToPdf(dato, $"C:\\Equipo Martin\\facturas\\Nueva carpeta\\Test{i + 1}.pdf");
-                    nuevaForma.ExportarToPdf(dato, $"C:\\ByMartin\\{dato.listnombre}\\Facturacion\\Factura {dato.listnumerofactura}.pdf");
+                    nuevaForma.ExportarToPdf(dato, $"C:\\ByMartin\\Clientes\\{dato.listnombre}\\Facturacion\\Factura {dato.listnumerofactura}.pdf");
 
                 }
 

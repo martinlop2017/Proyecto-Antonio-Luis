@@ -124,14 +124,30 @@ namespace Proyecto_Antonio_Luis
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == Convert.ToChar(13))
+            if (e.KeyChar == (char)(Keys.Enter))
             {
-                e.Handled = true; SendKeys.Send("{TAB}");
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
             }
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl((Control)sender, true, true, true, true);
+            }
 
         }
     }

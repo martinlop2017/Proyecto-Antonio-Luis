@@ -32,6 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionRemesas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,8 +50,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvremesas = new System.Windows.Forms.DataGridView();
-            this.dataSetAntonioLuis = new Proyecto_Antonio_Luis.DataSetAntonioLuis();
             this.resillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetAntonioLuis = new Proyecto_Antonio_Luis.DataSetAntonioLuis();
             this.remesanumeradorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remesanumeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remesafechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,8 +60,8 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvremesas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetAntonioLuis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resillaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetAntonioLuis)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -218,7 +222,7 @@
             this.dgvremesas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -233,23 +237,27 @@
             this.remesacontabilizadaDataGridViewCheckBoxColumn});
             this.dgvremesas.DataSource = this.resillaBindingSource;
             this.dgvremesas.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvremesas.Location = new System.Drawing.Point(41, 207);
+            this.dgvremesas.Location = new System.Drawing.Point(38, 204);
             this.dgvremesas.Name = "dgvremesas";
             this.dgvremesas.ReadOnly = true;
+            this.dgvremesas.RowHeadersWidth = 20;
             this.dgvremesas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvremesas.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvremesas.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvremesas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvremesas.Size = new System.Drawing.Size(477, 383);
             this.dgvremesas.TabIndex = 80;
-            // 
-            // dataSetAntonioLuis
-            // 
-            this.dataSetAntonioLuis.DataSetName = "DataSetAntonioLuis";
-            this.dataSetAntonioLuis.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // resillaBindingSource
             // 
             this.resillaBindingSource.DataMember = "Resilla";
             this.resillaBindingSource.DataSource = this.dataSetAntonioLuis;
+            // 
+            // dataSetAntonioLuis
+            // 
+            this.dataSetAntonioLuis.DataSetName = "DataSetAntonioLuis";
+            this.dataSetAntonioLuis.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // remesanumeradorDataGridViewTextBoxColumn
             // 
@@ -257,34 +265,46 @@
             this.remesanumeradorDataGridViewTextBoxColumn.HeaderText = "remesanumerador";
             this.remesanumeradorDataGridViewTextBoxColumn.Name = "remesanumeradorDataGridViewTextBoxColumn";
             this.remesanumeradorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.remesanumeradorDataGridViewTextBoxColumn.Visible = false;
             // 
             // remesanumeroDataGridViewTextBoxColumn
             // 
             this.remesanumeroDataGridViewTextBoxColumn.DataPropertyName = "remesanumero";
-            this.remesanumeroDataGridViewTextBoxColumn.HeaderText = "remesanumero";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remesanumeroDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.remesanumeroDataGridViewTextBoxColumn.HeaderText = "Remesa";
             this.remesanumeroDataGridViewTextBoxColumn.Name = "remesanumeroDataGridViewTextBoxColumn";
             this.remesanumeroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.remesanumeroDataGridViewTextBoxColumn.Width = 150;
             // 
             // remesafechaDataGridViewTextBoxColumn
             // 
             this.remesafechaDataGridViewTextBoxColumn.DataPropertyName = "remesafecha";
-            this.remesafechaDataGridViewTextBoxColumn.HeaderText = "remesafecha";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.remesafechaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.remesafechaDataGridViewTextBoxColumn.HeaderText = "      Fecha";
             this.remesafechaDataGridViewTextBoxColumn.Name = "remesafechaDataGridViewTextBoxColumn";
             this.remesafechaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // remesatotalDataGridViewTextBoxColumn
             // 
             this.remesatotalDataGridViewTextBoxColumn.DataPropertyName = "remesatotal";
-            this.remesatotalDataGridViewTextBoxColumn.HeaderText = "remesatotal";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = "0";
+            this.remesatotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.remesatotalDataGridViewTextBoxColumn.HeaderText = "       Importe";
             this.remesatotalDataGridViewTextBoxColumn.Name = "remesatotalDataGridViewTextBoxColumn";
             this.remesatotalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.remesatotalDataGridViewTextBoxColumn.Width = 115;
             // 
             // remesacontabilizadaDataGridViewCheckBoxColumn
             // 
             this.remesacontabilizadaDataGridViewCheckBoxColumn.DataPropertyName = "remesacontabilizada";
-            this.remesacontabilizadaDataGridViewCheckBoxColumn.HeaderText = "remesacontabilizada";
+            this.remesacontabilizadaDataGridViewCheckBoxColumn.HeaderText = "Contabilizada";
             this.remesacontabilizadaDataGridViewCheckBoxColumn.Name = "remesacontabilizadaDataGridViewCheckBoxColumn";
             this.remesacontabilizadaDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.remesacontabilizadaDataGridViewCheckBoxColumn.Width = 90;
             // 
             // GestionRemesas
             // 
@@ -317,8 +337,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvremesas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetAntonioLuis)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resillaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetAntonioLuis)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

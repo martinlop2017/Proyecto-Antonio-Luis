@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cliente));
             this.label27 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -92,7 +91,6 @@
             this.textCCC4 = new System.Windows.Forms.TextBox();
             this.textCCC5 = new System.Windows.Forms.TextBox();
             this.textCCC6 = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.textObserva = new System.Windows.Forms.RichTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -101,9 +99,7 @@
             this.textFechaAlta = new System.Windows.Forms.MaskedTextBox();
             this.checpormail = new System.Windows.Forms.CheckBox();
             this.textPreciotrabajador = new System.Windows.Forms.TextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.textMiCif = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label27
@@ -839,11 +835,6 @@
             this.textCCC6.TabIndex = 20;
             this.textCCC6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCCC6_KeyPress);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // textObserva
             // 
             this.textObserva.Location = new System.Drawing.Point(500, 452);
@@ -935,10 +926,6 @@
             this.textPreciotrabajador.Name = "textPreciotrabajador";
             this.textPreciotrabajador.Size = new System.Drawing.Size(76, 23);
             this.textPreciotrabajador.TabIndex = 196;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // textMiCif
             // 
@@ -1038,7 +1025,6 @@
             this.AutoValidateChanged += new System.EventHandler(this.Cliente_AutoValidateChanged);
             this.Load += new System.EventHandler(this.Clientes_Load);
             this.MouseEnter += new System.EventHandler(this.Cliente_MouseEnter);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1108,7 +1094,6 @@
         private System.Windows.Forms.TextBox textCCC4;
         private System.Windows.Forms.TextBox textCCC5;
         private System.Windows.Forms.TextBox textCCC6;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.RichTextBox textObserva;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label19;
@@ -1117,7 +1102,6 @@
         private System.Windows.Forms.MaskedTextBox textFechaAlta;
         private System.Windows.Forms.CheckBox checpormail;
         private System.Windows.Forms.TextBox textPreciotrabajador;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox textMiCif;
     }
 }

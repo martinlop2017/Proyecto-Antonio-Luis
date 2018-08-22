@@ -704,7 +704,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
 
              // Especificamos las rutas
-            string path = @"c:\ByMartin" + "\\" + textMiNombre.Text;
+            string path = @"c:\ByMartin\Clientes" + "\\" + textMiNombre.Text;
             string escritura = path + "\\Escrituras";
             string fiscal = path + "\\Fiscal";
             string laboral = path + "\\Laboral";
@@ -907,19 +907,20 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void textMiNombre_Validated(object sender, EventArgs e)
         {
-            errorProvider1.SetError(textMiNombre, "");
+          
 
         }
 
         private void textMiNombre_Validating(object sender, CancelEventArgs e)
         {
-            if (textMiNombre.Text == "")
+          /*  if (textMiNombre.Text == "")
 
             {
                 e.Cancel = true;
                 textMiNombre.Select(0, textMiNombre.Text.Length);
-                errorProvider1.SetError(textMiNombre, "Debe introducir el nombre");
+               
             }
+          */
         }
 
         private void Cliente_AutoValidateChanged(object sender, EventArgs e)

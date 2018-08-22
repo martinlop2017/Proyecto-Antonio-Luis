@@ -66,6 +66,7 @@
             this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.button1.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.button1_PreviewKeyDown);
             // 
             // panel2
             // 
@@ -81,6 +82,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(372, 199);
             this.panel2.TabIndex = 4;
+            this.panel2.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.button1_PreviewKeyDown);
             // 
             // label3
             // 
@@ -110,6 +112,7 @@
             this.textBox1.TabIndex = 1;
             this.textBox1.UseSystemPasswordChar = true;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
             // comboBox1
             // 
@@ -118,6 +121,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(156, 31);
             this.comboBox1.TabIndex = 0;
+            this.comboBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             this.comboBox1.Leave += new System.EventHandler(this.comboBox1_Leave);
             // 
             // panel1
