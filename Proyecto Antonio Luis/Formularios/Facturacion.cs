@@ -568,15 +568,16 @@ namespace Proyecto_Antonio_Luis.Formularios
             var hilo2 = Task.Factory.StartNew(() =>
             {
 
-                    Form3 nuevaForma = new Form3();
+                    
                 // cargamos la pantalla de listados de remesas
                 for (int i = 0; i < alistar.Count; i++)
                 {
+                    Form3 nuevaForma = new Form3();
                     var dato = alistar[i];
 
                     //nuevaForma.ExportarToPdf(dato, $"C:\\Equipo Martin\\facturas\\Nueva carpeta\\Test{i + 1}.pdf");
                     nuevaForma.ExportarToPdf(dato, $"C:\\ByMartin\\Clientes\\{dato.listnombre}\\Facturacion\\Factura {dato.listnumerofactura}.pdf");
-
+                    
                 }
 
                 form.Close();

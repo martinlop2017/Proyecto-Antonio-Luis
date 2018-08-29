@@ -273,12 +273,12 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void BotonEscaner_MouseEnter(object sender, EventArgs e)
         {
-            BotonEscaner.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Escaner_Azul;
+            BotonEscaner.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Gestion_Docuental_Azul;
         }
-
+       
         private void BotonEscaner_MouseLeave(object sender, EventArgs e)
         {
-            BotonEscaner.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Escaner;
+            BotonEscaner.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Gestion_Docuental;
         }
 
         private void BotonFactMensual_MouseEnter(object sender, EventArgs e)

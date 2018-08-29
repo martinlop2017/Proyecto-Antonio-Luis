@@ -46,7 +46,6 @@ namespace Proyecto_Antonio_Luis.Formularios
             file.Directory.Create(); // If the directory already exists, this method does nothing.
 
             File.WriteAllBytes(file.FullName, bytes);
-
         }
 
         private void datoslistadoremeBindingSource_CurrentChanged(object sender, EventArgs e)

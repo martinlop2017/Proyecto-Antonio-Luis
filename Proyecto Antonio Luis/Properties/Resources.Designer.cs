@@ -63,6 +63,46 @@ namespace Proyecto_Antonio_Luis.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1Escaner {
+            get {
+                object obj = ResourceManager.GetObject("1Escaner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1Escaner_Apagado {
+            get {
+                object obj = ResourceManager.GetObject("1Escaner Apagado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1Escaner_Apagado1 {
+            get {
+                object obj = ResourceManager.GetObject("1Escaner Apagado1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1Escaner_Azul {
+            get {
+                object obj = ResourceManager.GetObject("1Escaner Azul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Agenda {
             get {
                 object obj = ResourceManager.GetObject("Agenda", resourceCulture);
@@ -256,6 +296,26 @@ namespace Proyecto_Antonio_Luis.Properties {
         internal static System.Drawing.Bitmap Escaner_Azul {
             get {
                 object obj = ResourceManager.GetObject("Escaner Azul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Excel {
+            get {
+                object obj = ResourceManager.GetObject("Excel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Excel_Azul {
+            get {
+                object obj = ResourceManager.GetObject("Excel Azul", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -533,6 +593,26 @@ namespace Proyecto_Antonio_Luis.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Gestion_Docuental {
+            get {
+                object obj = ResourceManager.GetObject("Gestion Docuental", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gestion_Docuental_Azul {
+            get {
+                object obj = ResourceManager.GetObject("Gestion Docuental Azul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Impresora {
             get {
                 object obj = ResourceManager.GetObject("Impresora", resourceCulture);
@@ -783,6 +863,26 @@ namespace Proyecto_Antonio_Luis.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Salir {
+            get {
+                object obj = ResourceManager.GetObject("Salir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Salir_Azul {
+            get {
+                object obj = ResourceManager.GetObject("Salir Azul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Sistema {
             get {
                 object obj = ResourceManager.GetObject("Sistema", resourceCulture);
@@ -836,6 +936,26 @@ namespace Proyecto_Antonio_Luis.Properties {
         internal static System.Drawing.Bitmap Ususarios_Azul {
             get {
                 object obj = ResourceManager.GetObject("Ususarios Azul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Word {
+            get {
+                object obj = ResourceManager.GetObject("Word", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Word_Azul {
+            get {
+                object obj = ResourceManager.GetObject("Word Azul", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

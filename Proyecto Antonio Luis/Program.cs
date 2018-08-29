@@ -24,7 +24,7 @@ namespace Proyecto_Antonio_Luis
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new GestionDocumentos());
         }
     }
 }
@@ -38,8 +38,8 @@ namespace Proyecto_Antonio_Luis
     public static DateTime fechafactura;
     public static string mesfactura;
     public static decimal tipoiva;
+    public static string ruta;
 
-    
 
 
 
