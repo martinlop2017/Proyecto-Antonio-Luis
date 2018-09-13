@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BaseDatos;
+using System.IO;
 
 
 namespace Proyecto_Antonio_Luis.Formularios
@@ -102,11 +103,34 @@ namespace Proyecto_Antonio_Luis.Formularios
 
 
 
+            //aqui vamos acomprobar el año del sistema y el valor guardado en un archivo almacenado en el directorio del programa
+            //si dichos años son difrentes, se disparará un reinicio de bases de datos para comenzar a almacenar los datos del 
+            //nuevo año.
+            {
+                //leemos el archivo y sacamos el valor del año guardado.
+                String year, oldyear;
 
+                //Pasamo la direcion y nombre el archivo
+                StreamReader sr = new StreamReader("C:\\ByMartin\\Tmp\\Systemyear.txt");
 
+                //Carga las fechas, lee la linea del archivo y lo guarda en oldyear, y la fecha actual en year
+                oldyear = sr.ReadLine();
+                year = DateTime.Now.ToString("yyyy");
 
+                //Cierra el archivo
+                sr.Close();
+                Console.ReadLine();
 
+                //si las fechas son distintas entendemos que el año ha cambiado por lo que lo mandamos al formulario para 
+                //reiniciar las tablas.
+                if (oldyear != year)
+                {
+                    //abre el formulario para reiniciar las tablas.
+                    ReiniciaBases form = new ReiniciaBases();
+                    form.Show();
+                }
 
+            }
 
 
 

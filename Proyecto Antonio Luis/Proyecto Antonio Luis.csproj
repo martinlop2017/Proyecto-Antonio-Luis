@@ -255,6 +255,12 @@
     <Compile Include="Formularios\pruebasprogress.Designer.cs">
       <DependentUpon>pruebasprogress.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ReiniciaBases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReiniciaBases.Designer.cs">
+      <DependentUpon>ReiniciaBases.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Rutas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -368,6 +374,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\pruebasprogress.resx">
       <DependentUpon>pruebasprogress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReiniciaBases.resx">
+      <DependentUpon>ReiniciaBases.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Report1.rdlc" />
     <EmbeddedResource Include="Formularios\ReportFacturas.rdlc" />
