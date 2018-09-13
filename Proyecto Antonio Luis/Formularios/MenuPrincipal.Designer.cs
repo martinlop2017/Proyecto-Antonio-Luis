@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,8 +41,16 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.PanelSistema = new System.Windows.Forms.Panel();
+            this.BotonPropios = new System.Windows.Forms.Button();
+            this.BotonUsuarios = new System.Windows.Forms.Button();
+            this.BotonImpuestos = new System.Windows.Forms.Button();
+            this.BotonRutas = new System.Windows.Forms.Button();
             this.PanelClientes = new System.Windows.Forms.Panel();
+            this.BotonCliente = new System.Windows.Forms.Button();
+            this.BotonEscaner = new System.Windows.Forms.Button();
             this.PanelFacturas = new System.Windows.Forms.Panel();
+            this.BotonFactMensual = new System.Windows.Forms.Button();
+            this.BotonFactManual = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configurarSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,16 +70,6 @@
             this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.BotonFactMensual = new System.Windows.Forms.Button();
-            this.BotonFactManual = new System.Windows.Forms.Button();
-            this.BotonCliente = new System.Windows.Forms.Button();
-            this.BotonEscaner = new System.Windows.Forms.Button();
-            this.BotonPropios = new System.Windows.Forms.Button();
-            this.BotonUsuarios = new System.Windows.Forms.Button();
-            this.BotonImpuestos = new System.Windows.Forms.Button();
-            this.BotonRutas = new System.Windows.Forms.Button();
-            this.BotonAyuda = new System.Windows.Forms.Button();
-            this.BotonAgenda = new System.Windows.Forms.Button();
             this.BotonMantenimiento = new System.Windows.Forms.Button();
             this.BotonListados = new System.Windows.Forms.Button();
             this.BotonContaplus = new System.Windows.Forms.Button();
@@ -78,6 +77,7 @@
             this.BotonFacturas = new System.Windows.Forms.Button();
             this.BotonClientes = new System.Windows.Forms.Button();
             this.BotonSistema = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.statusStrip1.SuspendLayout();
             this.PanelSistema.SuspendLayout();
             this.PanelClientes.SuspendLayout();
@@ -190,31 +190,135 @@
             this.PanelSistema.Controls.Add(this.BotonUsuarios);
             this.PanelSistema.Controls.Add(this.BotonImpuestos);
             this.PanelSistema.Controls.Add(this.BotonRutas);
-            this.PanelSistema.Location = new System.Drawing.Point(41, 169);
+            this.PanelSistema.Location = new System.Drawing.Point(100, 169);
             this.PanelSistema.Name = "PanelSistema";
             this.PanelSistema.Size = new System.Drawing.Size(117, 552);
             this.PanelSistema.TabIndex = 40;
             this.PanelSistema.Visible = false;
             // 
+            // BotonPropios
+            // 
+            this.BotonPropios.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Propios;
+            this.BotonPropios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BotonPropios.Location = new System.Drawing.Point(0, 19);
+            this.BotonPropios.Name = "BotonPropios";
+            this.BotonPropios.Size = new System.Drawing.Size(109, 105);
+            this.BotonPropios.TabIndex = 32;
+            this.BotonPropios.UseVisualStyleBackColor = true;
+            this.BotonPropios.Click += new System.EventHandler(this.BotonPropios_Click);
+            this.BotonPropios.MouseEnter += new System.EventHandler(this.BotonPropios_MouseEnter);
+            this.BotonPropios.MouseLeave += new System.EventHandler(this.BotonPropios_MouseLeave);
+            // 
+            // BotonUsuarios
+            // 
+            this.BotonUsuarios.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Ususarios;
+            this.BotonUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BotonUsuarios.Location = new System.Drawing.Point(0, 150);
+            this.BotonUsuarios.Name = "BotonUsuarios";
+            this.BotonUsuarios.Size = new System.Drawing.Size(109, 105);
+            this.BotonUsuarios.TabIndex = 35;
+            this.BotonUsuarios.UseVisualStyleBackColor = true;
+            this.BotonUsuarios.Click += new System.EventHandler(this.BotonUsuarios_Click);
+            this.BotonUsuarios.MouseEnter += new System.EventHandler(this.BotonUsuarios_MouseEnter);
+            this.BotonUsuarios.MouseLeave += new System.EventHandler(this.BotonUsuarios_MouseLeave);
+            // 
+            // BotonImpuestos
+            // 
+            this.BotonImpuestos.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Impuetos;
+            this.BotonImpuestos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BotonImpuestos.Location = new System.Drawing.Point(0, 283);
+            this.BotonImpuestos.Name = "BotonImpuestos";
+            this.BotonImpuestos.Size = new System.Drawing.Size(109, 105);
+            this.BotonImpuestos.TabIndex = 33;
+            this.BotonImpuestos.UseVisualStyleBackColor = true;
+            this.BotonImpuestos.Click += new System.EventHandler(this.BotonImpuestos_Click);
+            this.BotonImpuestos.MouseEnter += new System.EventHandler(this.BotonImpuestos_MouseEnter);
+            this.BotonImpuestos.MouseLeave += new System.EventHandler(this.BotonImpuestos_MouseLeave);
+            // 
+            // BotonRutas
+            // 
+            this.BotonRutas.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Ruta;
+            this.BotonRutas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BotonRutas.Location = new System.Drawing.Point(0, 415);
+            this.BotonRutas.Name = "BotonRutas";
+            this.BotonRutas.Size = new System.Drawing.Size(109, 105);
+            this.BotonRutas.TabIndex = 34;
+            this.BotonRutas.UseVisualStyleBackColor = true;
+            this.BotonRutas.Click += new System.EventHandler(this.BotonRutas_Click);
+            this.BotonRutas.MouseEnter += new System.EventHandler(this.BotonRutas_MouseEnter);
+            this.BotonRutas.MouseLeave += new System.EventHandler(this.BotonRutas_MouseLeave);
+            // 
             // PanelClientes
             // 
             this.PanelClientes.Controls.Add(this.BotonCliente);
             this.PanelClientes.Controls.Add(this.BotonEscaner);
-            this.PanelClientes.Location = new System.Drawing.Point(174, 169);
+            this.PanelClientes.Location = new System.Drawing.Point(255, 159);
             this.PanelClientes.Name = "PanelClientes";
             this.PanelClientes.Size = new System.Drawing.Size(117, 265);
             this.PanelClientes.TabIndex = 41;
             this.PanelClientes.Visible = false;
             // 
+            // BotonCliente
+            // 
+            this.BotonCliente.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Clientes1;
+            this.BotonCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BotonCliente.Location = new System.Drawing.Point(0, 19);
+            this.BotonCliente.Name = "BotonCliente";
+            this.BotonCliente.Size = new System.Drawing.Size(109, 105);
+            this.BotonCliente.TabIndex = 36;
+            this.BotonCliente.UseVisualStyleBackColor = true;
+            this.BotonCliente.Click += new System.EventHandler(this.BotonCliente_Click);
+            this.BotonCliente.MouseEnter += new System.EventHandler(this.BotonCliente_MouseEnter);
+            this.BotonCliente.MouseLeave += new System.EventHandler(this.BotonCliente_MouseLeave);
+            // 
+            // BotonEscaner
+            // 
+            this.BotonEscaner.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Gestion_Docuental;
+            this.BotonEscaner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BotonEscaner.Location = new System.Drawing.Point(0, 150);
+            this.BotonEscaner.Name = "BotonEscaner";
+            this.BotonEscaner.Size = new System.Drawing.Size(109, 105);
+            this.BotonEscaner.TabIndex = 37;
+            this.BotonEscaner.UseVisualStyleBackColor = true;
+            this.BotonEscaner.Click += new System.EventHandler(this.BotonEscaner_Click);
+            this.BotonEscaner.MouseEnter += new System.EventHandler(this.BotonEscaner_MouseEnter);
+            this.BotonEscaner.MouseLeave += new System.EventHandler(this.BotonEscaner_MouseLeave);
+            // 
             // PanelFacturas
             // 
             this.PanelFacturas.Controls.Add(this.BotonFactMensual);
             this.PanelFacturas.Controls.Add(this.BotonFactManual);
-            this.PanelFacturas.Location = new System.Drawing.Point(307, 169);
+            this.PanelFacturas.Location = new System.Drawing.Point(410, 169);
             this.PanelFacturas.Name = "PanelFacturas";
             this.PanelFacturas.Size = new System.Drawing.Size(117, 265);
             this.PanelFacturas.TabIndex = 42;
             this.PanelFacturas.Visible = false;
+            // 
+            // BotonFactMensual
+            // 
+            this.BotonFactMensual.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.FacturaMensual;
+            this.BotonFactMensual.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BotonFactMensual.Location = new System.Drawing.Point(0, 19);
+            this.BotonFactMensual.Name = "BotonFactMensual";
+            this.BotonFactMensual.Size = new System.Drawing.Size(109, 105);
+            this.BotonFactMensual.TabIndex = 38;
+            this.BotonFactMensual.UseVisualStyleBackColor = true;
+            this.BotonFactMensual.Click += new System.EventHandler(this.BotonFactMensual_Click);
+            this.BotonFactMensual.MouseEnter += new System.EventHandler(this.BotonFactMensual_MouseEnter);
+            this.BotonFactMensual.MouseLeave += new System.EventHandler(this.BotonFactMensual_MouseLeave);
+            // 
+            // BotonFactManual
+            // 
+            this.BotonFactManual.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.FacturaManual;
+            this.BotonFactManual.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BotonFactManual.Location = new System.Drawing.Point(0, 147);
+            this.BotonFactManual.Name = "BotonFactManual";
+            this.BotonFactManual.Size = new System.Drawing.Size(109, 105);
+            this.BotonFactManual.TabIndex = 39;
+            this.BotonFactManual.UseVisualStyleBackColor = true;
+            this.BotonFactManual.Click += new System.EventHandler(this.BotonFactManual_Click);
+            this.BotonFactManual.MouseEnter += new System.EventHandler(this.BotonFactManual_MouseEnter);
+            this.BotonFactManual.MouseLeave += new System.EventHandler(this.BotonFactManual_MouseLeave);
             // 
             // menuStrip1
             // 
@@ -354,141 +458,11 @@
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
-            // BotonFactMensual
-            // 
-            this.BotonFactMensual.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.FacturaMensual;
-            this.BotonFactMensual.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonFactMensual.Location = new System.Drawing.Point(0, 19);
-            this.BotonFactMensual.Name = "BotonFactMensual";
-            this.BotonFactMensual.Size = new System.Drawing.Size(109, 105);
-            this.BotonFactMensual.TabIndex = 38;
-            this.BotonFactMensual.UseVisualStyleBackColor = true;
-            this.BotonFactMensual.Click += new System.EventHandler(this.BotonFactMensual_Click);
-            this.BotonFactMensual.MouseEnter += new System.EventHandler(this.BotonFactMensual_MouseEnter);
-            this.BotonFactMensual.MouseLeave += new System.EventHandler(this.BotonFactMensual_MouseLeave);
-            // 
-            // BotonFactManual
-            // 
-            this.BotonFactManual.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.FacturaManual;
-            this.BotonFactManual.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonFactManual.Location = new System.Drawing.Point(0, 147);
-            this.BotonFactManual.Name = "BotonFactManual";
-            this.BotonFactManual.Size = new System.Drawing.Size(109, 105);
-            this.BotonFactManual.TabIndex = 39;
-            this.BotonFactManual.UseVisualStyleBackColor = true;
-            this.BotonFactManual.Click += new System.EventHandler(this.BotonFactManual_Click);
-            this.BotonFactManual.MouseEnter += new System.EventHandler(this.BotonFactManual_MouseEnter);
-            this.BotonFactManual.MouseLeave += new System.EventHandler(this.BotonFactManual_MouseLeave);
-            // 
-            // BotonCliente
-            // 
-            this.BotonCliente.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Clientes1;
-            this.BotonCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonCliente.Location = new System.Drawing.Point(0, 19);
-            this.BotonCliente.Name = "BotonCliente";
-            this.BotonCliente.Size = new System.Drawing.Size(109, 105);
-            this.BotonCliente.TabIndex = 36;
-            this.BotonCliente.UseVisualStyleBackColor = true;
-            this.BotonCliente.Click += new System.EventHandler(this.BotonCliente_Click);
-            this.BotonCliente.MouseEnter += new System.EventHandler(this.BotonCliente_MouseEnter);
-            this.BotonCliente.MouseLeave += new System.EventHandler(this.BotonCliente_MouseLeave);
-            // 
-            // BotonEscaner
-            // 
-            this.BotonEscaner.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Gestion_Docuental;
-            this.BotonEscaner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonEscaner.Location = new System.Drawing.Point(0, 150);
-            this.BotonEscaner.Name = "BotonEscaner";
-            this.BotonEscaner.Size = new System.Drawing.Size(109, 105);
-            this.BotonEscaner.TabIndex = 37;
-            this.BotonEscaner.UseVisualStyleBackColor = true;
-            this.BotonEscaner.Click += new System.EventHandler(this.BotonEscaner_Click);
-            this.BotonEscaner.MouseEnter += new System.EventHandler(this.BotonEscaner_MouseEnter);
-            this.BotonEscaner.MouseLeave += new System.EventHandler(this.BotonEscaner_MouseLeave);
-            // 
-            // BotonPropios
-            // 
-            this.BotonPropios.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Propios;
-            this.BotonPropios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonPropios.Location = new System.Drawing.Point(0, 19);
-            this.BotonPropios.Name = "BotonPropios";
-            this.BotonPropios.Size = new System.Drawing.Size(109, 105);
-            this.BotonPropios.TabIndex = 32;
-            this.BotonPropios.UseVisualStyleBackColor = true;
-            this.BotonPropios.Click += new System.EventHandler(this.BotonPropios_Click);
-            this.BotonPropios.MouseEnter += new System.EventHandler(this.BotonPropios_MouseEnter);
-            this.BotonPropios.MouseLeave += new System.EventHandler(this.BotonPropios_MouseLeave);
-            // 
-            // BotonUsuarios
-            // 
-            this.BotonUsuarios.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Ususarios;
-            this.BotonUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonUsuarios.Location = new System.Drawing.Point(0, 150);
-            this.BotonUsuarios.Name = "BotonUsuarios";
-            this.BotonUsuarios.Size = new System.Drawing.Size(109, 105);
-            this.BotonUsuarios.TabIndex = 35;
-            this.BotonUsuarios.UseVisualStyleBackColor = true;
-            this.BotonUsuarios.Click += new System.EventHandler(this.BotonUsuarios_Click);
-            this.BotonUsuarios.MouseEnter += new System.EventHandler(this.BotonUsuarios_MouseEnter);
-            this.BotonUsuarios.MouseLeave += new System.EventHandler(this.BotonUsuarios_MouseLeave);
-            // 
-            // BotonImpuestos
-            // 
-            this.BotonImpuestos.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Impuetos;
-            this.BotonImpuestos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonImpuestos.Location = new System.Drawing.Point(0, 283);
-            this.BotonImpuestos.Name = "BotonImpuestos";
-            this.BotonImpuestos.Size = new System.Drawing.Size(109, 105);
-            this.BotonImpuestos.TabIndex = 33;
-            this.BotonImpuestos.UseVisualStyleBackColor = true;
-            this.BotonImpuestos.Click += new System.EventHandler(this.BotonImpuestos_Click);
-            this.BotonImpuestos.MouseEnter += new System.EventHandler(this.BotonImpuestos_MouseEnter);
-            this.BotonImpuestos.MouseLeave += new System.EventHandler(this.BotonImpuestos_MouseLeave);
-            // 
-            // BotonRutas
-            // 
-            this.BotonRutas.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Ruta;
-            this.BotonRutas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonRutas.Location = new System.Drawing.Point(0, 415);
-            this.BotonRutas.Name = "BotonRutas";
-            this.BotonRutas.Size = new System.Drawing.Size(109, 105);
-            this.BotonRutas.TabIndex = 34;
-            this.BotonRutas.UseVisualStyleBackColor = true;
-            this.BotonRutas.Click += new System.EventHandler(this.BotonRutas_Click);
-            this.BotonRutas.MouseEnter += new System.EventHandler(this.BotonRutas_MouseEnter);
-            this.BotonRutas.MouseLeave += new System.EventHandler(this.BotonRutas_MouseLeave);
-            // 
-            // BotonAyuda
-            // 
-            this.BotonAyuda.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Ayuda;
-            this.BotonAyuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonAyuda.Location = new System.Drawing.Point(1114, 58);
-            this.BotonAyuda.Name = "BotonAyuda";
-            this.BotonAyuda.Size = new System.Drawing.Size(109, 105);
-            this.BotonAyuda.TabIndex = 31;
-            this.BotonAyuda.UseVisualStyleBackColor = true;
-            this.BotonAyuda.Click += new System.EventHandler(this.BotonAyuda_Click);
-            this.BotonAyuda.MouseEnter += new System.EventHandler(this.BotonAyuda_MouseEnter);
-            this.BotonAyuda.MouseLeave += new System.EventHandler(this.BotonAyuda_MouseLeave);
-            // 
-            // BotonAgenda
-            // 
-            this.BotonAgenda.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Agenda;
-            this.BotonAgenda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonAgenda.Location = new System.Drawing.Point(979, 58);
-            this.BotonAgenda.Name = "BotonAgenda";
-            this.BotonAgenda.Size = new System.Drawing.Size(109, 105);
-            this.BotonAgenda.TabIndex = 30;
-            this.BotonAgenda.UseVisualStyleBackColor = true;
-            this.BotonAgenda.Click += new System.EventHandler(this.BotonAgenda_Click);
-            this.BotonAgenda.MouseEnter += new System.EventHandler(this.BotonAgenda_MouseEnter);
-            this.BotonAgenda.MouseLeave += new System.EventHandler(this.BotonAgenda_MouseLeave);
-            // 
             // BotonMantenimiento
             // 
-            this.BotonMantenimiento.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Mantenimiento;
+            this.BotonMantenimiento.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.backup;
             this.BotonMantenimiento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonMantenimiento.Location = new System.Drawing.Point(844, 58);
+            this.BotonMantenimiento.Location = new System.Drawing.Point(1022, 58);
             this.BotonMantenimiento.Name = "BotonMantenimiento";
             this.BotonMantenimiento.Size = new System.Drawing.Size(109, 105);
             this.BotonMantenimiento.TabIndex = 29;
@@ -501,7 +475,7 @@
             // 
             this.BotonListados.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Listados;
             this.BotonListados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonListados.Location = new System.Drawing.Point(710, 58);
+            this.BotonListados.Location = new System.Drawing.Point(875, 58);
             this.BotonListados.Name = "BotonListados";
             this.BotonListados.Size = new System.Drawing.Size(109, 105);
             this.BotonListados.TabIndex = 28;
@@ -514,7 +488,7 @@
             // 
             this.BotonContaplus.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Contaplus;
             this.BotonContaplus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonContaplus.Location = new System.Drawing.Point(576, 58);
+            this.BotonContaplus.Location = new System.Drawing.Point(565, 58);
             this.BotonContaplus.Name = "BotonContaplus";
             this.BotonContaplus.Size = new System.Drawing.Size(109, 105);
             this.BotonContaplus.TabIndex = 27;
@@ -527,7 +501,7 @@
             // 
             this.BotonCsb19.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.CSB19;
             this.BotonCsb19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonCsb19.Location = new System.Drawing.Point(446, 58);
+            this.BotonCsb19.Location = new System.Drawing.Point(720, 58);
             this.BotonCsb19.Name = "BotonCsb19";
             this.BotonCsb19.Size = new System.Drawing.Size(109, 105);
             this.BotonCsb19.TabIndex = 26;
@@ -540,7 +514,7 @@
             // 
             this.BotonFacturas.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Facturas;
             this.BotonFacturas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonFacturas.Location = new System.Drawing.Point(307, 58);
+            this.BotonFacturas.Location = new System.Drawing.Point(410, 58);
             this.BotonFacturas.Name = "BotonFacturas";
             this.BotonFacturas.Size = new System.Drawing.Size(109, 105);
             this.BotonFacturas.TabIndex = 25;
@@ -553,7 +527,7 @@
             // 
             this.BotonClientes.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Clientes;
             this.BotonClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonClientes.Location = new System.Drawing.Point(174, 58);
+            this.BotonClientes.Location = new System.Drawing.Point(255, 58);
             this.BotonClientes.Name = "BotonClientes";
             this.BotonClientes.Size = new System.Drawing.Size(109, 105);
             this.BotonClientes.TabIndex = 24;
@@ -566,7 +540,7 @@
             // 
             this.BotonSistema.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Sistema;
             this.BotonSistema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonSistema.Location = new System.Drawing.Point(41, 58);
+            this.BotonSistema.Location = new System.Drawing.Point(100, 58);
             this.BotonSistema.Name = "BotonSistema";
             this.BotonSistema.Size = new System.Drawing.Size(109, 105);
             this.BotonSistema.TabIndex = 23;
@@ -575,17 +549,24 @@
             this.BotonSistema.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             this.BotonSistema.MouseLeave += new System.EventHandler(this.BotonSistema_MouseLeave);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.Location = new System.Drawing.Point(1240, 206);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(12, 10);
+            this.checkBox1.TabIndex = 44;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1252, 901);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.PanelFacturas);
             this.Controls.Add(this.PanelClientes);
             this.Controls.Add(this.PanelSistema);
-            this.Controls.Add(this.BotonAyuda);
-            this.Controls.Add(this.BotonAgenda);
             this.Controls.Add(this.BotonMantenimiento);
             this.Controls.Add(this.BotonListados);
             this.Controls.Add(this.BotonContaplus);
@@ -599,6 +580,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -637,8 +619,6 @@
         private System.Windows.Forms.Button BotonContaplus;
         private System.Windows.Forms.Button BotonListados;
         private System.Windows.Forms.Button BotonMantenimiento;
-        private System.Windows.Forms.Button BotonAgenda;
-        private System.Windows.Forms.Button BotonAyuda;
         private System.Windows.Forms.Button BotonPropios;
         private System.Windows.Forms.Button BotonImpuestos;
         private System.Windows.Forms.Button BotonRutas;
@@ -669,5 +649,6 @@
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configurarSistemaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rutasExportacionToolStripMenuItem;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

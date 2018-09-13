@@ -323,8 +323,21 @@ namespace Proyecto_Antonio_Luis.Formularios
 
                 if (bd.Facturas.Any())
                 {
-                    numerofactura = (bd.Facturas.OrderByDescending(x => x.factnumerofact).First().factnumerofact.Value) + 1;
+                    // esto comprueba que las facturas corresponde a un año nuevo
+                    //por lo que deberia reiniciar la numeracion de las facturas
 
+                    // extrae el año de la ultima factuar
+                    string yearfactura = (bd.Facturas.OrderByDescending(x => x.factfecha).First().factfecha.Split('/').Last());
+                    // extrae el año del sistema
+                    int fechaHoy = DateTime.Now.Year;
+
+                    //compara ambos años, si el año de la factura es menor o igual al año del sistema
+                    //continua con la numeracion actual, si no la reinicia.
+                    if (fechaHoy <= Convert.ToInt16(yearfactura))
+                    {
+
+                        numerofactura = (bd.Facturas.OrderByDescending(x => x.factnumerofact).First().factnumerofact.Value) + 1;
+                    }
                 }
 
 
@@ -503,6 +516,9 @@ namespace Proyecto_Antonio_Luis.Formularios
                     // mylistado.listtotalremesa = totaltotalremesa;
                     mylistado.listnumeroremesa = numeroremesa;
 
+
+                    Globales.anofactura = Convert.ToDateTime(temp.tempfecha);
+
                     facturasAGuardar.Add(myFactura);
                     alistar.Add(mylistado);
                 }
@@ -575,9 +591,14 @@ namespace Proyecto_Antonio_Luis.Formularios
                     Form3 nuevaForma = new Form3();
                     var dato = alistar[i];
 
+
+                    int year = Globales.anofactura .Year;
+
+
                     //nuevaForma.ExportarToPdf(dato, $"C:\\Equipo Martin\\facturas\\Nueva carpeta\\Test{i + 1}.pdf");
-                    nuevaForma.ExportarToPdf(dato, $"C:\\ByMartin\\Clientes\\{dato.listnombre}\\Facturacion\\Factura {dato.listnumerofactura}.pdf");
-                    
+                    nuevaForma.ExportarToPdf(dato, $"C:\\ByMartin\\Clientes\\{dato.listnombre}\\Facturacion{year}\\Factura {dato.listnumerofactura}.pdf");
+
+
                 }
 
                 form.Close();

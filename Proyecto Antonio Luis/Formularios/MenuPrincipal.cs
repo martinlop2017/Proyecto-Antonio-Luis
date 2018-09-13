@@ -193,32 +193,32 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void BotonMantenimiento_MouseEnter(object sender, EventArgs e)
         {
-            BotonMantenimiento.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Mantenimiento_Azul;
+            BotonMantenimiento.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.backup_Azul1;
         }
 
         private void BotonMantenimiento_MouseLeave(object sender, EventArgs e)
         {
-            BotonMantenimiento.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Mantenimiento;
+            BotonMantenimiento.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.backup;
         }
 
         private void BotonAgenda_MouseEnter(object sender, EventArgs e)
         {
-            BotonAgenda.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Agenda_Azul;
+            
         }
 
         private void BotonAgenda_MouseLeave(object sender, EventArgs e)
         {
-            BotonAgenda.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Agenda;
+           
         }
 
         private void BotonAyuda_MouseEnter(object sender, EventArgs e)
         {
-            BotonAyuda.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Ayuda_Azul;
+            
         }
 
         private void BotonAyuda_MouseLeave(object sender, EventArgs e)
         {
-            BotonAyuda.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.Ayuda;
+            
         }
 
         private void BotonPropios_MouseEnter(object sender, EventArgs e)

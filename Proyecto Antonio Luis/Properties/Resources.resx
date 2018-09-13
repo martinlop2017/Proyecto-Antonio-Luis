@@ -136,6 +136,9 @@
   <data name="Ususarios Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ususarios Azul.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Copias Seguridad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Copias Seguridad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="FacturaMensual Apagado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FacturaMensual Apagado.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -186,6 +189,9 @@
   </data>
   <data name="MisDatos6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MisDatos4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gestion Docuental Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gestion Docuental Azul.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sistema Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sistema Azul.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -313,6 +319,9 @@
   <data name="MisDatos5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MisDatos3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Copias Seguridad1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Copias Seguridad1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MisDatos3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MisDatos3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -345,6 +354,9 @@
   </data>
   <data name="Facturacion of" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Facturacion of.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Copias Seguridad Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Copias Seguridad Azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Flor 14" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Flor 14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -385,7 +397,10 @@
   <data name="MisDatos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MisDatos1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Gestion Docuental Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Gestion Docuental Azul.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="backup Azul1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backup Azul1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="backup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backup.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

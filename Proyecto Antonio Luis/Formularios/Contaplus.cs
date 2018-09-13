@@ -1070,5 +1070,10 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
 
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
