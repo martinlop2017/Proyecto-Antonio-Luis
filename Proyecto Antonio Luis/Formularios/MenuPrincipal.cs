@@ -411,6 +411,8 @@ namespace Proyecto_Antonio_Luis.Formularios
             PanelSistema.Visible = false;
             PanelClientes.Visible = false;
             PanelFacturas.Visible = false;
+            Backup form = new Backup();
+            form.Show();
         }
 
         private void BotonPropios_Click(object sender, EventArgs e)
