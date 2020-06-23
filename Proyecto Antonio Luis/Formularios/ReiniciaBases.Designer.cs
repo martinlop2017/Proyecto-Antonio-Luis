@@ -240,9 +240,12 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ReiniciaBases";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ReiniciaBases";
+            this.Text = "eGESTION";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.ReiniciaBases_Load);
             this.panel2.ResumeLayout(false);

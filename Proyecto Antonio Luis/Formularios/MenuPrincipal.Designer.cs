@@ -77,7 +77,6 @@
             this.BotonFacturas = new System.Windows.Forms.Button();
             this.BotonClientes = new System.Windows.Forms.Button();
             this.BotonSistema = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.statusStrip1.SuspendLayout();
             this.PanelSistema.SuspendLayout();
             this.PanelClientes.SuspendLayout();
@@ -549,21 +548,12 @@
             this.BotonSistema.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             this.BotonSistema.MouseLeave += new System.EventHandler(this.BotonSistema_MouseLeave);
             // 
-            // checkBox1
-            // 
-            this.checkBox1.Location = new System.Drawing.Point(1240, 206);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(12, 10);
-            this.checkBox1.TabIndex = 44;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1252, 901);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.PanelFacturas);
             this.Controls.Add(this.PanelClientes);
             this.Controls.Add(this.PanelSistema);
@@ -649,6 +639,5 @@
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configurarSistemaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rutasExportacionToolStripMenuItem;
-        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

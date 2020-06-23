@@ -111,7 +111,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                 String year, oldyear;
 
                 //Pasamo la direcion y nombre el archivo
-                StreamReader sr = new StreamReader("C:\\ByMartin\\Tmp\\Systemyear.txt");
+                StreamReader sr = new StreamReader("C:\\ByMartin\\System\\Systemyear.txt");
 
                 //Carga las fechas, lee la linea del archivo y lo guarda en oldyear, y la fecha actual en year
                 oldyear = sr.ReadLine();
@@ -449,7 +449,8 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void BotonEscaner_Click(object sender, EventArgs e)
         {
-
+            GestionDocumentos form = new GestionDocumentos();
+            form.Show();
         }
 
         private void BotonFactMensual_Click(object sender, EventArgs e)

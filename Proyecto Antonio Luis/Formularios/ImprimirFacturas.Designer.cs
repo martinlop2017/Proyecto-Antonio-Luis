@@ -143,7 +143,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(578, 350);
-            this.ControlBox = false;
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxDocumentoFinal);
@@ -152,13 +151,14 @@
             this.Controls.Add(this.button8);
             this.Controls.Add(this.buttonGuardar);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(594, 388);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(594, 388);
             this.Name = "ImprimirFacturas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ImprimirFacturas";
+            this.Text = "eGESTION";
             this.Load += new System.EventHandler(this.ImprimirFacturas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -19,6 +19,10 @@ namespace Proyecto_Antonio_Luis.Formularios
 {
 
 
+   
+     
+   
+
 
 
 
@@ -34,148 +38,102 @@ namespace Proyecto_Antonio_Luis.Formularios
             bd = new AdministracionAntonioEntities();
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void Scaner_Load(object sender, EventArgs e)
         {
-            backgroundWorker1.RunWorkerAsync();
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-            // esto comprueba que las facturas corresponde a un año nuevo
-            //por lo que deberia reiniciar la numeracion de las facturas
-
-            // extrae el año de la ultima factuar
-            string yearfactura = (bd.Facturas.OrderByDescending(x => x.factfecha).First().factfecha.Split('/').Last());
-
-
-            // string yearfactura = (bd.Facturas.OrderByDescending(X=> X.factnumerofact.tol);
-            textBox1.Text = yearfactura.ToString();
-
-
-            string yearactual = yearfactura.Split('/').Last();
-            textBox2.Text = yearactual;
-
-            int fechaHoy = DateTime.Now.Year;
-            textBox1.Text = Convert.ToString(fechaHoy);
-
-            if (fechaHoy <= Convert.ToInt16(yearactual))
-                {
-                    MessageBox.Show("es menor, mismo año");
-                }
-            else
+            Devices.Items.Clear();
+            var deviceManager = new DeviceManager();
+            for (int i = 1; i <= deviceManager.DeviceInfos.Count; i++)
             {
-                    MessageBox.Show("año nuevo");
+                if (deviceManager.DeviceInfos[i].Type != WiaDeviceType.ScannerDeviceType)
+                {
+                    return;
+                }
+                Devices.Items.Add(new Scanner(deviceManager.DeviceInfos[i]));
             }
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
-
-        }
-
-
-       
-
-
-
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            //no usaremos código try/catch aquí, a no ser que después hagamos un throw de la excepción capturada.
-            //es necesario dejar que el backgroundworker sea quien capture cualquier excepción producida.
-            //si se produce una excepción, el control la disponibilizará una vez haya finalizado su ejecución,
-            //y disparado el evento "backgroundWorker1_RunWorkerCompleted"
-            //the RunWorkerCompletedEventArgs object, method backgroundWorker1_RunWorkerCompleted
-            //try
-            //{
-           // DateTime start = DateTime.Now;
-            e.Result = "";
-
-            //   static void Main(string[] args)
-            using (ZipFile zip = new ZipFile())
+            var device = Devices.SelectedItem as Scanner;
+            if (device == null)
             {
-                zip.AddDirectory(@"C:\ByMartin", "ByMartin");
-                //  zip.AddDirectory(@"C:\Carpeta2", "Carpeta2");
-                zip.Comment = "Archivo comprimido el " + System.DateTime.Now.ToString("G");
-                zip.Save(@"C:\ByMartin\COPIA DE SEGURIDADArchivoCreado.zip");
+                MessageBox.Show("Please select a device.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            var image = device.Scan();
+            var path = @"c:\scan.jpeg";
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+            try
+            {/*
+                image.SaveFile(path);
+                BitmapImage BImage = new BitmapImage(new Uri(path, UriKind.Absolute));
+                img.Source = BImage;
+            */
+             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
-
-            //         for (int i = 0; i < 100; i++)
-            {
-                System.Threading.Thread.Sleep(50); //simulamos trabajo
-
-                //hemos completado un porcentaje del trabajo previsto, luego notificamos de ello.
-          //      int paso = 10;
-                backgroundWorker1.ReportProgress(10) ;
-
-                //descomenta este código para ver como esta excepción es gestionada por el
-                //control backgroundworker
-                //descomenta también el atributo indicado arriba para evitar que el depurador
-                //pare en la excepción, ya que queremos simular
-                //el comportamiento del control en tiempo de ejecución.
-                //if (i == 34)
-                //    throw new Exception("something wrong here!!");
-
-            }
-
-            //       TimeSpan duration = DateTime.Now - start;
-
-            //aquí podríamos devolver información de utilidad, como el resultado de un cálculo,
-            //número de elementos afectados, etc.. de manera sencilla y segura
-            //al hilo principal
-            e.Result = "Clientes Completados.";
-            //}
-            //catch(Exception ex){
-            //    MessageBox.Show("Don't use try catch here!");
-            //}
-       
-
-    }
-
-
-
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-
-            if (e.Cancelled)
-            {
-                MessageBox.Show("The task has been cancelled");
-            }
-            else if (e.Error != null)
-            {
-                MessageBox.Show("Error. Details: " + (e.Error as Exception).ToString());
-            }
-            else
-            {
-                MessageBox.Show("The task has been completed. Results: " + e.Result.ToString());
-            }
-
-
-        }
-
-        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            progressBar1.Value = e.ProgressPercentage; //actualizamos la barra de progreso
-            string time = (e.UserState.ToString()); //obtenemos información adicional si procede
-
-            //en este ejemplo, logamos a un textbox
-            txt.AppendText(time);
-            txt.AppendText(Environment.NewLine);
         }
     }
+
+
+    public class Scanner
+        {
+            private readonly DeviceInfo _deviceInfo;
+
+            public Scanner(DeviceInfo deviceInfo)
+            {
+                this._deviceInfo = deviceInfo;
+            }
+
+            public ImageFile Scan()
+            {
+                var device = this._deviceInfo.Connect();
+                var item = device.Items[1];
+                var imageFile = (ImageFile)item.Transfer("{B96B3CAE-0728-11D3-9D7B-0000F81EF32E}");
+                return imageFile;
+            }
+
+            public override string ToString()
+            {
+                return this._deviceInfo.Properties["Name"].get_Value().ToString();
+            }
+        }
+ 
+
+ 
+
+
+
+
+
+
+
+    
 
 
 
      
-}
 
+      
 
    
+    }
+
+
+
+
+
+
+
+
+
 
 
 

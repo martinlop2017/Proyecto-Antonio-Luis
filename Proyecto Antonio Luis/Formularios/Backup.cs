@@ -97,7 +97,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
             SqlConnectionStringBuilder csb = new SqlConnectionStringBuilder();
 
-            csb.DataSource = @"MARTIN-PC\SQLEXPRESS";// this.txtServidor.Text;
+            csb.DataSource = @"DESKTOP-C91G7H5\SQLEXPRESS";// this.txtServidor.Text;
             csb.InitialCatalog = @"AdministracionAntonio";
             csb.IntegratedSecurity = true;
 

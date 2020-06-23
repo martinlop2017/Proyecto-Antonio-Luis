@@ -949,5 +949,10 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
 
         }
+
+        private void comboGrupo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

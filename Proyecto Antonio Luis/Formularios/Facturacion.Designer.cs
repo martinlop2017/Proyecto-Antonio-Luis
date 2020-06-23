@@ -1246,8 +1246,9 @@
             this.Controls.Add(this.añadir);
             this.Controls.Add(this.generar);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Facturacion";
-            this.Text = "Facturacion";
+            this.Text = "eGESTION";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Facturacion_Load);
             this.panel1.ResumeLayout(false);
