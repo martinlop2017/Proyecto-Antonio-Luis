@@ -299,10 +299,14 @@ namespace Proyecto_Antonio_Luis.Formularios
                 }
                 else
                 {
-                    cod = (ultimocod.First().  + 1).ToString();
+                    cod = (ultimocod.First().cod+ 1).ToString();
+                   
                     
                 }
                 label1.Text = cod;
+
+               
+
             }
         }
 
