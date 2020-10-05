@@ -61,7 +61,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                     //busca en la tabla la fila con el registro suminstrado
                     //y si lo carga los datos en el formulario
 
-                    var mostrar = bd.Clientes.SingleOrDefault(codcliente => codcliente.numerador == Globales.modificar);
+                    var mostrar = bd.Clientes.SingleOrDefault(codcliente => codcliente.codcliente == Globales.modificar);
                     if (mostrar != null)
                     {
                         label1.Text = mostrar.codcliente.ToString();

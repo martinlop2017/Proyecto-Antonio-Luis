@@ -170,7 +170,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             try
             {
                // creamos una variable que va aguardar los datos de la fila seleccionada en el dbgrid
-               Globales.modificar = Convert.ToInt16(dgvclientes.CurrentRow.Cells[0].Value);
+               Globales.modificar = Convert. ToInt16(dgvclientes.CurrentRow.Cells[1].Value);
                 // Abre Ususarios
                 Cliente form = new Cliente();
                 form.Show();
@@ -235,7 +235,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             try
             {
                 // creamos una variable que va aguardar los datos de la fila seleccionada en el dbgrid
-                Globales.modificar = Convert.ToInt16(dgvclientes.CurrentRow.Cells[0].Value);
+                Globales.modificar = Convert.ToInt16(dgvclientes.CurrentRow.Cells[1].Value);
                 // Abre Ususarios
                 Cliente form = new Cliente();
                 form.Show();
@@ -312,14 +312,6 @@ namespace Proyecto_Antonio_Luis.Formularios
             label6.Visible = false;
         }
 
-        private void dgvclientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

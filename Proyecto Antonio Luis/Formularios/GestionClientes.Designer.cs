@@ -196,7 +196,7 @@
             this.dgvclientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvclientes.Size = new System.Drawing.Size(790, 377);
             this.dgvclientes.TabIndex = 49;
-            this.dgvclientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclientes_CellContentClick);
+            
             this.dgvclientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclientes_CellDoubleClick);
             // 
             // numeradorDataGridViewTextBoxColumn
