@@ -187,6 +187,9 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void button4_Click_1(object sender, EventArgs e)
         {
+
+            
+
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
             openFileDialog1.InitialDirectory = "C:\\ByMartin\\Clientes\\" + textBox5.Text;
@@ -197,13 +200,28 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void BotonEscaner_Click(object sender, EventArgs e)
         {
-            string filename = "Excel.exe";
+            string ruta = "C:\\ByMartin\\Clientes\\" + textBox5.Text;
+
+       /*     string filename = "Excel.exe";
 
             Process proc = new Process();
             proc.EnableRaisingEvents = false;
             proc.StartInfo.FileName = filename;
             proc.StartInfo.Arguments = "";
             proc.Start();
+
+    */
+
+
+            Microsoft.Office.Interop.Excel.Application excel = null;
+            Microsoft.Office.Interop.Excel.Workbook book = null;
+
+            book = excel.Workbooks.Add();
+            book.SaveAs(ruta);
+            book.Close();
+            excel.Quit();
+
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)

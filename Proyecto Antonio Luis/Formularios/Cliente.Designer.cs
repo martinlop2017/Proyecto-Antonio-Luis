@@ -433,11 +433,21 @@
             // 
             this.comboGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboGrupo.FormattingEnabled = true;
+            this.comboGrupo.Items.AddRange(new object[] {
+            "ALQ",
+            "ARR",
+            "ASOC",
+            "CDC",
+            "LAB",
+            "MOD",
+            "SIM",
+            "SOC",
+            "OTROS"});
             this.comboGrupo.Location = new System.Drawing.Point(459, 335);
             this.comboGrupo.Name = "comboGrupo";
             this.comboGrupo.Size = new System.Drawing.Size(102, 24);
             this.comboGrupo.TabIndex = 21;
-            this.comboGrupo.Text = "grupo";
+            this.comboGrupo.SelectedIndexChanged += new System.EventHandler(this.comboGrupo_SelectedIndexChanged);
             // 
             // chec131
             // 
@@ -1019,9 +1029,12 @@
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Clientes";
+            this.Text = "eGESTION";
             this.AutoValidateChanged += new System.EventHandler(this.Cliente_AutoValidateChanged);
             this.Load += new System.EventHandler(this.Clientes_Load);
             this.MouseEnter += new System.EventHandler(this.Cliente_MouseEnter);

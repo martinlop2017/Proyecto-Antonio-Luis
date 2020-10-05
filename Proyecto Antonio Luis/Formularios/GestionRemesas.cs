@@ -28,6 +28,8 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void GestionRemesas_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet.Remesas' Puede moverla o quitarla según sea necesario.
+            this.remesasTableAdapter.Fill(this.administracionAntonioDataSet.Remesas);
             dgvremesas.DataSource = bd.Resilla.ToList();
             dgvremesas.Refresh();
         }

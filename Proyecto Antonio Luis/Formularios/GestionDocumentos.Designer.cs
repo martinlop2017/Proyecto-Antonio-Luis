@@ -719,7 +719,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(599, 358);
-            this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvclientes);
             this.Controls.Add(this.label2);
@@ -735,11 +734,12 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GestionDocumentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GestionDocumentos";
+            this.Text = "eGESTION";
             this.Load += new System.EventHandler(this.GestionDocumentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);

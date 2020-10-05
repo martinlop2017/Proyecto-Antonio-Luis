@@ -183,7 +183,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(602, 335);
-            this.ControlBox = false;
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.panel1);
@@ -195,11 +194,14 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(618, 373);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(618, 373);
             this.Name = "Nuevacontraseña";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nueva contraseña";
+            this.Text = "eGESTION";
             this.Load += new System.EventHandler(this.Nuevacontraseña_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -299,7 +299,8 @@ namespace Proyecto_Antonio_Luis.Formularios
                 }
                 else
                 {
-                    cod = (ultimocod.First().numerousuario+1).ToString();
+                    cod = (ultimocod.First().  + 1).ToString();
+                    
                 }
                 label1.Text = cod;
             }
@@ -515,7 +516,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                     usuarioAmodificar.nombre = textBox1.Text;
                     usuarioAmodificar.login = Encriptar.codificar(maskedTextBox1.Text);
                     usuarioAmodificar.pregunta = textBox2.Text;
-                    usuarioAmodificar.respuesta = textBox3.Text;
+                    usuarioAmodificar.respuesta = Encriptar.codificar(textBox3.Text);
                     usuarioAmodificar.grupo = comboBox1.Text;
 
 

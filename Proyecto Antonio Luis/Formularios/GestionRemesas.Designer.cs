@@ -50,18 +50,23 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvremesas = new System.Windows.Forms.DataGridView();
-            this.resillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetAntonioLuis = new Proyecto_Antonio_Luis.DataSetAntonioLuis();
             this.remesanumeradorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remesanumeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remesafechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remesatotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remesacontabilizadaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.resillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetAntonioLuis = new Proyecto_Antonio_Luis.DataSetAntonioLuis();
+            this.administracionAntonioDataSet = new Proyecto_Antonio_Luis.AdministracionAntonioDataSet();
+            this.remesasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.remesasTableAdapter = new Proyecto_Antonio_Luis.AdministracionAntonioDataSetTableAdapters.RemesasTableAdapter();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvremesas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resillaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetAntonioLuis)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.remesasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -235,7 +240,7 @@
             this.remesafechaDataGridViewTextBoxColumn,
             this.remesatotalDataGridViewTextBoxColumn,
             this.remesacontabilizadaDataGridViewCheckBoxColumn});
-            this.dgvremesas.DataSource = this.resillaBindingSource;
+            this.dgvremesas.DataSource = this.remesasBindingSource;
             this.dgvremesas.GridColor = System.Drawing.SystemColors.Control;
             this.dgvremesas.Location = new System.Drawing.Point(38, 204);
             this.dgvremesas.Name = "dgvremesas";
@@ -248,16 +253,6 @@
             this.dgvremesas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvremesas.Size = new System.Drawing.Size(477, 383);
             this.dgvremesas.TabIndex = 80;
-            // 
-            // resillaBindingSource
-            // 
-            this.resillaBindingSource.DataMember = "Resilla";
-            this.resillaBindingSource.DataSource = this.dataSetAntonioLuis;
-            // 
-            // dataSetAntonioLuis
-            // 
-            this.dataSetAntonioLuis.DataSetName = "DataSetAntonioLuis";
-            this.dataSetAntonioLuis.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // remesanumeradorDataGridViewTextBoxColumn
             // 
@@ -306,13 +301,36 @@
             this.remesacontabilizadaDataGridViewCheckBoxColumn.ReadOnly = true;
             this.remesacontabilizadaDataGridViewCheckBoxColumn.Width = 90;
             // 
+            // resillaBindingSource
+            // 
+            this.resillaBindingSource.DataMember = "Resilla";
+            this.resillaBindingSource.DataSource = this.dataSetAntonioLuis;
+            // 
+            // dataSetAntonioLuis
+            // 
+            this.dataSetAntonioLuis.DataSetName = "DataSetAntonioLuis";
+            this.dataSetAntonioLuis.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // administracionAntonioDataSet
+            // 
+            this.administracionAntonioDataSet.DataSetName = "AdministracionAntonioDataSet";
+            this.administracionAntonioDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // remesasBindingSource
+            // 
+            this.remesasBindingSource.DataMember = "Remesas";
+            this.remesasBindingSource.DataSource = this.administracionAntonioDataSet;
+            // 
+            // remesasTableAdapter
+            // 
+            this.remesasTableAdapter.ClearBeforeFill = true;
+            // 
             // GestionRemesas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(559, 641);
-            this.ControlBox = false;
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -325,13 +343,14 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dgvremesas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(575, 679);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(575, 679);
             this.Name = "GestionRemesas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GestionRemesas";
+            this.Text = "eGESTION";
             this.Load += new System.EventHandler(this.GestionRemesas_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -339,6 +358,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvremesas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resillaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetAntonioLuis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.administracionAntonioDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.remesasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,5 +388,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn remesafechaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn remesatotalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn remesacontabilizadaDataGridViewCheckBoxColumn;
+        private AdministracionAntonioDataSet administracionAntonioDataSet;
+        private System.Windows.Forms.BindingSource remesasBindingSource;
+        private AdministracionAntonioDataSetTableAdapters.RemesasTableAdapter remesasTableAdapter;
     }
 }
