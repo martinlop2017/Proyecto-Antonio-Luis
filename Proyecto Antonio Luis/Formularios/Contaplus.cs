@@ -91,8 +91,8 @@ namespace Proyecto_Antonio_Luis.Formularios
                             string basesuplida = Convert.ToString(temp.factbase2.Value);
                             bases = bases.Replace(",", ".");
 
-                            string nombre = temp.factnombre;
-                            nombre = nombre.Replace("   ", "");
+                            // El fichero de Contaplus tiene el nombre en un campo fijo de 40 caracteres
+                            string nombre = ClientesUtil.Recortar(temp.factnombre, 40);
 
                             sumatoriaremesa = sumatoriaremesa + temp.facttotalfactura.Value;
 

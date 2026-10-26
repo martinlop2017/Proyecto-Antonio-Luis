@@ -22,9 +22,9 @@ namespace BaseDatos
         public string localidacliente { get; set; }
         public string provinciacliente { get; set; }
         public string cod_postalcliente { get; set; }
-        public Nullable<decimal> telefono1cliente { get; set; }
-        public Nullable<decimal> telefono2cliente { get; set; }
-        public Nullable<decimal> faxcliente { get; set; }
+        public string telefono1cliente { get; set; }
+        public string telefono2cliente { get; set; }
+        public string faxcliente { get; set; }
         public string contactocliente { get; set; }
         public string mailcliente { get; set; }
         public Nullable<bool> pormailcliente { get; set; }

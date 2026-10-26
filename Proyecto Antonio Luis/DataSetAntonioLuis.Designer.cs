@@ -2683,8 +2683,8 @@ namespace Proyecto_Antonio_Luis {
                 this.columnfactcontador.Unique = true;
                 this.columnfactremesa.MaxLength = 20;
                 this.columnfactfecha.MaxLength = 30;
-                this.columnfactnombre.MaxLength = 50;
-                this.columnfactdireccion.MaxLength = 100;
+                this.columnfactnombre.MaxLength = 150;
+                this.columnfactdireccion.MaxLength = 150;
                 this.columnfactlocalidad.MaxLength = 100;
                 this.columnfactprovincia.MaxLength = 100;
                 this.columnfactcp.MaxLength = 20;

@@ -596,7 +596,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
 
                     //nuevaForma.ExportarToPdf(dato, $"C:\\Equipo Martin\\facturas\\Nueva carpeta\\Test{i + 1}.pdf");
-                    nuevaForma.ExportarToPdf(dato, $"C:\\ByMartin\\Clientes\\{dato.listnombre}\\Facturacion{year}\\Factura {dato.listnumerofactura}.pdf");
+                    nuevaForma.ExportarToPdf(dato, $"{ClientesUtil.CarpetaCliente(dato.listnombre)}\\Facturacion{year}\\Factura {dato.listnumerofactura}.pdf");
 
 
                 }

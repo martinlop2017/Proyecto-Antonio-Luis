@@ -129,27 +129,24 @@
             // 
             // label15
             // 
-            this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Tahoma", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(153)))), ((int)(((byte)(208)))));
-            this.label15.Location = new System.Drawing.Point(319, 40);
+            this.label15.Location = new System.Drawing.Point(34, 40);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(273, 42);
+            this.label15.Size = new System.Drawing.Size(816, 42);
             this.label15.TabIndex = 127;
             this.label15.Text = "Datos Clientes";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textMiNombre
             // 
             this.textMiNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiNombre.Location = new System.Drawing.Point(154, 141);
-            this.textMiNombre.MaxLength = 200;
+            this.textMiNombre.MaxLength = 150;
             this.textMiNombre.Name = "textMiNombre";
             this.textMiNombre.Size = new System.Drawing.Size(476, 23);
             this.textMiNombre.TabIndex = 0;
-            this.textMiNombre.Leave += new System.EventHandler(this.textMiNombre_Leave);
-            this.textMiNombre.Validating += new System.ComponentModel.CancelEventHandler(this.textMiNombre_Validating);
-            this.textMiNombre.Validated += new System.EventHandler(this.textMiNombre_Validated);
             // 
             // label17
             // 
@@ -240,28 +237,27 @@
             this.textMiTLF2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiTLF2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiTLF2.Location = new System.Drawing.Point(589, 211);
-            this.textMiTLF2.MaxLength = 18;
+            this.textMiTLF2.MaxLength = 20;
             this.textMiTLF2.Name = "textMiTLF2";
             this.textMiTLF2.Size = new System.Drawing.Size(117, 23);
             this.textMiTLF2.TabIndex = 7;
-            this.textMiTLF2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textMiTLF2_KeyPress);
+            this.textMiTLF2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Telefono_KeyPress);
             // 
             // textMiPersonaContacto
             // 
             this.textMiPersonaContacto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiPersonaContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiPersonaContacto.Location = new System.Drawing.Point(459, 386);
-            this.textMiPersonaContacto.MaxLength = 50;
+            this.textMiPersonaContacto.MaxLength = 100;
             this.textMiPersonaContacto.Name = "textMiPersonaContacto";
             this.textMiPersonaContacto.Size = new System.Drawing.Size(239, 23);
             this.textMiPersonaContacto.TabIndex = 9;
             // 
             // textMiMail
             // 
-            this.textMiMail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiMail.Location = new System.Drawing.Point(463, 266);
-            this.textMiMail.MaxLength = 50;
+            this.textMiMail.MaxLength = 100;
             this.textMiMail.Name = "textMiMail";
             this.textMiMail.Size = new System.Drawing.Size(243, 23);
             this.textMiMail.TabIndex = 10;
@@ -271,31 +267,29 @@
             this.textMiFax.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiFax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiFax.Location = new System.Drawing.Point(715, 211);
-            this.textMiFax.MaxLength = 18;
+            this.textMiFax.MaxLength = 20;
             this.textMiFax.Name = "textMiFax";
             this.textMiFax.Size = new System.Drawing.Size(117, 23);
             this.textMiFax.TabIndex = 8;
-            this.textMiFax.TextChanged += new System.EventHandler(this.textMiFax_TextChanged);
-            this.textMiFax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textMiFax_KeyPress);
+            this.textMiFax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Telefono_KeyPress);
             // 
             // textMiTLF1
             // 
             this.textMiTLF1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiTLF1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiTLF1.Location = new System.Drawing.Point(463, 211);
-            this.textMiTLF1.MaxLength = 18;
+            this.textMiTLF1.MaxLength = 20;
             this.textMiTLF1.Name = "textMiTLF1";
             this.textMiTLF1.Size = new System.Drawing.Size(117, 23);
             this.textMiTLF1.TabIndex = 6;
-            this.textMiTLF1.TextChanged += new System.EventHandler(this.textMiTLF1_TextChanged);
-            this.textMiTLF1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textMiTLF1_KeyPress);
+            this.textMiTLF1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Telefono_KeyPress);
             // 
             // textMiCP
             // 
             this.textMiCP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiCP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiCP.Location = new System.Drawing.Point(349, 266);
-            this.textMiCP.MaxLength = 18;
+            this.textMiCP.MaxLength = 10;
             this.textMiCP.Name = "textMiCP";
             this.textMiCP.Size = new System.Drawing.Size(84, 23);
             this.textMiCP.TabIndex = 5;
@@ -305,7 +299,7 @@
             this.textMiProvincia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiProvincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiProvincia.Location = new System.Drawing.Point(203, 266);
-            this.textMiProvincia.MaxLength = 30;
+            this.textMiProvincia.MaxLength = 50;
             this.textMiProvincia.Name = "textMiProvincia";
             this.textMiProvincia.Size = new System.Drawing.Size(140, 23);
             this.textMiProvincia.TabIndex = 4;
@@ -315,7 +309,7 @@
             this.textMiPoblacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiPoblacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiPoblacion.Location = new System.Drawing.Point(52, 266);
-            this.textMiPoblacion.MaxLength = 50;
+            this.textMiPoblacion.MaxLength = 80;
             this.textMiPoblacion.Name = "textMiPoblacion";
             this.textMiPoblacion.Size = new System.Drawing.Size(145, 23);
             this.textMiPoblacion.TabIndex = 3;
@@ -325,7 +319,7 @@
             this.textMiDiereccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiDiereccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiDiereccion.Location = new System.Drawing.Point(52, 211);
-            this.textMiDiereccion.MaxLength = 50;
+            this.textMiDiereccion.MaxLength = 150;
             this.textMiDiereccion.Name = "textMiDiereccion";
             this.textMiDiereccion.Size = new System.Drawing.Size(381, 23);
             this.textMiDiereccion.TabIndex = 2;
@@ -447,7 +441,6 @@
             this.comboGrupo.Name = "comboGrupo";
             this.comboGrupo.Size = new System.Drawing.Size(102, 24);
             this.comboGrupo.TabIndex = 21;
-            this.comboGrupo.SelectedIndexChanged += new System.EventHandler(this.comboGrupo_SelectedIndexChanged);
             // 
             // chec131
             // 
@@ -718,11 +711,11 @@
             this.textTrabajadores.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textTrabajadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textTrabajadores.Location = new System.Drawing.Point(567, 335);
-            this.textTrabajadores.MaxLength = 3;
+            this.textTrabajadores.MaxLength = 6;
             this.textTrabajadores.Name = "textTrabajadores";
             this.textTrabajadores.Size = new System.Drawing.Size(76, 23);
             this.textTrabajadores.TabIndex = 22;
-            this.textTrabajadores.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTrabajadores_KeyPress);
+            this.textTrabajadores.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloDigitos_KeyPress);
             // 
             // label12
             // 
@@ -753,12 +746,11 @@
             this.textTarifa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textTarifa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textTarifa.Location = new System.Drawing.Point(710, 386);
-            this.textTarifa.MaxLength = 18;
+            this.textTarifa.MaxLength = 12;
             this.textTarifa.Name = "textTarifa";
             this.textTarifa.Size = new System.Drawing.Size(118, 23);
             this.textTarifa.TabIndex = 25;
-            this.textTarifa.TextChanged += new System.EventHandler(this.textTarifa_TextChanged);
-            this.textTarifa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTarifa_KeyPress);
+            this.textTarifa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Importe_KeyPress);
             // 
             // label14
             // 
@@ -794,7 +786,7 @@
             this.textCCC2.Name = "textCCC2";
             this.textCCC2.Size = new System.Drawing.Size(50, 22);
             this.textCCC2.TabIndex = 16;
-            this.textCCC2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCCC2_KeyPress);
+            this.textCCC2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloDigitos_KeyPress);
             // 
             // textCCC3
             // 
@@ -806,7 +798,7 @@
             this.textCCC3.Name = "textCCC3";
             this.textCCC3.Size = new System.Drawing.Size(50, 22);
             this.textCCC3.TabIndex = 17;
-            this.textCCC3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCCC3_KeyPress);
+            this.textCCC3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloDigitos_KeyPress);
             // 
             // textCCC4
             // 
@@ -818,7 +810,7 @@
             this.textCCC4.Name = "textCCC4";
             this.textCCC4.Size = new System.Drawing.Size(50, 22);
             this.textCCC4.TabIndex = 18;
-            this.textCCC4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCCC4_KeyPress);
+            this.textCCC4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloDigitos_KeyPress);
             // 
             // textCCC5
             // 
@@ -830,8 +822,7 @@
             this.textCCC5.Name = "textCCC5";
             this.textCCC5.Size = new System.Drawing.Size(50, 22);
             this.textCCC5.TabIndex = 19;
-            this.textCCC5.TextChanged += new System.EventHandler(this.textCCC5_TextChanged);
-            this.textCCC5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCCC5_KeyPress);
+            this.textCCC5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloDigitos_KeyPress);
             // 
             // textCCC6
             // 
@@ -843,12 +834,12 @@
             this.textCCC6.Name = "textCCC6";
             this.textCCC6.Size = new System.Drawing.Size(50, 22);
             this.textCCC6.TabIndex = 20;
-            this.textCCC6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCCC6_KeyPress);
+            this.textCCC6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloDigitos_KeyPress);
             // 
             // textObserva
             // 
             this.textObserva.Location = new System.Drawing.Point(500, 452);
-            this.textObserva.MaxLength = 500;
+            this.textObserva.MaxLength = 1000;
             this.textObserva.Name = "textObserva";
             this.textObserva.Size = new System.Drawing.Size(332, 85);
             this.textObserva.TabIndex = 44;
@@ -912,7 +903,6 @@
             this.textFechaAlta.Name = "textFechaAlta";
             this.textFechaAlta.Size = new System.Drawing.Size(80, 23);
             this.textFechaAlta.TabIndex = 23;
-            this.textFechaAlta.Text = "12122007";
             this.textFechaAlta.ValidatingType = typeof(System.DateTime);
             // 
             // checpormail
@@ -932,17 +922,18 @@
             this.textPreciotrabajador.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textPreciotrabajador.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPreciotrabajador.Location = new System.Drawing.Point(659, 336);
-            this.textPreciotrabajador.MaxLength = 18;
+            this.textPreciotrabajador.MaxLength = 12;
             this.textPreciotrabajador.Name = "textPreciotrabajador";
             this.textPreciotrabajador.Size = new System.Drawing.Size(76, 23);
             this.textPreciotrabajador.TabIndex = 196;
+            this.textPreciotrabajador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Importe_KeyPress);
             // 
             // textMiCif
             // 
             this.textMiCif.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiCif.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMiCif.Location = new System.Drawing.Point(644, 141);
-            this.textMiCif.MaxLength = 15;
+            this.textMiCif.MaxLength = 20;
             this.textMiCif.Name = "textMiCif";
             this.textMiCif.Size = new System.Drawing.Size(163, 23);
             this.textMiCif.TabIndex = 1;
@@ -1035,9 +1026,7 @@
             this.Name = "Cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "eGESTION";
-            this.AutoValidateChanged += new System.EventHandler(this.Cliente_AutoValidateChanged);
             this.Load += new System.EventHandler(this.Clientes_Load);
-            this.MouseEnter += new System.EventHandler(this.Cliente_MouseEnter);
             this.ResumeLayout(false);
             this.PerformLayout();
 

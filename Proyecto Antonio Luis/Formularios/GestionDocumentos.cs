@@ -192,7 +192,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
-            openFileDialog1.InitialDirectory = "C:\\ByMartin\\Clientes\\" + textBox5.Text;
+            openFileDialog1.InitialDirectory = Proyecto_Antonio_Luis.Clases.ClientesUtil.CarpetaCliente(textBox5.Text);
 
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK) ;
@@ -200,7 +200,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void BotonEscaner_Click(object sender, EventArgs e)
         {
-            string ruta = "C:\\ByMartin\\Clientes\\" + textBox5.Text;
+            string ruta = Proyecto_Antonio_Luis.Clases.ClientesUtil.CarpetaCliente(textBox5.Text);
 
        /*     string filename = "Excel.exe";
 

@@ -11,17 +11,17 @@
           </Key>
           <Property Name="numerador" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="codcliente" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="nombrecliente" Type="nchar" MaxLength="50" />
-          <Property Name="cifcliente" Type="nchar" MaxLength="15" />
-          <Property Name="direcioncliente" Type="nchar" MaxLength="50" />
-          <Property Name="localidacliente" Type="nchar" MaxLength="50" />
-          <Property Name="provinciacliente" Type="nchar" MaxLength="30" />
-          <Property Name="cod_postalcliente" Type="nchar" MaxLength="18" />
-          <Property Name="telefono1cliente" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="telefono2cliente" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="faxcliente" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="contactocliente" Type="nchar" MaxLength="50" />
-          <Property Name="mailcliente" Type="nchar" MaxLength="50" />
+          <Property Name="nombrecliente" Type="nvarchar" MaxLength="150" />
+          <Property Name="cifcliente" Type="nvarchar" MaxLength="20" />
+          <Property Name="direcioncliente" Type="nvarchar" MaxLength="150" />
+          <Property Name="localidacliente" Type="nvarchar" MaxLength="80" />
+          <Property Name="provinciacliente" Type="nvarchar" MaxLength="50" />
+          <Property Name="cod_postalcliente" Type="nvarchar" MaxLength="20" />
+          <Property Name="telefono1cliente" Type="nvarchar" MaxLength="20" />
+          <Property Name="telefono2cliente" Type="nvarchar" MaxLength="20" />
+          <Property Name="faxcliente" Type="nvarchar" MaxLength="20" />
+          <Property Name="contactocliente" Type="nvarchar" MaxLength="100" />
+          <Property Name="mailcliente" Type="nvarchar" MaxLength="100" />
           <Property Name="pormailcliente" Type="bit" />
           <Property Name="activocliente" Type="bit" />
           <Property Name="domiciliadocliente" Type="bit" />
@@ -34,7 +34,7 @@
           <Property Name="iban5cliente" Type="nchar" MaxLength="4" />
           <Property Name="iban6cliente" Type="nchar" MaxLength="4" />
           <Property Name="grupocliente" Type="nchar" MaxLength="10" />
-          <Property Name="empleadoscliente" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="empleadoscliente" Type="numeric" Precision="6" Scale="0" />
           <Property Name="fechaaltacliente" Type="date" />
           <Property Name="fechabajacliente" Type="date" />
           <Property Name="tarifacliente" Type="numeric" Precision="18" Scale="2" />
@@ -57,7 +57,7 @@
           <Property Name="mod751" Type="bit" />
           <Property Name="mod752" Type="bit" />
           <Property Name="instrastatcliente" Type="bit" />
-          <Property Name="comentariocliente" Type="nchar" MaxLength="500" />
+          <Property Name="comentariocliente" Type="nvarchar" MaxLength="1000" />
           <Property Name="altacliente" Type="bit" />
           <Property Name="bajacliente" Type="bit" />
           <Property Name="precioempleadocliente" Type="numeric" Precision="18" Scale="2" />
@@ -91,8 +91,8 @@
           <Property Name="factremesa" Type="nchar" MaxLength="20" />
           <Property Name="factfecha" Type="nchar" MaxLength="30" />
           <Property Name="factcodcliente" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="factnombre" Type="nchar" MaxLength="50" />
-          <Property Name="factdireccion" Type="nchar" MaxLength="100" />
+          <Property Name="factnombre" Type="nvarchar" MaxLength="150" />
+          <Property Name="factdireccion" Type="nvarchar" MaxLength="150" />
           <Property Name="factlocalidad" Type="nchar" MaxLength="100" />
           <Property Name="factprovincia" Type="nchar" MaxLength="100" />
           <Property Name="factcp" Type="nchar" MaxLength="20" />
@@ -107,7 +107,7 @@
           <Property Name="factbase1" Type="decimal" Precision="18" Scale="2" />
           <Property Name="factconcepto2" Type="nchar" MaxLength="150" />
           <Property Name="factbase2" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="factemleados" Type="decimal" Precision="3" Scale="0" />
+          <Property Name="factemleados" Type="decimal" Precision="6" Scale="0" />
           <Property Name="factprecioempleado" Type="decimal" Precision="18" Scale="2" />
           <Property Name="factbaseempleado" Type="decimal" Precision="18" Scale="2" />
           <Property Name="facttipoiva" Type="decimal" Precision="18" Scale="2" />
@@ -232,17 +232,17 @@
           </Key>
           <Property Name="numerador" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="codcliente" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="nombrecliente" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="cifcliente" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
-          <Property Name="direcioncliente" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="localidacliente" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="provinciacliente" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="cod_postalcliente" Type="String" MaxLength="18" FixedLength="true" Unicode="true" />
-          <Property Name="telefono1cliente" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="telefono2cliente" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="faxcliente" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="contactocliente" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="mailcliente" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="nombrecliente" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="cifcliente" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="direcioncliente" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="localidacliente" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="provinciacliente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cod_postalcliente" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="telefono1cliente" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="telefono2cliente" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="faxcliente" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="contactocliente" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="mailcliente" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="pormailcliente" Type="Boolean" />
           <Property Name="activocliente" Type="Boolean" />
           <Property Name="domiciliadocliente" Type="Boolean" />
@@ -255,7 +255,7 @@
           <Property Name="iban5cliente" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
           <Property Name="iban6cliente" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
           <Property Name="grupocliente" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="empleadoscliente" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="empleadoscliente" Type="Decimal" Precision="6" Scale="0" />
           <Property Name="fechaaltacliente" Type="DateTime" Precision="0" />
           <Property Name="fechabajacliente" Type="DateTime" Precision="0" />
           <Property Name="tarifacliente" Type="Decimal" Precision="18" Scale="2" />
@@ -278,7 +278,7 @@
           <Property Name="mod751" Type="Boolean" />
           <Property Name="mod752" Type="Boolean" />
           <Property Name="instrastatcliente" Type="Boolean" />
-          <Property Name="comentariocliente" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+          <Property Name="comentariocliente" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="altacliente" Type="Boolean" />
           <Property Name="bajacliente" Type="Boolean" />
           <Property Name="precioempleadocliente" Type="Decimal" Precision="18" Scale="2" />
@@ -312,8 +312,8 @@
           <Property Name="factremesa" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="factfecha" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
           <Property Name="factcodcliente" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="factnombre" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="factdireccion" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="factnombre" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="factdireccion" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="factlocalidad" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="factprovincia" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="factcp" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
@@ -328,7 +328,7 @@
           <Property Name="factbase1" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="factconcepto2" Type="String" MaxLength="150" FixedLength="true" Unicode="true" />
           <Property Name="factbase2" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="factemleados" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="factemleados" Type="Decimal" Precision="6" Scale="0" />
           <Property Name="factprecioempleado" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="factbaseempleado" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="facttipoiva" Type="Decimal" Precision="18" Scale="2" />

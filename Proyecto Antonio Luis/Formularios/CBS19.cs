@@ -317,7 +317,8 @@ namespace Proyecto_Antonio_Luis.Formularios
                 writer.WriteEndElement();
                 //Introduce el nombre del cliente
                 writer.WriteStartElement("Dbtr");
-                writer.WriteElementString("Nm", temp.factnombre);
+                // SEPA admite como máximo 70 caracteres en el nombre del deudor
+                writer.WriteElementString("Nm", Proyecto_Antonio_Luis.Clases.ClientesUtil.Recortar(temp.factnombre, 70));
                 writer.WriteEndElement();
 
                 writer.WriteStartElement("DbtrAcct");

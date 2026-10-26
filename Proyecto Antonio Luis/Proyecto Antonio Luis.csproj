@@ -101,6 +101,7 @@
       <DependentUpon>AdministracionAntonioDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="Clases\albaranesclientes.cs" />
+    <Compile Include="Clases\ClientesUtil.cs" />
     <Compile Include="Clases\datoslistadoreme.cs" />
     <Compile Include="Clases\Encriptar.cs" />
     <Compile Include="Clases\PasoClientes.cs" />

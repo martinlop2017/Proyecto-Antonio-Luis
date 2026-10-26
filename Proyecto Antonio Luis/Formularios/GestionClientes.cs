@@ -1,317 +1,348 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BaseDatos;
 using Proyecto_Antonio_Luis.Clases;
+
 namespace Proyecto_Antonio_Luis.Formularios
 {
+    /// <summary>
+    /// Lista de clientes: alta, modificación (incluida la baja temporal,
+    /// desmarcando "Activo") y eliminación definitiva.
+    /// </summary>
     public partial class GestionClientes : Form
     {
-
-        AdministracionAntonioEntities bd;
-        private List<string> originalClientValues;
-
         public GestionClientes()
         {
             InitializeComponent();
-            bd = new AdministracionAntonioEntities();
         }
 
+        private void GestionClientes_Load(object sender, EventArgs e)
+        {
+            comboBox1.Text = "Nombre";
+            CargarClientes();
+        }
 
+        // =====================================================================
+        //  Carga del listado
+        // =====================================================================
 
-        //============================================================================================================
-        //============================================================================================================
-        //============================================================================================================
-        //=================                                                                               ============
-        //=================                                                                               ============
-        //=================      Aquí comineza las acciones al pulsar los distintos botones               ============
-        //=================                                                                               ============
-        //=================                                                                               ============
-        //============================================================================================================
-        //============================================================================================================
-        //============================================================================================================
+        /// <summary>
+        /// Recarga la lista aplicando el texto de búsqueda y el orden elegidos.
+        /// Usa un contexto nuevo cada vez para ver siempre los datos actuales.
+        /// </summary>
+        private void CargarClientes(decimal? seleccionarCodigo = null)
+        {
+            try
+            {
+                List<Clientes> lista;
+                using (var bd = new AdministracionAntonioEntities())
+                {
+                    IQueryable<Clientes> consulta = bd.Clientes.AsNoTracking();
+
+                    string buscar = textBox1.Text.Trim();
+                    if (buscar.Length > 0)
+                    {
+                        decimal codigoBuscado;
+                        bool esCodigo = decimal.TryParse(buscar, out codigoBuscado);
+                        consulta = consulta.Where(c => c.nombrecliente.Contains(buscar)
+                                                    || c.cifcliente.Contains(buscar)
+                                                    || (esCodigo && c.codcliente == codigoBuscado));
+                    }
+
+                    consulta = comboBox1.Text == "Código"
+                        ? consulta.OrderBy(c => c.codcliente)
+                        : consulta.OrderBy(c => c.nombrecliente);
+
+                    lista = consulta.ToList();
+                }
+
+                dgvclientes.DataSource = lista;
+
+                // Los clientes de baja se ven en gris
+                foreach (DataGridViewRow fila in dgvclientes.Rows)
+                {
+                    var c = fila.DataBoundItem as Clientes;
+                    if (c != null && c.activocliente != true)
+                    {
+                        fila.DefaultCellStyle.ForeColor = System.Drawing.Color.Gray;
+                    }
+                }
+
+                if (seleccionarCodigo.HasValue)
+                {
+                    SeleccionarFila(seleccionarCodigo.Value);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se ha podido cargar la lista de clientes.\n\n" + MensajeInterno(ex),
+                    "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SeleccionarFila(decimal codigo)
+        {
+            foreach (DataGridViewRow fila in dgvclientes.Rows)
+            {
+                var c = fila.DataBoundItem as Clientes;
+                if (c != null && c.codcliente == codigo)
+                {
+                    fila.Selected = true;
+                    dgvclientes.CurrentCell = fila.Cells.Cast<DataGridViewCell>().First(x => x.Visible);
+                    return;
+                }
+            }
+        }
+
+        /// <summary>Cliente de la fila seleccionada, o null si no hay ninguna.</summary>
+        private Clientes ClienteSeleccionado()
+        {
+            if (dgvclientes.CurrentRow == null)
+            {
+                return null;
+            }
+            return dgvclientes.CurrentRow.DataBoundItem as Clientes;
+        }
+
+        // =====================================================================
+        //  Alta
+        // =====================================================================
 
         private void sumar_Click(object sender, EventArgs e)
         {
-          
-            // Inicializa la variable global llamadas
             Globales.llamadas = "1";
-
-            // Abre Clientes
-              Cliente form = new Cliente();
-            form.Show();
-
-            dgvclientes.DataSource = "";
-            dgvclientes.DataSource = bd.Clientes.OrderBy(x => x.nombrecliente).ToList();
-            dgvclientes.Refresh();
+            using (var form = new Cliente())
+            {
+                if (form.ShowDialog(this) == DialogResult.OK)
+                {
+                    // Al grabar, Cliente deja el código asignado en Globales.modificar
+                    CargarClientes(Globales.modificar);
+                }
+            }
         }
 
+        // =====================================================================
+        //  Modificación
+        // =====================================================================
 
-
-        //************************************************************************************************************
-        //************************************************************************************************************
-        //************************************************************************************************************
-        //*****************                                                                              *************
-        //*****************        Los eventos del mouse sobre los botones para mostrar las etiquetas    *************
-        //*****************                                                                              *************
-        //************************************************************************************************************
-        //************************************************************************************************************
-        //************************************************************************************************************
-
-        private void sumar_MouseEnter(object sender, EventArgs e)
+        private void modificar_Click(object sender, EventArgs e)
         {
-            label1.Visible = true; 
+            AbrirModificacion();
         }
 
-        private void sumar_MouseLeave(object sender, EventArgs e)
+        private void dgvclientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            label1.Visible = false;
+            if (e.RowIndex >= 0)
+            {
+                AbrirModificacion();
+            }
         }
 
-        private void eliminar_MouseEnter(object sender, EventArgs e)
+        private void AbrirModificacion()
         {
-            label2.Visible = true;
+            var seleccionado = ClienteSeleccionado();
+            if (seleccionado == null || !seleccionado.codcliente.HasValue)
+            {
+                MessageBox.Show("Selecciona primero un cliente de la lista.", "Modificar cliente",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            decimal codigo = seleccionado.codcliente.Value;
+            Globales.llamadas = "2";
+            Globales.modificar = Convert.ToInt32(codigo);
+
+            using (var form = new Cliente())
+            {
+                if (form.ShowDialog(this) == DialogResult.OK)
+                {
+                    CargarClientes(codigo);
+                }
+            }
         }
 
-        private void eliminar_MouseLeave(object sender, EventArgs e)
+        // =====================================================================
+        //  Eliminar: borrado DEFINITIVO del cliente, tras varios avisos.
+        //  (Para una baja temporal, p. ej. baja en Hacienda, no se elimina:
+        //   se desmarca "Activo" en la ficha y el cliente conserva sus datos.)
+        //  Las facturas ya emitidas no se tocan (guardan su propia copia de los
+        //  datos del cliente) ni tampoco su carpeta de documentos.
+        // =====================================================================
+
+        private void eliminar_Click(object sender, EventArgs e)
         {
-            label2.Visible = false;
+            var seleccionado = ClienteSeleccionado();
+            if (seleccionado == null)
+            {
+                MessageBox.Show("Selecciona primero un cliente de la lista.", "Eliminar cliente",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            string nombre = (seleccionado.nombrecliente ?? "").Trim();
+            string codigo = seleccionado.codcliente.HasValue ? seleccionado.codcliente.Value.ToString("0") : "-";
+            string titulo = codigo + " - " + nombre;
+
+            // Aviso 1: si está activo, quizá lo que se quiere es darlo de baja
+            if (seleccionado.activocliente == true)
+            {
+                if (MessageBox.Show(
+                        "El cliente " + titulo + " está ACTIVO.\n\n" +
+                        "Si solo quieres que deje de facturarse durante un tiempo (por ejemplo, " +
+                        "baja temporal en Hacienda), no lo elimines: ábrelo con Modificar y " +
+                        "desmarca \"Activo\". Así conserva todos sus datos y podrás reactivarlo.\n\n" +
+                        "¿Quieres ELIMINARLO de todas formas?",
+                        "Eliminar cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning,
+                        MessageBoxDefaultButton.Button2) != DialogResult.Yes)
+                {
+                    return;
+                }
+            }
+
+            // Aviso 2: facturas pendientes de domiciliar o de contabilizar
+            int pendientes = FacturasPendientes(seleccionado.codcliente);
+            if (pendientes > 0)
+            {
+                if (MessageBox.Show(
+                        "El cliente " + titulo + " tiene " + pendientes +
+                        " factura(s) pendiente(s) de domiciliar o de contabilizar.\n\n" +
+                        "Las facturas no se borran, pero conviene terminar de tramitarlas antes.\n\n" +
+                        "¿Continuar con la eliminación?",
+                        "Eliminar cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning,
+                        MessageBoxDefaultButton.Button2) != DialogResult.Yes)
+                {
+                    return;
+                }
+            }
+
+            // Aviso 3: confirmación final
+            string aviso =
+                "Se va a ELIMINAR DEFINITIVAMENTE el cliente:\n\n" +
+                "   " + titulo + "\n\n" +
+                "Esta acción NO se puede deshacer.\n\n" +
+                "- Las facturas ya emitidas no se borran.\n" +
+                "- Su carpeta de documentos no se borra:\n   " + ClientesUtil.CarpetaCliente(nombre) + "\n" +
+                "- Su código no se volverá a usar para otro cliente.\n\n" +
+                "¿ELIMINAR el cliente?";
+
+            if (MessageBox.Show(aviso, "Eliminar cliente - confirmación final", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Stop, MessageBoxDefaultButton.Button2) != DialogResult.Yes)
+            {
+                return;
+            }
+
+            try
+            {
+                using (var bd = new AdministracionAntonioEntities())
+                {
+                    var borrar = bd.Clientes.Find(seleccionado.numerador);
+                    if (borrar != null)
+                    {
+                        bd.Clientes.Remove(borrar);
+                        bd.SaveChanges();
+                    }
+                }
+                CargarClientes();
+                MessageBox.Show("Cliente " + titulo + " eliminado.", "Eliminar cliente",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se ha podido eliminar el cliente.\n\n" + MensajeInterno(ex),
+                    "Eliminar cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void modificar_MouseEnter(object sender, EventArgs e)
+        /// <summary>Facturas del cliente pendientes de domiciliar o de contabilizar.</summary>
+        private static int FacturasPendientes(decimal? codigo)
         {
-            label3.Visible = true;
+            if (!codigo.HasValue)
+            {
+                return 0;
+            }
+            try
+            {
+                using (var bd = new AdministracionAntonioEntities())
+                {
+                    decimal cod = codigo.Value;
+                    return bd.Facturas.Count(f => f.factcodcliente == cod &&
+                        ((f.factparadomiciliar == true && f.factdomiciliada != true) ||
+                         (f.factparacontabilizar == true && f.factcontabilizada != true)));
+                }
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
-        private void modificar_MouseLeave(object sender, EventArgs e)
+        // =====================================================================
+        //  Búsqueda y orden
+        // =====================================================================
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            label3.Visible = false;
+            CargarClientes();
         }
 
-        private void buscar_MouseEnter(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            label4.Visible = true;
+            CargarClientes();
         }
 
-        private void buscar_MouseLeave(object sender, EventArgs e)
+        private void comboBox1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
-            label4.Visible = false;
         }
 
-        private void salir_MouseEnter(object sender, EventArgs e)
+        private void comboBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            label5.Visible = true;
         }
 
-        private void salir_MouseLeave(object sender, EventArgs e)
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            label5.Visible = false;
         }
+
+        // =====================================================================
+        //  Salir
+        // =====================================================================
 
         private void salir_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void GestionClientes_Load(object sender, EventArgs e)
-        {
-            //CARGA LOS REGISTROS EN EL GRIP AL INICIAR EL FORM
-            comboBox1.Text = "Nombre";
-            dgvclientes.DataSource = "";
-            var cargaclientes = bd.Clientes.OrderBy(x => x.nombrecliente);
-            dgvclientes.DataSource = cargaclientes.ToList();
-            dgvclientes.Refresh();
+        // =====================================================================
+        //  Etiquetas de ayuda al pasar el ratón por los botones
+        // =====================================================================
 
-        }
+        private void sumar_MouseEnter(object sender, EventArgs e) { label1.Visible = true; }
+        private void sumar_MouseLeave(object sender, EventArgs e) { label1.Visible = false; }
+        private void eliminar_MouseEnter(object sender, EventArgs e) { label2.Visible = true; }
+        private void eliminar_MouseLeave(object sender, EventArgs e) { label2.Visible = false; }
+        private void modificar_MouseEnter(object sender, EventArgs e) { label3.Visible = true; }
+        private void modificar_MouseLeave(object sender, EventArgs e) { label3.Visible = false; }
+        private void buscar_MouseEnter(object sender, EventArgs e) { label4.Visible = true; }
+        private void buscar_MouseLeave(object sender, EventArgs e) { label4.Visible = false; }
+        private void salir_MouseEnter(object sender, EventArgs e) { label5.Visible = true; }
+        private void salir_MouseLeave(object sender, EventArgs e) { label5.Visible = false; }
+        private void panel1_MouseEnter(object sender, EventArgs e) { label4.Visible = true; }
+        private void panel1_MouseLeave(object sender, EventArgs e) { label4.Visible = false; }
+        private void textBox1_MouseEnter(object sender, EventArgs e) { label4.Visible = true; }
+        private void textBox1_MouseLeave(object sender, EventArgs e) { label4.Visible = false; }
+        private void panel2_MouseEnter(object sender, EventArgs e) { label6.Visible = true; }
+        private void panel2_MouseLeave(object sender, EventArgs e) { label6.Visible = false; }
+        private void comboBox1_MouseEnter(object sender, EventArgs e) { label6.Visible = true; }
+        private void comboBox1_MouseLeave(object sender, EventArgs e) { label6.Visible = false; }
 
-        private void eliminar_Click(object sender, EventArgs e)
+        private static string MensajeInterno(Exception ex)
         {
-            try
+            while (ex.InnerException != null)
             {
-                if (MessageBox.Show("Confirme La Eliminación del Registro.", "Eliminar Registro",
-                    MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
-                {
-                    // creamos una variable que va aguardar los datos de la fila seleccionada en el dbgrid
-
-                    int valor1 = Convert.ToInt16(dgvclientes.CurrentRow.Cells[0].Value);
-
-                    //*** borrar
-                    //busca en la tabla la fila con el registro suminstrado
-                    //y si lo encuentra borra la linea de la base de datos
-
-                    var borrar = bd.Clientes.SingleOrDefault(codcliente => codcliente.numerador == valor1);
-                    if (borrar != null)
-                    {
-                        bd.Clientes.Remove(borrar);
-                    }
-                    //guardamos los cambios
-                    bd.SaveChanges();
-
-                    // Refrescamos el dbgrid
-                    dgvclientes.DataSource = bd.Clientes.ToList();
-                }
+                ex = ex.InnerException;
             }
-            catch (Exception)
-            {
-                MessageBox.Show("No ha sido posible eliminar los datos", "Error 103", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            return ex.Message;
         }
-
-        private void modificar_Click(object sender, EventArgs e)
-        {
-            // Inicializa la variable global llamadas
-            Globales.llamadas = "2";
-            try
-            {
-               // creamos una variable que va aguardar los datos de la fila seleccionada en el dbgrid
-               Globales.modificar = Convert. ToInt16(dgvclientes.CurrentRow.Cells[1].Value);
-                // Abre Ususarios
-                Cliente form = new Cliente();
-                form.Show();
-
-
-                dgvclientes.DataSource = "";
-                dgvclientes.DataSource = bd.Clientes.OrderBy(x=> x.nombrecliente). ToList();
-                dgvclientes.Refresh();
-            }
-            catch (Exception)
-            { 
-                MessageBox.Show("Debe Seleccionar un registro.", "Error 303", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-                
-        }
-
-  
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-           
-
-            var busqueda = from c in bd.Clientes select c;
-            busqueda = busqueda.Where(c => c.nombrecliente.Contains(textBox1.Text));
-
-            dgvclientes.DataSource = busqueda.ToList();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            var busqueda = from c in bd.Clientes select c;
-            busqueda = busqueda.Where(c => c.nombrecliente.Contains(textBox1.Text)).OrderBy(x=> x.nombrecliente);
-
-            dgvclientes.DataSource = busqueda.ToList();
-        }
-
-        private void panel1_MouseEnter(object sender, EventArgs e)
-        {
-            label4.Visible = true;
-        }
-
-        private void panel1_MouseLeave(object sender, EventArgs e)
-        {
-            label4.Visible = false;
-        }
-
-        private void textBox1_MouseEnter(object sender, EventArgs e)
-        {
-            label4.Visible = true;
-        }
-
-        private void textBox1_MouseLeave(object sender, EventArgs e)
-        {
-            label4.Visible = false;
-        }
-
-        private void dgvclientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //Esto lo que hace es mostrar los datos para modificar
-            // Inicializa la variable global llamadas
-            Globales.llamadas = "2";
-            try
-            {
-                // creamos una variable que va aguardar los datos de la fila seleccionada en el dbgrid
-                Globales.modificar = Convert.ToInt16(dgvclientes.CurrentRow.Cells[1].Value);
-                // Abre Ususarios
-                Cliente form = new Cliente();
-                form.Show();
-
-
-                dgvclientes.DataSource = "";
-                dgvclientes.DataSource = bd.Clientes.ToList();
-                dgvclientes.Refresh();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Debe Seleccionar un registro.", "Error 303", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-
-
-
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBox1.Text == "Código")
-            {
-                dgvclientes.DataSource = bd.Clientes.OrderBy(x=> x.codcliente).ToList();
-            }
-
-            if (comboBox1.Text == "Nombre")
-            {
-                dgvclientes.DataSource = bd.Clientes.OrderBy(x => x.nombrecliente).ToList();
-            }
-        }
-
-        private void comboBox1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-          
-        }
-
-        private void comboBox1_KeyDown(object sender, KeyEventArgs e)
-        {
-            
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_MouseEnter(object sender, EventArgs e)
-        {
-            label6.Visible = true;
-        }
-
-        private void panel2_MouseLeave(object sender, EventArgs e)
-        {
-            label6.Visible = false;
-        }
-
-        private void comboBox1_MouseEnter(object sender, EventArgs e)
-        {
-            label6.Visible = true;
-        }
-
-        private void comboBox1_MouseLeave(object sender, EventArgs e)
-        {
-            label6.Visible = false;
-        }
-
-
     }
 }

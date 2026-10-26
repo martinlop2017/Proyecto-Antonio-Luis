@@ -325,14 +325,14 @@ SELECT factcontador, factnumerofact, factremesa, factfecha, factcodcliente, fact
               <xs:element name="factnombre" msprop:Generator_ColumnVarNameInTable="columnfactnombre" msprop:Generator_ColumnPropNameInRow="factnombre" msprop:Generator_ColumnPropNameInTable="factnombreColumn" msprop:Generator_UserColumnName="factnombre" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="factdireccion" msprop:Generator_ColumnVarNameInTable="columnfactdireccion" msprop:Generator_ColumnPropNameInRow="factdireccion" msprop:Generator_ColumnPropNameInTable="factdireccionColumn" msprop:Generator_UserColumnName="factdireccion" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
+                    <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
