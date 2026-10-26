@@ -48,7 +48,7 @@
             this.panel3.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Logo_Antonio_Luis;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel3.Location = new System.Drawing.Point(9, 9);
+            this.panel3.Location = new System.Drawing.Point(40, 53);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(98, 109);
             this.panel3.TabIndex = 5;
@@ -58,7 +58,7 @@
             // 
             this.button1.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Llave;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(393, 374);
+            this.button1.Location = new System.Drawing.Point(427, 387);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 60);
             this.button1.TabIndex = 6;
@@ -78,7 +78,7 @@
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.Location = new System.Drawing.Point(145, 158);
+            this.panel2.Location = new System.Drawing.Point(179, 171);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(372, 199);
             this.panel2.TabIndex = 4;
@@ -130,7 +130,7 @@
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.label1);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(119, 40);
+            this.panel1.Location = new System.Drawing.Point(153, 53);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(455, 79);
             this.panel1.TabIndex = 3;
@@ -153,7 +153,7 @@
             this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label4.Location = new System.Drawing.Point(45, 390);
+            this.label4.Location = new System.Drawing.Point(79, 403);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(197, 23);
             this.label4.TabIndex = 9;
@@ -166,12 +166,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(586, 448);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(651, 501);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
