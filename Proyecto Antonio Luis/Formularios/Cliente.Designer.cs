@@ -136,7 +136,6 @@
             this.label15.Size = new System.Drawing.Size(816, 42);
             this.label15.TabIndex = 127;
             this.label15.Text = "Datos Clientes";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textMiNombre
             // 
