@@ -51,12 +51,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBoxivan1 = new System.Windows.Forms.TextBox();
-            this.textBoxivan2 = new System.Windows.Forms.TextBox();
-            this.textBoxivan3 = new System.Windows.Forms.TextBox();
-            this.textBoxivan4 = new System.Windows.Forms.TextBox();
-            this.textBoxivan5 = new System.Windows.Forms.TextBox();
-            this.textBoxivan6 = new System.Windows.Forms.TextBox();
+            this.textBoxIban = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox23 = new System.Windows.Forms.TextBox();
@@ -76,20 +71,20 @@
             this.textBoxMiCif.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxMiCif.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMiCif.Location = new System.Drawing.Point(534, 144);
+            this.textBoxMiCif.MaxLength = 20;
             this.textBoxMiCif.Name = "textBoxMiCif";
             this.textBoxMiCif.Size = new System.Drawing.Size(163, 23);
-            this.textBoxMiCif.TabIndex = 15;
-            this.textBoxMiCif.Text = "B-21.144.896";
+            this.textBoxMiCif.TabIndex = 1;
             // 
             // textBoxMiNombre
             // 
             this.textBoxMiNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxMiNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMiNombre.Location = new System.Drawing.Point(44, 144);
+            this.textBoxMiNombre.MaxLength = 150;
             this.textBoxMiNombre.Name = "textBoxMiNombre";
             this.textBoxMiNombre.Size = new System.Drawing.Size(476, 23);
-            this.textBoxMiNombre.TabIndex = 14;
-            this.textBoxMiNombre.Text = "PESCADOS REBOLLO DE PAN DURO S.L.";
+            this.textBoxMiNombre.TabIndex = 0;
             // 
             // label17
             // 
@@ -120,40 +115,40 @@
             this.textBoxMiCP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxMiCP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMiCP.Location = new System.Drawing.Point(341, 287);
+            this.textBoxMiCP.MaxLength = 20;
             this.textBoxMiCP.Name = "textBoxMiCP";
             this.textBoxMiCP.Size = new System.Drawing.Size(84, 23);
-            this.textBoxMiCP.TabIndex = 23;
-            this.textBoxMiCP.Text = "211560";
+            this.textBoxMiCP.TabIndex = 5;
             // 
             // textBoxMiProvincia
             // 
             this.textBoxMiProvincia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxMiProvincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMiProvincia.Location = new System.Drawing.Point(195, 287);
+            this.textBoxMiProvincia.MaxLength = 100;
             this.textBoxMiProvincia.Name = "textBoxMiProvincia";
             this.textBoxMiProvincia.Size = new System.Drawing.Size(140, 23);
-            this.textBoxMiProvincia.TabIndex = 21;
-            this.textBoxMiProvincia.Text = "LA ALCARRIA ";
+            this.textBoxMiProvincia.TabIndex = 4;
             // 
             // textBoxMiPoblacion
             // 
             this.textBoxMiPoblacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxMiPoblacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMiPoblacion.Location = new System.Drawing.Point(44, 287);
+            this.textBoxMiPoblacion.MaxLength = 100;
             this.textBoxMiPoblacion.Name = "textBoxMiPoblacion";
             this.textBoxMiPoblacion.Size = new System.Drawing.Size(145, 23);
-            this.textBoxMiPoblacion.TabIndex = 19;
-            this.textBoxMiPoblacion.Text = "PUNTA UMBRIA";
+            this.textBoxMiPoblacion.TabIndex = 3;
             // 
             // textBoxMiDiereccion
             // 
             this.textBoxMiDiereccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxMiDiereccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMiDiereccion.Location = new System.Drawing.Point(44, 225);
+            this.textBoxMiDiereccion.MaxLength = 200;
             this.textBoxMiDiereccion.Name = "textBoxMiDiereccion";
             this.textBoxMiDiereccion.Size = new System.Drawing.Size(381, 23);
-            this.textBoxMiDiereccion.TabIndex = 18;
-            this.textBoxMiDiereccion.Text = "C/ DEL PORRON  5, POLIGONO  EL RASTRO NAVE 6 Y 9";
+            this.textBoxMiDiereccion.TabIndex = 2;
             // 
             // label24
             // 
@@ -208,50 +203,50 @@
             this.textBoxMiTLF2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxMiTLF2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMiTLF2.Location = new System.Drawing.Point(576, 225);
+            this.textBoxMiTLF2.MaxLength = 20;
             this.textBoxMiTLF2.Name = "textBoxMiTLF2";
             this.textBoxMiTLF2.Size = new System.Drawing.Size(117, 23);
-            this.textBoxMiTLF2.TabIndex = 27;
-            this.textBoxMiTLF2.Text = "959-311 12 12 12 ";
+            this.textBoxMiTLF2.TabIndex = 7;
             // 
             // textBoxMiPersonaContacto
             // 
             this.textBoxMiPersonaContacto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxMiPersonaContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMiPersonaContacto.Location = new System.Drawing.Point(450, 287);
+            this.textBoxMiPersonaContacto.MaxLength = 100;
             this.textBoxMiPersonaContacto.Name = "textBoxMiPersonaContacto";
             this.textBoxMiPersonaContacto.Size = new System.Drawing.Size(144, 23);
-            this.textBoxMiPersonaContacto.TabIndex = 31;
-            this.textBoxMiPersonaContacto.Text = "ANTONIO";
+            this.textBoxMiPersonaContacto.TabIndex = 9;
             // 
             // textBoxMiMail
             // 
-            this.textBoxMiMail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxMiMail.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.textBoxMiMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMiMail.Location = new System.Drawing.Point(597, 287);
+            this.textBoxMiMail.MaxLength = 100;
             this.textBoxMiMail.Name = "textBoxMiMail";
             this.textBoxMiMail.Size = new System.Drawing.Size(222, 23);
-            this.textBoxMiMail.TabIndex = 33;
-            this.textBoxMiMail.Text = "PESCADOREBOLLO@GMAIL.COM";
+            this.textBoxMiMail.TabIndex = 10;
             // 
             // textBoxMiFax
             // 
             this.textBoxMiFax.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxMiFax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMiFax.Location = new System.Drawing.Point(702, 225);
+            this.textBoxMiFax.MaxLength = 20;
             this.textBoxMiFax.Name = "textBoxMiFax";
             this.textBoxMiFax.Size = new System.Drawing.Size(117, 23);
-            this.textBoxMiFax.TabIndex = 29;
-            this.textBoxMiFax.Text = "959-311 12 12 12 ";
+            this.textBoxMiFax.TabIndex = 8;
             // 
             // textBoxMiTLF1
             // 
             this.textBoxMiTLF1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxMiTLF1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMiTLF1.Location = new System.Drawing.Point(450, 225);
+            this.textBoxMiTLF1.MaxLength = 20;
             this.textBoxMiTLF1.Name = "textBoxMiTLF1";
             this.textBoxMiTLF1.Size = new System.Drawing.Size(117, 23);
-            this.textBoxMiTLF1.TabIndex = 26;
-            this.textBoxMiTLF1.Text = "959-311 12 12 12 ";
+            this.textBoxMiTLF1.TabIndex = 6;
             // 
             // label1
             // 
@@ -313,78 +308,18 @@
             this.label5.TabIndex = 40;
             this.label5.Text = "Email";
             // 
-            // textBoxivan1
+            // textBoxIban
             // 
-            this.textBoxivan1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBoxivan1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxivan1.Location = new System.Drawing.Point(59, 410);
-            this.textBoxivan1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxivan1.MaxLength = 4;
-            this.textBoxivan1.Name = "textBoxivan1";
-            this.textBoxivan1.Size = new System.Drawing.Size(50, 22);
-            this.textBoxivan1.TabIndex = 112;
-            this.textBoxivan1.Text = "ES99";
-            // 
-            // textBoxivan2
-            // 
-            this.textBoxivan2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBoxivan2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxivan2.Location = new System.Drawing.Point(117, 410);
-            this.textBoxivan2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxivan2.MaxLength = 4;
-            this.textBoxivan2.Name = "textBoxivan2";
-            this.textBoxivan2.Size = new System.Drawing.Size(50, 22);
-            this.textBoxivan2.TabIndex = 113;
-            this.textBoxivan2.Text = "ES99";
-            // 
-            // textBoxivan3
-            // 
-            this.textBoxivan3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBoxivan3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxivan3.Location = new System.Drawing.Point(175, 410);
-            this.textBoxivan3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxivan3.MaxLength = 4;
-            this.textBoxivan3.Name = "textBoxivan3";
-            this.textBoxivan3.Size = new System.Drawing.Size(50, 22);
-            this.textBoxivan3.TabIndex = 114;
-            this.textBoxivan3.Text = "ES99";
-            this.textBoxivan3.TextChanged += new System.EventHandler(this.textBox20_TextChanged);
-            // 
-            // textBoxivan4
-            // 
-            this.textBoxivan4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBoxivan4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxivan4.Location = new System.Drawing.Point(233, 410);
-            this.textBoxivan4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxivan4.MaxLength = 4;
-            this.textBoxivan4.Name = "textBoxivan4";
-            this.textBoxivan4.Size = new System.Drawing.Size(50, 22);
-            this.textBoxivan4.TabIndex = 115;
-            this.textBoxivan4.Text = "ES99";
-            // 
-            // textBoxivan5
-            // 
-            this.textBoxivan5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBoxivan5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxivan5.Location = new System.Drawing.Point(291, 410);
-            this.textBoxivan5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxivan5.MaxLength = 4;
-            this.textBoxivan5.Name = "textBoxivan5";
-            this.textBoxivan5.Size = new System.Drawing.Size(50, 22);
-            this.textBoxivan5.TabIndex = 116;
-            this.textBoxivan5.Text = "ES99";
-            // 
-            // textBoxivan6
-            // 
-            this.textBoxivan6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBoxivan6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxivan6.Location = new System.Drawing.Point(349, 411);
-            this.textBoxivan6.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxivan6.MaxLength = 4;
-            this.textBoxivan6.Name = "textBoxivan6";
-            this.textBoxivan6.Size = new System.Drawing.Size(50, 22);
-            this.textBoxivan6.TabIndex = 117;
-            this.textBoxivan6.Text = "ES99";
+            this.textBoxIban.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxIban.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIban.Location = new System.Drawing.Point(59, 410);
+            this.textBoxIban.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxIban.MaxLength = 42;
+            this.textBoxIban.Name = "textBoxIban";
+            this.textBoxIban.Size = new System.Drawing.Size(352, 22);
+            this.textBoxIban.TabIndex = 11;
+            this.textBoxIban.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxIban_KeyPress);
+            this.textBoxIban.Leave += new System.EventHandler(this.textBoxIban_Leave);
             // 
             // label6
             // 
@@ -397,7 +332,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 15);
             this.label6.TabIndex = 118;
-            this.label6.Text = "C.C.C.";
+            this.label6.Text = "IBAN";
             // 
             // button3
             // 
@@ -409,7 +344,7 @@
             this.button3.Location = new System.Drawing.Point(494, 404);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(29, 27);
-            this.button3.TabIndex = 121;
+            this.button3.TabIndex = 15;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -419,10 +354,12 @@
             this.textBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox23.Location = new System.Drawing.Point(446, 435);
             this.textBox23.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox23.MaxLength = 260;
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(303, 23);
-            this.textBox23.TabIndex = 119;
-            this.textBox23.Text = "C:\\IMAGENCORPORATIVA\\MI LOGO";
+            this.textBox23.TabIndex = 14;
+            this.textBox23.ReadOnly = true;
+            this.textBox23.TabStop = false;
             this.textBox23.TextChanged += new System.EventHandler(this.textBox23_TextChanged);
             // 
             // label8
@@ -447,7 +384,7 @@
             this.button1.Location = new System.Drawing.Point(182, 529);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(208, 60);
-            this.button1.TabIndex = 124;
+            this.button1.TabIndex = 16;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -460,7 +397,7 @@
             this.button2.Location = new System.Drawing.Point(456, 529);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(208, 60);
-            this.button2.TabIndex = 125;
+            this.button2.TabIndex = 17;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -481,9 +418,9 @@
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(756, 382);
+            this.panel1.Location = new System.Drawing.Point(756, 404);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(72, 96);
+            this.panel1.Size = new System.Drawing.Size(72, 74);
             this.panel1.TabIndex = 122;
             // 
             // textboxidentificador
@@ -492,11 +429,10 @@
             this.textboxidentificador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxidentificador.Location = new System.Drawing.Point(59, 455);
             this.textboxidentificador.Margin = new System.Windows.Forms.Padding(4);
-            this.textboxidentificador.MaxLength = 4;
+            this.textboxidentificador.MaxLength = 7;
             this.textboxidentificador.Name = "textboxidentificador";
             this.textboxidentificador.Size = new System.Drawing.Size(166, 22);
-            this.textboxidentificador.TabIndex = 127;
-            this.textboxidentificador.Text = "ES99";
+            this.textboxidentificador.TabIndex = 12;
             // 
             // label7
             // 
@@ -509,7 +445,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(148, 15);
             this.label7.TabIndex = 128;
-            this.label7.Text = "Identificador Bancario";
+            this.label7.Text = "Identificador SEPA";
             // 
             // textboxbic
             // 
@@ -517,11 +453,10 @@
             this.textboxbic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textboxbic.Location = new System.Drawing.Point(245, 455);
             this.textboxbic.Margin = new System.Windows.Forms.Padding(4);
-            this.textboxbic.MaxLength = 4;
+            this.textboxbic.MaxLength = 11;
             this.textboxbic.Name = "textboxbic";
             this.textboxbic.Size = new System.Drawing.Size(166, 22);
-            this.textboxbic.TabIndex = 129;
-            this.textboxbic.Text = "ES99";
+            this.textboxbic.TabIndex = 13;
             // 
             // label9
             // 
@@ -555,12 +490,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox23);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBoxivan1);
-            this.Controls.Add(this.textBoxivan2);
-            this.Controls.Add(this.textBoxivan3);
-            this.Controls.Add(this.textBoxivan4);
-            this.Controls.Add(this.textBoxivan5);
-            this.Controls.Add(this.textBoxivan6);
+            this.Controls.Add(this.textBoxIban);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -619,12 +549,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxivan1;
-        private System.Windows.Forms.TextBox textBoxivan2;
-        private System.Windows.Forms.TextBox textBoxivan3;
-        private System.Windows.Forms.TextBox textBoxivan4;
-        private System.Windows.Forms.TextBox textBoxivan5;
-        private System.Windows.Forms.TextBox textBoxivan6;
+        private System.Windows.Forms.TextBox textBoxIban;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox23;

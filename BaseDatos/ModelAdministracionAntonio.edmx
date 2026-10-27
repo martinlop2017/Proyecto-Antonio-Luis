@@ -62,6 +62,7 @@
           <Property Name="bajacliente" Type="bit" />
           <Property Name="precioempleadocliente" Type="numeric" Precision="18" Scale="2" />
           <Property Name="ibancliente" Type="nvarchar" MaxLength="34" />
+          <Property Name="retencioncliente" Type="bit" />
         </EntityType>
         <EntityType Name="Cuentas">
           <Key>
@@ -124,6 +125,8 @@
           <Property Name="factpormail" Type="bit" />
           <Property Name="factmail" Type="nchar" MaxLength="100" />
           <Property Name="factiban" Type="nvarchar" MaxLength="34" />
+          <Property Name="factretencionporc" Type="decimal" Precision="4" Scale="2" />
+          <Property Name="factretencion" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="Iva">
           <Key>
@@ -139,26 +142,28 @@
             <PropertyRef Name="numerador" />
           </Key>
           <Property Name="numerador" Type="numeric" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="minombre" Type="nchar" MaxLength="100" />
-          <Property Name="micif" Type="nchar" MaxLength="15" />
-          <Property Name="midireccion" Type="nchar" MaxLength="200" />
-          <Property Name="mipoblacion" Type="nchar" MaxLength="100" />
-          <Property Name="miprovincia" Type="nchar" MaxLength="100" />
-          <Property Name="micp" Type="nchar" MaxLength="10" />
-          <Property Name="mitelefono1" Type="nchar" MaxLength="20" />
-          <Property Name="mitelefono2" Type="nchar" MaxLength="20" />
-          <Property Name="mifax" Type="nchar" MaxLength="20" />
-          <Property Name="micontacto" Type="nchar" MaxLength="50" />
-          <Property Name="mimail" Type="nchar" MaxLength="50" />
+          <Property Name="minombre" Type="nvarchar" MaxLength="150" />
+          <Property Name="micif" Type="nvarchar" MaxLength="20" />
+          <Property Name="midireccion" Type="nvarchar" MaxLength="200" />
+          <Property Name="mipoblacion" Type="nvarchar" MaxLength="100" />
+          <Property Name="miprovincia" Type="nvarchar" MaxLength="100" />
+          <Property Name="micp" Type="nvarchar" MaxLength="20" />
+          <Property Name="mitelefono1" Type="nvarchar" MaxLength="20" />
+          <Property Name="mitelefono2" Type="nvarchar" MaxLength="20" />
+          <Property Name="mifax" Type="nvarchar" MaxLength="20" />
+          <Property Name="micontacto" Type="nvarchar" MaxLength="100" />
+          <Property Name="mimail" Type="nvarchar" MaxLength="100" />
           <Property Name="miiban1" Type="nchar" MaxLength="4" />
           <Property Name="miiban2" Type="nchar" MaxLength="4" />
           <Property Name="miiban3" Type="nchar" MaxLength="4" />
           <Property Name="miiban4" Type="nchar" MaxLength="4" />
           <Property Name="miiban5" Type="nchar" MaxLength="4" />
           <Property Name="miiban6" Type="nchar" MaxLength="4" />
-          <Property Name="milogo" Type="nchar" MaxLength="200" />
-          <Property Name="miidentificadorbancario" Type="nchar" MaxLength="15" />
-          <Property Name="mibic" Type="nchar" MaxLength="15" />
+          <Property Name="milogo" Type="nvarchar" MaxLength="260" />
+          <Property Name="miidentificadorbancario" Type="nvarchar" MaxLength="15" />
+          <Property Name="mibic" Type="nvarchar" MaxLength="15" />
+          <Property Name="miiban" Type="nvarchar" MaxLength="34" />
+          <Property Name="milogoimagen" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Resilla">
           <Key>
@@ -206,11 +211,21 @@
           <Property Name="avisos" Type="bit" />
           <Property Name="gavisos" Type="bit" />
         </EntityType>
+        <EntityType Name="Retenciones">
+          <Key>
+            <PropertyRef Name="numerador" />
+          </Key>
+          <Property Name="numerador" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="retconcepto" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="retporciento" Type="numeric" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="retpordefecto" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="AdministracionAntonioModelStoreContainer">
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cuentas" EntityType="Self.Cuentas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Facturas" EntityType="Self.Facturas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Iva" EntityType="Self.Iva" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Retenciones" EntityType="Self.Retenciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Propios" EntityType="Self.Propios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Resilla" EntityType="Self.Resilla" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ususarios" EntityType="Self.Ususarios" Schema="dbo" store:Type="Tables" />
@@ -224,6 +239,7 @@
           <EntitySet Name="Cuentas" EntityType="AdministracionAntonioModel.Cuentas" />
           <EntitySet Name="Facturas" EntityType="AdministracionAntonioModel.Facturas" />
           <EntitySet Name="Iva" EntityType="AdministracionAntonioModel.Iva" />
+          <EntitySet Name="Retenciones" EntityType="AdministracionAntonioModel.Retenciones" />
           <EntitySet Name="Propios" EntityType="AdministracionAntonioModel.Propios" />
           <EntitySet Name="Resilla" EntityType="AdministracionAntonioModel.Resilla" />
           <EntitySet Name="Ususarios" EntityType="AdministracionAntonioModel.Ususarios" />
@@ -285,6 +301,7 @@
           <Property Name="bajacliente" Type="Boolean" />
           <Property Name="precioempleadocliente" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="ibancliente" Type="String" MaxLength="34" FixedLength="false" Unicode="true" />
+          <Property Name="retencioncliente" Type="Boolean" />
         </EntityType>
         <EntityType Name="Cuentas">
           <Key>
@@ -347,6 +364,17 @@
           <Property Name="factpormail" Type="Boolean" />
           <Property Name="factmail" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="factiban" Type="String" MaxLength="34" FixedLength="false" Unicode="true" />
+          <Property Name="factretencionporc" Type="Decimal" Precision="4" Scale="2" />
+          <Property Name="factretencion" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Retenciones">
+          <Key>
+            <PropertyRef Name="numerador" />
+          </Key>
+          <Property Name="numerador" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="retconcepto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="retporciento" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="retpordefecto" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Iva">
           <Key>
@@ -362,26 +390,28 @@
             <PropertyRef Name="numerador" />
           </Key>
           <Property Name="numerador" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="minombre" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="micif" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
-          <Property Name="midireccion" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
-          <Property Name="mipoblacion" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="miprovincia" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <Property Name="micp" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="mitelefono1" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="mitelefono2" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="mifax" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="micontacto" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="mimail" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="minombre" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="micif" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="midireccion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="mipoblacion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="miprovincia" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="micp" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="mitelefono1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="mitelefono2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="mifax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="micontacto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="mimail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="miiban1" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
           <Property Name="miiban2" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
           <Property Name="miiban3" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
           <Property Name="miiban4" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
           <Property Name="miiban5" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
           <Property Name="miiban6" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
-          <Property Name="milogo" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
-          <Property Name="miidentificadorbancario" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
-          <Property Name="mibic" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="milogo" Type="String" MaxLength="260" FixedLength="false" Unicode="true" />
+          <Property Name="miidentificadorbancario" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="mibic" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="miiban" Type="String" MaxLength="34" FixedLength="false" Unicode="true" />
+          <Property Name="milogoimagen" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Resilla">
           <Key>
@@ -438,6 +468,7 @@
           <EntitySetMapping Name="Clientes">
             <EntityTypeMapping TypeName="AdministracionAntonioModel.Clientes">
               <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="retencioncliente" ColumnName="retencioncliente" />
                 <ScalarProperty Name="ibancliente" ColumnName="ibancliente" />
                 <ScalarProperty Name="precioempleadocliente" ColumnName="precioempleadocliente" />
                 <ScalarProperty Name="bajacliente" ColumnName="bajacliente" />
@@ -518,6 +549,8 @@
           <EntitySetMapping Name="Facturas">
             <EntityTypeMapping TypeName="AdministracionAntonioModel.Facturas">
               <MappingFragment StoreEntitySet="Facturas">
+                <ScalarProperty Name="factretencionporc" ColumnName="factretencionporc" />
+                <ScalarProperty Name="factretencion" ColumnName="factretencion" />
                 <ScalarProperty Name="factiban" ColumnName="factiban" />
                 <ScalarProperty Name="factmail" ColumnName="factmail" />
                 <ScalarProperty Name="factpormail" ColumnName="factpormail" />
@@ -558,6 +591,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Retenciones">
+            <EntityTypeMapping TypeName="AdministracionAntonioModel.Retenciones">
+              <MappingFragment StoreEntitySet="Retenciones">
+                <ScalarProperty Name="retpordefecto" ColumnName="retpordefecto" />
+                <ScalarProperty Name="retporciento" ColumnName="retporciento" />
+                <ScalarProperty Name="retconcepto" ColumnName="retconcepto" />
+                <ScalarProperty Name="numerador" ColumnName="numerador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Iva">
             <EntityTypeMapping TypeName="AdministracionAntonioModel.Iva">
               <MappingFragment StoreEntitySet="Iva">
@@ -571,6 +614,8 @@
           <EntitySetMapping Name="Propios">
             <EntityTypeMapping TypeName="AdministracionAntonioModel.Propios">
               <MappingFragment StoreEntitySet="Propios">
+                <ScalarProperty Name="milogoimagen" ColumnName="milogoimagen" />
+                <ScalarProperty Name="miiban" ColumnName="miiban" />
                 <ScalarProperty Name="mibic" ColumnName="mibic" />
                 <ScalarProperty Name="miidentificadorbancario" ColumnName="miidentificadorbancario" />
                 <ScalarProperty Name="milogo" ColumnName="milogo" />

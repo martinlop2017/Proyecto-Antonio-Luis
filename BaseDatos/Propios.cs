@@ -35,5 +35,7 @@ namespace BaseDatos
         public string milogo { get; set; }
         public string miidentificadorbancario { get; set; }
         public string mibic { get; set; }
+        public string miiban { get; set; }
+        public byte[] milogoimagen { get; set; }
     }
 }

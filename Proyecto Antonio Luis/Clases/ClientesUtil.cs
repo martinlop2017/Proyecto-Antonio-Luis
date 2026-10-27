@@ -237,6 +237,81 @@ namespace Proyecto_Antonio_Luis.Clases
         }
 
         // ------------------------------------------------------------------
+        //  Mis datos (tabla Propios, una sola fila)
+        // ------------------------------------------------------------------
+
+        /// <summary>
+        /// La fila de mis datos: la de numerador 1 y, si no existe, la primera.
+        /// Devuelve null si la tabla está vacía.
+        /// </summary>
+        public static Propios BuscarMisDatos(AdministracionAntonioEntities bd)
+        {
+            return bd.Propios.FirstOrDefault(x => x.numerador == 1)
+                ?? bd.Propios.OrderBy(x => x.numerador).FirstOrDefault();
+        }
+
+        /// <summary>IBAN propio: columna nueva y, si está vacía, los 6 bloques antiguos.</summary>
+        public static string IbanPropio(Propios p)
+        {
+            if (p == null) return "";
+            string iban = NormalizarIban(p.miiban);
+            return iban.Length > 0
+                ? iban
+                : IbanDeBloques(p.miiban1, p.miiban2, p.miiban3, p.miiban4, p.miiban5, p.miiban6);
+        }
+
+        // ------------------------------------------------------------------
+        //  SEPA: NIF, identificador de acreedor y BIC
+        // ------------------------------------------------------------------
+
+        /// <summary>Solo letras y números, en mayúsculas (B-21.144.896 -> B21144896).</summary>
+        public static string SoloAlfanumerico(string texto)
+        {
+            return NormalizarIban(texto);
+        }
+
+        /// <summary>
+        /// Dígitos de control del identificador de acreedor SEPA (EPC, AT-02):
+        /// se calculan sobre NIF + país + "00" con el mismo método que el IBAN.
+        /// Ejemplo oficial: DE98ZZZ09999999999.
+        /// </summary>
+        public static string DigitosControlAcreedor(string nif, string pais = "ES")
+        {
+            string datos = SoloAlfanumerico(nif) + pais.ToUpperInvariant() + "00";
+            int resto = 0;
+            foreach (char ch in datos)
+            {
+                string cifras = char.IsLetter(ch) ? (ch - 'A' + 10).ToString() : ch.ToString();
+                foreach (char d in cifras)
+                {
+                    resto = (resto * 10 + (d - '0')) % 97;
+                }
+            }
+            return (98 - resto).ToString("00");
+        }
+
+        /// <summary>
+        /// Identificador de acreedor completo para la remesa: la parte del banco
+        /// (ES + 2 dígitos + 3 de sufijo, p. ej. ES12000) seguida del NIF limpio.
+        /// </summary>
+        public static string IdentificadorAcreedor(string identificadorBancario, string nif)
+        {
+            return SoloAlfanumerico(identificadorBancario) + SoloAlfanumerico(nif);
+        }
+
+        /// <summary>BIC: 4 letras (banco) + 2 letras (país) + 2 letras/números + 3 opcionales.</summary>
+        public static bool BicValido(string bic)
+        {
+            string t = SoloAlfanumerico(bic);
+            if (t.Length != 8 && t.Length != 11) return false;
+            for (int i = 0; i < 6; i++)
+            {
+                if (!char.IsLetter(t[i])) return false;
+            }
+            return true;
+        }
+
+        // ------------------------------------------------------------------
         //  Numeración de códigos de cliente
         //  El código forma la subcuenta contable (CtaCliente + código), así que
         //  un código NUNCA se reutiliza aunque se borre el cliente. El último

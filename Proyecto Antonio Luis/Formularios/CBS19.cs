@@ -146,8 +146,13 @@ namespace Proyecto_Antonio_Luis.Formularios
             mesfact = "00" + mesfactura.factfecha. ToString().Substring(3,2);
 
             //sacamos el cif del presentador
-            var cifpresentador = bd.Propios.OrderByDescending(X => X.micif).FirstOrDefault();
-            referencia = "PRE" + ano + mes + dia + hora + minuto + mesfact + cifpresentador.micif.ToString();
+            // Mis datos (siempre la misma fila que se edita en "Mis Datos")
+            var cifpresentador = Proyecto_Antonio_Luis.Clases.ClientesUtil.BuscarMisDatos(bd);
+            if (cifpresentador == null)
+            {
+                throw new InvalidOperationException("Faltan tus datos de empresa. Rellénalos en Sistema > Mis Datos antes de generar la remesa.");
+            }
+            referencia = "PRE" + ano + mes + dia + hora + minuto + mesfact + Proyecto_Antonio_Luis.Clases.ClientesUtil.SoloAlfanumerico(cifpresentador.micif);
             writer.WriteElementString("MsgId", referencia);
 
             //Introducimos la fecha y hora de presentacion
@@ -164,16 +169,17 @@ namespace Proyecto_Antonio_Luis.Formularios
 
             //Introducimos El nombre del presentador
             writer.WriteStartElement("InitgPty");
-            var nombrepresentador = bd.Propios.OrderByDescending(X => X.minombre).FirstOrDefault();
-            writer.WriteElementString("Nm", nombrepresentador.minombre.ToString());
+            var nombrepresentador = cifpresentador;
+            // SEPA admite como máximo 70 caracteres en el nombre
+            writer.WriteElementString("Nm", Proyecto_Antonio_Luis.Clases.ClientesUtil.Recortar(nombrepresentador.minombre, 70));
 
             //Introducimos el identificador bancario
             writer.WriteStartElement("Id");
             writer.WriteStartElement("OrgId");
             writer.WriteStartElement("Othr");
 
-            string limpiaespacios = (nombrepresentador.miidentificadorbancario + nombrepresentador.micif).ToString();
-            limpiaespacios = limpiaespacios.Replace(" " , "");
+            // Identificador de acreedor: ES + control + sufijo + NIF, sin espacios, puntos ni guiones
+            string limpiaespacios = Proyecto_Antonio_Luis.Clases.ClientesUtil.IdentificadorAcreedor(nombrepresentador.miidentificadorbancario, nombrepresentador.micif);
             writer.WriteElementString("Id", limpiaespacios);
 
             writer.WriteStartElement("SchmeNm");
@@ -189,9 +195,8 @@ namespace Proyecto_Antonio_Luis.Formularios
 
             //Codigo Interno
             writer.WriteStartElement("PmtInf");
-            string texto = (nombrepresentador.miidentificadorbancario.ToString() + cifpresentador.micif.ToString()
-                                        + ano + mes + dia + mesfact);
-            texto = texto.Replace(" ", "");
+            string texto = Proyecto_Antonio_Luis.Clases.ClientesUtil.IdentificadorAcreedor(nombrepresentador.miidentificadorbancario, cifpresentador.micif)
+                                        + ano + mes + dia + mesfact;
             writer.WriteElementString("PmtInfId", texto );
             //Numero Operaciones e Importe
             writer.WriteElementString("PmtMtd", "DD");
@@ -217,7 +222,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
             //Datos del presentador/Cobrador
             writer.WriteStartElement("Cdtr");
-            writer.WriteElementString("Nm", nombrepresentador.minombre);
+            writer.WriteElementString("Nm", Proyecto_Antonio_Luis.Clases.ClientesUtil.Recortar(nombrepresentador.minombre, 70));
             writer.WriteStartElement("PstlAdr");
             //Pais del presentador
             writer.WriteElementString("Ctry", "ES");
@@ -230,8 +235,8 @@ namespace Proyecto_Antonio_Luis.Formularios
             writer.WriteStartElement("CdtrAcct");
             //Datos bancarios presentador
             writer.WriteStartElement("Id");
-            writer.WriteElementString("IBAN", nombrepresentador.miiban1 + nombrepresentador.miiban2 +
-                nombrepresentador.miiban3 + nombrepresentador.miiban4 + nombrepresentador.miiban5 + nombrepresentador.miiban6);
+            // IBAN propio completo (o los 6 bloques antiguos si aún no se ha grabado en Mis Datos)
+            writer.WriteElementString("IBAN", Proyecto_Antonio_Luis.Clases.ClientesUtil.IbanPropio(nombrepresentador));
             writer.WriteEndElement();
             writer.WriteElementString("Ccy", "EUR");
             
@@ -246,8 +251,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             writer.WriteStartElement("Id");
             writer.WriteStartElement("PrvtId");
             writer.WriteStartElement("Othr");
-            texto = (nombrepresentador.miidentificadorbancario + nombrepresentador.micif);
-            texto = texto.Replace(" ", "");
+            texto = Proyecto_Antonio_Luis.Clases.ClientesUtil.IdentificadorAcreedor(nombrepresentador.miidentificadorbancario, nombrepresentador.micif);
             writer.WriteElementString("Id", texto);
             writer.WriteStartElement("SchmeNm");
             writer.WriteElementString("Prtry", "SEPA");

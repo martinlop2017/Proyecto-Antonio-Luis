@@ -67,5 +67,6 @@ namespace BaseDatos
         public Nullable<bool> bajacliente { get; set; }
         public Nullable<decimal> precioempleadocliente { get; set; }
         public string ibancliente { get; set; }
+        public Nullable<bool> retencioncliente { get; set; }
     }
 }

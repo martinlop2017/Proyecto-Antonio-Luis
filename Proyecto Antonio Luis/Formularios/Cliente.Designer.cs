@@ -56,6 +56,7 @@
             this.checActivo = new System.Windows.Forms.CheckBox();
             this.checDomiciliacion = new System.Windows.Forms.CheckBox();
             this.checRE = new System.Windows.Forms.CheckBox();
+            this.checRetencion = new System.Windows.Forms.CheckBox();
             this.checContabilizar = new System.Windows.Forms.CheckBox();
             this.comboGrupo = new System.Windows.Forms.ComboBox();
             this.chec131 = new System.Windows.Forms.CheckBox();
@@ -106,7 +107,7 @@
             this.label27.Location = new System.Drawing.Point(59, 111);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(52, 15);
-            this.label27.TabIndex = 37;
+            this.label27.TabIndex = 38;
             this.label27.Text = "Código";
             // 
             // label1
@@ -118,7 +119,7 @@
             this.label1.Location = new System.Drawing.Point(51, 134);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 38);
-            this.label1.TabIndex = 36;
+            this.label1.TabIndex = 37;
             this.label1.Text = "999";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -129,7 +130,7 @@
             this.label15.Location = new System.Drawing.Point(34, 40);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(816, 42);
-            this.label15.TabIndex = 127;
+            this.label15.TabIndex = 128;
             this.label15.Text = "Datos Clientes";
             // 
             // textMiNombre
@@ -151,7 +152,7 @@
             this.label17.Location = new System.Drawing.Point(656, 122);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(74, 15);
-            this.label17.TabIndex = 131;
+            this.label17.TabIndex = 132;
             this.label17.Text = "N.I.F/C.I.F:";
             // 
             // label18
@@ -163,7 +164,7 @@
             this.label18.Location = new System.Drawing.Point(165, 122);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(131, 15);
-            this.label18.TabIndex = 130;
+            this.label18.TabIndex = 131;
             this.label18.Text = "Nombre Comercial:";
             // 
             // label5
@@ -175,7 +176,7 @@
             this.label5.Location = new System.Drawing.Point(471, 367);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 15);
-            this.label5.TabIndex = 149;
+            this.label5.TabIndex = 150;
             this.label5.Text = "Email";
             // 
             // label4
@@ -187,7 +188,7 @@
             this.label4.Location = new System.Drawing.Point(470, 247);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 15);
-            this.label4.TabIndex = 148;
+            this.label4.TabIndex = 149;
             this.label4.Text = "P. Contacto";
             // 
             // label3
@@ -199,7 +200,7 @@
             this.label3.Location = new System.Drawing.Point(722, 191);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 15);
-            this.label3.TabIndex = 147;
+            this.label3.TabIndex = 148;
             this.label3.Text = "Fax";
             // 
             // label2
@@ -211,7 +212,7 @@
             this.label2.Location = new System.Drawing.Point(591, 191);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 15);
-            this.label2.TabIndex = 146;
+            this.label2.TabIndex = 147;
             this.label2.Text = "Teléfono 2";
             // 
             // label6
@@ -223,7 +224,7 @@
             this.label6.Location = new System.Drawing.Point(470, 191);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 15);
-            this.label6.TabIndex = 145;
+            this.label6.TabIndex = 146;
             this.label6.Text = "Teléfono";
             // 
             // textMiTLF2
@@ -254,7 +255,7 @@
             this.textMiMail.MaxLength = 100;
             this.textMiMail.Name = "textMiMail";
             this.textMiMail.Size = new System.Drawing.Size(243, 23);
-            this.textMiMail.TabIndex = 20;
+            this.textMiMail.TabIndex = 21;
             // 
             // textMiFax
             // 
@@ -327,7 +328,7 @@
             this.label24.Location = new System.Drawing.Point(356, 247);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(29, 15);
-            this.label24.TabIndex = 139;
+            this.label24.TabIndex = 140;
             this.label24.Text = "C.P";
             // 
             // label25
@@ -339,7 +340,7 @@
             this.label25.Location = new System.Drawing.Point(215, 247);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(66, 15);
-            this.label25.TabIndex = 138;
+            this.label25.TabIndex = 139;
             this.label25.Text = "Provincia";
             // 
             // label26
@@ -351,7 +352,7 @@
             this.label26.Location = new System.Drawing.Point(60, 247);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(71, 15);
-            this.label26.TabIndex = 136;
+            this.label26.TabIndex = 137;
             this.label26.Text = "Poblacion";
             // 
             // label7
@@ -363,7 +364,7 @@
             this.label7.Location = new System.Drawing.Point(63, 191);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 15);
-            this.label7.TabIndex = 134;
+            this.label7.TabIndex = 135;
             this.label7.Text = "Direccion";
             // 
             // checActivo
@@ -406,6 +407,18 @@
             this.checRE.Text = "R.E.";
             this.checRE.UseVisualStyleBackColor = false;
             // 
+            // checRetencion
+            // 
+            this.checRetencion.AutoSize = true;
+            this.checRetencion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.checRetencion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checRetencion.Location = new System.Drawing.Point(264, 361);
+            this.checRetencion.Name = "checRetencion";
+            this.checRetencion.Size = new System.Drawing.Size(122, 21);
+            this.checRetencion.TabIndex = 14;
+            this.checRetencion.Text = "Retención IRPF";
+            this.checRetencion.UseVisualStyleBackColor = false;
+            // 
             // checContabilizar
             // 
             this.checContabilizar.AutoSize = true;
@@ -414,7 +427,7 @@
             this.checContabilizar.Location = new System.Drawing.Point(324, 334);
             this.checContabilizar.Name = "checContabilizar";
             this.checContabilizar.Size = new System.Drawing.Size(105, 21);
-            this.checContabilizar.TabIndex = 14;
+            this.checContabilizar.TabIndex = 15;
             this.checContabilizar.Text = "Contabilizar.";
             this.checContabilizar.UseVisualStyleBackColor = false;
             // 
@@ -435,7 +448,7 @@
             this.comboGrupo.Location = new System.Drawing.Point(459, 335);
             this.comboGrupo.Name = "comboGrupo";
             this.comboGrupo.Size = new System.Drawing.Size(102, 24);
-            this.comboGrupo.TabIndex = 15;
+            this.comboGrupo.TabIndex = 16;
             // 
             // chec131
             // 
@@ -445,7 +458,7 @@
             this.chec131.Location = new System.Drawing.Point(384, 452);
             this.chec131.Name = "chec131";
             this.chec131.Size = new System.Drawing.Size(51, 21);
-            this.chec131.TabIndex = 27;
+            this.chec131.TabIndex = 28;
             this.chec131.Text = "131";
             this.chec131.UseVisualStyleBackColor = false;
             // 
@@ -457,7 +470,7 @@
             this.chec303.Location = new System.Drawing.Point(384, 484);
             this.chec303.Name = "chec303";
             this.chec303.Size = new System.Drawing.Size(51, 21);
-            this.chec303.TabIndex = 33;
+            this.chec303.TabIndex = 34;
             this.chec303.Text = "303";
             this.chec303.UseVisualStyleBackColor = false;
             // 
@@ -469,7 +482,7 @@
             this.checIntrastat.Location = new System.Drawing.Point(384, 516);
             this.checIntrastat.Name = "checIntrastat";
             this.checIntrastat.Size = new System.Drawing.Size(78, 21);
-            this.checIntrastat.TabIndex = 39;
+            this.checIntrastat.TabIndex = 40;
             this.checIntrastat.Text = "Intrastat";
             this.checIntrastat.UseVisualStyleBackColor = false;
             // 
@@ -481,7 +494,7 @@
             this.chec752.Location = new System.Drawing.Point(319, 516);
             this.chec752.Name = "chec752";
             this.chec752.Size = new System.Drawing.Size(51, 21);
-            this.chec752.TabIndex = 38;
+            this.chec752.TabIndex = 39;
             this.chec752.Text = "752";
             this.chec752.UseVisualStyleBackColor = false;
             // 
@@ -493,7 +506,7 @@
             this.chec202.Location = new System.Drawing.Point(319, 484);
             this.chec202.Name = "chec202";
             this.chec202.Size = new System.Drawing.Size(51, 21);
-            this.chec202.TabIndex = 32;
+            this.chec202.TabIndex = 33;
             this.chec202.Text = "202";
             this.chec202.UseVisualStyleBackColor = false;
             // 
@@ -505,7 +518,7 @@
             this.chec130.Location = new System.Drawing.Point(319, 452);
             this.chec130.Name = "chec130";
             this.chec130.Size = new System.Drawing.Size(51, 21);
-            this.chec130.TabIndex = 26;
+            this.chec130.TabIndex = 27;
             this.chec130.Text = "130";
             this.chec130.UseVisualStyleBackColor = false;
             // 
@@ -517,7 +530,7 @@
             this.chec751.Location = new System.Drawing.Point(254, 516);
             this.chec751.Name = "chec751";
             this.chec751.Size = new System.Drawing.Size(51, 21);
-            this.chec751.TabIndex = 37;
+            this.chec751.TabIndex = 38;
             this.chec751.Text = "751";
             this.chec751.UseVisualStyleBackColor = false;
             // 
@@ -529,7 +542,7 @@
             this.chec200.Location = new System.Drawing.Point(254, 484);
             this.chec200.Name = "chec200";
             this.chec200.Size = new System.Drawing.Size(51, 21);
-            this.chec200.TabIndex = 31;
+            this.chec200.TabIndex = 32;
             this.chec200.Text = "200";
             this.chec200.UseVisualStyleBackColor = false;
             // 
@@ -541,7 +554,7 @@
             this.chec123.Location = new System.Drawing.Point(254, 452);
             this.chec123.Name = "chec123";
             this.chec123.Size = new System.Drawing.Size(51, 21);
-            this.chec123.TabIndex = 25;
+            this.chec123.TabIndex = 26;
             this.chec123.Text = "123";
             this.chec123.UseVisualStyleBackColor = false;
             // 
@@ -553,7 +566,7 @@
             this.chec390.Location = new System.Drawing.Point(189, 516);
             this.chec390.Name = "chec390";
             this.chec390.Size = new System.Drawing.Size(51, 21);
-            this.chec390.TabIndex = 36;
+            this.chec390.TabIndex = 37;
             this.chec390.Text = "390";
             this.chec390.UseVisualStyleBackColor = false;
             // 
@@ -565,7 +578,7 @@
             this.chec115.Location = new System.Drawing.Point(189, 452);
             this.chec115.Name = "chec115";
             this.chec115.Size = new System.Drawing.Size(51, 21);
-            this.chec115.TabIndex = 24;
+            this.chec115.TabIndex = 25;
             this.chec115.Text = "115";
             this.chec115.UseVisualStyleBackColor = false;
             // 
@@ -577,7 +590,7 @@
             this.chec193.Location = new System.Drawing.Point(189, 484);
             this.chec193.Name = "chec193";
             this.chec193.Size = new System.Drawing.Size(51, 21);
-            this.chec193.TabIndex = 30;
+            this.chec193.TabIndex = 31;
             this.chec193.Text = "193";
             this.chec193.UseVisualStyleBackColor = false;
             // 
@@ -589,7 +602,7 @@
             this.chec349.Location = new System.Drawing.Point(124, 516);
             this.chec349.Name = "chec349";
             this.chec349.Size = new System.Drawing.Size(51, 21);
-            this.chec349.TabIndex = 35;
+            this.chec349.TabIndex = 36;
             this.chec349.Text = "349";
             this.chec349.UseVisualStyleBackColor = false;
             // 
@@ -601,7 +614,7 @@
             this.chec190.Location = new System.Drawing.Point(124, 484);
             this.chec190.Name = "chec190";
             this.chec190.Size = new System.Drawing.Size(51, 21);
-            this.chec190.TabIndex = 29;
+            this.chec190.TabIndex = 30;
             this.chec190.Text = "190";
             this.chec190.UseVisualStyleBackColor = false;
             // 
@@ -613,7 +626,7 @@
             this.chec111.Location = new System.Drawing.Point(124, 452);
             this.chec111.Name = "chec111";
             this.chec111.Size = new System.Drawing.Size(51, 21);
-            this.chec111.TabIndex = 23;
+            this.chec111.TabIndex = 24;
             this.chec111.Text = "111";
             this.chec111.UseVisualStyleBackColor = false;
             // 
@@ -625,7 +638,7 @@
             this.chec309.Location = new System.Drawing.Point(59, 516);
             this.chec309.Name = "chec309";
             this.chec309.Size = new System.Drawing.Size(51, 21);
-            this.chec309.TabIndex = 34;
+            this.chec309.TabIndex = 35;
             this.chec309.Text = "309";
             this.chec309.UseVisualStyleBackColor = false;
             // 
@@ -637,7 +650,7 @@
             this.chec180.Location = new System.Drawing.Point(59, 484);
             this.chec180.Name = "chec180";
             this.chec180.Size = new System.Drawing.Size(51, 21);
-            this.chec180.TabIndex = 28;
+            this.chec180.TabIndex = 29;
             this.chec180.Text = "180";
             this.chec180.UseVisualStyleBackColor = false;
             // 
@@ -649,7 +662,7 @@
             this.chec100.Location = new System.Drawing.Point(59, 452);
             this.chec100.Name = "chec100";
             this.chec100.Size = new System.Drawing.Size(51, 21);
-            this.chec100.TabIndex = 22;
+            this.chec100.TabIndex = 23;
             this.chec100.Text = "100";
             this.chec100.UseVisualStyleBackColor = false;
             // 
@@ -662,7 +675,7 @@
             this.label8.Location = new System.Drawing.Point(61, 315);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 15);
-            this.label8.TabIndex = 175;
+            this.label8.TabIndex = 176;
             this.label8.Text = "Condiciones";
             // 
             // label9
@@ -674,7 +687,7 @@
             this.label9.Location = new System.Drawing.Point(466, 318);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(46, 15);
-            this.label9.TabIndex = 176;
+            this.label9.TabIndex = 177;
             this.label9.Text = "Grupo";
             // 
             // label10
@@ -686,7 +699,7 @@
             this.label10.Location = new System.Drawing.Point(754, 315);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 15);
-            this.label10.TabIndex = 177;
+            this.label10.TabIndex = 178;
             this.label10.Text = "Fecha Alta";
             // 
             // label11
@@ -698,7 +711,7 @@
             this.label11.Location = new System.Drawing.Point(656, 315);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(80, 15);
-            this.label11.TabIndex = 178;
+            this.label11.TabIndex = 179;
             this.label11.Text = "Imp.Emple.";
             // 
             // textTrabajadores
@@ -709,7 +722,7 @@
             this.textTrabajadores.MaxLength = 6;
             this.textTrabajadores.Name = "textTrabajadores";
             this.textTrabajadores.Size = new System.Drawing.Size(76, 23);
-            this.textTrabajadores.TabIndex = 16;
+            this.textTrabajadores.TabIndex = 17;
             this.textTrabajadores.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloDigitos_KeyPress);
             // 
             // label12
@@ -721,7 +734,7 @@
             this.label12.Location = new System.Drawing.Point(572, 315);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(71, 15);
-            this.label12.TabIndex = 180;
+            this.label12.TabIndex = 181;
             this.label12.Text = "Nº Trabaj.";
             // 
             // label13
@@ -733,7 +746,7 @@
             this.label13.Location = new System.Drawing.Point(722, 248);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(103, 15);
-            this.label13.TabIndex = 182;
+            this.label13.TabIndex = 183;
             this.label13.Text = "Tarifa Aplicada";
             // 
             // textTarifa
@@ -757,7 +770,7 @@
             this.label14.Location = new System.Drawing.Point(75, 368);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(38, 15);
-            this.label14.TabIndex = 189;
+            this.label14.TabIndex = 190;
             this.label14.Text = "IBAN";
             // 
             // textIban
@@ -769,7 +782,7 @@
             this.textIban.MaxLength = 42;
             this.textIban.Name = "textIban";
             this.textIban.Size = new System.Drawing.Size(340, 22);
-            this.textIban.TabIndex = 19;
+            this.textIban.TabIndex = 20;
             this.textIban.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textIban_KeyPress);
             this.textIban.Leave += new System.EventHandler(this.textIban_Leave);
             // 
@@ -779,7 +792,7 @@
             this.textObserva.MaxLength = 1000;
             this.textObserva.Name = "textObserva";
             this.textObserva.Size = new System.Drawing.Size(332, 85);
-            this.textObserva.TabIndex = 40;
+            this.textObserva.TabIndex = 41;
             this.textObserva.Text = "";
             // 
             // label16
@@ -791,7 +804,7 @@
             this.label16.Location = new System.Drawing.Point(61, 434);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(91, 15);
-            this.label16.TabIndex = 193;
+            this.label16.TabIndex = 194;
             this.label16.Text = "Obligaciones";
             // 
             // label19
@@ -803,7 +816,7 @@
             this.label19.Location = new System.Drawing.Point(497, 434);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(101, 15);
-            this.label19.TabIndex = 194;
+            this.label19.TabIndex = 195;
             this.label19.Text = "Observaciones";
             // 
             // button1
@@ -815,7 +828,7 @@
             this.button1.Location = new System.Drawing.Point(204, 578);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(208, 60);
-            this.button1.TabIndex = 41;
+            this.button1.TabIndex = 42;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -828,7 +841,7 @@
             this.button2.Location = new System.Drawing.Point(478, 578);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(208, 60);
-            this.button2.TabIndex = 42;
+            this.button2.TabIndex = 43;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -839,7 +852,7 @@
             this.textFechaAlta.Mask = "00/00/0000";
             this.textFechaAlta.Name = "textFechaAlta";
             this.textFechaAlta.Size = new System.Drawing.Size(80, 23);
-            this.textFechaAlta.TabIndex = 18;
+            this.textFechaAlta.TabIndex = 19;
             this.textFechaAlta.ValidatingType = typeof(System.DateTime);
             // 
             // checpormail
@@ -850,7 +863,7 @@
             this.checpormail.Location = new System.Drawing.Point(715, 386);
             this.checpormail.Name = "checpormail";
             this.checpormail.Size = new System.Drawing.Size(121, 21);
-            this.checpormail.TabIndex = 21;
+            this.checpormail.TabIndex = 22;
             this.checpormail.Text = "Enviar por Mail";
             this.checpormail.UseVisualStyleBackColor = false;
             // 
@@ -862,7 +875,7 @@
             this.textPreciotrabajador.MaxLength = 12;
             this.textPreciotrabajador.Name = "textPreciotrabajador";
             this.textPreciotrabajador.Size = new System.Drawing.Size(76, 23);
-            this.textPreciotrabajador.TabIndex = 17;
+            this.textPreciotrabajador.TabIndex = 18;
             this.textPreciotrabajador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Importe_KeyPress);
             // 
             // textMiCif
@@ -924,6 +937,7 @@
             this.Controls.Add(this.comboGrupo);
             this.Controls.Add(this.checContabilizar);
             this.Controls.Add(this.checRE);
+            this.Controls.Add(this.checRetencion);
             this.Controls.Add(this.checDomiciliacion);
             this.Controls.Add(this.checActivo);
             this.Controls.Add(this.label5);
@@ -993,6 +1007,7 @@
         private System.Windows.Forms.CheckBox checActivo;
         private System.Windows.Forms.CheckBox checDomiciliacion;
         private System.Windows.Forms.CheckBox checRE;
+        private System.Windows.Forms.CheckBox checRetencion;
         private System.Windows.Forms.CheckBox checContabilizar;
         private System.Windows.Forms.ComboBox comboGrupo;
         private System.Windows.Forms.CheckBox chec131;

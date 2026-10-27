@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Impuestos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonAceptar = new System.Windows.Forms.Button();
             this.dgvIva = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +58,10 @@
             this.boxrecargo = new System.Windows.Forms.TextBox();
             this.boxiva = new System.Windows.Forms.TextBox();
             this.boxconcepto = new System.Windows.Forms.TextBox();
+            this.checPorDefecto = new System.Windows.Forms.CheckBox();
             this.eliminar = new System.Windows.Forms.Button();
+            this.radioIva = new System.Windows.Forms.RadioButton();
+            this.radioRetencion = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIva)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ivaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetAntonioLuis)).BeginInit();
@@ -74,7 +77,7 @@
             this.buttonAceptar.Location = new System.Drawing.Point(19, 192);
             this.buttonAceptar.Name = "buttonAceptar";
             this.buttonAceptar.Size = new System.Drawing.Size(180, 60);
-            this.buttonAceptar.TabIndex = 114;
+            this.buttonAceptar.TabIndex = 4;
             this.buttonAceptar.UseVisualStyleBackColor = true;
             this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
             // 
@@ -86,14 +89,14 @@
             this.dgvIva.AutoGenerateColumns = false;
             this.dgvIva.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvIva.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvIva.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvIva.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvIva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIva.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -101,14 +104,15 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.dgvIva.DataSource = this.ivaBindingSource;
-            this.dgvIva.Location = new System.Drawing.Point(38, 212);
+            this.dgvIva.Location = new System.Drawing.Point(38, 201);
             this.dgvIva.MultiSelect = false;
             this.dgvIva.Name = "dgvIva";
             this.dgvIva.RowHeadersWidth = 15;
             this.dgvIva.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvIva.Size = new System.Drawing.Size(385, 211);
+            this.dgvIva.Size = new System.Drawing.Size(385, 222);
             this.dgvIva.TabIndex = 117;
             this.dgvIva.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIVAs_CellContentClick);
+            this.dgvIva.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIva_CellDoubleClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -120,8 +124,8 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "ivaconcepto";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn2.HeaderText = "Concepto";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 200;
@@ -129,8 +133,8 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "ivaporciento";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn3.HeaderText = "     Iva %";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 85;
@@ -154,15 +158,15 @@
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Tahoma", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(153)))), ((int)(((byte)(208)))));
-            this.label7.Location = new System.Drawing.Point(78, 30);
+            this.label7.Location = new System.Drawing.Point(30, 30);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(310, 42);
+            this.label7.Size = new System.Drawing.Size(393, 42);
             this.label7.TabIndex = 131;
             this.label7.Text = "Tipos Impuestos";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -256,7 +260,7 @@
             this.button2.Location = new System.Drawing.Point(215, 192);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(180, 60);
-            this.button2.TabIndex = 197;
+            this.button2.TabIndex = 5;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -274,7 +278,8 @@
             this.panel1.Controls.Add(this.boxiva);
             this.panel1.Controls.Add(this.boxconcepto);
             this.panel1.Controls.Add(this.buttonAceptar);
-            this.panel1.Location = new System.Drawing.Point(21, 182);
+            this.panel1.Controls.Add(this.checPorDefecto);
+            this.panel1.Location = new System.Drawing.Point(28, 181);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(422, 268);
             this.panel1.TabIndex = 198;
@@ -282,15 +287,15 @@
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(240)))), ((int)(((byte)(253)))));
             this.label9.Font = new System.Drawing.Font("Tahoma", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(153)))), ((int)(((byte)(208)))));
-            this.label9.Location = new System.Drawing.Point(124, 25);
+            this.label9.Location = new System.Drawing.Point(13, 25);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(176, 33);
+            this.label9.Size = new System.Drawing.Size(382, 33);
             this.label9.TabIndex = 199;
             this.label9.Text = "Alta de Tipo";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label8
             // 
@@ -325,6 +330,7 @@
             // boxrecargo
             // 
             this.boxrecargo.Location = new System.Drawing.Point(331, 119);
+            this.boxrecargo.MaxLength = 6;
             this.boxrecargo.Name = "boxrecargo";
             this.boxrecargo.Size = new System.Drawing.Size(64, 20);
             this.boxrecargo.TabIndex = 2;
@@ -332,6 +338,7 @@
             // boxiva
             // 
             this.boxiva.Location = new System.Drawing.Point(256, 119);
+            this.boxiva.MaxLength = 6;
             this.boxiva.Name = "boxiva";
             this.boxiva.Size = new System.Drawing.Size(64, 20);
             this.boxiva.TabIndex = 1;
@@ -339,10 +346,23 @@
             // boxconcepto
             // 
             this.boxconcepto.Location = new System.Drawing.Point(19, 119);
+            this.boxconcepto.MaxLength = 20;
             this.boxconcepto.Name = "boxconcepto";
             this.boxconcepto.Size = new System.Drawing.Size(222, 20);
             this.boxconcepto.TabIndex = 0;
             this.boxconcepto.TextChanged += new System.EventHandler(this.boxconcepto_TextChanged);
+            // 
+            // checPorDefecto
+            // 
+            this.checPorDefecto.AutoSize = true;
+            this.checPorDefecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(240)))), ((int)(((byte)(253)))));
+            this.checPorDefecto.Location = new System.Drawing.Point(256, 150);
+            this.checPorDefecto.Name = "checPorDefecto";
+            this.checPorDefecto.Size = new System.Drawing.Size(115, 17);
+            this.checPorDefecto.TabIndex = 3;
+            this.checPorDefecto.Text = "Es la que se aplica";
+            this.checPorDefecto.UseVisualStyleBackColor = false;
+            this.checPorDefecto.Visible = false;
             // 
             // eliminar
             // 
@@ -354,6 +374,36 @@
             this.eliminar.TabIndex = 199;
             this.eliminar.UseVisualStyleBackColor = false;
             this.eliminar.Click += new System.EventHandler(this.eliminar_Click_1);
+            this.eliminar.MouseEnter += new System.EventHandler(this.eliminar_MouseEnter);
+            this.eliminar.MouseLeave += new System.EventHandler(this.eliminar_MouseLeave);
+            // 
+            // radioIva
+            // 
+            this.radioIva.AutoSize = true;
+            this.radioIva.Checked = true;
+            this.radioIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioIva.ForeColor = System.Drawing.Color.SteelBlue;
+            this.radioIva.Location = new System.Drawing.Point(213, 117);
+            this.radioIva.Name = "radioIva";
+            this.radioIva.Size = new System.Drawing.Size(104, 19);
+            this.radioIva.TabIndex = 0;
+            this.radioIva.TabStop = true;
+            this.radioIva.Text = "Tipos de IVA";
+            this.radioIva.UseVisualStyleBackColor = true;
+            this.radioIva.CheckedChanged += new System.EventHandler(this.radioTipo_CheckedChanged);
+            // 
+            // radioRetencion
+            // 
+            this.radioRetencion.AutoSize = true;
+            this.radioRetencion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioRetencion.ForeColor = System.Drawing.Color.SteelBlue;
+            this.radioRetencion.Location = new System.Drawing.Point(213, 142);
+            this.radioRetencion.Name = "radioRetencion";
+            this.radioRetencion.Size = new System.Drawing.Size(140, 19);
+            this.radioRetencion.TabIndex = 1;
+            this.radioRetencion.Text = "Retenciones IRPF";
+            this.radioRetencion.UseVisualStyleBackColor = true;
+            this.radioRetencion.CheckedChanged += new System.EventHandler(this.radioTipo_CheckedChanged);
             // 
             // Impuestos
             // 
@@ -362,7 +412,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(464, 478);
+            this.ClientSize = new System.Drawing.Size(464, 476);
             this.Controls.Add(this.eliminar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
@@ -374,6 +424,8 @@
             this.Controls.Add(this.modificar);
             this.Controls.Add(this.sumar);
             this.Controls.Add(this.dgvIva);
+            this.Controls.Add(this.radioIva);
+            this.Controls.Add(this.radioRetencion);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -425,5 +477,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.RadioButton radioIva;
+        private System.Windows.Forms.RadioButton radioRetencion;
+        private System.Windows.Forms.CheckBox checPorDefecto;
     }
 }

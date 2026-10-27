@@ -114,6 +114,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             checActivo.Checked = cliente.activocliente == true;
             checDomiciliacion.Checked = cliente.domiciliadocliente == true;
             checRE.Checked = cliente.recargo == true;
+            checRetencion.Checked = cliente.retencioncliente == true;
             checContabilizar.Checked = cliente.contabilizarcliente == true;
             checpormail.Checked = cliente.pormailcliente == true;
             checIntrastat.Checked = cliente.instrastatcliente == true;
@@ -390,6 +391,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             c.activocliente = checActivo.Checked;
             c.domiciliadocliente = checDomiciliacion.Checked;
             c.recargo = checRE.Checked;
+            c.retencioncliente = checRetencion.Checked;
             c.contabilizarcliente = checContabilizar.Checked;
             c.pormailcliente = checpormail.Checked;
             c.instrastatcliente = checIntrastat.Checked;
@@ -612,6 +614,10 @@ namespace Proyecto_Antonio_Luis.Formularios
                 }
                 detalle = interna.Message;
 
+                if (detalle.Contains("retencion"))
+                {
+                    detalle += "\n\nFalta ejecutar el script SQL\\2026-10-27_Retenciones_IRPF.sql en la base de datos.";
+                }
                 if (detalle.Contains("ibancliente") || detalle.Contains("factiban"))
                 {
                     detalle += "\n\nFalta ejecutar el script SQL\\2026-10-27_IBAN_campo_unico.sql en la base de datos.";

@@ -9,7 +9,7 @@ Estados:
 - ✅ Reparado y probado
 - 🗑️ No se usa (candidato a borrar)
 
-Última actualización: 27-10-2026 (IBAN en un solo campo)
+Última actualización: 27-10-2026 (Cliente, MisDatos e Impuestos terminados; retenciones fase 1)
 
 ---
 
@@ -17,7 +17,7 @@ Estados:
 
 | Estado | Formulario | Qué hace | Notas |
 |:-:|---|---|---|
-| ⬜ | Control Usuarios (`Form1`) | Pantalla de login | Cambiado el marco el 26-10 (commit de Martín) |
+| ⬜ | Control Usuarios (`Form1`) | Pantalla de login | Cambiado el marco el 26-10 (commit de Martín). **Busca el logo en la ruta antigua: cambiarlo para que use el logo guardado en la tabla Propios** |
 | ⬜ | preguntaseguridad | Pregunta de seguridad al olvidar la contraseña | |
 | ⬜ | Nuevacontraseña | Cambiar la contraseña | |
 | ⬜ | MenuPrincipal | Menú principal | Los botones Listados, Agenda y Ayuda no hacen nada todavía |
@@ -27,7 +27,7 @@ Estados:
 | Estado | Formulario | Qué hace | Notas |
 |:-:|---|---|---|
 | 🔧 | GestionClientes | Lista de clientes: alta, modificar, eliminar | Recodificado 26-10. Clientes de baja en gris. Eliminar con avisos |
-| 🔧 | Cliente | Ficha del cliente (alta y modificación) | Recodificado 26-10. Campos ampliados, validaciones, baja/reactivación. 27-10: IBAN en un solo campo (hasta 34) |
+| ✅ | ~~Cliente~~ | ~~Ficha del cliente (alta y modificación)~~ | ~~Recodificado 26-10. Campos ampliados, validaciones, baja/reactivación. 27-10: IBAN en un solo campo (hasta 34)~~ Probado 27-10. Sin domiciliación el IBAN queda en gris; tabulación ordenada |
 | 🔧 | GestionDocumentos | Documentos del cliente / escáner | Solo cambiada la ruta de la carpeta del cliente (26-10) |
 
 ## 3. Facturación
@@ -49,13 +49,13 @@ Estados:
 | ⬜ | GestionRemesas | Lista de remesas | |
 | 🔧 | CBS19 | Genera la remesa SEPA (XML) | 26-10: nombre del deudor recortado a 70 car. 27-10: IBAN completo (o bloques en facturas antiguas). Revisar formato SEPA actual |
 | 🔧 | Contaplus | Exportación a Contaplus | Nombre recortado a 40 car. (26-10) |
-| ⬜ | Impuestos | Modelos de impuestos / IVA | |
+| ✅ | ~~Impuestos~~ | ~~Tipos de IVA y retenciones IRPF~~ | ~~Recodificado 27-10: validaciones (coma o punto), confirma al eliminar, no se cae con la lista vacía. Nueva lista de retenciones IRPF y cuál se aplica~~ Probado 27-10 |
 
 ## 5. Sistema
 
 | Estado | Formulario | Qué hace | Notas |
 |:-:|---|---|---|
-| ⬜ | MisDatos (Propios) | Datos de la empresa emisora | El IBAN propio sigue en 6 cuadros de 4 |
+| ✅ | ~~MisDatos (Propios)~~ | ~~Datos de la empresa emisora~~ | ~~Recodificado 27-10: IBAN en un campo, identificador SEPA y BIC completos, no se cae sin datos o sin logo, validaciones, tabulación. Logo guardado dentro de la tabla (no la ruta)~~ Probado 27-10 |
 | ⬜ | Rutas | Rutas y cuentas contables | |
 | ⬜ | GestionUsuarios | Lista de usuarios | |
 | ⬜ | Usuario | Ficha de usuario | |
@@ -91,6 +91,9 @@ Revisar si se pueden borrar.
 |:-:|---|---|
 | 🔧 | `SQL/2026-10-26_Clientes_ampliar_campos.sql` | Amplía campos de Clientes y Facturas, crea la tabla Contadores. Hace copia de seguridad antes |
 | 🔧 | `SQL/2026-10-27_IBAN_campo_unico.sql` | Añade `Clientes.ibancliente` y `Facturas.factiban` (34 car.) y las rellena con los 6 bloques. Los bloques antiguos no se tocan. Hace copia de seguridad antes |
+| 🔧 | `SQL/2026-10-27_Propios_mis_datos.sql` | Propios: amplía campos, nchar → nvarchar y añade `miiban` (34 car.). Los bloques antiguos no se tocan. Hace copia de seguridad antes |
+| 🔧 | `SQL/2026-10-27_Propios_logo_en_tabla.sql` | Añade `Propios.milogoimagen` (imagen del logo dentro de la tabla). No toca nada más. Hace copia de seguridad antes |
+| 🔧 | `SQL/2026-10-27_Retenciones_IRPF.sql` | Tabla nueva Retenciones (con General 15 % y Inicio de actividad 7 %), `Clientes.retencioncliente` y `Facturas.factretencionporc` / `factretencion`. No toca datos. Hace copia de seguridad antes |
 
 **Todos los scripts hay que ejecutarlos una vez en cada base de datos** (la tuya y, al instalar, la del cliente), en orden de fecha.
 
@@ -102,6 +105,32 @@ Revisar si se pueden borrar.
 - [ ] Botones del menú sin función: Listados, Agenda, Ayuda.
 - [ ] Rutas fijas `C:\ByMartin\...` repartidas por el código.
 - [ ] Actualizar .NET Framework 4.5.2 y ReportViewer.
-- [ ] IBAN propio (MisDatos) y de la factura manual (FacturaUnitaria) en un solo campo, como en clientes.
+- [ ] Pantalla de acceso (Control Usuarios): usar el logo guardado en la tabla Propios en vez de buscarlo en la ruta.
+- [x] IBAN propio (MisDatos) en un solo campo (27-10).
+- [ ] IBAN de la factura manual (FacturaUnitaria) en un solo campo, como en clientes.
 - [ ] En la facturación mensual el concepto dice "Honorários" (con tilde portuguesa); en la manual, "Honorarios".
 - [ ] Cuando todo funcione con `ibancliente`/`factiban`, decidir si se dejan de usar las columnas antiguas iban1..iban6.
+
+## Hallazgos en MisDatos (27-10-2026)
+
+- [x] Si la tabla Propios está vacía, el formulario se cae al abrir y al grabar.
+- [x] Si el logo no existe en la ruta guardada, el formulario se cae al abrir. (Ahora el logo se guarda dentro de la tabla.)
+- [ ] El logo elegido aquí no se usa en las facturas (llevan una imagen fija dentro del informe). **Pendiente: que las facturas usen el logo guardado en la tabla (al revisar los informes).**
+- [x] Identificador bancario y BIC limitados a 4 caracteres en pantalla (el identificador SEPA tiene 7 + NIF y el BIC 8 u 11).
+- [x] IBAN propio en 6 cuadros de 4.
+- [x] Campos nchar: se guardan rellenos de espacios y pasan así a la remesa SEPA (nombre de hasta 100 car., SEPA admite 70).
+- [x] El NIF con puntos o guiones rompe el identificador SEPA (se une al identificador bancario).
+- [x] Email en mayúsculas; no avisa de errores al grabar; tabulación: identificador y BIC van después de Grabar/Salir.
+
+## Hallazgos en Impuestos (27-10-2026)
+
+- [x] Añadir: si algo falla (tabla vacía, % mal escrito, concepto largo) no graba y no avisa.
+- [x] "5.2" con punto se guarda como 52 % (en español el punto es separador de miles).
+- [x] Modificar: con un dato mal escrito el programa se cae; tras grabar el panel no se cierra y los botones quedan desactivados.
+- [x] Modificar o Eliminar sin ninguna fila en la lista: el programa se cae.
+- [x] Eliminar: borra sin pedir confirmación.
+- [x] No limita el concepto a 20 caracteres ni el % a 99,99 (lo que admite la tabla).
+- [ ] El % de recargo de equivalencia se guarda pero no se aplica en ninguna factura (tampoco la casilla R.E. del cliente).
+- [ ] No hay retención de IRPF en las facturas (existe la cuenta de retenciones en Rutas, pero no se calcula).
+  - [x] Fase 1 (27-10): tabla Retenciones, lista en Impuestos, casilla "Retención IRPF" en la ficha del cliente y columnas en Facturas.
+  - [ ] Fase 2 (al revisar Facturación): calcular la retención en la facturación mensual y manual (total = base + IVA − retención), mostrarla en el PDF de la factura, cobrar el total líquido en la remesa y añadir la línea de retenciones en Contaplus (cuenta de Rutas). **Hasta entonces la casilla del cliente no tiene efecto.**
