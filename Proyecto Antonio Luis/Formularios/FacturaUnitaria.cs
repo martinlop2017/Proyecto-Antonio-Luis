@@ -90,12 +90,9 @@ namespace Proyecto_Antonio_Luis.Formularios
                     if (checkBox3.Checked == true)
                     {
                         nuevafactura.factparadomiciliar = true;
-                        nuevafactura.factiban1 = textBox7.Text;
-                        nuevafactura.factiban2 = textBox8.Text;
-                        nuevafactura.factiban3 = textBox9.Text;
-                        nuevafactura.factiban4 = textBox10.Text;
-                        nuevafactura.factiban5 = textBox11.Text;
-                        nuevafactura.factiban6 = textBox12.Text;
+                        // IBAN escrito a mano en los 6 cuadros
+                        Proyecto_Antonio_Luis.Clases.ClientesUtil.PonerIbanFactura(nuevafactura,
+                            Proyecto_Antonio_Luis.Clases.ClientesUtil.IbanDeBloques(textBox7.Text, textBox8.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox12.Text));
 
                     }
                     else
@@ -117,12 +114,8 @@ namespace Proyecto_Antonio_Luis.Formularios
                     nuevafactura.factprovincia = datoscliente.provinciacliente;
                     nuevafactura.factcp = datoscliente.cod_postalcliente;
                     nuevafactura.factnif = datoscliente.cifcliente;
-                    nuevafactura.factiban1 = datoscliente.iban1cliente;
-                    nuevafactura.factiban2 = datoscliente.iban2cliente;
-                    nuevafactura.factiban3 = datoscliente.iban3cliente;
-                    nuevafactura.factiban4 = datoscliente.iban4cliente;
-                    nuevafactura.factiban5 = datoscliente.iban5cliente;
-                    nuevafactura.factiban6 = datoscliente.iban6cliente;
+                    // IBAN completo del cliente
+                    Proyecto_Antonio_Luis.Clases.ClientesUtil.PonerIbanFactura(nuevafactura, Proyecto_Antonio_Luis.Clases.ClientesUtil.IbanCliente(datoscliente));
                     nuevafactura.factimpresa = false;
                     nuevafactura.factparacontabilizar = datoscliente.contabilizarcliente;
                     nuevafactura.factcontabilizada = false;
@@ -251,12 +244,9 @@ namespace Proyecto_Antonio_Luis.Formularios
                     datosapasar.factlocalidad = textBox4.Text;
                     datosapasar.factprovincia = textBox5.Text;
                     datosapasar.factnif = textBox2.Text;
-                    datosapasar.factiban1 = textBox7.Text;
-                    datosapasar.factiban2 = textBox8.Text;
-                    datosapasar.factiban3 = textBox9.Text;
-                    datosapasar.factiban4 = textBox10.Text;
-                    datosapasar.factiban5 = textBox11.Text;
-                    datosapasar.factiban6 = textBox12.Text;
+                    // IBAN escrito a mano en los 6 cuadros
+                    Proyecto_Antonio_Luis.Clases.ClientesUtil.PonerIbanFactura(datosapasar,
+                        Proyecto_Antonio_Luis.Clases.ClientesUtil.IbanDeBloques(textBox7.Text, textBox8.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox12.Text));
                     datosapasar.factdomiciliada = false;
                     datosapasar.factcontabilizada = false;
                     datosapasar.factimpresa = false;
@@ -282,12 +272,8 @@ namespace Proyecto_Antonio_Luis.Formularios
                     datosapasar.factlocalidad = datoscliente.localidacliente;
                     datosapasar.factprovincia = datoscliente.provinciacliente;
                     datosapasar.factnif = datoscliente.cifcliente;
-                    datosapasar.factiban1 = datoscliente.iban1cliente;
-                    datosapasar.factiban2 = datoscliente.iban2cliente;
-                    datosapasar.factiban3 = datoscliente.iban3cliente;
-                    datosapasar.factiban4 = datoscliente.iban4cliente;
-                    datosapasar.factiban5 = datoscliente.iban5cliente;
-                    datosapasar.factiban6 = datoscliente.iban6cliente;
+                    // IBAN completo del cliente
+                    Proyecto_Antonio_Luis.Clases.ClientesUtil.PonerIbanFactura(datosapasar, Proyecto_Antonio_Luis.Clases.ClientesUtil.IbanCliente(datoscliente));
                     datosapasar.factcodcliente = datoscliente.codcliente;
                     datosapasar.factdomiciliada = false;
                     datosapasar.factcontabilizada = false;

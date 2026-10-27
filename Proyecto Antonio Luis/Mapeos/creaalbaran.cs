@@ -34,6 +34,7 @@ namespace Proyecto_Antonio_Luis.Mapeos
                 albiban4 = c.iban4cliente,
                 albiban5 = c.iban5cliente,
                 albiban6 = c.iban6cliente,
+                albiban = ClientesUtil.IbanCliente(c),
                 albgrupo = c.grupocliente,
                 albempleados = c.empleadoscliente.Value,
                 albpvpempleados = c.precioempleadocliente.Value,

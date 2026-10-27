@@ -4,7 +4,6 @@ using System.Data.Entity.Validation;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using BaseDatos;
 using Proyecto_Antonio_Luis.Clases;
@@ -56,6 +55,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                 {
                     CargarCliente();
                 }
+                ActualizarCuadroIban();
                 cargando = false;
             }
             catch (Exception ex)
@@ -118,12 +118,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             checpormail.Checked = cliente.pormailcliente == true;
             checIntrastat.Checked = cliente.instrastatcliente == true;
 
-            textCCC1.Text = Limpio(cliente.iban1cliente);
-            textCCC2.Text = Limpio(cliente.iban2cliente);
-            textCCC3.Text = Limpio(cliente.iban3cliente);
-            textCCC4.Text = Limpio(cliente.iban4cliente);
-            textCCC5.Text = Limpio(cliente.iban5cliente);
-            textCCC6.Text = Limpio(cliente.iban6cliente);
+            textIban.Text = ClientesUtil.FormatearIban(ClientesUtil.IbanCliente(cliente));
 
             textTrabajadores.Text = cliente.empleadoscliente.HasValue ? cliente.empleadoscliente.Value.ToString("0") : "";
             textPreciotrabajador.Text = FormatoImporte(cliente.precioempleadocliente);
@@ -262,11 +257,12 @@ namespace Proyecto_Antonio_Luis.Formularios
                 error(textMiMail, "Para enviar las facturas por email hay que indicar el email.");
 
             // IBAN
-            string iban = IbanCompleto();
+            string iban = ClientesUtil.NormalizarIban(textIban.Text);
+            string motivoIban;
             if (checDomiciliacion.Checked && iban.Length == 0)
-                error(textCCC1, "Para domiciliar hay que indicar la cuenta (IBAN).");
-            else if (iban.Length > 0 && !IbanValido(iban))
-                error(textCCC1, "La cuenta IBAN no es correcta (revisa los 24 caracteres: ES + 22 dígitos).");
+                error(textIban, "Para domiciliar hay que indicar la cuenta (IBAN).");
+            else if (checDomiciliacion.Checked && iban.Length > 0 && !ClientesUtil.IbanValido(iban, out motivoIban))
+                error(textIban, "La cuenta IBAN no es correcta: " + motivoIban + ".");
 
             if (errores.Count > 0)
             {
@@ -398,14 +394,17 @@ namespace Proyecto_Antonio_Luis.Formularios
             c.pormailcliente = checpormail.Checked;
             c.instrastatcliente = checIntrastat.Checked;
 
-            // IBAN en 6 bloques de 4 (así lo usan facturas y remesas)
-            string iban = IbanCompleto();
-            c.iban1cliente = BloqueIban(iban, 0);
-            c.iban2cliente = BloqueIban(iban, 1);
-            c.iban3cliente = BloqueIban(iban, 2);
-            c.iban4cliente = BloqueIban(iban, 3);
-            c.iban5cliente = BloqueIban(iban, 4);
-            c.iban6cliente = BloqueIban(iban, 5);
+            // IBAN completo (hasta 34). Los bloques antiguos de 4 en 4 se siguen
+            // rellenando si cabe, por compatibilidad; si no cabe, quedan vacíos.
+            string iban = ClientesUtil.NormalizarIban(textIban.Text);
+            string[] bloques = ClientesUtil.BloquesIban(iban);
+            c.ibancliente = iban;
+            c.iban1cliente = bloques[0];
+            c.iban2cliente = bloques[1];
+            c.iban3cliente = bloques[2];
+            c.iban4cliente = bloques[3];
+            c.iban5cliente = bloques[4];
+            c.iban6cliente = bloques[5];
 
             c.mod100 = chec100.Checked;
             c.mod111 = chec111.Checked;
@@ -464,6 +463,26 @@ namespace Proyecto_Antonio_Luis.Formularios
         }
 
         /// <summary>Aviso al dar de baja o reactivar un cliente.</summary>
+        /// <summary>
+        /// El IBAN solo se puede escribir si el cliente tiene domiciliación bancaria.
+        /// Al desmarcar la domiciliación el cuadro queda en gris pero NO se borra:
+        /// el IBAN guardado se conserva y reaparece al volver a marcarla.
+        /// </summary>
+        private void checDomiciliacion_CheckedChanged(object sender, EventArgs e)
+        {
+            ActualizarCuadroIban();
+            if (!cargando && checDomiciliacion.Checked)
+            {
+                textIban.Focus();
+            }
+        }
+
+        private void ActualizarCuadroIban()
+        {
+            textIban.Enabled = checDomiciliacion.Checked;
+            label14.Enabled = checDomiciliacion.Checked;
+        }
+
         private void checActivo_CheckedChanged(object sender, EventArgs e)
         {
             if (cargando)
@@ -498,6 +517,21 @@ namespace Proyecto_Antonio_Luis.Formularios
             {
                 e.Handled = true;
             }
+        }
+
+        /// <summary>IBAN: letras, dígitos y espacios.</summary>
+        private void textIban_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        /// <summary>Al salir del IBAN se muestra en grupos de 4 para leerlo mejor.</summary>
+        private void textIban_Leave(object sender, EventArgs e)
+        {
+            textIban.Text = ClientesUtil.FormatearIban(textIban.Text);
         }
 
         /// <summary>Teléfonos: dígitos, espacios y el prefijo +.</summary>
@@ -557,43 +591,6 @@ namespace Proyecto_Antonio_Luis.Formularios
                 && !mail.Contains(" ");
         }
 
-        private string IbanCompleto()
-        {
-            return (textCCC1.Text + textCCC2.Text + textCCC3.Text + textCCC4.Text + textCCC5.Text + textCCC6.Text)
-                .Replace(" ", "").Trim().ToUpperInvariant();
-        }
-
-        private static string BloqueIban(string iban, int bloque)
-        {
-            int inicio = bloque * 4;
-            if (inicio >= iban.Length) return "";
-            return iban.Substring(inicio, Math.Min(4, iban.Length - inicio));
-        }
-
-        /// <summary>Comprueba un IBAN español (24 caracteres) con el dígito de control ISO 13616.</summary>
-        private static bool IbanValido(string iban)
-        {
-            if (iban.Length != 24 || !iban.StartsWith("ES") || !iban.Substring(2).All(char.IsDigit))
-            {
-                return false;
-            }
-
-            // Se pasan las letras a números (A=10 ... Z=35) y se calcula el resto entre 97 por partes
-            string reordenado = iban.Substring(4) + iban.Substring(0, 4);
-            var numero = new StringBuilder();
-            foreach (char ch in reordenado)
-            {
-                numero.Append(char.IsLetter(ch) ? (ch - 'A' + 10).ToString() : ch.ToString());
-            }
-
-            int resto = 0;
-            foreach (char digito in numero.ToString())
-            {
-                resto = (resto * 10 + (digito - '0')) % 97;
-            }
-            return resto == 1;
-        }
-
         /// <summary>Muestra el error real (incluido el de SQL Server) en lugar de un mensaje genérico.</summary>
         private static void MostrarError(string mensaje, Exception ex)
         {
@@ -615,6 +612,10 @@ namespace Proyecto_Antonio_Luis.Formularios
                 }
                 detalle = interna.Message;
 
+                if (detalle.Contains("ibancliente") || detalle.Contains("factiban"))
+                {
+                    detalle += "\n\nFalta ejecutar el script SQL\\2026-10-27_IBAN_campo_unico.sql en la base de datos.";
+                }
                 if (detalle.Contains("Contadores"))
                 {
                     detalle += "\n\nFalta ejecutar el script SQL\\2026-10-26_Clientes_ampliar_campos.sql en la base de datos.";
@@ -623,5 +624,7 @@ namespace Proyecto_Antonio_Luis.Formularios
 
             MessageBox.Show(mensaje + "\n\n" + detalle, "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+
     }
 }

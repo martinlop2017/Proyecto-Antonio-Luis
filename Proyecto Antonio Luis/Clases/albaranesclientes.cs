@@ -42,6 +42,7 @@ namespace Proyecto_Antonio_Luis.Clases
         public bool albparadomiciliar { get; set; }
         public bool albparaimprimir { get; set; }
         public bool albparacontabilizar { get; set; }
+        public string albiban { get; set; }
 
 
 

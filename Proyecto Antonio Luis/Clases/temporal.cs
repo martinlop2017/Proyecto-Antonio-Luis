@@ -41,6 +41,7 @@ namespace Proyecto_Antonio_Luis.Clases
         public bool tempparacontabilizar { get; set; }
         public bool tempparadomiciliar { get; set; }
         public bool tempparaimprimir { get; set; }
+        public string tempiban { get; set; }
 
 
 

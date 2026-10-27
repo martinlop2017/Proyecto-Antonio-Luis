@@ -381,6 +381,12 @@ namespace Proyecto_Antonio_Luis.Formularios
                     datosapasar.tempiban4 = Convert.ToString(row.Cells[26].Value);
                     datosapasar.tempiban5 = Convert.ToString(row.Cells[27].Value);
                     datosapasar.tempiban6 = Convert.ToString(row.Cells[28].Value);
+                    // IBAN completo, tomado del albarán de la fila (no de la columna de la rejilla)
+                    var albaranFila = row.DataBoundItem as albaranesclientes;
+                    datosapasar.tempiban = albaranFila != null
+                        ? albaranFila.albiban
+                        : ClientesUtil.IbanDeBloques(datosapasar.tempiban1, datosapasar.tempiban2, datosapasar.tempiban3,
+                                                     datosapasar.tempiban4, datosapasar.tempiban5, datosapasar.tempiban6);
                     datosapasar.tempparadomiciliar = Convert.ToBoolean(row.Cells[31].Value);
                     datosapasar.tempparaimprimir = Convert.ToBoolean(row.Cells[32].Value);
                     datosapasar.tempparacontabilizar = Convert.ToBoolean(row.Cells[33].Value);
@@ -447,12 +453,8 @@ namespace Proyecto_Antonio_Luis.Formularios
                     mylistado.listcif = temp.tempcif;
 
 
-                    myFactura.factiban1 = temp.tempiban1;
-                    myFactura.factiban2 = temp.tempiban2;
-                    myFactura.factiban3 = temp.tempiban3;
-                    myFactura.factiban4 = temp.tempiban4;
-                    myFactura.factiban5 = temp.tempiban5;
-                    myFactura.factiban6 = temp.tempiban6;
+                    // IBAN completo + bloques antiguos (si cabe)
+                    ClientesUtil.PonerIbanFactura(myFactura, temp.tempiban);
                     myFactura.factconcepto1 = temp.tempconcepto1;
                     mylistado.listconcepto1 = temp.tempconcepto1;
 
@@ -667,51 +669,59 @@ namespace Proyecto_Antonio_Luis.Formularios
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            // Añade a la facturación el cliente (o clientes) de la rejilla de búsqueda.
+            // Los datos se toman del propio cliente, no del número de columna de la
+            // rejilla (antes varias columnas estaban desplazadas: domiciliado leía el
+            // recargo, el IBAN salía mezclado, etc.).
             foreach (DataGridViewRow row in dataGridView2.Rows)
-
             {
+                var c = row.DataBoundItem as Clientes;
+                if (c == null)
+                {
+                    continue;
+                }
+
+                decimal empleados = c.empleadoscliente ?? 0;
+                decimal precioEmpleado = c.precioempleadocliente ?? 0;
+                decimal tarifa = c.tarifacliente ?? 0;
+                decimal laboral = empleados * precioEmpleado;
+                decimal baseImponible = tarifa + laboral;
+                decimal iva = baseImponible * Globales.tipoiva / 100;
+
                 albaranesclientes datosapasar = new albaranesclientes();
-                datosapasar.albcod = Convert.ToDecimal(row.Cells[1].Value);
-                datosapasar.albnombre = Convert.ToString(row.Cells[2].Value);
-                datosapasar.albcif = Convert.ToString(row.Cells[3].Value);
-                datosapasar.albdireccion = Convert.ToString(row.Cells[4].Value);
-                datosapasar.alblocalidad = Convert.ToString(row.Cells[5].Value);
-                datosapasar.albprovincia = Convert.ToString(row.Cells[6].Value);
-                datosapasar.albcp = Convert.ToString(row.Cells[7].Value);
-                datosapasar.albmail = Convert.ToString(row.Cells[12].Value);
-                datosapasar.albpormail = Convert.ToBoolean(row.Cells[13].Value);
-                datosapasar.albdomiciliado = Convert.ToBoolean(row.Cells[16].Value);
-                datosapasar.albiban1 = Convert.ToString(row.Cells[19].Value);
-                datosapasar.albiban2 = Convert.ToString(row.Cells[20].Value);
-                datosapasar.albiban3 = Convert.ToString(row.Cells[21].Value);
-                datosapasar.albiban4 = Convert.ToString(row.Cells[15].Value);
-                datosapasar.albiban5 = Convert.ToString(row.Cells[22].Value);
-                datosapasar.albiban6 = Convert.ToString(row.Cells[26].Value);
-                datosapasar.albempleados = Convert.ToInt64(row.Cells[25].Value);
-                datosapasar.albpvpempleados = Convert.ToDecimal(row.Cells[51].Value);
-                datosapasar.albtarifa = Convert.ToDecimal(row.Cells[28].Value);
+                datosapasar.albcod = c.codcliente ?? 0;
+                datosapasar.albnombre = c.nombrecliente;
+                datosapasar.albcif = c.cifcliente;
+                datosapasar.albdireccion = c.direcioncliente;
+                datosapasar.alblocalidad = c.localidacliente;
+                datosapasar.albprovincia = c.provinciacliente;
+                datosapasar.albcp = c.cod_postalcliente;
+                datosapasar.albmail = c.mailcliente;
+                datosapasar.albpormail = c.pormailcliente == true;
+                datosapasar.albdomiciliado = c.domiciliadocliente == true;
+                datosapasar.albiban1 = c.iban1cliente;
+                datosapasar.albiban2 = c.iban2cliente;
+                datosapasar.albiban3 = c.iban3cliente;
+                datosapasar.albiban4 = c.iban4cliente;
+                datosapasar.albiban5 = c.iban5cliente;
+                datosapasar.albiban6 = c.iban6cliente;
+                datosapasar.albiban = ClientesUtil.IbanCliente(c);
+                datosapasar.albgrupo = c.grupocliente;
+                datosapasar.albempleados = empleados;
+                datosapasar.albpvpempleados = precioEmpleado;
+                datosapasar.albtarifa = tarifa;
                 datosapasar.albfecha = Globales.fechafactura.ToString("dd/MM/yyy");
                 datosapasar.albmes = Globales.mesfactura;
                 datosapasar.albconcepto1 = "Honorarios Correspondiente al mes de " + Globales.mesfactura.ToString();
                 datosapasar.albconcepto2 = null;
                 datosapasar.albtarifa2 = 0;
                 datosapasar.albtipoiva = Globales.tipoiva;
-                datosapasar.alblaboral = Convert.ToDecimal((Convert.ToInt64(row.Cells[25].Value)) * (Convert.ToDecimal(row.Cells[51].Value)));
-                datosapasar.albbase = Convert.ToDecimal(Convert.ToDecimal(row.Cells[28].Value)) +
-                   ((Convert.ToInt64(row.Cells[25].Value)) * (Convert.ToDecimal(row.Cells[51].Value)));
-
-                datosapasar.albiva = Convert.ToDecimal(((Convert.ToDecimal(row.Cells[28].Value)) +
-                   ((Convert.ToInt64(row.Cells[25].Value)) * (Convert.ToDecimal(row.Cells[51].Value)))) * Globales.tipoiva / 100);
-
-                datosapasar.albtotal = Convert.ToDecimal(Convert.ToDecimal(row.Cells[28].Value)) +
-                   ((Convert.ToInt64(row.Cells[25].Value)) * (Convert.ToDecimal(row.Cells[51].Value)) +
-                   Convert.ToDecimal(((Convert.ToDecimal(row.Cells[28].Value)) +
-                   ((Convert.ToInt64(row.Cells[25].Value)) * (Convert.ToDecimal(row.Cells[51].Value)))) * Globales.tipoiva / 100));
-
-                datosapasar.albparadomiciliar = Convert.ToBoolean(row.Cells[16].Value);
-                datosapasar.albparacontabilizar = Convert.ToBoolean(row.Cells[18].Value);
-
-
+                datosapasar.alblaboral = laboral;
+                datosapasar.albbase = baseImponible;
+                datosapasar.albiva = iva;
+                datosapasar.albtotal = baseImponible + iva;
+                datosapasar.albparadomiciliar = c.domiciliadocliente == true;
+                datosapasar.albparacontabilizar = c.contabilizarcliente == true;
 
                 albaranes.Add(datosapasar);
             }

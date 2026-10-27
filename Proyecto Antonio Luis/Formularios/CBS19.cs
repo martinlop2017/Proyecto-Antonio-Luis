@@ -323,8 +323,8 @@ namespace Proyecto_Antonio_Luis.Formularios
 
                 writer.WriteStartElement("DbtrAcct");
                 writer.WriteStartElement("Id");
-                writer.WriteElementString("IBAN", temp.factiban1 + temp.factiban2 + temp.factiban3 + temp.factiban4 +
-                                            temp.factiban5 + temp.factiban6);
+                // IBAN completo (columna nueva) o, en facturas antiguas, unión de los bloques de 4
+                writer.WriteElementString("IBAN", Proyecto_Antonio_Luis.Clases.ClientesUtil.IbanFactura(temp));
                 writer.WriteEndElement();
                 writer.WriteEndElement();
 

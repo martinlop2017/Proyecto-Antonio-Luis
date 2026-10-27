@@ -61,6 +61,7 @@
           <Property Name="altacliente" Type="bit" />
           <Property Name="bajacliente" Type="bit" />
           <Property Name="precioempleadocliente" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="ibancliente" Type="nvarchar" MaxLength="34" />
         </EntityType>
         <EntityType Name="Cuentas">
           <Key>
@@ -122,6 +123,7 @@
           <Property Name="facttotalremesa" Type="decimal" Precision="18" Scale="2" />
           <Property Name="factpormail" Type="bit" />
           <Property Name="factmail" Type="nchar" MaxLength="100" />
+          <Property Name="factiban" Type="nvarchar" MaxLength="34" />
         </EntityType>
         <EntityType Name="Iva">
           <Key>
@@ -282,6 +284,7 @@
           <Property Name="altacliente" Type="Boolean" />
           <Property Name="bajacliente" Type="Boolean" />
           <Property Name="precioempleadocliente" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ibancliente" Type="String" MaxLength="34" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Cuentas">
           <Key>
@@ -343,6 +346,7 @@
           <Property Name="facttotalremesa" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="factpormail" Type="Boolean" />
           <Property Name="factmail" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="factiban" Type="String" MaxLength="34" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Iva">
           <Key>
@@ -434,6 +438,7 @@
           <EntitySetMapping Name="Clientes">
             <EntityTypeMapping TypeName="AdministracionAntonioModel.Clientes">
               <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="ibancliente" ColumnName="ibancliente" />
                 <ScalarProperty Name="precioempleadocliente" ColumnName="precioempleadocliente" />
                 <ScalarProperty Name="bajacliente" ColumnName="bajacliente" />
                 <ScalarProperty Name="altacliente" ColumnName="altacliente" />
@@ -513,6 +518,7 @@
           <EntitySetMapping Name="Facturas">
             <EntityTypeMapping TypeName="AdministracionAntonioModel.Facturas">
               <MappingFragment StoreEntitySet="Facturas">
+                <ScalarProperty Name="factiban" ColumnName="factiban" />
                 <ScalarProperty Name="factmail" ColumnName="factmail" />
                 <ScalarProperty Name="factpormail" ColumnName="factpormail" />
                 <ScalarProperty Name="facttotalremesa" ColumnName="facttotalremesa" />

@@ -85,12 +85,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.textTarifa = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textCCC1 = new System.Windows.Forms.TextBox();
-            this.textCCC2 = new System.Windows.Forms.TextBox();
-            this.textCCC3 = new System.Windows.Forms.TextBox();
-            this.textCCC4 = new System.Windows.Forms.TextBox();
-            this.textCCC5 = new System.Windows.Forms.TextBox();
-            this.textCCC6 = new System.Windows.Forms.TextBox();
+            this.textIban = new System.Windows.Forms.TextBox();
             this.textObserva = new System.Windows.Forms.RichTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -177,7 +172,7 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(475, 247);
+            this.label5.Location = new System.Drawing.Point(471, 367);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 15);
             this.label5.TabIndex = 149;
@@ -189,7 +184,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label4.Location = new System.Drawing.Point(466, 367);
+            this.label4.Location = new System.Drawing.Point(470, 247);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 15);
             this.label4.TabIndex = 148;
@@ -246,7 +241,7 @@
             // 
             this.textMiPersonaContacto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textMiPersonaContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMiPersonaContacto.Location = new System.Drawing.Point(459, 386);
+            this.textMiPersonaContacto.Location = new System.Drawing.Point(463, 266);
             this.textMiPersonaContacto.MaxLength = 100;
             this.textMiPersonaContacto.Name = "textMiPersonaContacto";
             this.textMiPersonaContacto.Size = new System.Drawing.Size(239, 23);
@@ -255,11 +250,11 @@
             // textMiMail
             // 
             this.textMiMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textMiMail.Location = new System.Drawing.Point(463, 266);
+            this.textMiMail.Location = new System.Drawing.Point(459, 386);
             this.textMiMail.MaxLength = 100;
             this.textMiMail.Name = "textMiMail";
             this.textMiMail.Size = new System.Drawing.Size(243, 23);
-            this.textMiMail.TabIndex = 10;
+            this.textMiMail.TabIndex = 20;
             // 
             // textMiFax
             // 
@@ -397,6 +392,7 @@
             this.checDomiciliacion.TabIndex = 12;
             this.checDomiciliacion.Text = "Domc. Bancaria.";
             this.checDomiciliacion.UseVisualStyleBackColor = false;
+            this.checDomiciliacion.CheckedChanged += new System.EventHandler(this.checDomiciliacion_CheckedChanged);
             // 
             // checRE
             // 
@@ -439,7 +435,7 @@
             this.comboGrupo.Location = new System.Drawing.Point(459, 335);
             this.comboGrupo.Name = "comboGrupo";
             this.comboGrupo.Size = new System.Drawing.Size(102, 24);
-            this.comboGrupo.TabIndex = 21;
+            this.comboGrupo.TabIndex = 15;
             // 
             // chec131
             // 
@@ -449,7 +445,7 @@
             this.chec131.Location = new System.Drawing.Point(384, 452);
             this.chec131.Name = "chec131";
             this.chec131.Size = new System.Drawing.Size(51, 21);
-            this.chec131.TabIndex = 31;
+            this.chec131.TabIndex = 27;
             this.chec131.Text = "131";
             this.chec131.UseVisualStyleBackColor = false;
             // 
@@ -461,7 +457,7 @@
             this.chec303.Location = new System.Drawing.Point(384, 484);
             this.chec303.Name = "chec303";
             this.chec303.Size = new System.Drawing.Size(51, 21);
-            this.chec303.TabIndex = 37;
+            this.chec303.TabIndex = 33;
             this.chec303.Text = "303";
             this.chec303.UseVisualStyleBackColor = false;
             // 
@@ -473,7 +469,7 @@
             this.checIntrastat.Location = new System.Drawing.Point(384, 516);
             this.checIntrastat.Name = "checIntrastat";
             this.checIntrastat.Size = new System.Drawing.Size(78, 21);
-            this.checIntrastat.TabIndex = 43;
+            this.checIntrastat.TabIndex = 39;
             this.checIntrastat.Text = "Intrastat";
             this.checIntrastat.UseVisualStyleBackColor = false;
             // 
@@ -485,7 +481,7 @@
             this.chec752.Location = new System.Drawing.Point(319, 516);
             this.chec752.Name = "chec752";
             this.chec752.Size = new System.Drawing.Size(51, 21);
-            this.chec752.TabIndex = 42;
+            this.chec752.TabIndex = 38;
             this.chec752.Text = "752";
             this.chec752.UseVisualStyleBackColor = false;
             // 
@@ -497,7 +493,7 @@
             this.chec202.Location = new System.Drawing.Point(319, 484);
             this.chec202.Name = "chec202";
             this.chec202.Size = new System.Drawing.Size(51, 21);
-            this.chec202.TabIndex = 36;
+            this.chec202.TabIndex = 32;
             this.chec202.Text = "202";
             this.chec202.UseVisualStyleBackColor = false;
             // 
@@ -509,7 +505,7 @@
             this.chec130.Location = new System.Drawing.Point(319, 452);
             this.chec130.Name = "chec130";
             this.chec130.Size = new System.Drawing.Size(51, 21);
-            this.chec130.TabIndex = 30;
+            this.chec130.TabIndex = 26;
             this.chec130.Text = "130";
             this.chec130.UseVisualStyleBackColor = false;
             // 
@@ -521,7 +517,7 @@
             this.chec751.Location = new System.Drawing.Point(254, 516);
             this.chec751.Name = "chec751";
             this.chec751.Size = new System.Drawing.Size(51, 21);
-            this.chec751.TabIndex = 41;
+            this.chec751.TabIndex = 37;
             this.chec751.Text = "751";
             this.chec751.UseVisualStyleBackColor = false;
             // 
@@ -533,7 +529,7 @@
             this.chec200.Location = new System.Drawing.Point(254, 484);
             this.chec200.Name = "chec200";
             this.chec200.Size = new System.Drawing.Size(51, 21);
-            this.chec200.TabIndex = 35;
+            this.chec200.TabIndex = 31;
             this.chec200.Text = "200";
             this.chec200.UseVisualStyleBackColor = false;
             // 
@@ -545,7 +541,7 @@
             this.chec123.Location = new System.Drawing.Point(254, 452);
             this.chec123.Name = "chec123";
             this.chec123.Size = new System.Drawing.Size(51, 21);
-            this.chec123.TabIndex = 29;
+            this.chec123.TabIndex = 25;
             this.chec123.Text = "123";
             this.chec123.UseVisualStyleBackColor = false;
             // 
@@ -557,7 +553,7 @@
             this.chec390.Location = new System.Drawing.Point(189, 516);
             this.chec390.Name = "chec390";
             this.chec390.Size = new System.Drawing.Size(51, 21);
-            this.chec390.TabIndex = 40;
+            this.chec390.TabIndex = 36;
             this.chec390.Text = "390";
             this.chec390.UseVisualStyleBackColor = false;
             // 
@@ -569,7 +565,7 @@
             this.chec115.Location = new System.Drawing.Point(189, 452);
             this.chec115.Name = "chec115";
             this.chec115.Size = new System.Drawing.Size(51, 21);
-            this.chec115.TabIndex = 28;
+            this.chec115.TabIndex = 24;
             this.chec115.Text = "115";
             this.chec115.UseVisualStyleBackColor = false;
             // 
@@ -581,7 +577,7 @@
             this.chec193.Location = new System.Drawing.Point(189, 484);
             this.chec193.Name = "chec193";
             this.chec193.Size = new System.Drawing.Size(51, 21);
-            this.chec193.TabIndex = 34;
+            this.chec193.TabIndex = 30;
             this.chec193.Text = "193";
             this.chec193.UseVisualStyleBackColor = false;
             // 
@@ -593,7 +589,7 @@
             this.chec349.Location = new System.Drawing.Point(124, 516);
             this.chec349.Name = "chec349";
             this.chec349.Size = new System.Drawing.Size(51, 21);
-            this.chec349.TabIndex = 39;
+            this.chec349.TabIndex = 35;
             this.chec349.Text = "349";
             this.chec349.UseVisualStyleBackColor = false;
             // 
@@ -605,7 +601,7 @@
             this.chec190.Location = new System.Drawing.Point(124, 484);
             this.chec190.Name = "chec190";
             this.chec190.Size = new System.Drawing.Size(51, 21);
-            this.chec190.TabIndex = 33;
+            this.chec190.TabIndex = 29;
             this.chec190.Text = "190";
             this.chec190.UseVisualStyleBackColor = false;
             // 
@@ -617,7 +613,7 @@
             this.chec111.Location = new System.Drawing.Point(124, 452);
             this.chec111.Name = "chec111";
             this.chec111.Size = new System.Drawing.Size(51, 21);
-            this.chec111.TabIndex = 27;
+            this.chec111.TabIndex = 23;
             this.chec111.Text = "111";
             this.chec111.UseVisualStyleBackColor = false;
             // 
@@ -629,7 +625,7 @@
             this.chec309.Location = new System.Drawing.Point(59, 516);
             this.chec309.Name = "chec309";
             this.chec309.Size = new System.Drawing.Size(51, 21);
-            this.chec309.TabIndex = 38;
+            this.chec309.TabIndex = 34;
             this.chec309.Text = "309";
             this.chec309.UseVisualStyleBackColor = false;
             // 
@@ -641,7 +637,7 @@
             this.chec180.Location = new System.Drawing.Point(59, 484);
             this.chec180.Name = "chec180";
             this.chec180.Size = new System.Drawing.Size(51, 21);
-            this.chec180.TabIndex = 32;
+            this.chec180.TabIndex = 28;
             this.chec180.Text = "180";
             this.chec180.UseVisualStyleBackColor = false;
             // 
@@ -653,7 +649,7 @@
             this.chec100.Location = new System.Drawing.Point(59, 452);
             this.chec100.Name = "chec100";
             this.chec100.Size = new System.Drawing.Size(51, 21);
-            this.chec100.TabIndex = 26;
+            this.chec100.TabIndex = 22;
             this.chec100.Text = "100";
             this.chec100.UseVisualStyleBackColor = false;
             // 
@@ -713,7 +709,7 @@
             this.textTrabajadores.MaxLength = 6;
             this.textTrabajadores.Name = "textTrabajadores";
             this.textTrabajadores.Size = new System.Drawing.Size(76, 23);
-            this.textTrabajadores.TabIndex = 22;
+            this.textTrabajadores.TabIndex = 16;
             this.textTrabajadores.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloDigitos_KeyPress);
             // 
             // label12
@@ -734,7 +730,7 @@
             this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label13.Location = new System.Drawing.Point(718, 368);
+            this.label13.Location = new System.Drawing.Point(722, 248);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(103, 15);
             this.label13.TabIndex = 182;
@@ -744,11 +740,11 @@
             // 
             this.textTarifa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textTarifa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textTarifa.Location = new System.Drawing.Point(710, 386);
+            this.textTarifa.Location = new System.Drawing.Point(714, 266);
             this.textTarifa.MaxLength = 12;
             this.textTarifa.Name = "textTarifa";
             this.textTarifa.Size = new System.Drawing.Size(118, 23);
-            this.textTarifa.TabIndex = 25;
+            this.textTarifa.TabIndex = 10;
             this.textTarifa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Importe_KeyPress);
             // 
             // label14
@@ -760,80 +756,22 @@
             this.label14.ForeColor = System.Drawing.Color.SteelBlue;
             this.label14.Location = new System.Drawing.Point(75, 368);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(46, 15);
+            this.label14.Size = new System.Drawing.Size(38, 15);
             this.label14.TabIndex = 189;
-            this.label14.Text = "C.C.C.";
+            this.label14.Text = "IBAN";
             // 
-            // textCCC1
+            // textIban
             // 
-            this.textCCC1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textCCC1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCCC1.Location = new System.Drawing.Point(64, 387);
-            this.textCCC1.Margin = new System.Windows.Forms.Padding(4);
-            this.textCCC1.MaxLength = 4;
-            this.textCCC1.Name = "textCCC1";
-            this.textCCC1.Size = new System.Drawing.Size(50, 22);
-            this.textCCC1.TabIndex = 15;
-            // 
-            // textCCC2
-            // 
-            this.textCCC2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textCCC2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCCC2.Location = new System.Drawing.Point(122, 387);
-            this.textCCC2.Margin = new System.Windows.Forms.Padding(4);
-            this.textCCC2.MaxLength = 4;
-            this.textCCC2.Name = "textCCC2";
-            this.textCCC2.Size = new System.Drawing.Size(50, 22);
-            this.textCCC2.TabIndex = 16;
-            this.textCCC2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloDigitos_KeyPress);
-            // 
-            // textCCC3
-            // 
-            this.textCCC3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textCCC3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCCC3.Location = new System.Drawing.Point(180, 387);
-            this.textCCC3.Margin = new System.Windows.Forms.Padding(4);
-            this.textCCC3.MaxLength = 4;
-            this.textCCC3.Name = "textCCC3";
-            this.textCCC3.Size = new System.Drawing.Size(50, 22);
-            this.textCCC3.TabIndex = 17;
-            this.textCCC3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloDigitos_KeyPress);
-            // 
-            // textCCC4
-            // 
-            this.textCCC4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textCCC4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCCC4.Location = new System.Drawing.Point(238, 387);
-            this.textCCC4.Margin = new System.Windows.Forms.Padding(4);
-            this.textCCC4.MaxLength = 4;
-            this.textCCC4.Name = "textCCC4";
-            this.textCCC4.Size = new System.Drawing.Size(50, 22);
-            this.textCCC4.TabIndex = 18;
-            this.textCCC4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloDigitos_KeyPress);
-            // 
-            // textCCC5
-            // 
-            this.textCCC5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textCCC5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCCC5.Location = new System.Drawing.Point(296, 387);
-            this.textCCC5.Margin = new System.Windows.Forms.Padding(4);
-            this.textCCC5.MaxLength = 4;
-            this.textCCC5.Name = "textCCC5";
-            this.textCCC5.Size = new System.Drawing.Size(50, 22);
-            this.textCCC5.TabIndex = 19;
-            this.textCCC5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloDigitos_KeyPress);
-            // 
-            // textCCC6
-            // 
-            this.textCCC6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textCCC6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCCC6.Location = new System.Drawing.Point(354, 388);
-            this.textCCC6.Margin = new System.Windows.Forms.Padding(4);
-            this.textCCC6.MaxLength = 4;
-            this.textCCC6.Name = "textCCC6";
-            this.textCCC6.Size = new System.Drawing.Size(50, 22);
-            this.textCCC6.TabIndex = 20;
-            this.textCCC6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloDigitos_KeyPress);
+            this.textIban.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textIban.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textIban.Location = new System.Drawing.Point(64, 387);
+            this.textIban.Margin = new System.Windows.Forms.Padding(4);
+            this.textIban.MaxLength = 42;
+            this.textIban.Name = "textIban";
+            this.textIban.Size = new System.Drawing.Size(340, 22);
+            this.textIban.TabIndex = 19;
+            this.textIban.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textIban_KeyPress);
+            this.textIban.Leave += new System.EventHandler(this.textIban_Leave);
             // 
             // textObserva
             // 
@@ -841,7 +779,7 @@
             this.textObserva.MaxLength = 1000;
             this.textObserva.Name = "textObserva";
             this.textObserva.Size = new System.Drawing.Size(332, 85);
-            this.textObserva.TabIndex = 44;
+            this.textObserva.TabIndex = 40;
             this.textObserva.Text = "";
             // 
             // label16
@@ -877,7 +815,7 @@
             this.button1.Location = new System.Drawing.Point(204, 578);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(208, 60);
-            this.button1.TabIndex = 45;
+            this.button1.TabIndex = 41;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -890,7 +828,7 @@
             this.button2.Location = new System.Drawing.Point(478, 578);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(208, 60);
-            this.button2.TabIndex = 46;
+            this.button2.TabIndex = 42;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -901,7 +839,7 @@
             this.textFechaAlta.Mask = "00/00/0000";
             this.textFechaAlta.Name = "textFechaAlta";
             this.textFechaAlta.Size = new System.Drawing.Size(80, 23);
-            this.textFechaAlta.TabIndex = 23;
+            this.textFechaAlta.TabIndex = 18;
             this.textFechaAlta.ValidatingType = typeof(System.DateTime);
             // 
             // checpormail
@@ -909,10 +847,10 @@
             this.checpormail.AutoSize = true;
             this.checpormail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.checpormail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checpormail.Location = new System.Drawing.Point(711, 268);
+            this.checpormail.Location = new System.Drawing.Point(715, 386);
             this.checpormail.Name = "checpormail";
             this.checpormail.Size = new System.Drawing.Size(121, 21);
-            this.checpormail.TabIndex = 195;
+            this.checpormail.TabIndex = 21;
             this.checpormail.Text = "Enviar por Mail";
             this.checpormail.UseVisualStyleBackColor = false;
             // 
@@ -924,7 +862,7 @@
             this.textPreciotrabajador.MaxLength = 12;
             this.textPreciotrabajador.Name = "textPreciotrabajador";
             this.textPreciotrabajador.Size = new System.Drawing.Size(76, 23);
-            this.textPreciotrabajador.TabIndex = 196;
+            this.textPreciotrabajador.TabIndex = 17;
             this.textPreciotrabajador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Importe_KeyPress);
             // 
             // textMiCif
@@ -956,12 +894,7 @@
             this.Controls.Add(this.label16);
             this.Controls.Add(this.textObserva);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.textCCC1);
-            this.Controls.Add(this.textCCC2);
-            this.Controls.Add(this.textCCC3);
-            this.Controls.Add(this.textCCC4);
-            this.Controls.Add(this.textCCC5);
-            this.Controls.Add(this.textCCC6);
+            this.Controls.Add(this.textIban);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textTarifa);
             this.Controls.Add(this.label12);
@@ -1089,12 +1022,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textTarifa;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textCCC1;
-        private System.Windows.Forms.TextBox textCCC2;
-        private System.Windows.Forms.TextBox textCCC3;
-        private System.Windows.Forms.TextBox textCCC4;
-        private System.Windows.Forms.TextBox textCCC5;
-        private System.Windows.Forms.TextBox textCCC6;
+        private System.Windows.Forms.TextBox textIban;
         private System.Windows.Forms.RichTextBox textObserva;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label19;

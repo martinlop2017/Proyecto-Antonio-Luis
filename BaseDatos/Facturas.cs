@@ -50,5 +50,6 @@ namespace BaseDatos
         public Nullable<decimal> facttotalremesa { get; set; }
         public Nullable<bool> factpormail { get; set; }
         public string factmail { get; set; }
+        public string factiban { get; set; }
     }
 }
