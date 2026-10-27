@@ -38,6 +38,14 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelDestino = new System.Windows.Forms.Label();
+            this.textDestino = new System.Windows.Forms.TextBox();
+            this.buttonCarpeta = new System.Windows.Forms.Button();
+            this.labelConservar = new System.Windows.Forms.Label();
+            this.numericCopias = new System.Windows.Forms.NumericUpDown();
+            this.labelCopias = new System.Windows.Forms.Label();
+            this.buttonRestaurar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.numericCopias)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +76,7 @@
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(15, 38);
-            this.progressBar1.Maximum = 11;
+            this.progressBar1.Maximum = 100;
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(425, 30);
             this.progressBar1.TabIndex = 10;
@@ -80,7 +88,7 @@
             this.panel2.Controls.Add(this.progressBar1);
             this.panel2.Controls.Add(this.label3);
             this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel2.Location = new System.Drawing.Point(13, 185);
+            this.panel2.Location = new System.Drawing.Point(13, 218);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(455, 85);
             this.panel2.TabIndex = 129;
@@ -95,7 +103,7 @@
             this.button1.Location = new System.Drawing.Point(28, 377);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(191, 60);
-            this.button1.TabIndex = 131;
+            this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -108,18 +116,18 @@
             this.button3.Location = new System.Drawing.Point(252, 377);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(191, 60);
-            this.button3.TabIndex = 132;
+            this.button3.TabIndex = 4;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // richTextBox1
             // 
             this.richTextBox1.Enabled = false;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(34, 137);
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(34, 118);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(415, 203);
+            this.richTextBox1.Size = new System.Drawing.Size(415, 92);
             this.richTextBox1.TabIndex = 130;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
@@ -148,6 +156,79 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // labelDestino
+            // 
+            this.labelDestino.AutoSize = true;
+            this.labelDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDestino.ForeColor = System.Drawing.Color.SteelBlue;
+            this.labelDestino.Location = new System.Drawing.Point(31, 222);
+            this.labelDestino.Name = "labelDestino";
+            this.labelDestino.Size = new System.Drawing.Size(145, 15);
+            this.labelDestino.TabIndex = 133;
+            this.labelDestino.Text = "Guardar las copias en:";
+            // 
+            // textDestino
+            // 
+            this.textDestino.Location = new System.Drawing.Point(34, 241);
+            this.textDestino.Name = "textDestino";
+            this.textDestino.ReadOnly = true;
+            this.textDestino.Size = new System.Drawing.Size(325, 20);
+            this.textDestino.TabIndex = 134;
+            this.textDestino.TabStop = false;
+            // 
+            // buttonCarpeta
+            // 
+            this.buttonCarpeta.Location = new System.Drawing.Point(365, 239);
+            this.buttonCarpeta.Name = "buttonCarpeta";
+            this.buttonCarpeta.Size = new System.Drawing.Size(84, 24);
+            this.buttonCarpeta.TabIndex = 0;
+            this.buttonCarpeta.Text = "Cambiar...";
+            this.buttonCarpeta.UseVisualStyleBackColor = true;
+            this.buttonCarpeta.Click += new System.EventHandler(this.buttonCarpeta_Click);
+            // 
+            // labelConservar
+            // 
+            this.labelConservar.AutoSize = true;
+            this.labelConservar.Location = new System.Drawing.Point(31, 278);
+            this.labelConservar.Name = "labelConservar";
+            this.labelConservar.Size = new System.Drawing.Size(113, 13);
+            this.labelConservar.TabIndex = 135;
+            this.labelConservar.Text = "Conservar las últimas";
+            // 
+            // numericCopias
+            // 
+            this.numericCopias.Location = new System.Drawing.Point(150, 275);
+            this.numericCopias.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.numericCopias.Name = "numericCopias";
+            this.numericCopias.Size = new System.Drawing.Size(55, 20);
+            this.numericCopias.TabIndex = 1;
+            this.numericCopias.ValueChanged += new System.EventHandler(this.numericCopias_ValueChanged);
+            // 
+            // labelCopias
+            // 
+            this.labelCopias.AutoSize = true;
+            this.labelCopias.Location = new System.Drawing.Point(211, 278);
+            this.labelCopias.Name = "labelCopias";
+            this.labelCopias.Size = new System.Drawing.Size(97, 13);
+            this.labelCopias.TabIndex = 136;
+            this.labelCopias.Text = "copias (0 = todas)";
+            // 
+            // buttonRestaurar
+            // 
+            this.buttonRestaurar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRestaurar.ForeColor = System.Drawing.Color.Firebrick;
+            this.buttonRestaurar.Location = new System.Drawing.Point(34, 313);
+            this.buttonRestaurar.Name = "buttonRestaurar";
+            this.buttonRestaurar.Size = new System.Drawing.Size(415, 32);
+            this.buttonRestaurar.TabIndex = 3;
+            this.buttonRestaurar.Text = "Restaurar una copia de seguridad...";
+            this.buttonRestaurar.UseVisualStyleBackColor = true;
+            this.buttonRestaurar.Click += new System.EventHandler(this.buttonRestaurar_Click);
+            // 
             // Backup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,6 +236,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(483, 476);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.labelDestino);
+            this.Controls.Add(this.textDestino);
+            this.Controls.Add(this.buttonCarpeta);
+            this.Controls.Add(this.labelConservar);
+            this.Controls.Add(this.numericCopias);
+            this.Controls.Add(this.labelCopias);
+            this.Controls.Add(this.buttonRestaurar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.richTextBox1);
@@ -168,6 +256,9 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "eGESTION";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Backup_FormClosing);
+            this.Load += new System.EventHandler(this.Backup_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numericCopias)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -185,5 +276,12 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelDestino;
+        private System.Windows.Forms.TextBox textDestino;
+        private System.Windows.Forms.Button buttonCarpeta;
+        private System.Windows.Forms.Label labelConservar;
+        private System.Windows.Forms.NumericUpDown numericCopias;
+        private System.Windows.Forms.Label labelCopias;
+        private System.Windows.Forms.Button buttonRestaurar;
     }
 }

@@ -9,7 +9,7 @@ Estados:
 - ✅ Reparado y probado
 - 🗑️ No se usa (candidato a borrar)
 
-Última actualización: 27-10-2026 (Cliente, MisDatos e Impuestos terminados; retenciones fase 1)
+Última actualización: 28-10-2026 (Cliente, MisDatos, Impuestos y Backup terminados; acordado cambio de año sin borrar)
 
 ---
 
@@ -59,8 +59,8 @@ Estados:
 | ⬜ | Rutas | Rutas y cuentas contables | |
 | ⬜ | GestionUsuarios | Lista de usuarios | |
 | ⬜ | Usuario | Ficha de usuario | |
-| ⬜ | Backup | Copia de seguridad | Rutas fijas en `C:\ByMartin` |
-| ⬜ | ReiniciaBases | Cierre de año / reinicio de numeración | |
+| ✅ | ~~Backup~~ | ~~Copia de seguridad y restauración~~ | ~~Recodificado 28-10: usa la conexión del programa, carpeta de destino elegible, no mete copias dentro de copias, conserva las últimas N, progreso real. Nuevo: Restaurar (con copia previa automática; admite los ZIP antiguos)~~ Probado 28-10 |
+| ⬜ | ReiniciaBases | Cierre de año / reinicio de numeración | Servidor SQL escrito a mano (`DESKTOP-UKKKNCG`): solo funciona en ese PC |
 
 ## 6. Auxiliares
 
@@ -134,3 +134,28 @@ Revisar si se pueden borrar.
 - [ ] No hay retención de IRPF en las facturas (existe la cuenta de retenciones en Rutas, pero no se calcula).
   - [x] Fase 1 (27-10): tabla Retenciones, lista en Impuestos, casilla "Retención IRPF" en la ficha del cliente y columnas en Facturas.
   - [ ] Fase 2 (al revisar Facturación): calcular la retención en la facturación mensual y manual (total = base + IVA − retención), mostrarla en el PDF de la factura, cobrar el total líquido en la remesa y añadir la línea de retenciones en Contaplus (cuenta de Rutas). **Hasta entonces la casilla del cliente no tiene efecto.**
+
+## Hallazgos en Backup (28-10-2026)
+
+- [x] El servidor SQL está escrito a mano (`DESKTOP-C91G7H5\SQLEXPRESS`): en otro PC la copia falla.
+- [x] Mete en el ZIP toda la carpeta C:\ByMartin, incluidas las copias anteriores (Backup) y los .bak de Historico: cada copia contiene todas las anteriores y crece sin parar. (Ahora se excluye Backup; Historico se sigue copiando a propósito.)
+- [x] La carpeta tmp se añade dos veces.
+- [x] Si no existen C:\ByMartin\Backup o C:\ByMartin\tmp, falla.
+- [x] La copia se guarda en el mismo disco: si el disco se estropea se pierde todo.
+- [x] La barra de progreso no avanza; se puede pulsar el botón dos veces o cerrar durante la copia.
+- [x] Sin soporte ZIP64: si el ZIP pasa de 4 GB falla.
+- [x] El nombre del fichero no ordena por fecha (ddMMyyyy).
+- [x] No borra copias antiguas ni permite restaurar.
+
+## Cambio de año sin borrar facturas (acordado 28-10-2026)
+
+Se hará al revisar Facturación, Remesas, Contaplus y ReiniciaBases (junto con la fase 2 de retenciones):
+
+- [ ] Columna `factejercicio` (año) en Facturas y en remesas; las existentes se rellenan con el año de su fecha.
+- [ ] Numeración por año: siguiente = último número de ese año + 1 (cada enero empieza en 1 sin borrar nada).
+- [ ] Selector de año en facturas, remesas, Contaplus y listados (por defecto el año actual).
+- [ ] ReiniciaBases ya no borra: solo hace la copia anual a Historico la primera vez que se entra en el año nuevo.
+- [ ] Opcional: recuperar los años antiguos desde los .bak de Historico.
+- [ ] Arreglar: el menú lee `C:\ByMartin\System\Systemyear.txt` y ReiniciaBases usa `C:\ByMartin\Tmp\Systemyear.txt`.
+- [ ] Arreglar: la numeración busca la "última factura" ordenando la fecha como texto (dd/MM/yyyy).
+- [ ] Motivo: VeriFactu (obligatorio en 2027, anunciado aplazamiento a 2028) no permite borrar facturas; Hacienda puede pedir las de 4 años.
