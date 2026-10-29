@@ -41,6 +41,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             public bool Contabilizada { get; set; }
             public bool Domiciliada { get; set; }
             public bool PorMail { get; set; }
+            public bool Enviada { get; set; }
 
             // Para ordenar
             public string Serie { get; set; }
@@ -71,6 +72,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             Marca("Contabilizada", "Cont.");
             Marca("Domiciliada", "Domic.");
             Marca("PorMail", "Mail");
+            Marca("Enviada", "Env.");
         }
 
         private DataGridViewTextBoxColumn Columna(string propiedad, string titulo, int ancho,
@@ -205,6 +207,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                         Contabilizada = f.factcontabilizada == true,
                         Domiciliada = f.factdomiciliada == true,
                         PorMail = f.factpormail == true,
+                        Enviada = f.factenviada == true,
                         Serie = f.factserie ?? "",
                         Ejercicio = f.factejercicio ?? 0,
                         NumeroFactura = f.factnumerofact ?? 0,
@@ -378,6 +381,29 @@ namespace Proyecto_Antonio_Luis.Formularios
             Cargar(elegidas.Count == 1 ? elegidas[0].Id : (decimal?)null);
         }
 
+        /// <summary>Envía por correo las facturas seleccionadas (también se pueden reenviar).</summary>
+        private void enviar_Click(object sender, EventArgs e)
+        {
+            var elegidas = Seleccionadas();
+            if (elegidas.Count == 0)
+            {
+                MessageBox.Show("Selecciona en la lista las facturas que quieres enviar por correo.\n" +
+                                "(Con Ctrl o Mayús puedes seleccionar varias.)", "Envío por correo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            var sinMail = elegidas.Where(f => !f.PorMail).ToList();
+            var yaEnviadas = elegidas.Where(f => f.Enviada).ToList();
+            string pregunta = "Se van a enviar por correo " + elegidas.Count + (elegidas.Count == 1 ? " factura" : " facturas") +
+                              " al email que tiene cada una.";
+            if (yaEnviadas.Count > 0) pregunta += "\n\n" + yaEnviadas.Count + " ya se habían enviado antes y se volverán a enviar.";
+            if (sinMail.Count > 0) pregunta += "\n\n" + sinMail.Count + " son de clientes que no tienen marcado \"por mail\" (se enviarán igualmente si tienen email).";
+            pregunta += "\n\n¿Enviarlas?";
+
+            EnvioFacturas.PreguntarYEnviar(this, elegidas.Select(f => f.Id).ToList(), pregunta);
+            Cargar(elegidas.Count == 1 ? elegidas[0].Id : (decimal?)null);
+        }
+
         private void salir_Click(object sender, EventArgs e)
         {
             Close();
@@ -391,6 +417,8 @@ namespace Proyecto_Antonio_Luis.Formularios
         private void sumar_MouseLeave(object sender, EventArgs e) { label1.Visible = false; }
         private void imprimir_MouseEnter(object sender, EventArgs e) { label8.Visible = true; }
         private void imprimir_MouseLeave(object sender, EventArgs e) { label8.Visible = false; }
+        private void enviar_MouseEnter(object sender, EventArgs e) { labelEnviar.Visible = true; }
+        private void enviar_MouseLeave(object sender, EventArgs e) { labelEnviar.Visible = false; }
         private void panel1_MouseEnter(object sender, EventArgs e) { label4.Visible = true; }
         private void panel1_MouseLeave(object sender, EventArgs e) { label4.Visible = false; }
         private void panelEjercicio_MouseEnter(object sender, EventArgs e) { labelEjercicio.Visible = true; }

@@ -9,7 +9,7 @@ Estados:
 - ✅ Reparado y probado
 - 🗑️ No se usa (candidato a borrar)
 
-Última actualización: 29-10-2026 (paso 2 probado; paso 3a facturación mensual hecho, pendiente de probar)
+Última actualización: 29-10-2026 (paso 2 probado; pasos 3a facturación mensual y 3b envío por correo hechos, pendientes de probar)
 
 > **PARA PROBAR EL PASO 2 (29-10):**
 > 1. Ejecutar en Management Studio `SQL/2026-10-29_Lineas_IVA.sql` y pasar a Claude lo que salga.
@@ -25,7 +25,7 @@ Estados:
 | ⬜ | Control Usuarios (`Form1`) | Pantalla de login | Cambiado el marco el 26-10 (commit de Martín). **Busca el logo en la ruta antigua: cambiarlo para que use el logo guardado en la tabla Propios** |
 | ⬜ | preguntaseguridad | Pregunta de seguridad al olvidar la contraseña | |
 | ⬜ | Nuevacontraseña | Cambiar la contraseña | |
-| ⬜ | MenuPrincipal | Menú principal | Los botones Listados, Agenda y Ayuda no hacen nada todavía |
+| ⬜ | MenuPrincipal | Menú principal | Los botones Listados, Agenda y Ayuda no hacen nada todavía. 29-10: botón nuevo a3 (junto a Contaplus, mismo estilo; de momento avisa "en preparación"); botones de arriba reespaciados para que quepan |
 
 ## 2. Clientes
 
@@ -60,7 +60,7 @@ Estados:
 
 | Estado | Formulario | Qué hace | Notas |
 |:-:|---|---|---|
-| ✅ | ~~MisDatos (Propios)~~ | ~~Datos de la empresa emisora~~ | ~~Recodificado 27-10: IBAN en un campo, identificador SEPA y BIC completos, no se cae sin datos o sin logo, validaciones, tabulación. Logo guardado dentro de la tabla (no la ruta)~~ Probado 27-10 |
+| ✅ | ~~MisDatos (Propios)~~ | ~~Datos de la empresa emisora~~ | ~~Recodificado 27-10: IBAN en un campo, identificador SEPA y BIC completos, no se cae sin datos o sin logo, validaciones, tabulación. Logo guardado dentro de la tabla (no la ruta)~~ Probado 27-10. 29-10: botón nuevo "Configurar correo de envío de facturas" (pendiente de probar) |
 | ⬜ | Rutas | Rutas y cuentas contables | |
 | ⬜ | GestionUsuarios | Lista de usuarios | |
 | ⬜ | Usuario | Ficha de usuario | |
@@ -101,11 +101,19 @@ Revisar si se pueden borrar.
 | 🔧 | `SQL/2026-10-27_Retenciones_IRPF.sql` | Tabla nueva Retenciones (con General 15 % y Inicio de actividad 7 %), `Clientes.retencioncliente` y `Facturas.factretencionporc` / `factretencion`. No toca datos. Hace copia de seguridad antes |
 | ✅ | `SQL/2026-10-28_Facturacion_series_lineas.sql` | Tablas Series (M mensual, D directa, R rectificativa) y FacturaLineas; en Facturas: serie, ejercicio, fecha real, origen, base imponible, enlace a remesa, estado; en remesas: año, fecha de cargo, envío y fichero. Rellena todo desde los datos existentes y copia las líneas de las facturas antiguas. No toca nada existente |
 | ✅ | `SQL/2026-10-29_Lineas_IVA.sql` | `FacturaLineas.tipoiva` / `tiporecargo` (IVA de cada línea) y `Facturas.factimporterecargo`. Copia el IVA de cada factura a sus líneas. No toca nada existente. Hace copia de seguridad antes |
+| 🔧 | `SQL/2026-10-29_Correo.sql` | Configuración del correo de envío en Propios (servidor, puerto, usuario, contraseña cifrada, remitente, asunto, texto) y `Facturas.factenviada` / `factfechaenvio`. Solo añade columnas. Hace copia de seguridad antes |
+| 🔧 | `SQL/2026-10-29_Correo_acuses.sql` | `Propios.mimailacuselectura` / `mimailacuseentrega` (pedir acuse de lectura y de entrega). Solo añade columnas. Hace copia de seguridad antes |
 
 **Todos los scripts hay que ejecutarlos una vez en cada base de datos** (la tuya y, al instalar, la del cliente), en orden de fecha.
 
 ## Pendientes anotados (para más adelante)
 
+- [ ] **PROBAR EL ENVÍO POR CORREO** (hecho el 29-10, sin probar todavía porque falta la cuenta de correo del dominio):
+  1. Ejecutar `SQL/2026-10-29_Correo.sql` y `SQL/2026-10-29_Correo_acuses.sql` (si no se han ejecutado ya).
+  2. Mis Datos → "Configurar correo de envío de facturas": servidor SMTP, puerto 587, conexión cifrada, usuario, contraseña, remitente; "Enviar prueba".
+  3. Probar los acuses (confirmación de lectura y aviso de entrega).
+  4. Facturar con un cliente "por mail" (con un email nuestro de prueba) y comprobar que pregunta y envía; mirar la columna "Env." en Gestión de facturas y el botón del sobre para reenviar.
+  5. En la instalación del cliente: volver a escribir la contraseña del correo.
 - [ ] El alta crea la subcarpeta `Facturacion`, pero las facturas se guardan en `Facturacion2026`.
 - [ ] Historial de bajas y reactivaciones de clientes (ahora solo se guarda la última fecha de baja).
 - [ ] Revisar la remesa SEPA (CBS19) con el formato vigente del banco.
@@ -188,9 +196,17 @@ Decisiones: tabla de líneas (uso general), series distintas (M mensual, D direc
   - Retención: a los clientes con "Retención IRPF" en su ficha se les descuenta el % por defecto de la tabla Retenciones (15 %) sobre la base (no sobre los suplidos). También en la factura directa (casilla "Retención IRPF").
   - Las facturas mensuales antiguas sin serie de año siguen en su remesa antigua ("Octubre").
   - Pruebas: generar el mes; cambiar tarifa, empleados y suplidos de alguno; quitar uno y añadirlo con Añadir; facturar; mirar PDF, listado y Gestión de facturas; volver a Generar el mismo mes (debe decir que ya está facturado); cliente con retención.
-- [ ] Paso 3b: envío de las facturas por correo tras facturar (pidiendo permiso) y desde Gestión de facturas. Configuración del correo en Mis Datos.
+- [x] Paso 3b (29-10, pendiente de probar): envío de las facturas por correo.
+  - Script `SQL/2026-10-29_Correo.sql` (configuración del correo en Propios y `factenviada` / `factfechaenvio` en Facturas).
+  - Configuración: Mis Datos → botón "Configurar correo de envío de facturas" (formulario nuevo ConfiguracionCorreo): servidor SMTP del dominio propio, puerto (587), conexión cifrada, usuario, contraseña (guardada cifrada, solo vale en este ordenador), remitente, copia oculta, asunto y texto con campos {numero} {fecha} {total} {cliente} {emisor} {remesa}. Botón "Enviar prueba".
+  - El puerto 465 (SSL directo) no lo admite .NET; hay que usar 587 con conexión cifrada.
+  - Tras facturar el mes: pregunta si se envían las facturas de los clientes "por mail". En la factura directa, igual.
+  - Gestión de facturas: botón nuevo (sobre) para enviar o reenviar las seleccionadas y columna "Env.".
+  - Al instalar en el cliente: volver a escribir la contraseña del correo (está cifrada para este ordenador).
+  - Acuses (29-10, script `SQL/2026-10-29_Correo_acuses.sql`): casillas "Pedir confirmación de lectura" y "Pedir aviso de entrega". Las respuestas llegan al buzón del remitente; el programa no las lee. El aviso de NO entregado se pide siempre.
 - [ ] Paso 4: Remesas / SEPA (solo la remesa elegida, total de control correcto, facturas directas domiciliadas).
 - [ ] Paso 5: Contabilidad: asiento común y exportación a Contaplus y a3ECO (conseguir especificación del fichero de importación de a3ECO).
+  - 29-10: botón a3 en el menú principal preparado (iconos `Resources/A3.bmp` y `A3 Azul.bmp` hechos con el logo de `Imagenes/logo 3.png`).
 - [ ] Paso 6: Resto de informes (facturación mensual y remesas). El informe de factura con N líneas y logo ya está hecho (paso 2).
 
 Errores encontrados al revisar (se arreglan en esos pasos):

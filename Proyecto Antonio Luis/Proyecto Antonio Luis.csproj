@@ -78,6 +78,7 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
@@ -102,6 +103,8 @@
     </Compile>
     <Compile Include="Clases\albaranesclientes.cs" />
     <Compile Include="Clases\ClientesUtil.cs" />
+    <Compile Include="Clases\CorreoUtil.cs" />
+    <Compile Include="Clases\EnvioFacturas.cs" />
     <Compile Include="Clases\FacturaImpresion.cs" />
     <Compile Include="Clases\FacturasUtil.cs" />
     <Compile Include="Clases\datoslistadoreme.cs" />
@@ -113,6 +116,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetAntonioLuis.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ConfiguracionCorreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ConfiguracionCorreo.Designer.cs">
+      <DependentUpon>ConfiguracionCorreo.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Backup.cs">
       <SubType>Form</SubType>
@@ -321,6 +330,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetListados.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Formularios\ConfiguracionCorreo.resx">
+      <DependentUpon>ConfiguracionCorreo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Backup.resx">
       <DependentUpon>Backup.cs</DependentUpon>
     </EmbeddedResource>
@@ -664,6 +676,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Impresora.bmp" />
+    <None Include="Resources\A3.bmp" />
+    <None Include="Resources\A3 Azul.bmp" />
+    <None Include="Resources\Correo.bmp" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

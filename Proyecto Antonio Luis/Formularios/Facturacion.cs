@@ -85,6 +85,8 @@ namespace Proyecto_Antonio_Luis.Formularios
         {
             InitializeComponent();
             CrearColumnas();
+            combomes.KeyDown += SoloElegir_KeyDown;
+            comboiva.KeyDown += SoloElegir_KeyDown;
         }
 
         // =====================================================================
@@ -201,15 +203,17 @@ namespace Proyecto_Antonio_Luis.Formularios
         }
 
         /// <summary>
-        /// Año del mes que se factura. Si se factura diciembre con fecha de enero,
-        /// el mes facturado es del año anterior.
+        /// Año del mes que se factura: el año actual. Solo si estamos en enero o
+        /// febrero y se factura noviembre o diciembre, es el año anterior
+        /// (facturar en enero el mes de diciembre).
+        /// No depende de la fecha de la factura, para que "fin de mes" no lo cambie.
         /// </summary>
         private int AñoFacturado
         {
             get
             {
-                DateTime f = fechafactura.Value.Date;
-                return MesFacturado > f.Month ? f.Year - 1 : f.Year;
+                DateTime hoy = DateTime.Today;
+                return hoy.Month <= 2 && MesFacturado >= 11 ? hoy.Year - 1 : hoy.Year;
             }
         }
 
@@ -222,6 +226,20 @@ namespace Proyecto_Antonio_Luis.Formularios
         private string MesTexto
         {
             get { return Meses[MesFacturado - 1].ToLower(Es) + " de " + AñoFacturado; }
+        }
+
+        /// <summary>
+        /// Los desplegables de mes e IVA se dejan en blanco (estilo normal), pero no
+        /// se puede escribir en ellos: solo elegir de la lista.
+        /// </summary>
+        private void SoloElegir_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void SoloElegir_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete) e.SuppressKeyPress = e.Handled = true;
         }
 
         private void linkFinMes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -611,7 +629,23 @@ namespace Proyecto_Antonio_Luis.Formularios
                                 : "\nLos PDF están en la carpeta de facturación de cada cliente."),
                 "Facturación mensual", MessageBoxButtons.OK, errores.Count > 0 ? MessageBoxIcon.Warning : MessageBoxIcon.Information);
 
-            // 3. Listado de control de la remesa
+            // 3. Envío por correo a los clientes que la reciben por mail
+            try
+            {
+                var porMail = EnvioFacturas.PendientesDeEnviar(ids);
+                if (porMail.Count > 0)
+                {
+                    EnvioFacturas.PreguntarYEnviar(this, porMail,
+                        porMail.Count + (porMail.Count == 1 ? " factura es de un cliente que la recibe" : " facturas son de clientes que las reciben") +
+                        " por correo.\n\n¿Enviarlas ahora?");
+                }
+            }
+            catch (Exception ex)
+            {
+                Error("No se han podido enviar las facturas por correo", ex);
+            }
+
+            // 4. Listado de control de la remesa
             MostrarListado(remesa);
         }
 

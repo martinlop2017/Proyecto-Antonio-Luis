@@ -73,6 +73,7 @@
             this.BotonMantenimiento = new System.Windows.Forms.Button();
             this.BotonListados = new System.Windows.Forms.Button();
             this.BotonContaplus = new System.Windows.Forms.Button();
+            this.BotonA3 = new System.Windows.Forms.Button();
             this.BotonCsb19 = new System.Windows.Forms.Button();
             this.BotonFacturas = new System.Windows.Forms.Button();
             this.BotonClientes = new System.Windows.Forms.Button();
@@ -189,7 +190,7 @@
             this.PanelSistema.Controls.Add(this.BotonUsuarios);
             this.PanelSistema.Controls.Add(this.BotonImpuestos);
             this.PanelSistema.Controls.Add(this.BotonRutas);
-            this.PanelSistema.Location = new System.Drawing.Point(100, 169);
+            this.PanelSistema.Location = new System.Drawing.Point(40, 169);
             this.PanelSistema.Name = "PanelSistema";
             this.PanelSistema.Size = new System.Drawing.Size(117, 552);
             this.PanelSistema.TabIndex = 40;
@@ -251,7 +252,7 @@
             // 
             this.PanelClientes.Controls.Add(this.BotonCliente);
             this.PanelClientes.Controls.Add(this.BotonEscaner);
-            this.PanelClientes.Location = new System.Drawing.Point(255, 159);
+            this.PanelClientes.Location = new System.Drawing.Point(190, 159);
             this.PanelClientes.Name = "PanelClientes";
             this.PanelClientes.Size = new System.Drawing.Size(117, 265);
             this.PanelClientes.TabIndex = 41;
@@ -287,7 +288,7 @@
             // 
             this.PanelFacturas.Controls.Add(this.BotonFactMensual);
             this.PanelFacturas.Controls.Add(this.BotonFactManual);
-            this.PanelFacturas.Location = new System.Drawing.Point(410, 169);
+            this.PanelFacturas.Location = new System.Drawing.Point(340, 169);
             this.PanelFacturas.Name = "PanelFacturas";
             this.PanelFacturas.Size = new System.Drawing.Size(117, 265);
             this.PanelFacturas.TabIndex = 42;
@@ -461,7 +462,7 @@
             // 
             this.BotonMantenimiento.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.backup;
             this.BotonMantenimiento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonMantenimiento.Location = new System.Drawing.Point(1022, 58);
+            this.BotonMantenimiento.Location = new System.Drawing.Point(1090, 58);
             this.BotonMantenimiento.Name = "BotonMantenimiento";
             this.BotonMantenimiento.Size = new System.Drawing.Size(109, 105);
             this.BotonMantenimiento.TabIndex = 29;
@@ -474,7 +475,7 @@
             // 
             this.BotonListados.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Listados;
             this.BotonListados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonListados.Location = new System.Drawing.Point(875, 58);
+            this.BotonListados.Location = new System.Drawing.Point(940, 58);
             this.BotonListados.Name = "BotonListados";
             this.BotonListados.Size = new System.Drawing.Size(109, 105);
             this.BotonListados.TabIndex = 28;
@@ -487,7 +488,7 @@
             // 
             this.BotonContaplus.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Contaplus;
             this.BotonContaplus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonContaplus.Location = new System.Drawing.Point(565, 58);
+            this.BotonContaplus.Location = new System.Drawing.Point(490, 58);
             this.BotonContaplus.Name = "BotonContaplus";
             this.BotonContaplus.Size = new System.Drawing.Size(109, 105);
             this.BotonContaplus.TabIndex = 27;
@@ -496,11 +497,24 @@
             this.BotonContaplus.MouseEnter += new System.EventHandler(this.BotonContaplus_MouseEnter);
             this.BotonContaplus.MouseLeave += new System.EventHandler(this.BotonContaplus_MouseLeave);
             // 
+            // BotonA3
+            // 
+            this.BotonA3.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.A3;
+            this.BotonA3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BotonA3.Location = new System.Drawing.Point(640, 58);
+            this.BotonA3.Name = "BotonA3";
+            this.BotonA3.Size = new System.Drawing.Size(109, 105);
+            this.BotonA3.TabIndex = 28;
+            this.BotonA3.UseVisualStyleBackColor = true;
+            this.BotonA3.Click += new System.EventHandler(this.BotonA3_Click);
+            this.BotonA3.MouseEnter += new System.EventHandler(this.BotonA3_MouseEnter);
+            this.BotonA3.MouseLeave += new System.EventHandler(this.BotonA3_MouseLeave);
+            // 
             // BotonCsb19
             // 
             this.BotonCsb19.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.CSB19;
             this.BotonCsb19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonCsb19.Location = new System.Drawing.Point(720, 58);
+            this.BotonCsb19.Location = new System.Drawing.Point(790, 58);
             this.BotonCsb19.Name = "BotonCsb19";
             this.BotonCsb19.Size = new System.Drawing.Size(109, 105);
             this.BotonCsb19.TabIndex = 26;
@@ -513,7 +527,7 @@
             // 
             this.BotonFacturas.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Facturas;
             this.BotonFacturas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonFacturas.Location = new System.Drawing.Point(410, 58);
+            this.BotonFacturas.Location = new System.Drawing.Point(340, 58);
             this.BotonFacturas.Name = "BotonFacturas";
             this.BotonFacturas.Size = new System.Drawing.Size(109, 105);
             this.BotonFacturas.TabIndex = 25;
@@ -526,7 +540,7 @@
             // 
             this.BotonClientes.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Clientes;
             this.BotonClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonClientes.Location = new System.Drawing.Point(255, 58);
+            this.BotonClientes.Location = new System.Drawing.Point(190, 58);
             this.BotonClientes.Name = "BotonClientes";
             this.BotonClientes.Size = new System.Drawing.Size(109, 105);
             this.BotonClientes.TabIndex = 24;
@@ -539,7 +553,7 @@
             // 
             this.BotonSistema.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Sistema;
             this.BotonSistema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BotonSistema.Location = new System.Drawing.Point(100, 58);
+            this.BotonSistema.Location = new System.Drawing.Point(40, 58);
             this.BotonSistema.Name = "BotonSistema";
             this.BotonSistema.Size = new System.Drawing.Size(109, 105);
             this.BotonSistema.TabIndex = 23;
@@ -560,6 +574,7 @@
             this.Controls.Add(this.BotonMantenimiento);
             this.Controls.Add(this.BotonListados);
             this.Controls.Add(this.BotonContaplus);
+            this.Controls.Add(this.BotonA3);
             this.Controls.Add(this.BotonCsb19);
             this.Controls.Add(this.BotonFacturas);
             this.Controls.Add(this.BotonClientes);
@@ -607,6 +622,7 @@
         private System.Windows.Forms.Button BotonFacturas;
         private System.Windows.Forms.Button BotonCsb19;
         private System.Windows.Forms.Button BotonContaplus;
+        private System.Windows.Forms.Button BotonA3;
         private System.Windows.Forms.Button BotonListados;
         private System.Windows.Forms.Button BotonMantenimiento;
         private System.Windows.Forms.Button BotonPropios;

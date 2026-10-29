@@ -58,6 +58,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.buttonCorreo = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textboxidentificador = new System.Windows.Forms.TextBox();
@@ -388,6 +389,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // buttonCorreo
+            // 
+            this.buttonCorreo.BackColor = System.Drawing.Color.White;
+            this.buttonCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(153)))), ((int)(((byte)(208)))));
+            this.buttonCorreo.Location = new System.Drawing.Point(446, 470);
+            this.buttonCorreo.Name = "buttonCorreo";
+            this.buttonCorreo.Size = new System.Drawing.Size(303, 30);
+            this.buttonCorreo.TabIndex = 60;
+            this.buttonCorreo.Text = "Configurar correo de envío de facturas...";
+            this.buttonCorreo.UseVisualStyleBackColor = false;
+            this.buttonCorreo.Click += new System.EventHandler(this.buttonCorreo_Click);
+            // 
             // button2
             // 
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
@@ -485,6 +499,7 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonCorreo);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button3);
@@ -556,6 +571,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonCorreo;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textboxidentificador;

@@ -64,5 +64,7 @@ namespace BaseDatos
         public Nullable<System.DateTime> factfechacontab { get; set; }
         public Nullable<System.DateTime> factfechadomic { get; set; }
         public Nullable<decimal> factimporterecargo { get; set; }
+        public Nullable<bool> factenviada { get; set; }
+        public Nullable<System.DateTime> factfechaenvio { get; set; }
     }
 }

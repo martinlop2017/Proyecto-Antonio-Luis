@@ -37,5 +37,17 @@ namespace BaseDatos
         public string mibic { get; set; }
         public string miiban { get; set; }
         public byte[] milogoimagen { get; set; }
+        public string mismtpservidor { get; set; }
+        public Nullable<int> mismtppuerto { get; set; }
+        public Nullable<bool> mismtpcifrado { get; set; }
+        public string mismtpusuario { get; set; }
+        public string mismtpclave { get; set; }
+        public string mimailremitente { get; set; }
+        public string mimailnombre { get; set; }
+        public string mimailcopia { get; set; }
+        public string mimailasunto { get; set; }
+        public string mimailtexto { get; set; }
+        public Nullable<bool> mimailacuselectura { get; set; }
+        public Nullable<bool> mimailacuseentrega { get; set; }
     }
 }

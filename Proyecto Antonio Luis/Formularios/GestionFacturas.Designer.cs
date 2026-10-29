@@ -34,6 +34,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.labelEnviar = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.labelEjercicio = new System.Windows.Forms.Label();
             this.labelSerie = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.sumar = new System.Windows.Forms.Button();
             this.imprimir = new System.Windows.Forms.Button();
+            this.enviar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboEjercicio = new System.Windows.Forms.ComboBox();
@@ -91,13 +93,23 @@
             this.label8.Text = "&Imprimir";
             this.label8.Visible = false;
             // 
+            // labelEnviar
+            // 
+            this.labelEnviar.AutoSize = true;
+            this.labelEnviar.BackColor = System.Drawing.Color.White;
+            this.labelEnviar.Location = new System.Drawing.Point(152, 88);
+            this.labelEnviar.Name = "labelEnviar";
+            this.labelEnviar.TabIndex = 54;
+            this.labelEnviar.Text = "&Enviar";
+            this.labelEnviar.Visible = false;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(153, 88);
+            this.label4.Location = new System.Drawing.Point(211, 88);
             this.label4.Name = "label4";
-            this.label4.TabIndex = 54;
+            this.label4.TabIndex = 55;
             this.label4.Text = "&Buscar";
             this.label4.Visible = false;
             // 
@@ -107,7 +119,7 @@
             this.labelEjercicio.BackColor = System.Drawing.Color.White;
             this.labelEjercicio.Location = new System.Drawing.Point(459, 88);
             this.labelEjercicio.Name = "labelEjercicio";
-            this.labelEjercicio.TabIndex = 55;
+            this.labelEjercicio.TabIndex = 56;
             this.labelEjercicio.Text = "Año";
             this.labelEjercicio.Visible = false;
             // 
@@ -117,7 +129,7 @@
             this.labelSerie.BackColor = System.Drawing.Color.White;
             this.labelSerie.Location = new System.Drawing.Point(565, 88);
             this.labelSerie.Name = "labelSerie";
-            this.labelSerie.TabIndex = 56;
+            this.labelSerie.TabIndex = 57;
             this.labelSerie.Text = "Serie";
             this.labelSerie.Visible = false;
             // 
@@ -127,7 +139,7 @@
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(678, 88);
             this.label6.Name = "label6";
-            this.label6.TabIndex = 57;
+            this.label6.TabIndex = 58;
             this.label6.Text = "&Ordenar";
             this.label6.Visible = false;
             // 
@@ -137,7 +149,7 @@
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(802, 88);
             this.label5.Name = "label5";
-            this.label5.TabIndex = 58;
+            this.label5.TabIndex = 59;
             this.label5.Text = "&Salir";
             this.label5.Visible = false;
             // 
@@ -167,11 +179,24 @@
             this.imprimir.MouseEnter += new System.EventHandler(this.imprimir_MouseEnter);
             this.imprimir.MouseLeave += new System.EventHandler(this.imprimir_MouseLeave);
             // 
+            // enviar
+            // 
+            this.enviar.BackColor = System.Drawing.Color.White;
+            this.enviar.BackgroundImage = global::Proyecto_Antonio_Luis.Properties.Resources.Correo;
+            this.enviar.Location = new System.Drawing.Point(147, 103);
+            this.enviar.Name = "enviar";
+            this.enviar.Size = new System.Drawing.Size(52, 56);
+            this.enviar.TabIndex = 3;
+            this.enviar.UseVisualStyleBackColor = false;
+            this.enviar.Click += new System.EventHandler(this.enviar_Click);
+            this.enviar.MouseEnter += new System.EventHandler(this.enviar_MouseEnter);
+            this.enviar.MouseLeave += new System.EventHandler(this.enviar_MouseLeave);
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(10, 18);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(280, 20);
+            this.textBox1.Size = new System.Drawing.Size(222, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
@@ -183,10 +208,10 @@
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(147, 104);
+            this.panel1.Location = new System.Drawing.Point(205, 104);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 56);
-            this.panel1.TabIndex = 3;
+            this.panel1.Size = new System.Drawing.Size(242, 56);
+            this.panel1.TabIndex = 4;
             this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             this.panel1.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
             // 
@@ -322,7 +347,7 @@
             this.labelResumen.Location = new System.Drawing.Point(41, 592);
             this.labelResumen.Name = "labelResumen";
             this.labelResumen.Size = new System.Drawing.Size(790, 20);
-            this.labelResumen.TabIndex = 59;
+            this.labelResumen.TabIndex = 60;
             this.labelResumen.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // GestionFacturas
@@ -338,6 +363,7 @@
             this.Controls.Add(this.panelSerie);
             this.Controls.Add(this.panelEjercicio);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.enviar);
             this.Controls.Add(this.imprimir);
             this.Controls.Add(this.sumar);
             this.Controls.Add(this.label5);
@@ -345,6 +371,7 @@
             this.Controls.Add(this.labelSerie);
             this.Controls.Add(this.labelEjercicio);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelEnviar);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label7);
@@ -374,6 +401,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelEnviar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelEjercicio;
         private System.Windows.Forms.Label labelSerie;
@@ -381,6 +409,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button sumar;
         private System.Windows.Forms.Button imprimir;
+        private System.Windows.Forms.Button enviar;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboEjercicio;

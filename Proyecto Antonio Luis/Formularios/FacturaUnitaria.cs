@@ -562,6 +562,12 @@ namespace Proyecto_Antonio_Luis.Formularios
                       "Puedes imprimirla después desde Gestión de facturas", ex);
             }
 
+            if (checkPorMail.Checked)
+            {
+                EnvioFacturas.PreguntarYEnviar(this, EnvioFacturas.PendientesDeEnviar(new[] { id }),
+                    "El cliente recibe las facturas por correo (" + txtMail.Text.Trim() + ").\n\n¿Enviarla ahora?");
+            }
+
             DialogResult = DialogResult.OK;
             Close();
         }

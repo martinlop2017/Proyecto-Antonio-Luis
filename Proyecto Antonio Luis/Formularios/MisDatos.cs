@@ -206,6 +206,15 @@ namespace Proyecto_Antonio_Luis.Formularios
         //  Salir
         // =====================================================================
 
+        /// <summary>Configuración del correo con el que se envían las facturas.</summary>
+        private void buttonCorreo_Click(object sender, EventArgs e)
+        {
+            using (var form = new ConfiguracionCorreo())
+            {
+                form.ShowDialog(this);
+            }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;

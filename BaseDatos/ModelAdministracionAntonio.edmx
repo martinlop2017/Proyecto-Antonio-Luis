@@ -138,6 +138,8 @@
           <Property Name="factfechacontab" Type="datetime" />
           <Property Name="factfechadomic" Type="datetime" />
           <Property Name="factimporterecargo" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="factenviada" Type="bit" />
+          <Property Name="factfechaenvio" Type="datetime" />
         </EntityType>
         <EntityType Name="Iva">
           <Key>
@@ -175,6 +177,18 @@
           <Property Name="mibic" Type="nvarchar" MaxLength="15" />
           <Property Name="miiban" Type="nvarchar" MaxLength="34" />
           <Property Name="milogoimagen" Type="varbinary(max)" />
+          <Property Name="mismtpservidor" Type="nvarchar" MaxLength="150" />
+          <Property Name="mismtppuerto" Type="int" />
+          <Property Name="mismtpcifrado" Type="bit" />
+          <Property Name="mismtpusuario" Type="nvarchar" MaxLength="150" />
+          <Property Name="mismtpclave" Type="nvarchar" MaxLength="1000" />
+          <Property Name="mimailremitente" Type="nvarchar" MaxLength="150" />
+          <Property Name="mimailnombre" Type="nvarchar" MaxLength="150" />
+          <Property Name="mimailcopia" Type="nvarchar" MaxLength="150" />
+          <Property Name="mimailasunto" Type="nvarchar" MaxLength="250" />
+          <Property Name="mimailtexto" Type="nvarchar(max)" />
+          <Property Name="mimailacuselectura" Type="bit" />
+          <Property Name="mimailacuseentrega" Type="bit" />
         </EntityType>
         <EntityType Name="Resilla">
           <Key>
@@ -419,6 +433,8 @@
           <Property Name="factfechacontab" Type="DateTime" Precision="3" />
           <Property Name="factfechadomic" Type="DateTime" Precision="3" />
           <Property Name="factimporterecargo" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="factenviada" Type="Boolean" />
+          <Property Name="factfechaenvio" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Series">
           <Key>
@@ -488,6 +504,18 @@
           <Property Name="mibic" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="miiban" Type="String" MaxLength="34" FixedLength="false" Unicode="true" />
           <Property Name="milogoimagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="mismtpservidor" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="mismtppuerto" Type="Int32" />
+          <Property Name="mismtpcifrado" Type="Boolean" />
+          <Property Name="mismtpusuario" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="mismtpclave" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="mimailremitente" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="mimailnombre" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="mimailcopia" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="mimailasunto" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="mimailtexto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mimailacuselectura" Type="Boolean" />
+          <Property Name="mimailacuseentrega" Type="Boolean" />
         </EntityType>
         <EntityType Name="Resilla">
           <Key>
@@ -630,6 +658,8 @@
             <EntityTypeMapping TypeName="AdministracionAntonioModel.Facturas">
               <MappingFragment StoreEntitySet="Facturas">
                 <ScalarProperty Name="factimporterecargo" ColumnName="factimporterecargo" />
+                <ScalarProperty Name="factenviada" ColumnName="factenviada" />
+                <ScalarProperty Name="factfechaenvio" ColumnName="factfechaenvio" />
                 <ScalarProperty Name="factserie" ColumnName="factserie" />
                 <ScalarProperty Name="factejercicio" ColumnName="factejercicio" />
                 <ScalarProperty Name="factfechadoc" ColumnName="factfechadoc" />
@@ -731,6 +761,18 @@
             <EntityTypeMapping TypeName="AdministracionAntonioModel.Propios">
               <MappingFragment StoreEntitySet="Propios">
                 <ScalarProperty Name="milogoimagen" ColumnName="milogoimagen" />
+                <ScalarProperty Name="mismtpservidor" ColumnName="mismtpservidor" />
+                <ScalarProperty Name="mismtppuerto" ColumnName="mismtppuerto" />
+                <ScalarProperty Name="mismtpcifrado" ColumnName="mismtpcifrado" />
+                <ScalarProperty Name="mismtpusuario" ColumnName="mismtpusuario" />
+                <ScalarProperty Name="mismtpclave" ColumnName="mismtpclave" />
+                <ScalarProperty Name="mimailremitente" ColumnName="mimailremitente" />
+                <ScalarProperty Name="mimailnombre" ColumnName="mimailnombre" />
+                <ScalarProperty Name="mimailcopia" ColumnName="mimailcopia" />
+                <ScalarProperty Name="mimailasunto" ColumnName="mimailasunto" />
+                <ScalarProperty Name="mimailtexto" ColumnName="mimailtexto" />
+                <ScalarProperty Name="mimailacuselectura" ColumnName="mimailacuselectura" />
+                <ScalarProperty Name="mimailacuseentrega" ColumnName="mimailacuseentrega" />
                 <ScalarProperty Name="miiban" ColumnName="miiban" />
                 <ScalarProperty Name="mibic" ColumnName="mibic" />
                 <ScalarProperty Name="miidentificadorbancario" ColumnName="miidentificadorbancario" />

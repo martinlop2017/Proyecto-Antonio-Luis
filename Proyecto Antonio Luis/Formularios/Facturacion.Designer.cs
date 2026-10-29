@@ -207,12 +207,13 @@
             // 
             // comboiva
             // 
-            this.comboiva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboiva.BackColor = System.Drawing.Color.White;
             this.comboiva.FormattingEnabled = true;
             this.comboiva.Location = new System.Drawing.Point(540, 16);
             this.comboiva.Name = "comboiva";
             this.comboiva.Size = new System.Drawing.Size(90, 21);
             this.comboiva.TabIndex = 138;
+            this.comboiva.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloElegir_KeyPress);
             this.comboiva.SelectedIndexChanged += new System.EventHandler(this.comboiva_SelectedIndexChanged);
             // 
             // label3
@@ -261,7 +262,7 @@
             // 
             // combomes
             // 
-            this.combomes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combomes.BackColor = System.Drawing.Color.White;
             this.combomes.FormattingEnabled = true;
             this.combomes.Items.AddRange(new object[] {
             "Enero",
@@ -280,6 +281,7 @@
             this.combomes.Name = "combomes";
             this.combomes.Size = new System.Drawing.Size(90, 21);
             this.combomes.TabIndex = 0;
+            this.combomes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloElegir_KeyPress);
             // 
             // linkFinMes
             // 

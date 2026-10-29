@@ -399,6 +399,27 @@ namespace Proyecto_Antonio_Luis.Formularios
             form.Show();
         }
 
+        private void BotonA3_Click(object sender, EventArgs e)
+        {
+            PanelSistema.Visible = false;
+            PanelClientes.Visible = false;
+            PanelFacturas.Visible = false;
+            // Enlace con a3ECO: se prepara en el paso 5 (contabilidad)
+            MessageBox.Show("El enlace con a3ECO está en preparación.\n\n" +
+                            "Aquí se generará el fichero para importar las facturas en a3ECO.",
+                "a3ECO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void BotonA3_MouseEnter(object sender, EventArgs e)
+        {
+            BotonA3.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.A3_Azul;
+        }
+
+        private void BotonA3_MouseLeave(object sender, EventArgs e)
+        {
+            BotonA3.BackgroundImage = Proyecto_Antonio_Luis.Properties.Resources.A3;
+        }
+
         private void BotonListados_Click(object sender, EventArgs e)
         {
             PanelSistema.Visible = false;
