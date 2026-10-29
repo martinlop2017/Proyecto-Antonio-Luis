@@ -60,7 +60,7 @@
             this.labelCobro = new System.Windows.Forms.Label();
             this.labelEfectivo = new System.Windows.Forms.Label();
             this.checkContabilizar = new System.Windows.Forms.CheckBox();
-            this.checkRecargo = new System.Windows.Forms.CheckBox();
+            this.checkRetencion = new System.Windows.Forms.CheckBox();
             this.checkPorMail = new System.Windows.Forms.CheckBox();
             this.groupCliente = new System.Windows.Forms.GroupBox();
             this.colConcepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,8 +73,8 @@
             this.valorBase = new System.Windows.Forms.Label();
             this.tituloIva = new System.Windows.Forms.Label();
             this.valorIva = new System.Windows.Forms.Label();
-            this.tituloRecargo = new System.Windows.Forms.Label();
-            this.valorRecargo = new System.Windows.Forms.Label();
+            this.tituloRetencion = new System.Windows.Forms.Label();
+            this.valorRetencion = new System.Windows.Forms.Label();
             this.tituloSuplidos = new System.Windows.Forms.Label();
             this.valorSuplidos = new System.Windows.Forms.Label();
             this.tituloTotal = new System.Windows.Forms.Label();
@@ -329,16 +329,16 @@
             this.checkContabilizar.Text = "Contabilizar";
             this.checkContabilizar.UseVisualStyleBackColor = true;
             // 
-            // checkRecargo
+            // checkRetencion
             // 
-            this.checkRecargo.AutoSize = true;
-            this.checkRecargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkRecargo.Location = new System.Drawing.Point(618, 158);
-            this.checkRecargo.Name = "checkRecargo";
-            this.checkRecargo.TabIndex = 26;
-            this.checkRecargo.Text = "Recargo equiv.";
-            this.checkRecargo.UseVisualStyleBackColor = true;
-            this.checkRecargo.CheckedChanged += new System.EventHandler(this.checkRecargo_CheckedChanged);
+            this.checkRetencion.AutoSize = true;
+            this.checkRetencion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkRetencion.Location = new System.Drawing.Point(618, 158);
+            this.checkRetencion.Name = "checkRetencion";
+            this.checkRetencion.TabIndex = 26;
+            this.checkRetencion.Text = "Retención IRPF";
+            this.checkRetencion.UseVisualStyleBackColor = true;
+            this.checkRetencion.CheckedChanged += new System.EventHandler(this.checkRetencion_CheckedChanged);
             // 
             // checkPorMail
             // 
@@ -373,7 +373,7 @@
             this.groupCliente.Controls.Add(this.labelCobro);
             this.groupCliente.Controls.Add(this.labelEfectivo);
             this.groupCliente.Controls.Add(this.checkContabilizar);
-            this.groupCliente.Controls.Add(this.checkRecargo);
+            this.groupCliente.Controls.Add(this.checkRetencion);
             this.groupCliente.Controls.Add(this.checkPorMail);
             this.groupCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupCliente.Location = new System.Drawing.Point(40, 108);
@@ -497,24 +497,24 @@
             this.valorIva.Text = "0,00 €";
             this.valorIva.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // tituloRecargo
+            // tituloRetencion
             // 
-            this.tituloRecargo.AutoSize = true;
-            this.tituloRecargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tituloRecargo.Location = new System.Drawing.Point(12, 66);
-            this.tituloRecargo.Name = "tituloRecargo";
-            this.tituloRecargo.TabIndex = 34;
-            this.tituloRecargo.Text = "Recargo equivalencia";
+            this.tituloRetencion.AutoSize = true;
+            this.tituloRetencion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tituloRetencion.Location = new System.Drawing.Point(12, 66);
+            this.tituloRetencion.Name = "tituloRetencion";
+            this.tituloRetencion.TabIndex = 34;
+            this.tituloRetencion.Text = "Retención IRPF";
             // 
-            // valorRecargo
+            // valorRetencion
             // 
-            this.valorRecargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valorRecargo.Location = new System.Drawing.Point(170, 64);
-            this.valorRecargo.Name = "valorRecargo";
-            this.valorRecargo.Size = new System.Drawing.Size(165, 20);
-            this.valorRecargo.TabIndex = 35;
-            this.valorRecargo.Text = "0,00 €";
-            this.valorRecargo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.valorRetencion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valorRetencion.Location = new System.Drawing.Point(170, 64);
+            this.valorRetencion.Name = "valorRetencion";
+            this.valorRetencion.Size = new System.Drawing.Size(165, 20);
+            this.valorRetencion.TabIndex = 35;
+            this.valorRetencion.Text = "0,00 €";
+            this.valorRetencion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tituloSuplidos
             // 
@@ -562,8 +562,8 @@
             this.groupTotales.Controls.Add(this.valorBase);
             this.groupTotales.Controls.Add(this.tituloIva);
             this.groupTotales.Controls.Add(this.valorIva);
-            this.groupTotales.Controls.Add(this.tituloRecargo);
-            this.groupTotales.Controls.Add(this.valorRecargo);
+            this.groupTotales.Controls.Add(this.tituloRetencion);
+            this.groupTotales.Controls.Add(this.valorRetencion);
             this.groupTotales.Controls.Add(this.tituloSuplidos);
             this.groupTotales.Controls.Add(this.valorSuplidos);
             this.groupTotales.Controls.Add(this.tituloTotal);
@@ -703,7 +703,7 @@
         private System.Windows.Forms.Label labelCobro;
         private System.Windows.Forms.Label labelEfectivo;
         private System.Windows.Forms.CheckBox checkContabilizar;
-        private System.Windows.Forms.CheckBox checkRecargo;
+        private System.Windows.Forms.CheckBox checkRetencion;
         private System.Windows.Forms.CheckBox checkPorMail;
         private System.Windows.Forms.GroupBox groupCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn colConcepto;
@@ -716,8 +716,8 @@
         private System.Windows.Forms.Label valorBase;
         private System.Windows.Forms.Label tituloIva;
         private System.Windows.Forms.Label valorIva;
-        private System.Windows.Forms.Label tituloRecargo;
-        private System.Windows.Forms.Label valorRecargo;
+        private System.Windows.Forms.Label tituloRetencion;
+        private System.Windows.Forms.Label valorRetencion;
         private System.Windows.Forms.Label tituloSuplidos;
         private System.Windows.Forms.Label valorSuplidos;
         private System.Windows.Forms.Label tituloTotal;

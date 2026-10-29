@@ -79,7 +79,22 @@ namespace Proyecto_Antonio_Luis.Clases
         public string Iban { get; set; }
         public bool Domiciliar { get; set; }
         public bool Contabilizar { get; set; }
-        public bool RecargoEquivalencia { get; set; }
+        /// <summary>% de retención de IRPF a aplicar (0 = sin retención).</summary>
+        public decimal PorcRetencion { get; set; }
+    }
+
+    /// <summary>Una factura de la facturación mensual, antes de grabarla.</summary>
+    public class FacturaMensualNueva
+    {
+        public DatosClienteFactura Cliente { get; set; }
+        public List<LineaFactura> Lineas { get; set; }
+        /// <summary>Honorarios fiscales y contables (tarifa del cliente).</summary>
+        public decimal Honorarios { get; set; }
+        public decimal Empleados { get; set; }
+        public decimal PrecioEmpleado { get; set; }
+        public decimal Laboral { get; set; }
+        public decimal Suplidos { get; set; }
+        public string ConceptoSuplido { get; set; }
     }
 
     /// <summary>
@@ -139,7 +154,11 @@ namespace Proyecto_Antonio_Luis.Clases
         //  Cálculo
         // =====================================================================
 
-        public static TotalesFactura Calcular(IEnumerable<LineaFactura> lineas)
+        /// <summary>
+        /// Calcula base, IVA (por tipo), suplidos y retención de IRPF.
+        /// La retención se aplica sobre la base imponible (los suplidos no retienen).
+        /// </summary>
+        public static TotalesFactura Calcular(IEnumerable<LineaFactura> lineas, decimal porcRetencion = 0)
         {
             var lista = lineas.ToList();
             var desglose = lista
@@ -160,117 +179,231 @@ namespace Proyecto_Antonio_Luis.Clases
                 })
                 .ToList();
 
+            decimal baseImponible = desglose.Sum(d => d.Base);
             return new TotalesFactura
             {
                 Desglose = desglose,
-                BaseImponible = desglose.Sum(d => d.Base),
+                BaseImponible = baseImponible,
                 CuotaIva = desglose.Sum(d => d.CuotaIva),
                 CuotaRecargo = desglose.Sum(d => d.CuotaRecargo),
                 Suplidos = lista.Where(l => l.Suplido).Sum(l => l.Importe),
-                Retencion = 0   // fase 2 de retenciones (con la facturación mensual y la contabilidad)
+                Retencion = porcRetencion > 0
+                    ? Math.Round(baseImponible * porcRetencion / 100, 2, MidpointRounding.AwayFromZero)
+                    : 0
             };
         }
 
-        /// <summary>Tipo de recargo de equivalencia que corresponde a un tipo de IVA (tabla Iva).</summary>
-        public static decimal RecargoDeTipo(AdministracionAntonioEntities bd, decimal tipoIva)
+        /// <summary>
+        /// % de retención de IRPF que se aplica a los clientes con "Retención IRPF":
+        /// el marcado como "por defecto" en la tabla Retenciones (General, 15 %).
+        /// </summary>
+        public static decimal PorcentajeRetencion(AdministracionAntonioEntities bd)
         {
-            var iva = bd.Iva.AsNoTracking().FirstOrDefault(i => i.ivaporciento == tipoIva);
-            return iva != null && iva.ivarecargo.HasValue ? iva.ivarecargo.Value : 0;
+            var r = bd.Retenciones.AsNoTracking().FirstOrDefault(x => x.retpordefecto)
+                 ?? bd.Retenciones.AsNoTracking().OrderBy(x => x.numerador).FirstOrDefault();
+            return r != null ? r.retporciento : 15m;
         }
 
         // =====================================================================
-        //  Grabar una factura directa (serie D)
+        //  Grabar
         // =====================================================================
 
         /// <summary>
-        /// Graba una factura directa con sus líneas y devuelve su identificador
-        /// (factcontador). El número se asigna aquí, dentro de una transacción.
+        /// Monta una factura con los datos comunes (cliente, importes, estado).
+        /// No la añade a la base de datos.
+        /// </summary>
+        private static Facturas MontarFactura(string serie, int ejercicio, decimal numero, DateTime fecha,
+            DatosClienteFactura cliente, IList<LineaFactura> lineas, TotalesFactura totales, decimal porcRetencion)
+        {
+            var f = new Facturas();
+
+            f.factserie = serie;
+            f.factorigen = serie;
+            f.factejercicio = ejercicio;
+            f.factnumerofact = numero;
+            f.factfechadoc = fecha.Date;
+            f.factfecha = fecha.ToString("dd/MM/yyyy");
+            f.factestado = "Emitida";
+
+            // Cliente (copia de sus datos en la factura)
+            f.factcodcliente = cliente.Codigo ?? CodigoClienteOcasional;
+            f.factnombre = ClientesUtil.Recortar(cliente.Nombre, 150);
+            f.factnif = ClientesUtil.Recortar(cliente.Nif, 20);
+            f.factdireccion = ClientesUtil.Recortar(cliente.Direccion, 150);
+            f.factlocalidad = ClientesUtil.Recortar(cliente.Localidad, 100);
+            f.factprovincia = ClientesUtil.Recortar(cliente.Provincia, 100);
+            f.factcp = ClientesUtil.Recortar(cliente.CodigoPostal, 20);
+            f.factmail = ClientesUtil.Recortar(cliente.Mail, 100);
+            f.factpormail = cliente.PorMail;
+            ClientesUtil.PonerIbanFactura(f, cliente.Iban);
+
+            // Importes nuevos
+            f.factbaseimponible = totales.BaseImponible;
+            f.factimporterecargo = totales.CuotaRecargo;
+            f.factretencionporc = totales.Retencion != 0 ? porcRetencion : 0;
+            f.factretencion = totales.Retencion;
+
+            // Importes en las columnas antiguas, para que remesas y Contaplus
+            // sigan funcionando hasta que se adapten (pasos 4 y 5):
+            //   base1 = base imponible, base2 = suplidos, IVA = IVA + recargo,
+            //   total = lo que paga el cliente (con la retención ya descontada).
+            var primeraConIva = lineas.FirstOrDefault(l => !l.Suplido);
+            var primerSuplido = lineas.FirstOrDefault(l => l.Suplido);
+            f.factconcepto1 = ClientesUtil.Recortar(primeraConIva != null ? primeraConIva.Concepto : "", 150);
+            f.factbase1 = totales.BaseImponible;
+            f.factconcepto2 = ClientesUtil.Recortar(primerSuplido != null ? primerSuplido.Concepto : "", 150);
+            f.factbase2 = totales.Suplidos;
+            f.factemleados = 0;
+            f.factprecioempleado = 0;
+            f.factbaseempleado = 0;
+            f.facttipoiva = totales.Desglose.Count > 0 ? totales.Desglose[0].TipoIva : 0;
+            f.factimporteiva = totales.CuotaIva + totales.CuotaRecargo;
+            f.facttotalfactura = totales.TotalAPagar;
+
+            // Estado
+            f.factpara_imprimir = !cliente.PorMail;
+            f.factimpresa = false;
+            f.factparacontabilizar = cliente.Contabilizar;
+            f.factcontabilizada = false;
+            f.factparadomiciliar = cliente.Domiciliar;
+            f.factdomiciliada = false;
+            return f;
+        }
+
+        private static void GrabarLineas(AdministracionAntonioEntities bd, decimal factcontador, IList<LineaFactura> lineas)
+        {
+            int orden = 1;
+            foreach (var l in lineas)
+            {
+                bd.FacturaLineas.Add(new FacturaLineas
+                {
+                    factcontador = factcontador,
+                    orden = orden++,
+                    concepto = ClientesUtil.Recortar(l.Concepto, 250),
+                    cantidad = l.Cantidad,
+                    precio = l.Precio,
+                    importe = l.Importe,
+                    sujetoiva = !l.Suplido,
+                    tipoiva = l.Suplido ? (decimal?)null : l.TipoIva,
+                    tiporecargo = l.Suplido ? 0 : l.TipoRecargo
+                });
+            }
+        }
+
+        /// <summary>
+        /// Graba una factura directa (serie D) con sus líneas y devuelve su
+        /// identificador (factcontador). El número se asigna aquí, dentro de una
+        /// transacción. Las facturas directas se cobran en efectivo: nunca se
+        /// domicilian.
         /// </summary>
         public static decimal GrabarDirecta(DatosClienteFactura cliente, DateTime fecha, IList<LineaFactura> lineas)
         {
-            var totales = Calcular(lineas);
+            var totales = Calcular(lineas, cliente.PorcRetencion);
             int ejercicio = fecha.Year;
 
             using (var bd = new AdministracionAntonioEntities())
             using (var transaccion = bd.Database.BeginTransaction(IsolationLevel.Serializable))
             {
-                var f = new Facturas();
-
-                f.factserie = SerieDirecta;
-                f.factorigen = SerieDirecta;
-                f.factejercicio = ejercicio;
-                f.factnumerofact = SiguienteNumero(bd, SerieDirecta, ejercicio);
-                f.factfechadoc = fecha.Date;
-                f.factfecha = fecha.ToString("dd/MM/yyyy");
-                f.factestado = "Emitida";
-                f.factremesa = "Directa " + Numero(SerieDirecta, ejercicio, f.factnumerofact);
-
-                // Cliente (copia de sus datos en la factura)
-                f.factcodcliente = cliente.Codigo ?? CodigoClienteOcasional;
-                f.factnombre = ClientesUtil.Recortar(cliente.Nombre, 150);
-                f.factnif = ClientesUtil.Recortar(cliente.Nif, 20);
-                f.factdireccion = ClientesUtil.Recortar(cliente.Direccion, 150);
-                f.factlocalidad = ClientesUtil.Recortar(cliente.Localidad, 100);
-                f.factprovincia = ClientesUtil.Recortar(cliente.Provincia, 100);
-                f.factcp = ClientesUtil.Recortar(cliente.CodigoPostal, 20);
-                f.factmail = ClientesUtil.Recortar(cliente.Mail, 100);
-                f.factpormail = cliente.PorMail;
-                ClientesUtil.PonerIbanFactura(f, cliente.Iban);
-
-                // Importes nuevos
-                f.factbaseimponible = totales.BaseImponible;
-                f.factimporterecargo = totales.CuotaRecargo;
-                f.factretencion = 0;
-                f.factretencionporc = 0;
-
-                // Importes en las columnas antiguas, para que remesas y Contaplus
-                // sigan funcionando hasta que se adapten (pasos 4 y 5):
-                //   base1 = base imponible, base2 = suplidos, IVA = IVA + recargo,
-                //   total = lo que paga el cliente.
-                var primeraConIva = lineas.FirstOrDefault(l => !l.Suplido);
-                var primerSuplido = lineas.FirstOrDefault(l => l.Suplido);
-                f.factconcepto1 = ClientesUtil.Recortar(primeraConIva != null ? primeraConIva.Concepto : "", 150);
-                f.factbase1 = totales.BaseImponible;
-                f.factconcepto2 = ClientesUtil.Recortar(primerSuplido != null ? primerSuplido.Concepto : "", 150);
-                f.factbase2 = totales.Suplidos;
-                f.factemleados = 0;
-                f.factprecioempleado = 0;
-                f.factbaseempleado = 0;
-                f.facttipoiva = totales.Desglose.Count > 0 ? totales.Desglose[0].TipoIva : 0;
-                f.factimporteiva = totales.CuotaIva + totales.CuotaRecargo;
-                f.facttotalfactura = totales.TotalAPagar;
-
-                // Estado
-                f.factpara_imprimir = !cliente.PorMail;
-                f.factimpresa = false;
-                f.factparacontabilizar = cliente.Contabilizar;
-                f.factcontabilizada = false;
-                f.factparadomiciliar = false;   // las facturas directas se cobran en efectivo
-                f.factdomiciliada = false;
+                cliente.Domiciliar = false;
+                cliente.Iban = "";
+                decimal numero = SiguienteNumero(bd, SerieDirecta, ejercicio);
+                var f = MontarFactura(SerieDirecta, ejercicio, numero, fecha, cliente, lineas, totales, cliente.PorcRetencion);
+                f.factremesa = "Directa " + Numero(SerieDirecta, ejercicio, numero);
 
                 bd.Facturas.Add(f);
                 bd.SaveChanges();
-
-                int orden = 1;
-                foreach (var l in lineas)
-                {
-                    bd.FacturaLineas.Add(new FacturaLineas
-                    {
-                        factcontador = f.factcontador,
-                        orden = orden++,
-                        concepto = ClientesUtil.Recortar(l.Concepto, 250),
-                        cantidad = l.Cantidad,
-                        precio = l.Precio,
-                        importe = l.Importe,
-                        sujetoiva = !l.Suplido,
-                        tipoiva = l.Suplido ? (decimal?)null : l.TipoIva,
-                        tiporecargo = l.Suplido ? 0 : l.TipoRecargo
-                    });
-                }
+                GrabarLineas(bd, f.factcontador, lineas);
                 bd.SaveChanges();
                 transaccion.Commit();
                 return f.factcontador;
             }
+        }
+
+        /// <summary>Clientes que ya tienen factura mensual en esa remesa.</summary>
+        public static HashSet<decimal> ClientesYaFacturados(AdministracionAntonioEntities bd, string remesa)
+        {
+            return new HashSet<decimal>(bd.Facturas
+                .Where(f => f.factserie == SerieMensual && f.factremesa == remesa && f.factcodcliente != null)
+                .Select(f => f.factcodcliente.Value)
+                .ToList());
+        }
+
+        /// <summary>
+        /// Graba todas las facturas de la facturación mensual (serie M) en una sola
+        /// transacción: o se graban todas, o ninguna. Las añade a la remesa del
+        /// mes (la crea si no existe) y actualiza su total.
+        /// Devuelve los identificadores (factcontador) de las facturas grabadas.
+        /// </summary>
+        public static List<decimal> GrabarMensual(string remesa, int añoRemesa, DateTime fecha, IList<FacturaMensualNueva> facturas)
+        {
+            int ejercicio = fecha.Year;
+            var ids = new List<decimal>();
+
+            using (var bd = new AdministracionAntonioEntities())
+            using (var transaccion = bd.Database.BeginTransaction(IsolationLevel.Serializable))
+            {
+                // Nadie puede tener ya factura en esta remesa
+                var yaFacturados = ClientesYaFacturados(bd, remesa);
+                var repetido = facturas.FirstOrDefault(x => x.Cliente.Codigo.HasValue && yaFacturados.Contains(x.Cliente.Codigo.Value));
+                if (repetido != null)
+                {
+                    throw new InvalidOperationException(repetido.Cliente.Nombre.Trim() + " ya tiene factura en la remesa " + remesa + ".");
+                }
+
+                // Remesa del mes: se reutiliza si ya existe
+                var r = bd.Resilla.FirstOrDefault(x => x.remesanumero == remesa);
+                if (r == null)
+                {
+                    r = new Resilla
+                    {
+                        remesanumero = remesa,
+                        remesafecha = fecha.ToString("dd/MM/yyyy"),
+                        remesafechacargo = fecha.Date,
+                        remesaejercicio = añoRemesa,
+                        remesatotal = 0,
+                        remesacontabilizada = false
+                    };
+                    bd.Resilla.Add(r);
+                    bd.SaveChanges();
+                }
+
+                decimal numero = SiguienteNumero(bd, SerieMensual, ejercicio);
+                var nuevas = new List<Facturas>();
+                foreach (var x in facturas)
+                {
+                    var totales = Calcular(x.Lineas, x.Cliente.PorcRetencion);
+                    var f = MontarFactura(SerieMensual, ejercicio, numero++, fecha, x.Cliente, x.Lineas, totales, x.Cliente.PorcRetencion);
+                    f.factremesa = remesa;
+                    f.factremesaid = r.remesanumerador;
+
+                    // Columnas antiguas con el desglose de la mensual (Contaplus, remesas)
+                    f.factbase1 = x.Honorarios;
+                    f.factemleados = x.Empleados;
+                    f.factprecioempleado = x.PrecioEmpleado;
+                    f.factbaseempleado = x.Laboral;
+                    f.factbase2 = x.Suplidos;
+                    f.factconcepto2 = ClientesUtil.Recortar(x.Suplidos != 0 ? x.ConceptoSuplido : "", 150);
+
+                    bd.Facturas.Add(f);
+                    bd.SaveChanges();
+                    GrabarLineas(bd, f.factcontador, x.Lineas);
+                    nuevas.Add(f);
+                    ids.Add(f.factcontador);
+                }
+                bd.SaveChanges();
+
+                // Total de la remesa (todas sus facturas, también las de antes)
+                decimal total = bd.Facturas.Where(f => f.factremesa == remesa && f.factserie == SerieMensual)
+                    .Sum(f => (decimal?)f.facttotalfactura) ?? 0;
+                r.remesatotal = total;
+                foreach (var f in bd.Facturas.Where(f => f.factremesa == remesa && f.factserie == SerieMensual).ToList())
+                {
+                    f.facttotalremesa = total;
+                }
+                bd.SaveChanges();
+                transaccion.Commit();
+            }
+            return ids;
         }
 
         // =====================================================================
@@ -396,7 +529,7 @@ namespace Proyecto_Antonio_Luis.Clases
                 if (cabecera.Retencion != 0 || cabecera.Suplidos != 0)
                     totalesImp.Add(new TotalImpresion { Concepto = "Total factura", Importe = cabecera.TotalFactura });
                 if (cabecera.Retencion != 0)
-                    totalesImp.Add(new TotalImpresion { Concepto = "Retención IRPF", Importe = -cabecera.Retencion });
+                    totalesImp.Add(new TotalImpresion { Concepto = "Retención IRPF" + ((f.factretencionporc ?? 0) != 0 ? " (" + f.factretencionporc.Value.ToString("0.##", Es) + " %)" : ""), Importe = -cabecera.Retencion });
                 if (cabecera.Suplidos != 0)
                     totalesImp.Add(new TotalImpresion { Concepto = "Suplidos (provisión de fondos)", Importe = cabecera.Suplidos });
                 totalesImp.Add(new TotalImpresion { Concepto = "TOTAL A PAGAR", Importe = cabecera.TotalAPagar, Destacado = true });

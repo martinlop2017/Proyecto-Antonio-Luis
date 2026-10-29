@@ -1,813 +1,758 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BaseDatos;
 using Proyecto_Antonio_Luis.Clases;
-using Proyecto_Antonio_Luis.Formularios;
-using System.Threading;
 
 namespace Proyecto_Antonio_Luis.Formularios
 {
+    /// <summary>
+    /// Facturación mensual (serie M).
+    ///
+    ///  1. Generar: propone una factura para cada cliente activo con su tarifa,
+    ///     sus nóminas (empleados × precio) y su retención de IRPF si la lleva.
+    ///  2. Se pueden retocar importes, añadir suplidos, añadir o quitar clientes.
+    ///  3. Facturar: graba todas las facturas de golpe (o ninguna si algo falla),
+    ///     las añade a la remesa del mes ("Octubre 2026"), crea los PDF y saca el
+    ///     listado de control.
+    ///
+    /// Un cliente no puede tener dos facturas en la misma remesa: si el mes ya
+    /// está facturado, solo se proponen los clientes que falten.
+    /// </summary>
     public partial class Facturacion : Form
     {
-        TaskScheduler uiScheduler;
-        int pasos = 1;
+        private static readonly CultureInfo Es = new CultureInfo("es-ES");
 
-        AdministracionAntonioEntities bd;
-        //esta lista la declaro arriba para poder usarla posteriormente
-        List<albaranesclientes> albaranes = new List<albaranesclientes>();
-        List<datoslistadoreme> alistar = new List<datoslistadoreme>();
-        private List<string> originalClientValues;
+        private static readonly string[] Meses =
+        {
+            "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        };
 
+        private readonly BindingList<FilaMensual> filas = new BindingList<FilaMensual>();
+        private decimal porcRetencion = 15m;
+        private bool cargando;
+
+        // =====================================================================
+        //  Una fila de la facturación (una factura propuesta)
+        // =====================================================================
+
+        private class FilaMensual
+        {
+            public Clientes Cliente { get; set; }
+
+            public decimal Codigo { get { return Cliente.codcliente ?? 0; } }
+            public string Nombre { get { return (Cliente.nombrecliente ?? "").Trim(); } }
+
+            public decimal Honorarios { get; set; }
+            public decimal Empleados { get; set; }
+            public decimal PrecioEmpleado { get; set; }
+            public string ConceptoSuplido { get; set; }
+            public decimal Suplidos { get; set; }
+
+            public decimal TipoIva { get; set; }
+            /// <summary>% de retención (0 si el cliente no lleva).</summary>
+            public decimal PorcRetencion { get; set; }
+
+            public decimal Laboral
+            {
+                get { return Math.Round(Empleados * PrecioEmpleado, 2, MidpointRounding.AwayFromZero); }
+            }
+
+            public decimal BaseImponible { get { return Honorarios + Laboral; } }
+
+            public decimal Iva
+            {
+                get { return Math.Round(BaseImponible * TipoIva / 100, 2, MidpointRounding.AwayFromZero); }
+            }
+
+            public decimal Retencion
+            {
+                get { return Math.Round(BaseImponible * PorcRetencion / 100, 2, MidpointRounding.AwayFromZero); }
+            }
+
+            public decimal Total { get { return BaseImponible + Iva - Retencion + Suplidos; } }
+
+            public bool PorMail { get { return Cliente.pormailcliente == true; } }
+            public bool Domiciliar { get { return Cliente.domiciliadocliente == true; } }
+        }
 
         public Facturacion()
         {
             InitializeComponent();
-            this.uiScheduler = TaskScheduler.FromCurrentSynchronizationContext();
-
-            bd = new AdministracionAntonioEntities();
-          
-
+            CrearColumnas();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //************************************************************************************************************
-        //************************************************************************************************************
-        //************************************************************************************************************
-        //*****************                                                                               ************
-        //*****************  Esto controla el que cambie de color los botones cuando los señala el raton  ************
-        //*****************                                                                               ************
-        //*****************                                                                               ************
-        //************************************************************************************************************
-        //************************************************************************************************************
-
-        private void toolStripButton1_MouseEnter(object sender, EventArgs e)
-        {
-
-        }
+        // =====================================================================
+        //  Carga
+        // =====================================================================
 
         private void Facturacion_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet1.Facturas' Puede moverla o quitarla según sea necesario.
-            //this.facturasTableAdapter.Fill(this.administracionAntonioDataSet1.Facturas);
-            // cargamos el combo del iva y la fecha.
-            comboiva.DataSource = bd.Iva.Select(user => user.ivaporciento).ToList();
-            comboiva.Text = "21";
+            cargando = true;
+            try
+            {
+                using (var bd = new AdministracionAntonioEntities())
+                {
+                    var tipos = bd.Iva.AsNoTracking()
+                        .Where(i => i.ivaporciento != null)
+                        .Select(i => i.ivaporciento.Value)
+                        .ToList()
+                        .Distinct()
+                        .OrderByDescending(t => t)
+                        .ToList();
+                    comboiva.DataSource = tipos;
+                    comboiva.FormatString = "0.##";
+                    if (tipos.Contains(21m)) comboiva.SelectedItem = 21m;
 
-            fechafactura.Value = DateTime.Now;
+                    porcRetencion = FacturasUtil.PorcentajeRetencion(bd);
+                }
 
-            //mostramos el mes actual
-            combomes.Text = DateTime.Now.ToString("MMMM");
+                combomes.Items.Clear();
+                combomes.Items.AddRange(Meses);
+                combomes.SelectedIndex = DateTime.Today.Month - 1;
+                fechafactura.Value = DateTime.Today;
+            }
+            catch (Exception ex)
+            {
+                Error("No se han podido cargar los datos", ex);
+            }
+            finally
+            {
+                cargando = false;
+            }
 
-
-            // borrar
-            dgvTemporal.DataSource = "";
-            dgvTemporal.DataSource = bd.Clientes .ToList();
-            dgvTemporal.Refresh();
-
+            dgvTemporal.DataSource = filas;
+            ActualizarContador();
+            facturar.Enabled = false;
         }
 
+        private void CrearColumnas()
+        {
+            dgvTemporal.AutoGenerateColumns = false;
+            dgvTemporal.Columns.Clear();
+            dgvTemporal.AllowUserToAddRows = false;
+            dgvTemporal.AllowUserToDeleteRows = false;
+            dgvTemporal.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            dgvTemporal.RowTemplate.DefaultCellStyle.Format = null;
+
+            Columna("Nombre", "Cliente", 0, null, true).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Columna("Honorarios", "Fiscal y contable", 90, "N2", false);
+            Columna("Empleados", "Emp.", 50, "0.##", false);
+            Columna("PrecioEmpleado", "Precio empl.", 80, "N2", false);
+            Columna("Laboral", "Laboral", 80, "N2", true);
+            Columna("ConceptoSuplido", "Concepto suplidos", 170, null, false);
+            Columna("Suplidos", "Suplidos", 80, "N2", false);
+            Columna("BaseImponible", "Base", 85, "N2", true);
+            Columna("Iva", "IVA", 75, "N2", true);
+            Columna("Retencion", "Ret. IRPF", 75, "N2", true);
+            Columna("Total", "Total", 90, "N2", true);
+            Marca("PorMail", "Mail");
+            Marca("Domiciliar", "Domic.");
+        }
+
+        private DataGridViewTextBoxColumn Columna(string propiedad, string titulo, int ancho, string formato, bool soloLectura)
+        {
+            var c = new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = propiedad,
+                Name = "col" + propiedad,
+                HeaderText = titulo,
+                ReadOnly = soloLectura,
+                SortMode = DataGridViewColumnSortMode.NotSortable
+            };
+            if (ancho > 0) c.Width = ancho;
+            if (formato != null)
+            {
+                c.DefaultCellStyle.Format = formato;
+                c.DefaultCellStyle.FormatProvider = Es;
+                c.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            }
+            // Las columnas que se pueden cambiar, en blanco; el resto, en amarillo
+            if (!soloLectura) c.DefaultCellStyle.BackColor = Color.White;
+            dgvTemporal.Columns.Add(c);
+            return c;
+        }
+
+        private void Marca(string propiedad, string titulo)
+        {
+            dgvTemporal.Columns.Add(new DataGridViewCheckBoxColumn
+            {
+                DataPropertyName = propiedad,
+                Name = "col" + propiedad,
+                HeaderText = titulo,
+                Width = 45,
+                ReadOnly = true,
+                SortMode = DataGridViewColumnSortMode.NotSortable
+            });
+        }
+
+        // =====================================================================
+        //  Mes, año y fecha
+        // =====================================================================
+
+        private int MesFacturado
+        {
+            get { return combomes.SelectedIndex + 1; }
+        }
+
+        /// <summary>
+        /// Año del mes que se factura. Si se factura diciembre con fecha de enero,
+        /// el mes facturado es del año anterior.
+        /// </summary>
+        private int AñoFacturado
+        {
+            get
+            {
+                DateTime f = fechafactura.Value.Date;
+                return MesFacturado > f.Month ? f.Year - 1 : f.Year;
+            }
+        }
+
+        /// <summary>Nombre de la remesa: "Octubre 2026".</summary>
+        private string NombreRemesa
+        {
+            get { return Meses[MesFacturado - 1] + " " + AñoFacturado; }
+        }
+
+        private string MesTexto
+        {
+            get { return Meses[MesFacturado - 1].ToLower(Es) + " de " + AñoFacturado; }
+        }
+
+        private void linkFinMes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (combomes.SelectedIndex < 0) return;
+            int año = AñoFacturado;
+            fechafactura.Value = new DateTime(año, MesFacturado, DateTime.DaysInMonth(año, MesFacturado));
+        }
+
+        // =====================================================================
+        //  Generar
+        // =====================================================================
 
         private void sumar_Click(object sender, EventArgs e)
         {
-            
-           
+            if (combomes.SelectedIndex < 0)
+            {
+                Aviso("Elige el mes que vas a facturar.");
+                return;
+            }
+            if (filas.Count > 0 &&
+                MessageBox.Show("Se va a volver a generar la lista y se perderán los cambios hechos a mano.\n¿Continuar?",
+                    "Facturación mensual", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            {
+                return;
+            }
 
+            try
+            {
+                List<Clientes> activos;
+                HashSet<decimal> yaFacturados;
+                using (var bd = new AdministracionAntonioEntities())
+                {
+                    activos = bd.Clientes.AsNoTracking()
+                        .Where(c => c.activocliente == true)
+                        .OrderBy(c => c.nombrecliente)
+                        .ToList();
+                    yaFacturados = FacturasUtil.ClientesYaFacturados(bd, NombreRemesa);
+                }
 
+                filas.RaiseListChangedEvents = false;
+                filas.Clear();
+                int omitidos = 0;
+                foreach (var c in activos)
+                {
+                    if (c.codcliente.HasValue && yaFacturados.Contains(c.codcliente.Value))
+                    {
+                        omitidos++;
+                        continue;
+                    }
+                    filas.Add(NuevaFila(c));
+                }
+                filas.RaiseListChangedEvents = true;
+                filas.ResetBindings();
 
-            // cuando generamos, recorremos los datos de la tabla clientes, y extraemos los datos de los que
-            //tienen como true el campo activo.
+                ActualizarContador();
+                facturar.Enabled = filas.Count > 0;
+                añadir.Enabled = true;
+                eliminar.Enabled = true;
 
-            var facturcliente = bd.Clientes.Where(x => x.activocliente == true).ToList();
-
-            Globales.fechafactura = fechafactura.Value;
-            Globales.mesfactura = combomes.Text;
-            Globales.tipoiva = Convert.ToDecimal(comboiva.Text);
-
-
-
-            //aqui realiza el mapeo 
-            //esta lista la declaro arriba para poder usarla posteriormente
-          //  List<albaranesclientes> albaranes = new List<albaranesclientes>();
-            albaranes = Mapeos.creaalbaran.pasoclientes_a_albaran(facturcliente);
-
-            dgvTemporal.DataSource = albaranes.OrderBy(x => x.albnombre).ToList();
-            //**************************
-
-            label14.Text = albaranes.Count.ToString();
-
-            //activamos los botones de imprimir y facturar.
-            facturar.Enabled = true;
-            
-            añadir.Enabled = true;
-            eliminar.Enabled = true;
-
-
-
-
-
+                if (omitidos > 0)
+                {
+                    MessageBox.Show("La remesa " + NombreRemesa + " ya está facturada para " + omitidos +
+                                    (omitidos == 1 ? " cliente" : " clientes") + ".\n" +
+                                    (filas.Count > 0
+                                        ? "Solo se proponen los " + filas.Count + " que faltan."
+                                        : "No falta ningún cliente activo por facturar."),
+                        "Facturación mensual", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                Error("No se ha podido generar la facturación", ex);
+            }
         }
 
-
-  
-
-        private void salir_Click(object sender, EventArgs e)
+        private FilaMensual NuevaFila(Clientes c)
         {
-            Close();
+            return new FilaMensual
+            {
+                Cliente = c,
+                Honorarios = c.tarifacliente ?? 0,
+                Empleados = c.empleadoscliente ?? 0,
+                PrecioEmpleado = c.precioempleadocliente ?? 0,
+                ConceptoSuplido = "",
+                Suplidos = 0,
+                TipoIva = TipoIvaElegido(),
+                PorcRetencion = c.retencioncliente == true ? porcRetencion : 0
+            };
         }
 
-   
-        private void generar_MouseEnter(object sender, EventArgs e)
+        private decimal TipoIvaElegido()
         {
-            label9.Visible = true;
+            return comboiva.SelectedItem is decimal ? (decimal)comboiva.SelectedItem : 21m;
         }
 
-        private void generar_MouseLeave(object sender, EventArgs e)
+        private void ActualizarContador()
         {
-            label9.Visible = false;
+            label14.Text = filas.Count + "   ·   Total: " + filas.Sum(f => f.Total).ToString("N2", Es) + " €";
         }
 
-        private void añadir_MouseEnter(object sender, EventArgs e)
+        /// <summary>Al cambiar el IVA se recalculan todas las filas.</summary>
+        private void comboiva_SelectedIndexChanged(object sender, EventArgs e)
         {
-            label8.Visible = true;
+            if (cargando || filas.Count == 0) return;
+            decimal tipo = TipoIvaElegido();
+            foreach (var f in filas) f.TipoIva = tipo;
+            filas.ResetBindings();
+            ActualizarContador();
         }
-
-        private void añadir_MouseLeave(object sender, EventArgs e)
-        {
-            label8.Visible = false;
-        }
-
-        private void eliminar_MouseEnter(object sender, EventArgs e)
-        {
-            label6.Visible = true;
-        }
-
-        private void eliminar_MouseLeave(object sender, EventArgs e)
-        {
-            label6.Visible = false;
-        }
-
-        private void facturar_MouseEnter(object sender, EventArgs e)
-        {
-            label5.Visible = true;
-        }
-
-        private void facturar_MouseLeave(object sender, EventArgs e)
-        {
-            label5.Visible = false;
-        }
-
-        private void imprimir_MouseEnter(object sender, EventArgs e)
-        {
-            label4.Visible = true;
-        }
-
-        private void imprimir_MouseLeave(object sender, EventArgs e)
-        {
-            label4.Visible = false;
-        }
-
-        private void salir_MouseEnter(object sender, EventArgs e)
-        {
-            label10.Visible = true;
-
-        }
-
-        private void salir_MouseLeave(object sender, EventArgs e)
-        {
-            label10.Visible = false;
-        }
-
-  
 
         private void dgvTemporal_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            //  creamos variables para los calculos y les damos valor
-            decimal basealbaran, ivaalbaran, tarifa1albaran, tarifa2albaran, laboralalbaran,
-                    tipoivaalbaran, totalalbaran, empleadosalbaran, precioempleadoalbaran;
-            // creamos la variable para acceder a la fila
-            int fila;
-            
-            
-            
-            // realizamos esto si modificamos la tarifa 1 o tarifa 2
-            if (dgvTemporal.Columns[e.ColumnIndex].Name == "dataGridViewTextBoxColumn6")
-            {
-                fila = Convert.ToInt32(dgvTemporal.CurrentRow.Index);
+            if (e.RowIndex < 0) return;
+            // Los totales de la fila dependen de lo que se ha cambiado
+            dgvTemporal.InvalidateRow(e.RowIndex);
+            ActualizarContador();
+        }
 
+        private void dgvTemporal_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Escribe un número válido.", "Facturación mensual", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            e.Cancel = true;
+        }
 
-                // cargamos las variables con los datos del dgv
-                tarifa1albaran = Convert.ToDecimal(dgvTemporal[6, fila].Value);
-                tarifa2albaran = Convert.ToDecimal(dgvTemporal[8, fila].Value);
-                laboralalbaran = Convert.ToDecimal(dgvTemporal[11, fila].Value);
-                tipoivaalbaran = Convert.ToDecimal(dgvTemporal[1, fila].Value);
-
-                // realizamos lo scalculos
-                basealbaran = (tarifa1albaran + tarifa2albaran + laboralalbaran);
-                ivaalbaran = ((tarifa1albaran + laboralalbaran) * tipoivaalbaran)/100;
-
-                totalalbaran = basealbaran + ivaalbaran;
-
-                // cargamos los datos e el dgv
-                dgvTemporal[12, fila].Value = basealbaran;
-                dgvTemporal[13, fila].Value = ivaalbaran;
-                dgvTemporal[14, fila].Value = totalalbaran;
-            }
-
-
-
-            // realizamos esto si modificamos la tarifa 2 (SUPLIDOS)
-            if (dgvTemporal.Columns[e.ColumnIndex].Name == "dataGridViewTextBoxColumn8")
-            {
-                fila = Convert.ToInt32(dgvTemporal.CurrentRow.Index);
-
-
-                // cargamos las variables con los datos del dgv
-                tarifa1albaran = Convert.ToDecimal(dgvTemporal[6, fila].Value);
-                tarifa2albaran = Convert.ToDecimal(dgvTemporal[8, fila].Value);
-                laboralalbaran = Convert.ToDecimal(dgvTemporal[11, fila].Value);
-                tipoivaalbaran = Convert.ToDecimal(dgvTemporal[1, fila].Value);
-
-                // realizamos lo scalculos
-                basealbaran = (tarifa1albaran + tarifa2albaran + laboralalbaran);
-                ivaalbaran = ((tarifa1albaran + laboralalbaran) * tipoivaalbaran) / 100;
-
-                totalalbaran = basealbaran + ivaalbaran;
-
-                // cargamos los datos e el dgv
-                dgvTemporal[12, fila].Value = basealbaran;
-                dgvTemporal[13, fila].Value = ivaalbaran;
-                dgvTemporal[14, fila].Value = totalalbaran;
-            }
-
-
-            // realizamos esto si modificamos los empleados o el precio por emleado
-            if ((dgvTemporal.Columns[e.ColumnIndex].Name == "dataGridViewTextBoxColumn9") ||
-                    (dgvTemporal.Columns[e.ColumnIndex].Name == "dataGridViewTextBoxColumn10"))
-            {
-                fila = Convert.ToInt32(dgvTemporal.CurrentRow.Index);
-
-                // cargamos las variables con los datos del dgv
-                tarifa1albaran = Convert.ToDecimal(dgvTemporal[6, fila].Value);
-                tarifa2albaran = Convert.ToDecimal(dgvTemporal[8, fila].Value);
-                tipoivaalbaran = Convert.ToDecimal(dgvTemporal[1, fila].Value);
-                empleadosalbaran = Convert.ToInt32(dgvTemporal[9, fila].Value);
-                precioempleadoalbaran = Convert.ToDecimal(dgvTemporal[10, fila].Value);
-
-                // realizamos lo scalculos
-                laboralalbaran = empleadosalbaran * precioempleadoalbaran;
-                basealbaran = (tarifa1albaran + tarifa2albaran + laboralalbaran);
-                ivaalbaran = ((tarifa1albaran + laboralalbaran) * tipoivaalbaran) / 100;
-                totalalbaran = basealbaran + ivaalbaran;
-
-                // cargamos los datos e el dgv
-                dgvTemporal[12, fila].Value = basealbaran;
-                dgvTemporal[13, fila].Value = ivaalbaran;
-                dgvTemporal[14, fila].Value = totalalbaran;
-                dgvTemporal[11, fila].Value = laboralalbaran;
-
-            }
-
-
-
-            }
+        // =====================================================================
+        //  Añadir y quitar clientes
+        // =====================================================================
 
         private void añadir_Click(object sender, EventArgs e)
         {
-
-            // hace visible el panel de busqueda y ordena por numero de cliente
             panel3.Visible = true;
-            var nuevocliente = bd.Clientes.OrderBy(y => y.nombrecliente);
-            dataGridView2.DataSource = nuevocliente.ToList();
-
-
+            panel3.BringToFront();
+            textBox2.Text = "";
+            BuscarClientes();
+            textBox2.Focus();
         }
 
-
-
-
-        private void facturar_Click(object sender, EventArgs e)
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
-            //mostramos el detagrib
-            dataGridView1.Visible = true;
-
-
-            CheckForIllegalCrossThreadCalls = false;
-            var formEsperar = new FormEsperar("Creando Facturas");
-            var hilo = Task.Factory.StartNew(() =>
-            {
-
-
-                generar.Enabled = false;
-                añadir.Enabled = false;
-                eliminar.Enabled = false;
-                imprimir.Enabled = true;
-                facturar.Enabled = false;
-                //mostramos el detagrib
-                //     dataGridView1.Visible = true;
-
-                //cargamos los datos en el dgv.
-
-                //**** calculamos el valor de la coluna numerador
-                // Número siguiente de la serie M (facturación mensual) en el año de la factura.
-                // Cada serie empieza en 1 cada año.
-                decimal numerofactura = FacturasUtil.SiguienteNumero(bd, FacturasUtil.SerieMensual, Globales.fechafactura.Year);
-
-
-                List<temporal> lista = new List<temporal>();
-
-
-
-                foreach (DataGridViewRow row in dgvTemporal.Rows)
-
-                {
-                    temporal datosapasar = new temporal();
-
-                    datosapasar.tempnumerofactura = Convert.ToDecimal(numerofactura);
-                    numerofactura++;
-                    datosapasar.tempremesa = Convert.ToString(row.Cells[0].Value);
-                    datosapasar.temptipoiva = Convert.ToDecimal(row.Cells[1].Value);
-                    datosapasar.tempcod = Convert.ToDecimal(row.Cells[2].Value);
-                    datosapasar.tempfecha = Convert.ToString(row.Cells[3].Value);
-                    datosapasar.tempnombre = Convert.ToString(row.Cells[4].Value);
-                    datosapasar.tempconcepto1 = Convert.ToString(row.Cells[5].Value);
-                    datosapasar.temptarifa = Convert.ToDecimal(row.Cells[6].Value);
-                    datosapasar.tempconcepto2 = Convert.ToString(row.Cells[7].Value);
-                    datosapasar.temptarifa2 = Convert.ToDecimal(row.Cells[8].Value);
-                    datosapasar.tempempleados = Convert.ToDecimal(row.Cells[9].Value);
-                    datosapasar.temppvempleados = Convert.ToDecimal(row.Cells[10].Value);
-                    datosapasar.templaboral = Convert.ToDecimal(row.Cells[11].Value);
-                    datosapasar.tempbase = Convert.ToDecimal(row.Cells[12].Value);
-                    datosapasar.tempiva = Convert.ToDecimal(row.Cells[13].Value);
-                    datosapasar.temptotal = Convert.ToDecimal(row.Cells[14].Value);
-                    datosapasar.temppormail = Convert.ToBoolean(row.Cells[15].Value);
-                    datosapasar.tempdoiciliado = Convert.ToBoolean(row.Cells[16].Value);
-                    datosapasar.tempcif = Convert.ToString(row.Cells[17].Value);
-                    datosapasar.tempdireccion = Convert.ToString(row.Cells[18].Value);
-                    datosapasar.templocalidad = Convert.ToString(row.Cells[19].Value);
-                    datosapasar.tempprovincia = Convert.ToString(row.Cells[20].Value);
-                    datosapasar.tempcp = Convert.ToString(row.Cells[21].Value);
-                    datosapasar.tempmail = Convert.ToString(row.Cells[22].Value);
-                    datosapasar.tempiban1 = Convert.ToString(row.Cells[23].Value);
-                    datosapasar.tempiban2 = Convert.ToString(row.Cells[24].Value);
-                    datosapasar.tempiban3 = Convert.ToString(row.Cells[25].Value);
-                    datosapasar.tempiban4 = Convert.ToString(row.Cells[26].Value);
-                    datosapasar.tempiban5 = Convert.ToString(row.Cells[27].Value);
-                    datosapasar.tempiban6 = Convert.ToString(row.Cells[28].Value);
-                    // IBAN completo, tomado del albarán de la fila (no de la columna de la rejilla)
-                    var albaranFila = row.DataBoundItem as albaranesclientes;
-                    datosapasar.tempiban = albaranFila != null
-                        ? albaranFila.albiban
-                        : ClientesUtil.IbanDeBloques(datosapasar.tempiban1, datosapasar.tempiban2, datosapasar.tempiban3,
-                                                     datosapasar.tempiban4, datosapasar.tempiban5, datosapasar.tempiban6);
-                    datosapasar.tempparadomiciliar = Convert.ToBoolean(row.Cells[31].Value);
-                    datosapasar.tempparaimprimir = Convert.ToBoolean(row.Cells[32].Value);
-                    datosapasar.tempparacontabilizar = Convert.ToBoolean(row.Cells[33].Value);
-
-
-
-
-
-                    lista.Add(datosapasar);
-
-                }
-
-                dataGridView1.DataSource = lista.ToList();
-
-                //ahora vamos a pasar los datos a la tabla de factura.
-
-                //**** calculamos el valor de la coluna numerador
-                //var ultimonumerador = bd.Facturas.OrderByDescending(x => x.factcontador).First().factcontador;
-
-
-                decimal totalbaseremesa = 0;
-                decimal totalivaremesa = 0;
-                decimal totaltotalremesa = 0;
-                string numeroremesa = "";
-                string fecharemesa = "";
-                int totaldocumentos = 0;
-
-
-                List<Facturas> facturasAGuardar = new List<Facturas>();
-
-                //            List<datoslistadoreme> alistar = new List<datoslistadoreme>();
-
-                foreach (var temp in lista)
-                {
-                    datoslistadoreme mylistado = new datoslistadoreme();
-                    Facturas myFactura = new Facturas();
-
-
-                    myFactura.factbase1 = temp.tempbase;
-                    //          mylistado.listimporte1 = temp.
-
-                    myFactura.factnumerofact = temp.tempnumerofactura;
-                    mylistado.listnumerofactura = temp.tempnumerofactura.ToString();
-
-                    myFactura.factremesa = temp.tempremesa;
-                    myFactura.factfecha = temp.tempfecha;
-                    myFactura.factcodcliente = temp.tempcod;
-                    myFactura.factnombre = temp.tempnombre;
-                    mylistado.listnombre = temp.tempnombre;
-
-                    myFactura.factdireccion = temp.tempdireccion;
-                    mylistado.listdireccion = temp.tempdireccion;
-
-                    myFactura.factlocalidad = temp.templocalidad;
-                    mylistado.listpoblacion = temp.templocalidad;
-
-                    myFactura.factprovincia = temp.tempprovincia;
-                    mylistado.listprovincia = temp.tempprovincia;
-
-                    myFactura.factcp = temp.tempcp;
-                    mylistado.listcp = temp.tempcp;
-
-                    myFactura.factnif = temp.tempcif;
-                    mylistado.listcif = temp.tempcif;
-
-
-                    // IBAN completo + bloques antiguos (si cabe)
-                    ClientesUtil.PonerIbanFactura(myFactura, temp.tempiban);
-                    myFactura.factconcepto1 = temp.tempconcepto1;
-                    mylistado.listconcepto1 = temp.tempconcepto1;
-
-                    myFactura.factconcepto2 = temp.tempconcepto2;
-                    mylistado.listconcepto2 = temp.tempconcepto2;
-
-                    myFactura.factbase1 = temp.temptarifa;
-                    mylistado.listimporte1 = temp.temptarifa;
-
-
-                    mylistado.listbase = temp.tempbase;
-
-                    myFactura.factconcepto2 = temp.tempconcepto2;
-                    myFactura.factbase2 = temp.temptarifa2;
-                    mylistado.listsuplidos = temp.temptarifa2;
-
-                    myFactura.factemleados = temp.tempempleados;
-                    mylistado.listnumempleados = temp.tempempleados;
-
-                    myFactura.factprecioempleado = temp.temppvempleados;
-                    mylistado.listimporteempleados = temp.temppvempleados;
-
-                    myFactura.factbaseempleado = temp.templaboral;
-                    mylistado.listtotalempleados = temp.templaboral;
-
-
-                    myFactura.facttipoiva = temp.temptipoiva;
-                    myFactura.factimporteiva = temp.tempiva;
-                    mylistado.listiva = temp.tempiva;
-
-                    myFactura.facttotalfactura = temp.temptotal;
-                    mylistado.listtotal = temp.temptotal;
-
-                    myFactura.factpara_imprimir = true;
-                    myFactura.factimpresa = false;
-
-                    if (temp.temppormail == true)
-                    {
-                        myFactura.factpara_imprimir = false;
-                    }
-                    myFactura.factpormail = temp.temppormail;
-                    myFactura.factmail = temp.tempmail;
-
-                    myFactura.factparacontabilizar = temp.tempparacontabilizar;
-                    myFactura.factcontabilizada = false;
-                    myFactura.factparadomiciliar = temp.tempparadomiciliar;
-                    myFactura.factdomiciliada = false;
-
-                    // Serie, año y fecha real (hasta rehacer la facturación mensual en el paso 3)
-                    myFactura.factserie = FacturasUtil.SerieMensual;
-                    myFactura.factorigen = FacturasUtil.SerieMensual;
-                    myFactura.factejercicio = Globales.fechafactura.Year;
-                    myFactura.factfechadoc = Globales.fechafactura.Date;
-                    myFactura.factbaseimponible = temp.temptarifa + temp.templaboral;
-                    myFactura.factestado = "Emitida";
-
-                    totalbaseremesa = totalbaseremesa + temp.tempbase;
-
-
-                    totalivaremesa = totalivaremesa + temp.tempiva;
-                    totaltotalremesa = totaltotalremesa + temp.temptotal;
-
-                    numeroremesa = temp.tempremesa;
-                    fecharemesa = temp.tempfecha;
-                    mylistado.listfecha = temp.tempfecha;
-
-
-                    mylistado.listnombreemisor = bd.Propios.First().minombre;
-                    // mylistado.listtotalremesa = totaltotalremesa;
-                    mylistado.listnumeroremesa = numeroremesa;
-
-
-                    Globales.anofactura = Convert.ToDateTime(temp.tempfecha);
-
-                    facturasAGuardar.Add(myFactura);
-                    alistar.Add(mylistado);
-                }
-                // pasamos los datos a la tabla facturacion y remesa
-                bd.Facturas.AddRange(facturasAGuardar);
-                bd.SaveChanges();
-
-
-                var pasoremesa = new Resilla();
-                pasoremesa.remesanumero = numeroremesa;
-
-
-                pasoremesa.remesafecha = fecharemesa;
-                pasoremesa.remesatotal = Convert.ToDecimal(totaltotalremesa);
-                // pasoremesa.remesaimpresa = false;
-                pasoremesa.remesacontabilizada = false;
-
-
-
-                // pasamos los datos a remesa
-                bd.Resilla.Add(pasoremesa);
-
-                //grabamos el total de la remesa en la clase a listar
-                alistar.ToList().ForEach(x => x.listtotalremesa = totaltotalremesa);
-                totaldocumentos = alistar.Count;
-                alistar.ToList().ForEach(x => x.listtotaldocumentos = totaldocumentos);
-
-
-
-
-
-
-                //ahora vamos a introducir el total de la remesa en las facturas.
-
-                // Filtramos la tabla facuras por el numero de remesa
-                var facturasfiltradas = bd.Facturas.Where(x => x.factremesa == numeroremesa);
-                //Modificamos el campo
-                facturasfiltradas.ToList().ForEach(f => f.facttotalremesa = totaltotalremesa);
-
-
-                // Guardamos los cambios
-                bd.SaveChanges();
-
-
-
-                //desasctivamos los botones de generar, añadir y borrar
-                añadir.Enabled = false;
-                generar.Enabled = false;
-                eliminar.Enabled = false;
-
-                formEsperar.Close();
-
-            });
-
-            formEsperar.ShowDialog();
-
-            hilo.Dispose();
-            CheckForIllegalCrossThreadCalls = true;
-
-
-            var form = new FormEsperar("Imprimiendo Facturas");
-            CheckForIllegalCrossThreadCalls = false;
-            var hilo2 = Task.Factory.StartNew(() =>
-            {
-
-                    
-                // cargamos la pantalla de listados de remesas
-                for (int i = 0; i < alistar.Count; i++)
-                {
-                    Form3 nuevaForma = new Form3();
-                    var dato = alistar[i];
-
-
-                    int year = Globales.anofactura .Year;
-
-
-                    //nuevaForma.ExportarToPdf(dato, $"C:\\Equipo Martin\\facturas\\Nueva carpeta\\Test{i + 1}.pdf");
-                    nuevaForma.ExportarToPdf(dato, $"{ClientesUtil.CarpetaCliente(dato.listnombre)}\\Facturacion{year}\\Factura {dato.listnumerofactura}.pdf");
-
-
-                }
-
-                form.Close();
-            });
-
-            form.ShowDialog();
-
-            hilo2.Dispose();
-            CheckForIllegalCrossThreadCalls = true;
-
-
-
-            // cargamos la pantalla de listados de remesas
-            Form2 forma = new Form2(alistar);
-            forma.Show();
-
-
-
+            BuscarClientes();
         }
 
+        private void textBox2_Enter_1(object sender, EventArgs e)
+        {
+        }
 
+        private void BuscarClientes()
+        {
+            try
+            {
+                string texto = textBox2.Text.Trim();
+                using (var bd = new AdministracionAntonioEntities())
+                {
+                    var lista = bd.Clientes.AsNoTracking()
+                        .Where(c => texto == "" || c.nombrecliente.Contains(texto))
+                        .OrderBy(c => c.nombrecliente)
+                        .ToList()
+                        .Select(c => new { c.codcliente, Nombre = (c.nombrecliente ?? "").Trim(), Nif = (c.cifcliente ?? "").Trim(),
+                                           Activo = c.activocliente == true, Cliente = c })
+                        .ToList();
+                    dataGridView2.AutoGenerateColumns = true;
+                    dataGridView2.DataSource = lista;
+                    if (dataGridView2.Columns.Contains("Cliente")) dataGridView2.Columns["Cliente"].Visible = false;
+                    if (dataGridView2.Columns.Contains("codcliente")) dataGridView2.Columns["codcliente"].HeaderText = "Código";
+                    if (dataGridView2.Columns.Contains("Nombre")) dataGridView2.Columns["Nombre"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                    dataGridView2.MultiSelect = true;
+                    dataGridView2.ReadOnly = true;
+                    dataGridView2.ClearSelection();
+                }
+            }
+            catch (Exception ex)
+            {
+                Error("No se han podido buscar los clientes", ex);
+            }
+        }
 
+        /// <summary>Añade a la facturación los clientes seleccionados en la búsqueda.</summary>
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (combomes.SelectedIndex < 0)
+            {
+                Aviso("Elige primero el mes que vas a facturar.");
+                return;
+            }
+            var elegidos = dataGridView2.SelectedRows.Cast<DataGridViewRow>()
+                .Select(r => (Clientes)r.DataBoundItem.GetType().GetProperty("Cliente").GetValue(r.DataBoundItem, null))
+                .ToList();
+            if (elegidos.Count == 0)
+            {
+                Aviso("Selecciona en la lista el cliente (o los clientes) que quieres añadir.");
+                return;
+            }
 
+            HashSet<decimal> yaFacturados;
+            using (var bd = new AdministracionAntonioEntities())
+            {
+                yaFacturados = FacturasUtil.ClientesYaFacturados(bd, NombreRemesa);
+            }
 
+            var avisos = new List<string>();
+            foreach (var c in elegidos)
+            {
+                decimal cod = c.codcliente ?? 0;
+                if (filas.Any(f => f.Codigo == cod))
+                {
+                    avisos.Add((c.nombrecliente ?? "").Trim() + ": ya está en la lista.");
+                    continue;
+                }
+                if (yaFacturados.Contains(cod))
+                {
+                    avisos.Add((c.nombrecliente ?? "").Trim() + ": ya tiene factura en la remesa " + NombreRemesa + ".");
+                    continue;
+                }
+                filas.Add(NuevaFila(c));
+            }
 
+            panel3.Visible = false;
+            ActualizarContador();
+            facturar.Enabled = filas.Count > 0;
+            eliminar.Enabled = filas.Count > 0;
 
-
+            if (avisos.Count > 0)
+            {
+                MessageBox.Show("No se han añadido:\n\n" + string.Join("\n", avisos), "Facturación mensual",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
 
         private void button3_Click(object sender, EventArgs e)
         {
             panel3.Visible = false;
         }
 
-        private void dataGridView2_CellClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            int fila = Convert.ToInt32(dataGridView2.CurrentRow.Index);
-            decimal esteclienod = Convert.ToDecimal(dataGridView2[1, fila].Value);
-
-
-            var porcodigo2 = bd.Clientes.Where(x => x.codcliente == esteclienod).ToList();
-
-
-            dataGridView2.DataSource = porcodigo2.ToList();
-        }
-
-        private void textBox2_TextChanged_1(object sender, EventArgs e)
-        {
-            var busqueda = from c in bd.Clientes select c;
-            busqueda = busqueda.Where(c => c.nombrecliente.Contains(textBox2.Text)).OrderBy(x => x.nombrecliente);
-
-            dataGridView2.DataSource = busqueda.ToList();
-
-        }
-
-        private void textBox2_Enter_1(object sender, EventArgs e)
-        {
-            // ordena por nombre de cliente
-            var nuevocliente = bd.Clientes.OrderBy(y => y.nombrecliente);
-            dataGridView2.DataSource = nuevocliente.ToList();
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            // Añade a la facturación el cliente (o clientes) de la rejilla de búsqueda.
-            // Los datos se toman del propio cliente, no del número de columna de la
-            // rejilla (antes varias columnas estaban desplazadas: domiciliado leía el
-            // recargo, el IBAN salía mezclado, etc.).
-            foreach (DataGridViewRow row in dataGridView2.Rows)
-            {
-                var c = row.DataBoundItem as Clientes;
-                if (c == null)
-                {
-                    continue;
-                }
-
-                decimal empleados = c.empleadoscliente ?? 0;
-                decimal precioEmpleado = c.precioempleadocliente ?? 0;
-                decimal tarifa = c.tarifacliente ?? 0;
-                decimal laboral = empleados * precioEmpleado;
-                decimal baseImponible = tarifa + laboral;
-                decimal iva = baseImponible * Globales.tipoiva / 100;
-
-                albaranesclientes datosapasar = new albaranesclientes();
-                datosapasar.albcod = c.codcliente ?? 0;
-                datosapasar.albnombre = c.nombrecliente;
-                datosapasar.albcif = c.cifcliente;
-                datosapasar.albdireccion = c.direcioncliente;
-                datosapasar.alblocalidad = c.localidacliente;
-                datosapasar.albprovincia = c.provinciacliente;
-                datosapasar.albcp = c.cod_postalcliente;
-                datosapasar.albmail = c.mailcliente;
-                datosapasar.albpormail = c.pormailcliente == true;
-                datosapasar.albdomiciliado = c.domiciliadocliente == true;
-                datosapasar.albiban1 = c.iban1cliente;
-                datosapasar.albiban2 = c.iban2cliente;
-                datosapasar.albiban3 = c.iban3cliente;
-                datosapasar.albiban4 = c.iban4cliente;
-                datosapasar.albiban5 = c.iban5cliente;
-                datosapasar.albiban6 = c.iban6cliente;
-                datosapasar.albiban = ClientesUtil.IbanCliente(c);
-                datosapasar.albgrupo = c.grupocliente;
-                datosapasar.albempleados = empleados;
-                datosapasar.albpvpempleados = precioEmpleado;
-                datosapasar.albtarifa = tarifa;
-                datosapasar.albfecha = Globales.fechafactura.ToString("dd/MM/yyy");
-                datosapasar.albmes = Globales.mesfactura;
-                datosapasar.albconcepto1 = "Honorarios Correspondiente al mes de " + Globales.mesfactura.ToString();
-                datosapasar.albconcepto2 = null;
-                datosapasar.albtarifa2 = 0;
-                datosapasar.albtipoiva = Globales.tipoiva;
-                datosapasar.alblaboral = laboral;
-                datosapasar.albbase = baseImponible;
-                datosapasar.albiva = iva;
-                datosapasar.albtotal = baseImponible + iva;
-                datosapasar.albparadomiciliar = c.domiciliadocliente == true;
-                datosapasar.albparacontabilizar = c.contabilizarcliente == true;
-
-                albaranes.Add(datosapasar);
-            }
-            panel3.Visible = false;
-
-            dgvTemporal.DataSource =  albaranes.OrderBy(x => x.albnombre).ToList();
-
-            label14.Text = albaranes.Count.ToString();
-        }
-
-        private void textBox1_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-
-            }
-        }
-
         private void eliminar_Click(object sender, EventArgs e)
         {
-
-
-            if (MessageBox.Show("Va a proceder a eliminar el registro seleccionado.\n                     Desea Eliminar el registro?"
-                                 , "Eliminar Registro.", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) 
+            var quitar = dgvTemporal.SelectedCells.Cast<DataGridViewCell>()
+                .Select(c => c.RowIndex)
+                .Distinct()
+                .Where(i => i >= 0 && i < filas.Count)
+                .Select(i => filas[i])
+                .ToList();
+            if (quitar.Count == 0)
             {
-                Globales.modificar = Convert.ToInt16(dgvTemporal.CurrentRow.Cells[2].Value);
+                Aviso("Selecciona en la lista el cliente que quieres quitar.");
+                return;
+            }
+            string nombres = string.Join("\n", quitar.Take(10).Select(f => "   " + f.Nombre)) + (quitar.Count > 10 ? "\n   ..." : "");
+            if (MessageBox.Show("Se van a quitar de esta facturación:\n\n" + nombres + "\n\n¿Continuar?", "Quitar de la facturación",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            {
+                return;
+            }
+            foreach (var f in quitar) filas.Remove(f);
+            ActualizarContador();
+            facturar.Enabled = filas.Count > 0;
+        }
 
-                try
+        // =====================================================================
+        //  Facturar
+        // =====================================================================
+
+        private void facturar_Click(object sender, EventArgs e)
+        {
+            dgvTemporal.EndEdit();
+            if (filas.Count == 0)
+            {
+                Aviso("No hay ninguna factura que emitir. Pulsa Generar.");
+                return;
+            }
+
+            var sinImporte = filas.Where(f => f.Total <= 0).ToList();
+            if (sinImporte.Count > 0)
+            {
+                Aviso("Estas facturas tienen total cero o negativo. Corrige el importe o quítalas de la lista:\n\n" +
+                      string.Join("\n", sinImporte.Take(15).Select(f => "   " + f.Nombre)));
+                return;
+            }
+            var sinNif = filas.Where(f => string.IsNullOrWhiteSpace(f.Cliente.cifcliente)).ToList();
+            if (sinNif.Count > 0)
+            {
+                Aviso("Estos clientes no tienen NIF en su ficha. Complétalo antes de facturar:\n\n" +
+                      string.Join("\n", sinNif.Take(15).Select(f => "   " + f.Nombre)));
+                return;
+            }
+
+            DateTime fecha = fechafactura.Value.Date;
+            string remesa = NombreRemesa;
+            int añoRemesa = AñoFacturado;
+
+            if (fecha < new DateTime(añoRemesa, MesFacturado, 1) &&
+                MessageBox.Show("La fecha de las facturas (" + fecha.ToString("dd/MM/yyyy") + ") es anterior al mes que facturas (" +
+                                remesa + ").\n¿Es correcto?", "Facturación mensual",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) != DialogResult.Yes)
+            {
+                return;
+            }
+
+            try
+            {
+                using (var bd = new AdministracionAntonioEntities())
                 {
-                    dgvTemporal.DataSource = albaranes.Remove(albaranes.First(x => x.albcod == Globales.modificar));
-                   
-                    dgvTemporal.DataSource = albaranes.OrderBy(x=> x.albnombre). ToList();
-
-                    label14.Text = albaranes.Count.ToString();
-
-
+                    int ejercicio = fecha.Year;
+                    DateTime? ultima = bd.Facturas
+                        .Where(f => f.factserie == FacturasUtil.SerieMensual && f.factejercicio == ejercicio)
+                        .Max(f => f.factfechadoc);
+                    if (ultima.HasValue && fecha < ultima.Value)
+                    {
+                        Aviso("La última factura mensual de " + ejercicio + " tiene fecha " + ultima.Value.ToString("dd/MM/yyyy") +
+                              ".\nLas facturas tienen que ir numeradas en orden de fecha: pon una fecha igual o posterior.");
+                        return;
+                    }
                 }
-                catch (Exception exp)
+            }
+            catch (Exception ex)
+            {
+                Error("No se ha podido comprobar la numeración", ex);
+                return;
+            }
+
+            string resumen = "Se van a emitir " + filas.Count + " facturas de la remesa " + remesa +
+                             "\ncon fecha " + fecha.ToString("dd/MM/yyyy") + " e IVA del " + TipoIvaElegido().ToString("0.##", Es) + " %." +
+                             "\n\nTotal: " + filas.Sum(f => f.Total).ToString("N2", Es) + " €" +
+                             "\n\nUna vez emitidas no se pueden modificar ni borrar.\n¿Emitir las facturas?";
+            if (MessageBox.Show(resumen, "Facturación mensual", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            {
+                return;
+            }
+
+            // 1. Grabar todas (o ninguna)
+            List<decimal> ids;
+            Cursor = Cursors.WaitCursor;
+            try
+            {
+                var nuevas = filas.Select(f => Preparar(f)).ToList();
+                ids = FacturasUtil.GrabarMensual(remesa, añoRemesa, fecha, nuevas);
+            }
+            catch (Exception ex)
+            {
+                Cursor = Cursors.Default;
+                Error("No se ha grabado ninguna factura", ex);
+                return;
+            }
+
+            filas.Clear();
+            ActualizarContador();
+            facturar.Enabled = false;
+            eliminar.Enabled = false;
+
+            // 2. PDF de cada factura
+            var errores = new List<string>();
+            var espera = new FormEsperar("Creando los PDF de las facturas");
+            try
+            {
+                espera.Show(this);
+                Application.DoEvents();
+                using (var bd = new AdministracionAntonioEntities())
                 {
-
-                    MessageBox.Show("Error" + exp.Message);
-
+                    foreach (var id in ids)
+                    {
+                        try
+                        {
+                            FacturasUtil.GenerarPdf(id, false);
+                        }
+                        catch (Exception ex)
+                        {
+                            var f = bd.Facturas.Find(id);
+                            var interna = ex;
+                            while (interna.InnerException != null) interna = interna.InnerException;
+                            errores.Add((f != null ? FacturasUtil.Numero(f) + " " + (f.factnombre ?? "").Trim() : id.ToString()) + ": " + interna.Message);
+                        }
+                        Application.DoEvents();
+                    }
                 }
+            }
+            finally
+            {
+                espera.Close();
+                Cursor = Cursors.Default;
+            }
 
+            MessageBox.Show(ids.Count + " facturas emitidas en la remesa " + remesa + "." +
+                            (errores.Count > 0
+                                ? "\n\nNo se ha podido crear el PDF de:\n" + string.Join("\n", errores.Take(10)) +
+                                  "\n\nSe pueden imprimir después desde Gestión de facturas."
+                                : "\nLos PDF están en la carpeta de facturación de cada cliente."),
+                "Facturación mensual", MessageBoxButtons.OK, errores.Count > 0 ? MessageBoxIcon.Warning : MessageBoxIcon.Information);
+
+            // 3. Listado de control de la remesa
+            MostrarListado(remesa);
+        }
+
+        /// <summary>Prepara los datos y las líneas de una factura a partir de su fila.</summary>
+        private FacturaMensualNueva Preparar(FilaMensual f)
+        {
+            var c = f.Cliente;
+            var lineas = new List<LineaFactura>();
+            if (f.Honorarios != 0)
+            {
+                lineas.Add(new LineaFactura
+                {
+                    Cantidad = 1,
+                    Concepto = "Honorarios correspondientes al mes de " + MesTexto,
+                    Precio = f.Honorarios,
+                    TipoIva = f.TipoIva
+                });
+            }
+            if (f.Laboral != 0)
+            {
+                lineas.Add(new LineaFactura
+                {
+                    Cantidad = f.Empleados,
+                    Concepto = "Gestión laboral: nóminas del mes de " + MesTexto,
+                    Precio = f.PrecioEmpleado,
+                    TipoIva = f.TipoIva
+                });
+            }
+            string conceptoSuplido = string.IsNullOrWhiteSpace(f.ConceptoSuplido) ? "Suplidos" : f.ConceptoSuplido.Trim();
+            if (f.Suplidos != 0)
+            {
+                lineas.Add(new LineaFactura
+                {
+                    Cantidad = 1,
+                    Concepto = conceptoSuplido,
+                    Precio = f.Suplidos,
+                    Suplido = true
+                });
+            }
+
+            return new FacturaMensualNueva
+            {
+                Cliente = new DatosClienteFactura
+                {
+                    Codigo = c.codcliente,
+                    Nombre = c.nombrecliente,
+                    Nif = c.cifcliente,
+                    Direccion = c.direcioncliente,
+                    Localidad = c.localidacliente,
+                    Provincia = c.provinciacliente,
+                    CodigoPostal = c.cod_postalcliente,
+                    Mail = c.mailcliente,
+                    PorMail = c.pormailcliente == true,
+                    Iban = ClientesUtil.IbanCliente(c),
+                    Domiciliar = c.domiciliadocliente == true,
+                    Contabilizar = c.contabilizarcliente == true,
+                    PorcRetencion = f.PorcRetencion
+                },
+                Lineas = lineas,
+                Honorarios = f.Honorarios,
+                Empleados = f.Empleados,
+                PrecioEmpleado = f.PrecioEmpleado,
+                Laboral = f.Laboral,
+                Suplidos = f.Suplidos,
+                ConceptoSuplido = conceptoSuplido
+            };
+        }
+
+        /// <summary>Listado de control con todas las facturas de la remesa.</summary>
+        private void MostrarListado(string remesa)
+        {
+            try
+            {
+                var lista = new List<datoslistadoreme>();
+                using (var bd = new AdministracionAntonioEntities())
+                {
+                    var mios = ClientesUtil.BuscarMisDatos(bd);
+                    var facturas = bd.Facturas.AsNoTracking()
+                        .Where(f => f.factserie == FacturasUtil.SerieMensual && f.factremesa == remesa)
+                        .OrderBy(f => f.factnumerofact)
+                        .ToList();
+                    decimal total = facturas.Sum(f => f.facttotalfactura ?? 0);
+                    foreach (var f in facturas)
+                    {
+                        lista.Add(new datoslistadoreme
+                        {
+                            listnumerofactura = FacturasUtil.Numero(f),
+                            listfecha = f.factfechadoc.HasValue ? f.factfechadoc.Value.ToString("dd/MM/yyyy") : (f.factfecha ?? "").Trim(),
+                            listnombre = (f.factnombre ?? "").Trim(),
+                            listbase = (f.factbaseimponible ?? 0) + (f.factbase2 ?? 0),
+                            listsuplidos = f.factbase2 ?? 0,
+                            listiva = f.factimporteiva ?? 0,
+                            listretencion = f.factretencion ?? 0,
+                            listtotal = f.facttotalfactura ?? 0,
+                            listnumeroremesa = remesa,
+                            listtotalremesa = total,
+                            listtotaldocumentos = facturas.Count,
+                            listnombreemisor = mios != null ? (mios.minombre ?? "").Trim() : ""
+                        });
+                    }
+                }
+                new Form2(lista).Show();
+            }
+            catch (Exception ex)
+            {
+                Error("No se ha podido sacar el listado de control", ex);
             }
         }
 
-        private void clientesBindingSource_CurrentChanged(object sender, EventArgs e)
+        private void salir_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
 
-        private void dgvTemporal_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        // =====================================================================
+        //  Rótulos que aparecen al pasar el ratón
+        // =====================================================================
 
+        private void generar_MouseEnter(object sender, EventArgs e) { label9.Visible = true; }
+        private void generar_MouseLeave(object sender, EventArgs e) { label9.Visible = false; }
+        private void añadir_MouseEnter(object sender, EventArgs e) { label8.Visible = true; }
+        private void añadir_MouseLeave(object sender, EventArgs e) { label8.Visible = false; }
+        private void eliminar_MouseEnter(object sender, EventArgs e) { label6.Visible = true; }
+        private void eliminar_MouseLeave(object sender, EventArgs e) { label6.Visible = false; }
+        private void facturar_MouseEnter(object sender, EventArgs e) { label5.Visible = true; }
+        private void facturar_MouseLeave(object sender, EventArgs e) { label5.Visible = false; }
+        private void salir_MouseEnter(object sender, EventArgs e) { label10.Visible = true; }
+        private void salir_MouseLeave(object sender, EventArgs e) { label10.Visible = false; }
+
+        // =====================================================================
+
+        private static void Aviso(string texto)
+        {
+            MessageBox.Show(texto, "Facturación mensual", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private static void Error(string texto, Exception ex)
         {
-            
-
+            var interna = ex;
+            while (interna.InnerException != null) interna = interna.InnerException;
+            MessageBox.Show(texto + ":\n\n" + interna.Message, "Facturación mensual", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        private void imprimir_Click(object sender, EventArgs e)
-        {
-
-        }
-       
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-        
-        }
-
-        private void facturar_MouseDown(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void facturar_MouseUp(object sender, MouseEventArgs e)
-        {
-            //Image img = Image.FromFile("C:\\Equipo Martin\\Programacion\\Repositorio Remoto\\Proyecto Antonio Luis\\Proyecto Antonio Luis\\Imagenes\\pROGRESS\\gif flor 1.gif");
-
-           // pictureBox1.Image = img;
-
-            
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-            }
-    
+    }
 }

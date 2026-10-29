@@ -31,6 +31,8 @@ namespace Proyecto_Antonio_Luis.Clases
         public decimal listnumempleados { get; set; }
         public decimal listimporteempleados { get; set; }
         public decimal listtotalempleados { get; set; }
+        /// <summary>Retención de IRPF descontada en la factura.</summary>
+        public decimal listretencion { get; set; }
 
     }
 }

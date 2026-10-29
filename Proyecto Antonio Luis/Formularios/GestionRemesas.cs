@@ -41,7 +41,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             mesrremesa = Convert.ToString(dgvremesas[1, fila].Value);
 
             //filtramos la base de datos de facturacion por el numero de remesa. y que contabilizado= false
-            var facturasacontabilizar = bd.Facturas.Where(x => x.factremesa == mesrremesa).ToList();
+            var facturasacontabilizar = bd.Facturas.Where(x => x.factremesa == mesrremesa).OrderBy(x => x.factserie).ThenBy(x => x.factnumerofact).ToList();
 
 
 
@@ -54,13 +54,16 @@ namespace Proyecto_Antonio_Luis.Formularios
             {
                 datoslistadoreme mylistado = new datoslistadoreme();
                 
-                mylistado.listnumerofactura = temp.factnumerofact.ToString();
+                mylistado.listnumerofactura = FacturasUtil.Numero(temp);
                 mylistado.listfecha = temp.factfecha;
                 mylistado.listnombre = temp.factnombre;
                 mylistado.listbase = Convert.ToDecimal(temp.factbase1 + temp.factbase2 + temp.factbaseempleado);
                 mylistado.listsuplidos = Convert.ToDecimal(temp.factbase2);
                 mylistado.listiva = Convert.ToDecimal(temp.factimporteiva);
                 mylistado.listtotal = Convert.ToDecimal(temp.facttotalfactura);
+                mylistado.listretencion = temp.factretencion ?? 0;
+                mylistado.listnombreemisor = ClientesUtil.BuscarMisDatos(bd) != null ? ClientesUtil.BuscarMisDatos(bd).minombre : "";
+                mylistado.listtotaldocumentos = facturasacontabilizar.Count;
                 mylistado.listnumeroremesa = temp.factremesa;
                 mylistado.listtotalremesa = Convert.ToDecimal(temp.facttotalremesa);
                 

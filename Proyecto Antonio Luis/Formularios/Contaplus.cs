@@ -42,6 +42,9 @@ namespace Proyecto_Antonio_Luis.Formularios
                 string cuentaiva = rutas.IvaGeneral.ToString();
                 string cuentabanco = rutas.CtaBanco.ToString();
                 string cuentasuplido = rutas.CtaSuplido.ToString();
+                // Cuenta de retenciones de IRPF (473), con los mismos dígitos que la de prestaciones.
+                // En el paso 5 (contabilidad) se podrá configurar.
+                string cuentaretencion = "473".PadRight(Math.Max(cuentabase.Trim().Length, 3), '0');
 
 
                 //filtramos la tabla por contabilizados sea igual a falso.
@@ -246,6 +249,163 @@ namespace Proyecto_Antonio_Luis.Formularios
                         + " ".PadLeft(40, ' ')
                         + "0".PadLeft(2, ' ')
                         + "0".PadLeft(2, ' '));
+
+                            // Retención de IRPF: el cliente nos paga el total menos la retención,
+                            // y la retención va al debe de la 473 para que el asiento cuadre.
+                            if (temp.factretencion.GetValueOrDefault() != 0)
+                            {
+                                string retencion = temp.factretencion.Value.ToString("0.00", System.Globalization.CultureInfo.InvariantCulture);
+                                nuevalinea.WriteLine(
+                            // LINEA 1b, RETENCION DE IRPF (cuenta 473)
+                            "1".PadLeft(6, ' ')
+                            + fecha
+                            + cuentaretencion.PadRight(12, ' ')
+                            + " ".PadLeft(12, ' ')
+                            + "0.00".PadLeft(16, ' ')
+                            + ("Ret. Fra. " + FacturasUtil.Numero(temp)).PadRight(25, ' ')
+                            + "0.00".PadLeft(16, ' ')
+                            + "0".PadLeft(8, ' ')
+                            + "0.00".PadLeft(16, ' ')
+                            + "0.00".PadLeft(5, ' ')
+                            + "0.00".PadLeft(5, ' ')
+                            + " ".PadLeft(10, ' ')
+                            + " ".PadLeft(3, ' ')
+
+
+                            + " ".PadLeft(6, ' ')
+                            + " ".PadLeft(1, ' ')
+                            + "0".PadLeft(6, ' ')
+                            + "0".PadLeft(1, ' ')
+                            + "0".PadLeft(6, ' ')
+                            + "0.000000".PadLeft(16, ' ')
+                            + "0.00".PadLeft(16, ' ')
+                            + "0.00".PadLeft(16, ' ')
+                            + " ".PadLeft(1, ' ')
+                            + " ".PadLeft(1, ' ')
+                            + " ".PadLeft(4, ' ')
+                            + " ".PadLeft(5, ' ')
+                            + "0.00".PadLeft(16, ' ')
+
+
+                            + "2"
+                            + retencion.PadLeft(16, ' ')
+                            + "0.00".PadLeft(16, ' ')
+                            + "0.00".PadLeft(16, ' ')
+                            + " "
+                            + " ".PadLeft(10, ' ')
+                            + " "
+                            + "0".PadLeft(8, ' ')
+                            + "0.00".PadLeft(16, ' ')
+                            + "0.00".PadLeft(16, ' ')
+                            + "F"
+                            + " ".PadLeft(8, ' ')
+                            + "E"
+
+
+                            + " "
+                            + " ".PadLeft(6, ' ')
+                            + " "
+                            + " ".PadLeft(6, ' ')
+                            + " ".PadLeft(6, ' ')
+                            + "F"
+                            + " ".PadLeft(8, ' ')
+                            + " ".PadLeft(8, ' ')
+                            + " ".PadLeft(5, ' ')
+                            + " ".PadLeft(10, ' ')
+                            + "0.00".PadLeft(5, ' ')
+                            + "0.00".PadLeft(5, ' ')
+                            + "0".PadLeft(6, ' ')
+
+
+                            + "0.00".PadLeft(16, ' ')
+                            + " ".PadLeft(100, ' ')
+                            + " ".PadLeft(50, ' ')
+                            + " ".PadLeft(50, ' ')
+                            + " "
+                            + "0".PadLeft(8, ' ')
+                            + " ".PadLeft(40, ' ')
+                            + " ".PadLeft(40, ' ')
+                            + "0"
+                            + " ".PadLeft(15, ' ')
+                            + " ".PadLeft(40, ' ')
+                            + " ".PadLeft(9, ' ')
+                            + "F"
+
+
+                            + " ".PadLeft(10, ' ')
+                            + "F"
+                            + "F"
+                            + "0.00".PadLeft(16, ' ')
+                            + " ".PadLeft(12, ' ')
+                            + "0"
+                            + " ".PadLeft(40, ' ')
+                            + " "
+                            + " "
+                            + " "
+                            + "F"
+                            + "0".PadLeft(4, ' ')
+                            + " ".PadLeft(15, ' ')
+
+
+                            + " ".PadLeft(12, ' ')
+                            + " ".PadLeft(8, ' ')
+                            + "0.00".PadLeft(16, ' ')
+                            + " ".PadLeft(40, ' ')
+                            + " ".PadLeft(12, ' ')
+                            + " ".PadLeft(8, ' ')
+                            + "0.00".PadLeft(16, ' ')
+                            + " ".PadLeft(40, ' ')
+                            + "0".PadLeft(2, ' ')
+                            + "F"
+                            + " "
+                            + " ".PadLeft(25, ' ')
+                            + "0"
+
+
+                            + "0".PadLeft(2, ' ')
+                            + "0".PadLeft(2, ' ')
+                            + "F"
+                            + " ".PadLeft(8, ' ')
+                            + "0.00".PadLeft(16, ' ')
+                            + " ".PadLeft(32, ' ')
+                            + "0.00".PadLeft(16, ' ')
+                            + " ".PadLeft(2, ' ')
+                            + " ".PadLeft(50, ' ')
+                            + " "
+                            + " "
+                            + " ".PadLeft(34, ' ')
+                            + "F"
+
+
+                            + " ".PadLeft(40, ' ')
+                            + "0".PadLeft(2, ' ')
+                            + "0".PadLeft(2, ' ')
+                            + " ".PadLeft(8, ' ')
+                            + " ".PadLeft(8, ' ')
+                            + "0".PadLeft(2, ' ')
+                            + "0.00".PadLeft(16, ' ')
+                            + "F"
+                            + "F"
+                            + "0".PadLeft(2, ' ')
+                            + " ".PadLeft(40, ' ')
+                            + "0"
+                            + "0".PadLeft(2, ' ')
+
+
+                            + "0".PadLeft(2, ' ')
+                            + "0".PadLeft(2, ' ')
+                            + "0".PadLeft(2, ' ')
+                            + " ".PadLeft(40, ' ')
+                            + " ".PadLeft(40, ' ')
+                            + "0".PadLeft(2, ' ')
+                            + "0.00".PadLeft(16, ' ')
+                            + "F"
+                            + "0"
+                            + " ".PadLeft(8, ' ')
+                            + " ".PadLeft(40, ' ')
+                            + "0".PadLeft(2, ' ')
+                            + "0".PadLeft(2, ' '));
+                            }
 
                             nuevalinea.WriteLine(
                             // LINEA 2, PASO BASE DE LA FACTURA

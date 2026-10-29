@@ -9,7 +9,7 @@ Estados:
 - ✅ Reparado y probado
 - 🗑️ No se usa (candidato a borrar)
 
-Última actualización: 29-10-2026 (rediseño de facturación: paso 2 hecho, pendiente de probar)
+Última actualización: 29-10-2026 (paso 2 probado; paso 3a facturación mensual hecho, pendiente de probar)
 
 > **PARA PROBAR EL PASO 2 (29-10):**
 > 1. Ejecutar en Management Studio `SQL/2026-10-29_Lineas_IVA.sql` y pasar a Claude lo que salga.
@@ -39,21 +39,21 @@ Estados:
 
 | Estado | Formulario | Qué hace | Notas |
 |:-:|---|---|---|
-| 🔧 | Facturacion | Facturación mensual | 26-10: ruta de los PDF. 27-10: IBAN completo; arreglado "añadir cliente a mano" (leía columnas desplazadas). 29-10: las facturas nuevas se graban con serie M, año y fecha real, y se numeran dentro de la serie M del año (antes comparaba fechas como texto). Revisar entero en el paso 3 |
+| 🔧 | Facturacion | Facturación mensual | 26-10: ruta de los PDF. 27-10: IBAN completo; arreglado "añadir cliente a mano" (leía columnas desplazadas). 29-10: las facturas nuevas se graban con serie M, año y fecha real, y se numeran dentro de la serie M del año (antes comparaba fechas como texto). 29-10 (paso 3a): rehecha por dentro. Remesa "Octubre 2026", no deja facturar dos veces a un cliente en el mismo mes, graba todo o nada, líneas y PDF nuevo, retención IRPF, botón "fin de mes" para la fecha, rejilla limpia (blanco = se puede cambiar). Quitado el botón Imprimir (sin función) |
 | 🔧 | GestionFacturas | Lista de facturas | 29-10: rehecho. Filtros por año y serie, búsqueda por nombre/NIF/número, columnas claras, resumen de totales, doble clic = ver, imprimir varias seleccionadas (PDF nuevo) |
-| 🔧 | FacturaUnitaria | Factura directa | 29-10: rehecha. Serie D numerada por año, líneas sin límite con IVA por línea y suplidos, recargo de equivalencia, cliente ocasional, IBAN en un campo, PDF nuevo. También sirve para ver una factura emitida |
+| 🔧 | FacturaUnitaria | Factura directa | 29-10: rehecha. Serie D numerada por año, líneas sin límite con IVA por línea y suplidos, retención IRPF (sin recargo de equivalencia), cliente ocasional, IBAN en un campo, PDF nuevo. También sirve para ver una factura emitida |
 | 🗑️ | ImprimirFacturas | Imprimir un rango de facturas | 29-10: ya no se abre (se imprime desde Gestión de facturas). Corregido: marcaba como contabilizadas en vez de impresas |
 | ⬜ | Form3 | Exporta una factura a PDF (interno) | Nombre poco claro |
 | ⬜ | Form4 | Impresión directa (interno) | Nombre poco claro |
-| ⬜ | Form2 | Visor de listados de remesas (interno) | Nombre poco claro |
+| 🔧 | Form2 | Listado de control de remesas (interno) | 29-10: el informe (Report1) tiene columna Retención y el número con serie (M-2026/0007). Mismo formato |
 
 ## 4. Bancos y contabilidad
 
 | Estado | Formulario | Qué hace | Notas |
 |:-:|---|---|---|
-| ⬜ | GestionRemesas | Lista de remesas | |
+| ⬜ | GestionRemesas | Lista de remesas | 29-10: el listado de una remesa sale con número con serie, retención, emisor y nº de documentos (antes salían en blanco) |
 | 🔧 | CBS19 | Genera la remesa SEPA (XML) | 26-10: nombre del deudor recortado a 70 car. 27-10: IBAN completo (o bloques en facturas antiguas). Revisar formato SEPA actual |
-| 🔧 | Contaplus | Exportación a Contaplus | Nombre recortado a 40 car. (26-10) |
+| 🔧 | Contaplus | Exportación a Contaplus | Nombre recortado a 40 car. (26-10). 29-10: si la factura lleva retención añade la línea de la 473 (cuenta 473 con los dígitos de la de prestaciones) para que el asiento cuadre |
 | ✅ | ~~Impuestos~~ | ~~Tipos de IVA y retenciones IRPF~~ | ~~Recodificado 27-10: validaciones (coma o punto), confirma al eliminar, no se cae con la lista vacía. Nueva lista de retenciones IRPF y cuál se aplica~~ Probado 27-10 |
 
 ## 5. Sistema
@@ -100,7 +100,7 @@ Revisar si se pueden borrar.
 | 🔧 | `SQL/2026-10-27_Propios_logo_en_tabla.sql` | Añade `Propios.milogoimagen` (imagen del logo dentro de la tabla). No toca nada más. Hace copia de seguridad antes |
 | 🔧 | `SQL/2026-10-27_Retenciones_IRPF.sql` | Tabla nueva Retenciones (con General 15 % y Inicio de actividad 7 %), `Clientes.retencioncliente` y `Facturas.factretencionporc` / `factretencion`. No toca datos. Hace copia de seguridad antes |
 | ✅ | `SQL/2026-10-28_Facturacion_series_lineas.sql` | Tablas Series (M mensual, D directa, R rectificativa) y FacturaLineas; en Facturas: serie, ejercicio, fecha real, origen, base imponible, enlace a remesa, estado; en remesas: año, fecha de cargo, envío y fichero. Rellena todo desde los datos existentes y copia las líneas de las facturas antiguas. No toca nada existente |
-| 🔧 | `SQL/2026-10-29_Lineas_IVA.sql` | `FacturaLineas.tipoiva` / `tiporecargo` (IVA de cada línea) y `Facturas.factimporterecargo`. Copia el IVA de cada factura a sus líneas. No toca nada existente. Hace copia de seguridad antes |
+| ✅ | `SQL/2026-10-29_Lineas_IVA.sql` | `FacturaLineas.tipoiva` / `tiporecargo` (IVA de cada línea) y `Facturas.factimporterecargo`. Copia el IVA de cada factura a sus líneas. No toca nada existente. Hace copia de seguridad antes |
 
 **Todos los scripts hay que ejecutarlos una vez en cada base de datos** (la tuya y, al instalar, la del cliente), en orden de fecha.
 
@@ -115,7 +115,7 @@ Revisar si se pueden borrar.
 - [ ] Pantalla de acceso (Control Usuarios): usar el logo guardado en la tabla Propios en vez de buscarlo en la ruta.
 - [x] IBAN propio (MisDatos) en un solo campo (27-10).
 - [x] IBAN de la factura manual (FacturaUnitaria) en un solo campo, como en clientes (29-10).
-- [ ] En la facturación mensual el concepto dice "Honorários" (con tilde portuguesa); en la manual, "Honorarios".
+- [x] En la facturación mensual el concepto dice "Honorários" (con tilde portuguesa); en la manual, "Honorarios" (29-10: ahora "Honorarios correspondientes al mes de octubre de 2026").
 - [ ] Cuando todo funcione con `ibancliente`/`factiban`, decidir si se dejan de usar las columnas antiguas iban1..iban6.
 
 ## Hallazgos en MisDatos (27-10-2026)
@@ -137,7 +137,7 @@ Revisar si se pueden borrar.
 - [x] Modificar o Eliminar sin ninguna fila en la lista: el programa se cae.
 - [x] Eliminar: borra sin pedir confirmación.
 - [x] No limita el concepto a 20 caracteres ni el % a 99,99 (lo que admite la tabla).
-- [ ] El % de recargo de equivalencia se guarda pero no se aplica en ninguna factura (tampoco la casilla R.E. del cliente).
+- [x] El % de recargo de equivalencia se guarda pero no se aplica en ninguna factura (29-10, decidido: no se aplica; los servicios de la gestoría no llevan recargo de equivalencia. La casilla R.E. del cliente es informativa).
 - [ ] No hay retención de IRPF en las facturas (existe la cuenta de retenciones en Rutas, pero no se calcula).
   - [x] Fase 1 (27-10): tabla Retenciones, lista en Impuestos, casilla "Retención IRPF" en la ficha del cliente y columnas en Facturas.
   - [ ] Fase 2 (al revisar Facturación): calcular la retención en la facturación mensual y manual (total = base + IVA − retención), mostrarla en el PDF de la factura, cobrar el total líquido en la remesa y añadir la línea de retenciones en Contaplus (cuenta de Rutas). **Hasta entonces la casilla del cliente no tiene efecto.**
@@ -181,7 +181,14 @@ Decisiones: tabla de líneas (uso general), series distintas (M mensual, D direc
   - El PDF se guarda en `C:\ByMartin\Clientes\<cliente>\Facturacion<año>\Factura D-2026-0001.pdf` y la factura queda como impresa.
   - Las facturas antiguas sin líneas se imprimen montando las líneas desde sus importes.
   - Pruebas: factura a cliente de alta; a cliente ocasional domiciliado (IBAN mal → avisa); con dos tipos de IVA y un suplido; cliente con recargo; fecha anterior a la última (debe impedirlo); ver una factura antigua (mensual) y reimprimirla; imprimir varias a la vez; filtros de año y serie.
-- [ ] Paso 3: Facturación mensual (serie M, líneas, ejercicio, remesa por año) + fase 2 de retenciones.
+- [x] Paso 3a (29-10, pendiente de probar): facturación mensual nueva + retención IRPF.
+  - Decisiones de Antonio: fecha = día de la factura o fin de mes; sí se descuenta la retención; se quita el recargo de equivalencia (también de la directa); el listado de control se queda con el mismo formato.
+  - Remesa = "Mes Año" (p. ej. "Octubre 2026"). Si el mes ya está facturado, Generar solo propone los clientes que falten.
+  - Líneas de la factura: "Honorarios correspondientes al mes de octubre de 2026" (tarifa), "Gestión laboral: nóminas del mes de octubre de 2026" (empleados × precio) y el suplido si lo hay.
+  - Retención: a los clientes con "Retención IRPF" en su ficha se les descuenta el % por defecto de la tabla Retenciones (15 %) sobre la base (no sobre los suplidos). También en la factura directa (casilla "Retención IRPF").
+  - Las facturas mensuales antiguas sin serie de año siguen en su remesa antigua ("Octubre").
+  - Pruebas: generar el mes; cambiar tarifa, empleados y suplidos de alguno; quitar uno y añadirlo con Añadir; facturar; mirar PDF, listado y Gestión de facturas; volver a Generar el mismo mes (debe decir que ya está facturado); cliente con retención.
+- [ ] Paso 3b: envío de las facturas por correo tras facturar (pidiendo permiso) y desde Gestión de facturas. Configuración del correo en Mis Datos.
 - [ ] Paso 4: Remesas / SEPA (solo la remesa elegida, total de control correcto, facturas directas domiciliadas).
 - [ ] Paso 5: Contabilidad: asiento común y exportación a Contaplus y a3ECO (conseguir especificación del fichero de importación de a3ECO).
 - [ ] Paso 6: Resto de informes (facturación mensual y remesas). El informe de factura con N líneas y logo ya está hecho (paso 2).
@@ -193,6 +200,6 @@ Errores encontrados al revisar (se arreglan en esos pasos):
 - [ ] CBS19: el total de control incluye facturas no domiciliadas (el banco lo rechazaría).
 - [ ] Contaplus: misma fecha para todas, todo en el asiento 1, cobro por banco también de las no domiciliadas, fichero siempre `miarchivo.txt`.
 - [x] ImprimirFacturas marca las facturas como **contabilizadas** al imprimir (arreglado 29-10: ahora impresas).
-- [ ] Retención IRPF en las facturas: la factura directa todavía no la aplica (fase 2, con la facturación mensual y la contabilidad).
+- [x] Retención IRPF en las facturas (29-10: mensual y directa; Contaplus con línea de la 473).
 - [ ] Cambiar la disposición del PDF de la factura (`ReportFactura.rdlc`): Antonio quiere otra distribución. No urge.
 - [ ] Facturas rectificativas (serie R): pendiente, para anular o corregir una factura emitida.

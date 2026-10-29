@@ -33,8 +33,11 @@ namespace Proyecto_Antonio_Luis.Formularios
         private Clientes clienteElegido;
         private bool cargando;
 
-        /// <summary>Tipo de IVA -> tipo de recargo de equivalencia (tabla Iva).</summary>
-        private Dictionary<decimal, decimal> recargos = new Dictionary<decimal, decimal>();
+        /// <summary>Tipos de IVA de la tabla Iva.</summary>
+        private List<decimal> tiposIva = new List<decimal>();
+
+        /// <summary>% de retención de IRPF (el "por defecto" de la tabla Retenciones).</summary>
+        private decimal porcRetencion = 15m;
 
         /// <summary>Identificador de la factura grabada (para que Gestión de facturas la seleccione).</summary>
         public decimal? FacturaGrabada { get; private set; }
@@ -105,11 +108,12 @@ namespace Proyecto_Antonio_Luis.Formularios
                 .OrderByDescending(g => g.Key)
                 .ToList();
 
-            recargos = tipos.ToDictionary(g => g.Key, g => g.First().ivarecargo ?? 0);
-            if (!recargos.ContainsKey(0)) recargos[0] = 0;
+            tiposIva = tipos.Select(g => g.Key).ToList();
+            if (!tiposIva.Contains(0)) tiposIva.Add(0);
+            porcRetencion = FacturasUtil.PorcentajeRetencion(bd);
 
             colIva.Items.Clear();
-            foreach (var tipo in recargos.Keys.OrderByDescending(k => k))
+            foreach (var tipo in tiposIva.OrderByDescending(k => k))
             {
                 colIva.Items.Add(TextoIva(tipo));
             }
@@ -193,7 +197,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             txtProvincia.Text = (c.provinciacliente ?? "").Trim();
             txtMail.Text = (c.mailcliente ?? "").Trim();
             checkContabilizar.Checked = c.contabilizarcliente == true;
-            checkRecargo.Checked = c.recargo == true;
+            checkRetencion.Checked = c.retencioncliente == true;
             checkPorMail.Checked = c.pormailcliente == true;
             Recalcular();
         }
@@ -205,7 +209,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                 t.Text = "";
             }
             checkContabilizar.Checked = true;
-            checkRecargo.Checked = false;
+            checkRetencion.Checked = false;
             checkPorMail.Checked = false;
             Recalcular();
         }
@@ -228,7 +232,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                 t.ReadOnly = !ocasional;
             }
             checkContabilizar.Enabled = ocasional;
-            checkRecargo.Enabled = ocasional;
+            checkRetencion.Enabled = ocasional;
             checkPorMail.Enabled = ocasional;
 
             if (ocasional)
@@ -247,7 +251,7 @@ namespace Proyecto_Antonio_Luis.Formularios
             }
         }
 
-        private void checkRecargo_CheckedChanged(object sender, EventArgs e)
+        private void checkRetencion_CheckedChanged(object sender, EventArgs e)
         {
             if (!cargando) Recalcular();
         }
@@ -359,8 +363,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                     decimal tipo;
                     ClientesUtil.LeerDecimal(textoIva.Replace("%", "").Trim(), out tipo);
                     linea.TipoIva = tipo;
-                    decimal re;
-                    linea.TipoRecargo = checkRecargo.Checked && recargos.TryGetValue(tipo, out re) ? re : 0;
+                    linea.TipoRecargo = 0;   // los servicios no llevan recargo de equivalencia
                 }
                 lineas.Add(linea);
             }
@@ -390,14 +393,21 @@ namespace Proyecto_Antonio_Luis.Formularios
                 }
             }
 
-            MostrarTotales(FacturasUtil.Calcular(lineas), 0);
+            var t = FacturasUtil.Calcular(lineas, PorcActual());
+            MostrarTotales(t, t.Retencion);
+        }
+
+        /// <summary>% de retención que lleva esta factura (0 si no lleva).</summary>
+        private decimal PorcActual()
+        {
+            return checkRetencion.Checked ? porcRetencion : 0;
         }
 
         private void MostrarTotales(TotalesFactura t, decimal retencion)
         {
             valorBase.Text = Euros(t.BaseImponible);
             valorIva.Text = Euros(t.CuotaIva);
-            valorRecargo.Text = Euros(t.CuotaRecargo);
+            valorRetencion.Text = retencion != 0 ? Euros(-retencion) : Euros(0);
             valorSuplidos.Text = Euros(t.Suplidos);
             valorTotal.Text = Euros(t.TotalFactura - retencion + t.Suplidos);
 
@@ -458,7 +468,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                 return;
             }
 
-            var totales = FacturasUtil.Calcular(lineas);
+            var totales = FacturasUtil.Calcular(lineas, PorcActual());
             if (totales.TotalAPagar <= 0)
             {
                 Aviso("El total de la factura tiene que ser mayor que cero.\nPara anular o corregir una factura se hará una rectificativa.");
@@ -519,7 +529,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                 Iban = "",             // las facturas directas se cobran en efectivo
                 Domiciliar = false,    // nunca se pasan al banco
                 Contabilizar = checkContabilizar.Checked,
-                RecargoEquivalencia = checkRecargo.Checked
+                PorcRetencion = PorcActual()
             };
 
             decimal id;
@@ -611,14 +621,14 @@ namespace Proyecto_Antonio_Luis.Formularios
             txtProvincia.Text = (f.factprovincia ?? "").Trim();
             txtMail.Text = (f.factmail ?? "").Trim();
             checkContabilizar.Checked = f.factparacontabilizar == true;
-            checkRecargo.Checked = (f.factimporterecargo ?? 0) != 0;
+            checkRetencion.Checked = (f.factretencion ?? 0) != 0;
             checkPorMail.Checked = f.factpormail == true;
 
             foreach (var t in new[] { txtNombre, txtNif, txtDireccion, txtCp, txtLocalidad, txtProvincia, txtMail })
             {
                 t.ReadOnly = true;
             }
-            foreach (var c in new[] { checkContabilizar, checkRecargo, checkPorMail })
+            foreach (var c in new[] { checkContabilizar, checkRetencion, checkPorMail })
             {
                 c.Enabled = false;
             }
