@@ -53,5 +53,16 @@ namespace BaseDatos
         public string factiban { get; set; }
         public Nullable<decimal> factretencionporc { get; set; }
         public Nullable<decimal> factretencion { get; set; }
+        public string factserie { get; set; }
+        public Nullable<int> factejercicio { get; set; }
+        public Nullable<System.DateTime> factfechadoc { get; set; }
+        public string factorigen { get; set; }
+        public Nullable<decimal> factbaseimponible { get; set; }
+        public Nullable<decimal> factremesaid { get; set; }
+        public string factestado { get; set; }
+        public Nullable<decimal> factrectificaid { get; set; }
+        public Nullable<System.DateTime> factfechacontab { get; set; }
+        public Nullable<System.DateTime> factfechadomic { get; set; }
+        public Nullable<decimal> factimporterecargo { get; set; }
     }
 }

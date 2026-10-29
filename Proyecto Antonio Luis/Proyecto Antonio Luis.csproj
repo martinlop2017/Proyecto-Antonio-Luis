@@ -102,6 +102,8 @@
     </Compile>
     <Compile Include="Clases\albaranesclientes.cs" />
     <Compile Include="Clases\ClientesUtil.cs" />
+    <Compile Include="Clases\FacturaImpresion.cs" />
+    <Compile Include="Clases\FacturasUtil.cs" />
     <Compile Include="Clases\datoslistadoreme.cs" />
     <Compile Include="Clases\Encriptar.cs" />
     <Compile Include="Clases\PasoClientes.cs" />
@@ -407,6 +409,7 @@
       <DependentUpon>ReiniciaBases.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Report1.rdlc" />
+    <EmbeddedResource Include="Formularios\ReportFactura.rdlc" />
     <EmbeddedResource Include="Formularios\ReportFacturas.rdlc" />
     <EmbeddedResource Include="Formularios\ReportImpresionDirecta.rdlc" />
     <EmbeddedResource Include="Formularios\Rutas.resx">

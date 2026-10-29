@@ -142,6 +142,32 @@
         s9ln46RTAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="panelEjercicio.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAckAAABCCAYAAAA8Py3eAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAGHSURBVHhe7dVBbUNBAMXAsirYkiqj33fZSF05CDIjGYO/
+        HgAgmSQAvPGa5PfPryRJWodJSpJ0dZikJElXh0lKknR15CQB4NPUB00SAKY+aJIAMPVBkwSAqQ+aJABM
+        fdAkAWDqgyYJAFMfNEkAmPqgSQLA1AdNEgCmPmiSADD1QZMEgKkPmiQATH3QJAFg6oMmCQBTHzRJAJj6
+        oEkCwNQHTRIApj5okgAw9UGTBICpD5okAEx90CQBYOqDJgkAUx80SQCY+qBJAsDUB00SAKY+aJIAMPVB
+        kwSAqQ+aJABMfdAkAWDqgyYJAFMfNEkAmPqgSQLA1AdNEgCmPmiSADD1QZMEgKkPmiQATH3QJAFg6oMm
+        CQBTHzRJAJj6oEkCwNQHTRIApj5okgAw9UGTBICpD5okAEx90CQBYOqDJgkAUx80SQCY+qBJAsDUB00S
+        AKY+aJIAMPVBkwSAqQ/mJCVJ+uQOk5Qk6eowSUmSrg6TlCTp6nhNEgD4zyQB4A2TBIA3TBIA0vP8Aes3
+        s9ln46RTAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="panelSerie.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAckAAABCCAYAAAA8Py3eAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAGHSURBVHhe7dVBbUNBAMXAsirYkiqj33fZSF05CDIjGYO/
+        HgAgmSQAvPGa5PfPryRJWodJSpJ0dZikJElXh0lKknR15CQB4NPUB00SAKY+aJIAMPVBkwSAqQ+aJABM
+        fdAkAWDqgyYJAFMfNEkAmPqgSQLA1AdNEgCmPmiSADD1QZMEgKkPmiQATH3QJAFg6oMmCQBTHzRJAJj6
+        oEkCwNQHTRIApj5okgAw9UGTBICpD5okAEx90CQBYOqDJgkAUx80SQCY+qBJAsDUB00SAKY+aJIAMPVB
+        kwSAqQ+aJABMfdAkAWDqgyYJAFMfNEkAmPqgSQLA1AdNEgCmPmiSADD1QZMEgKkPmiQATH3QJAFg6oMm
+        CQBTHzRJAJj6oEkCwNQHTRIApj5okgAw9UGTBICpD5okAEx90CQBYOqDJgkAUx80SQCY+qBJAsDUB00S
+        AKY+aJIAMPVBkwSAqQ/mJCVJ+uQOk5Qk6eowSUmSrg6TlCTp6nhNEgD4zyQB4A2TBIA3TBIA0vP8Aes3
+        s9ln46RTAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="facturasBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>174, 17</value>
   </metadata>

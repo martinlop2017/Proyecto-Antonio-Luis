@@ -86,6 +86,12 @@
     <Compile Include="Propios.cs">
       <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
     </Compile>
+    <Compile Include="FacturaLineas.cs">
+      <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Series.cs">
+      <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
+    </Compile>
     <Compile Include="Retenciones.cs">
       <DependentUpon>ModelAdministracionAntonio.tt</DependentUpon>
     </Compile>

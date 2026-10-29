@@ -19,5 +19,9 @@ namespace BaseDatos
         public string remesafecha { get; set; }
         public Nullable<decimal> remesatotal { get; set; }
         public Nullable<bool> remesacontabilizada { get; set; }
+        public Nullable<int> remesaejercicio { get; set; }
+        public Nullable<System.DateTime> remesafechacargo { get; set; }
+        public Nullable<System.DateTime> remesafechaenvio { get; set; }
+        public string remesafichero { get; set; }
     }
 }

@@ -10,6 +10,8 @@
         <EntityTypeShape EntityType="AdministracionAntonioModel.Facturas" Width="1.5" PointX="4.75" PointY="0.75" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Iva" Width="1.5" PointX="6.75" PointY="0.75" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Retenciones" Width="1.5" PointX="6.75" PointY="3" />
+        <EntityTypeShape EntityType="AdministracionAntonioModel.Series" Width="1.5" PointX="8.75" PointY="3" />
+        <EntityTypeShape EntityType="AdministracionAntonioModel.FacturaLineas" Width="1.5" PointX="10.75" PointY="0.75" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Propios" Width="1.5" PointX="6.75" PointY="3.75" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Resilla" Width="1.5" PointX="8.75" PointY="0.75" />
         <EntityTypeShape EntityType="AdministracionAntonioModel.Ususarios" Width="1.5" PointX="8.75" PointY="3.75" />

@@ -1,132 +1,381 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.Diagnostics;
+using System.Globalization;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BaseDatos;
 using Proyecto_Antonio_Luis.Clases;
 
-
 namespace Proyecto_Antonio_Luis.Formularios
 {
+    /// <summary>
+    /// Lista de facturas emitidas, filtrada por año y serie.
+    ///  - Añadir: nueva factura directa (serie D).
+    ///  - Doble clic o Intro: ver la factura.
+    ///  - Imprimir: crea el PDF de las facturas seleccionadas.
+    /// Las facturas no se modifican ni se borran.
+    /// </summary>
     public partial class GestionFacturas : Form
     {
-        AdministracionAntonioEntities bd;
+        private static readonly CultureInfo Es = new CultureInfo("es-ES");
+        private const string Todos = "Todos";
+        private const string Todas = "Todas";
+
+        private bool cargando;
+        private List<FilaFactura> filas = new List<FilaFactura>();
+
+        /// <summary>Una fila de la lista de facturas.</summary>
+        private class FilaFactura
+        {
+            public decimal Id { get; set; }
+            public string Numero { get; set; }
+            public DateTime? Fecha { get; set; }
+            public string Cliente { get; set; }
+            public string Nif { get; set; }
+            public decimal Base { get; set; }
+            public decimal Iva { get; set; }
+            public decimal Total { get; set; }
+            public bool Impresa { get; set; }
+            public bool Contabilizada { get; set; }
+            public bool Domiciliada { get; set; }
+            public bool PorMail { get; set; }
+
+            // Para ordenar
+            public string Serie { get; set; }
+            public int Ejercicio { get; set; }
+            public decimal NumeroFactura { get; set; }
+            public decimal CodigoCliente { get; set; }
+        }
 
         public GestionFacturas()
         {
             InitializeComponent();
-
-            bd = new AdministracionAntonioEntities();
+            CrearColumnas();
         }
 
-        private void sumar_MouseEnter(object sender, EventArgs e)
+        private void CrearColumnas()
         {
-            label1.Visible = true;
+            dgvfactura.AutoGenerateColumns = false;
+            dgvfactura.Columns.Clear();
+            Columna("Id", "Id", 0).Visible = false;
+            Columna("Numero", "Número", 105);
+            Columna("Fecha", "Fecha", 80, "dd/MM/yyyy", DataGridViewContentAlignment.MiddleCenter);
+            Columna("Cliente", "Cliente", 0).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Columna("Nif", "NIF", 85);
+            Columna("Base", "Base", 80, "N2", DataGridViewContentAlignment.MiddleRight);
+            Columna("Iva", "IVA", 70, "N2", DataGridViewContentAlignment.MiddleRight);
+            Columna("Total", "Total", 85, "N2", DataGridViewContentAlignment.MiddleRight);
+            Marca("Impresa", "Impr.");
+            Marca("Contabilizada", "Cont.");
+            Marca("Domiciliada", "Domic.");
+            Marca("PorMail", "Mail");
         }
 
-        private void sumar_MouseLeave(object sender, EventArgs e)
+        private DataGridViewTextBoxColumn Columna(string propiedad, string titulo, int ancho,
+            string formato = null, DataGridViewContentAlignment alineacion = DataGridViewContentAlignment.MiddleLeft)
         {
-            label1.Visible = false;
+            var c = new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = propiedad,
+                Name = "col" + propiedad,
+                HeaderText = titulo,
+                SortMode = DataGridViewColumnSortMode.NotSortable
+            };
+            if (ancho > 0) c.Width = ancho;
+            c.DefaultCellStyle.Alignment = alineacion;
+            if (formato != null)
+            {
+                c.DefaultCellStyle.Format = formato;
+                c.DefaultCellStyle.FormatProvider = Es;
+            }
+            dgvfactura.Columns.Add(c);
+            return c;
         }
 
-        private void eliminar_MouseEnter(object sender, EventArgs e)
+        private void Marca(string propiedad, string titulo)
         {
-            
+            dgvfactura.Columns.Add(new DataGridViewCheckBoxColumn
+            {
+                DataPropertyName = propiedad,
+                Name = "col" + propiedad,
+                HeaderText = titulo,
+                Width = 45,
+                SortMode = DataGridViewColumnSortMode.NotSortable
+            });
         }
 
-        private void eliminar_MouseLeave(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void modificar_MouseEnter(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void modificar_MouseLeave(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void panel1_MouseEnter(object sender, EventArgs e)
-        {
-            label4.Visible = true;
-        }
-
-        private void panel1_MouseLeave(object sender, EventArgs e)
-        {
-            label4.Visible = false;
-        }
-
-        private void textBox1_MouseEnter(object sender, EventArgs e)
-        {
-            label4.Visible = true;
-        }
-
-        private void textBox1_MouseLeave(object sender, EventArgs e)
-        {
-            label4.Visible = false;
-        }
-
-        private void panel2_MouseEnter(object sender, EventArgs e)
-        {
-            label6.Visible = true;
-        }
-
-        private void panel2_MouseLeave(object sender, EventArgs e)
-        {
-            label6.Visible = false;
-        }
-
-        private void comboBox1_MouseEnter(object sender, EventArgs e)
-        {
-            label6.Visible = true;
-        }
-
-        private void comboBox1_MouseLeave(object sender, EventArgs e)
-        {
-            label6.Visible = false;
-        }
-
-        private void salir_MouseEnter(object sender, EventArgs e)
-        {
-            label5.Visible = true;
-        }
-
-        private void salir_MouseLeave(object sender, EventArgs e)
-        {
-            label5.Visible = false;
-        }
+        // =====================================================================
+        //  Carga y filtros
+        // =====================================================================
 
         private void GestionFacturas_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dataSetAntonioLuis.Facturas' Puede moverla o quitarla según sea necesario.
-            //this.facturasTableAdapter.Fill(this.dataSetAntonioLuis.Facturas);
+            cargando = true;
+            try
+            {
+                using (var bd = new AdministracionAntonioEntities())
+                {
+                    var años = bd.Facturas
+                        .Where(f => f.factejercicio != null)
+                        .Select(f => f.factejercicio.Value)
+                        .Distinct()
+                        .OrderByDescending(a => a)
+                        .ToList();
+                    if (!años.Contains(DateTime.Today.Year)) años.Insert(0, DateTime.Today.Year);
 
-            dgvfactura.DataSource = bd.Facturas.ToList();
-            dgvfactura.Refresh();
-            comboBox1.Text = "Número";
+                    comboEjercicio.Items.Clear();
+                    foreach (int ej in años.OrderByDescending(x => x)) comboEjercicio.Items.Add(ej.ToString());
+                    comboEjercicio.Items.Add(Todos);
+
+                    // Año actual, o el último con facturas si este año aún no hay
+                    int año = DateTime.Today.Year;
+                    if (!bd.Facturas.Any(f => f.factejercicio == año) && años.Count > 1)
+                    {
+                        año = años.Where(a => a != DateTime.Today.Year).Max();
+                    }
+                    comboEjercicio.SelectedItem = año.ToString();
+
+                    comboSerie.Items.Clear();
+                    comboSerie.Items.Add(Todas);
+                    foreach (var s in bd.Series.AsNoTracking().OrderBy(s => s.serie).ToList())
+                    {
+                        comboSerie.Items.Add(s.serie.Trim() + " - " + (s.descripcion ?? "").Trim());
+                    }
+                    comboSerie.SelectedIndex = 0;
+                }
+                comboBox1.SelectedItem = "Número";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se han podido cargar las facturas:\n" + ex.Message, "Gestión de facturas",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                cargando = false;
+            }
+            Cargar(null);
         }
 
-        private void dgvclientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Filtro_Cambiado(object sender, EventArgs e)
         {
-
+            if (!cargando) Cargar(null);
         }
 
-        private void imprimir_MouseEnter(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            label8.Visible = true;
+            if (!cargando) Mostrar(null);
         }
 
-        private void imprimir_MouseLeave(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            label8.Visible = false;
+            if (!cargando) Mostrar(null);
+        }
+
+        /// <summary>Lee de la base de datos las facturas del año y serie elegidos.</summary>
+        private void Cargar(decimal? seleccionar)
+        {
+            try
+            {
+                string textoAño = Convert.ToString(comboEjercicio.SelectedItem);
+                string textoSerie = Convert.ToString(comboSerie.SelectedItem);
+                int año;
+                bool filtrarAño = int.TryParse(textoAño, out año);
+                string serie = textoSerie == Todas || textoSerie.Length == 0 ? null : textoSerie.Split('-')[0].Trim();
+
+                using (var bd = new AdministracionAntonioEntities())
+                {
+                    var consulta = bd.Facturas.AsNoTracking().AsQueryable();
+                    if (filtrarAño) consulta = consulta.Where(f => f.factejercicio == año);
+                    if (serie != null) consulta = consulta.Where(f => f.factserie == serie);
+
+                    filas = consulta.ToList().Select(f => new FilaFactura
+                    {
+                        Id = f.factcontador,
+                        Numero = FacturasUtil.Numero(f),
+                        Fecha = f.factfechadoc,
+                        Cliente = (f.factnombre ?? "").Trim(),
+                        Nif = (f.factnif ?? "").Trim(),
+                        Base = f.factbaseimponible ?? ((f.factbase1 ?? 0) + (f.factbaseempleado ?? 0)),
+                        Iva = (f.factimporteiva ?? 0),
+                        Total = f.facttotalfactura ?? 0,
+                        Impresa = f.factimpresa == true,
+                        Contabilizada = f.factcontabilizada == true,
+                        Domiciliada = f.factdomiciliada == true,
+                        PorMail = f.factpormail == true,
+                        Serie = f.factserie ?? "",
+                        Ejercicio = f.factejercicio ?? 0,
+                        NumeroFactura = f.factnumerofact ?? 0,
+                        CodigoCliente = f.factcodcliente ?? 0
+                    }).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                filas = new List<FilaFactura>();
+                MessageBox.Show("No se han podido leer las facturas:\n" + ex.Message, "Gestión de facturas",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Mostrar(seleccionar);
+        }
+
+        /// <summary>Aplica la búsqueda por nombre/NIF/número y el orden, sin volver a leer la base de datos.</summary>
+        private void Mostrar(decimal? seleccionar)
+        {
+            IEnumerable<FilaFactura> lista = filas;
+
+            string buscar = textBox1.Text.Trim();
+            if (buscar.Length > 0)
+            {
+                lista = lista.Where(f =>
+                    f.Cliente.IndexOf(buscar, StringComparison.CurrentCultureIgnoreCase) >= 0 ||
+                    f.Nif.IndexOf(buscar, StringComparison.CurrentCultureIgnoreCase) >= 0 ||
+                    f.Numero.IndexOf(buscar, StringComparison.CurrentCultureIgnoreCase) >= 0);
+            }
+
+            switch (Convert.ToString(comboBox1.SelectedItem))
+            {
+                case "Código":
+                    lista = lista.OrderBy(f => f.CodigoCliente).ThenBy(f => f.Fecha);
+                    break;
+                case "Nombre":
+                    lista = lista.OrderBy(f => f.Cliente).ThenBy(f => f.Fecha);
+                    break;
+                case "Fecha":
+                    lista = lista.OrderByDescending(f => f.Fecha).ThenBy(f => f.Serie).ThenByDescending(f => f.NumeroFactura);
+                    break;
+                default: // Número
+                    lista = lista.OrderByDescending(f => f.Ejercicio).ThenBy(f => f.Serie).ThenByDescending(f => f.NumeroFactura);
+                    break;
+            }
+
+            var mostradas = lista.ToList();
+            dgvfactura.DataSource = mostradas;
+
+            labelResumen.Text = mostradas.Count + (mostradas.Count == 1 ? " factura" : " facturas") +
+                                "   ·   Base: " + mostradas.Sum(f => f.Base).ToString("N2", Es) + " €" +
+                                "   ·   Total: " + mostradas.Sum(f => f.Total).ToString("N2", Es) + " €";
+
+            dgvfactura.ClearSelection();
+            if (seleccionar.HasValue)
+            {
+                foreach (DataGridViewRow fila in dgvfactura.Rows)
+                {
+                    if (((FilaFactura)fila.DataBoundItem).Id == seleccionar.Value)
+                    {
+                        dgvfactura.CurrentCell = fila.Cells["colNumero"];
+                        fila.Selected = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        private List<FilaFactura> Seleccionadas()
+        {
+            return dgvfactura.SelectedRows.Cast<DataGridViewRow>()
+                .Select(r => (FilaFactura)r.DataBoundItem)
+                .OrderBy(f => f.Serie).ThenBy(f => f.Ejercicio).ThenBy(f => f.NumeroFactura)
+                .ToList();
+        }
+
+        // =====================================================================
+        //  Acciones
+        // =====================================================================
+
+        private void sumar_Click(object sender, EventArgs e)
+        {
+            using (var form = new FacturaUnitaria())
+            {
+                if (form.ShowDialog(this) == DialogResult.OK && form.FacturaGrabada.HasValue)
+                {
+                    Cargar(form.FacturaGrabada);
+                }
+                else
+                {
+                    Cargar(null);
+                }
+            }
+        }
+
+        private void dgvclientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            VerFactura(((FilaFactura)dgvfactura.Rows[e.RowIndex].DataBoundItem).Id);
+        }
+
+        private void dgvfactura_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && dgvfactura.CurrentRow != null)
+            {
+                e.Handled = true;
+                VerFactura(((FilaFactura)dgvfactura.CurrentRow.DataBoundItem).Id);
+            }
+        }
+
+        private void VerFactura(decimal id)
+        {
+            using (var form = new FacturaUnitaria(id))
+            {
+                form.ShowDialog(this);
+            }
+            Cargar(id);   // por si se ha impreso
+        }
+
+        private void imprimir_Click(object sender, EventArgs e)
+        {
+            var elegidas = Seleccionadas();
+            if (elegidas.Count == 0)
+            {
+                MessageBox.Show("Selecciona en la lista las facturas que quieres imprimir.\n" +
+                                "(Con Ctrl o Mayús puedes seleccionar varias.)", "Imprimir facturas",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (elegidas.Count > 1 &&
+                MessageBox.Show("Se va a crear el PDF de " + elegidas.Count + " facturas en la carpeta de cada cliente.\n¿Continuar?",
+                    "Imprimir facturas", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            {
+                return;
+            }
+
+            var errores = new List<string>();
+            Cursor = Cursors.WaitCursor;
+            try
+            {
+                foreach (var f in elegidas)
+                {
+                    try
+                    {
+                        FacturasUtil.GenerarPdf(f.Id, elegidas.Count == 1);
+                    }
+                    catch (Exception ex)
+                    {
+                        var interna = ex;
+                        while (interna.InnerException != null) interna = interna.InnerException;
+                        errores.Add(f.Numero + ": " + interna.Message);
+                    }
+                }
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
+
+            if (errores.Count > 0)
+            {
+                MessageBox.Show("No se han podido crear estos PDF:\n\n" + string.Join("\n", errores.Take(15)),
+                    "Imprimir facturas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (elegidas.Count > 1)
+            {
+                MessageBox.Show(elegidas.Count + " PDF creados en las carpetas de facturación de cada cliente.",
+                    "Imprimir facturas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            Cargar(elegidas.Count == 1 ? elegidas[0].Id : (decimal?)null);
         }
 
         private void salir_Click(object sender, EventArgs e)
@@ -134,74 +383,23 @@ namespace Proyecto_Antonio_Luis.Formularios
             Close();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBox1.Text == "Número")
-            {
-                dgvfactura.DataSource = bd.Facturas.OrderBy(x => x.factnumerofact).ToList();
-            }
-            if (comboBox1.Text == "Código")
-            {
-                dgvfactura.DataSource = bd.Facturas.OrderBy(x => x.factcodcliente).ToList();
-            }
+        // =====================================================================
+        //  Rótulos que aparecen al pasar el ratón
+        // =====================================================================
 
-            if (comboBox1.Text == "Nombre")
-            {
-                dgvfactura.DataSource = bd.Facturas.OrderBy(x => x.factnombre).ToList();
-            }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            var busqueda = from c in bd.Facturas select c;
-            busqueda = busqueda.Where(c => c.factnombre.Contains(textBox1.Text)).OrderBy(x => x.factnombre);
-
-            dgvfactura.DataSource = busqueda.ToList();
-        }
-
-        private void dgvclientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //Esto lo que hace es mostrar los datos para modificar
-            // Inicializa la variable global llamadas
-            Globales.llamadas = "2";
-            try
-            {
-                // creamos una variable que va aguardar los datos de la fila seleccionada en el dbgrid
-                Globales.modificar = Convert.ToInt16(dgvfactura.CurrentRow.Cells [1].Value);
-                // Abre Ususarios
-                FacturaUnitaria form = new FacturaUnitaria();
-                form.Show();
-
-
-                dgvfactura.DataSource = "";
-                dgvfactura.DataSource = bd.Facturas.ToList();
-                dgvfactura.Refresh();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Debe Seleccionar un registro.", "Error 303", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
-        private void sumar_Click(object sender, EventArgs e)
-        {
-            Globales.llamadas = "1";
-            FacturaUnitaria form = new FacturaUnitaria();
-            form.Show();
-        }
-
-        private void imprimir_Click(object sender, EventArgs e)
-        {
-            //primero cogemos el valor de la linea selecionada
-            Globales.modificar = Convert.ToInt16(dgvfactura.CurrentRow.Cells[1].Value);
-            ImprimirFacturas form = new ImprimirFacturas();
-            form.Show();
-        }
-
-        private void facturasBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
+        private void sumar_MouseEnter(object sender, EventArgs e) { label1.Visible = true; }
+        private void sumar_MouseLeave(object sender, EventArgs e) { label1.Visible = false; }
+        private void imprimir_MouseEnter(object sender, EventArgs e) { label8.Visible = true; }
+        private void imprimir_MouseLeave(object sender, EventArgs e) { label8.Visible = false; }
+        private void panel1_MouseEnter(object sender, EventArgs e) { label4.Visible = true; }
+        private void panel1_MouseLeave(object sender, EventArgs e) { label4.Visible = false; }
+        private void panelEjercicio_MouseEnter(object sender, EventArgs e) { labelEjercicio.Visible = true; }
+        private void panelEjercicio_MouseLeave(object sender, EventArgs e) { labelEjercicio.Visible = false; }
+        private void panelSerie_MouseEnter(object sender, EventArgs e) { labelSerie.Visible = true; }
+        private void panelSerie_MouseLeave(object sender, EventArgs e) { labelSerie.Visible = false; }
+        private void panel2_MouseEnter(object sender, EventArgs e) { label6.Visible = true; }
+        private void panel2_MouseLeave(object sender, EventArgs e) { label6.Visible = false; }
+        private void salir_MouseEnter(object sender, EventArgs e) { label5.Visible = true; }
+        private void salir_MouseLeave(object sender, EventArgs e) { label5.Visible = false; }
     }
 }

@@ -319,26 +319,9 @@ namespace Proyecto_Antonio_Luis.Formularios
                 //cargamos los datos en el dgv.
 
                 //**** calculamos el valor de la coluna numerador
-                decimal numerofactura = 1;
-
-                if (bd.Facturas.Any())
-                {
-                    // esto comprueba que las facturas corresponde a un año nuevo
-                    //por lo que deberia reiniciar la numeracion de las facturas
-
-                    // extrae el año de la ultima factuar
-                    string yearfactura = (bd.Facturas.OrderByDescending(x => x.factfecha).First().factfecha.Split('/').Last());
-                    // extrae el año del sistema
-                    int fechaHoy = DateTime.Now.Year;
-
-                    //compara ambos años, si el año de la factura es menor o igual al año del sistema
-                    //continua con la numeracion actual, si no la reinicia.
-                    if (fechaHoy <= Convert.ToInt16(yearfactura))
-                    {
-
-                        numerofactura = (bd.Facturas.OrderByDescending(x => x.factnumerofact).First().factnumerofact.Value) + 1;
-                    }
-                }
+                // Número siguiente de la serie M (facturación mensual) en el año de la factura.
+                // Cada serie empieza en 1 cada año.
+                decimal numerofactura = FacturasUtil.SiguienteNumero(bd, FacturasUtil.SerieMensual, Globales.fechafactura.Year);
 
 
                 List<temporal> lista = new List<temporal>();
@@ -502,6 +485,14 @@ namespace Proyecto_Antonio_Luis.Formularios
                     myFactura.factcontabilizada = false;
                     myFactura.factparadomiciliar = temp.tempparadomiciliar;
                     myFactura.factdomiciliada = false;
+
+                    // Serie, año y fecha real (hasta rehacer la facturación mensual en el paso 3)
+                    myFactura.factserie = FacturasUtil.SerieMensual;
+                    myFactura.factorigen = FacturasUtil.SerieMensual;
+                    myFactura.factejercicio = Globales.fechafactura.Year;
+                    myFactura.factfechadoc = Globales.fechafactura.Date;
+                    myFactura.factbaseimponible = temp.temptarifa + temp.templaboral;
+                    myFactura.factestado = "Emitida";
 
                     totalbaseremesa = totalbaseremesa + temp.tempbase;
 

@@ -127,6 +127,17 @@
           <Property Name="factiban" Type="nvarchar" MaxLength="34" />
           <Property Name="factretencionporc" Type="decimal" Precision="4" Scale="2" />
           <Property Name="factretencion" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="factserie" Type="nvarchar" MaxLength="10" />
+          <Property Name="factejercicio" Type="int" />
+          <Property Name="factfechadoc" Type="date" />
+          <Property Name="factorigen" Type="nvarchar" MaxLength="1" />
+          <Property Name="factbaseimponible" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="factremesaid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="factestado" Type="nvarchar" MaxLength="15" />
+          <Property Name="factrectificaid" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="factfechacontab" Type="datetime" />
+          <Property Name="factfechadomic" Type="datetime" />
+          <Property Name="factimporterecargo" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="Iva">
           <Key>
@@ -174,6 +185,10 @@
           <Property Name="remesafecha" Type="nchar" MaxLength="10" />
           <Property Name="remesatotal" Type="decimal" Precision="18" Scale="2" />
           <Property Name="remesacontabilizada" Type="bit" />
+          <Property Name="remesaejercicio" Type="int" />
+          <Property Name="remesafechacargo" Type="date" />
+          <Property Name="remesafechaenvio" Type="datetime" />
+          <Property Name="remesafichero" Type="nvarchar" MaxLength="260" />
         </EntityType>
         <EntityType Name="Ususarios">
           <Key>
@@ -220,12 +235,37 @@
           <Property Name="retporciento" Type="numeric" Precision="4" Scale="2" Nullable="false" />
           <Property Name="retpordefecto" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="Series">
+          <Key>
+            <PropertyRef Name="serie" />
+          </Key>
+          <Property Name="serie" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="uso" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FacturaLineas">
+          <Key>
+            <PropertyRef Name="lineaid" />
+          </Key>
+          <Property Name="lineaid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="factcontador" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="orden" Type="int" Nullable="false" />
+          <Property Name="concepto" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="cantidad" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+          <Property Name="precio" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="importe" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="sujetoiva" Type="bit" Nullable="false" />
+          <Property Name="tipoiva" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="tiporecargo" Type="decimal" Precision="5" Scale="2" />
+        </EntityType>
         <EntityContainer Name="AdministracionAntonioModelStoreContainer">
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cuentas" EntityType="Self.Cuentas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Facturas" EntityType="Self.Facturas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Iva" EntityType="Self.Iva" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Retenciones" EntityType="Self.Retenciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Series" EntityType="Self.Series" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FacturaLineas" EntityType="Self.FacturaLineas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Propios" EntityType="Self.Propios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Resilla" EntityType="Self.Resilla" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ususarios" EntityType="Self.Ususarios" Schema="dbo" store:Type="Tables" />
@@ -240,6 +280,8 @@
           <EntitySet Name="Facturas" EntityType="AdministracionAntonioModel.Facturas" />
           <EntitySet Name="Iva" EntityType="AdministracionAntonioModel.Iva" />
           <EntitySet Name="Retenciones" EntityType="AdministracionAntonioModel.Retenciones" />
+          <EntitySet Name="Series" EntityType="AdministracionAntonioModel.Series" />
+          <EntitySet Name="FacturaLineas" EntityType="AdministracionAntonioModel.FacturaLineas" />
           <EntitySet Name="Propios" EntityType="AdministracionAntonioModel.Propios" />
           <EntitySet Name="Resilla" EntityType="AdministracionAntonioModel.Resilla" />
           <EntitySet Name="Ususarios" EntityType="AdministracionAntonioModel.Ususarios" />
@@ -366,6 +408,40 @@
           <Property Name="factiban" Type="String" MaxLength="34" FixedLength="false" Unicode="true" />
           <Property Name="factretencionporc" Type="Decimal" Precision="4" Scale="2" />
           <Property Name="factretencion" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="factserie" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="factejercicio" Type="Int32" />
+          <Property Name="factfechadoc" Type="DateTime" Precision="0" />
+          <Property Name="factorigen" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="factbaseimponible" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="factremesaid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="factestado" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="factrectificaid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="factfechacontab" Type="DateTime" Precision="3" />
+          <Property Name="factfechadomic" Type="DateTime" Precision="3" />
+          <Property Name="factimporterecargo" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Series">
+          <Key>
+            <PropertyRef Name="serie" />
+          </Key>
+          <Property Name="serie" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="uso" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FacturaLineas">
+          <Key>
+            <PropertyRef Name="lineaid" />
+          </Key>
+          <Property Name="lineaid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="factcontador" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="orden" Type="Int32" Nullable="false" />
+          <Property Name="concepto" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cantidad" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+          <Property Name="precio" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="importe" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="sujetoiva" Type="Boolean" Nullable="false" />
+          <Property Name="tipoiva" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="tiporecargo" Type="Decimal" Precision="5" Scale="2" />
         </EntityType>
         <EntityType Name="Retenciones">
           <Key>
@@ -422,6 +498,10 @@
           <Property Name="remesafecha" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="remesatotal" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="remesacontabilizada" Type="Boolean" />
+          <Property Name="remesaejercicio" Type="Int32" />
+          <Property Name="remesafechacargo" Type="DateTime" Precision="0" />
+          <Property Name="remesafechaenvio" Type="DateTime" Precision="3" />
+          <Property Name="remesafichero" Type="String" MaxLength="260" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Ususarios">
           <Key>
@@ -549,6 +629,17 @@
           <EntitySetMapping Name="Facturas">
             <EntityTypeMapping TypeName="AdministracionAntonioModel.Facturas">
               <MappingFragment StoreEntitySet="Facturas">
+                <ScalarProperty Name="factimporterecargo" ColumnName="factimporterecargo" />
+                <ScalarProperty Name="factserie" ColumnName="factserie" />
+                <ScalarProperty Name="factejercicio" ColumnName="factejercicio" />
+                <ScalarProperty Name="factfechadoc" ColumnName="factfechadoc" />
+                <ScalarProperty Name="factorigen" ColumnName="factorigen" />
+                <ScalarProperty Name="factbaseimponible" ColumnName="factbaseimponible" />
+                <ScalarProperty Name="factremesaid" ColumnName="factremesaid" />
+                <ScalarProperty Name="factestado" ColumnName="factestado" />
+                <ScalarProperty Name="factrectificaid" ColumnName="factrectificaid" />
+                <ScalarProperty Name="factfechacontab" ColumnName="factfechacontab" />
+                <ScalarProperty Name="factfechadomic" ColumnName="factfechadomic" />
                 <ScalarProperty Name="factretencionporc" ColumnName="factretencionporc" />
                 <ScalarProperty Name="factretencion" ColumnName="factretencion" />
                 <ScalarProperty Name="factiban" ColumnName="factiban" />
@@ -588,6 +679,31 @@
                 <ScalarProperty Name="factremesa" ColumnName="factremesa" />
                 <ScalarProperty Name="factnumerofact" ColumnName="factnumerofact" />
                 <ScalarProperty Name="factcontador" ColumnName="factcontador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Series">
+            <EntityTypeMapping TypeName="AdministracionAntonioModel.Series">
+              <MappingFragment StoreEntitySet="Series">
+                <ScalarProperty Name="uso" ColumnName="uso" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="serie" ColumnName="serie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FacturaLineas">
+            <EntityTypeMapping TypeName="AdministracionAntonioModel.FacturaLineas">
+              <MappingFragment StoreEntitySet="FacturaLineas">
+                <ScalarProperty Name="tipoiva" ColumnName="tipoiva" />
+                <ScalarProperty Name="tiporecargo" ColumnName="tiporecargo" />
+                <ScalarProperty Name="sujetoiva" ColumnName="sujetoiva" />
+                <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="concepto" ColumnName="concepto" />
+                <ScalarProperty Name="orden" ColumnName="orden" />
+                <ScalarProperty Name="factcontador" ColumnName="factcontador" />
+                <ScalarProperty Name="lineaid" ColumnName="lineaid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -643,6 +759,10 @@
           <EntitySetMapping Name="Resilla">
             <EntityTypeMapping TypeName="AdministracionAntonioModel.Resilla">
               <MappingFragment StoreEntitySet="Resilla">
+                <ScalarProperty Name="remesaejercicio" ColumnName="remesaejercicio" />
+                <ScalarProperty Name="remesafechacargo" ColumnName="remesafechacargo" />
+                <ScalarProperty Name="remesafechaenvio" ColumnName="remesafechaenvio" />
+                <ScalarProperty Name="remesafichero" ColumnName="remesafichero" />
                 <ScalarProperty Name="remesacontabilizada" ColumnName="remesacontabilizada" />
                 <ScalarProperty Name="remesatotal" ColumnName="remesatotal" />
                 <ScalarProperty Name="remesafecha" ColumnName="remesafecha" />

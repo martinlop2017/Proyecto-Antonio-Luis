@@ -1,219 +1,559 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Proyecto_Antonio_Luis.Clases;
 using BaseDatos;
+using Proyecto_Antonio_Luis.Clases;
 
 namespace Proyecto_Antonio_Luis.Formularios
 {
+    /// <summary>
+    /// Factura directa (serie D): una factura suelta a un cliente dado de alta
+    /// o a un cliente ocasional, con tantas líneas como haga falta y el IVA
+    /// de cada línea. Se cobran en efectivo: nunca se pasan al banco,
+    /// pero sí a contabilidad.
+    ///
+    /// new FacturaUnitaria()            -> factura nueva
+    /// new FacturaUnitaria(factcontador) -> ver una factura ya emitida (solo lectura)
+    ///
+    /// Una vez emitida, la factura no se puede modificar ni borrar.
+    /// </summary>
     public partial class FacturaUnitaria : Form
     {
-        AdministracionAntonioEntities bd;
-        List<albaranesclientes> nuevafactura = new List<albaranesclientes>();
-        bool encontrado = false;
-        string cliente;
+        private const string TextoSuplido = "Suplido";
 
-        //*** variables para calcular las bases e ivas.
-        decimal base0, base4, base10, base21, basesupl;
-        bool iva0, iva10, iva4, iva21, supli = false;
-        //**************************************
-        //**************************************
-        //  variable que controla si los datos del cliente los toma de la base cliente o del formulario
-        bool clientenuevo;
+        private static readonly CultureInfo Es = new CultureInfo("es-ES");
+
+        /// <summary>Factura que se está viendo, o null si es nueva.</summary>
+        private readonly decimal? facturaVista;
+
+        private List<Clientes> clientes = new List<Clientes>();
+        private Clientes clienteElegido;
+        private bool cargando;
+
+        /// <summary>Tipo de IVA -> tipo de recargo de equivalencia (tabla Iva).</summary>
+        private Dictionary<decimal, decimal> recargos = new Dictionary<decimal, decimal>();
+
+        /// <summary>Identificador de la factura grabada (para que Gestión de facturas la seleccione).</summary>
+        public decimal? FacturaGrabada { get; private set; }
+
         public FacturaUnitaria()
         {
             InitializeComponent();
-            bd = new AdministracionAntonioEntities();
-            
         }
+
+        public FacturaUnitaria(decimal factcontador) : this()
+        {
+            facturaVista = factcontador;
+        }
+
+        // =====================================================================
+        //  Carga
+        // =====================================================================
 
         private void FacturaUnitaria_Load(object sender, EventArgs e)
         {
-
-            if (Globales.llamadas == "1")
+            cargando = true;
+            try
             {
-                // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet1.Iva' Puede moverla o quitarla según sea necesario.
-                this.ivaTableAdapter.Fill(this.administracionAntonioDataSet1.Iva);
-                //carga la tabla de clientes en el conbo
-                dataGridView2.DataSource = bd.Clientes.ToList();
+                using (var bd = new AdministracionAntonioEntities())
+                {
+                    CargarTiposIva(bd);
 
-                //carga el numero de factura
-                var numerofactura = bd.Facturas.OrderByDescending(x => x.factnumerofact).Take(1).FirstOrDefault();
-                labelNumeroFactura.Text = (numerofactura.factnumerofact.Value + 1).ToString();
+                    if (facturaVista.HasValue)
+                    {
+                        MostrarFactura(bd, facturaVista.Value);
+                        return;
+                    }
 
+                    clientes = bd.Clientes.AsNoTracking()
+                        .Where(c => c.activocliente != false)
+                        .OrderBy(c => c.nombrecliente)
+                        .ToList();
+                }
 
+                comboCliente.DisplayMember = "nombrecliente";
+                comboCliente.DataSource = clientes;
+                comboCliente.SelectedIndex = -1;
+                comboCliente.Text = "";
+
+                dateTimePickerFecha.Value = DateTime.Today;
+                ActualizarNumero();
+                ModoOcasional(false);
+                imprimir.Visible = false;
             }
-
-            //  comboBox1.DataSource = baseDeDatos.Ususarios.Where(user => user.activo == true).Select(user => user.nombre).ToList<string>();
-
-        }
-
-        private void imprimir_Click(object sender, EventArgs e)
-        {
-            Globales.llamadas = "1";
-
-            if (Globales.llamadas == "1")
+            catch (Exception ex)
             {
-                var datoscliente = bd.Clientes.Where(x => x.nombrecliente == textBox13.Text).Take(1).FirstOrDefault();
-
-                var nuevafactura = new Facturas();
-
-               
-                //si el cliente no existe en la tabla cliente toma los datos del formulario
-                if (clientenuevo == true)
-                {
-                    
-                    nuevafactura.factcodcliente = 9999999999;
-                    nuevafactura.factnombre = textBox1.Text;
-                    nuevafactura.factdireccion = textBox3.Text;
-                    nuevafactura.factlocalidad = textBox4.Text;
-                    nuevafactura.factprovincia = textBox5.Text;
-                    nuevafactura.factcp = textBox6.Text;
-                    nuevafactura.factnif = textBox2.Text;
-                    
-                    nuevafactura.factimpresa = false;
-                    if (checkBox2.Checked == true)
-                    {
-                        nuevafactura.factparacontabilizar = true;
-                    }
-                    else
-                    {
-                        nuevafactura.factparacontabilizar = false;
-                    }
-                    nuevafactura.factcontabilizada = false;
-                    if (checkBox3.Checked == true)
-                    {
-                        nuevafactura.factparadomiciliar = true;
-                        // IBAN escrito a mano en los 6 cuadros
-                        Proyecto_Antonio_Luis.Clases.ClientesUtil.PonerIbanFactura(nuevafactura,
-                            Proyecto_Antonio_Luis.Clases.ClientesUtil.IbanDeBloques(textBox7.Text, textBox8.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox12.Text));
-
-                    }
-                    else
-                    {
-                        nuevafactura.factparadomiciliar = false;
-                    }
-                    nuevafactura.factdomiciliada = false;
-               
-                }
-                
-                //si el cliente existe en la tabla de clientes
-                if (clientenuevo == false)
-                {
-                    
-                    nuevafactura.factcodcliente = datoscliente.codcliente;
-                    nuevafactura.factnombre = datoscliente.nombrecliente;
-                    nuevafactura.factdireccion = datoscliente.direcioncliente;
-                    nuevafactura.factlocalidad = datoscliente.localidacliente;
-                    nuevafactura.factprovincia = datoscliente.provinciacliente;
-                    nuevafactura.factcp = datoscliente.cod_postalcliente;
-                    nuevafactura.factnif = datoscliente.cifcliente;
-                    // IBAN completo del cliente
-                    Proyecto_Antonio_Luis.Clases.ClientesUtil.PonerIbanFactura(nuevafactura, Proyecto_Antonio_Luis.Clases.ClientesUtil.IbanCliente(datoscliente));
-                    nuevafactura.factimpresa = false;
-                    nuevafactura.factparacontabilizar = datoscliente.contabilizarcliente;
-                    nuevafactura.factcontabilizada = false;
-                    nuevafactura.factparadomiciliar = datoscliente.domiciliadocliente;
-                    nuevafactura.factdomiciliada = false;
-                    
-
-                }
-
-                //estos son genericos no deneden de los clientes
-                nuevafactura.factfecha = dateTimePickerFecha.Text;
-                nuevafactura.factnumerofact = Convert.ToDecimal(labelNumeroFactura.Text);
-                nuevafactura.factremesa = "Factura Directa " + labelNumeroFactura.Text;
-                nuevafactura.factemleados = 0;
-                nuevafactura.factprecioempleado = 0;
-                nuevafactura.factpormail = false;
-                nuevafactura.factmail = "";
-
-
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-
-                {
-                   
-                            nuevafactura.factconcepto1 = Convert.ToString(row.Cells[3].Value); 
-                            nuevafactura.factbase1 = Convert.ToDecimal (row.Cells[2].Value);
-                  
-                /*        if (dataGridView1.CurrentRow.Index.ToString() == "1")
-                        {
-                            nuevafactura.factconcepto2 = Convert.ToString(row.Cells[2]);
-                        }
-*/
-                       
-
-                   
-
-
-
-                }
-
-                    bd.Facturas.Add(nuevafactura);
-
-                //guardamos los cambios
-                bd.SaveChanges();
+                MessageBox.Show("No se han podido cargar los datos:\n" + ex.Message, "Factura directa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                cargando = false;
             }
         }
 
-
-
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        /// <summary>Rellena el desplegable de IVA de las líneas con los tipos de la tabla Iva.</summary>
+        private void CargarTiposIva(AdministracionAntonioEntities bd)
         {
-            if (checkBox3.Checked == true)
+            var tipos = bd.Iva.AsNoTracking()
+                .Where(i => i.ivaporciento != null)
+                .ToList()
+                .GroupBy(i => i.ivaporciento.Value)
+                .OrderByDescending(g => g.Key)
+                .ToList();
+
+            recargos = tipos.ToDictionary(g => g.Key, g => g.First().ivarecargo ?? 0);
+            if (!recargos.ContainsKey(0)) recargos[0] = 0;
+
+            colIva.Items.Clear();
+            foreach (var tipo in recargos.Keys.OrderByDescending(k => k))
             {
-                panel2.Visible = true;
+                colIva.Items.Add(TextoIva(tipo));
+            }
+            colIva.Items.Add(TextoSuplido);
+        }
+
+        private static string TextoIva(decimal tipo)
+        {
+            return tipo.ToString("0.##", Es) + " %";
+        }
+
+        // =====================================================================
+        //  Número provisional
+        // =====================================================================
+
+        private void ActualizarNumero()
+        {
+            if (facturaVista.HasValue) return;
+            try
+            {
+                int año = dateTimePickerFecha.Value.Year;
+                using (var bd = new AdministracionAntonioEntities())
+                {
+                    decimal siguiente = FacturasUtil.SiguienteNumero(bd, FacturasUtil.SerieDirecta, año);
+                    labelNumeroFactura.Text = FacturasUtil.Numero(FacturasUtil.SerieDirecta, año, siguiente) + "  (provisional)";
+                }
+            }
+            catch
+            {
+                labelNumeroFactura.Text = "(se asigna al grabar)";
+            }
+        }
+
+        private void dateTimePickerFecha_ValueChanged(object sender, EventArgs e)
+        {
+            if (!cargando) ActualizarNumero();
+        }
+
+        // =====================================================================
+        //  Cliente
+        // =====================================================================
+
+        private void comboCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cargando || checkOcasional.Checked) return;
+            PonerCliente(comboCliente.SelectedItem as Clientes);
+        }
+
+        private void comboCliente_Leave(object sender, EventArgs e)
+        {
+            if (checkOcasional.Checked) return;
+            // Si se ha escrito el nombre a mano, buscar el cliente exacto
+            if (comboCliente.SelectedItem == null && comboCliente.Text.Trim().Length > 0)
+            {
+                var c = clientes.FirstOrDefault(x =>
+                    string.Equals((x.nombrecliente ?? "").Trim(), comboCliente.Text.Trim(), StringComparison.CurrentCultureIgnoreCase));
+                if (c != null)
+                {
+                    comboCliente.SelectedItem = c;
+                }
+            }
+            if (comboCliente.SelectedItem == null)
+            {
+                PonerCliente(null);
+            }
+        }
+
+        private void PonerCliente(Clientes c)
+        {
+            clienteElegido = c;
+            if (c == null)
+            {
+                LimpiarCliente();
+                return;
+            }
+            txtNombre.Text = (c.nombrecliente ?? "").Trim();
+            txtNif.Text = (c.cifcliente ?? "").Trim();
+            txtDireccion.Text = (c.direcioncliente ?? "").Trim();
+            txtCp.Text = (c.cod_postalcliente ?? "").Trim();
+            txtLocalidad.Text = (c.localidacliente ?? "").Trim();
+            txtProvincia.Text = (c.provinciacliente ?? "").Trim();
+            txtMail.Text = (c.mailcliente ?? "").Trim();
+            checkContabilizar.Checked = c.contabilizarcliente == true;
+            checkRecargo.Checked = c.recargo == true;
+            checkPorMail.Checked = c.pormailcliente == true;
+            Recalcular();
+        }
+
+        private void LimpiarCliente()
+        {
+            foreach (var t in new[] { txtNombre, txtNif, txtDireccion, txtCp, txtLocalidad, txtProvincia, txtMail })
+            {
+                t.Text = "";
+            }
+            checkContabilizar.Checked = true;
+            checkRecargo.Checked = false;
+            checkPorMail.Checked = false;
+            Recalcular();
+        }
+
+        private void checkOcasional_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cargando) return;
+            ModoOcasional(checkOcasional.Checked);
+        }
+
+        /// <summary>
+        /// Cliente ocasional: los datos se escriben a mano.
+        /// Cliente dado de alta: se toman de su ficha y no se pueden cambiar aquí.
+        /// </summary>
+        private void ModoOcasional(bool ocasional)
+        {
+            comboCliente.Enabled = !ocasional;
+            foreach (var t in new[] { txtNombre, txtNif, txtDireccion, txtCp, txtLocalidad, txtProvincia, txtMail })
+            {
+                t.ReadOnly = !ocasional;
+            }
+            checkContabilizar.Enabled = ocasional;
+            checkRecargo.Enabled = ocasional;
+            checkPorMail.Enabled = ocasional;
+
+            if (ocasional)
+            {
+                cargando = true;
+                comboCliente.SelectedIndex = -1;
+                comboCliente.Text = "";
+                cargando = false;
+                clienteElegido = null;
+                LimpiarCliente();
+                txtNombre.Focus();
             }
             else
             {
-                panel2.Visible = false;
+                PonerCliente(comboCliente.SelectedItem as Clientes);
             }
-
         }
 
-        private void dataGridView2_DoubleClick(object sender, EventArgs e)
+        private void checkRecargo_CheckedChanged(object sender, EventArgs e)
         {
-            textBox13.Text =  Convert.ToString(dataGridView2.CurrentRow.Cells[0].Value);
-            dataGridView2.Visible = false;
+            if (!cargando) Recalcular();
         }
 
+        // =====================================================================
+        //  Líneas
+        // =====================================================================
 
-        private void button3_Click(object sender, EventArgs e)
+        private void dataGridLineas_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
+            e.Row.Cells[colCantidad.Index].Value = "1";
+            e.Row.Cells[colIva.Index].Value = colIva.Items.Count > 0 ? colIva.Items[0] : TextoSuplido;
+        }
 
-            //**************************************************
-            //***************************************************
-
-            // nos aseguramos que se rellenen todos los datos
-
-            if ((textBox1.Text=="")|| (textBox2.Text == "") || (textBox3.Text == "") || (textBox4.Text == "") ||
-                    (textBox5.Text == "") || (textBox6.Text == "") )
+        private void dataGridLineas_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            // Que el cambio en el desplegable de IVA se note al momento
+            if (dataGridLineas.IsCurrentCellDirty && dataGridLineas.CurrentCell is DataGridViewComboBoxCell)
             {
-               MessageBox.Show("Debe completar los datos del cliente. ");
-
+                dataGridLineas.CommitEdit(DataGridViewDataErrorContexts.Commit);
             }
-            if (checkBox3.Checked == true)
+        }
+
+        private void dataGridLineas_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (e.ColumnIndex != colCantidad.Index && e.ColumnIndex != colPrecio.Index) return;
+            string texto = Convert.ToString(e.FormattedValue).Replace("€", "").Trim();
+            decimal valor;
+            if (texto.Length > 0 && !ClientesUtil.LeerDecimal(texto, out valor))
             {
-                if ((textBox7.Text == "") || (textBox8.Text == "") || (textBox9.Text == "") ||
-                    (textBox10.Text == "") || (textBox11.Text == "") || (textBox12.Text == ""))
+                dataGridLineas.Rows[e.RowIndex].ErrorText = "Escribe un número.";
+                e.Cancel = true;
+            }
+        }
+
+        private void dataGridLineas_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            var fila = dataGridLineas.Rows[e.RowIndex];
+            fila.ErrorText = "";
+            if (e.ColumnIndex == colCantidad.Index || e.ColumnIndex == colPrecio.Index)
+            {
+                decimal valor;
+                string texto = Convert.ToString(fila.Cells[e.ColumnIndex].Value).Replace("€", "").Trim();
+                if (ClientesUtil.LeerDecimal(texto, out valor) && texto.Length > 0)
                 {
-                    MessageBox.Show("Debe rellenar los datos bancarios.");
+                    fila.Cells[e.ColumnIndex].Value = e.ColumnIndex == colCantidad.Index
+                        ? valor.ToString("0.###", Es)
+                        : valor.ToString("N2", Es);
                 }
             }
-            //******************************************************
-            //******************************************************
-            panel1.Visible = false;
+            Recalcular();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void dataGridLineas_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
+            if (!cargando && e.RowIndex >= 0 && e.ColumnIndex == colIva.Index) Recalcular();
+        }
 
+        private void dataGridLineas_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if (!cargando) Recalcular();
+        }
+
+        private void dataGridLineas_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+        }
+
+        /// <summary>Lee las líneas de la rejilla (las vacías se ignoran).</summary>
+        private List<LineaFactura> LeerLineas(bool avisar, out string error)
+        {
+            error = null;
+            var lineas = new List<LineaFactura>();
+            foreach (DataGridViewRow fila in dataGridLineas.Rows)
+            {
+                if (fila.IsNewRow) continue;
+                string concepto = Convert.ToString(fila.Cells[colConcepto.Index].Value).Trim();
+                string textoCantidad = Convert.ToString(fila.Cells[colCantidad.Index].Value).Trim();
+                string textoPrecio = Convert.ToString(fila.Cells[colPrecio.Index].Value).Replace("€", "").Trim();
+                string textoIva = Convert.ToString(fila.Cells[colIva.Index].Value);
+
+                if (concepto.Length == 0 && textoPrecio.Length == 0) continue;
+
+                decimal cantidad, precio;
+                if (!ClientesUtil.LeerDecimal(textoCantidad.Length == 0 ? "1" : textoCantidad, out cantidad))
+                {
+                    error = "La cantidad de la línea " + (fila.Index + 1) + " no es válida.";
+                    continue;
+                }
+                if (!ClientesUtil.LeerDecimal(textoPrecio, out precio))
+                {
+                    error = "El precio de la línea " + (fila.Index + 1) + " no es válido.";
+                    continue;
+                }
+                if (concepto.Length == 0)
+                {
+                    error = "Falta el concepto de la línea " + (fila.Index + 1) + ".";
+                }
+
+                var linea = new LineaFactura
+                {
+                    Cantidad = cantidad,
+                    Concepto = concepto,
+                    Precio = precio,
+                    Suplido = textoIva == TextoSuplido
+                };
+                if (!linea.Suplido)
+                {
+                    decimal tipo;
+                    ClientesUtil.LeerDecimal(textoIva.Replace("%", "").Trim(), out tipo);
+                    linea.TipoIva = tipo;
+                    decimal re;
+                    linea.TipoRecargo = checkRecargo.Checked && recargos.TryGetValue(tipo, out re) ? re : 0;
+                }
+                lineas.Add(linea);
+            }
+            return lineas;
+        }
+
+        private void Recalcular()
+        {
+            string error;
+            var lineas = LeerLineas(false, out error);
+
+            foreach (DataGridViewRow fila in dataGridLineas.Rows)
+            {
+                if (fila.IsNewRow) continue;
+                decimal cantidad, precio;
+                string textoCantidad = Convert.ToString(fila.Cells[colCantidad.Index].Value).Trim();
+                string textoPrecio = Convert.ToString(fila.Cells[colPrecio.Index].Value).Replace("€", "").Trim();
+                if (ClientesUtil.LeerDecimal(textoCantidad.Length == 0 ? "1" : textoCantidad, out cantidad)
+                    && ClientesUtil.LeerDecimal(textoPrecio, out precio) && textoPrecio.Length > 0)
+                {
+                    fila.Cells[colImporte.Index].Value =
+                        Math.Round(cantidad * precio, 2, MidpointRounding.AwayFromZero).ToString("N2", Es) + " €";
+                }
+                else
+                {
+                    fila.Cells[colImporte.Index].Value = "";
+                }
+            }
+
+            MostrarTotales(FacturasUtil.Calcular(lineas), 0);
+        }
+
+        private void MostrarTotales(TotalesFactura t, decimal retencion)
+        {
+            valorBase.Text = Euros(t.BaseImponible);
+            valorIva.Text = Euros(t.CuotaIva);
+            valorRecargo.Text = Euros(t.CuotaRecargo);
+            valorSuplidos.Text = Euros(t.Suplidos);
+            valorTotal.Text = Euros(t.TotalFactura - retencion + t.Suplidos);
+
+            string desglose = string.Join("   ", t.Desglose.Select(d =>
+                TextoIva(d.TipoIva) + ": " + Euros(d.Base) +
+                (d.TipoRecargo != 0 ? " (R.E. " + TextoIva(d.TipoRecargo) + ")" : "")));
+            labelDesglose.Text = t.Desglose.Count > 1 ? desglose : "";
+        }
+
+        private static string Euros(decimal importe)
+        {
+            return importe.ToString("N2", Es) + " €";
+        }
+
+        // =====================================================================
+        //  Grabar
+        // =====================================================================
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridLineas.EndEdit();
+
+            string error;
+            var lineas = LeerLineas(true, out error);
+            if (error != null)
+            {
+                Aviso(error);
+                return;
+            }
+            if (lineas.Count == 0)
+            {
+                Aviso("La factura no tiene ninguna línea.");
+                dataGridLineas.Focus();
+                return;
+            }
+
+            if (!checkOcasional.Checked && clienteElegido == null)
+            {
+                Aviso("Elige un cliente de la lista, o marca \"Cliente ocasional\" para escribir sus datos.");
+                comboCliente.Focus();
+                return;
+            }
+            if (txtNombre.Text.Trim().Length == 0)
+            {
+                Aviso("Falta el nombre del cliente.");
+                txtNombre.Focus();
+                return;
+            }
+            if (txtNif.Text.Trim().Length == 0)
+            {
+                Aviso("Falta el NIF del cliente. Es obligatorio en una factura completa.");
+                if (checkOcasional.Checked) txtNif.Focus();
+                return;
+            }
+            if (checkPorMail.Checked && txtMail.Text.Trim().Length == 0)
+            {
+                Aviso("Está marcado \"Por mail\" pero el cliente no tiene email.");
+                return;
+            }
+
+            var totales = FacturasUtil.Calcular(lineas);
+            if (totales.TotalAPagar <= 0)
+            {
+                Aviso("El total de la factura tiene que ser mayor que cero.\nPara anular o corregir una factura se hará una rectificativa.");
+                return;
+            }
+
+            DateTime fecha = dateTimePickerFecha.Value.Date;
+            int año = fecha.Year;
+
+            try
+            {
+                using (var bd = new AdministracionAntonioEntities())
+                {
+                    // Las facturas de una serie van en orden de fecha
+                    DateTime? ultimaFecha = bd.Facturas
+                        .Where(f => f.factserie == FacturasUtil.SerieDirecta && f.factejercicio == año)
+                        .Max(f => f.factfechadoc);
+                    if (ultimaFecha.HasValue && fecha < ultimaFecha.Value)
+                    {
+                        Aviso("La última factura directa de " + año + " tiene fecha " + ultimaFecha.Value.ToString("dd/MM/yyyy") +
+                              ".\nLas facturas tienen que ir numeradas en orden de fecha: pon una fecha igual o posterior.");
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Error("No se ha podido comprobar la numeración", ex);
+                return;
+            }
+
+            if (fecha > DateTime.Today &&
+                MessageBox.Show("La fecha de la factura es posterior a hoy. ¿Seguro?", "Factura directa",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) != DialogResult.Yes)
+            {
+                return;
+            }
+
+            string resumen = "Se va a emitir la factura a:\n\n   " + txtNombre.Text.Trim() +
+                             "\n\nTotal a pagar: " + Euros(totales.TotalAPagar) +
+                             "\n\nUna vez emitida no se puede modificar ni borrar.\n¿Emitir la factura?";
+            if (MessageBox.Show(resumen, "Factura directa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            {
+                return;
+            }
+
+            var cliente = new DatosClienteFactura
+            {
+                Codigo = checkOcasional.Checked || clienteElegido == null ? (decimal?)null : clienteElegido.codcliente,
+                Nombre = txtNombre.Text,
+                Nif = txtNif.Text,
+                Direccion = txtDireccion.Text,
+                Localidad = txtLocalidad.Text,
+                Provincia = txtProvincia.Text,
+                CodigoPostal = txtCp.Text,
+                Mail = txtMail.Text,
+                PorMail = checkPorMail.Checked,
+                Iban = "",             // las facturas directas se cobran en efectivo
+                Domiciliar = false,    // nunca se pasan al banco
+                Contabilizar = checkContabilizar.Checked,
+                RecargoEquivalencia = checkRecargo.Checked
+            };
+
+            decimal id;
+            try
+            {
+                id = FacturasUtil.GrabarDirecta(cliente, fecha, lineas);
+                FacturaGrabada = id;
+            }
+            catch (Exception ex)
+            {
+                Error("No se ha podido grabar la factura. No se ha guardado nada", ex);
+                return;
+            }
+
+            string numero;
+            using (var bd = new AdministracionAntonioEntities())
+            {
+                numero = FacturasUtil.Numero(bd.Facturas.Find(id));
+            }
+
+            try
+            {
+                string ruta = FacturasUtil.GenerarPdf(id, true);
+                MessageBox.Show("Factura " + numero + " emitida.\n\nPDF guardado en:\n" + ruta, "Factura directa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                Error("La factura " + numero + " está grabada, pero no se ha podido crear el PDF.\n" +
+                      "Puedes imprimirla después desde Gestión de facturas", ex);
+            }
+
+            DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -221,427 +561,123 @@ namespace Proyecto_Antonio_Luis.Formularios
             Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void FacturaUnitaria_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (facturaVista.HasValue || DialogResult == DialogResult.OK) return;
 
-            List<Facturas> lista = new List<Facturas>();
-
- 
-            
+            string error;
+            bool hayDatos = LeerLineas(false, out error).Count > 0 || txtNombre.Text.Trim().Length > 0;
+            if (hayDatos &&
+                MessageBox.Show("La factura no se ha emitido. ¿Salir sin grabarla?", "Factura directa",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) != DialogResult.Yes)
             {
-                Facturas datosapasar = new Facturas();
-
-                datosapasar.factnumerofact = Convert.ToDecimal(labelNumeroFactura.Text);
-                datosapasar.factfecha = dateTimePickerFecha.Text;
-              
-                var datoscliente = bd.Clientes.FirstOrDefault(x => x.nombrecliente == textBox13.Text);
-     
-                if (datoscliente == null)
-                    {
-                    datosapasar.factnombre = textBox1.Text;
-                    datosapasar.factdireccion = textBox3.Text;
-                    datosapasar.factcp = textBox6.Text;
-                    datosapasar.factlocalidad = textBox4.Text;
-                    datosapasar.factprovincia = textBox5.Text;
-                    datosapasar.factnif = textBox2.Text;
-                    // IBAN escrito a mano en los 6 cuadros
-                    Proyecto_Antonio_Luis.Clases.ClientesUtil.PonerIbanFactura(datosapasar,
-                        Proyecto_Antonio_Luis.Clases.ClientesUtil.IbanDeBloques(textBox7.Text, textBox8.Text, textBox9.Text, textBox10.Text, textBox11.Text, textBox12.Text));
-                    datosapasar.factdomiciliada = false;
-                    datosapasar.factcontabilizada = false;
-                    datosapasar.factimpresa = false;
-                    datosapasar.factparacontabilizar = false;
-                    datosapasar.factparadomiciliar = false;
-
-                    if (checkBox3.Checked == true)
-                    {
-                        datosapasar.factparadomiciliar = true;
-                    }
-                    if (checkBox3.Checked == true)
-                    {
-                        datosapasar.factparacontabilizar = true;
-
-                    }
-
-                }
-                    else
-                    {
-                    datosapasar.factnombre = datoscliente.nombrecliente;
-                    datosapasar.factdireccion = datoscliente.direcioncliente;
-                    datosapasar.factcp = datoscliente.cod_postalcliente;
-                    datosapasar.factlocalidad = datoscliente.localidacliente;
-                    datosapasar.factprovincia = datoscliente.provinciacliente;
-                    datosapasar.factnif = datoscliente.cifcliente;
-                    // IBAN completo del cliente
-                    Proyecto_Antonio_Luis.Clases.ClientesUtil.PonerIbanFactura(datosapasar, Proyecto_Antonio_Luis.Clases.ClientesUtil.IbanCliente(datoscliente));
-                    datosapasar.factcodcliente = datoscliente.codcliente;
-                    datosapasar.factdomiciliada = false;
-                    datosapasar.factcontabilizada = false;
-                    datosapasar.factimpresa = false;
-                    datosapasar.factparacontabilizar = datoscliente.contabilizarcliente;
-                    datosapasar.factparadomiciliar = datoscliente.domiciliadocliente;
-
-
-                }
-                datosapasar.factremesa = "Factura Directa " + labelNumeroFactura.Text;
-                int contador = 0;
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                   
-                {
-                    
-                    if ("" != Convert.ToString(row.Cells[3].Value)&&(contador == 0))
-                    {
-                        if (true == Convert.ToBoolean(row.Cells[1].Value))
-                        {
-                            
-                          //  datosapasar.factcopceptolinea2 = Convert.ToString(row.Cells[3].Value);
-                            datosapasar.factbase2 = Convert.ToDecimal(row.Cells[5].Value);
-                        }
-                        else
-                        {
-                            datosapasar.factconcepto1 = Convert.ToString(row.Cells[3].Value);
-                            datosapasar.factbase1 = Convert.ToDecimal(row.Cells[5].Value);
-                        }
-                    }
-
-                    if ("" != Convert.ToString(row.Cells[3].Value) && (contador == 1))
-                    {
-                        if (true == Convert.ToBoolean(row.Cells[1].Value))
-                        {
-                            datosapasar.factconcepto2 = Convert.ToString(row.Cells[3].Value);
-                            datosapasar.factbase2 = Convert.ToDecimal(row.Cells[5].Value);
-                        }
-                        else
-                        {
-                            datosapasar.factconcepto1 = Convert.ToString(row.Cells[3].Value);
-                            datosapasar.factbase1 = Convert.ToDecimal(row.Cells[5].Value);
-                        }
-
-                    }
-
-
-                    if ("" != Convert.ToString(row.Cells[3].Value) && (contador == 2))
-                    {
-                        if (true == Convert.ToBoolean(row.Cells[1].Value))
-                        {
-                            datosapasar.factconcepto2 = Convert.ToString(row.Cells[3].Value);
-                            datosapasar.factbase2 = Convert.ToDecimal(row.Cells[5].Value);
-                        }
-                        else
-                        {
-                            datosapasar.factconcepto1 = Convert.ToString(row.Cells[3].Value);
-                            datosapasar.factbase1 = Convert.ToDecimal(row.Cells[5].Value);
-                        }
-
-                    }
-
-
-                    contador++;
-                }
-
-
-
-                //datosapasar.facttotalfactura = Convert.ToDecimal(totalfactura.Text);
-                /*
-            datosapasar.imprinombre = temp.factnombre;
-            datosapasar.impridireccion = temp.factdireccion;
-            datosapasar.impricp = temp.factcp;
-            datosapasar.impriciudad = temp.factlocalidad;
-            datosapasar.impriprovincia = temp.factprovincia;
-            datosapasar.imprinif = temp.factnif;
-            datosapasar.impriconcepto1 = temp.factconcepto1;
-            datosapasar.impribase1 = Convert.ToDecimal(temp.factbase1);
-            datosapasar.impriconcepto2 = temp.factconcepto2;
-            datosapasar.impribase2 = Convert.ToDecimal(temp.factbase2);
-            //atosapasar.impriconcepto3 = temp.
-            datosapasar.impribasenosujeta = Convert.ToDecimal(temp.factbase2);
-            datosapasar.impribasesujeta = Convert.ToDecimal(temp.factbase1);
-            datosapasar.impritotalfactura = Convert.ToDecimal(temp.facttotalfactura);
-            datosapasar.impritipoiva = Convert.ToDecimal(temp.facttipoiva);
-
-*/
-
-                lista.Add(datosapasar);
-
+                e.Cancel = true;
             }
-            bd.Facturas.AddRange(lista);
-            bd.SaveChanges();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        // =====================================================================
+        //  Ver una factura emitida
+        // =====================================================================
+
+        private void MostrarFactura(AdministracionAntonioEntities bd, decimal factcontador)
         {
+            var f = bd.Facturas.AsNoTracking().FirstOrDefault(x => x.factcontador == factcontador);
+            if (f == null)
+            {
+                MessageBox.Show("La factura no existe.", "Factura", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                BeginInvoke(new Action(Close));
+                return;
+            }
 
+            labelTitulo.Text = f.factserie == FacturasUtil.SerieMensual ? "Factura mensual"
+                             : f.factserie == FacturasUtil.SerieRectificativa ? "Factura rectificativa"
+                             : "Factura directa";
+            labelNumeroFactura.Text = FacturasUtil.Numero(f);
+            if (f.factfechadoc.HasValue) dateTimePickerFecha.Value = f.factfechadoc.Value;
+            dateTimePickerFecha.Enabled = false;
+
+            checkOcasional.Checked = f.factcodcliente == FacturasUtil.CodigoClienteOcasional;
+            checkOcasional.Enabled = false;
+            comboCliente.Enabled = false;
+            comboCliente.Text = f.factcodcliente.HasValue && f.factcodcliente != FacturasUtil.CodigoClienteOcasional
+                ? "Código " + f.factcodcliente.Value.ToString("0")
+                : "";
+
+            txtNombre.Text = (f.factnombre ?? "").Trim();
+            txtNif.Text = (f.factnif ?? "").Trim();
+            txtDireccion.Text = (f.factdireccion ?? "").Trim();
+            txtCp.Text = (f.factcp ?? "").Trim();
+            txtLocalidad.Text = (f.factlocalidad ?? "").Trim();
+            txtProvincia.Text = (f.factprovincia ?? "").Trim();
+            txtMail.Text = (f.factmail ?? "").Trim();
+            checkContabilizar.Checked = f.factparacontabilizar == true;
+            checkRecargo.Checked = (f.factimporterecargo ?? 0) != 0;
+            checkPorMail.Checked = f.factpormail == true;
+
+            foreach (var t in new[] { txtNombre, txtNif, txtDireccion, txtCp, txtLocalidad, txtProvincia, txtMail })
+            {
+                t.ReadOnly = true;
+            }
+            foreach (var c in new[] { checkContabilizar, checkRecargo, checkPorMail })
+            {
+                c.Enabled = false;
+            }
+
+            var lineas = FacturasUtil.LineasDe(bd, f);
+            dataGridLineas.ReadOnly = true;
+            dataGridLineas.AllowUserToAddRows = false;
+            dataGridLineas.AllowUserToDeleteRows = false;
+            foreach (var l in lineas)
+            {
+                string iva = l.Suplido ? TextoSuplido : TextoIva(l.TipoIva);
+                if (!colIva.Items.Contains(iva)) colIva.Items.Add(iva);
+                dataGridLineas.Rows.Add(l.Concepto, l.Cantidad.ToString("0.###", Es), l.Precio.ToString("N2", Es), iva,
+                    l.Importe.ToString("N2", Es) + " €");
+            }
+            MostrarTotales(FacturasUtil.Calcular(lineas), f.factretencion ?? 0);
+
+            var estado = new List<string>();
+            estado.Add(f.factimpresa == true ? "Impresa" : "Sin imprimir");
+            if (f.factparacontabilizar == true) estado.Add(f.factcontabilizada == true ? "Contabilizada" : "Pendiente de contabilizar");
+            if (f.factparadomiciliar == true) estado.Add(f.factdomiciliada == true ? "Domiciliada" : "Pendiente de domiciliar");
+            labelAviso.Text = string.Join("  ·  ", estado);
+
+            button1.Visible = false;
+            button2.Location = new Point(130, 575);
+            imprimir.Visible = true;
+            Text = "eGESTION - Factura " + FacturasUtil.Numero(f);
         }
 
-        private void dataGridView1_RowLeave(object sender, DataGridViewCellEventArgs e)
+        private void imprimir_Click(object sender, EventArgs e)
         {
-            if (this.dataGridView1.Rows.Count >= 4)
+            if (!facturaVista.HasValue) return;
+            try
             {
-                this.dataGridView1.AllowUserToAddRows = false;
-                MessageBox.Show("El numero máximo de conceptos es tres.");
+                Cursor = Cursors.WaitCursor;
+                FacturasUtil.GenerarPdf(facturaVista.Value, true);
+            }
+            catch (Exception ex)
+            {
+                Error("No se ha podido crear el PDF", ex);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
             }
         }
 
-        private void textBox13_TextChanged(object sender, EventArgs e)
+        // =====================================================================
+
+        private static void Aviso(string texto)
         {
-            var busqueda = from c in bd.Clientes select c;
-          //  busqueda = from c in bd.Clientes select c;
-            busqueda = busqueda.OrderBy(c=> c.nombrecliente). Where(c => c.nombrecliente.Contains(textBox13.Text));
-            dataGridView2.Visible = true;
-            dataGridView2.DataSource = busqueda.ToList();
-            
-
-
-
-            //   comboBoxClientes.DataSource = busqueda.Select(x => x.nombrecliente).ToList<string>();
-
-            if (busqueda.Count() == 0)
-            {
-                encontrado = false;
-            }
-            else
-            {
-                encontrado = true;
-            }
+            MessageBox.Show(texto, "Factura directa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void textBox13_Leave(object sender, EventArgs e)
+        private static void Error(string texto, Exception ex)
         {
-            // cuando sale del combo, si no ha encontrado el registro de clientes
-            // pide que introduzcamos los datos.
-
-            if (dataGridView2.RowCount == 0)
-            {
-                dataGridView2.Visible = false;
-                panel1.Visible = true;
-                textBox1.Text = textBox13.Text;
-                textBox2.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
-                textBox7.Text = "";
-                textBox8.Text = "";
-                textBox9.Text = "";
-                textBox10.Text = "";
-                textBox11.Text = "";
-                textBox12.Text = "";
-                clientenuevo = true;
-
-            }
-            else
-            {
-                panel1.Visible = false;
-                clientenuevo = false;
-
-            }
-
+            var interna = ex;
+            while (interna.InnerException != null) interna = interna.InnerException;
+            MessageBox.Show(texto + ":\n\n" + interna.Message, "Factura directa", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
-        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            textBox13.Text = Convert.ToString(dataGridView2.CurrentRow.Cells[0].Value);
-            dataGridView2.Visible = false;
-
-
-        //    dataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit);
-        }
-
-        private void textBox13_Enter(object sender, EventArgs e)
-        {
-            // TODO: esta línea de código carga datos en la tabla 'administracionAntonioDataSet1.Iva' Puede moverla o quitarla según sea necesario.
-            this.ivaTableAdapter.Fill(this.administracionAntonioDataSet1.Iva);
-            //carga la tabla de clientes en el conbo
-            dataGridView2.DataSource = bd.Clientes.ToList();
-        }
-
-        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-
-            //  creamos variables para los calculos y les damos valor
-            decimal unidades, importe, total;
-            // creamos la variable para acceder a la fila
-            int fila;
-
-            // realizamos esto si modificamos las unidades
-            if ((dataGridView1.Columns[e.ColumnIndex].Name == "DataGridviewColumn1")||
-                    (dataGridView1.Columns[e.ColumnIndex].Name == "DataGridviewColumn3")||
-                    (dataGridView1.Columns[e.ColumnIndex].Name == "DataGridviewColumn4")||
-                    (dataGridView1.Columns[e.ColumnIndex].Name == "Column6"))
-            {
-               fila = Convert.ToInt32(dataGridView1.CurrentRow.Index);
-                // cargamos las variables con los datos del dgv
-                unidades = Convert.ToDecimal(dataGridView1[2, fila].Value);
-                importe = Convert.ToDecimal(dataGridView1[4, fila].Value);
-                
-                // realizamos lo scalculos
-                total = unidades * importe;
-
-                // cargamos los datos e el dgv
-                dataGridView1[5, fila].Value = total;
-
-            }
-
-
-
-            // actualiza los totales.
-
-            // recorre la tabla para actualizar los ivas
-
-            base0 = 0; base4 = 0; base10 = 0; base21 = 0; basesupl = 0;
-
-
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-
-            {
-                string sup = Convert.ToString(row.Cells[1].Value);
-
-                  if (sup == "True")
-                {
-                    basesupl = basesupl + Convert.ToDecimal(row.Cells[5].Value);
-                }
-                decimal tipo = Convert.ToDecimal(row.Cells[0].Value);
-                if (tipo == 0)
-                {
-                    if (sup != "True")
-                    {
-                        base0 = base0 + Convert.ToDecimal(row.Cells[5].Value);
-                    }
-                
-                }
-                if (tipo == 4)
-                {
-                    if (sup != "True")
-                    {
-                        base4 = base4 + Convert.ToDecimal(row.Cells[5].Value);
-                    }
-                   
-                }
-                if (tipo == 10)
-                {
-                    if (sup != "True")
-                    {
-                        base10 = base10 + Convert.ToDecimal(row.Cells[5].Value);
-                    }
-                }
-                if (tipo == 21)
-                {
-                    if (sup != "True")
-                    {
-                        base21 = base21 + Convert.ToDecimal(row.Cells[5].Value);
-                    }
-                }
-
-
-                //muestras las bases y calcula los ivas
-
-                bas1.Text = base0.ToString("C2");
-                total1.Text = "0,00";
-
-                bas2.Text = base4.ToString("C2");
-                decimal x = (base4*4)/100;
-                total2.Text = x.ToString("C2");
-
-                bas3.Text = base10.ToString("C2");
-                x = (base10 * 10) / 100;
-                total3.Text = x.ToString("C2");
-
-                bas4.Text = base21.ToString("C2");
-                x = (base21 * 21) / 100;
-                total4.Text = x.ToString("C2");
-
-                //actualiza los totales de las facturas
-                basenosujeta.Text = basesupl.ToString("C2");
-                baseimponible.Text = (base0 + base4 + base10 + base21).ToString("C2");
-
-                string a, b, c;
-                a = total2.Text;
-                a = a.Replace("€", "");
-                b = total3.Text;
-                b = b.Replace("€", "");
-                c = total4.Text;
-                c = c.Replace("€", "");
-                
-                x = Convert.ToDecimal(a)+ Convert.ToDecimal(b)+ Convert.ToDecimal(c);
-
-
-
-                totaliva.Text = (x).ToString("C2");
-                totalfactura.Text = (basesupl + (base0 + base4 + base10 + base21) + (x)).ToString("C2");
-                
-
-
-
-            }
-
-
-
-
-        }
-
-
-        private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
-        {  // Donde el numero "0" es el numero de tu columna 
-
-            if ((dataGridView1.CurrentCell.ColumnIndex == 2)||
-                    (dataGridView1.CurrentCell.ColumnIndex == 4))
-
-            {
-
-                if (e.KeyChar == (char)Keys.Back || char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Escape)
-                {
-                    e.Handled = false;
-                }
-                else
-                {
-                    e.Handled = true;
-                }
-
-
-                if (e.KeyChar == (char)44 | e.KeyChar == (char)46) // Si es un . o una ,
-                {
-
-                    // Si no hay caracteres
-                    // o
-                    // Si ya hay un punto o una coma
-                    // no dejamos poner la , o .
-
-                    e.Handled = false;
-                }
-
-                if (e.KeyChar == (char)43 | e.KeyChar == (char)45)
-                // Si es un + o un -
-                {
-                    e.Handled = false;
-                }
-            
-                if (e.KeyChar == (char)46)
-                {
-                    e.KeyChar = (char) 44;
-                }
-
-
-
-            }
-        }
-
-        private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        {
-           if (dataGridView1.CurrentCell.ColumnIndex == 2)
-            {
-                TextBox txt = e.Control as TextBox;
-
-                if (txt != null)
-                {
-                    txt.KeyPress -= new KeyPressEventHandler(dataGridView1_KeyPress);
-
-                    txt.KeyPress += new KeyPressEventHandler(dataGridView1_KeyPress);
-                }
-            }
-        }
-
     }
-
-    }
+}

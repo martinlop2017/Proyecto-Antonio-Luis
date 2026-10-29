@@ -98,7 +98,7 @@ namespace Proyecto_Antonio_Luis.Formularios
                     //marcamos lo s registros como IMPRESOS
                     foreach (var temp in facturasacontabilizar)
                     {
-                        temp.factcontabilizada = true;
+                        temp.factimpresa = true;
                     }
                     bd.SaveChanges();
 

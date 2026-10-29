@@ -30,6 +30,8 @@ namespace BaseDatos
         public virtual DbSet<Facturas> Facturas { get; set; }
         public virtual DbSet<Iva> Iva { get; set; }
         public virtual DbSet<Retenciones> Retenciones { get; set; }
+        public virtual DbSet<Series> Series { get; set; }
+        public virtual DbSet<FacturaLineas> FacturaLineas { get; set; }
         public virtual DbSet<Propios> Propios { get; set; }
         public virtual DbSet<Resilla> Resilla { get; set; }
         public virtual DbSet<Ususarios> Ususarios { get; set; }
